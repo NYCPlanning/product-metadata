@@ -7,12 +7,21 @@ description: >
   geographically modified to fit the New York City base map. All previously released
   versions of this data are available at <a href="https://www1.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts[year]=0">BYTES of the BIG APPLE- Archive.</a>
 tags: [2010 census blocks, census, '2010', gis, map, dcp]
-each_row_is_a: <FILL_ME_IN>
+each_row_is_a: Census Block
 
 destinations:
-- id: socrata_prod
+- id: socrata_water_not_included
   type: socrata
-  four_four:
+  four_four: tbd # former: v2h8-6mxf
+  attachments: []
+  datasets:
+  - primary_shapefile
+  omit_columns: []
+  column_details: {}
+
+- id: socrata_water_included
+  type: socrata
+  four_four: tbd # former: v9xd-tt3e
   attachments: []
   datasets:
   - primary_shapefile
@@ -34,29 +43,35 @@ package:
 columns:
 - name: CB2010
   display_name: CB2010
-  description: ''
+  description: 'Census block number.'
   data_type: text
 - name: BoroCode
   display_name: BoroCode
-  description: ''
+  description: 'Borough code for the borough in which the census block is located.'
   data_type: text
+  values:
+    - ["1", Manhattan]
+    - ["2", Bronx]
+    - ["3", Brooklyn]
+    - ["4", Queens]
+    - ["5", Staten Island]
 - name: BoroName
   display_name: BoroName
-  description: ''
+  description: 'Borough Name.'
   data_type: text
 - name: CT2010
   display_name: CT2010
-  description: ''
+  description: 'Census tract number.'
   data_type: text
 - name: BCTCB2010
   display_name: BCTCB2010
-  description: ''
+  description: 'Merged string value of the BoroCode, census tract number, and census block number.'
   data_type: text
 - name: Shape__Area
   display_name: Shape__Area
-  description: ''
+  description: 'Area of feature in internal units squared.'
   data_type: double
 - name: Shape__Length
   display_name: Shape__Length
-  description: ''
+  description: 'Length of feature in internal units.'
   data_type: double
