@@ -1,32 +1,24 @@
 name: 2010_census_blocks
 display_name: 2010 Census Blocks
-summary: 2010 Census Blocks from the US Census for New York City. These boundary files
-  are derived from the US Census Bureau's TIGER data products and have been geographically
-  modified to fit the New York City base map. All previously released versions of
-  this data are available at <a href="https://www1.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts[year]=0">BYTES
-  of the BIG APPLE- Archive.</a>
-description: 2010 Census Blocks from the US Census for New York City. These boundary
+summary: ""
+description: >
+  2010 Census Blocks from the US Census for New York City. These boundary
   files are derived from the US Census Bureau's TIGER data products and have been
   geographically modified to fit the New York City base map. All previously released
-  versions of this data are available at <a href="https://www1.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts[year]=0">BYTES
-  of the BIG APPLE- Archive.</a>
-tags:
-- 2010 census blocks
-- census
-- '2010'
-- gis
-- map
-- dcp
+  versions of this data are available at <a href="https://www1.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts[year]=0">BYTES of the BIG APPLE- Archive.</a>
+tags: [2010 census blocks, census, '2010', gis, map, dcp]
 each_row_is_a: <FILL_ME_IN>
+
 destinations:
 - id: socrata_prod
   type: socrata
-  four_four: v2h8-6mxf
+  four_four:
   attachments: []
   datasets:
   - primary_shapefile
   omit_columns: []
   column_details: {}
+
 package:
   dataset_files:
   - name: primary_shapefile
@@ -38,6 +30,7 @@ package:
       columns: {}
   attachments:
   - nycb2010_metadata.pdf
+
 columns:
 - name: CB2010
   display_name: CB2010
