@@ -13,32 +13,54 @@ destinations:
 - id: socrata_water_not_included
   type: socrata
   four_four: tbd # former: v2h8-6mxf
-  attachments: []
+  attachments: [nycb2010_metadata.pdf]
   datasets:
-  - primary_shapefile
+  - shapefile_water_not_included
   omit_columns: []
   column_details: {}
 
 - id: socrata_water_included
   type: socrata
   four_four: tbd # former: v9xd-tt3e
-  attachments: []
+  attachments: [nycb2010wi_metadata.pdf]
   datasets:
-  - primary_shapefile
+  - shapefile_water_included
   omit_columns: []
   column_details: {}
 
 package:
   dataset_files:
-  - name: primary_shapefile
+  - name: shapefile_water_not_included
     type: shapefile
-    filename: shapefile.zip
+    filename: nycb2010.zip
     overrides:
+      display_name: 2010 Census Blocks
+      description: >
+        2010 Census Blocks from the US Census for New York City. These boundary
+        files are derived from the US Census Bureau's TIGER data products and have been
+        geographically modified to fit the New York City base map. All previously released
+        versions of this data are available at
+        <a href="https://www1.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts[year]=0">BYTES of the BIG APPLE- Archive.</a>
+      omit_columns: []
+      ignore_validation: []
+      columns: {}
+  - name: shapefile_water_included
+    type: shapefile
+    filename: nycb2010wi.zip
+    overrides:
+      display_name: 2010 Census Blocks (water areas included)
+      description: >
+        2010 Census Blocks (water areas included) from the US Census for New York City. These boundary
+        files are derived from the US Census Bureau's TIGER data products and have been
+        geographically modified to fit the New York City base map. All previously released
+        versions of this data are available at
+        <a href="https://www1.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts[year]=0">BYTES of the BIG APPLE- Archive.</a>
       omit_columns: []
       ignore_validation: []
       columns: {}
   attachments:
   - nycb2010_metadata.pdf
+  - nycb2010wi_metadata.pdf
 
 columns:
 - name: CB2010
