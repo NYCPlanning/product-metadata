@@ -50,7 +50,7 @@ package:
       columns: {}
   - name: shapefile_water_included
     type: shapefile
-    filename: nycb2010wi.zip
+    filename: nycb2020wi.zip
     overrides:
       display_name: 2020 Census Blocks (water areas included)
       description: >

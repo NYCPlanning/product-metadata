@@ -61,11 +61,11 @@ package:
   - nyct2010wi_metadata.pdf
 
 columns:
-- name: CTLabel
+- name: ctlabel
   display_name: CTLabel
   description: 'The census tract identifier for the polygon. Each 2010 census tract number is unique to its borough.'
   data_type: text
-- name: BoroCode
+- name: borocode
   display_name: BoroCode
   description: 'Borough of census tract.'
   data_type: text
@@ -79,35 +79,43 @@ columns:
   display_name: BoroName
   description: 'Borough Name.'
   data_type: text
-- name: CT2010
+  example: Queens
+  values:
+    - [Brooklyn, ""]
+    - [Bronx, ""]
+    - [Manhattan, ""]
+    - [Queens, ""]
+    - [Staten Island, ""]
+- name: ct2010
   display_name: CT2010
   description: 'String value of the 2010 census tract number.'
   data_type: text
-- name: BoroCT2010
+- name: boroct2010
   display_name: BoroCT2010
   description: 'Merged string of borough code and 2010 census tract number.'
   data_type: text
-- name: CDEligibil
+  example: '20060002009'
+- name: cdeligibil
   display_name: CDEligibil
   description: 'Community Development Block Grant Eligibility.'
   data_type: text
-- name: NTACode
+- name: ntacode
   display_name: NTACode
   description: '2010 Neighborhood Tabulation Area Code'
   data_type: text
-- name: NTAName
+- name: ntaname
   display_name: NTAName
   description: '2010 Neighborhood Tabulation Area Name'
   data_type: text
-- name: PUMA
+- name: puma
   display_name: PUMA
   description: '2010 Public Use Microdata Area code'
   data_type: text
-- name: Shape__Area
+- name: shape__area
   display_name: Shape__Area
   description: 'Area of feature in internal units squared.'
   data_type: double
-- name: Shape__Length
+- name: shape__length
   display_name: Shape__Length
   description: 'Length of feature in internal units.'
   data_type: double
