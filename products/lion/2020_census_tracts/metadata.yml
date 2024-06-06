@@ -1,5 +1,5 @@
-name: 2020_census_tracts__tabular
-display_name: 2020 Census Tracts - Tabular
+name: 2020_census_tracts
+display_name: 2020 Census Tracts
 summary: ""
 description: >
   2020 Census Tracts from the US Census for New York City. These boundary files
@@ -11,117 +11,139 @@ tags: [census tracts, '2020', us census bureau, boundary, boundaries, districts,
 each_row_is_a: Census Tract
 
 destinations:
-- id: socrata_prod
+- id: socrata_water_not_included
   type: socrata
-  four_four: 63ge-mke6
-  attachments: []
+  four_four: tbd # former: 63ge-mke6
+  attachments: [nyct2020_metadata.pdf]
   datasets:
-  - primary_shapefile
+  - shapefile_water_not_included
+  omit_columns: []
+  column_details: {}
+
+- id: socrata_water_included
+  type: socrata
+  four_four: tbd # former: imfq-nf3j
+  attachments: [nyct2020wi_metadata.pdf]
+  datasets:
+  - shapefile_water_included
   omit_columns: []
   column_details: {}
 
 package:
   dataset_files:
-  - name: primary_shapefile
+  - name: shapefile_water_not_included
     type: shapefile
-    filename: shapefile.zip
+    filename: nyct2020.zip
     overrides:
+      display_name: 2020 Census Blocks
+      description: >
+        2020 Census Blocks from the US Census for New York City. These boundary
+        files are derived from the US Census Bureau's TIGER data products and have been
+        geographically modified to fit the New York City base map. All previously released
+        versions of this data are available at
+        <a href="https://www1.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts[year]=0">BYTES
+        of the BIG APPLE- Archive</a>.
       omit_columns: []
       ignore_validation: []
       columns: {}
-  attachments: []
+  - name: shapefile_water_included
+    type: shapefile
+    filename: nyct2020wi.zip
+    overrides:
+      display_name: 2020 Census Blocks (water areas included)
+      description: >
+        2020 Census Blocks (water areas included) from the US Census for New York City. These boundary
+        files are derived from the US Census Bureau's TIGER data products and have been
+        geographically modified to fit the New York City base map. All previously released
+        versions of this data are available at
+        <a href="https://www1.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts[year]=0">BYTES
+        of the BIG APPLE- Archive</a>.
+      omit_columns: []
+      ignore_validation: []
+      columns: {}
+  attachments:
+  - nyct2020_metadata.pdf
+  - nyct2020wi_metadata.pdf
 
 columns:
 - name: the_geom
   display_name: the_geom
   description: ''
   data_type: wkb
-  example: <FILL_ME_IN>
   readme_data_type: geometry
 - name: ctlabel
   display_name: CTLabel
-  description: ''
+  description: 'The census tract identifier for the polygon. Each 2020 census tract number is unique to its borough.'
   data_type: text
   example: '75'
 - name: borocode
   display_name: BoroCode
-  description: ''
+  description: 'Borough of census tract.'
   data_type: text
   example: '3'
   values:
-  - - '3'
-    - <FILL_IN_THE_VALUE_DESCRIPTION!>
-  - - '4'
-    - <FILL_IN_THE_VALUE_DESCRIPTION!>
-  - - '2'
-    - <FILL_IN_THE_VALUE_DESCRIPTION!>
-  - - '1'
-    - <FILL_IN_THE_VALUE_DESCRIPTION!>
-  - - '5'
-    - <FILL_IN_THE_VALUE_DESCRIPTION!>
+    - ["1", Manhattan]
+    - ["2", Bronx]
+    - ["3", Brooklyn]
+    - ["4", Queens]
+    - ["5", Staten Island]
 - name: boroname
   display_name: BoroName
-  description: ''
+  description: 'Borough Name.'
   data_type: text
   example: Brooklyn
   values:
-  - - Brooklyn
-    - <FILL_IN_THE_VALUE_DESCRIPTION!>
-  - - Queens
-    - <FILL_IN_THE_VALUE_DESCRIPTION!>
-  - - Bronx
-    - <FILL_IN_THE_VALUE_DESCRIPTION!>
-  - - Manhattan
-    - <FILL_IN_THE_VALUE_DESCRIPTION!>
-  - - Staten Island
-    - <FILL_IN_THE_VALUE_DESCRIPTION!>
+    - [Brooklyn, ""]
+    - [Bronx, ""]
+    - [Manhattan, ""]
+    - [Queens, ""]
+    - [Staten Island, ""]
 - name: ct2020
   display_name: CT2020
-  description: ''
+  description: 'String value of the 2020 census tract number.'
   data_type: text
   example: '024700'
 - name: boroct2020
   display_name: BoroCT2020
-  description: ''
+  description: 'Merged string of borough code and 2020 census tract number.'
   data_type: text
   example: '1012902'
 - name: cdeligibil
   display_name: CDEligibil
-  description: ''
+  description: 'Community Development Block Grant Eligibility.'
   data_type: text
-  example: <FILL_ME_IN>
 - name: ntaname
   display_name: NTAName
-  description: ''
+  description: 'Community Development Block Grant Eligibility.'
   data_type: text
   example: Canarsie
 - name: nta2020
   display_name: NTA2020
-  description: ''
+  description: '2020 Neighborhood Tabulation Area Code'
   data_type: text
   example: BK1803
 - name: cdta2020
   display_name: CDTA2020
-  description: ''
+  description: '2020 Community District Tabulation Area code'
   data_type: text
   example: QN12
 - name: cdtaname
   display_name: CDTANAME
-  description: ''
+  description: '2020 Community District Tabulation Area name'
   data_type: text
   example: QN12 Jamaica-St. Albans-Hollis (CD 12 Approximation)
 - name: geoid
   display_name: GEOID
-  description: ''
+  description: 'Full Census Tract number including the FIPS state and county code'
   data_type: text
   example: '36085020702'
 - name: shape_leng
   display_name: Shape_Leng
-  description: ''
-  data_type: <FILL_ME_IN>!
+  description: 'Length of feature in internal units.'
+  data_type: double
   example: '6231.17106636'
 - name: shape_area
   display_name: Shape_Area
-  description: ''
-  data_type: <FILL_ME_IN>!
+  description: 'Area of feature in internal units squared.'
+  data_type: double
   example: '5103683.95122'

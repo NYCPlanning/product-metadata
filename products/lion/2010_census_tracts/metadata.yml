@@ -61,6 +61,11 @@ package:
   - nyct2010wi_metadata.pdf
 
 columns:
+- name: the_geom
+  display_name: the_geom
+  description: ''
+  data_type: wkb
+  readme_data_type: geometry
 - name: ctlabel
   display_name: CTLabel
   description: 'The census tract identifier for the polygon. Each 2010 census tract number is unique to its borough.'
@@ -75,7 +80,7 @@ columns:
     - ["3", Brooklyn]
     - ["4", Queens]
     - ["5", Staten Island]
-- name: BoroName
+- name: boroname
   display_name: BoroName
   description: 'Borough Name.'
   data_type: text
