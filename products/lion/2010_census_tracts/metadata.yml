@@ -1,0 +1,113 @@
+name: 2010_census_tracts
+display_name: 2010 Census Tracts
+summary: ""
+description: >
+  2010 Census Tracts from the US Census for New
+  York City. These boundary files are derived from the US Census Bureau's TIGER data
+  products and have been geographically modified to fit the New York City base map.
+  All previously released versions of this data are available at <a href="https://www1.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts[year]=0">BYTES of the BIG APPLE- Archive</a>.
+tags: [2010 census tracts (water areas included), dcp, city planning, census, water areas]
+each_row_is_a: Census Tract
+
+destinations:
+- id: socrata_water_not_included
+  type: socrata
+  four_four: tbd # former: fxpq-c8ku
+  attachments: [nyct2010_metadata.pdf]
+  datasets:
+  - shapefile_water_not_included
+  omit_columns: []
+  column_details: {}
+
+- id: socrata_water_included
+  type: socrata
+  four_four: tbd # former: gx7x-82rk
+  attachments: [nyct2010wi_metadata.pdf]
+  datasets:
+  - shapefile_water_included
+  omit_columns: []
+  column_details: {}
+
+package:
+  dataset_files:
+  - name: shapefile_water_not_included
+    type: shapefile
+    filename: nyct2010.zip
+    overrides:
+      display_name: 2010 Census Tracts
+      description: >
+        2010 Census Tracts from the US Census for New
+        York City. These boundary files are derived from the US Census Bureau's TIGER data
+        products and have been geographically modified to fit the New York City base map.
+        All previously released versions of this data are available at <a href="https://www1.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts[year]=0">BYTES of the BIG APPLE- Archive</a>.
+      omit_columns: []
+      ignore_validation: []
+      columns: {}
+  - name: shapefile_water_included
+    type: shapefile
+    filename: nyct2010wi.zip
+    overrides:
+      display_name: 2010 Census Tracts (water areas included)
+      description: >
+        2010 Census Tracts (water areas included) from the US Census for New
+        York City. These boundary files are derived from the US Census Bureau's TIGER data
+        products and have been geographically modified to fit the New York City base map.
+        All previously released versions of this data are available at <a href="https://www1.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts[year]=0">BYTES of the BIG APPLE- Archive</a>.
+      omit_columns: []
+      ignore_validation: []
+      columns: {}
+  attachments:
+  - nyct2010_metadata.pdf
+  - nyct2010wi_metadata.pdf
+
+columns:
+- name: CTLabel
+  display_name: CTLabel
+  description: 'The census tract identifier for the polygon. Each 2010 census tract number is unique to its borough.'
+  data_type: text
+- name: BoroCode
+  display_name: BoroCode
+  description: 'Borough of census tract.'
+  data_type: text
+  values:
+    - ["1", Manhattan]
+    - ["2", Bronx]
+    - ["3", Brooklyn]
+    - ["4", Queens]
+    - ["5", Staten Island]
+- name: BoroName
+  display_name: BoroName
+  description: 'Borough Name.'
+  data_type: text
+- name: CT2010
+  display_name: CT2010
+  description: 'String value of the 2010 census tract number.'
+  data_type: text
+- name: BoroCT2010
+  display_name: BoroCT2010
+  description: 'Merged string of borough code and 2010 census tract number.'
+  data_type: text
+- name: CDEligibil
+  display_name: CDEligibil
+  description: 'Community Development Block Grant Eligibility.'
+  data_type: text
+- name: NTACode
+  display_name: NTACode
+  description: '2010 Neighborhood Tabulation Area Code'
+  data_type: text
+- name: NTAName
+  display_name: NTAName
+  description: '2010 Neighborhood Tabulation Area Name'
+  data_type: text
+- name: PUMA
+  display_name: PUMA
+  description: '2010 Public Use Microdata Area code'
+  data_type: text
+- name: Shape__Area
+  display_name: Shape__Area
+  description: 'Area of feature in internal units squared.'
+  data_type: double
+- name: Shape__Length
+  display_name: Shape__Length
+  description: 'Length of feature in internal units.'
+  data_type: double
