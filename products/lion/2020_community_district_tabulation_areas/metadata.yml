@@ -1,0 +1,102 @@
+name: 2020_community_district_tabulation_areas
+display_name: 2020 Community District Tabulation Areas (CDTAs)
+summary: ""
+description: >
+  The Department of City Planning (DCP) created Community District Tabulation
+  Areas (CDTAs) to closely approximate the 59 Community Districts of New York City
+  for the purpose of reporting American Community Survey (ACS) data. CDTAs are built
+  by aggregating whole 2020 census tracts. All previously released versions of this
+  data are available at
+  <a href="https://www1.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts[year]=0">BYTES of the BIG APPLE- Archive</a>.
+tags: [community district tabulation area, cdta, '2020', census, american community survey, acs, boundary, boundaries, districts, lion, cscl, department of city planning, dcp]
+each_row_is_a: Community District Tabulation Area
+
+destinations:
+- id: socrata_prod
+  type: socrata
+  four_four: xn3r-zk6y
+  attachments: [nycdta2020_metadata.pdf]
+  datasets:
+  - primary_shapefile
+  omit_columns: []
+  column_details: {}
+
+package:
+  dataset_files:
+  - name: primary_shapefile
+    type: shapefile
+    filename: shapefile.zip
+    overrides:
+      omit_columns: []
+      ignore_validation: []
+      columns: {}
+  attachments:
+  - nycdta2020_metadata.pdf
+
+columns:
+- name: the_geom
+  display_name: the_geom
+  description: ''
+  data_type: wkb
+  readme_data_type: geometry
+- name: borocode
+  display_name: BoroCode
+  description: 'Borough of census tract.'
+  data_type: integer
+  example: '3'
+  values:
+    - ["1", Manhattan]
+    - ["2", Bronx]
+    - ["3", Brooklyn]
+    - ["4", Queens]
+    - ["5", Staten Island]
+- name: boroname
+  display_name: BoroName
+  description: 'Borough Name.'
+  data_type: text
+  example: Brooklyn
+  values:
+    - [Brooklyn, ""]
+    - [Bronx, ""]
+    - [Manhattan, ""]
+    - [Queens, ""]
+    - [Staten Island, ""]
+- name: countyfips
+  display_name: CountyFIPS
+  description: "The Census Bureau defined County FIPS code"
+  data_type: text
+  example: '047'
+  values:
+  - ["005", "Bronx County"]
+  - ["047", "Kings County (Brooklyn)"]
+  - ["061", "New York County (Manhattan)"]
+  - ["081", "Queens County"]
+  - ["085", "Richmond County (Staten Island)"]
+- name: cdta2020
+  display_name: CDTA2020
+  description: 'Community District Tabulation Area code.'
+  data_type: text
+  example: BK56
+- name: cdtaname
+  display_name: CDTAName
+  description: 'Community District Tabulation Area name.'
+  data_type: text
+  example: QN82 Forest Park (JIA 82 Approximation)
+- name: cdtatype
+  display_name: CDTAType
+  description: 'Type of Community District Tabulation Area. One digit code assigned to a CDTA to distinguish between those that are representative of a Community District (given a code of 0) and those that are representative of a Joint Interest Area (given a code of 1). Joint Interest Areas are large open spaces or airports that are not part of any Community District.'
+  data_type: text
+  example: '0'
+  values:
+  - ['0', 'Representative of a Community District']
+  - ['1', 'Joint Interest Areas']
+- name: shape_leng
+  display_name: Shape_Leng
+  description: 'Length of feature in internal units.'
+  data_type: double
+  example: '37550.8572191'
+- name: shape_area
+  display_name: Shape_Area
+  description: 'Area of feature in internal units squared.'
+  data_type: double
+  example: '66224982.0063'
