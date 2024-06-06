@@ -1,0 +1,127 @@
+name: 2020_census_tracts__tabular
+display_name: 2020 Census Tracts - Tabular
+summary: ""
+description: >
+  2020 Census Tracts from the US Census for New York City. These boundary files
+  are derived from the US Census Bureau's TIGER data products and have been geographically
+  modified to fit the New York City base map. All previously released versions of
+  this data are available at
+  <a href="https://www1.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts[year]=0">BYTES of the BIG APPLE- Archive</a>.
+tags: [census tracts, '2020', us census bureau, boundary, boundaries, districts, lion, cscl, department of city planning, dcp]
+each_row_is_a: Census Tract
+
+destinations:
+- id: socrata_prod
+  type: socrata
+  four_four: 63ge-mke6
+  attachments: []
+  datasets:
+  - primary_shapefile
+  omit_columns: []
+  column_details: {}
+
+package:
+  dataset_files:
+  - name: primary_shapefile
+    type: shapefile
+    filename: shapefile.zip
+    overrides:
+      omit_columns: []
+      ignore_validation: []
+      columns: {}
+  attachments: []
+
+columns:
+- name: the_geom
+  display_name: the_geom
+  description: ''
+  data_type: wkb
+  example: <FILL_ME_IN>
+  readme_data_type: geometry
+- name: ctlabel
+  display_name: CTLabel
+  description: ''
+  data_type: text
+  example: '75'
+- name: borocode
+  display_name: BoroCode
+  description: ''
+  data_type: text
+  example: '3'
+  values:
+  - - '3'
+    - <FILL_IN_THE_VALUE_DESCRIPTION!>
+  - - '4'
+    - <FILL_IN_THE_VALUE_DESCRIPTION!>
+  - - '2'
+    - <FILL_IN_THE_VALUE_DESCRIPTION!>
+  - - '1'
+    - <FILL_IN_THE_VALUE_DESCRIPTION!>
+  - - '5'
+    - <FILL_IN_THE_VALUE_DESCRIPTION!>
+- name: boroname
+  display_name: BoroName
+  description: ''
+  data_type: text
+  example: Brooklyn
+  values:
+  - - Brooklyn
+    - <FILL_IN_THE_VALUE_DESCRIPTION!>
+  - - Queens
+    - <FILL_IN_THE_VALUE_DESCRIPTION!>
+  - - Bronx
+    - <FILL_IN_THE_VALUE_DESCRIPTION!>
+  - - Manhattan
+    - <FILL_IN_THE_VALUE_DESCRIPTION!>
+  - - Staten Island
+    - <FILL_IN_THE_VALUE_DESCRIPTION!>
+- name: ct2020
+  display_name: CT2020
+  description: ''
+  data_type: text
+  example: '024700'
+- name: boroct2020
+  display_name: BoroCT2020
+  description: ''
+  data_type: text
+  example: '1012902'
+- name: cdeligibil
+  display_name: CDEligibil
+  description: ''
+  data_type: text
+  example: <FILL_ME_IN>
+- name: ntaname
+  display_name: NTAName
+  description: ''
+  data_type: text
+  example: Canarsie
+- name: nta2020
+  display_name: NTA2020
+  description: ''
+  data_type: text
+  example: BK1803
+- name: cdta2020
+  display_name: CDTA2020
+  description: ''
+  data_type: text
+  example: QN12
+- name: cdtaname
+  display_name: CDTANAME
+  description: ''
+  data_type: text
+  example: QN12 Jamaica-St. Albans-Hollis (CD 12 Approximation)
+- name: geoid
+  display_name: GEOID
+  description: ''
+  data_type: text
+  example: '36085020702'
+- name: shape_leng
+  display_name: Shape_Leng
+  description: ''
+  data_type: <FILL_ME_IN>!
+  example: '6231.17106636'
+- name: shape_area
+  display_name: Shape_Area
+  description: ''
+  data_type: <FILL_ME_IN>!
+  example: '5103683.95122'
