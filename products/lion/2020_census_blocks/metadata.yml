@@ -14,7 +14,7 @@ each_row_is_a: Census Block
 destinations:
 - id: socrata_water_not_included
   type: socrata
-  four_four: tbd # former: v2h8-6mxf
+  four_four: wmsu-5muw
   attachments: [nycb2020_metadata.pdf]
   datasets:
   - shapefile_water_not_included
@@ -23,7 +23,7 @@ destinations:
 
 - id: socrata_water_included
   type: socrata
-  four_four: tbd # former: v9xd-tt3e
+  four_four: wrzv-t2c4
   attachments: [nycb2020wi_metadata.pdf]
   datasets:
   - shapefile_water_included
