@@ -20,7 +20,7 @@ description: >
   Questions about this database can be directed to
   <b><a href="mailto:dcpopendata@planning.nyc.gov">dcpopendata@planning.nyc.gov</a></b>
   All previously released versions of this data are available at
-  <a href="https://www1.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts[year]=0">BYTES of the BIG APPLE Archive</a>
+  <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE Archive</a>
 
 tags: [service, services, property, facility, facilities, community, program, school, park, library, day care, foster care, special needs, mental health, housing, "selected facilities and program sites: text", dcp]
 

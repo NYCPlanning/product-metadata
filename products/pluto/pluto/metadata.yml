@@ -7,7 +7,7 @@ description: >-
   from data maintained by city agencies.
 
   All previously released versions of this data are available at
-  <a href=\"https://www1.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts[year]=0\">BYTES of the BIG APPLE- Archive</a>
+  <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>
 tags: [primary land use tax lot output, pluto, parcels, tax lot, tax block, zoning, land use, department of city planning, dcp, new york city, nyc]
 each_row_is_a: Tax Lot
 

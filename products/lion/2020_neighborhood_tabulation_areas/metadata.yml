@@ -18,7 +18,7 @@ description: >
   areas including large parks, airports, cemeteries, and other special areas are represented
   separately within this dataset and are assigned codes according to their type (See
   NTAType field). All previously released versions of this data are available at <a
-  href="https://www1.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts[year]=0">BYTES
+  href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES
   of the BIG APPLE- Archive</a>.
 tags: [neighborhood tabulation areas, nta, '2020', census, american community survey, acs, boundary, boundaries, districts, lion, cscl, department of city planning, dcp]
 each_row_is_a: Neighborhood Tabulation Area

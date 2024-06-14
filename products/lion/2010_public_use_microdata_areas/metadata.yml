@@ -9,7 +9,7 @@ description: >
   and have been geographically modified to fit the New York City base map.
 
 
-  All previously released versions of this data are available at <a href=\"https://www1.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts[year]=0\" >BYTES of the BIG APPLE- Archive</a>
+  All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>
 
 # TODO: Define some tags!
 tags: []

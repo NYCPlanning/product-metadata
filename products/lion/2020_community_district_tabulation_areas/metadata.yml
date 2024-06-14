@@ -7,7 +7,7 @@ description: >
   for the purpose of reporting American Community Survey (ACS) data. CDTAs are built
   by aggregating whole 2020 census tracts. All previously released versions of this
   data are available at
-  <a href="https://www1.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts[year]=0">BYTES of the BIG APPLE- Archive</a>.
+  <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
 tags: [community district tabulation area, cdta, '2020', census, american community survey, acs, boundary, boundaries, districts, lion, cscl, department of city planning, dcp]
 each_row_is_a: Community District Tabulation Area
 
