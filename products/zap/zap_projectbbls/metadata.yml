@@ -54,14 +54,14 @@ destinations:
   four_four: 2iga-a6mk
   attachments: []
   datasets:
-  - primary_shapefile
+  - primary_csv
   omit_columns: []
   column_details: {}
 package:
   dataset_files:
-  - name: primary_shapefile
-    type: shapefile
-    filename: shapefile.zip
+  - name: primary_csv
+    type: csv
+    filename: zap_projectbbls.csv
     overrides:
       omit_columns: []
       ignore_validation: []
@@ -82,7 +82,7 @@ columns:
     numeric digits, preceded with leading zeros when the block is less than five digits.
     The tax lot is one to four digits and is preceded with leading zeros when the
     lot is less than four digits. This was validated by Geosupport.
-  data_type: <FILL ME IN!>
+  data_type: bbl
   example: '4000827501'
 - name: validated_borough
   display_name: validated_borough
@@ -91,27 +91,22 @@ columns:
   data_type: text
   example: Staten Island
   values:
-  - - Staten Island
-    - <FILL ME IN!>
-  - - Manhattan
-    - <FILL ME IN!>
-  - - Brooklyn
-    - <FILL ME IN!>
-  - - Queens
-    - <FILL ME IN!>
-  - - Bronx
-    - <FILL ME IN!>
+  - [Staten Island]
+  - [Manhattan]
+  - [Brooklyn]
+  - [Queens]
+  - [Bronx]
 - name: validated_block
   display_name: validated_block
   description: Block number of a tax lot associated to the application. This was validated
     by Geosupport. See validated field description for more details.
-  data_type: <FILL ME IN!>
+  data_type: text
   example: '859'
 - name: validated_lot
   display_name: validated_lot
   description: Tax lot number of a tax lot associated to the application. This was
     validated by Geosupport. See validated field description for more details.
-  data_type: <FILL ME IN!>
+  data_type: text
   example: '1'
 - name: validated
   display_name: validated
@@ -121,10 +116,8 @@ columns:
   data_type: text
   example: 'true'
   values:
-  - - 'true'
-    - <FILL ME IN!>
-  - - 'false'
-    - <FILL ME IN!>
+  - ['true']
+  - ['false']
 - name: validated_date
   display_name: validated_date
   description: Date the Geosupport validation was run.
@@ -138,23 +131,18 @@ columns:
   data_type: text
   example: Staten Island
   values:
-  - - Staten Island
-    - <FILL ME IN!>
-  - - Manhattan
-    - <FILL ME IN!>
-  - - Brooklyn
-    - <FILL ME IN!>
-  - - Queens
-    - <FILL ME IN!>
-  - - Bronx
-    - <FILL ME IN!>
+  - [Staten Island]
+  - [Manhattan]
+  - [Brooklyn]
+  - [Queens]
+  - [Bronx]
 - name: unverified_block
   display_name: unverified_block
   description: Block number of a tax lot associated to the application. This data
     was manually entered by a user. If validated_block field is blank then there was
     not a matching record in Geosupport. See validated field description for more
     details.
-  data_type: <FILL ME IN!>
+  data_type: text
   example: '859'
 - name: unverified_lot
   display_name: unverified_lot
@@ -162,5 +150,5 @@ columns:
     was manually entered by a user. If validated_lot field is blank then there was
     not a matching record in Geosupport. See validated field description for more
     details.
-  data_type: <FILL ME IN!>
+  data_type: text
   example: '1'

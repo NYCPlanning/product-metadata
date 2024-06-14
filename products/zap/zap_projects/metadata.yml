@@ -50,14 +50,14 @@ destinations:
   four_four: hgx4-8ukb
   attachments: []
   datasets:
-  - primary_shapefile
+  - primary_csv
   omit_columns: []
   column_details: {}
 package:
   dataset_files:
-  - name: primary_shapefile
-    type: shapefile
-    filename: shapefile.zip
+  - name: primary_csv
+    type: csv
+    filename: zap_projects.csv
     overrides:
       omit_columns: []
       ignore_validation: []
@@ -87,34 +87,23 @@ columns:
   data_type: text
   example: Complete
   values:
-  - - Complete
-    - <FILL ME IN!>
-  - - Withdrawn-Other
-    - <FILL ME IN!>
-  - - Terminated
-    - <FILL ME IN!>
-  - - Active
-    - <FILL ME IN!>
-  - - On-Hold
-    - <FILL ME IN!>
-  - - Terminated-Applicant Unresponsive
-    - <FILL ME IN!>
-  - - Record Closed
-    - <FILL ME IN!>
+  - [Complete]
+  - [Withdrawn-Other]
+  - [Terminated]
+  - [Active]
+  - [On-Hold]
+  - [Terminated-Applicant Unresponsive]
+  - [Record Closed]
 - name: public_status
   display_name: public_status
   description: The public status of the application.
   data_type: text
   example: Completed
   values:
-  - - Completed
-    - <FILL ME IN!>
-  - - Filed
-    - <FILL ME IN!>
-  - - In Public Review
-    - <FILL ME IN!>
-  - - Noticed
-    - <FILL ME IN!>
+  - [Completed]
+  - [Filed]
+  - [In Public Review]
+  - [Noticed]
 - name: ulurp_non
   display_name: ulurp_non
   description: Flag that indicates if a project is subject to ULURP or not. Applications
@@ -123,10 +112,8 @@ columns:
   data_type: text
   example: Non-ULURP
   values:
-  - - Non-ULURP
-    - <FILL ME IN!>
-  - - ULURP
-    - <FILL ME IN!>
+  - [Non-ULURP]
+  - [ULURP]
 - name: actions
   display_name: actions
   description: The type of action(s) included in the application. There may be multiple
@@ -149,14 +136,10 @@ columns:
   data_type: text
   example: Type II
   values:
-  - - Type II
-    - <FILL ME IN!>
-  - - Unlisted
-    - <FILL ME IN!>
-  - - Type I
-    - <FILL ME IN!>
-  - - Not Applicable
-    - <FILL ME IN!>
+  - [Type II]
+  - [Unlisted]
+  - [Type I]
+  - [Not Applicable]
 - name: ceqr_number
   display_name: ceqr_number
   description: Unique environmental review identifier
@@ -170,12 +153,9 @@ columns:
   data_type: text
   example: EAS
   values:
-  - - EAS
-    - <FILL ME IN!>
-  - - EIS
-    - <FILL ME IN!>
-  - - Tech Memo
-    - <FILL ME IN!>
+  - [EAS]
+  - [EIS]
+  - [Tech Memo]
 - name: ceqr_leadagency
   display_name: ceqr_leadagency
   description: The agency responsible for determining if an environmental review is
@@ -193,30 +173,21 @@ columns:
   data_type: text
   example: Private
   values:
-  - - Private
-    - <FILL ME IN!>
-  - - Other Public Agency
-    - <FILL ME IN!>
-  - - DCP
-    - <FILL ME IN!>
+  - [Private]
+  - [Other Public Agency]
+  - [DCP]
 - name: borough
   display_name: borough
   description: Borough that is affected by the land use application.
   data_type: text
   example: Manhattan
   values:
-  - - Manhattan
-    - <FILL ME IN!>
-  - - Staten Island
-    - <FILL ME IN!>
-  - - Brooklyn
-    - <FILL ME IN!>
-  - - Queens
-    - <FILL ME IN!>
-  - - Bronx
-    - <FILL ME IN!>
-  - - Citywide
-    - <FILL ME IN!>
+  - [Manhattan]
+  - [Staten Island]
+  - [Brooklyn]
+  - [Queens]
+  - [Bronx]
+  - [Citywide]
 - name: community_district
   display_name: community_district
   description: Community District(s) associated to the project
@@ -225,7 +196,7 @@ columns:
 - name: cc_district
   display_name: cc_district
   description: City Council District(s) associated to the project
-  data_type: <FILL ME IN!>
+  data_type: text
   example: '33'
 - name: flood_zone_a
   display_name: flood_zone_a
@@ -235,10 +206,8 @@ columns:
   data_type: text
   example: 'false'
   values:
-  - - 'false'
-    - <FILL ME IN!>
-  - - 'true'
-    - <FILL ME IN!>
+  - ['false']
+  - ['true']
 - name: flood_zone_shadedx
   display_name: flood_zone_shadedx
   description: Flag that indicates if project is in the 0.2% annual chance floodplain.
@@ -247,10 +216,8 @@ columns:
   data_type: text
   example: 'false'
   values:
-  - - 'false'
-    - <FILL ME IN!>
-  - - 'true'
-    - <FILL ME IN!>
+  - ['false']
+  - ['true']
 - name: current_milestone
   display_name: current_milestone
   description: The current milestone related to the review of a land use application
@@ -309,10 +276,8 @@ columns:
   data_type: text
   example: 'false'
   values:
-  - - 'false'
-    - <FILL ME IN!>
-  - - 'true'
-    - <FILL ME IN!>
+  - ['false']
+  - ['true']
 - name: mih_option1
   display_name: mih_option1
   description: Flag that indicates MIH Option 1 is proposed to be mapped (25% Units/60%
@@ -320,10 +285,8 @@ columns:
   data_type: text
   example: 'false'
   values:
-  - - 'false'
-    - <FILL ME IN!>
-  - - 'true'
-    - <FILL ME IN!>
+  - ['false']
+  - ['true']
 - name: mih_option2
   display_name: mih_option2
   description: Flag that indicates MIH Option 2 is proposed to be mapped (30% Units/80%
@@ -331,10 +294,8 @@ columns:
   data_type: text
   example: 'False'
   values:
-  - - 'False'
-    - <FILL ME IN!>
-  - - 'True'
-    - <FILL ME IN!>
+  - ['False']
+  - ['True']
 - name: mih_workforce
   display_name: mih_workforce
   description: Flag that indicates the MIH Workforce option is proposed to be mapped
@@ -342,10 +303,8 @@ columns:
   data_type: text
   example: 'false'
   values:
-  - - 'false'
-    - <FILL ME IN!>
-  - - 'true'
-    - <FILL ME IN!>
+  - ['false']
+  - ['true']
 - name: mih_deepaffordability
   display_name: mih_deepaffordability
   description: Flag that indicates the MIH Deep Affordability option is proposed to
@@ -353,10 +312,8 @@ columns:
   data_type: text
   example: 'false'
   values:
-  - - 'false'
-    - <FILL ME IN!>
-  - - 'true'
-    - <FILL ME IN!>
+  - ['false']
+  - ['true']
 - name: mih_mapped_no_res
   display_name: mih_mapped_no_res
   description: Flag that indicates Mandatory Inclusionary Housing (MIH) is proposed
@@ -364,15 +321,12 @@ columns:
   data_type: text
   example: 'false'
   values:
-  - - 'false'
-    - <FILL ME IN!>
-  - - 'true'
-    - <FILL ME IN!>
+  - ['false']
+  - ['true']
 - name: dcp_visibility
   display_name: dcp_visibility
   description: ''
   data_type: text
   example: General Public
   values:
-  - - General Public
-    - <FILL ME IN!>
+  - [General Public]
