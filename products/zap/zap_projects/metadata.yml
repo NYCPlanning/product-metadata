@@ -1,0 +1,378 @@
+name: zap_projects
+display_name: Zoning Application Portal (ZAP) - Project Data
+summary: "The Department of City Planning (DCP) processes land use applications submitted\
+  \ by City or other public agencies and other (private) applicants. This data set\
+  \ provides information on land use applications, specifically the project tracking\
+  \ and description data related to approximately 30,000 projects since the late 1970\u2019\
+  s. \r\n\r\nZAP project data appears on NYC Planning - Zoning Application Portal\
+  \ Search. It includes data migrated from the prior applications tracking system\
+  \ (LUCATS) and covers all projects that have been \u2018Noticed\u2019 (that they\
+  \ will appear before the City Planning Commission in 30 or more days for Certification\
+  \ as complete for the ULURP process to begin) or Filed (a CEQR or Land Use application\
+  \ has been formally submitted to the Department for review) through completion (approval,\
+  \ disapproval, withdrawal, or termination). For more information on the land use\
+  \ and environmental review application process see:\r\nhttps://www1.nyc.gov/site/planning/applicants/applicant-portal/application-process.page\r\
+  \n\r\nYou can explore this data in the Zoning Application Portal: https://zap.planning.nyc.gov/projects\r\
+  \n\r\nTo report data errors or for questions, email <a href = \"mailto:zap_feedback_dl@planning.nyc.gov\"\
+  >zap_feedback_dl@planning.nyc.gov</a>."
+description: "The Department of City Planning (DCP) processes land use applications\
+  \ submitted by City or other public agencies and other (private) applicants. This\
+  \ data set provides information on land use applications, specifically the project\
+  \ tracking and description data related to approximately 30,000 projects since the\
+  \ late 1970\u2019s. \r\n\r\nZAP project data appears on NYC Planning - Zoning Application\
+  \ Portal Search. It includes data migrated from the prior applications tracking\
+  \ system (LUCATS) and covers all projects that have been \u2018Noticed\u2019 (that\
+  \ they will appear before the City Planning Commission in 30 or more days for Certification\
+  \ as complete for the ULURP process to begin) or Filed (a CEQR or Land Use application\
+  \ has been formally submitted to the Department for review) through completion (approval,\
+  \ disapproval, withdrawal, or termination). For more information on the land use\
+  \ and environmental review application process see:\r\nhttps://www1.nyc.gov/site/planning/applicants/applicant-portal/application-process.page\r\
+  \n\r\nYou can explore this data in the Zoning Application Portal: https://zap.planning.nyc.gov/projects\r\
+  \n\r\nTo report data errors or for questions, email <a href = \"mailto:zap_feedback_dl@planning.nyc.gov\"\
+  >zap_feedback_dl@planning.nyc.gov</a>."
+tags:
+- zap
+- zoning application portal
+- land use
+- applications
+- ulurp
+- public review
+- project data
+- ceqr
+- mih
+- affordable housing
+- department of city planning
+- dcp
+each_row_is_a: project in the Zoning Application Portal (ZAP)
+destinations:
+- id: socrata_prod
+  type: socrata
+  four_four: hgx4-8ukb
+  attachments: []
+  datasets:
+  - primary_shapefile
+  omit_columns: []
+  column_details: {}
+package:
+  dataset_files:
+  - name: primary_shapefile
+    type: shapefile
+    filename: shapefile.zip
+    overrides:
+      omit_columns: []
+      ignore_validation: []
+      columns: {}
+  attachments:
+  - zapprojects_datadictionary.xlsx
+columns:
+- name: project_id
+  display_name: project_id
+  description: Unique internal application identifier.
+  data_type: text
+  example: P1981M0059
+- name: project_name
+  display_name: project_name
+  description: Name of application/project provided by the applicant.
+  data_type: text
+  example: C-O-P
+- name: project_brief
+  display_name: project_brief
+  description: Description of the application and the development it will facilitate.
+  data_type: text
+  example: DISPOSITION OF CITY-OWNED PROPERTY, 1 PARCEL
+- name: project_status
+  display_name: project_status
+  description: This indicates whether the application is actively being worked on
+    or not.
+  data_type: text
+  example: Complete
+  values:
+  - - Complete
+    - <FILL ME IN!>
+  - - Withdrawn-Other
+    - <FILL ME IN!>
+  - - Terminated
+    - <FILL ME IN!>
+  - - Active
+    - <FILL ME IN!>
+  - - On-Hold
+    - <FILL ME IN!>
+  - - Terminated-Applicant Unresponsive
+    - <FILL ME IN!>
+  - - Record Closed
+    - <FILL ME IN!>
+- name: public_status
+  display_name: public_status
+  description: The public status of the application.
+  data_type: text
+  example: Completed
+  values:
+  - - Completed
+    - <FILL ME IN!>
+  - - Filed
+    - <FILL ME IN!>
+  - - In Public Review
+    - <FILL ME IN!>
+  - - Noticed
+    - <FILL ME IN!>
+- name: ulurp_non
+  display_name: ulurp_non
+  description: Flag that indicates if a project is subject to ULURP or not. Applications
+    can either follow the Uniform Land Use Review Procedure (ULURP) or are designated
+    as Non-ULURP, and are therefore not restricted to ULURP rules and timing.
+  data_type: text
+  example: Non-ULURP
+  values:
+  - - Non-ULURP
+    - <FILL ME IN!>
+  - - ULURP
+    - <FILL ME IN!>
+- name: actions
+  display_name: actions
+  description: The type of action(s) included in the application. There may be multiple
+    land use actions attached to an application to facilitate a single development.
+    Many action types on historical applications are retired.
+  data_type: text
+  example: RC
+- name: ulurp_numbers
+  display_name: ulurp_numbers
+  description: 'The ULURP number is a unique identifier for each application''s action.
+    The first 2-characters (number) are the fiscal year the application was filed,
+    followed by 4-character unique number, if an application was modified it will
+    be followed by a 1-character (letter), followed by 2-character (letter) action
+    code, followed by a 1-character (letter) borough code. '
+  data_type: text
+  example: C870526HAK
+- name: ceqr_type
+  display_name: ceqr_type
+  description: Indicates the type of environmental review
+  data_type: text
+  example: Type II
+  values:
+  - - Type II
+    - <FILL ME IN!>
+  - - Unlisted
+    - <FILL ME IN!>
+  - - Type I
+    - <FILL ME IN!>
+  - - Not Applicable
+    - <FILL ME IN!>
+- name: ceqr_number
+  display_name: ceqr_number
+  description: Unique environmental review identifier
+  data_type: text
+  example: 81-040R
+- name: eas_eis
+  display_name: eas_eis
+  description: Flag that indicates the environmental review document issued.   Environmental
+    Assessment Statement (EAS), Environmental Impact Statement (EIS), Technical Memorandum
+    (Tech Memo)
+  data_type: text
+  example: EAS
+  values:
+  - - EAS
+    - <FILL ME IN!>
+  - - EIS
+    - <FILL ME IN!>
+  - - Tech Memo
+    - <FILL ME IN!>
+- name: ceqr_leadagency
+  display_name: ceqr_leadagency
+  description: The agency responsible for determining if an environmental review is
+    required.
+  data_type: text
+  example: DCP
+- name: primary_applicant
+  display_name: primary_applicant
+  description: Name of the project's primary applicant.
+  data_type: text
+  example: DRP
+- name: applicant_type
+  display_name: applicant_type
+  description: Indicates if the applicant is a private or public entity.
+  data_type: text
+  example: Private
+  values:
+  - - Private
+    - <FILL ME IN!>
+  - - Other Public Agency
+    - <FILL ME IN!>
+  - - DCP
+    - <FILL ME IN!>
+- name: borough
+  display_name: borough
+  description: Borough that is affected by the land use application.
+  data_type: text
+  example: Manhattan
+  values:
+  - - Manhattan
+    - <FILL ME IN!>
+  - - Staten Island
+    - <FILL ME IN!>
+  - - Brooklyn
+    - <FILL ME IN!>
+  - - Queens
+    - <FILL ME IN!>
+  - - Bronx
+    - <FILL ME IN!>
+  - - Citywide
+    - <FILL ME IN!>
+- name: community_district
+  display_name: community_district
+  description: Community District(s) associated to the project
+  data_type: text
+  example: R03
+- name: cc_district
+  display_name: cc_district
+  description: City Council District(s) associated to the project
+  data_type: <FILL ME IN!>
+  example: '33'
+- name: flood_zone_a
+  display_name: flood_zone_a
+  description: Flag that indicates if project is in the 1% annual chance floodplain.
+    Areas subject to the 1% annual chance flood (100 year flood) and are considered
+    high-risk.
+  data_type: text
+  example: 'false'
+  values:
+  - - 'false'
+    - <FILL ME IN!>
+  - - 'true'
+    - <FILL ME IN!>
+- name: flood_zone_shadedx
+  display_name: flood_zone_shadedx
+  description: Flag that indicates if project is in the 0.2% annual chance floodplain.
+    Areas subject to the 0.2% annual chance flood (500 year flood) and are considered
+    moderate-risk.
+  data_type: text
+  example: 'false'
+  values:
+  - - 'false'
+    - <FILL ME IN!>
+  - - 'true'
+    - <FILL ME IN!>
+- name: current_milestone
+  display_name: current_milestone
+  description: The current milestone related to the review of a land use application
+  data_type: text
+  example: RC - Project Completed
+- name: current_milestone_date
+  display_name: current_milestone_date
+  description: The start date of the current milestone related to the review of a
+    land use application
+  data_type: datetime
+  example: '2022-10-11T00:00:00.000'
+- name: current_envmilestone
+  display_name: current_envmilestone
+  description: The current milestone related to the CEQR/environmental review of an
+    application.
+  data_type: text
+  example: EAS - Review Filed EAS
+- name: current_envmilestone_date
+  display_name: current_envmilestone_date
+  description: The start date of the current milestone related to the CEQR/environmental
+    review of an application.
+  data_type: datetime
+  example: '2024-03-15T00:00:00.000'
+- name: app_filed_date
+  display_name: app_filed_date
+  description: The date an application(s) was filed with the Department of City Planning
+    (DCP)
+  data_type: datetime
+  example: '2018-05-04T00:00:00.000'
+- name: noticed_date
+  display_name: noticed_date
+  description: The date notice was given that an application will certify no sooner
+    than 30 days per the City Charter requirement. This only applies to ULURP projects.
+  data_type: datetime
+  example: '2020-08-14T00:00:00.000'
+- name: certified_referred
+  display_name: certified_referred
+  description: The date an application was certified or referred. This is also the
+    official start of the ULURP process.
+  data_type: datetime
+  example: '2011-01-31T00:00:00.000'
+- name: approval_date
+  display_name: approval_date
+  description: The date an application was approved.
+  data_type: datetime
+  example: '2021-12-15T00:00:00.000'
+- name: completed_date
+  display_name: completed_date
+  description: The date the application processing was completed.
+  data_type: datetime
+  example: '1982-05-18T00:00:00.000'
+- name: mih_flag
+  display_name: mih_flag
+  description: Flag that indicates if Mandatory Inclusionary Housing (MIH) is proposed
+    to be mapped through an amendment to the Zoning Resolution.
+  data_type: text
+  example: 'false'
+  values:
+  - - 'false'
+    - <FILL ME IN!>
+  - - 'true'
+    - <FILL ME IN!>
+- name: mih_option1
+  display_name: mih_option1
+  description: Flag that indicates MIH Option 1 is proposed to be mapped (25% Units/60%
+    AMI)
+  data_type: text
+  example: 'false'
+  values:
+  - - 'false'
+    - <FILL ME IN!>
+  - - 'true'
+    - <FILL ME IN!>
+- name: mih_option2
+  display_name: mih_option2
+  description: Flag that indicates MIH Option 2 is proposed to be mapped (30% Units/80%
+    AMI)
+  data_type: text
+  example: 'False'
+  values:
+  - - 'False'
+    - <FILL ME IN!>
+  - - 'True'
+    - <FILL ME IN!>
+- name: mih_workforce
+  display_name: mih_workforce
+  description: Flag that indicates the MIH Workforce option is proposed to be mapped
+    (30% Units/115% AMI)
+  data_type: text
+  example: 'false'
+  values:
+  - - 'false'
+    - <FILL ME IN!>
+  - - 'true'
+    - <FILL ME IN!>
+- name: mih_deepaffordability
+  display_name: mih_deepaffordability
+  description: Flag that indicates the MIH Deep Affordability option is proposed to
+    be mapped (20% Units/40% AMI)
+  data_type: text
+  example: 'false'
+  values:
+  - - 'false'
+    - <FILL ME IN!>
+  - - 'true'
+    - <FILL ME IN!>
+- name: mih_mapped_no_res
+  display_name: mih_mapped_no_res
+  description: Flag that indicates Mandatory Inclusionary Housing (MIH) is proposed
+    to be mapped, but no residential units are proposed
+  data_type: text
+  example: 'false'
+  values:
+  - - 'false'
+    - <FILL ME IN!>
+  - - 'true'
+    - <FILL ME IN!>
+- name: dcp_visibility
+  display_name: dcp_visibility
+  description: ''
+  data_type: text
+  example: General Public
+  values:
+  - - General Public
+    - <FILL ME IN!>

@@ -1,0 +1,166 @@
+name: zap_projectbbls
+display_name: Zoning Application Portal (ZAP) - BBL
+summary: "The Department of City Planning (DCP) processes land use applications submitted\
+  \ by City or other public agencies and other (private) applicants. This data set\
+  \ provides information on land use applications, specifically the project tracking\
+  \ and description data related to approximately 30,000 projects since the late 1970\u2019\
+  s. \r\n\r\nZAP project data appears on NYC Planning - Zoning Application Portal\
+  \ Search. It includes data migrated from the prior applications tracking system\
+  \ (LUCATS) and covers all projects that have been \u2018Noticed\u2019 (that they\
+  \ will appear before the City Planning Commission in 30 or more days for Certification\
+  \ as complete for the ULURP process to begin) or Filed (a CEQR or Land Use application\
+  \ has been formally submitted to the Department for review) through completion (approval,\
+  \ disapproval, withdrawal, or termination). For more information on the land use\
+  \ and environmental review application process see:\r\nhttps://www1.nyc.gov/site/planning/applicants/applicant-portal/application-process.page\r\
+  \n\r\nYou can explore this data in the Zoning Application Portal: https://zap.planning.nyc.gov/projects\r\
+  \n\r\nTo report data errors or for questions, email <a href=\"mailto:zap_feedback_dl@planning.nyc.gov\"\
+  >zap_feedback_dl@planning.nyc.gov </a>."
+description: "The Department of City Planning (DCP) processes land use applications\
+  \ submitted by City or other public agencies and other (private) applicants. This\
+  \ data set provides information on land use applications, specifically the project\
+  \ tracking and description data related to approximately 30,000 projects since the\
+  \ late 1970\u2019s. \r\n\r\nZAP project data appears on NYC Planning - Zoning Application\
+  \ Portal Search. It includes data migrated from the prior applications tracking\
+  \ system (LUCATS) and covers all projects that have been \u2018Noticed\u2019 (that\
+  \ they will appear before the City Planning Commission in 30 or more days for Certification\
+  \ as complete for the ULURP process to begin) or Filed (a CEQR or Land Use application\
+  \ has been formally submitted to the Department for review) through completion (approval,\
+  \ disapproval, withdrawal, or termination). For more information on the land use\
+  \ and environmental review application process see:\r\nhttps://www1.nyc.gov/site/planning/applicants/applicant-portal/application-process.page\r\
+  \n\r\nYou can explore this data in the Zoning Application Portal: https://zap.planning.nyc.gov/projects\r\
+  \n\r\nTo report data errors or for questions, email <a href=\"mailto:zap_feedback_dl@planning.nyc.gov\"\
+  >zap_feedback_dl@planning.nyc.gov </a>."
+tags:
+- zap
+- zoning application portal
+- land use
+- applications
+- ulurp
+- public review
+- project data
+- ceqr
+- mih
+- affordable housing
+- borough
+- block
+- lot
+- bbl
+- department of city planning
+- dcp
+each_row_is_a: tax lot associated to a project in the Zoning Application Portal (ZAP)
+destinations:
+- id: socrata_prod
+  type: socrata
+  four_four: 2iga-a6mk
+  attachments: []
+  datasets:
+  - primary_shapefile
+  omit_columns: []
+  column_details: {}
+package:
+  dataset_files:
+  - name: primary_shapefile
+    type: shapefile
+    filename: shapefile.zip
+    overrides:
+      omit_columns: []
+      ignore_validation: []
+      columns: {}
+  attachments:
+  - zapprojectbbls_datadictionary.xlsx
+columns:
+- name: project_id
+  display_name: project_id
+  description: Unique internal application identifier
+  data_type: text
+  example: 2020R0189
+- name: bbl
+  display_name: bbl
+  description: Borough, block and lot number of a tax lot associated to the application.
+    This field consists of the borough code, followed by the tax block, followed by
+    the tax lot. The borough code is one numeric digit. The tax block is one to five
+    numeric digits, preceded with leading zeros when the block is less than five digits.
+    The tax lot is one to four digits and is preceded with leading zeros when the
+    lot is less than four digits. This was validated by Geosupport.
+  data_type: <FILL ME IN!>
+  example: '4000827501'
+- name: validated_borough
+  display_name: validated_borough
+  description: Borough of a tax lot associated to the application. This was validated
+    by Geosupport. See validated field description for more details.
+  data_type: text
+  example: Staten Island
+  values:
+  - - Staten Island
+    - <FILL ME IN!>
+  - - Manhattan
+    - <FILL ME IN!>
+  - - Brooklyn
+    - <FILL ME IN!>
+  - - Queens
+    - <FILL ME IN!>
+  - - Bronx
+    - <FILL ME IN!>
+- name: validated_block
+  display_name: validated_block
+  description: Block number of a tax lot associated to the application. This was validated
+    by Geosupport. See validated field description for more details.
+  data_type: <FILL ME IN!>
+  example: '859'
+- name: validated_lot
+  display_name: validated_lot
+  description: Tax lot number of a tax lot associated to the application. This was
+    validated by Geosupport. See validated field description for more details.
+  data_type: <FILL ME IN!>
+  example: '1'
+- name: validated
+  display_name: validated
+  description: Flag that indicates whether the BBL or address data was validated against
+    Geosupport. Geosupport is a geocoding tool that allows for the standardization,
+    validation and processing of geographic locations throughout New York City.
+  data_type: text
+  example: 'true'
+  values:
+  - - 'true'
+    - <FILL ME IN!>
+  - - 'false'
+    - <FILL ME IN!>
+- name: validated_date
+  display_name: validated_date
+  description: Date the Geosupport validation was run.
+  data_type: datetime
+  example: '2018-04-10T00:00:00.000'
+- name: unverified_borough
+  display_name: unverified_borough
+  description: Borough of a tax lot associated to the application. This data was manually
+    entered by a user. If validated_borough field is blank then there was not a matching
+    record in Geosupport. See validated field description for more details.
+  data_type: text
+  example: Staten Island
+  values:
+  - - Staten Island
+    - <FILL ME IN!>
+  - - Manhattan
+    - <FILL ME IN!>
+  - - Brooklyn
+    - <FILL ME IN!>
+  - - Queens
+    - <FILL ME IN!>
+  - - Bronx
+    - <FILL ME IN!>
+- name: unverified_block
+  display_name: unverified_block
+  description: Block number of a tax lot associated to the application. This data
+    was manually entered by a user. If validated_block field is blank then there was
+    not a matching record in Geosupport. See validated field description for more
+    details.
+  data_type: <FILL ME IN!>
+  example: '859'
+- name: unverified_lot
+  display_name: unverified_lot
+  description: Tax lot number of a tax lot associated to the application. This data
+    was manually entered by a user. If validated_lot field is blank then there was
+    not a matching record in Geosupport. See validated field description for more
+    details.
+  data_type: <FILL ME IN!>
+  example: '1'
