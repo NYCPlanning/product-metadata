@@ -25,7 +25,7 @@ package:
   dataset_files:
   - name: primary_shapefile
     type: shapefile
-    filename: shapefile.zip
+    filename: nycdta2020.zip
     overrides:
       omit_columns: []
       ignore_validation: []
