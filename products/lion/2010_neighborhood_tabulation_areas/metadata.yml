@@ -18,7 +18,7 @@ description: >
   areas are represented separately within this dataset and are assigned codes according
   to their type (See NTAType field).
 
-  All previously released versions of this data are available at <a href=\"https://www1.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts[year]=0\" >BYTES of the BIG APPLE- Archive</a>
+  All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>
 tags: [neighborhood tabulation areas, dcp, city planning, community, area, nta]
 each_row_is_a: Neighborhood Tabulation Area
 

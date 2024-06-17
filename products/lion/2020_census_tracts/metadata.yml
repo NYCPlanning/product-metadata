@@ -6,14 +6,14 @@ description: >
   are derived from the US Census Bureau's TIGER data products and have been geographically
   modified to fit the New York City base map. All previously released versions of
   this data are available at
-  <a href="https://www1.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts[year]=0">BYTES of the BIG APPLE- Archive</a>.
+  <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
 tags: [census tracts, '2020', us census bureau, boundary, boundaries, districts, lion, cscl, department of city planning, dcp]
 each_row_is_a: Census Tract
 
 destinations:
 - id: socrata_water_not_included
   type: socrata
-  four_four: tbd # former: 63ge-mke6
+  four_four: 63ge-mke6
   attachments: [nyct2020_metadata.pdf]
   datasets:
   - shapefile_water_not_included
@@ -22,7 +22,7 @@ destinations:
 
 - id: socrata_water_included
   type: socrata
-  four_four: tbd # former: imfq-nf3j
+  four_four: imfq-nf3j
   attachments: [nyct2020wi_metadata.pdf]
   datasets:
   - shapefile_water_included
@@ -35,14 +35,6 @@ package:
     type: shapefile
     filename: nyct2020.zip
     overrides:
-      display_name: 2020 Census Blocks
-      description: >
-        2020 Census Blocks from the US Census for New York City. These boundary
-        files are derived from the US Census Bureau's TIGER data products and have been
-        geographically modified to fit the New York City base map. All previously released
-        versions of this data are available at
-        <a href="https://www1.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts[year]=0">BYTES
-        of the BIG APPLE- Archive</a>.
       omit_columns: []
       ignore_validation: []
       columns: {}
@@ -56,8 +48,7 @@ package:
         files are derived from the US Census Bureau's TIGER data products and have been
         geographically modified to fit the New York City base map. All previously released
         versions of this data are available at
-        <a href="https://www1.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts[year]=0">BYTES
-        of the BIG APPLE- Archive</a>.
+        <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
       omit_columns: []
       ignore_validation: []
       columns: {}
