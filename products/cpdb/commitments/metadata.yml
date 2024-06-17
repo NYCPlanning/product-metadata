@@ -1,0 +1,141 @@
+name: commitments
+display_name: Capital Projects Database (CPDB) - Commitments
+summary: ""
+description: >
+  Office of Management and Budget (OMB) publishes the Capital Commitment Plan three times a year as
+  a series of pdf files, generally in the months of January, April, and September as part of
+  the publication of the Preliminary, Executive, and Adopted Capital Budgets.
+
+  
+  To explore the data, please visit 
+  <a href="https://capitalplanning.nyc.gov/map#10/40.7128/-74.0807">Capital Planning Explorer</a>
+
+
+  For additional information, please visit 
+  <a href="https://www.ibo.nyc.ny.us/iboreports/IBOCBG.pdf">A Guide to The Capital Budget</a>
+  
+tags: [capital projects database, capital planning, cpdb, budget, omb]
+each_row_is_a: Capital Commitment
+
+destinations:
+  - id: socrata_commitments
+    type: socrata
+    four_four: "djxg-kcfi"
+    datasets:
+      - commitments
+
+package:
+  dataset_files:
+    - name: commitments
+      filename: cpdb_planned_commitments.csv
+      type: csv
+
+  attachments:
+    - cpdb_data_dictionary.xlsx
+    - source_data_versions.csv
+
+columns:
+  - name: ccpversion
+    display_name: ccpversion
+    description: Reports the version of the Capital Commitment Plan which the record is based on.
+    data_type: text
+
+  - name: maprojid
+    display_name: maprojid
+    description: Unique identifier that defines a discrete project. The maprojid is
+      a concatenation of magency and projectid and it is the primary key.
+    data_type: text
+    example: 801HLDNSTJHN
+  - name: magency
+    display_name: magency
+    description: Three digit code of the distinct City agency managing the project.
+      The managing agency is the agency overseeing the construction or implementation
+      of a project.
+    data_type: integer
+    example: '846'
+  - name: projectid
+    display_name: projectid
+    description: Alphanumeric code created by the sponsor agency that identifies a distinct
+      project. A Project ID must be unique within a managing agency.
+    data_type: text
+    example: DOIT3MIFR
+  - name: projectdescription
+    display_name: projectdescription
+    description: Short description of the project as described by the sponsor agency.
+      If one projectid had many descriptions the longest description is reported by
+      CPDB.
+    data_type: text
+    example: JOB ORDER CONTRACTING WORK IN REGIONS NORTH, SOUTH & EAST
+
+  - name: sagencyacro
+    display_name: sagencyacro
+    description: Common acronym of the city agency sponsoring the planned commitment. This value is derived from the budget line.
+    data_type: text
+  - name: sagencyname
+    display_name: sagencyname
+    description: Common name for the city agency sponsoring the planned commitment. This value is derived from the budget line.
+    data_type: text
+
+  - name: budgetline
+    display_name: budgetline
+    description: Unique identifier of the budget used to fund the project.
+    data_type: text
+  - name: projecttype
+    display_name: projecttype
+    description: Short description of the type of project based on the budget funding the project.
+    data_type: text
+  - name: plancommdate
+    display_name: plancommdate
+    description: Month and year of when the planned commitment is projected to be committed.
+    data_type: datetime
+  - name: commitmentdescription
+    display_name: commitmentdescription
+    description: Short description of what the planned commtiment will specifically fund. Not all commitments have descriptions.
+    data_type: text
+  - name: commitmentcode
+    display_name: commitmentcode
+    description: Four letter or digit code indicating what part of the planned commitment the associated funding is for, such as design, construction, or contingency.
+    data_type: text
+  - name: typc
+    display_name: typc
+    description: Classification given by DCP based on keywords found in the short description
+      describing if a projects is Fixed Asset, Lump Sum, or ITT, Vehicles, and Equipment.
+    data_type: text
+    example: Fixed Asset
+  - name: typcname
+    display_name: typcname
+    description: Ten year plan category (typc) the planned commitment supports.
+    data_type: text
+
+  - name: plannedcommit_ccnonexempt
+    display_name: plannedcommit_ccnonexempt
+    description: Sum of City funding (Non-Exempt) associated with the planned commitment in the Capital Commitment Plan. 
+    data_type: integer
+  - name: plannedcommit_ccexempt
+    display_name: plannedcommit_ccexempt
+    description: Sum of City funding (Exempt) associated with the planned commitment in the Capital Commitment Plan.
+    data_type: integer
+  - name: plannedcommit_citycost
+    display_name: plannedcommit_citycost
+    description: Sum of City funding associated with the planned commitment the Capital Commitment Plan.
+    data_type: integer
+  - name: plannedcommit_nccstate
+    display_name: plannedcommit_nccstate
+    description: Sum of State funding associated with the planned commitment in the Capital Commitment Plan.
+    data_type: integer
+  - name: plannedcommit_nccfederal
+    display_name: plannedcommit_nccfederal
+    description: Sum of Federal funding associated with the planned commitment in the Capital Commitment Plan.
+    data_type: integer
+  - name: plannedcommit_nccother
+    display_name: plannedcommit_nccother
+    description: Sum of Other funding associated with the planned commitment in the Capital Commitment Plan.
+    data_type: integer
+  - name: plannedcommit_noncitycost
+    display_name: plannedcommit_noncitycost
+    description: Sum of Non-City funding associated with the planned commitment in the Capital Commitment Plan,
+    data_type: integer
+  - name: plannedcommit_total
+    display_name: plannedcommit_total
+    description: Sum of of the total planned commitments in in the Capital Commitment Plan.
+    data_type: integer
