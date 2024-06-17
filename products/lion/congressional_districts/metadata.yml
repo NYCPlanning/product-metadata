@@ -1,0 +1,88 @@
+name: congressional_districts
+summary: ""
+display_name: Congressional Districts
+description: >
+  GIS data: Boundaries of Congressional Districts.
+
+
+  All previously released versions of this data are available at
+  <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
+tags: [geographic, voting, location, map, cartography, district, congress, congressional, boundary, elect, election, congressional districts, dcp]
+each_row_is_a: Congressional District
+
+destinations:
+- id: socrata_prod_wi
+  type: socrata
+  four_four: j5kw-6gtg
+  attachments: [nycgwi_metadata.pdf]
+  datasets:
+  - shapefile_wi
+  omit_columns: []
+  column_details: {}
+  overrides:
+    omit_columns: []
+    ignore_validation: []
+    columns: {}
+    tags: []
+- id: socrata_prod
+  type: socrata
+  four_four: j3u5-usz2
+  attachments: [nycg_metadata.pdf]
+  datasets:
+  - shapefile_wi
+  omit_columns: []
+  column_details: {}
+  overrides:
+    omit_columns: []
+    ignore_validation: []
+    columns: {}
+    tags: []
+
+package:
+  dataset_files:
+  - name: shapefile_wi
+    type: shapefile
+    filename: nycgwi.zip
+    overrides:
+      omit_columns: []
+      ignore_validation: []
+      columns:
+        shape_length: {name: shape_leng}
+      tags: []
+      display_name: Congressional Districts (Water Areas Included)
+      description: >
+        GIS data: Boundaries of Congressional Districts (water areas included).
+
+
+        All previously released versions of this data are available at
+        <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
+  - name: shapefile
+    type: shapefile
+    filename: nycg.zip
+    overrides:
+      omit_columns: []
+      ignore_validation: []
+      columns:
+        shape_length: {name: shape_leng}
+      tags: []
+  attachments:
+  - nycg_metadata.pdf
+  - nycgwi_metadata.pdf
+
+columns:
+- name: congdist
+  display_name: CongDist
+  description: US House of Representatives Congressional District Number for the State of New York.
+  data_type: integer
+- name: the_geom
+  display_name: Shape
+  description: ""
+  data_type: wkb
+- name: shape_length
+  display_name: Shape_Length
+  description: ""
+  data_type: double
+- name: shape_area
+  display_name: Shape_Area
+  description: ""
+  data_type: double
