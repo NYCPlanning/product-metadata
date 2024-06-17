@@ -70,7 +70,7 @@ package:
   - nyedwi_metadata.pdf
 
 columns:
-- name: elect_dist
+- name: electdist
   display_name: ElectDist
   description: Three digit election district number proceeded by the two digit state assembly district.
   data_type: integer
