@@ -1,0 +1,118 @@
+name: community_districts
+summary: ""
+display_name: Community Districts
+description: >
+  GIS data: Community Districts
+
+
+  Community Districts are mandated by the city charter to review and monitor quality of life
+  issues for New York City (NYC) neighborhoods.  NYC is currently comprised of 59
+  community districts. The first byte is a borough code and the second and third
+  bytes are the community district number. There are also 12 Joint Interest Areas
+  (JIAs).  The JIAs are major parks and airports and are not contained within any
+  community district.   This dataset is being provided by the Department of City
+  Planning (DCP) for informational purposes only. DCP does not warranty the completeness,
+  accuracy, content, or fitness for any particular purpose or use of the dataset,
+  nor are any such warranties to be implied or inferred with respect to the dataset
+  as furnished on the website. DCP and the City are not liable for any deficiencies
+  in the completeness, accuracy, content, or fitness for any particular purpose
+  or use the dataset, or applications utilizing the dataset, provided by any third
+  party.
+
+
+  All previously released versions of this data are available at
+  <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
+tags: [community districts, dcp, geographic, location, map, cartography, community, boundaries, water]
+each_row_is_a: Community District
+
+destinations:
+- id: socrata_prod
+  type: socrata
+  four_four: 5crt-au7u
+  attachments: [nycd_metadata.pdf]
+  datasets:
+  - shapefile
+  omit_columns: []
+  column_details: {}
+  overrides:
+    omit_columns: []
+    ignore_validation: []
+    columns: {}
+    tags: []
+- id: socrata_prod_wi
+  type: socrata
+  four_four: 597j-7eb8
+  attachments: [nycdwi_metadata.pdf]
+  datasets:
+  - shapefile_wi
+  omit_columns: []
+  column_details: {}
+  overrides:
+    omit_columns: []
+    ignore_validation: []
+    columns: {}
+    tags: [community districts (water areas included), dcp, geographic, location, map, cartography, community, boundaries, water]
+
+package:
+  dataset_files:
+  - name: shapefile_wi
+    type: shapefile
+    filename: nycdwi.zip
+    overrides:
+      omit_columns: []
+      ignore_validation: []
+      columns:
+        shape_length: {name: shape_leng}
+      tags: []
+      display_name: Community Districts (Water areas included)
+      description: >
+        GIS data: Community Districts (Water areas included)
+
+
+        Community Districts are mandated by the city charter to review and monitor quality of life
+        issues for New York City (NYC) neighborhoods.  NYC is currently comprised of 59
+        community districts. The first byte is a borough code and the second and third
+        bytes are the community district number. There are also 12 Joint Interest Areas
+        (JIAs).  The JIAs are major parks and airports and are not contained within any
+        community district.   This dataset is being provided by the Department of City
+        Planning (DCP) for informational purposes only. DCP does not warranty the completeness,
+        accuracy, content, or fitness for any particular purpose or use of the dataset,
+        nor are any such warranties to be implied or inferred with respect to the dataset
+        as furnished on the website. DCP and the City are not liable for any deficiencies
+        in the completeness, accuracy, content, or fitness for any particular purpose
+        or use the dataset, or applications utilizing the dataset, provided by any third
+        party.
+
+
+        All previously released versions of this data are available at
+        <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
+  - name: shapefile
+    type: shapefile
+    filename: nycd.zip
+    overrides:
+      omit_columns: []
+      ignore_validation: []
+      columns:
+        shape_length: {name: shape_leng}
+      tags: []
+  attachments:
+  - nycdwi_metadata.pdf
+  - nycd_metadata.pdf
+
+columns:
+- name: borocd
+  display_name: BoroCd
+  description: Community district number preceded by BoroCode.
+  data_type: text
+- name: the_geom
+  display_name: Shape
+  description: ""
+  data_type: wkb
+- name: shape_length
+  display_name: Shape_Length
+  description: ""
+  data_type: double
+- name: shape_area
+  display_name: Shape_Area
+  description: ""
+  data_type: double
