@@ -1,0 +1,88 @@
+name: election_districts
+summary: ""
+display_name: Election Districts
+description: >
+  GIS data: Boundaries of Election Districts.
+
+
+  All previously released versions of this data are available at
+  <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
+tags: ['political & election districts gis: election districts', dcp, geographic, voting, location, map, cartography, district, boundary, elect, election]
+each_row_is_a: Election District
+
+destinations:
+- id: socrata_prod_wi
+  type: socrata
+  four_four: 63sm-kk9b
+  attachments: [nyedwi_metadata.pdf]
+  datasets:
+  - shapefile_wi
+  omit_columns: []
+  column_details: {}
+  overrides:
+    omit_columns: []
+    ignore_validation: []
+    columns: {}
+    tags: []
+- id: socrata_prod
+  type: socrata
+  four_four: afve-r9tt
+  attachments: [nyed_metadata.pdf]
+  datasets:
+  - shapefile_wi
+  omit_columns: []
+  column_details: {}
+  overrides:
+    omit_columns: []
+    ignore_validation: []
+    columns: {}
+    tags: []
+
+package:
+  dataset_files:
+  - name: shapefile_wi
+    type: shapefile
+    filename: nyedwi.zip
+    overrides:
+      omit_columns: []
+      ignore_validation: []
+      columns:
+        shape_length: {name: shape_leng}
+      tags: []
+      display_name: Election Districts (Water Areas Included)
+      description: >
+        GIS data: Boundaries of Election Districts (Water Areas Included).
+
+
+        All previously released versions of this data are available at
+        <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
+  - name: shapefile
+    type: shapefile
+    filename: nyed.zip
+    overrides:
+      omit_columns: []
+      ignore_validation: []
+      columns:
+        shape_length: {name: shape_leng}
+      tags: []
+  attachments:
+  - nyed_metadata.pdf
+  - nyedwi_metadata.pdf
+
+columns:
+- name: elect_dist
+  display_name: ElectDist
+  description: Three digit election district number proceeded by the two digit state assembly district.
+  data_type: integer
+- name: the_geom
+  display_name: Shape
+  description: ""
+  data_type: wkb
+- name: shape_length
+  display_name: Shape_Length
+  description: ""
+  data_type: double
+- name: shape_area
+  display_name: Shape_Area
+  description: ""
+  data_type: double
