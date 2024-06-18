@@ -50,8 +50,6 @@ package:
       filename: cpdb_projects_pts.shp.zip
       overrides:
         display_name: Capital Projects Database (CPDB) - Projects (Points)
-        omit_columns: []
-        ignore_validation: []
         columns:
           maprojid: {name: maprojid}
           magency: {name: magency}
@@ -111,8 +109,6 @@ package:
       filename: cpdb_projects_poly.shp.zip
       overrides:
         display_name: Capital Projects Database (CPDB) - Projects (Polygons)
-        omit_columns: []
-        ignore_validation: []
         columns:
           maprojid: {name: maprojid}
           magency: {name: magency}
