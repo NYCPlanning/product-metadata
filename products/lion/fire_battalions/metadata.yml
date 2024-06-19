@@ -1,0 +1,58 @@
+name: fire_battalions
+display_name: Fire Battalions
+summary: ""
+description: >
+  GIS data: Boundaries of Fire Battalions.
+
+
+  All previously released versions of this data are available at
+  <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
+tags: [fire battalions, dcp, public safety, fdny]
+each_row_is_a: Fire Battalion
+
+destinations:
+- id: socrata_prod
+  type: socrata
+  four_four: srix-vkxq
+  attachments: [nyfb_metadata.pdf]
+  datasets:
+  - shapefile
+  omit_columns: []
+  column_details: {}
+  overrides:
+    omit_columns: []
+    ignore_validation: []
+    columns: {}
+    tags: []
+
+package:
+  dataset_files:
+  - name: shapefile
+    type: shapefile
+    filename: nyfb.zip
+    overrides:
+      omit_columns: []
+      ignore_validation: []
+      columns:
+        shape_length: {name: shape_leng}
+      tags: []
+  attachments:
+  - nyfb_metadata.pdf
+
+columns:
+- name: firebn
+  display_name: FireBN
+  description: The battalion number servicing the district
+  data_type: integer
+- name: the_geom
+  display_name: Shape
+  description: ""
+  data_type: wkb
+- name: shape_length
+  display_name: Shape_Length
+  description: ""
+  data_type: double
+- name: shape_area
+  display_name: Shape_Area
+  description: ""
+  data_type: double
