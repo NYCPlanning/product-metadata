@@ -41,7 +41,7 @@ package:
   dataset_files:
   - name: primary_shapefile
     type: shapefile
-    filename: dcp_mandatory_inclusionary_housing.zip
+    filename: nycmih.zip
     overrides:
       omit_columns: []
       columns:
@@ -72,7 +72,6 @@ package:
           data_type: geom_poly
         zoning_map:
           name: Zoning_Map
-
   attachments:
   - nycmih_metadata.pdf
 
