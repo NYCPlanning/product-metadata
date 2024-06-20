@@ -1,0 +1,92 @@
+name: pseudo_lots
+display_name: Pseudo Lots
+summary: ""
+description: >
+  The Pseudo Lots dataset contains polygons of locations that have an address
+  and/or a structure with a building identification number (BIN), but for which there
+  is no tax lot. Pseudo lots may exist for locations with open space, subway or train
+  stations, skyways, tunnels, or other miscellaneous features. Note that this is not
+  a comprehensive dataset of locations with these types of features.
+tags: [pseudo lots, bin, building identification number, addresses, cscl]
+each_row_is_a: Pseudo lot
+destinations:
+- id: socrata_prod
+  type: socrata
+  four_four: dx24-9ef7
+  attachments: []
+  datasets:
+  - primary_shapefile
+  omit_columns: []
+  column_details: {}
+  overrides:
+    omit_columns: []
+    ignore_validation: []
+    columns: {}
+    tags: []
+
+package:
+  dataset_files:
+  - name: primary_shapefile
+    type: shapefile
+    filename: pseudolots.zip
+    overrides:
+      omit_columns: []
+      ignore_validation: []
+      columns: {}
+      tags: []
+  attachments:
+  - pseudolots_datadictionary.xlsx
+
+columns:
+- name: the_geom
+  display_name: the_geom
+  description: Geometry
+  data_type: wkb
+  readme_data_type: geometry
+- name: boro
+  display_name: BORO
+  description: Borough code for the borough in which the pseudo lot is located.
+  data_type: text
+  example: '1'
+  values:
+    - ["1", "Manhattan"]
+    - ["2", "Bronx"]
+    - ["3", "Brooklyn"]
+    - ["4", "Queens"]
+    - ["5", "Staten Island"]
+- name: block
+  display_name: BLOCK
+  description: Pseudo block number.
+  data_type: integer
+  example: '27000'
+- name: lot
+  display_name: LOT
+  description: Pseudo lot number.
+  data_type: integer
+  example: '9999'
+- name: bbl
+  display_name: BBL
+  description: Pseudo BBL number.
+  data_type: text
+  example: '2200319999'
+- name: type
+  display_name: TYPE
+  description: Pseudo lot type or classification.
+  data_type: text
+  example: '1'
+  values:
+  - ["1", "Infrastructure"]
+  - ["2", "Open Space"]
+  - ["3", "Skyway"]
+  - ["O", "Other"]
+  - ["blank", "Not yet classified"]
+- name: shape_star
+  display_name: Shape_STAr
+  description: Area of feature in internal units squared.
+  data_type: double
+  example: '116222.518864'
+- name: shape_stle
+  display_name: Shape_STLe
+  description: Length of feature in internal units.
+  data_type: double
+  example: '181.04988692'
