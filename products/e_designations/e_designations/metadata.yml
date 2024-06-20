@@ -18,31 +18,29 @@ tags: [e-designation, (e) designation, hazmat, hazardous material, contamination
 each_row_is_a: E-Designation
 
 destinations:
-- id: socrata_test
+  # Newly created shapefile destination. # TODO: swap
+- id: socrata_prod_shapefile
   type: socrata
   four_four: jep3-h9py
   attachments:
   - nyedes_metadata.pdf
   datasets:
-  - primary_shapefile
+  - shapefile
   omit_columns: ['noise_code', 'noise_date', 'effective_date', 'air_date', 'hazmat_date', 'description', 'air_code', 'hazmat_code']
-  column_details:
-    descriptio: # TODO: fix
-      api_name: description
-      display_name: description
-- id: socrata_prod
+  column_details: {}
+- id: socrata_prod_csv
   type: socrata
   four_four: hxm3-23vy
   attachments:
   - nyedes_metadata.pdf
   datasets:
-  - primary_shapefile
+  - csv
   omit_columns: []
   column_details: {}
 
 package:
   dataset_files:
-  - name: primary_shapefile
+  - name: shapefile
     type: shapefile
     filename: nyedes_shape.zip
     overrides:
@@ -63,7 +61,7 @@ columns:
   data_type: text
   example: E-175
 - name: effective_date
-  display_name: E Effective Date
+  display_name: EffectiveDate
   description: The date the E-Designation went in to effect or was established.
   data_type: datetime
   example: '2007-09-10T00:00:00.000'
@@ -95,7 +93,7 @@ columns:
   data_type: integer
   example: '1'
 - name: hazmat_code
-  display_name: HazMat Code
+  display_name: HazMatCode
   description: > 
     A one digit numeric code that represents the E-Designation is related
     to hazardous materials
@@ -105,7 +103,7 @@ columns:
   - ["0", "No"]
   - ["1", "Yes"]
 - name: air_code
-  display_name: Air Code
+  display_name: AirCode
   description: >
     A one digit numeric code that represents the E-Designation is related
     to air quality
@@ -115,7 +113,7 @@ columns:
   - ["0", "No"]
   - ["1", "Yes"]
 - name: noise_code
-  display_name: Noise Code
+  display_name: NoiseCode
   description: >
     A one digit numeric code that represents the E-Designation is related
     to noise quality
@@ -125,18 +123,18 @@ columns:
   - ["0", "No"]
   - ["1", "Yes"]
 - name: hazmat_date
-  display_name: HazMat Date
+  display_name: HazMatDate
   description: >
     The date the hazardous material component of the E-designation was satisfied (remediated)
   data_type: datetime
   example: "2003/08/04 0:00:00"
 - name: air_date
-  display_name: Air Date
+  display_name: AirDate
   description: The date the air quality component of the E-designation was satisfied (remediated)
   data_type: datetime
   example: "2003/08/04 0:00:00"
 - name: noise_date
-  display_name: Noise Date
+  display_name: NoiseDate
   description: The date the noise quality component of the E-designation was satisfied (remediated)
   data_type: datetime
   example: '2023-05-30T00:00:00.000'
