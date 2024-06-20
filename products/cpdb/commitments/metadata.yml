@@ -31,7 +31,7 @@ package:
       type: csv
 
   attachments:
-    - cpdb_data_dictionary.xlsx
+    # - cpdb_data_dictionary.xlsx
     - source_data_versions.csv
 
 columns:
