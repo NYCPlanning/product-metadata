@@ -1,0 +1,97 @@
+name: state_assembly_districts
+summary: ""
+display_name: State Assembly Districts
+description: >
+  GIS data: Boundaries of State Assembly Districts.
+
+
+  All previously released versions of this data are available at
+  <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
+tags: ['gis data: state assembly districts', boundary, boundaries, dcp, city planning, politics]
+each_row_is_a: State Assembly District
+
+destinations:
+- id: socrata_prod_wi
+  type: socrata
+  four_four: 8gke-583r
+  attachments: [nyadwi_metadata.pdf]
+  datasets:
+  - primary_shapefile_wi
+  omit_columns: []
+  column_details: {}
+  overrides:
+    omit_columns: []
+    ignore_validation: []
+    columns: {}
+    tags: []
+- id: socrata_prod
+  type: socrata
+  four_four: 5yfv-9hkp
+  attachments: [nyad_metadata.pdf]
+  datasets:
+  - primary_shapefile
+  omit_columns: []
+  column_details: {}
+  overrides:
+    omit_columns: []
+    ignore_validation: []
+    columns: {}
+    tags: []
+
+package:
+  dataset_files:
+  - name: primary_shapefile_wi
+    type: shapefile
+    filename: nyadwi.zip
+    overrides:
+      omit_columns: []
+      ignore_validation: []
+      columns:
+        shape_length: {name: shape_leng}
+        assembly_district: {name: assemdist}
+      tags: []
+      display_name: State Assembly Districts (water areas included)
+      description: >
+        GIS data: Boundaries of State Assembly Districts (water areas included).
+
+
+        All previously released versions of this data are available at
+        <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
+  - name: primary_shapefile
+    type: shapefile
+    filename: nyad.zip
+    overrides:
+      omit_columns: []
+      ignore_validation: []
+      columns:
+        shape_length: {name: shape_leng}
+        assembly_district: {name: assemdist}
+      tags: []
+      display_name: State Assembly Districts
+      description: >
+        GIS data: Boundaries of State Assembly Districts.
+
+
+        All previously released versions of this data are available at
+        <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
+  attachments:
+  - nyad_metadata.pdf
+  - nyadwi_metadata.pdf
+
+columns:
+- name: assembly_district
+  display_name: AssemblyDistrict
+  description: State Assembly District Number
+  data_type: integer
+- name: the_geom
+  display_name: Shape
+  description: ""
+  data_type: wkb
+- name: shape_length
+  display_name: Shape_Length
+  description: ""
+  data_type: double
+- name: shape_area
+  display_name: Shape_Area
+  description: ""
+  data_type: double

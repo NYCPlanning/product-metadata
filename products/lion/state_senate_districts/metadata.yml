@@ -1,0 +1,96 @@
+name: state_senate_districts
+summary: ""
+display_name: State Senate Districts
+description: >
+  GIS data: Boundaries of State Senate Districts.
+
+
+  All previously released versions of this data are available at
+  <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
+tags: [state senate districts, dcp, geographic, voting, location, map, cartography, state, senate, district, boundary]
+each_row_is_a: State Senate District
+
+destinations:
+- id: socrata_prod_wi
+  type: socrata
+  four_four: kkv2-gkck
+  attachments: [nysswi_metadata.pdf]
+  datasets:
+  - primary_shapefile_wi
+  omit_columns: []
+  column_details: {}
+  overrides:
+    omit_columns: []
+    ignore_validation: []
+    columns: {}
+    tags: []
+- id: socrata_prod
+  type: socrata
+  four_four: qi35-3r9s
+  attachments: [nyss_metadata.pdf]
+  datasets:
+  - primary_shapefile
+  omit_columns: []
+  column_details: {}
+  overrides:
+    omit_columns: []
+    ignore_validation: []
+    columns: {}
+    tags: []
+
+package:
+  dataset_files:
+  - name: primary_shapefile_wi
+    type: shapefile
+    filename: nysswi.zip
+    overrides:
+      omit_columns: []
+      ignore_validation: []
+      columns:
+        shape_length: {name: shape_leng}
+        state_senate_district: {name: stsendist}
+      tags: []
+      display_name: State Senate Districts
+      description: >
+        GIS data: Boundaries of State Senate Districts (water areas included).
+
+
+        All previously released versions of this data are available at
+        <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
+  - name: primary_shapefile
+    type: shapefile
+    filename: nyss.zip
+    overrides:
+      omit_columns: []
+      ignore_validation: []
+      columns:
+        shape_length: {name: shape_leng}
+        state_senate_district: {name: stsendist}
+      tags: []
+      description: >
+        GIS data: Boundaries of State Senate Districts.
+
+
+        All previously released versions of this data are available at
+        <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
+  attachments:
+  - nyss_metadata.pdf
+  - nysswi_metadata.pdf
+
+columns:
+- name: state_senate_district
+  display_name: StateSenateDistrict
+  description: New York State Senate District Number
+  data_type: integer
+- name: the_geom
+  display_name: Shape
+  description: ""
+  data_type: wkb
+- name: shape_length
+  display_name: Shape_Length
+  description: ""
+  data_type: double
+- name: shape_area
+  display_name: Shape_Area
+  description: ""
+  data_type: double
