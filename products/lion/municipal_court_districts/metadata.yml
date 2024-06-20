@@ -1,0 +1,113 @@
+name: municipal_court_districts
+summary: ""
+display_name: Municipal Court Districts
+description: >
+  GIS data: Boundaries of Municipal Court Districts.
+
+
+  All previously released versions of this data are available at
+  <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
+tags: [municipal court districts, dcp, city planning, judicial, judge, law]
+each_row_is_a: Municipal Court District
+
+destinations:
+- id: socrata_prod_wi
+  type: socrata
+  four_four: yr65-4zy6
+  attachments: [nymcwi_metadata.pdf]
+  datasets:
+  - primary_shapefile_wi
+  omit_columns: []
+  column_details: {}
+  overrides:
+    omit_columns: []
+    ignore_validation: []
+    columns: {}
+    tags: []
+- id: socrata_prod
+  type: socrata
+  four_four: 5ewv-dbt8
+  attachments: [nymc_metadata.pdf]
+  datasets:
+  - primary_shapefile
+  omit_columns: []
+  column_details: {}
+  overrides:
+    omit_columns: []
+    ignore_validation: []
+    columns: {}
+    tags: []
+
+package:
+  dataset_files:
+  - name: primary_shapefile_wi
+    type: shapefile
+    filename: nymcwi.zip
+    overrides:
+      omit_columns: []
+      ignore_validation: []
+      columns:
+        shape_length: {name: shape_leng}
+        state_senate_district: {name: stsendist}
+      tags: []
+      display_name: Municipal Court Districts  (water areas included)
+      description: >
+        GIS data: Boundaries of Municipal Court Districts. (water areas included)
+
+
+        All previously released versions of this data are available at
+        <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
+  - name: primary_shapefile
+    type: shapefile
+    filename: nymc.zip
+    overrides:
+      omit_columns: []
+      ignore_validation: []
+      columns:
+        shape_length: {name: shape_leng}
+        state_senate_district: {name: stsendist}
+      tags: []
+  attachments:
+  - nymc_metadata.pdf
+  - nymcwi_metadata.pdf
+
+
+columns:
+- name: municourt
+  display_name: MuniCourt
+  description: Municipal Court District Number
+  data_type: integer
+- name: borocode
+  display_name: BoroCode
+  description: 'Borough code for the borough in which the census block is located.'
+  data_type: text
+  example: '4'
+  values:
+    - ["1", Manhattan]
+    - ["2", Bronx]
+    - ["3", Brooklyn]
+    - ["4", Queens]
+    - ["5", Staten Island]
+- name: boroname
+  display_name: BoroName
+  description: 'Borough Name.'
+  data_type: text
+  example: Queens
+  values:
+    - [Brooklyn, ""]
+    - [Bronx, ""]
+    - [Manhattan, ""]
+    - [Queens, ""]
+    - [Staten Island, ""]
+- name: the_geom
+  display_name: Shape
+  description: ""
+  data_type: wkb
+- name: shape_length
+  display_name: Shape_Length
+  description: ""
+  data_type: double
+- name: shape_area
+  display_name: Shape_Area
+  description: ""
+  data_type: double
