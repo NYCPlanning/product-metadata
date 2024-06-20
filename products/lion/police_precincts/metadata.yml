@@ -1,0 +1,58 @@
+name: police_precincts
+display_name: Police Precincts
+summary: ""
+description: >
+  GIS data: Boundaries of Police Precincts.
+
+
+  All previously released versions of this data are available at
+  <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
+tags: [police precincts, dcp, geographic, location, map, cartography, safety, crime, boundary, police, policeman, cop, division, precinct, precincts, gis, jurisdiction, school, health, 'fire & police gis: police precincts']
+each_row_is_a: Police Precinct
+
+destinations:
+- id: socrata_prod
+  type: socrata
+  four_four: y76i-bdw7
+  attachments: [nypp_metadata.pdf]
+  datasets:
+  - primary_shapefile
+  omit_columns: []
+  column_details: {}
+  overrides:
+    omit_columns: []
+    ignore_validation: []
+    columns: {}
+    tags: []
+
+package:
+  dataset_files:
+  - name: primary_shapefile
+    type: shapefile
+    filename: nypp.zip
+    overrides:
+      omit_columns: []
+      ignore_validation: []
+      columns:
+        shape_length: {name: shape_leng}
+      tags: []
+  attachments:
+  - nypp_metadata.pdf
+
+columns:
+- name: precinct
+  display_name: Precinct
+  description: Denotes the precinct number serviced by the police precinct
+  data_type: integer
+- name: the_geom
+  display_name: Shape
+  description: ""
+  data_type: wkb
+- name: shape_length
+  display_name: Shape_Length
+  description: ""
+  data_type: double
+- name: shape_area
+  display_name: Shape_Area
+  description: ""
+  data_type: double

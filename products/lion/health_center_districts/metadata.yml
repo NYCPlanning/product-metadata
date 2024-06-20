@@ -1,0 +1,82 @@
+name: health_center_districts
+display_name: Health Center Districts
+summary: ""
+description: >
+  Health Center Districts - by Department of City Planning.
+
+
+  All previously released versions of this data are available at
+  <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
+tags: ['gis data: boundaries of health districts']
+each_row_is_a: Health Center District
+
+destinations:
+- id: socrata_prod
+  type: socrata
+  four_four: 6nss-v3ep
+  attachments: [nyhc_metadata.pdf]
+  datasets:
+  - primary_shapefile
+  omit_columns: []
+  column_details: {}
+  overrides:
+    omit_columns: []
+    ignore_validation: []
+    columns: {}
+    tags: []
+
+package:
+  dataset_files:
+  - name: primary_shapefile
+    type: shapefile
+    filename: nyhc.zip
+    overrides:
+      omit_columns: []
+      ignore_validation: []
+      columns:
+        boro_code: {name: borocode}
+        boro_name: {name: boroname}
+        health_center_district: {name: hcentdist}
+        shape_length: {name: shape_leng}
+      tags: []
+  attachments:
+  - nyhc_metadata.pdf
+
+columns:
+- name: boro_code
+  display_name: BoroCode
+  description: 'Borough code for the borough in which the census block is located.'
+  data_type: integer
+  values:
+    - ["1", Manhattan]
+    - ["2", Bronx]
+    - ["3", Brooklyn]
+    - ["4", Queens]
+    - ["5", Staten Island]
+- name: boro_name
+  display_name: BoroName
+  description: 'Borough Name.'
+  data_type: text
+  example: Queens
+  values:
+    - [Brooklyn, ""]
+    - [Bronx, ""]
+    - [Manhattan, ""]
+    - [Queens, ""]
+    - [Staten Island, ""]
+- name: health_center_district
+  display_name: HealthCenterDistrict
+  description: 'Denotes the Health Center number'
+  data_type: integer
+- name: shape_area
+  display_name: Shape_Area
+  description: ''
+  data_type: double
+- name: shape_length
+  display_name: Shape_Length
+  description: ''
+  data_type: double
+- name: the_geom
+  display_name: Shape
+  description: ""
+  data_type: wkb

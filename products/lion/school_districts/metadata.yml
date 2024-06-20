@@ -1,0 +1,58 @@
+name: school_districts
+display_name: School Districts
+summary: ""
+description: >
+  GIS data: Boundaries of School Districts.
+
+  All previously released versions of this data are available at
+  <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
+tags: [school districts, education, dcp, city planning, maps]
+each_row_is_a: School District
+
+destinations:
+- id: socrata_prod
+  type: socrata
+  four_four: 8ugf-3d8u
+  attachments: [nysd_metadata.pdf]
+  datasets:
+  - primary_shapefile
+  omit_columns: []
+  column_details: {}
+  overrides:
+    omit_columns: []
+    ignore_validation: []
+    columns: {}
+    tags: []
+
+package:
+  dataset_files:
+  - name: primary_shapefile
+    type: shapefile
+    filename: nysd.zip
+    overrides:
+      omit_columns: []
+      ignore_validation: []
+      columns:
+        shape_length: {name: shape_leng}
+        school_district: {name: schooldist}
+      tags: []
+  attachments:
+  - nysd_metadata.pdf
+
+columns:
+- name: school_district
+  display_name: SchoolDistrict
+  description: The school district identifier the region defines
+  data_type: integer
+- name: the_geom
+  display_name: Shape
+  description: ""
+  data_type: wkb
+- name: shape_length
+  display_name: Shape_Length
+  description: ""
+  data_type: double
+- name: shape_area
+  display_name: Shape_Area
+  description: ""
+  data_type: double
