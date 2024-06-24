@@ -1,0 +1,210 @@
+name: housing_database_by_2020_nta
+display_name: Housing Database by 2020 NTA
+summary: "Net change in housing units arising from new buildings, demolitions, or\
+  \ alterations for NYC NTAs since 2010. The NYC Department of City Planning\u2019\
+  s (DCP) <a href=\"https://www1.nyc.gov/site/planning/data-maps/open-data/dwn-housing-database.page#housingdevelopmentproject\"\
+  >Housing Database</a>  provide the 2010 census count of housing units, the net change\
+  \ in Class A housing units since the census, and the count of units pending completion\
+  \ for commonly used political and statistical boundaries. These tables are aggregated\
+  \ from the DCP Housing Database, which is derived from Department of Buildings (DOB)-approved\
+  \ housing construction and demolition jobs filed or completed in NYC since January\
+  \ 1, 2010. Net housing unit change is calculated as the sum of all three construction\
+  \ job types that add or remove residential units: new buildings, major alterations,\
+  \ and demolitions, and can be used to determine the change in legal housing units\
+  \ across time and space.\r\n\r\nAll previously released versions of this data are\
+  \ available at a <a href=\"https://www1.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts[year]=0\"\
+  >BYTES of the BIG APPLE- Archive</a>"
+description: "Net change in housing units arising from new buildings, demolitions,\
+  \ or alterations for NYC NTAs since 2010. The NYC Department of City Planning\u2019\
+  s (DCP) <a href=\"https://www1.nyc.gov/site/planning/data-maps/open-data/dwn-housing-database.page#housingdevelopmentproject\"\
+  >Housing Database</a>  provide the 2010 census count of housing units, the net change\
+  \ in Class A housing units since the census, and the count of units pending completion\
+  \ for commonly used political and statistical boundaries. These tables are aggregated\
+  \ from the DCP Housing Database, which is derived from Department of Buildings (DOB)-approved\
+  \ housing construction and demolition jobs filed or completed in NYC since January\
+  \ 1, 2010. Net housing unit change is calculated as the sum of all three construction\
+  \ job types that add or remove residential units: new buildings, major alterations,\
+  \ and demolitions, and can be used to determine the change in legal housing units\
+  \ across time and space.\r\n\r\nAll previously released versions of this data are\
+  \ available at a <a href=\"https://www1.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts[year]=0\"\
+  >BYTES of the BIG APPLE- Archive</a>"
+tags:
+- housing
+- house
+- building
+- development
+- dwelling unit
+- certificate of occupancy
+- co
+- permit
+- job application
+- filing
+- net units
+- unit change
+- pipeline
+- construction
+- census block
+- census tract
+- nta
+- puma
+- city council district
+- community district
+each_row_is_a: <FILL ME IN!>
+destinations:
+- id: socrata_prod
+  type: socrata
+  four_four: kyz5-72x5
+  attachments: []
+  datasets:
+  - primary_shapefile
+  omit_columns: []
+  column_details: {}
+  overrides:
+    omit_columns: []
+    ignore_validation: []
+    columns: {}
+    tags: []
+package:
+  dataset_files:
+  - name: primary_shapefile
+    type: shapefile
+    filename: shapefile.zip
+    overrides:
+      omit_columns: []
+      ignore_validation: []
+      columns: {}
+      tags: []
+  attachments:
+  - Housing_Summary_Files_Data_Dictionary (7).xlsx
+columns:
+- name: the_geom
+  display_name: the_geom
+  description: <FILL ME IN!>
+  data_type: wkb
+  example: <FILL ME IN!>
+  readme_data_type: geometry
+- name: nta2010
+  display_name: nta2020
+  description: ''
+  data_type: text
+  example: BX0102
+- name: ntaname2010
+  display_name: ntaname2020
+  description: ''
+  data_type: text
+  example: Highbridge Park
+- name: comp2010ap
+  display_name: comp2010ap
+  description: ''
+  data_type: <FILL ME IN!>
+  example: '0.0'
+- name: comp2010
+  display_name: comp2010
+  description: ''
+  data_type: <FILL ME IN!>
+  example: '0.0'
+- name: comp2011
+  display_name: comp2011
+  description: ''
+  data_type: <FILL ME IN!>
+  example: '0.0'
+- name: comp2012
+  display_name: comp2012
+  description: ''
+  data_type: <FILL ME IN!>
+  example: '0.0'
+- name: comp2013
+  display_name: comp2013
+  description: ''
+  data_type: <FILL ME IN!>
+  example: '0.0'
+- name: comp2014
+  display_name: comp2014
+  description: ''
+  data_type: <FILL ME IN!>
+  example: '0.0'
+- name: comp2015
+  display_name: comp2015
+  description: ''
+  data_type: <FILL ME IN!>
+  example: '0.0'
+- name: comp2016
+  display_name: comp2016
+  description: ''
+  data_type: <FILL ME IN!>
+  example: '0.0'
+- name: comp2017
+  display_name: comp2017
+  description: ''
+  data_type: <FILL ME IN!>
+  example: '0.0'
+- name: comp2018
+  display_name: comp2018
+  description: ''
+  data_type: <FILL ME IN!>
+  example: '0.0'
+- name: comp2019
+  display_name: comp2019
+  description: ''
+  data_type: <FILL ME IN!>
+  example: '0.0'
+- name: comp2020
+  display_name: comp2020
+  description: ''
+  data_type: <FILL ME IN!>
+  example: '0.0'
+- name: comp2021
+  display_name: comp2021
+  description: ''
+  data_type: <FILL ME IN!>
+  example: '0.0'
+- name: comp2022
+  display_name: comp2022
+  description: ''
+  data_type: <FILL ME IN!>
+  example: '0.0'
+- name: filed
+  display_name: filed
+  description: ''
+  data_type: <FILL ME IN!>
+  example: '0.0'
+- name: approved
+  display_name: approved
+  description: ''
+  data_type: <FILL ME IN!>
+  example: '0.0'
+- name: permitted
+  display_name: permitted
+  description: ''
+  data_type: <FILL ME IN!>
+  example: '0.0'
+- name: withdrawn
+  display_name: withdrawn
+  description: ''
+  data_type: <FILL ME IN!>
+  example: '0.0'
+- name: inactive
+  display_name: inactive
+  description: ''
+  data_type: <FILL ME IN!>
+  example: '0.0'
+- name: shape_area
+  display_name: Shape__Area
+  description: ''
+  data_type: <FILL ME IN!>
+  example: '24024170.9071'
+- name: shape_length
+  display_name: Shape__Length
+  description: ''
+  data_type: <FILL ME IN!>
+  example: '16654.685928'
+- name: comp2023
+  display_name: Comp2023
+  description: Number of total housing units counted in Census on April 1, 2020
+  data_type: <FILL ME IN!>
+  example: '0.0'
+- name: cenunits20
+  display_name: Cenunits20
+  description: Number of total housing units counted in Census on April 1, 2020
+  data_type: <FILL ME IN!>
+  example: '0'
