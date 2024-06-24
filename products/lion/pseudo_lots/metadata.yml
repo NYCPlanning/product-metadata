@@ -8,12 +8,12 @@ description: >
   stations, skyways, tunnels, or other miscellaneous features. Note that this is not
   a comprehensive dataset of locations with these types of features.
 tags: [pseudo lots, bin, building identification number, addresses, cscl]
-each_row_is_a: Pseudo lot
+each_row_is_a: Pseudo Lot
 destinations:
 - id: socrata_prod
   type: socrata
   four_four: dx24-9ef7
-  attachments: []
+  attachments: [pseudolots_datadictionary.xlsx]
   datasets:
   - primary_shapefile
   omit_columns: []
