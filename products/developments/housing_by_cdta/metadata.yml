@@ -1,40 +1,31 @@
 name: housing_database_by_2020_cdta
 display_name: Housing Database by 2020 CDTA
-summary: 'Net change in housing units arising from new buildings, demolitions, or
-  alterations for specified geography (Census Block, Census Tract, City Council district,
-  Community District, Community District Tabulation Area (CDTA), Neighborhood Tabulation
-  Area (NTA). These tables are aggregated from the DCP Housing Database, which is
-  derived from Department of Buildings (DOB)-approved housing construction and demolition
-  jobs filed or completed in NYC since January 1, 2010. Net housing unit change is
-  calculated as the sum of all three construction job types that add or remove residential
-  units: new buildings, major alterations, and demolitions, and can be used to determine
-  the change in legal housing units across time and space. <br>
-
-  <b>NOTE: Housing Database by PUMA has been sunset as of the 20q4 release. Anyone
-  looking for housing database at the PUMA level should use the Housing Database by
-  2020 CDTA dataset, which is a similar geography but not an exact equivalent.</b><br>
-
-  All previously released versions of this data are available at the <a target="_blank"
-  href="https://www1.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5byear%5d=0">BYTES
-  of the BIG APPLE Archive</a>.'
-description: 'Net change in housing units arising from new buildings, demolitions,
-  or alterations for specified geography (Census Block, Census Tract, City Council
-  district, Community District, Community District Tabulation Area (CDTA), Neighborhood
-  Tabulation Area (NTA). These tables are aggregated from the DCP Housing Database,
-  which is derived from Department of Buildings (DOB)-approved housing construction
-  and demolition jobs filed or completed in NYC since January 1, 2010. Net housing
-  unit change is calculated as the sum of all three construction job types that add
-  or remove residential units: new buildings, major alterations, and demolitions,
-  and can be used to determine the change in legal housing units across time and space.
-  <br>
-
-  <b>NOTE: Housing Database by PUMA has been sunset as of the 20q4 release. Anyone
-  looking for housing database at the PUMA level should use the Housing Database by
-  2020 CDTA dataset, which is a similar geography but not an exact equivalent.</b><br>
-
-  All previously released versions of this data are available at the <a target="_blank"
-  href="https://www1.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5byear%5d=0">BYTES
-  of the BIG APPLE Archive</a>.'
+summary: >
+  Net change in housing units arising from new buildings, demolitions, or alterations for NYC Community District Tabulation Areas (CDTAs) since 2010.
+  The NYC Department of City Planning's (DCP)
+  <a href="https://www1.nyc.gov/site/planning/data-maps/open-data/dwn-housing-database.page#housingdevelopmentproject">Housing Database</a>
+  provide the 2010 census count of housing units, the net change in Class A housing units since the census, and the count of units
+  pending completion for commonly used political and statistical boundaries. These tables are aggregated from the DCP Housing Database,
+  which is derived from Department of Buildings (DOB)-approved housing construction and demolition jobs filed or completed in NYC since
+  January 1, 2010. Net housing unit change is calculated as the sum of all three construction job types that add or remove residential
+  units: new buildings, major alterations, and demolitions, and can be used to determine the change in legal housing units across time
+  and space.
+  
+  All previously released versions of this data are available at a
+  <a href="https://www1.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts[year]=0"BYTES of the BIG APPLE- Archive</a>
+description: >
+  Net change in housing units arising from new buildings, demolitions, or alterations for NYC Community District Tabulation Areas (CDTAs) since 2010.
+  The NYC Department of City Planning's (DCP)
+  <a href="https://www1.nyc.gov/site/planning/data-maps/open-data/dwn-housing-database.page#housingdevelopmentproject">Housing Database</a>
+  provide the 2010 census count of housing units, the net change in Class A housing units since the census, and the count of units
+  pending completion for commonly used political and statistical boundaries. These tables are aggregated from the DCP Housing Database,
+  which is derived from Department of Buildings (DOB)-approved housing construction and demolition jobs filed or completed in NYC since
+  January 1, 2010. Net housing unit change is calculated as the sum of all three construction job types that add or remove residential
+  units: new buildings, major alterations, and demolitions, and can be used to determine the change in legal housing units across time
+  and space.
+  
+  All previously released versions of this data are available at a
+  <a href="https://www1.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts[year]=0"BYTES of the BIG APPLE- Archive</a>
 tags:
 - housing
 - house
@@ -65,7 +56,7 @@ tags:
 - cdta
 - neighborhood tabulation area
 - nta
-each_row_is_a: 'HousingDB_by_2020_CDTA: Community District Tabulation Area'
+each_row_is_a: community district tabulation area
 destinations:
 - id: socrata_prod
   type: socrata
@@ -91,13 +82,13 @@ package:
       columns: {}
       tags: []
   attachments:
+  - Housing Summary Files - ReadMe.pdf
   - Housing_Summary_Files_Data_Dictionary.xlsx
 columns:
 - name: the_geom
   display_name: the_geom
-  description: Geometry column
-  data_type: wkb
-  example: <FILL ME IN!>
+  description: Geometry of the CDTA
+  data_type: geometry
   readme_data_type: geometry
 - name: cdta2020
   display_name: CDTA2020
@@ -111,136 +102,116 @@ columns:
   example: QN82 Forest Park (JIA 82 Approximation)
 - name: comp2010ap
   display_name: comp2010ap
-  description: Net number of class A housing units completed between April 1, 2010
-    and December 31, 2010, accounting for new buildings, alterations, and demolitions
-  data_type: <FILL ME IN!>
-  example: '0.0'
+  description: Net number of class A housing units completed between April 1, 2010 and December 31, 2010, accounting for new buildings, alterations, and demolitions
+  data_type: integer
+  example: '253.0'
 - name: comp2010
   display_name: comp2010
-  description: Net number of class A housing units completed in 2010, accounting for
-    new buildings, alterations, and demolitions
-  data_type: <FILL ME IN!>
-  example: '0.0'
+  description: Net number of class A housing units completed year in 2010, accounting for new buildings, alterations, and demolitions
+  data_type: integer
+  example: '188.0'
 - name: comp2011
   display_name: comp2011
-  description: Net number of class A housing units completed in 2011, accounting for
-    new buildings, alterations, and demolitions
-  data_type: <FILL ME IN!>
-  example: '0.0'
+  description: Net number of class A housing units completed year in 2011, accounting for new buildings, alterations, and demolitions
+  data_type: integer
+  example: '122.0'
 - name: comp2012
   display_name: comp2012
-  description: Net number of class A housing units completed in 2012, accounting for
-    new buildings, alterations, and demolitions
-  data_type: <FILL ME IN!>
-  example: '0.0'
+  description: Net number of class A housing units completed year in 2012, accounting for new buildings, alterations, and demolitions
+  data_type: integer
+  example: '34.0'
 - name: comp2013
   display_name: comp2013
-  description: Net number of class A housing units completed in 2013, accounting for
-    new buildings, alterations, and demolitions
-  data_type: <FILL ME IN!>
-  example: '0.0'
+  description: Net number of class A housing units completed year in 2013, accounting for new buildings, alterations, and demolitions
+  data_type: integer
+  example: '70.0'
 - name: comp2014
   display_name: comp2014
-  description: Net number of class A housing units completed in 2014, accounting for
-    new buildings, alterations, and demolitions
-  data_type: <FILL ME IN!>
-  example: '0.0'
+  description: Net number of class A housing units completed year in 2014, accounting for new buildings, alterations, and demolitions
+  data_type: integer
+  example: '46.0'
 - name: comp2015
   display_name: comp2015
-  description: Net number of class A housing units completed in 2015, accounting for
-    new buildings, alterations, and demolitions
-  data_type: <FILL ME IN!>
-  example: '0.0'
+  description: Net number of class A housing units completed year in 2015, accounting for new buildings, alterations, and demolitions
+  data_type: integer
+  example: '63.0'
 - name: comp2016
   display_name: comp2016
-  description: Net number of class A housing units completed in 2016, accounting for
-    new buildings, alterations, and demolitions
-  data_type: <FILL ME IN!>
-  example: '0.0'
+  description: Net number of class A housing units completed year in 2016, accounting for new buildings, alterations, and demolitions
+  data_type: integer
+  example: '41.0'
 - name: comp2017
   display_name: comp2017
-  description: Net number of class A housing units completed in 2017, accounting for
-    new buildings, alterations, and demolitions
-  data_type: <FILL ME IN!>
-  example: '0.0'
+  description: Net number of class A housing units completed year in 2017, accounting for new buildings, alterations, and demolitions
+  data_type: integer
+  example: '2011.0'
 - name: comp2018
   display_name: comp2018
-  description: Net number of class A housing units completed in 2018, accounting for
-    new buildings, alterations, and demolitions
-  data_type: <FILL ME IN!>
-  example: '0.0'
+  description: Net number of class A housing units completed year in 2018, accounting for new buildings, alterations, and demolitions
+  data_type: integer
+  example: '119.0'
 - name: comp2019
   display_name: comp2019
-  description: Net number of class A housing units completed in 2019, accounting for
-    new buildings, alterations, and demolitions
-  data_type: <FILL ME IN!>
-  example: '0.0'
+  description: Net number of class A housing units completed year in 2019, accounting for new buildings, alterations, and demolitions
+  data_type: integer
+  example: '352.0'
 - name: comp2020
   display_name: comp2020
-  description: Net number of class A housing units completed in 2020, accounting for
-    new buildings, alterations, and demolitions
-  data_type: <FILL ME IN!>
-  example: '0.0'
+  description: Net number of class A housing units completed year in 2020, accounting for new buildings, alterations, and demolitions
+  data_type: integer
+  example: '792.0'
 - name: comp2021
   display_name: comp2021
-  description: Net number of class A housing units completed in 2021, accounting for
-    new buildings, alterations, and demolitions
-  data_type: <FILL ME IN!>
-  example: '0.0'
+  description: Net number of class A housing units completed year in 2021, accounting for new buildings, alterations, and demolitions
+  data_type: integer
+  example: '658.0'
 - name: comp2022
   display_name: comp2022
-  description: Net number of class A housing units completed in 2022, accounting for
-    new buildings, alterations, and demolitions
-  data_type: <FILL ME IN!>
-  example: '0.0'
+  description: Net number of class A housing units completed year in 2022, accounting for new buildings, alterations, and demolitions
+  data_type: integer
+  example: '93.0'
+- name: comp2023
+  display_name: comp2023
+  description: Net number of class A housing units completed year to date, accounting for new buildings, alterations, and demolitions
+  data_type: integer
+  example: '74.0'
+- name: cenunits20
+  display_name: cenunits20
+  description: Number of total housing units counted in Census on April 1, 2020
+  data_type: integer
+  example: '55202'
 - name: filed
   display_name: filed
-  description: Net number of incomplete class A housing units where the job status
-    is filed. Excludes inactive jobs.
-  data_type: <FILL ME IN!>
-  example: '0.0'
+  description: <FILL ME IN!>
+  data_type: integer
+  example: '713.0'
 - name: approved
   display_name: approved
-  description: Net number of incomplete class A housing units where the job status
-    is application approved. Excludes inactive jobs.
-  data_type: <FILL ME IN!>
-  example: '0.0'
+  description: <FILL ME IN!>
+  data_type: integer
+  example: '509.0'
 - name: permitted
   display_name: permitted
-  description: Net number of incomplete class A housing units where the job status
-    is permit issued. Excludes inactive jobs.
-  data_type: <FILL ME IN!>
-  example: '0.0'
+  description: <FILL ME IN!>
+  data_type: integer
+  example: '390.0'
 - name: withdrawn
   display_name: withdrawn
-  description: Net number of incomplete class A housing units where the job status
-    is withdrawn.
-  data_type: <FILL ME IN!>
-  example: '0.0'
+  description: <FILL ME IN!>
+  data_type: integer
+  example: '316.0'
 - name: inactive
   display_name: inactive
-  description: Net number of incomplete class A housing units where the job is inactive
-    but not withdrawn.
-  data_type: <FILL ME IN!>
-  example: '0.0'
-- name: shape_leng
-  display_name: Shape_Leng
-  description: Length of feature in feet.
-  data_type: <FILL ME IN!>
-  example: '37550.8572191'
+  description: <FILL ME IN!>
+  data_type: integer
+  example: '239.0'
 - name: shape_area
-  display_name: Shape_Area
-  description: Area of feature in internal squared feet.
-  data_type: <FILL ME IN!>
-  example: '66224982.0063'
-- name: comp2023
-  display_name: Comp2023
-  description: Net number of class A housing units completed year to date, accounting
-    for new buildings, alterations, and demolitions
-  data_type: <FILL ME IN!>
-  example: '0.0'
-- name: cenunits20
-  display_name: Cenunits20
-  description: Number of total housing units counted in Census on April 1, 2020
-  data_type: <FILL ME IN!>
-  example: '7'
+  display_name: Shape__Area
+  description: ''
+  data_type: double
+  example: '665197816.296'
+- name: shape_length
+  display_name: Shape__Length
+  description: ''
+  data_type: double
+  example: '58169.108768'
