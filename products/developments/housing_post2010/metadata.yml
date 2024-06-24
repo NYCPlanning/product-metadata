@@ -1,37 +1,39 @@
 name: housing_database_project_level_files
 display_name: Housing Database Project Level Files
-summary: "The NYC Department of City Planning\u2019s (DCP) <a href=\"https://www.nyc.gov/site/planning/data-maps/open-data/dwn-housing-database.page#housingdevelopmentproject\"\
-  >Housing Database</a> contains all NYC Department of Buildings (DOB) approved housing\
-  \ construction and demolition jobs filed or completed in NYC since January 1, 2010.\
-  \ It includes the three primary construction job types that add or remove residential\
-  \ units: new buildings, major alterations, and demolitions, and can be used to determine\
-  \ the change in legal housing units across time and space. Records in the Housing\
-  \ Database Project-Level Files are geocoded to the greatest level of precision possible,\
-  \ subject to numerous quality assurance and control checks, recoded for usability,\
-  \ and joined to other housing data sources relevant to city planners and analysts.\n\
-  \nData are updated semiannually, at the end of the second and fourth quarters of\
-  \ each year.\n\nPlease see DCP\u2019s annual Housing Production Snapshot summarizing\
-  \ findings from the 21Q4 data release <a href=\"https://storymaps.arcgis.com/stories/1c9138dc24064b2e8142ff156345a719\"\
-  >here. Additional Housing and Economic analyses are also <a href=\"https://www.nyc.gov/site/planning/planning-level/housing-economy/housing-economy.page\"\
-  >available</a>.\n\nAll previously released versions of this data are available at\
-  \ <a href=\"https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%255byear%255d=0\"\
-  >BYTES of the BIG APPLE- Archive</a>."
-description: "The NYC Department of City Planning\u2019s (DCP) <a href=\"https://www.nyc.gov/site/planning/data-maps/open-data/dwn-housing-database.page#housingdevelopmentproject\"\
-  >Housing Database</a> contains all NYC Department of Buildings (DOB) approved housing\
-  \ construction and demolition jobs filed or completed in NYC since January 1, 2010.\
-  \ It includes the three primary construction job types that add or remove residential\
-  \ units: new buildings, major alterations, and demolitions, and can be used to determine\
-  \ the change in legal housing units across time and space. Records in the Housing\
-  \ Database Project-Level Files are geocoded to the greatest level of precision possible,\
-  \ subject to numerous quality assurance and control checks, recoded for usability,\
-  \ and joined to other housing data sources relevant to city planners and analysts.\n\
-  \nData are updated semiannually, at the end of the second and fourth quarters of\
-  \ each year.\n\nPlease see DCP\u2019s annual Housing Production Snapshot summarizing\
-  \ findings from the 21Q4 data release <a href=\"https://storymaps.arcgis.com/stories/1c9138dc24064b2e8142ff156345a719\"\
-  >here. Additional Housing and Economic analyses are also <a href=\"https://www.nyc.gov/site/planning/planning-level/housing-economy/housing-economy.page\"\
-  >available</a>.\n\nAll previously released versions of this data are available at\
-  \ <a href=\"https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%255byear%255d=0\"\
-  >BYTES of the BIG APPLE- Archive</a>."
+summary: >
+  The NYC Department of City Planning's (DCP)
+  <a href="https://www.nyc.gov/site/planning/data-maps/open-data/dwn-housing-database.page#housingdevelopmentproject">Housing Database</a>
+  contains all NYC Department of Buildings (DOB) approved housing construction and demolition jobs filed or completed in NYC since January 1, 2010.
+  It includes the three primary construction job types that add or remove residential units: new buildings, major alterations, and demolitions, 
+  and can be used to determine the change in legal housing units across time and space. Records in the Housing Database Project-Level Files 
+  are geocoded to the greatest level of precision possible, subject to numerous quality assurance and control checks, recoded for usability, 
+  and joined to other housing data sources relevant to city planners and analysts.
+
+  Data are updated semiannually, at the end of the second and fourth quarters of each year.
+  
+  Please see DCP's annual Housing Production Snapshot summarizing findings from the 21Q4 data release 
+  <a href="https://storymaps.arcgis.com/stories/1c9138dc24064b2e8142ff156345a719">here. Additional Housing and Economic analyses are also 
+  <a href="https://www.nyc.gov/site/planning/planning-level/housing-economy/housing-economy.page">available</a>.
+  
+  All previously released versions of this data are available at 
+  <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%255byear%255d=0">BYTES of the BIG APPLE- Archive</a>.
+description: >
+  The NYC Department of City Planning's (DCP)
+  <a href="https://www.nyc.gov/site/planning/data-maps/open-data/dwn-housing-database.page#housingdevelopmentproject">Housing Database</a>
+  contains all NYC Department of Buildings (DOB) approved housing construction and demolition jobs filed or completed in NYC since January 1, 2010.
+  It includes the three primary construction job types that add or remove residential units: new buildings, major alterations, and demolitions, 
+  and can be used to determine the change in legal housing units across time and space. Records in the Housing Database Project-Level Files 
+  are geocoded to the greatest level of precision possible, subject to numerous quality assurance and control checks, recoded for usability, 
+  and joined to other housing data sources relevant to city planners and analysts.
+
+  Data are updated semiannually, at the end of the second and fourth quarters of each year.
+  
+  Please see DCP's annual Housing Production Snapshot summarizing findings from the 21Q4 data release 
+  <a href="https://storymaps.arcgis.com/stories/1c9138dc24064b2e8142ff156345a719">here. Additional Housing and Economic analyses are also 
+  <a href="https://www.nyc.gov/site/planning/planning-level/housing-economy/housing-economy.page">available</a>.
+  
+  All previously released versions of this data are available at 
+  <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%255byear%255d=0">BYTES of the BIG APPLE- Archive</a>.
 tags:
 - housing
 - house
@@ -53,14 +55,13 @@ tags:
 - puma
 - city council district
 - community district
-each_row_is_a: <FILL ME IN!>
+each_row_is_a: DOB-approved housing construction or demolition job
 destinations:
 - id: socrata_prod
   type: socrata
   four_four: uxt4-ugwr
   attachments: []
-  datasets:
-  - primary_shapefile
+  datasets: [primary_shapefile]
   omit_columns: []
   column_details: {}
   overrides:
@@ -72,19 +73,19 @@ package:
   dataset_files:
   - name: primary_shapefile
     type: shapefile
-    filename: shapefile.zip
+    filename: nychdb_shp.zip
     overrides:
       omit_columns: []
       ignore_validation: []
       columns: {}
       tags: []
   attachments:
-  - Housing_Database_Data_Dictionary (2).xlsx
+  - Housing_Database_Data_Dictionary.xlsx
 columns:
 - name: the_geom
   display_name: the_geom
-  description: <FILL ME IN!>
-  data_type: wkb
+  description: ''
+  data_type: point
   example:
     coordinates:
     - 1006276.9556583731
@@ -101,44 +102,34 @@ columns:
   data_type: text
   example: Alteration
   values:
-  - - Alteration
-    - <FILL ME IN!>
-  - - New Building
-    - <FILL ME IN!>
-  - - Demolition
-    - <FILL ME IN!>
+  - [Alteration]
+  - [New Building]
+  - [Demolition]
 - name: residflag
   display_name: ResidFlag
   description: ''
   data_type: text
   example: Residential
   values:
-  - - Residential
-    - <FILL ME IN!>
+  - [Residential]
 - name: nonresflag
   display_name: NonresFlag
   description: ''
   data_type: text
   example: Non-Residential
   values:
-  - - Non-Residential
-    - <FILL ME IN!>
+  - [Non-Residential]
 - name: job_status
   display_name: Job_Status
   description: ''
   data_type: text
   example: 5. Completed Construction
   values:
-  - - 5. Completed Construction
-    - <FILL ME IN!>
-  - - 3. Permitted for Construction
-    - <FILL ME IN!>
-  - - 1. Filed Application
-    - <FILL ME IN!>
-  - - 2. Approved Application
-    - <FILL ME IN!>
-  - - 4. Partially Completed Construction
-    - <FILL ME IN!>
+  - [1. Filed Application]
+  - [2. Approved Application]
+  - [3. Permitted for Construction]
+  - [ 4. Partially Completed Construction]
+  - [5. Completed Construction]
 - name: compltyear
   display_name: CompltYear
   description: ''
@@ -152,17 +143,17 @@ columns:
 - name: classainit
   display_name: ClassAInit
   description: ''
-  data_type: <FILL ME IN!>
+  data_type: double
   example: '0.0'
 - name: classaprop
   display_name: ClassAProp
   description: ''
-  data_type: <FILL ME IN!>
+  data_type: double
   example: '2.0'
 - name: classanet
   display_name: ClassANet
   description: ''
-  data_type: <FILL ME IN!>
+  data_type: double
   example: '0.0'
 - name: hotelinit
   display_name: HotelInit
@@ -187,24 +178,19 @@ columns:
 - name: unitsco
   display_name: UnitsCO
   description: ''
-  data_type: <FILL ME IN!>
+  data_type: double
   example: '2.0'
 - name: boro
   display_name: Boro
-  description: <FILL ME IN!>
+  description: int
   data_type: text
   example: '4'
   values:
-  - - '4'
-    - <FILL ME IN!>
-  - - '3'
-    - <FILL ME IN!>
-  - - '5'
-    - <FILL ME IN!>
-  - - '1'
-    - <FILL ME IN!>
-  - - '2'
-    - <FILL ME IN!>
+  - ["1"]
+  - ["2"]
+  - ["3"]
+  - ["4"]
+  - ["5"]
 - name: bin
   display_name: BIN
   description: <FILL ME IN!>
@@ -291,17 +277,16 @@ columns:
   data_type: text
   example: 'Yes'
   values:
-  - - 'Yes'
-    - <FILL ME IN!>
+  - ['Yes']
 - name: floorsinit
   display_name: FloorsInit
   description: <FILL ME IN!>
-  data_type: <FILL ME IN!>
+  data_type: double
   example: '2.0'
 - name: floorsprop
   display_name: FloorsProp
   description: <FILL ME IN!>
-  data_type: <FILL ME IN!>
+  data_type: dpib;e
   example: '2.0'
 - name: enlargemnt
   display_name: Enlargemnt
@@ -309,12 +294,9 @@ columns:
   data_type: text
   example: Horizontal and Vertical
   values:
-  - - Horizontal and Vertical
-    - <FILL ME IN!>
-  - - Horizontal
-    - <FILL ME IN!>
-  - - Vertical
-    - <FILL ME IN!>
+  - [Horizontal and Vertical]
+  - [Horizontal]
+  - [Vertical]
 - name: ownership
   display_name: Ownership
   description: <FILL ME IN!>
@@ -401,16 +383,14 @@ columns:
   data_type: text
   example: '1'
   values:
-  - - '1'
-    - <FILL ME IN!>
+  - ['1']
 - name: pl_pfirm15
   display_name: PL_PFIRM15
   description: ''
   data_type: text
   example: '1'
   values:
-  - - '1'
-    - <FILL ME IN!>
+  - ['1']
 - name: latitude
   display_name: Latitude
   description: ''
@@ -427,18 +407,12 @@ columns:
   data_type: text
   example: BIN DOB buildingfootprints
   values:
-  - - BIN DOB buildingfootprints
-    - <FILL ME IN!>
-  - - Lat/Lon geosupport
-    - <FILL ME IN!>
-  - - BBL DOB MapPLUTO
-    - <FILL ME IN!>
-  - - Lat/Lon DCP
-    - <FILL ME IN!>
-  - - BIN DOB buildingfootprints (historical)
-    - <FILL ME IN!>
-  - - Lat/Lon DOB
-    - <FILL ME IN!>
+  - [BIN DOB buildingfootprints, <FILL ME IN!>]
+  - [Lat/Lon geosupport, <FILL ME IN!>]
+  - [BBL DOB MapPLUTO, <FILL ME IN!>]
+  - [Lat/Lon DCP, <FILL ME IN!>]
+  - [BIN DOB buildingfootprints (historical), <FILL ME IN!>]
+  - [Lat/Lon DOB, <FILL ME IN!>]
 - name: dcpedited
   display_name: DCPEdited
   description: ''
@@ -449,13 +423,10 @@ columns:
   description: ''
   data_type: text
   example: 23Q4
-  values:
-  - - 23Q4
-    - <FILL ME IN!>
 - name: location
   display_name: Location
   description: ''
-  data_type: wkb
+  data_type: point
   example:
     coordinates:
     - -73.920731
