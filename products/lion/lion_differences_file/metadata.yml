@@ -1,0 +1,43 @@
+name: lion_differences_file
+display_name: LION Differences File
+summary: ''
+description: >
+  The LION Differences File (LDF) documents segment and node level changes
+  that have occurred in the LION file between two subsequent releases. This file
+  allows a user who "ties" organizational data to DCP's Segment ID
+  and/or Node ID to migrate their data appropriately when these changes occur.
+
+  All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
+tags: [node, street, street name, intersection, segment, lion, ldf, change]
+each_row_is_a: Changed Segment or Node
+
+destinations:
+- id: socrata_prod
+  type: socrata
+  four_four: ige5-v6sk
+  attachments: [ldf_metadata.pdf]
+  datasets:
+  - primary_shapefile
+  omit_columns: []
+  column_details: {}
+  overrides:
+    omit_columns: []
+    ignore_validation: []
+    columns: {}
+    tags: []
+    destination_file_name: ldf_{{ version }}.zip
+  is_unparsed_dataset: true
+
+package:
+  dataset_files:
+  - name: primary_shapefile
+    type: shapefile
+    filename: ldf.zip
+    overrides:
+      omit_columns: []
+      ignore_validation: []
+      columns: {}
+      tags: []
+  attachments:
+  - ldf_metadata.pdf
+columns: []
