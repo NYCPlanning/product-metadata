@@ -19,6 +19,7 @@ destinations:
   attachments: [snd_metadata.pdf]
   datasets:
   - primary_shapefile
+  is_unparsed_dataset: true
   omit_columns: []
   column_details: {}
   overrides:
@@ -26,7 +27,7 @@ destinations:
     ignore_validation: []
     columns: {}
     tags: []
-  is_unparsed_dataset: true
+    destination_file_name: snd_{{ version }}.zip
 
 package:
   dataset_files:
