@@ -1,35 +1,48 @@
 name: projects
 display_name: Zoning Application Portal (ZAP) - Project Data
-summary: "The Department of City Planning (DCP) processes land use applications submitted\
-  \ by City or other public agencies and other (private) applicants. This data set\
-  \ provides information on land use applications, specifically the project tracking\
-  \ and description data related to approximately 30,000 projects since the late 1970\u2019\
-  s. \r\n\r\nZAP project data appears on NYC Planning - Zoning Application Portal\
-  \ Search. It includes data migrated from the prior applications tracking system\
-  \ (LUCATS) and covers all projects that have been \u2018Noticed\u2019 (that they\
-  \ will appear before the City Planning Commission in 30 or more days for Certification\
-  \ as complete for the ULURP process to begin) or Filed (a CEQR or Land Use application\
-  \ has been formally submitted to the Department for review) through completion (approval,\
-  \ disapproval, withdrawal, or termination). For more information on the land use\
-  \ and environmental review application process see:\r\nhttps://www1.nyc.gov/site/planning/applicants/applicant-portal/application-process.page\r\
-  \n\r\nYou can explore this data in the Zoning Application Portal: https://zap.planning.nyc.gov/projects\r\
-  \n\r\nTo report data errors or for questions, email <a href = \"mailto:zap_feedback_dl@planning.nyc.gov\"\
-  >zap_feedback_dl@planning.nyc.gov</a>."
-description: "The Department of City Planning (DCP) processes land use applications\
-  \ submitted by City or other public agencies and other (private) applicants. This\
-  \ data set provides information on land use applications, specifically the project\
-  \ tracking and description data related to approximately 30,000 projects since the\
-  \ late 1970\u2019s. \r\n\r\nZAP project data appears on NYC Planning - Zoning Application\
-  \ Portal Search. It includes data migrated from the prior applications tracking\
-  \ system (LUCATS) and covers all projects that have been \u2018Noticed\u2019 (that\
-  \ they will appear before the City Planning Commission in 30 or more days for Certification\
-  \ as complete for the ULURP process to begin) or Filed (a CEQR or Land Use application\
-  \ has been formally submitted to the Department for review) through completion (approval,\
-  \ disapproval, withdrawal, or termination). For more information on the land use\
-  \ and environmental review application process see:\r\nhttps://www1.nyc.gov/site/planning/applicants/applicant-portal/application-process.page\r\
-  \n\r\nYou can explore this data in the Zoning Application Portal: https://zap.planning.nyc.gov/projects\r\
-  \n\r\nTo report data errors or for questions, email <a href = \"mailto:zap_feedback_dl@planning.nyc.gov\"\
-  >zap_feedback_dl@planning.nyc.gov</a>."
+summary: >
+  The Department of City Planning (DCP) processes land use applications submitted
+  by City or other public agencies and other (private) applicants. This data set
+  provides information on land use applications, specifically the project tracking
+  and description data related to approximately 30,000 projects since the late 1970s.
+  
+  
+  ZAP project data appears on NYC Planning - Zoning Application Portal
+  Search. It includes data migrated from the prior applications tracking system
+  (LUCATS) and covers all projects that have been "Noticed" (that they
+  will appear before the City Planning Commission in 30 or more days for Certification
+  as complete for the ULURP process to begin) or Filed (a CEQR or Land Use application
+  has been formally submitted to the Department for review) through completion (approval,
+  disapproval, withdrawal, or termination). For more information on the land use
+  and environmental review application process see: <a href="https://www1.nyc.gov/site/planning/applicants/applicant-portal/application-process.page">Application Process Overview</a>
+  
+  
+  You can explore this data in the <a href="https://zap.planning.nyc.gov/projects">Zoning Application Portal</a>
+  
+  
+  To report data errors or for questions, email <a href="mailto:zap_feedback_dl@planning.nyc.gov">zap_feedback_dl@planning.nyc.gov</a>.
+description: >
+  The Department of City Planning (DCP) processes land use applications
+  submitted by City or other public agencies and other (private) applicants. This
+  data set provides information on land use applications, specifically the project
+  tracking and description data related to approximately 30,000 projects since the
+  late 1970s.
+  
+
+  ZAP project data appears on NYC Planning - Zoning Application
+  Portal Search. It includes data migrated from the prior applications tracking
+  system (LUCATS) and covers all projects that have been "Noticed" (that
+  they will appear before the City Planning Commission in 30 or more days for Certification
+  as complete for the ULURP process to begin) or Filed (a CEQR or Land Use application
+  has been formally submitted to the Department for review) through completion (approval,
+  disapproval, withdrawal, or termination). For more information on the land use
+  and environmental review application process see: <a href="https://www1.nyc.gov/site/planning/applicants/applicant-portal/application-process.page">Application Process Overview</a>
+  
+  
+  You can explore this data in the <a href="https://zap.planning.nyc.gov/projects">Zoning Application Portal</a>
+  
+  
+  To report data errors or for questions, email <a href="mailto:zap_feedback_dl@planning.nyc.gov">zap_feedback_dl@planning.nyc.gov</a>.
 tags: [zap, zoning application portal, land use, applications, ulurp, public review, project data, ceqr, mih, affordable housing, department of city planning, dcp]
 each_row_is_a: project in the Zoning Application Portal (ZAP)
 
