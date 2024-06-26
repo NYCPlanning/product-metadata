@@ -47,19 +47,21 @@ tags: [zap, zoning application portal, land use, applications, ulurp, public rev
 each_row_is_a: project in the Zoning Application Portal (ZAP)
 
 destinations:
-- id: socrata_projects
-  type: socrata
-  four_four: hgx4-8ukb
-  datasets:
-    - projects
+  - id: socrata_projects
+    type: socrata
+    four_four: hgx4-8ukb
+    datasets:
+      - projects
+    attachments:
+      - zapprojects_datadictionary.xlsx
 
 package:
   dataset_files:
-  - name: projects
-    type: csv
-    filename: dcp_projects_visible.csv
-  attachments: []
-  #   - zapprojects_datadictionary.xlsx
+    - name: projects
+      type: csv
+      filename: dcp_projects_visible.csv
+  attachments:
+    - zapprojects_datadictionary.xlsx
 
 columns:
 - name: project_id
