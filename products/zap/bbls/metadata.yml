@@ -47,20 +47,21 @@ tags: [zap, zoning application portal, land use, applications, ulurp, public rev
 each_row_is_a: tax lot associated to a project in the Zoning Application Portal (ZAP)
 
 destinations:
-- id: socrata_bbls
-  type: socrata
-  four_four: 2iga-a6mk
-  attachments: []
-  datasets:
-  - bbls
+  - id: socrata_bbls
+    type: socrata
+    four_four: 2iga-a6mk
+    datasets:
+      - bbls
+    attachments:
+      - zapprojects_datadictionary.xlsx
 
 package:
   dataset_files:
-  - name: bbls
-    type: csv
-    filename: dcp_projectbbls_visible.csv
-  attachments: []
-  #   - zapprojects_datadictionary.xlsx
+    - name: bbls
+      type: csv
+      filename: dcp_projectbbls_visible.csv
+  attachments:
+    - zapprojects_datadictionary.xlsx
 
 columns:
 - name: project_id
