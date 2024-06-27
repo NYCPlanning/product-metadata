@@ -1,0 +1,299 @@
+name: privately_owned_public_spaces_pops
+display_name: Privately Owned Public Spaces (POPS)
+summary: ""
+description:
+  "Privately owned public spaces, also known by the acronym POPS, are outdoor\
+  \ and indoor spaces provided for public enjoyment by private owners in exchange\
+  \ for bonus floor area or waivers, an incentive first introduced into New York City\u2019\
+  s zoning regulations in 1961. To find out more about POPS, visit the Department\
+  \ of City Planning's website at http://nyc.gov/pops. This database contains detailed\
+  \ information about each privately owned public space in New York City.\r\n\r\n\
+  Data Source: Privately Owned Public Space Database (2018), owned and maintained\
+  \ by the New York City Department of City Planning and created in collaboration\
+  \ with Jerold S. Kayden and The Municipal Art Society of New York.\r\n\r\nAll previously\
+  \ released versions of this data are available at <a href=\"https://www1.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts[year]=0\"\
+  >BYTES of the BIG APPLE- Archive</a>"
+tags:
+  - dcp
+  - privately owned public space database
+  - pops
+each_row_is_a: Privately Owned Public Space
+destinations:
+  - id: socrata_prod
+    type: socrata
+    four_four: rvih-nhyn
+    attachments: []
+    datasets:
+      - primary_shapefile
+    omit_columns: []
+    column_details: {}
+    overrides:
+      omit_columns: []
+      ignore_validation: []
+      columns: {}
+      tags: []
+    is_unparsed_dataset: false
+package:
+  dataset_files:
+    - name: primary_shapefile
+      type: shapefile
+      filename: shapefile.zip
+      overrides:
+        omit_columns: []
+        ignore_validation: []
+        columns: {}
+        tags: []
+  attachments:
+    - pops_datadictionary.xlsx
+columns:
+  - name: pops_number
+    display_name: POPS_Number
+    description: ""
+    data_type: text
+    example: K010001
+  - name: borough_name
+    display_name: Borough
+    description: ""
+    data_type: text
+    example: Manhattan
+    values:
+      - - Manhattan
+        - <FILL ME IN!>
+      - - Brooklyn
+        - <FILL ME IN!>
+      - - Queens
+        - <FILL ME IN!>
+      - - Bronx
+        - <FILL ME IN!>
+      - - Staten Island
+        - <FILL ME IN!>
+  - name: borocode
+    display_name: Borocode
+    description: ""
+    data_type: <FILL ME IN!>
+    example: "1"
+    values:
+      - - "1"
+        - <FILL ME IN!>
+      - - "3"
+        - <FILL ME IN!>
+      - - "4"
+        - <FILL ME IN!>
+      - - "2"
+        - <FILL ME IN!>
+      - - "5"
+        - <FILL ME IN!>
+  - name: community_district
+    display_name: Community Board
+    description: ""
+    data_type: <FILL ME IN!>
+    example: "5"
+  - name: address_number
+    display_name: Number
+    description: ""
+    data_type: text
+    example: "200"
+  - name: street_name
+    display_name: Street
+    description: ""
+    data_type: text
+    example: BROADWAY
+  - name: zip_code
+    display_name: Postcode
+    description: ""
+    data_type: <FILL ME IN!>
+    example: "10022"
+  - name: building_address_with_zip
+    display_name: Building_Address_With_Zip_Code
+    description: ""
+    data_type: text
+    example: 1000 TENTH AVENUE, New York, NY 10019
+  - name: tax_block
+    display_name: Tax_Block
+    description: ""
+    data_type: <FILL ME IN!>
+    example: "1292"
+  - name: tax_lot
+    display_name: Tax_Lot
+    description: ""
+    data_type: <FILL ME IN!>
+    example: "7501"
+  - name: building_name
+    display_name: Building_Name
+    description: ""
+    data_type: text
+    example: Normandie Court
+  - name: building_location
+    display_name: Building_Location
+    description: ""
+    data_type: text
+    example: South side of West 57th Street between Sixth and Seventh Avenues
+  - name: year_completed
+    display_name: Year_Completed
+    description: ""
+    data_type: text
+    example: "1974"
+  - name: building_constructed
+    display_name: Building_Constructed
+    description: ""
+    data_type: text
+    example: Completed
+    values:
+      - - Completed
+        - <FILL ME IN!>
+      - - Under Construction
+        - <FILL ME IN!>
+  - name: public_space_type
+    display_name: Public_Space_Type
+    description: ""
+    data_type: text
+    example: Plaza
+  - name: developer
+    display_name: Developer
+    description: ""
+    data_type: text
+    example: Fisher Brothers
+  - name: building_architect
+    display_name: Building_Architect
+    description: ""
+    data_type: text
+    example: Emery Roth & Sons
+  - name: principal_public_space
+    display_name: Principal_Public_Space_Designer
+    description: ""
+    data_type: text
+    example: Emery Roth & Sons
+  - name: size_required
+    display_name: Size_Required
+    description: ""
+    data_type: text
+    example: Through Block Connection 3012.00 sf
+  - name: hour_of_access_required
+    display_name: Hour_Of_Access_Required
+    description: ""
+    data_type: text
+    example: 24 Hours
+    values:
+      - - 24 Hours
+        - <FILL ME IN!>
+      - - Restricted Hours
+        - <FILL ME IN!>
+      - - 24 Hours; Restricted Hours
+        - <FILL ME IN!>
+      - - 24 Hours; Closing for Events; Restricted Hours
+        - <FILL ME IN!>
+      - - Closing for Events; Restricted Hours
+        - <FILL ME IN!>
+  - name: amenities_required
+    display_name: Amenities_Required
+    description: ""
+    data_type: text
+    example: None
+  - name: other_required
+    display_name: Other_Required
+    description: ""
+    data_type: text
+    example: skylight
+  - name: permitted_amenities
+    display_name: Permitted_Amenities
+    description: ""
+    data_type: text
+    example: Open Air Cafe
+    values:
+      - - Open Air Cafe
+        - <FILL ME IN!>
+      - - Other Permitted
+        - <FILL ME IN!>
+      - - Open Air Cafe; Other Permitted
+        - <FILL ME IN!>
+  - name: physically_disabled
+    display_name: Physically_Disabled
+    description: ""
+    data_type: text
+    example: Full/Partial
+    values:
+      - - Full/Partial
+        - <FILL ME IN!>
+      - - None
+        - <FILL ME IN!>
+      - - Unknown
+        - <FILL ME IN!>
+  - name: latitude
+    display_name: Latitude
+    description: ""
+    data_type: <FILL ME IN!>
+    example: "40.70741"
+  - name: longitude
+    display_name: Longitude
+    description: ""
+    data_type: <FILL ME IN!>
+    example: "-74.13974"
+  - name: xcoordinate
+    display_name: XCoordinate
+    description: ""
+    data_type: <FILL ME IN!>
+    example: "990213"
+  - name: ycoordinate
+    display_name: YCoordinate
+    description: ""
+    data_type: <FILL ME IN!>
+    example: "197005"
+  - name: council_district
+    display_name: Council District
+    description: ""
+    data_type: <FILL ME IN!>
+    example: "4"
+  - name: census_tract
+    display_name: Census Tract
+    description: ""
+    data_type: <FILL ME IN!>
+    example: "7"
+  - name: bin
+    display_name: BIN
+    description: ""
+    data_type: <FILL ME IN!>
+    example: "1000000"
+  - name: bbl
+    display_name: BBL
+    description: ""
+    data_type: <FILL ME IN!>
+    example: "1000047501"
+  - name: nta
+    display_name: NTA
+    description: ""
+    data_type: text
+    example: <FILL ME IN!>
+  - name: geocoded_column
+    display_name: Location
+    description: ""
+    data_type: text
+    example:
+      coordinates:
+        - -73.980027
+        - 40.761768
+      type: Point
+  - name: :@computed_region_f5dn_yrer
+    display_name: Community Districts
+    description: ""
+    data_type: <FILL ME IN!>
+    example: <FILL ME IN!>
+  - name: :@computed_region_yeji_bk3q
+    display_name: Borough Boundaries
+    description: ""
+    data_type: <FILL ME IN!>
+    example: <FILL ME IN!>
+  - name: :@computed_region_92fq_4b7q
+    display_name: City Council Districts
+    description: ""
+    data_type: <FILL ME IN!>
+    example: <FILL ME IN!>
+  - name: :@computed_region_sbqj_enih
+    display_name: Police Precincts
+    description: ""
+    data_type: <FILL ME IN!>
+    example: <FILL ME IN!>
+  - name: :@computed_region_efsh_h5xi
+    display_name: Zip Codes
+    description: ""
+    data_type: <FILL ME IN!>
+    example: <FILL ME IN!>
