@@ -1,4 +1,4 @@
-name: facilities_database
+name: facilities
 display_name: Facilities Database
 summary: ""
 
@@ -30,7 +30,10 @@ destinations:
 - id: socrata_prod
   type: socrata
   four_four: ji82-xba5
-  attachments: []
+  attachments:
+  - facilities_data_dictionary.xlsx
+  - facilities_readme.pdf
+
   datasets:
   - shapefile
   omit_columns: []
@@ -38,18 +41,50 @@ destinations:
 
 package:
   dataset_files:
-  - name: csv
-    type: csv
-    filename: facilities.csv
-    overrides:
-      omit_columns: []
-      columns: {}
   - name: shapefile
     type: shapefile
     filename: facilities_shapefile.zip
     overrides:
       omit_columns: []
-      columns: {}
+      columns:
+        uid: {name: UID}
+        facname: {name: FACNAME}
+        addressnum: {name: ADDRESSNUM}
+        streetname: {name: STREETNAME}
+        address: {name: ADDRESS}
+        city: {name: CITY}
+        boro: {name: BORO}
+        borocode: {name: BOROCODE}
+        zipcode: {name: ZIPCODE}
+        latitude: {name: LATITUDE}
+        longitude: {name: LONGITUDE}
+        xcoord: {name: XCOORD}
+        ycoord: {name: YCOORD}
+        bin: {name: BIN}
+        bbl: {name: BBL}
+        cd: {name: CD}
+        council: {name: COUNCIL}
+        ct2010: {name: CT2010}
+        ct2020: {name: CT2020}
+        nta2010: {name: NTA2010}
+        nta2020: {name: NTA2020}
+        facgroup: {name: FACGROUP}
+        facsubgrp: {name: FACSUBGRP}
+        factype: {name: FACTYPE}
+        capacity: {name: CAPACITY}
+        captype: {name: CAPTYPE}
+        optype: {name: OPTYPE}
+        opname: {name: OPNAME}
+        opabbrev: {name: OPABBREV}
+        overlevel: {name: OVERLEVEL}
+        overagency: {name: OVERAGENCY}
+        overabbrev: {name: OVERABBREV}
+        datasource: {name: DATASOURCE}
+        facdomain: {name: FACDOMAIN}
+        schooldist: {name: SCHOOLDIST}
+        policeprct: {name: POLICEPRCT}
+        servarea: {name: SERVAREA}
+        geometry: {name: geometry}
   attachments:
   - facilities_data_dictionary.xlsx
   - facilities_readme.pdf
@@ -105,23 +140,11 @@ columns:
   description: The full name the borough the facility is within.
   data_type: text
   example: MANHATTAN
-  values:
-    - ["MANHATTAN", ""]
-    - ["BRONX", ""]
-    - ["BROOKLYN", ""]
-    - ["QUEENS", ""]
-    - ["STATEN ISLAND", ""]
 - name: borocode
   display_name: borocode
   description: The number value representing the borough the facility is within.
   data_type: text
   example: '1'
-  values:
-    - ["1", Manhattan]
-    - ["2", Bronx]
-    - ["3", Brooklyn]
-    - ["4", Queens]
-    - ["5", Staten Island]
 - name: zipcode
   display_name: postcode
   description: >
@@ -174,32 +197,45 @@ columns:
     are not located on tax lots.
   data_type: text
   example: '1007860001.0'
-- name: commboard
-  display_name: community board
+- name: cd
+  display_name: community district
   description: >
     The Community District the facility is within. This field
     contains blanks because the Community District boundaries do not capture facilities
     beyond the shoreline.
-  data_type: integer
-  example: '105'
+  data_type: text
+  example: '105.0'
 - name: council
   display_name: council district
   description: The City Council District the facility is within
-  data_type: integer
-  example: '1'
-- name: censtract
-  display_name: census tract
-  description: The U.S. Census Tract the facility is within
-  data_type: integer
-  example: '2100'
-- name: nta
-  display_name: nta
+  data_type: text
+  example: '8.0'
+- name: ct2010
+  display_name: census tract 2010
+  description: The 2010 U.S. Census Tract the facility is within
+  data_type: text
+  example: '2100.0'
+- name: ct2020
+  display_name: census tract 2020
+  description: The 2020 U.S. Census Tract the facility is within
+  data_type: text
+  example: '2100.0'
+- name: nta2010
+  display_name: nta 2010
   description: >
-    The Neighborhood Tabulation Area (NTA) the facility is within. This
+    The 2010 Neighborhood Tabulation Area (NTA) the facility is within. This
     field contains blanks because the NTA boundaries do not capture facilities
     beyond the shoreline.
   data_type: text
   example: MN17
+- name: nta2020
+  display_name: nta 2020
+  description: >
+    The 2020 Neighborhood Tabulation Area (NTA) the facility is within. This
+    field contains blanks because the NTA boundaries do not capture facilities
+    beyond the shoreline.
+  data_type: text
+  example: MN0502
 - name: facgroup
   display_name: facgroup
   description: The value representing the group type, the second broadest category.
@@ -230,18 +266,11 @@ columns:
   description: The value representing the unit type of capacity, such as beds, visitors, seats, etc.
   data_type: text
   example: seats
-  values:
-  - [seats, ""]
-  - [beds, ""]
-  - [routes, ""]
 - name: optype
   display_name: optype
   description: Indicates whether the operating entity is public or non-public.
   data_type: text
   example: Non-public
-  values:
-  - [Non-public, ""]
-  - [Public, ""]
 - name: opname
   display_name: opname
   description: The name of the operating entity.
@@ -257,11 +286,6 @@ columns:
   description: 'The level of government of the oversight agency: City, State, City-State, Federal, or Non-public Oversight.'
   data_type: text
   example: City
-  values:
-  - [City, ""]
-  - [State, ""]
-  - [Federal, ""]
-  - [County, ""]
 - name: overagency
   display_name: overagency
   description: The name of the agency overseeing the facility.
@@ -308,3 +332,7 @@ columns:
   values:
   - [Local, ""]
   - [Regional, ""]
+- name: geometry
+  display_name: geometry
+  description: Spatial data for the facility.
+  data_type: text
