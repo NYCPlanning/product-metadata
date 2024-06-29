@@ -1,23 +1,26 @@
 name: privately_owned_public_spaces_pops
 display_name: Privately Owned Public Spaces (POPS)
 summary: ""
-description:
-  "Privately owned public spaces, also known by the acronym POPS, are outdoor\
-  \ and indoor spaces provided for public enjoyment by private owners in exchange\
-  \ for bonus floor area or waivers, an incentive first introduced into New York City\u2019\
-  s zoning regulations in 1961. To find out more about POPS, visit the Department\
-  \ of City Planning's website at http://nyc.gov/pops. This database contains detailed\
-  \ information about each privately owned public space in New York City.\r\n\r\n\
-  Data Source: Privately Owned Public Space Database (2018), owned and maintained\
-  \ by the New York City Department of City Planning and created in collaboration\
-  \ with Jerold S. Kayden and The Municipal Art Society of New York.\r\n\r\nAll previously\
-  \ released versions of this data are available at <a href=\"https://www1.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts[year]=0\"\
-  >BYTES of the BIG APPLE- Archive</a>"
-tags:
-  - dcp
-  - privately owned public space database
-  - pops
+
+description: >
+  Privately owned public spaces, also known by the acronym POPS, are outdoor 
+  and indoor spaces provided for public enjoyment by private owners in exchange 
+  for bonus floor area or waivers, an incentive first introduced into New York City's 
+  zoning regulations in 1961. To find out more about POPS, visit the Department 
+  of City Planning's website at http://nyc.gov/pops. This database contains detailed 
+  information about each privately owned public space in New York City.
+
+  Data Source: Privately Owned Public Space Database (2018), owned and maintained 
+  by the New York City Department of City Planning and created in collaboration 
+  with Jerold S. Kayden and The Municipal Art Society of New York.
+
+  All previously released versions of this data are available at 
+  <a href=\"https://www1.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts[year]=0\">BYTES of the BIG APPLE- Archive</a>"
+
+tags: [dcp, privately owned public space database, pops]
+
 each_row_is_a: Privately Owned Public Space
+
 destinations:
   - id: socrata_prod
     type: socrata
