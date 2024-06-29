@@ -21,33 +21,6 @@ tags: [dcp, privately owned public space database, pops]
 
 each_row_is_a: Privately Owned Public Space
 
-destinations:
-  - id: socrata_prod
-    type: socrata
-    four_four: rvih-nhyn
-    attachments: []
-    datasets:
-      - primary_shapefile
-    omit_columns: []
-    column_details: {}
-    overrides:
-      omit_columns: []
-      ignore_validation: []
-      columns: {}
-      tags: []
-    is_unparsed_dataset: false
-package:
-  dataset_files:
-    - name: primary_shapefile
-      type: shapefile
-      filename: shapefile.zip
-      overrides:
-        omit_columns: []
-        ignore_validation: []
-        columns: {}
-        tags: []
-  attachments:
-    - pops_datadictionary.xlsx
 columns:
   - name: pops_number
     display_name: POPS_Number
@@ -300,3 +273,32 @@ columns:
     description: ""
     data_type: <FILL ME IN!>
     example: <FILL ME IN!>
+
+package:
+  dataset_files:
+    - name: primary_shapefile
+      type: shapefile
+      filename: shapefile.zip
+      overrides:
+        omit_columns: []
+        ignore_validation: []
+        columns: {}
+        tags: []
+  attachments:
+    - pops_datadictionary.xlsx
+
+destinations:
+  - id: socrata_prod
+    type: socrata
+    four_four: rvih-nhyn
+    attachments: []
+    datasets:
+      - primary_shapefile
+    omit_columns: []
+    column_details: {}
+    overrides:
+      omit_columns: []
+      ignore_validation: []
+      columns: {}
+      tags: []
+    is_unparsed_dataset: false
