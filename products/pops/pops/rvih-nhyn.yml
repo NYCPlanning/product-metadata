@@ -383,14 +383,10 @@ destinations:
   - id: socrata_prod
     type: socrata
     four_four: rvih-nhyn
-    attachments: []
+    attachments:
+      - pops_datadictionary.xlsx
     datasets:
-      - primary_shapefile
-    omit_columns: []
+      - primary_csv
+    omit_columns:
+      - WKT
     column_details: {}
-    overrides:
-      omit_columns: []
-      ignore_validation: []
-      columns: {}
-      tags: []
-    is_unparsed_dataset: false
