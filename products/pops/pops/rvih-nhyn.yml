@@ -383,14 +383,16 @@ destinations:
   - id: socrata_prod
     type: socrata
     four_four: rvih-nhyn
-    attachments: []
+    attachments:
+      - pops_datadictionary.xlsx
     datasets:
-      - primary_shapefile
-    omit_columns: []
-    column_details: {}
-    overrides:
-      omit_columns: []
-      ignore_validation: []
-      columns: {}
-      tags: []
-    is_unparsed_dataset: false
+      - primary_csv
+    omit_columns:
+      - WKT
+    column_details:
+      popsnumber: { api_name: pops_number }
+      borough_code: { api_name: borocode }
+      building_address_with_zip_code: { api_name: building_address_with_zip }
+      community_board: { api_name: community_district }
+      principal_public_space_designer: { api_name: principal_public_space }
+      physically_disabled_access: { api_name: physically_disabled }
