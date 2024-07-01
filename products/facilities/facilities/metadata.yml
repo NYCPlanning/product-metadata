@@ -33,11 +33,48 @@ destinations:
   attachments:
   - facilities_data_dictionary.xlsx
   - facilities_readme.pdf
-
   datasets:
   - shapefile
   omit_columns: []
-  column_details: {}
+  column_details:
+    UID: {api_name: uid}
+    FACNAME: {api_name: facname}
+    ADDRESSNUM: {api_name: addressnum}
+    STREETNAME: {api_name: streetname}
+    ADDRESS: {api_name: address}
+    CITY: {api_name: city}
+    BORO: {api_name: boro}
+    BOROCODE: {api_name: borocode}
+    ZIPCODE: {api_name: zipcode}
+    LATITUDE: {api_name: latitude}
+    LONGITUDE: {api_name: longitude}
+    XCOORD: {api_name: xcoord}
+    YCOORD: {api_name: ycoord}
+    BIN: {api_name: bin}
+    BBL: {api_name: bbl}
+    CD: {api_name: cd}
+    COUNCIL: {api_name: council}
+    CT2010: {api_name: ct2010}
+    CT2020: {api_name: ct2020}
+    NTA2010: {api_name: nta2010}
+    NTA2020: {api_name: nta2020}
+    FACGROUP: {api_name: facgroup}
+    FACSUBGRP: {api_name: facsubgrp}
+    FACTYPE: {api_name: factype}
+    CAPACITY: {api_name: capacity}
+    CAPTYPE: {api_name: captype}
+    OPTYPE: {api_name: optype}
+    OPNAME: {api_name: opname}
+    OPABBREV: {api_name: opabbrev}
+    OVERLEVEL: {api_name: overlevel}
+    OVERAGENCY: {api_name: overagency}
+    OVERABBREV: {api_name: overabbrev}
+    DATASOURCE: {api_name: datasource}
+    FACDOMAIN: {api_name: facdomain}
+    SCHOOLDIST: {api_name: schooldist}
+    POLICEPRCT: {api_name: policeprct}
+    SERVAREA: {api_name: servarea}
+    geometry: {api_name: geometry}
 
 package:
   dataset_files:
