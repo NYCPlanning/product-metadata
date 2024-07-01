@@ -22,6 +22,12 @@ tags: [dcp, privately owned public space database, pops]
 each_row_is_a: Privately Owned Public Space
 
 columns:
+  - name: WKT
+    display_name: WKT
+    description: ""
+    data_type: text
+    example: POINT (-73.948665 40.70116)
+
   - name: pops_number
     display_name: POPS_Number
     description: >
