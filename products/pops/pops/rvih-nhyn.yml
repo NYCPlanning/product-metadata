@@ -335,12 +335,47 @@ package:
   dataset_files:
     - name: primary_shapefile
       type: shapefile
-      filename: shapefile.zip
+      filename: dcp_pops.shp.zip
       overrides:
-        omit_columns: []
+        omit_columns: [geocoded_column]
         ignore_validation: []
-        columns: {}
+        columns:
+          pops_number: { name: popsnumber }
+          borough_name: { name: boro_name }
+          borocode: { name: boro_code }
+          address_number: { name: add_number }
+          street_name: { name: streetname }
+          building_address_with_zip: { name: addzipcode }
+          community_district: { name: cd }
+          council_district: { name: cc_dist }
+          census_tract: { name: cen_tract }
+          building_name: { name: bldg_name }
+          building_location: { name: bldg_loc }
+          year_completed: { name: year_comp }
+          building_constructed: { name: constructd }
+          public_space_type: { name: ps_type }
+          building_architect: { name: architect }
+          principal_public_space: { name: designer }
+          size_required: { name: size_reqd }
+          hour_of_access_required: { name: houraccess }
+          amenities_required: { name: amen_reqd }
+          permitted_amenities: { name: perm_amen }
+          other_required: { name: other_reqd }
+          physically_disabled: { name: phys_dis }
         tags: []
+    - name: primary_csv
+      type: csv
+      filename: pops.csv
+      overrides:
+        omit_columns:
+        ignore_validation: []
+        columns:
+          pops_number: { name: popsnumber }
+          borocode: { name: borough_code }
+          building_address_with_zip: { name: building_address_with_zip_code }
+          community_district: { name: community_board }
+          principal_public_space: { name: principal_public_space_designer }
+          physically_disabled: { name: physically_disabled_access }
   attachments:
     - pops_datadictionary.xlsx
 
