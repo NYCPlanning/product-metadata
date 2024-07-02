@@ -367,7 +367,7 @@ package:
       type: csv
       filename: pops.csv
       overrides:
-        omit_columns:
+        omit_columns: []
         ignore_validation: []
         columns:
           pops_number: { name: popsnumber }
