@@ -1,0 +1,57 @@
+name: georeferenced_nyc_zoning_maps
+display_name: Georeferenced NYC Zoning Maps
+summary: ''
+description: >
+  The Georeferenced NYC Zoning Maps raster dataset is intended to be a
+  spatial representation of the entire zoning map catalog for the City of New York
+  as one seamless citywide raster zoning map sans title blocks. These maps are normally
+  maintained as 126 individual quarter sections and printed periodically for inclusion
+  in Vol III of the City\u2019s Zoning Resolution. This dataset encompasses recent
+  changes to mapped zoning districts or zoning text amendments as they are adopted
+  by the City Council as well as filed City Map changes.
+
+
+  All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>
+tags: [zoning,  raster,  city planning,  dcp,  maps]
+each_row_is_a: Row
+
+destinations:
+- id: socrata_prod
+  type: socrata
+  four_four: mxbm-493w
+  attachments: [georeferencedzoningmaps_metadata]
+  datasets:
+  - fgdb
+  omit_columns: []
+  column_details: {}
+  overrides:
+    omit_columns: []
+    ignore_validation: []
+    columns: {}
+    tags: []
+    destination_file_name: georeferencedzoningmaps_{{ version }}.zip
+  is_unparsed_dataset: true
+- id: bytes
+  type: bytes
+  files:
+  - id: fgdb
+    url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/georeferencedzoningmaps_{{ version }}.zip
+  - id: georeferencedzoningmaps_metadata
+    url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/georeferencedzoningmaps_metadata.pdf
+
+package:
+  dataset_files:
+  - name: fgdb
+    filename: georeferencedzoningmaps.zip
+    type: fgdb
+    overrides:
+      omit_columns: []
+      ignore_validation: []
+      columns: {}
+      tags: []
+  attachments:
+  - name: georeferencedzoningmaps_metadata
+    filename: georeferencedzoningmaps_metadata.pdf
+  zip_files: []
+
+columns: []
