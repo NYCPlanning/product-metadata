@@ -33,8 +33,25 @@ destinations:
   - pluto_changes_applied
   omit_columns: []
   column_details: {}
+- id: bytes
+  type: bytes
+  files:
+    - id: csv_package
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/PLUTOChangeFile{{ version }}.zip
+    - id: pluto_change_file_readme
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/plutochangefile_readme.pdf
 
 package:
+  zip_files:
+  - name: csv_package
+    filename: PLUTOChangeFile{{ version }}.zip
+    contains:
+      - name: pluto_changes_applied
+        filename: pluto_changes_applied.csv
+      - name: pluto_changes_not_applied
+        filename: pluto_changes_not_applied.csv
+      - name: pluto_removed_records
+        filename: pluto_removed_records.csv
   dataset_files:
   - name: pluto_changes_applied
     type: csv
@@ -51,7 +68,10 @@ package:
       ignore_validation: []
       columns: {}
   attachments:
-    - pluto_removed_records.csv
+    - name: pluto_removed_records
+      filename: pluto_removed_records.csv
+    - name: pluto_change_file_readme
+      filename: pluto_change_file_readme.pdf
 
 columns:
 - name: bbl
