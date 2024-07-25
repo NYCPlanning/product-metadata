@@ -1531,7 +1531,7 @@ columns:
       Census Tract 203.01 would be stored as 020301
       Census Tract 23 would be stored as 0023
     data_source: Department of City Planning – Geosupport System
-    data_type: Alphanumeric - 6 characters
+    data_type: text
     readme_data_type: Alphanumeric - 6 characters
     example: "226"
 
@@ -1892,7 +1892,7 @@ columns:
       Department of City Planning – Geosupport System
       Department of City Planning – Administrative District Base Map files
     readme_data_type: Alphanumeric - 7 characters
-    data_type: Alphanumeric - 7 characters
+    data_type: text
     example: "4089201"
 
   - name: bctcb2020
