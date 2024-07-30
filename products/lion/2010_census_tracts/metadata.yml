@@ -11,7 +11,7 @@ tags: [2010 census tracts (water areas included), dcp, city planning, census, wa
 each_row_is_a: Census Tract
 
 destinations:
-- id: socrata_water_not_included
+- id: socrata
   type: socrata
   four_four: bmjq-373p
   attachments: [nyct2010_metadata.pdf]

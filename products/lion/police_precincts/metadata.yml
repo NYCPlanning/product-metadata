@@ -11,7 +11,7 @@ tags: [police precincts, dcp, geographic, location, map, cartography, safety, cr
 each_row_is_a: Police Precinct
 
 destinations:
-- id: socrata_prod
+- id: socrata
   type: socrata
   four_four: y76i-bdw7
   attachments: [nypp_metadata.pdf]

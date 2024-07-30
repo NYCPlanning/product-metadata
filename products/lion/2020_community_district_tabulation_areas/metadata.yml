@@ -12,7 +12,7 @@ tags: [community district tabulation area, cdta, '2020', census, american commun
 each_row_is_a: Community District Tabulation Area
 
 destinations:
-- id: socrata_prod
+- id: socrata
   type: socrata
   four_four: xn3r-zk6y
   attachments: [nycdta2020_metadata.pdf]

@@ -12,7 +12,7 @@ tags: [primary land use tax lot output, pluto, parcels, tax lot, tax block, zoni
 each_row_is_a: Tax Lot
 
 destinations:
-- id: socrata_prod_water_incl
+- id: socrata_water_incl
   type: socrata
   four_four: 64uk-42ks
   attachments:
@@ -30,7 +30,7 @@ destinations:
       api_name: healthcent
     sanitdistrict:
       api_name: sanitdistr
-- id: test_socrata_prod_water_incl
+- id: test_socrata_water_incl
   type: socrata
   four_four: 4g5k-ab5u
   attachments:

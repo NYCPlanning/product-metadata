@@ -360,7 +360,7 @@ dataset_package:
     - metadata.yml
 
 destinations:
-  - id: socrata_prod
+  - id: socrata
     type: socrata
     four_four: "fn4k-qyk2"
     datasets:

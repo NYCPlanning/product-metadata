@@ -10,7 +10,7 @@ description: >
 tags: [pseudo lots, bin, building identification number, addresses, cscl]
 each_row_is_a: Pseudo Lot
 destinations:
-- id: socrata_prod
+- id: socrata
   type: socrata
   four_four: dx24-9ef7
   attachments: [pseudolots_datadictionary.xlsx]

@@ -16,7 +16,7 @@ tags: [nycem, evacuation, hurricane, zones]
 each_row_is_a: Hurricane Evacuation Zone
 
 destinations:
-- id: socrata_prod
+- id: socrata
   type: socrata
   four_four: epne-qv9x
   attachments: [nyhez_metadata.pdf]

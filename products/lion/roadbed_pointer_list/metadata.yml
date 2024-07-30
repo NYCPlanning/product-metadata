@@ -13,7 +13,7 @@ tags: []
 each_row_is_a: Roadbed Pointer
 
 destinations:
-- id: socrata_prod
+- id: socrata
   type: socrata
   four_four: qs4p-vs2w
   attachments: [rpl_filelayout.pdf]

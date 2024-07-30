@@ -380,7 +380,7 @@ package:
     - pops_datadictionary.xlsx
 
 destinations:
-  - id: socrata_prod
+  - id: socrata
     type: socrata
     four_four: rvih-nhyn
     attachments:

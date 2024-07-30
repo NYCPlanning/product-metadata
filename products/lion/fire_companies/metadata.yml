@@ -11,7 +11,7 @@ tags: [fire companies, dcp, public safety, fdny]
 each_row_is_a: Fire Company
 
 destinations:
-- id: socrata_prod
+- id: socrata
   type: socrata
   four_four: qzxy-jtkb
   attachments: [nyfc_metadata.pdf]

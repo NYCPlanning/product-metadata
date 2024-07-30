@@ -17,7 +17,7 @@ tags: [housing, house, building, development]
 each_row_is_a: A Mandatorily Included House
 
 destinations:
-- id: socrata_prod
+- id: socrata
   type: socrata
   four_four: bw8v-wzdr
   attachments:

@@ -11,7 +11,7 @@ tags: [state senate districts, dcp, geographic, voting, location, map, cartograp
 each_row_is_a: State Senate District
 
 destinations:
-- id: socrata_prod_wi
+- id: socrata_water_included
   type: socrata
   four_four: kkv2-gkck
   attachments: [nysswi_metadata.pdf]
@@ -24,7 +24,7 @@ destinations:
     ignore_validation: []
     columns: {}
     tags: []
-- id: socrata_prod
+- id: socrata
   type: socrata
   four_four: qi35-3r9s
   attachments: [nyss_metadata.pdf]

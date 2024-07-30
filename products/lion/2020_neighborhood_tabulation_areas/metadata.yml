@@ -24,7 +24,7 @@ tags: [neighborhood tabulation areas, nta, '2020', census, american community su
 each_row_is_a: Neighborhood Tabulation Area
 
 destinations:
-- id: socrata_prod
+- id: socrata
   type: socrata
   four_four: 9nt8-h7nd
   attachments: [nynta2020_metadata.pdf]

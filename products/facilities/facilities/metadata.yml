@@ -27,7 +27,7 @@ tags: [service, services, property, facility, facilities, community, program, sc
 each_row_is_a: Public or Private Facility Licensed to Operate in NYC
 
 destinations:
-- id: socrata_prod
+- id: socrata
   type: socrata
   four_four: ji82-xba5
   attachments:

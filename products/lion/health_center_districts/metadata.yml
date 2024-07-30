@@ -11,7 +11,7 @@ tags: ['gis data: boundaries of health districts']
 each_row_is_a: Health Center District
 
 destinations:
-- id: socrata_prod
+- id: socrata
   type: socrata
   four_four: 6nss-v3ep
   attachments: [nyhc_metadata.pdf]

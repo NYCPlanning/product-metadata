@@ -12,7 +12,7 @@ tags: [node, street, street name, intersection, segment, lion, ldf, change]
 each_row_is_a: Changed Segment or Node
 
 destinations:
-- id: socrata_prod
+- id: socrata
   type: socrata
   four_four: ige5-v6sk
   attachments: [ldf_metadata.pdf]

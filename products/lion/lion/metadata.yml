@@ -16,7 +16,7 @@ tags: [lion, gis, dcp, department of city planning (dcp), nodes]
 each_row_is_a: City Street
 
 destinations:
-- id: socrata_prod
+- id: socrata
   type: socrata
   four_four: 2v4z-66xt
   attachments:

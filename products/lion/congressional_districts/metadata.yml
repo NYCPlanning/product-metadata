@@ -11,7 +11,7 @@ tags: [geographic, voting, location, map, cartography, district, congress, congr
 each_row_is_a: Congressional District
 
 destinations:
-- id: socrata_prod_wi
+- id: socrata_water_included
   type: socrata
   four_four: j5kw-6gtg
   attachments: [nycgwi_metadata.pdf]
@@ -24,7 +24,7 @@ destinations:
     ignore_validation: []
     columns: {}
     tags: []
-- id: socrata_prod
+- id: socrata
   type: socrata
   four_four: j3u5-usz2
   attachments: [nycg_metadata.pdf]

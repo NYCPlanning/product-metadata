@@ -17,7 +17,7 @@ tags:
 each_row_is_a: Atomic Polygon
 
 destinations:
-- id: socrata_prod
+- id: socrata
   type: socrata
   four_four: k4qs-rbku
   attachments: []

@@ -10,7 +10,7 @@ description: >
 tags: [health areas, dcp, health, city planning]
 each_row_is_a: Health Area
 destinations:
-- id: socrata_prod
+- id: socrata
   type: socrata
   four_four: jntv-ngw5
   attachments: [nyha_metadata.pdf]

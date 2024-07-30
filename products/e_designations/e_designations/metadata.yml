@@ -19,7 +19,7 @@ each_row_is_a: E-Designation
 
 destinations:
   # Newly created shapefile destination. # TODO: swap
-- id: socrata_prod_shapefile
+- id: socrata_shapefile
   type: socrata
   four_four: jep3-h9py
   attachments:
@@ -28,7 +28,7 @@ destinations:
   - shapefile
   omit_columns: ['noise_code', 'noise_date', 'effective_date', 'air_date', 'hazmat_date', 'description', 'air_code', 'hazmat_code']
   column_details: {}
-- id: socrata_prod_csv
+- id: socrata_csv
   type: socrata
   four_four: hxm3-23vy
   attachments:

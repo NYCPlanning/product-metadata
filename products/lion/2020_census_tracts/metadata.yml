@@ -11,7 +11,7 @@ tags: [census tracts, '2020', us census bureau, boundary, boundaries, districts,
 each_row_is_a: Census Tract
 
 destinations:
-- id: socrata_water_not_included
+- id: socrata
   type: socrata
   four_four: 63ge-mke6
   attachments: [nyct2020_metadata.pdf]

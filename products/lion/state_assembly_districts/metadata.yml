@@ -11,7 +11,7 @@ tags: ['gis data: state assembly districts', boundary, boundaries, dcp, city pla
 each_row_is_a: State Assembly District
 
 destinations:
-- id: socrata_prod_wi
+- id: socrata_water_included
   type: socrata
   four_four: 8gke-583r
   attachments: [nyadwi_metadata.pdf]
@@ -24,7 +24,7 @@ destinations:
     ignore_validation: []
     columns: {}
     tags: []
-- id: socrata_prod
+- id: socrata
   type: socrata
   four_four: 5yfv-9hkp
   attachments: [nyad_metadata.pdf]

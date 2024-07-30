@@ -11,7 +11,7 @@ tags: [fire divisions, dcp, public safety, fdny]
 each_row_is_a: Fire Division
 
 destinations:
-- id: socrata_prod
+- id: socrata
   type: socrata
   four_four: pdpm-dczf
   attachments: [nyfd_metadata.pdf]

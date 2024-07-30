@@ -11,7 +11,7 @@ tags: [census block, '2020', us census bureau, boundary, boundaries, districts, 
 each_row_is_a: Census Block
 
 destinations:
-- id: socrata_water_not_included
+- id: socrata
   type: socrata
   four_four: wmsu-5muw
   attachments: [nycb2020_metadata.pdf]

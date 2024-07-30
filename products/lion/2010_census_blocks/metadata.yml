@@ -6,7 +6,7 @@ tags: [2010 census blocks, census, '2010', gis, map, dcp]
 each_row_is_a: Census Block
 
 destinations:
-- id: socrata_water_not_included
+- id: socrata
   type: socrata
   four_four: y9w2-ph8n
   attachments: [nycb2010_metadata.pdf]

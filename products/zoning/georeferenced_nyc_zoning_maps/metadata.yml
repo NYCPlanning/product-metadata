@@ -16,7 +16,7 @@ tags: [zoning,  raster,  city planning,  dcp,  maps]
 each_row_is_a: Row
 
 destinations:
-- id: socrata_prod
+- id: socrata
   type: socrata
   four_four: mxbm-493w
   attachments: [georeferencedzoningmaps_metadata]

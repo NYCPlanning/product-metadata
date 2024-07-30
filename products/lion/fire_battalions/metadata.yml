@@ -11,7 +11,7 @@ tags: [fire battalions, dcp, public safety, fdny]
 each_row_is_a: Fire Battalion
 
 destinations:
-- id: socrata_prod
+- id: socrata
   type: socrata
   four_four: srix-vkxq
   attachments: [nyfb_metadata.pdf]

@@ -26,7 +26,7 @@ tags: [community districts, dcp, geographic, location, map, cartography, communi
 each_row_is_a: Community District
 
 destinations:
-- id: socrata_prod
+- id: socrata
   type: socrata
   four_four: 5crt-au7u
   attachments: [nycd_metadata.pdf]
@@ -39,7 +39,7 @@ destinations:
     ignore_validation: []
     columns: {}
     tags: []
-- id: socrata_prod_wi
+- id: socrata_water_included
   type: socrata
   four_four: 597j-7eb8
   attachments: [nycdwi_metadata.pdf]

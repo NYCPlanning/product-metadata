@@ -15,7 +15,7 @@ description: >
 tags: []
 each_row_is_a: Public Use Microdata Area
 destinations:
-- id: socrata_prod
+- id: socrata
   type: socrata
   four_four: k2r4-n9ax
   attachments: [nypuma2010_metadata.pdf]

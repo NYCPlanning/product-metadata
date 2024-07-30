@@ -15,7 +15,7 @@ tags: [pluto, mappluto, dtm, tax block, tax lot, parcels, change, correction, dc
 each_row_is_a: change to selected filed value in PLUTO
 
 destinations:
-- id: socrata_prod
+- id: socrata
   type: socrata
   four_four: qt5r-nqxp
   attachments:

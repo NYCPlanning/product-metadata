@@ -13,7 +13,7 @@ tags: [dcp, street, street name, street code, dictionary, snd, geographic, inter
 each_row_is_a: Street Name
 
 destinations:
-- id: socrata_prod
+- id: socrata
   type: socrata
   four_four: w4v2-rv6b
   attachments: [snd_metadata.pdf]
