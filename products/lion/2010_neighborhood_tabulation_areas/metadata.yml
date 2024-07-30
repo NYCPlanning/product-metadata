@@ -24,13 +24,13 @@ tags: [neighborhood tabulation areas, dcp, city planning, community, area, nta]
 each_row_is_a: Neighborhood Tabulation Area
 
 destinations:
-- id: socrata_prod
+- id: socrata
   type: socrata
   four_four: ca69-3vdk
-  attachments: []
+  attachments: [nynta2010_metadata.pdf]
   datasets:
   - primary_shapefile
-  omit_columns: [nynta2010_metadata.pdf]
+  omit_columns: []
   column_details: {}
 
 package:

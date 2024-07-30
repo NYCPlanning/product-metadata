@@ -11,7 +11,7 @@ tags: ['political & election districts gis: election districts', dcp, geographic
 each_row_is_a: Election District
 
 destinations:
-- id: socrata_prod_wi
+- id: socrata_water_included
   type: socrata
   four_four: 63sm-kk9b
   attachments: [nyedwi_metadata.pdf]
@@ -24,12 +24,12 @@ destinations:
     ignore_validation: []
     columns: {}
     tags: []
-- id: socrata_prod
+- id: socrata
   type: socrata
   four_four: afve-r9tt
   attachments: [nyed_metadata.pdf]
   datasets:
-  - shapefile_wi
+  - shapefile
   omit_columns: []
   column_details: {}
   overrides:

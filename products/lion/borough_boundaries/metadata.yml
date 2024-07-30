@@ -1,14 +1,12 @@
 name: borough_boundaries
 display_name: Borough Boundaries
 summary: ""
-description: >
-  Boundaries of Boroughs (water areas excluded). All previously released versions of this data are available at
-  <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
+description: ""
 tags: [borough boundaries, data, water areas, dcp]
 each_row_is_a: Borough Boundary
 
 destinations:
-- id: socrata_prod_wi
+- id: socrata_water_included
   type: socrata
   four_four: wh2p-dxnf
   attachments: [nybbwi_metadata.pdf]
@@ -21,7 +19,7 @@ destinations:
     ignore_validation: []
     columns: {}
     tags: []
-- id: socrata_prod
+- id: socrata
   type: socrata
   four_four: gthc-hcne
   attachments: [nybb_metadata.pdf]
@@ -48,7 +46,10 @@ package:
       tags: []
       display_name: Borough Boundaries (water areas included)
       description: >
-        Boundaries of Boroughs (water areas included). All previously released versions of this data are available at
+        Boundaries of Boroughs (water areas included).
+
+
+        All previously released versions of this data are available at
         <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
   - name: shapefile
     type: shapefile
@@ -61,7 +62,10 @@ package:
       tags: []
       display_name: Borough Boundaries (water areas excluded)
       description: >
-        Boundaries of Boroughs (water areas excluded). All previously released versions of this data are available at
+        Boundaries of Boroughs (water areas excluded).
+
+
+        All previously released versions of this data are available at
         <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
   attachments:
   - nybb_metadata.pdf

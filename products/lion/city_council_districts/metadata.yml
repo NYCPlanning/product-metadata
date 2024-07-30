@@ -4,13 +4,14 @@ display_name: City Council Districts
 description: >
   GIS data: Boundaries of City Council Districts.
 
+
   All previously released versions of this data are available at
   <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive.</a>
 tags: [geographic, voting, location, map, cartography, city council, council, boundary, elect, election, city council districts, dcp]
 each_row_is_a: Council District
 
 destinations:
-- id: socrata_prod_wi
+- id: socrata_water_included
   type: socrata
   four_four: acqs-su35
   attachments: [nyccwi_metadata.pdf]
@@ -23,7 +24,7 @@ destinations:
     ignore_validation: []
     columns: {}
     tags: []
-- id: socrata_prod
+- id: socrata
   type: socrata
   four_four: 872g-cjhh
   attachments: [nycc_metadata.pdf]
@@ -51,6 +52,7 @@ package:
       display_name: City Council Districts (Water Areas Included)
       description: >
         GIS data: Boundaries of City Council Districts. (Water Areas Included)
+
 
         All previously released versions of this data are available at
         <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive.</a>

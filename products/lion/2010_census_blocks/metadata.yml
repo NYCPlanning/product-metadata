@@ -1,11 +1,7 @@
 name: 2010_census_blocks
 display_name: 2010 Census Blocks
 summary: ""
-description: >
-  2010 Census Blocks from the US Census for New York City. These boundary
-  files are derived from the US Census Bureau's TIGER data products and have been
-  geographically modified to fit the New York City base map. All previously released
-  versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive.</a>
+description: ""
 tags: [2010 census blocks, census, '2010', gis, map, dcp]
 each_row_is_a: Census Block
 
@@ -38,7 +34,10 @@ package:
       description: >
         2010 Census Blocks from the US Census for New York City. These boundary
         files are derived from the US Census Bureau's TIGER data products and have been
-        geographically modified to fit the New York City base map. All previously released
+        geographically modified to fit the New York City base map.
+
+
+        All previously released
         versions of this data are available at
         <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive.</a>
       omit_columns: []
@@ -52,7 +51,10 @@ package:
       description: >
         2010 Census Blocks (water areas included) from the US Census for New York City. These boundary
         files are derived from the US Census Bureau's TIGER data products and have been
-        geographically modified to fit the New York City base map. All previously released
+        geographically modified to fit the New York City base map.
+
+
+        All previously released
         versions of this data are available at
         <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive.</a>
       omit_columns: []

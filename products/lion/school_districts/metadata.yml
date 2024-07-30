@@ -4,13 +4,14 @@ summary: ""
 description: >
   GIS data: Boundaries of School Districts.
 
+
   All previously released versions of this data are available at
   <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
 tags: [school districts, education, dcp, city planning, maps]
 each_row_is_a: School District
 
 destinations:
-- id: socrata_prod
+- id: socrata
   type: socrata
   four_four: 8ugf-3d8u
   attachments: [nysd_metadata.pdf]
