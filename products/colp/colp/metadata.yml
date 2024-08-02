@@ -284,8 +284,8 @@ columns:
     data_type: wkb
     readme_data_type: geometry
 
-dataset_package:
-  datasets:
+package:
+  dataset_files:
     - name: primary_shapefile
       filename: colp_shp.zip
       type: shapefile
@@ -435,13 +435,3 @@ destinations:
       geom:
         api_name: the_geom
         display_name: GEOM
-
-
-  # FYI, not implemented.
-  - id: bytes
-    type: bytes
-    datasets:
-      - primary_shapefile
-      - primary_csv
-      - primary_file_geodatabase
-      # - "colp.xlsx" TODO: still required?
