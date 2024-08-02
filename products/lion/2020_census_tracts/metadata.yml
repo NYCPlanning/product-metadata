@@ -1,140 +1,162 @@
-name: 2020_census_tracts
-display_name: 2020 Census Tracts
-summary: ""
-description: >
-  2020 Census Tracts from the US Census for New York City. These boundary files
-  are derived from the US Census Bureau's TIGER data products and have been geographically
-  modified to fit the New York City base map. All previously released versions of
-  this data are available at
-  <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
-tags: [census tracts, '2020', us census bureau, boundary, boundaries, districts, lion, cscl, department of city planning, dcp]
-each_row_is_a: Census Tract
+id: 2020_census_tracts
+
+attributes:
+  description: '2020 Census Tracts from the US Census for New York City. These boundary
+    files are derived from the US Census Bureau''s TIGER data products and have been
+    geographically modified to fit the New York City base map. All previously released
+    versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES
+    of the BIG APPLE- Archive</a>.
+
+    '
+  display_name: 2020 Census Tracts
+  each_row_is_a: Census Tract
+  tags:
+  - census tracts
+  - '2020'
+  - us census bureau
+  - boundary
+  - boundaries
+  - districts
+  - lion
+  - cscl
+  - department of city planning
+  - dcp
+
+assembly: []
 
 destinations:
 - id: socrata
   type: socrata
-  four_four: 63ge-mke6
-  attachments: [nyct2020_metadata.pdf]
-  datasets:
-  - shapefile_water_not_included
-  omit_columns: []
-  column_details: {}
-
+  files:
+  - id: nyct2020_metadata.pdf
+    custom:
+      destination_use: attachment
+  - id: shapefile_water_not_included
+    custom:
+      destination_use: dataset_file
+  custom:
+    four_four: 63ge-mke6
 - id: socrata_water_included
   type: socrata
-  four_four: imfq-nf3j
-  attachments: [nyct2020wi_metadata.pdf]
-  datasets:
-  - shapefile_water_included
-  omit_columns: []
-  column_details: {}
+  files:
+  - id: nyct2020wi_metadata.pdf
+    custom:
+      destination_use: attachment
+  - id: shapefile_water_included
+    custom:
+      destination_use: dataset_file
+  custom:
+    four_four: imfq-nf3j
 
-package:
-  dataset_files:
-  - name: shapefile_water_not_included
-    type: shapefile
-    filename: nyct2020.zip
-    overrides:
-      omit_columns: []
-      ignore_validation: []
-      columns: {}
-  - name: shapefile_water_included
-    type: shapefile
-    filename: nyct2020wi.zip
-    overrides:
-      display_name: 2020 Census Blocks (water areas included)
-      description: >
-        2020 Census Blocks (water areas included) from the US Census for New York City. These boundary
-        files are derived from the US Census Bureau's TIGER data products and have been
-        geographically modified to fit the New York City base map. All previously released
-        versions of this data are available at
-        <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
-      omit_columns: []
-      ignore_validation: []
-      columns: {}
-  attachments:
-  - nyct2020_metadata.pdf
-  - nyct2020wi_metadata.pdf
+files:
+- id: shapefile_water_not_included
+  filename: nyct2020.zip
+  type: shapefile
+- id: shapefile_water_included
+  filename: nyct2020wi.zip
+  type: shapefile
+  overrides:
+    description: '2020 Census Blocks (water areas included) from the US Census for
+      New York City. These boundary files are derived from the US Census Bureau''s
+      TIGER data products and have been geographically modified to fit the New York
+      City base map. All previously released versions of this data are available at
+      <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES
+      of the BIG APPLE- Archive</a>.
+
+      '
+    display_name: 2020 Census Blocks (water areas included)
+- id: nyct2020_metadata.pdf
+  filename: nyct2020_metadata.pdf
+- id: nyct2020wi_metadata.pdf
+  filename: nyct2020wi_metadata.pdf
 
 columns:
-- name: the_geom
+- id: the_geom
   display_name: the_geom
-  description: ''
-  data_type: wkb
-  readme_data_type: geometry
-- name: ctlabel
+  data_type: geometry
+  example: None
+  custom:
+    readme_data_type: geometry
+- id: ctlabel
   display_name: CTLabel
-  description: 'The census tract identifier for the polygon. Each 2020 census tract number is unique to its borough.'
   data_type: text
+  description: The census tract identifier for the polygon. Each 2020 census tract
+    number is unique to its borough.
   example: '75'
-- name: borocode
+- id: borocode
   display_name: BoroCode
-  description: 'Borough of census tract.'
   data_type: text
+  description: Borough of census tract.
   example: '3'
   values:
-    - ["1", Manhattan]
-    - ["2", Bronx]
-    - ["3", Brooklyn]
-    - ["4", Queens]
-    - ["5", Staten Island]
-- name: boroname
+  - value: '1'
+    description: Manhattan
+  - value: '2'
+    description: Bronx
+  - value: '3'
+    description: Brooklyn
+  - value: '4'
+    description: Queens
+  - value: '5'
+    description: Staten Island
+- id: boroname
   display_name: BoroName
-  description: 'Borough Name.'
   data_type: text
+  description: Borough Name.
   example: Brooklyn
   values:
-    - [Brooklyn, ""]
-    - [Bronx, ""]
-    - [Manhattan, ""]
-    - [Queens, ""]
-    - [Staten Island, ""]
-- name: ct2020
+  - value: Brooklyn
+  - value: Bronx
+  - value: Manhattan
+  - value: Queens
+  - value: Staten Island
+- id: ct2020
   display_name: CT2020
-  description: 'String value of the 2020 census tract number.'
   data_type: text
+  description: String value of the 2020 census tract number.
   example: '024700'
-- name: boroct2020
+- id: boroct2020
   display_name: BoroCT2020
-  description: 'Merged string of borough code and 2020 census tract number.'
   data_type: text
+  description: Merged string of borough code and 2020 census tract number.
   example: '1012902'
-- name: cdeligibil
+- id: cdeligibil
   display_name: CDEligibil
-  description: 'Community Development Block Grant Eligibility.'
   data_type: text
-- name: ntaname
+  description: Community Development Block Grant Eligibility.
+  example: None
+- id: ntaname
   display_name: NTAName
-  description: 'Community Development Block Grant Eligibility.'
   data_type: text
+  description: Community Development Block Grant Eligibility.
   example: Canarsie
-- name: nta2020
+- id: nta2020
   display_name: NTA2020
-  description: '2020 Neighborhood Tabulation Area Code'
   data_type: text
+  description: 2020 Neighborhood Tabulation Area Code
   example: BK1803
-- name: cdta2020
+- id: cdta2020
   display_name: CDTA2020
-  description: '2020 Community District Tabulation Area code'
   data_type: text
+  description: 2020 Community District Tabulation Area code
   example: QN12
-- name: cdtaname
+- id: cdtaname
   display_name: CDTANAME
-  description: '2020 Community District Tabulation Area name'
   data_type: text
+  description: 2020 Community District Tabulation Area name
   example: QN12 Jamaica-St. Albans-Hollis (CD 12 Approximation)
-- name: geoid
+- id: geoid
   display_name: GEOID
-  description: 'Full Census Tract number including the FIPS state and county code'
   data_type: text
+  description: Full Census Tract number including the FIPS state and county code
   example: '36085020702'
-- name: shape_leng
+- id: shape_leng
   display_name: Shape_Leng
-  description: 'Length of feature in internal units.'
-  data_type: double
+  data_type: decimal
+  description: Length of feature in internal units.
   example: '6231.17106636'
-- name: shape_area
+- id: shape_area
   display_name: Shape_Area
-  description: 'Area of feature in internal units squared.'
-  data_type: double
+  data_type: decimal
+  description: Area of feature in internal units squared.
   example: '5103683.95122'

@@ -1,74 +1,83 @@
-name: dcp_template_db
-display_name: "Template DB (Overridden at the dest level)"
-summary: |
-  Template DB is a mock dataset created by the Data Engineering team at the Department of City Planning (DCP).
-description: "Overriding at the the destination-level"
-tags: [Department of City Planning, DCP, New York City, NYC]
-each_row_is_a: Interesting place in NYC
+id: dcp_template_db
 
-columns:
-  - name: place_name
-    description: The name of the Place
-    display_name: Place Name
-    data_type: text
+attributes:
+  description: Overriding at the the destination-level
+  display_name: Template DB (Overridden at the dest level)
+  each_row_is_a: Interesting place in NYC
+  tags:
+  - Department of City Planning
+  - DCP
+  - New York City
+  - NYC
 
-  - name: bbl
-    description: The Borough-Block-Lot (BBL) of the Place
-    display_name: BBL
-    data_type: bbl
-
-  - name: place_type
-    description: The type of the Place
-    display_name: Place Type
-    data_type: text
-
-  - name: borough
-    description: The borough of the Place
-    display_name: Borough
-    data_type: text
-
-  - name: wkb_geometry
-    description: The geometry of the Place
-    display_name: Geometry
-    data_type: wkb
-
-package:
-  dataset_files:
-    - name: primary_csv
-      filename: templatedb.csv
-      type: csv
-    - name: shapefile_points
-      filename: templatedb_points.shp.zip
-      type: shapefile
-      overrides:
-        columns:
-          wkb_geometry:
-            name: the_geom
-    - name: shapefile_polygons
-      filename: templatedb_polygons.shp.zip
-      type: shapefile
-      overrides:
-        columns:
-          wkb_geometry:
-            name: the_geom
-  attachments:
-    - source_data_versions.csv
-    - build_metadata.json
+assembly: []
 
 destinations:
-  - id: socrata
-    type: socrata
-    four_four: "b7pm-uzu7"
-    datasets:
-      - shapefile_points
-    attachments:
-      - source_data_versions.csv
+- id: socrata
+  type: socrata
+  files:
+  - id: source_data_versions.csv
+    custom:
+      destination_use: attachment
+  - id: shapefile_points
     overrides:
-      display_name: Template DB
-      description: |
-          Template DB is a mock dataset created by the Data Engineering team at the Department of City Planning (DCP).
+      overridden_columns:
+      - id: the_geom
+        custom:
+          api_name: wkb_geometry
+    custom:
+      destination_use: dataset_file
+  custom:
+    four_four: b7pm-uzu7
 
-          More details are available at the DCP Data Engineering wiki <a href="https://github.com/NYCPlanning/data-engineering/wiki/"\>here</a>
-    column_details:
-      the_geom:
-        api_name: wkb_geometry
+files:
+- id: primary_csv
+  filename: templatedb.csv
+  type: csv
+- id: shapefile_points
+  filename: templatedb_points.shp.zip
+  type: shapefile
+  overrides:
+    overridden_columns:
+    - id: wkb_geometry
+      custom:
+        name: the_geom
+- id: shapefile_polygons
+  filename: templatedb_polygons.shp.zip
+  type: shapefile
+  overrides:
+    overridden_columns:
+    - id: wkb_geometry
+      custom:
+        name: the_geom
+- id: source_data_versions.csv
+  filename: source_data_versions.csv
+- id: build_metadata.json
+  filename: build_metadata.json
+
+columns:
+- id: place_name
+  display_name: Place Name
+  data_type: text
+  description: The name of the Place
+  example: None
+- id: bbl
+  display_name: BBL
+  data_type: bbl
+  description: The Borough-Block-Lot (BBL) of the Place
+  example: None
+- id: place_type
+  display_name: Place Type
+  data_type: text
+  description: The type of the Place
+  example: None
+- id: borough
+  display_name: Borough
+  data_type: text
+  description: The borough of the Place
+  example: None
+- id: wkb_geometry
+  display_name: Geometry
+  data_type: geometry
+  description: The geometry of the Place
+  example: None

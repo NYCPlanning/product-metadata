@@ -1,96 +1,112 @@
-name: state_senate_districts
-summary: ""
-display_name: State Senate Districts
-description: >
-  GIS data: Boundaries of State Senate Districts.
+id: state_senate_districts
+
+attributes:
+  description: 'GIS data: Boundaries of State Senate Districts.
 
 
-  All previously released versions of this data are available at
-  <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
-tags: [state senate districts, dcp, geographic, voting, location, map, cartography, state, senate, district, boundary]
-each_row_is_a: State Senate District
+    All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES
+    of the BIG APPLE- Archive</a>.
+
+    '
+  display_name: State Senate Districts
+  each_row_is_a: State Senate District
+  tags:
+  - state senate districts
+  - dcp
+  - geographic
+  - voting
+  - location
+  - map
+  - cartography
+  - state
+  - senate
+  - district
+  - boundary
+
+assembly: []
 
 destinations:
 - id: socrata_water_included
   type: socrata
-  four_four: kkv2-gkck
-  attachments: [nysswi_metadata.pdf]
-  datasets:
-  - primary_shapefile_wi
-  omit_columns: []
-  column_details: {}
-  overrides:
-    omit_columns: []
-    ignore_validation: []
-    columns: {}
-    tags: []
+  files:
+  - id: nysswi_metadata.pdf
+    custom:
+      destination_use: attachment
+  - id: primary_shapefile_wi
+    custom:
+      destination_use: dataset_file
+  custom:
+    four_four: kkv2-gkck
 - id: socrata
   type: socrata
-  four_four: qi35-3r9s
-  attachments: [nyss_metadata.pdf]
-  datasets:
-  - primary_shapefile
-  omit_columns: []
-  column_details: {}
+  files:
+  - id: nyss_metadata.pdf
+    custom:
+      destination_use: attachment
+  - id: primary_shapefile
+    custom:
+      destination_use: dataset_file
+  custom:
+    four_four: qi35-3r9s
+
+files:
+- id: primary_shapefile_wi
+  filename: nysswi.zip
+  type: shapefile
   overrides:
-    omit_columns: []
-    ignore_validation: []
-    columns: {}
-    tags: []
-
-package:
-  dataset_files:
-  - name: primary_shapefile_wi
-    type: shapefile
-    filename: nysswi.zip
-    overrides:
-      omit_columns: []
-      ignore_validation: []
-      columns:
-        shape_length: {name: shape_leng}
-        state_senate_district: {name: stsendist}
-      tags: []
-      display_name: State Senate Districts
-      description: >
-        GIS data: Boundaries of State Senate Districts (water areas included).
+    description: 'GIS data: Boundaries of State Senate Districts (water areas included).
 
 
-        All previously released versions of this data are available at
-        <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
-  - name: primary_shapefile
-    type: shapefile
-    filename: nyss.zip
-    overrides:
-      omit_columns: []
-      ignore_validation: []
-      columns:
-        shape_length: {name: shape_leng}
-        state_senate_district: {name: stsendist}
-      tags: []
-      description: >
-        GIS data: Boundaries of State Senate Districts.
+      All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES
+      of the BIG APPLE- Archive</a>.
+
+      '
+    display_name: State Senate Districts
+    overridden_columns:
+    - id: shape_length
+      custom:
+        name: shape_leng
+    - id: state_senate_district
+      custom:
+        name: stsendist
+- id: primary_shapefile
+  filename: nyss.zip
+  type: shapefile
+  overrides:
+    description: 'GIS data: Boundaries of State Senate Districts.
 
 
-        All previously released versions of this data are available at
-        <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
-  attachments:
-  - nyss_metadata.pdf
-  - nysswi_metadata.pdf
+      All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES
+      of the BIG APPLE- Archive</a>.
+
+      '
+    overridden_columns:
+    - id: shape_length
+      custom:
+        name: shape_leng
+    - id: state_senate_district
+      custom:
+        name: stsendist
+- id: nyss_metadata.pdf
+  filename: nyss_metadata.pdf
+- id: nysswi_metadata.pdf
+  filename: nysswi_metadata.pdf
 
 columns:
-- name: state_senate_district
+- id: state_senate_district
   display_name: StateSenateDistrict
-  description: New York State Senate District Number
   data_type: integer
-- name: the_geom
+  description: New York State Senate District Number
+  example: None
+- id: the_geom
   display_name: Shape
-  description: ""
-  data_type: wkb
-- name: shape_length
+  data_type: geometry
+  example: None
+- id: shape_length
   display_name: Shape_Length
-  description: ""
-  data_type: double
-- name: shape_area
+  data_type: decimal
+  example: None
+- id: shape_area
   display_name: Shape_Area
-  description: ""
-  data_type: double
+  data_type: decimal
+  example: None
