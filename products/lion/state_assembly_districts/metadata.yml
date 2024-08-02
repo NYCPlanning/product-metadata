@@ -1,97 +1,108 @@
-name: state_assembly_districts
-summary: ""
-display_name: State Assembly Districts
-description: >
-  GIS data: Boundaries of State Assembly Districts.
+id: state_assembly_districts
+
+attributes:
+  description: 'GIS data: Boundaries of State Assembly Districts.
 
 
-  All previously released versions of this data are available at
-  <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
-tags: ['gis data: state assembly districts', boundary, boundaries, dcp, city planning, politics]
-each_row_is_a: State Assembly District
+    All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES
+    of the BIG APPLE- Archive</a>.
+
+    '
+  display_name: State Assembly Districts
+  each_row_is_a: State Assembly District
+  tags:
+  - 'gis data: state assembly districts'
+  - boundary
+  - boundaries
+  - dcp
+  - city planning
+  - politics
+
+assembly: []
 
 destinations:
 - id: socrata_water_included
   type: socrata
-  four_four: 8gke-583r
-  attachments: [nyadwi_metadata.pdf]
-  datasets:
-  - primary_shapefile_wi
-  omit_columns: []
-  column_details: {}
-  overrides:
-    omit_columns: []
-    ignore_validation: []
-    columns: {}
-    tags: []
+  files:
+  - id: nyadwi_metadata.pdf
+    custom:
+      destination_use: attachment
+  - id: primary_shapefile_wi
+    custom:
+      destination_use: dataset_file
+  custom:
+    four_four: 8gke-583r
 - id: socrata
   type: socrata
-  four_four: 5yfv-9hkp
-  attachments: [nyad_metadata.pdf]
-  datasets:
-  - primary_shapefile
-  omit_columns: []
-  column_details: {}
+  files:
+  - id: nyad_metadata.pdf
+    custom:
+      destination_use: attachment
+  - id: primary_shapefile
+    custom:
+      destination_use: dataset_file
+  custom:
+    four_four: 5yfv-9hkp
+
+files:
+- id: primary_shapefile_wi
+  filename: nyadwi.zip
+  type: shapefile
   overrides:
-    omit_columns: []
-    ignore_validation: []
-    columns: {}
-    tags: []
-
-package:
-  dataset_files:
-  - name: primary_shapefile_wi
-    type: shapefile
-    filename: nyadwi.zip
-    overrides:
-      omit_columns: []
-      ignore_validation: []
-      columns:
-        shape_length: {name: shape_leng}
-        assembly_district: {name: assemdist}
-      tags: []
-      display_name: State Assembly Districts (water areas included)
-      description: >
-        GIS data: Boundaries of State Assembly Districts (water areas included).
+    description: 'GIS data: Boundaries of State Assembly Districts (water areas included).
 
 
-        All previously released versions of this data are available at
-        <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
-  - name: primary_shapefile
-    type: shapefile
-    filename: nyad.zip
-    overrides:
-      omit_columns: []
-      ignore_validation: []
-      columns:
-        shape_length: {name: shape_leng}
-        assembly_district: {name: assemdist}
-      tags: []
-      display_name: State Assembly Districts
-      description: >
-        GIS data: Boundaries of State Assembly Districts.
+      All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES
+      of the BIG APPLE- Archive</a>.
+
+      '
+    display_name: State Assembly Districts (water areas included)
+    overridden_columns:
+    - id: shape_length
+      custom:
+        name: shape_leng
+    - id: assembly_district
+      custom:
+        name: assemdist
+- id: primary_shapefile
+  filename: nyad.zip
+  type: shapefile
+  overrides:
+    description: 'GIS data: Boundaries of State Assembly Districts.
 
 
-        All previously released versions of this data are available at
-        <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
-  attachments:
-  - nyad_metadata.pdf
-  - nyadwi_metadata.pdf
+      All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES
+      of the BIG APPLE- Archive</a>.
+
+      '
+    display_name: State Assembly Districts
+    overridden_columns:
+    - id: shape_length
+      custom:
+        name: shape_leng
+    - id: assembly_district
+      custom:
+        name: assemdist
+- id: nyad_metadata.pdf
+  filename: nyad_metadata.pdf
+- id: nyadwi_metadata.pdf
+  filename: nyadwi_metadata.pdf
 
 columns:
-- name: assembly_district
+- id: assembly_district
   display_name: AssemblyDistrict
-  description: State Assembly District Number
   data_type: integer
-- name: the_geom
+  description: State Assembly District Number
+  example: None
+- id: the_geom
   display_name: Shape
-  description: ""
-  data_type: wkb
-- name: shape_length
+  data_type: geometry
+  example: None
+- id: shape_length
   display_name: Shape_Length
-  description: ""
-  data_type: double
-- name: shape_area
+  data_type: decimal
+  example: None
+- id: shape_area
   display_name: Shape_Area
-  description: ""
-  data_type: double
+  data_type: decimal
+  example: None

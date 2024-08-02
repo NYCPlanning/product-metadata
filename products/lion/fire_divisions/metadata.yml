@@ -1,58 +1,63 @@
-name: fire_divisions
-display_name: Fire Divisions
-summary: ""
-description: >
-  GIS data: Boundaries of Fire Divisions.
+id: fire_divisions
+
+attributes:
+  description: 'GIS data: Boundaries of Fire Divisions.
 
 
-  All previously released versions of this data are available at
-  <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
-tags: [fire divisions, dcp, public safety, fdny]
-each_row_is_a: Fire Division
+    All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES
+    of the BIG APPLE- Archive</a>.
+
+    '
+  display_name: Fire Divisions
+  each_row_is_a: Fire Division
+  tags:
+  - fire divisions
+  - dcp
+  - public safety
+  - fdny
+
+assembly: []
 
 destinations:
 - id: socrata
   type: socrata
-  four_four: pdpm-dczf
-  attachments: [nyfd_metadata.pdf]
-  datasets:
-  - shapefile
-  omit_columns: []
-  column_details: {}
-  overrides:
-    omit_columns: []
-    ignore_validation: []
-    columns: {}
-    tags: []
+  files:
+  - id: nyfd_metadata.pdf
+    custom:
+      destination_use: attachment
+  - id: shapefile
+    custom:
+      destination_use: dataset_file
+  custom:
+    four_four: pdpm-dczf
 
-package:
-  dataset_files:
-  - name: shapefile
-    type: shapefile
-    filename: nyfd.zip
-    overrides:
-      omit_columns: []
-      ignore_validation: []
-      columns:
-        shape_length: {name: shape_leng}
-      tags: []
-  attachments:
-  - nyfd_metadata.pdf
+files:
+- id: shapefile
+  filename: nyfd.zip
+  type: shapefile
+  overrides:
+    overridden_columns:
+    - id: shape_length
+      custom:
+        name: shape_leng
+- id: nyfd_metadata.pdf
+  filename: nyfd_metadata.pdf
 
 columns:
-- name: firediv
+- id: firediv
   display_name: FireDiv
-  description: The fire division number servicing the district
   data_type: integer
-- name: the_geom
+  description: The fire division number servicing the district
+  example: None
+- id: the_geom
   display_name: Shape
-  description: ""
-  data_type: wkb
-- name: shape_length
+  data_type: geometry
+  example: None
+- id: shape_length
   display_name: Shape_Length
-  description: ""
-  data_type: double
-- name: shape_area
+  data_type: decimal
+  example: None
+- id: shape_area
   display_name: Shape_Area
-  description: ""
-  data_type: double
+  data_type: decimal
+  example: None

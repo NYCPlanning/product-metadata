@@ -1,106 +1,117 @@
-name: borough_boundaries
-display_name: Borough Boundaries
-summary: ""
-description: ""
-tags: [borough boundaries, data, water areas, dcp]
-each_row_is_a: Borough Boundary
+id: borough_boundaries
+
+attributes:
+  display_name: Borough Boundaries
+  each_row_is_a: Borough Boundary
+  tags:
+  - borough boundaries
+  - data
+  - water areas
+  - dcp
+
+assembly: []
 
 destinations:
 - id: socrata_water_included
   type: socrata
-  four_four: wh2p-dxnf
-  attachments: [nybbwi_metadata.pdf]
-  datasets:
-  - shapefile_wi
-  omit_columns: []
-  column_details: {}
-  overrides:
-    omit_columns: []
-    ignore_validation: []
-    columns: {}
-    tags: []
+  files:
+  - id: nybbwi_metadata.pdf
+    custom:
+      destination_use: attachment
+  - id: shapefile_wi
+    custom:
+      destination_use: dataset_file
+  custom:
+    four_four: wh2p-dxnf
 - id: socrata
   type: socrata
-  four_four: gthc-hcne
-  attachments: [nybb_metadata.pdf]
-  datasets:
-  - shapefile
-  omit_columns: []
-  column_details: {}
+  files:
+  - id: nybb_metadata.pdf
+    custom:
+      destination_use: attachment
+  - id: shapefile
+    custom:
+      destination_use: dataset_file
+  custom:
+    four_four: gthc-hcne
+
+files:
+- id: shapefile_wi
+  filename: nybbwi.zip
+  type: shapefile
   overrides:
-    omit_columns: []
-    ignore_validation: []
-    columns: {}
-    tags: []
-
-package:
-  dataset_files:
-  - name: shapefile_wi
-    type: shapefile
-    filename: nybbwi.zip
-    overrides:
-      omit_columns: []
-      ignore_validation: []
-      columns:
-        shape_length: {name: shape_leng}
-      tags: []
-      display_name: Borough Boundaries (water areas included)
-      description: >
-        Boundaries of Boroughs (water areas included).
+    description: 'Boundaries of Boroughs (water areas included).
 
 
-        All previously released versions of this data are available at
-        <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
-  - name: shapefile
-    type: shapefile
-    filename: nybb.zip
-    overrides:
-      omit_columns: []
-      ignore_validation: []
-      columns:
-        shape_length: {name: shape_leng}
-      tags: []
-      display_name: Borough Boundaries (water areas excluded)
-      description: >
-        Boundaries of Boroughs (water areas excluded).
+      All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES
+      of the BIG APPLE- Archive</a>.
+
+      '
+    display_name: Borough Boundaries (water areas included)
+    overridden_columns:
+    - id: shape_length
+      custom:
+        name: shape_leng
+- id: shapefile
+  filename: nybb.zip
+  type: shapefile
+  overrides:
+    description: 'Boundaries of Boroughs (water areas excluded).
 
 
-        All previously released versions of this data are available at
-        <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
-  attachments:
-  - nybb_metadata.pdf
-  - nybbwi_metadata.pdf
+      All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES
+      of the BIG APPLE- Archive</a>.
+
+      '
+    display_name: Borough Boundaries (water areas excluded)
+    overridden_columns:
+    - id: shape_length
+      custom:
+        name: shape_leng
+- id: nybb_metadata.pdf
+  filename: nybb_metadata.pdf
+- id: nybbwi_metadata.pdf
+  filename: nybbwi_metadata.pdf
 
 columns:
-- name: borocode
+- id: borocode
   display_name: BoroCode
-  description: 'Borough Code'
   data_type: integer
+  description: Borough Code
+  example: None
   values:
-    - ["1", Manhattan]
-    - ["2", Bronx]
-    - ["3", Brooklyn]
-    - ["4", Queens]
-    - ["5", Staten Island]
-- name: boroname
+  - value: '1'
+    description: Manhattan
+  - value: '2'
+    description: Bronx
+  - value: '3'
+    description: Brooklyn
+  - value: '4'
+    description: Queens
+  - value: '5'
+    description: Staten Island
+- id: boroname
   display_name: BoroName
-  description: 'Name of Borough.'
   data_type: text
+  description: Name of Borough.
+  example: None
   values:
-  - [Brooklyn]
-  - [Bronx]
-  - [Manhattan]
-  - [Queens]
-  - [Staten Island]
-- name: shape_area
+  - value: Brooklyn
+  - value: Bronx
+  - value: Manhattan
+  - value: Queens
+  - value: Staten Island
+- id: shape_area
   display_name: Shape_Area
-  description: 'Area of feature in internal units squared.'
-  data_type: double
-- name: shape_length
+  data_type: decimal
+  description: Area of feature in internal units squared.
+  example: None
+- id: shape_length
   display_name: Shape_Length
-  description: 'Length of feature in internal units.'
-  data_type: double
-- name: the_geom
+  data_type: decimal
+  description: Length of feature in internal units.
+  example: None
+- id: the_geom
   display_name: the_geom
-  description: ''
-  data_type: wkb
+  data_type: geometry
+  example: None

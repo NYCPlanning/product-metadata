@@ -1,64 +1,70 @@
-name: hurricane_evacuation_zones
-display_name: Hurricane Evacuation Zones
-summary: ""
-description: >
-  "Hurricane Evacuation Zones are determined by New York City Emergency
-  Management and represent varying threat levels of coastal flooding resulting from
-  storm surge. Hurricane evacuation zones should not be confused with flood insurance
-  risk zones, which are designated by FEMA and available in the form of Flood Insurance
-  Rate Maps (FIRMs).
+id: hurricane_evacuation_zones
+
+attributes:
+  description: '"Hurricane Evacuation Zones are determined by New York City Emergency
+    Management and represent varying threat levels of coastal flooding resulting from
+    storm surge. Hurricane evacuation zones should not be confused with flood insurance
+    risk zones, which are designated by FEMA and available in the form of Flood Insurance
+    Rate Maps (FIRMs).
 
 
-  All previously released versions of this data
-  are available at
-  <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
-tags: [nycem, evacuation, hurricane, zones]
-each_row_is_a: Hurricane Evacuation Zone
+    All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES
+    of the BIG APPLE- Archive</a>.
+
+    '
+  display_name: Hurricane Evacuation Zones
+  each_row_is_a: Hurricane Evacuation Zone
+  tags:
+  - nycem
+  - evacuation
+  - hurricane
+  - zones
+
+assembly: []
 
 destinations:
 - id: socrata
   type: socrata
-  four_four: epne-qv9x
-  attachments: [nyhez_metadata.pdf]
-  datasets:
-  - primary_shapefile
-  omit_columns: []
-  column_details: {}
-  overrides:
-    omit_columns: []
-    ignore_validation: []
-    columns: {}
-    tags: []
+  files:
+  - id: nyhez_metadata.pdf
+    custom:
+      destination_use: attachment
+  - id: primary_shapefile
+    custom:
+      destination_use: dataset_file
+  custom:
+    four_four: epne-qv9x
 
-package:
-  dataset_files:
-  - name: primary_shapefile
-    type: shapefile
-    filename: nyhez.zip
-    overrides:
-      omit_columns: []
-      ignore_validation: []
-      columns:
-        shape_length: {name: shape_leng}
-        hurricane_evacuation_zone: {name: hurricane_}
-      tags: []
-  attachments:
-  - nyhez_metadata.pdf
+files:
+- id: primary_shapefile
+  filename: nyhez.zip
+  type: shapefile
+  overrides:
+    overridden_columns:
+    - id: shape_length
+      custom:
+        name: shape_leng
+    - id: hurricane_evacuation_zone
+      custom:
+        name: hurricane_
+- id: nyhez_metadata.pdf
+  filename: nyhez_metadata.pdf
 
 columns:
-- name: hurricane_evacuation_zone
+- id: hurricane_evacuation_zone
   display_name: HurricaneEvacuationZone
-  description: Hurricane Evacuation Zone
   data_type: text
-- name: the_geom
+  description: Hurricane Evacuation Zone
+  example: None
+- id: the_geom
   display_name: Shape
-  description: ""
-  data_type: wkb
-- name: shape_length
+  data_type: geometry
+  example: None
+- id: shape_length
   display_name: Shape_Length
-  description: ""
-  data_type: double
-- name: shape_area
+  data_type: decimal
+  example: None
+- id: shape_area
   display_name: Shape_Area
-  description: ""
-  data_type: double
+  data_type: decimal
+  example: None

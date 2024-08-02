@@ -1,45 +1,50 @@
-name: property_address_directory
-display_name: Property Address Directory
-summary: ''
-description: >
-  The PAD (Property Address Directory) file contains additional geographic
-  information at the tax lot level not found in the PLUTO files.  This data includes
-  alias addresses and Building Identification Numbers (BINs).  It consists of two
-  ASCII, comma delimited files: a tax lot file and an address file.
+id: property_address_directory
+
+attributes:
+  description: 'The PAD (Property Address Directory) file contains additional geographic
+    information at the tax lot level not found in the PLUTO files.  This data includes
+    alias addresses and Building Identification Numbers (BINs).  It consists of two
+    ASCII, comma delimited files: a tax lot file and an address file.
 
 
-  All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
-tags: [dcp, pad, property address directory, lot, tax lot, building, city planning, planning, block]
-each_row_is_a: Property Address
+    All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES
+    of the BIG APPLE- Archive</a>.
+
+    '
+  display_name: Property Address Directory
+  each_row_is_a: Property Address
+  tags:
+  - dcp
+  - pad
+  - property address directory
+  - lot
+  - tax lot
+  - building
+  - city planning
+  - planning
+  - block
+
+assembly: []
 
 destinations:
 - id: socrata
   type: socrata
-  four_four: bc8t-ecyu
-  attachments: [padlayout.pdf]
-  datasets:
-  - primary_shapefile
-  omit_columns: []
-  column_details: {}
-  is_unparsed_dataset: true
-  overrides:
-    omit_columns: []
-    ignore_validation: []
-    columns: {}
-    tags: []
-    destination_file_name: pad_{{ version }}.zip
+  files:
+  - id: padlayout.pdf
+    custom:
+      destination_use: attachment
+  - id: primary_shapefile
+    custom:
+      destination_use: dataset_file
+  custom:
+    four_four: bc8t-ecyu
+    is_unparsed_dataset: true
 
-package:
-  dataset_files:
-  - name: primary_shapefile
-    type: shapefile
-    filename: pad.zip
-    overrides:
-      omit_columns: []
-      ignore_validation: []
-      columns: {}
-      tags: []
-  attachments:
-  - padlayout.pdf
+files:
+- id: primary_shapefile
+  filename: pad.zip
+  type: shapefile
+- id: padlayout.pdf
+  filename: padlayout.pdf
 
 columns: []

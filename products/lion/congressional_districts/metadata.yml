@@ -1,88 +1,102 @@
-name: congressional_districts
-summary: ""
-display_name: Congressional Districts
-description: >
-  GIS data: Boundaries of Congressional Districts.
+id: congressional_districts
+
+attributes:
+  description: 'GIS data: Boundaries of Congressional Districts.
 
 
-  All previously released versions of this data are available at
-  <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
-tags: [geographic, voting, location, map, cartography, district, congress, congressional, boundary, elect, election, congressional districts, dcp]
-each_row_is_a: Congressional District
+    All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES
+    of the BIG APPLE- Archive</a>.
+
+    '
+  display_name: Congressional Districts
+  each_row_is_a: Congressional District
+  tags:
+  - geographic
+  - voting
+  - location
+  - map
+  - cartography
+  - district
+  - congress
+  - congressional
+  - boundary
+  - elect
+  - election
+  - congressional districts
+  - dcp
+
+assembly: []
 
 destinations:
 - id: socrata_water_included
   type: socrata
-  four_four: j5kw-6gtg
-  attachments: [nycgwi_metadata.pdf]
-  datasets:
-  - shapefile_wi
-  omit_columns: []
-  column_details: {}
-  overrides:
-    omit_columns: []
-    ignore_validation: []
-    columns: {}
-    tags: []
+  files:
+  - id: nycgwi_metadata.pdf
+    custom:
+      destination_use: attachment
+  - id: shapefile_wi
+    custom:
+      destination_use: dataset_file
+  custom:
+    four_four: j5kw-6gtg
 - id: socrata
   type: socrata
-  four_four: j3u5-usz2
-  attachments: [nycg_metadata.pdf]
-  datasets:
-  - shapefile_wi
-  omit_columns: []
-  column_details: {}
+  files:
+  - id: nycg_metadata.pdf
+    custom:
+      destination_use: attachment
+  - id: shapefile_wi
+    custom:
+      destination_use: dataset_file
+  custom:
+    four_four: j3u5-usz2
+
+files:
+- id: shapefile_wi
+  filename: nycgwi.zip
+  type: shapefile
   overrides:
-    omit_columns: []
-    ignore_validation: []
-    columns: {}
-    tags: []
-
-package:
-  dataset_files:
-  - name: shapefile_wi
-    type: shapefile
-    filename: nycgwi.zip
-    overrides:
-      omit_columns: []
-      ignore_validation: []
-      columns:
-        shape_length: {name: shape_leng}
-      tags: []
-      display_name: Congressional Districts (Water Areas Included)
-      description: >
-        GIS data: Boundaries of Congressional Districts (water areas included).
+    description: 'GIS data: Boundaries of Congressional Districts (water areas included).
 
 
-        All previously released versions of this data are available at
-        <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
-  - name: shapefile
-    type: shapefile
-    filename: nycg.zip
-    overrides:
-      omit_columns: []
-      ignore_validation: []
-      columns:
-        shape_length: {name: shape_leng}
-      tags: []
-  attachments:
-  - nycg_metadata.pdf
-  - nycgwi_metadata.pdf
+      All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES
+      of the BIG APPLE- Archive</a>.
+
+      '
+    display_name: Congressional Districts (Water Areas Included)
+    overridden_columns:
+    - id: shape_length
+      custom:
+        name: shape_leng
+- id: shapefile
+  filename: nycg.zip
+  type: shapefile
+  overrides:
+    overridden_columns:
+    - id: shape_length
+      custom:
+        name: shape_leng
+- id: nycg_metadata.pdf
+  filename: nycg_metadata.pdf
+- id: nycgwi_metadata.pdf
+  filename: nycgwi_metadata.pdf
 
 columns:
-- name: congdist
+- id: congdist
   display_name: CongDist
-  description: US House of Representatives Congressional District Number for the State of New York.
   data_type: integer
-- name: the_geom
+  description: US House of Representatives Congressional District Number for the State
+    of New York.
+  example: None
+- id: the_geom
   display_name: Shape
-  description: ""
-  data_type: wkb
-- name: shape_length
+  data_type: geometry
+  example: None
+- id: shape_length
   display_name: Shape_Length
-  description: ""
-  data_type: double
-- name: shape_area
+  data_type: decimal
+  example: None
+- id: shape_area
   display_name: Shape_Area
-  description: ""
-  data_type: double
+  data_type: decimal
+  example: None
