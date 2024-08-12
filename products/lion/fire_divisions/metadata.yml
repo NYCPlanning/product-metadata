@@ -24,6 +24,13 @@ destinations:
     ignore_validation: []
     columns: {}
     tags: []
+- id: bytes
+  type: bytes
+  files:
+    - id: shapefile
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nyfd_{{ version }}.zip
+    - id: nyfd_metadata.pdf
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nyfd_metadata.pdf
 
 package:
   dataset_files:

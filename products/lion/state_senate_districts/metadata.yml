@@ -16,7 +16,7 @@ destinations:
   four_four: kkv2-gkck
   attachments: [nysswi_metadata.pdf]
   datasets:
-  - primary_shapefile_wi
+  - shapefile_wi
   omit_columns: []
   column_details: {}
   overrides:
@@ -29,7 +29,7 @@ destinations:
   four_four: qi35-3r9s
   attachments: [nyss_metadata.pdf]
   datasets:
-  - primary_shapefile
+  - shapefile
   omit_columns: []
   column_details: {}
   overrides:
@@ -37,10 +37,21 @@ destinations:
     ignore_validation: []
     columns: {}
     tags: []
+- id: bytes
+  type: bytes
+  files:
+    - id: shapefile
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nyss_{{ version }}.zip
+    - id: shapefile_wi
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nysswi_{{ version }}.zip
+    - id: nyss_metadata.pdf
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nyss_metadata.pdf
+    - id: nysswi_metadata.pdf
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nysswi_metadata.pdf
 
 package:
   dataset_files:
-  - name: primary_shapefile_wi
+  - name: shapefile_wi
     type: shapefile
     filename: nysswi.zip
     overrides:
@@ -57,7 +68,7 @@ package:
 
         All previously released versions of this data are available at
         <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
-  - name: primary_shapefile
+  - name: shapefile
     type: shapefile
     filename: nyss.zip
     overrides:

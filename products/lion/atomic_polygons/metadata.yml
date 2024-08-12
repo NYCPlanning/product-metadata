@@ -22,7 +22,7 @@ destinations:
   four_four: k4qs-rbku
   attachments: []
   datasets:
-  - primary_shapefile
+  - shapefile
   omit_columns: []
   column_details: {}
   overrides:
@@ -30,10 +30,17 @@ destinations:
     ignore_validation: []
     columns: {}
     tags: []
+- id: bytes
+  type: bytes
+  files:
+    - id: shapefile
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nyap_{{ version }}.zip
+    - id: nynta2020_metadata.pdf
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nyap_metadata.pdf
 
 package:
   dataset_files:
-  - name: primary_shapefile
+  - name: shapefile
     type: shapefile
     filename: nyap.zip
     overrides:

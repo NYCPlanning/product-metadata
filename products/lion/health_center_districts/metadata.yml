@@ -16,7 +16,7 @@ destinations:
   four_four: 6nss-v3ep
   attachments: [nyhc_metadata.pdf]
   datasets:
-  - primary_shapefile
+  - shapefile
   omit_columns: []
   column_details: {}
   overrides:
@@ -24,10 +24,17 @@ destinations:
     ignore_validation: []
     columns: {}
     tags: []
+- id: bytes
+  type: bytes
+  files:
+    - id: shapefile
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nyhc_{{ version }}.zip
+    - id: nyhc_metadata.pdf
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nyhc_metadata.pdf
 
 package:
   dataset_files:
-  - name: primary_shapefile
+  - name: shapefile
     type: shapefile
     filename: nyhc.zip
     overrides:

@@ -28,6 +28,17 @@ destinations:
   - shapefile_water_included
   omit_columns: []
   column_details: {}
+- id: bytes
+  type: bytes
+  files:
+    - id: shapefile_water_not_included
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nycb2020_{{ version }}.zip
+    - id: shapefile_water_included
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nycb2020wi_{{ version }}.zip
+    - id: nycb2020_metadata.pdf
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nycb2020_metadata.pdf
+    - id: nycb2020wi_metadata.pdf
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nycb2020wi_metadata.pdf
 
 
 package:

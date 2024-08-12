@@ -35,6 +35,19 @@ destinations:
     columns: {}
     tags: []
     destination_file_name: nyclion_{{ version }}.zip
+- id: bytes
+  type: bytes
+  files:
+    - id: lion_zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nyclion_{{ version }}.zip
+    - id: lion_metadata.pdf
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/lion_metadata.pdf
+    - id: altnames_metadata.pdf
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/altnames_metadata.pdf
+    - id: node_stname_metadata.pdf
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/node_stname_metadata.pdf
+    - id: node_metadata.pdf
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/node_metadata.pdf
 
 package:
   dataset_files:

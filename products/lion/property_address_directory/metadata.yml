@@ -18,7 +18,7 @@ destinations:
   four_four: bc8t-ecyu
   attachments: [padlayout.pdf]
   datasets:
-  - primary_shapefile
+  - shapefile
   omit_columns: []
   column_details: {}
   is_unparsed_dataset: true
@@ -28,10 +28,19 @@ destinations:
     columns: {}
     tags: []
     destination_file_name: pad_{{ version }}.zip
+- id: bytes
+  type: bytes
+  files:
+    - id: shapefile
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/pad_{{ version }}.zip
+    - id: padlayout.pdf
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/padlayout.pdf
+    - id: padgui.pdf
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/padgui.pdf
 
 package:
   dataset_files:
-  - name: primary_shapefile
+  - name: shapefile
     type: shapefile
     filename: pad.zip
     overrides:

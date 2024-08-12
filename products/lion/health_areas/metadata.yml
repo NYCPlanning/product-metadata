@@ -15,7 +15,7 @@ destinations:
   four_four: jntv-ngw5
   attachments: [nyha_metadata.pdf]
   datasets:
-  - primary_shapefile
+  - shapefile
   omit_columns: []
   column_details: {}
   overrides:
@@ -23,10 +23,18 @@ destinations:
     ignore_validation: []
     columns: {}
     tags: []
+- id: bytes
+  type: bytes
+  files:
+    - id: shapefile
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nyha_{{ version }}.zip
+    - id: nyha_metadata.pdf
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nyha_metadata.pdf
+
 
 package:
   dataset_files:
-  - name: primary_shapefile
+  - name: shapefile
     type: shapefile
     filename: nyha.zip
     overrides:

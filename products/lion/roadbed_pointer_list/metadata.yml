@@ -18,7 +18,7 @@ destinations:
   four_four: qs4p-vs2w
   attachments: [rpl_filelayout.pdf]
   datasets:
-  - primary_shapefile
+  - shapefile
   omit_columns: []
   column_details: {}
   overrides:
@@ -28,10 +28,17 @@ destinations:
     tags: []
     destination_file_name: rpl_{{ version }}.zip
   is_unparsed_dataset: true
+- id: bytes
+  type: bytes
+  files:
+    - id: shapefile
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/rpl_{{ version }}.zip
+    - id: rpl_filelayout.pdf
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/rpl_filelayout.pdf
 
 package:
   dataset_files:
-  - name: primary_shapefile
+  - name: shapefile
     type: shapefile
     filename: rpl.zip
     overrides:

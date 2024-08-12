@@ -29,6 +29,18 @@ destinations:
   omit_columns: []
   column_details: {}
 
+- id: bytes
+  type: bytes
+  files:
+    - id: shapefile_water_not_included
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nyct2020_{{ version }}.zip
+    - id: shapefile_water_included
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nyct2020wi_{{ version }}.zip
+    - id: nyct2020_metadata.pdf
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nyct2020_metadata.pdf
+    - id: nyct2020wi_metadata.pdf
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nyct2020wi_metadata.pdf
+
 package:
   dataset_files:
   - name: shapefile_water_not_included

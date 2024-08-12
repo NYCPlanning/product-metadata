@@ -21,7 +21,7 @@ destinations:
   four_four: epne-qv9x
   attachments: [nyhez_metadata.pdf]
   datasets:
-  - primary_shapefile
+  - shapefile
   omit_columns: []
   column_details: {}
   overrides:
@@ -32,7 +32,7 @@ destinations:
 
 package:
   dataset_files:
-  - name: primary_shapefile
+  - name: shapefile
     type: shapefile
     filename: nyhez.zip
     overrides:

@@ -9,13 +9,14 @@ description: >
   a comprehensive dataset of locations with these types of features.
 tags: [pseudo lots, bin, building identification number, addresses, cscl]
 each_row_is_a: Pseudo Lot
+
 destinations:
 - id: socrata
   type: socrata
   four_four: dx24-9ef7
   attachments: [pseudolots_datadictionary.xlsx]
   datasets:
-  - primary_shapefile
+  - shapefile
   omit_columns: []
   column_details: {}
   overrides:
@@ -23,10 +24,17 @@ destinations:
     ignore_validation: []
     columns: {}
     tags: []
+- id: bytes
+  type: bytes
+  files:
+    - id: shapefile
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/pseudolots_{{ version }}.zip
+    - id: pseudolots_datadictionary.xlsx
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/excel/data-tools/bytes/pseudolots_datadictionary.xlsx
 
 package:
   dataset_files:
-  - name: primary_shapefile
+  - name: shapefile
     type: shapefile
     filename: pseudolots.zip
     overrides:

@@ -17,7 +17,7 @@ destinations:
   four_four: ige5-v6sk
   attachments: [ldf_metadata.pdf]
   datasets:
-  - primary_shapefile
+  - shapefile
   omit_columns: []
   column_details: {}
   overrides:
@@ -27,10 +27,17 @@ destinations:
     tags: []
     destination_file_name: ldf_{{ version }}.zip
   is_unparsed_dataset: true
+- id: bytes
+  type: bytes
+  files:
+    - id: shapefile
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/ldf_{{ version }}.zip
+    - id: ldf_metadata.pdf
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/ldf_metadata.pdf
 
 package:
   dataset_files:
-  - name: primary_shapefile
+  - name: shapefile
     type: shapefile
     filename: ldf.zip
     overrides:

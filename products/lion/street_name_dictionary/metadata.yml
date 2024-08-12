@@ -18,7 +18,7 @@ destinations:
   four_four: w4v2-rv6b
   attachments: [snd_metadata.pdf]
   datasets:
-  - primary_shapefile
+  - shapefile
   is_unparsed_dataset: true
   omit_columns: []
   column_details: {}
@@ -28,10 +28,19 @@ destinations:
     columns: {}
     tags: []
     destination_file_name: snd_{{ version }}.zip
+- id: bytes
+  type: bytes
+  files:
+    - id: shapefile
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/snd_{{ version }}.zip
+    - id: snd_metadata.pdf
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/snd_metadata.pdf
+    - id: snd_userguide.pdf
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/snd_userguide.pdf
 
 package:
   dataset_files:
-  - name: primary_shapefile
+  - name: shapefile
     type: zip
     filename: snd.zip
     overrides:
