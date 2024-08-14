@@ -1,53 +1,62 @@
-name: street_name_dictionary
-display_name: Street Name Dictionary
-summary: ""
-description: >
-  The Street Name Dictionary (SND) contains street names and street codes
-  for New York City.  Street names (which include names of other geographic features
-  as well) are associated to street codes.  Alias street names and variant spellings
-  are related through a street code hierarchy.
+id: street_name_dictionary
 
+attributes:
+  description: |-
+    The Street Name Dictionary (SND) contains street names and street codes for New York City.  Street names (which include names of other geographic features as well) are associated to street codes.  Alias street names and variant spellings are related through a street code hierarchy.
 
-  All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>
-tags: [dcp, street, street name, street code, dictionary, snd, geographic, intersection]
-each_row_is_a: Street Name
+    All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>
+  display_name: Street Name Dictionary
+  each_row_is_a: Street Name
+  tags:
+  - dcp
+  - street
+  - street name
+  - street code
+  - dictionary
+  - snd
+  - geographic
+  - intersection
+
+assembly: []
+
+custom: {}
 
 destinations:
 - id: socrata
   type: socrata
-  four_four: w4v2-rv6b
-  attachments: [snd_metadata.pdf]
-  datasets:
-  - shapefile
-  is_unparsed_dataset: true
-  omit_columns: []
-  column_details: {}
-  overrides:
-    omit_columns: []
-    ignore_validation: []
-    columns: {}
-    tags: []
-    destination_file_name: snd_{{ version }}.zip
+  files:
+  - id: snd_metadata.pdf
+    custom:
+      destination_use: attachment
+  - id: shapefile
+    custom:
+      destination_use: dataset_file
+  custom:
+    four_four: w4v2-rv6b
+    is_unparsed_dataset: true
 - id: bytes
   type: bytes
   files:
-    - id: shapefile
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/snd_{{ version }}.zip
-    - id: snd_metadata.pdf
+  - id: shapefile
+    custom:
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/snd_{{
+        version }}.zip
+  - id: snd_metadata.pdf
+    custom:
       url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/snd_metadata.pdf
-    - id: snd_userguide.pdf
+  - id: snd_userguide.pdf
+    custom:
       url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/snd_userguide.pdf
 
-package:
-  dataset_files:
-  - name: shapefile
-    type: zip
+files:
+- file:
+    id: shapefile
     filename: snd.zip
-    overrides:
-      omit_columns: []
-      ignore_validation: []
-      columns: {}
-      tags: []
-  attachments:
-  - snd_metadata.pdf
+    type: zip
+- file:
+    id: snd_metadata.pdf
+    filename: snd_metadata.pdf
+    is_metadata: true
+    type: None
+
 columns: []

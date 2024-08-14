@@ -1,108 +1,124 @@
-name: state_assembly_districts
-summary: ""
-display_name: State Assembly Districts
-description: >
-  GIS data: Boundaries of State Assembly Districts.
+id: state_assembly_districts
 
+attributes:
+  description: |-
+    GIS data: Boundaries of State Assembly Districts.
 
-  All previously released versions of this data are available at
-  <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
-tags: ['gis data: state assembly districts', boundary, boundaries, dcp, city planning, politics]
-each_row_is_a: State Assembly District
+    All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
+  display_name: State Assembly Districts
+  each_row_is_a: State Assembly District
+  tags:
+  - 'gis data: state assembly districts'
+  - boundary
+  - boundaries
+  - dcp
+  - city planning
+  - politics
+
+assembly: []
+
+custom: {}
 
 destinations:
 - id: socrata_water_included
   type: socrata
-  four_four: 8gke-583r
-  attachments: [nyadwi_metadata.pdf]
-  datasets:
-  - shapefile_wi
-  omit_columns: []
-  column_details: {}
-  overrides:
-    omit_columns: []
-    ignore_validation: []
-    columns: {}
-    tags: []
+  files:
+  - id: nyadwi_metadata.pdf
+    custom:
+      destination_use: attachment
+  - id: shapefile_wi
+    custom:
+      destination_use: dataset_file
+  custom:
+    four_four: 8gke-583r
 - id: socrata
   type: socrata
-  four_four: 5yfv-9hkp
-  attachments: [nyad_metadata.pdf]
-  datasets:
-  - shapefile
-  omit_columns: []
-  column_details: {}
-  overrides:
-    omit_columns: []
-    ignore_validation: []
-    columns: {}
-    tags: []
+  files:
+  - id: nyad_metadata.pdf
+    custom:
+      destination_use: attachment
+  - id: shapefile
+    custom:
+      destination_use: dataset_file
+  custom:
+    four_four: 5yfv-9hkp
 - id: bytes
   type: bytes
   files:
-    - id: shapefile
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nyad_{{ version }}.zip
-    - id: shapefile_wi
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nyadwi_{{ version }}.zip
-    - id: nyad_metadata.pdf
+  - id: shapefile
+    custom:
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nyad_{{
+        version }}.zip
+  - id: shapefile_wi
+    custom:
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nyadwi_{{
+        version }}.zip
+  - id: nyad_metadata.pdf
+    custom:
       url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nyad_metadata.pdf
-    - id: nyadwi_metadata.pdf
+  - id: nyadwi_metadata.pdf
+    custom:
       url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nyadwi_metadata.pdf
 
-package:
-  dataset_files:
-  - name: shapefile_wi
-    type: shapefile
+files:
+- file:
+    id: shapefile_wi
     filename: nyadwi.zip
-    overrides:
-      omit_columns: []
-      ignore_validation: []
-      columns:
-        shape_length: {name: shape_leng}
-        assembly_district: {name: assemdist}
-      tags: []
-      display_name: State Assembly Districts (water areas included)
-      description: >
+    type: shapefile
+  dataset_overrides:
+    attributes:
+      description: |-
         GIS data: Boundaries of State Assembly Districts (water areas included).
 
-
-        All previously released versions of this data are available at
-        <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
-  - name: shapefile
-    type: shapefile
+        All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
+      display_name: State Assembly Districts (water areas included)
+    overridden_columns:
+    - id: shape_length
+      name: shape_leng
+    - id: assembly_district
+      name: assemdist
+- file:
+    id: shapefile
     filename: nyad.zip
-    overrides:
-      omit_columns: []
-      ignore_validation: []
-      columns:
-        shape_length: {name: shape_leng}
-        assembly_district: {name: assemdist}
-      tags: []
-      display_name: State Assembly Districts
-      description: >
+    type: shapefile
+  dataset_overrides:
+    attributes:
+      description: |-
         GIS data: Boundaries of State Assembly Districts.
 
-
-        All previously released versions of this data are available at
-        <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
-  attachments:
-  - nyad_metadata.pdf
-  - nyadwi_metadata.pdf
+        All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
+      display_name: State Assembly Districts
+    overridden_columns:
+    - id: shape_length
+      name: shape_leng
+    - id: assembly_district
+      name: assemdist
+- file:
+    id: nyad_metadata.pdf
+    filename: nyad_metadata.pdf
+    is_metadata: true
+    type: None
+- file:
+    id: nyadwi_metadata.pdf
+    filename: nyadwi_metadata.pdf
+    is_metadata: true
+    type: None
 
 columns:
-- name: assembly_district
-  display_name: AssemblyDistrict
-  description: State Assembly District Number
+- id: assembly_district
+  name: AssemblyDistrict
   data_type: integer
-- name: the_geom
-  display_name: Shape
-  description: ""
-  data_type: wkb
-- name: shape_length
-  display_name: Shape_Length
-  description: ""
-  data_type: double
-- name: shape_area
-  display_name: Shape_Area
-  description: ""
-  data_type: double
+  description: State Assembly District Number
+  example: None
+- id: the_geom
+  name: Shape
+  data_type: geometry
+  example: None
+- id: shape_length
+  name: Shape_Length
+  data_type: decimal
+  example: None
+- id: shape_area
+  name: Shape_Area
+  data_type: decimal
+  example: None

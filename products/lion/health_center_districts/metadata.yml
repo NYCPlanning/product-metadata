@@ -1,89 +1,105 @@
-name: health_center_districts
-display_name: Health Center Districts
-summary: ""
-description: >
-  Health Center Districts - by Department of City Planning.
+id: health_center_districts
 
+attributes:
+  description: |-
+    Health Center Districts - by Department of City Planning.
 
-  All previously released versions of this data are available at
-  <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
-tags: ['gis data: boundaries of health districts']
-each_row_is_a: Health Center District
+    All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
+  display_name: Health Center Districts
+  each_row_is_a: Health Center District
+  tags:
+  - 'gis data: boundaries of health districts'
+
+assembly: []
+
+custom: {}
 
 destinations:
 - id: socrata
   type: socrata
-  four_four: 6nss-v3ep
-  attachments: [nyhc_metadata.pdf]
-  datasets:
-  - shapefile
-  omit_columns: []
-  column_details: {}
-  overrides:
-    omit_columns: []
-    ignore_validation: []
-    columns: {}
-    tags: []
+  files:
+  - id: nyhc_metadata.pdf
+    custom:
+      destination_use: attachment
+  - id: shapefile
+    custom:
+      destination_use: dataset_file
+  custom:
+    four_four: 6nss-v3ep
 - id: bytes
   type: bytes
   files:
-    - id: shapefile
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nyhc_{{ version }}.zip
-    - id: nyhc_metadata.pdf
+  - id: shapefile
+    custom:
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nyhc_{{
+        version }}.zip
+  - id: nyhc_metadata.pdf
+    custom:
       url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nyhc_metadata.pdf
 
-package:
-  dataset_files:
-  - name: shapefile
-    type: shapefile
+files:
+- file:
+    id: shapefile
     filename: nyhc.zip
-    overrides:
-      omit_columns: []
-      ignore_validation: []
-      columns:
-        boro_code: {name: borocode}
-        boro_name: {name: boroname}
-        health_center_district: {name: hcentdist}
-        shape_length: {name: shape_leng}
-      tags: []
-  attachments:
-  - nyhc_metadata.pdf
+    type: shapefile
+  dataset_overrides:
+    overridden_columns:
+    - id: boro_code
+      name: borocode
+    - id: boro_name
+      name: boroname
+    - id: health_center_district
+      name: hcentdist
+    - id: shape_length
+      name: shape_leng
+- file:
+    id: nyhc_metadata.pdf
+    filename: nyhc_metadata.pdf
+    is_metadata: true
+    type: None
 
 columns:
-- name: boro_code
-  display_name: BoroCode
-  description: 'Borough code for the borough in which the census block is located.'
+- id: boro_code
+  name: BoroCode
   data_type: integer
+  description: Borough code for the borough in which the census block is located.
+  example: None
   values:
-    - ["1", Manhattan]
-    - ["2", Bronx]
-    - ["3", Brooklyn]
-    - ["4", Queens]
-    - ["5", Staten Island]
-- name: boro_name
-  display_name: BoroName
-  description: 'Borough Name.'
+  - value: '1'
+    description: Manhattan
+  - value: '2'
+    description: Bronx
+  - value: '3'
+    description: Brooklyn
+  - value: '4'
+    description: Queens
+  - value: '5'
+    description: Staten Island
+- id: boro_name
+  name: BoroName
   data_type: text
+  description: Borough Name.
   example: Queens
   values:
-    - [Brooklyn, ""]
-    - [Bronx, ""]
-    - [Manhattan, ""]
-    - [Queens, ""]
-    - [Staten Island, ""]
-- name: health_center_district
-  display_name: HealthCenterDistrict
-  description: 'Denotes the Health Center number'
+  - value: Brooklyn
+  - value: Bronx
+  - value: Manhattan
+  - value: Queens
+  - value: Staten Island
+- id: health_center_district
+  name: HealthCenterDistrict
   data_type: integer
-- name: shape_area
-  display_name: Shape_Area
-  description: ''
-  data_type: double
-- name: shape_length
-  display_name: Shape_Length
-  description: ''
-  data_type: double
-- name: the_geom
-  display_name: Shape
-  description: ""
-  data_type: wkb
+  description: Denotes the Health Center number
+  example: None
+- id: shape_area
+  name: Shape_Area
+  data_type: decimal
+  example: None
+- id: shape_length
+  name: Shape_Length
+  data_type: decimal
+  example: None
+- id: the_geom
+  name: Shape
+  data_type: geometry
+  example: None

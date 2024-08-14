@@ -1,54 +1,63 @@
-name: property_address_directory
-display_name: Property Address Directory
-summary: ''
-description: >
-  The PAD (Property Address Directory) file contains additional geographic
-  information at the tax lot level not found in the PLUTO files.  This data includes
-  alias addresses and Building Identification Numbers (BINs).  It consists of two
-  ASCII, comma delimited files: a tax lot file and an address file.
+id: property_address_directory
 
+attributes:
+  description: |-
+    The PAD (Property Address Directory) file contains additional geographic information at the tax lot level not found in the PLUTO files.  This data includes alias addresses and Building Identification Numbers (BINs).  It consists of two ASCII, comma delimited files: a tax lot file and an address file.
 
-  All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
-tags: [dcp, pad, property address directory, lot, tax lot, building, city planning, planning, block]
-each_row_is_a: Property Address
+    All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
+  display_name: Property Address Directory
+  each_row_is_a: Property Address
+  tags:
+  - dcp
+  - pad
+  - property address directory
+  - lot
+  - tax lot
+  - building
+  - city planning
+  - planning
+  - block
+
+assembly: []
+
+custom: {}
 
 destinations:
 - id: socrata
   type: socrata
-  four_four: bc8t-ecyu
-  attachments: [padlayout.pdf]
-  datasets:
-  - shapefile
-  omit_columns: []
-  column_details: {}
-  is_unparsed_dataset: true
-  overrides:
-    omit_columns: []
-    ignore_validation: []
-    columns: {}
-    tags: []
-    destination_file_name: pad_{{ version }}.zip
+  files:
+  - id: padlayout.pdf
+    custom:
+      destination_use: attachment
+  - id: shapefile
+    custom:
+      destination_use: dataset_file
+  custom:
+    four_four: bc8t-ecyu
+    is_unparsed_dataset: true
 - id: bytes
   type: bytes
   files:
-    - id: shapefile
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/pad_{{ version }}.zip
-    - id: padlayout.pdf
+  - id: shapefile
+    custom:
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/pad_{{
+        version }}.zip
+  - id: padlayout.pdf
+    custom:
       url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/padlayout.pdf
-    - id: padgui.pdf
+  - id: padgui.pdf
+    custom:
       url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/padgui.pdf
 
-package:
-  dataset_files:
-  - name: shapefile
-    type: shapefile
+files:
+- file:
+    id: shapefile
     filename: pad.zip
-    overrides:
-      omit_columns: []
-      ignore_validation: []
-      columns: {}
-      tags: []
-  attachments:
-  - padlayout.pdf
+    type: shapefile
+- file:
+    id: padlayout.pdf
+    filename: padlayout.pdf
+    is_metadata: true
+    type: None
 
 columns: []

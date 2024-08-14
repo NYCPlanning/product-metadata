@@ -1,109 +1,148 @@
-name: 2020_community_district_tabulation_areas
-display_name: 2020 Community District Tabulation Areas (CDTAs)
-summary: ""
-description: >
-  The Department of City Planning (DCP) created Community District Tabulation
-  Areas (CDTAs) to closely approximate the 59 Community Districts of New York City
-  for the purpose of reporting American Community Survey (ACS) data. CDTAs are built
-  by aggregating whole 2020 census tracts. All previously released versions of this
-  data are available at
-  <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
-tags: [community district tabulation area, cdta, '2020', census, american community survey, acs, boundary, boundaries, districts, lion, cscl, department of city planning, dcp]
-each_row_is_a: Community District Tabulation Area
+id: 2020_community_district_tabulation_areas
+
+attributes:
+  description: The Department of City Planning (DCP) created Community District Tabulation
+    Areas (CDTAs) to closely approximate the 59 Community Districts of New York City
+    for the purpose of reporting American Community Survey (ACS) data. CDTAs are built
+    by aggregating whole 2020 census tracts. All previously released versions of this
+    data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES
+    of the BIG APPLE- Archive</a>.
+  display_name: 2020 Community District Tabulation Areas (CDTAs)
+  each_row_is_a: Community District Tabulation Area
+  tags:
+  - community district tabulation area
+  - cdta
+  - '2020'
+  - census
+  - american community survey
+  - acs
+  - boundary
+  - boundaries
+  - districts
+  - lion
+  - cscl
+  - department of city planning
+  - dcp
+
+assembly: []
+
+custom: {}
 
 destinations:
 - id: socrata
   type: socrata
-  four_four: xn3r-zk6y
-  attachments: [nycdta2020_metadata.pdf]
-  datasets:
-  - shapefile
-  omit_columns: []
-  column_details: {}
+  files:
+  - id: nycdta2020_metadata.pdf
+    custom:
+      destination_use: attachment
+  - id: shapefile
+    custom:
+      destination_use: dataset_file
+  custom:
+    four_four: xn3r-zk6y
 - id: bytes
   type: bytes
   files:
-    - id: shapefile
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nycdta2020_{{ version }}.zip
-    - id: nycdta2020_metadata.pdf
+  - id: shapefile
+    custom:
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nycdta2020_{{
+        version }}.zip
+  - id: nycdta2020_metadata.pdf
+    custom:
       url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nycdta2020_metadata.pdf
 
-package:
-  dataset_files:
-  - name: shapefile
-    type: shapefile
+files:
+- file:
+    id: shapefile
     filename: nycdta2020.zip
-    overrides:
-      omit_columns: []
-      ignore_validation: []
-      columns: {}
-  attachments:
-  - nycdta2020_metadata.pdf
+    type: shapefile
+- file:
+    id: nycdta2020_metadata.pdf
+    filename: nycdta2020_metadata.pdf
+    is_metadata: true
+    type: None
 
 columns:
-- name: the_geom
-  display_name: the_geom
-  description: ''
-  data_type: wkb
-  readme_data_type: geometry
-- name: borocode
-  display_name: BoroCode
-  description: 'Borough of census tract.'
+- id: the_geom
+  name: the_geom
+  data_type: geometry
+  example: None
+  custom:
+    readme_data_type: geometry
+- id: borocode
+  name: BoroCode
   data_type: integer
+  description: Borough of census tract.
   example: '3'
   values:
-    - ["1", Manhattan]
-    - ["2", Bronx]
-    - ["3", Brooklyn]
-    - ["4", Queens]
-    - ["5", Staten Island]
-- name: boroname
-  display_name: BoroName
-  description: 'Borough Name.'
+  - value: '1'
+    description: Manhattan
+  - value: '2'
+    description: Bronx
+  - value: '3'
+    description: Brooklyn
+  - value: '4'
+    description: Queens
+  - value: '5'
+    description: Staten Island
+- id: boroname
+  name: BoroName
   data_type: text
+  description: Borough Name.
   example: Brooklyn
   values:
-    - [Brooklyn, ""]
-    - [Bronx, ""]
-    - [Manhattan, ""]
-    - [Queens, ""]
-    - [Staten Island, ""]
-- name: countyfips
-  display_name: CountyFIPS
-  description: "The Census Bureau defined County FIPS code"
+  - value: Brooklyn
+  - value: Bronx
+  - value: Manhattan
+  - value: Queens
+  - value: Staten Island
+- id: countyfips
+  name: CountyFIPS
   data_type: text
+  description: The Census Bureau defined County FIPS code
   example: '047'
   values:
-  - ["005", "Bronx County"]
-  - ["047", "Kings County (Brooklyn)"]
-  - ["061", "New York County (Manhattan)"]
-  - ["081", "Queens County"]
-  - ["085", "Richmond County (Staten Island)"]
-- name: cdta2020
-  display_name: CDTA2020
-  description: 'Community District Tabulation Area code.'
+  - value: '005'
+    description: Bronx County
+  - value: '047'
+    description: Kings County (Brooklyn)
+  - value: '061'
+    description: New York County (Manhattan)
+  - value: 081
+    description: Queens County
+  - value: 085
+    description: Richmond County (Staten Island)
+- id: cdta2020
+  name: CDTA2020
   data_type: text
+  description: Community District Tabulation Area code.
   example: BK56
-- name: cdtaname
-  display_name: CDTAName
-  description: 'Community District Tabulation Area name.'
+- id: cdtaname
+  name: CDTAName
   data_type: text
+  description: Community District Tabulation Area name.
   example: QN82 Forest Park (JIA 82 Approximation)
-- name: cdtatype
-  display_name: CDTAType
-  description: 'Type of Community District Tabulation Area. One digit code assigned to a CDTA to distinguish between those that are representative of a Community District (given a code of 0) and those that are representative of a Joint Interest Area (given a code of 1). Joint Interest Areas are large open spaces or airports that are not part of any Community District.'
+- id: cdtatype
+  name: CDTAType
   data_type: text
+  description: Type of Community District Tabulation Area. One digit code assigned
+    to a CDTA to distinguish between those that are representative of a Community
+    District (given a code of 0) and those that are representative of a Joint Interest
+    Area (given a code of 1). Joint Interest Areas are large open spaces or airports
+    that are not part of any Community District.
   example: '0'
   values:
-  - ['0', 'Representative of a Community District']
-  - ['1', 'Joint Interest Areas']
-- name: shape_leng
-  display_name: Shape_Leng
-  description: 'Length of feature in internal units.'
-  data_type: double
+  - value: '0'
+    description: Representative of a Community District
+  - value: '1'
+    description: Joint Interest Areas
+- id: shape_leng
+  name: Shape_Leng
+  data_type: decimal
+  description: Length of feature in internal units.
   example: '37550.8572191'
-- name: shape_area
-  display_name: Shape_Area
-  description: 'Area of feature in internal units squared.'
-  data_type: double
+- id: shape_area
+  name: Shape_Area
+  data_type: decimal
+  description: Area of feature in internal units squared.
   example: '66224982.0063'

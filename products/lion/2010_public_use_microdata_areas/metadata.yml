@@ -1,62 +1,68 @@
-name: 2010_public_use_microdata_areas
-display_name: 2010 Public Use Microdata Areas (PUMAs)
-summary: ""
-description: >
-  The 2010 NYC Public Use Microdata Areas (PUMAs) are statistical geographic
-  areas defined for the dissemination of Public Use Microdata Sample (PUMS) data.
-  PUMAs have a minimum population of 100,000 and were aggregated from 2010 census
-  tracts. These boundary files are derived from the US Census Bureau's TIGER project
-  and have been geographically modified to fit the New York City base map.
+id: 2010_public_use_microdata_areas
 
+attributes:
+  description: |-
+    The 2010 NYC Public Use Microdata Areas (PUMAs) are statistical geographic areas defined for the dissemination of Public Use Microdata Sample (PUMS) data. PUMAs have a minimum population of 100,000 and were aggregated from 2010 census tracts. These boundary files are derived from the US Census Bureau's TIGER project and have been geographically modified to fit the New York City base map.
 
-  All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>
+    All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>
+  display_name: 2010 Public Use Microdata Areas (PUMAs)
+  each_row_is_a: Public Use Microdata Area
 
-# TODO: Define some tags!
-tags: []
-each_row_is_a: Public Use Microdata Area
+assembly: []
+
+custom: {}
+
 destinations:
 - id: socrata
   type: socrata
-  four_four: k2r4-n9ax
-  attachments: [nypuma2010_metadata.pdf]
-  datasets:
-  - shapefile
-  omit_columns: []
-  column_details: {}
+  files:
+  - id: nypuma2010_metadata.pdf
+    custom:
+      destination_use: attachment
+  - id: shapefile
+    custom:
+      destination_use: dataset_file
+  custom:
+    four_four: k2r4-n9ax
 - id: bytes
   type: bytes
   files:
-    - id: shapefile
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nypuma2010_{{ version }}.zip
-    - id: nypuma2010_metadata.pdf
+  - id: shapefile
+    custom:
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nypuma2010_{{
+        version }}.zip
+  - id: nypuma2010_metadata.pdf
+    custom:
       url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nypuma2010_metadata.pdf
 
-package:
-  dataset_files:
-  - name: shapefile
-    type: shapefile
+files:
+- file:
+    id: shapefile
     filename: nypuma2010.zip
-    overrides:
-      omit_columns: []
-      ignore_validation: []
-      columns: {}
-  attachments:
-  - nypuma2010_metadata.pdf
+    type: shapefile
+- file:
+    id: nypuma2010_metadata.pdf
+    filename: nypuma2010_metadata.pdf
+    is_metadata: true
+    type: None
 
 columns:
-- name: the_geom
-  display_name: the_geom
-  description: ''
+- id: the_geom
+  name: the_geom
   data_type: text
-- name: puma
-  display_name: PUMA
-  description: '2010 PUMA number.'
+  example: None
+- id: puma
+  name: PUMA
   data_type: text
-- name: shape_area
-  display_name: Shape__Area
-  description: 'Area of feature in internal units squared.'
-  data_type: double
-- name: shape_leng
-  display_name: Shape__Length
-  description: 'Length of feature in internal units.'
-  data_type: double
+  description: 2010 PUMA number.
+  example: None
+- id: shape_area
+  name: Shape__Area
+  data_type: decimal
+  description: Area of feature in internal units squared.
+  example: None
+- id: shape_leng
+  name: Shape__Length
+  data_type: decimal
+  description: Length of feature in internal units.
+  example: None

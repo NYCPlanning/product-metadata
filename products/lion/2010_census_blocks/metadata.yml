@@ -1,127 +1,150 @@
-name: 2010_census_blocks
-display_name: 2010 Census Blocks
-summary: ""
-description: ""
-tags: [2010 census blocks, census, '2010', gis, map, dcp]
-each_row_is_a: Census Block
+id: 2010_census_blocks
+
+attributes:
+  display_name: 2010 Census Blocks
+  each_row_is_a: Census Block
+  tags:
+  - 2010 census blocks
+  - census
+  - '2010'
+  - gis
+  - map
+  - dcp
+
+assembly: []
+
+custom: {}
 
 destinations:
 - id: socrata
   type: socrata
-  four_four: y9w2-ph8n
-  attachments: [nycb2010_metadata.pdf]
-  datasets:
-  - shapefile_water_not_included
-  omit_columns: []
-  column_details: {}
-
+  files:
+  - id: nycb2010_metadata.pdf
+    custom:
+      destination_use: attachment
+  - id: shapefile_water_not_included
+    custom:
+      destination_use: dataset_file
+  custom:
+    four_four: y9w2-ph8n
 - id: socrata_water_included
   type: socrata
-  four_four: 444b-5yrw
-  attachments: [nycb2010wi_metadata.pdf]
-  datasets:
-  - shapefile_water_included
-  omit_columns: []
-  column_details: {}
-
+  files:
+  - id: nycb2010wi_metadata.pdf
+    custom:
+      destination_use: attachment
+  - id: shapefile_water_included
+    custom:
+      destination_use: dataset_file
+  custom:
+    four_four: 444b-5yrw
 - id: bytes
   type: bytes
   files:
-    - id: shapefile_water_not_included
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nycb2010_{{ version }}.zip
-    - id: shapefile_water_included
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nycb2010wi_{{ version }}.zip
-    - id: nycb2010_metadata.pdf
+  - id: shapefile_water_not_included
+    custom:
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nycb2010_{{
+        version }}.zip
+  - id: shapefile_water_included
+    custom:
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nycb2010wi_{{
+        version }}.zip
+  - id: nycb2010_metadata.pdf
+    custom:
       url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nycb2010_metadata.pdf
-    - id: nycb2010wi_metadata.pdf
+  - id: nycb2010wi_metadata.pdf
+    custom:
       url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nycb2010wi_metadata.pdf
 
-package:
-  dataset_files:
-  - name: shapefile_water_not_included
-    type: shapefile
+files:
+- file:
+    id: shapefile_water_not_included
     filename: nycb2010.zip
-    overrides:
-      display_name: 2010 Census Blocks
-      description: >
-        2010 Census Blocks from the US Census for New York City. These boundary
-        files are derived from the US Census Bureau's TIGER data products and have been
-        geographically modified to fit the New York City base map.
-
-
-        All previously released
-        versions of this data are available at
-        <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive.</a>
-      omit_columns: []
-      ignore_validation: []
-      columns: {}
-  - name: shapefile_water_included
     type: shapefile
+  dataset_overrides:
+    attributes:
+      description: |-
+        2010 Census Blocks from the US Census for New York City. These boundary files are derived from the US Census Bureau's TIGER data products and have been geographically modified to fit the New York City base map.
+
+        All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive.</a>
+      display_name: 2010 Census Blocks
+- file:
+    id: shapefile_water_included
     filename: nycb2010wi.zip
-    overrides:
+    type: shapefile
+  dataset_overrides:
+    attributes:
+      description: |-
+        2010 Census Blocks (water areas included) from the US Census for New York City. These boundary files are derived from the US Census Bureau's TIGER data products and have been geographically modified to fit the New York City base map.
+
+        All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive.</a>
       display_name: 2010 Census Blocks (water areas included)
-      description: >
-        2010 Census Blocks (water areas included) from the US Census for New York City. These boundary
-        files are derived from the US Census Bureau's TIGER data products and have been
-        geographically modified to fit the New York City base map.
-
-
-        All previously released
-        versions of this data are available at
-        <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive.</a>
-      omit_columns: []
-      ignore_validation: []
-      columns: {}
-  attachments:
-  - nycb2010_metadata.pdf
-  - nycb2010wi_metadata.pdf
+- file:
+    id: nycb2010_metadata.pdf
+    filename: nycb2010_metadata.pdf
+    is_metadata: true
+    type: None
+- file:
+    id: nycb2010wi_metadata.pdf
+    filename: nycb2010wi_metadata.pdf
+    is_metadata: true
+    type: None
 
 columns:
-- name: cb2010
-  display_name: CB2010
-  description: 'Census block number.'
+- id: cb2010
+  name: CB2010
   data_type: text
+  description: Census block number.
   example: '1000'
-- name: borocode
-  display_name: BoroCode
-  description: 'Borough code for the borough in which the census block is located.'
+- id: borocode
+  name: BoroCode
   data_type: text
+  description: Borough code for the borough in which the census block is located.
+  example: None
   values:
-    - ["1", Manhattan]
-    - ["2", Bronx]
-    - ["3", Brooklyn]
-    - ["4", Queens]
-    - ["5", Staten Island]
-- name: boroname
-  display_name: BoroName
-  description: 'Borough Name.'
+  - value: '1'
+    description: Manhattan
+  - value: '2'
+    description: Bronx
+  - value: '3'
+    description: Brooklyn
+  - value: '4'
+    description: Queens
+  - value: '5'
+    description: Staten Island
+- id: boroname
+  name: BoroName
   data_type: text
+  description: Borough Name.
   example: Queens
   values:
-    - [Brooklyn, ""]
-    - [Bronx, ""]
-    - [Manhattan, ""]
-    - [Queens, ""]
-    - [Staten Island, ""]
-- name: ct2010
-  display_name: CT2010
-  description: 'Census tract number.'
+  - value: Brooklyn
+  - value: Bronx
+  - value: Manhattan
+  - value: Queens
+  - value: Staten Island
+- id: ct2010
+  name: CT2010
   data_type: text
+  description: Census tract number.
   example: 013800
-- name: bctcb2010
-  display_name: BCTCB2010
-  description: 'Merged string value of the BoroCode, census tract number, and census block number.'
+- id: bctcb2010
+  name: BCTCB2010
   data_type: text
+  description: Merged string value of the BoroCode, census tract number, and census
+    block number.
   example: '20060002009'
-- name: shape_area
-  display_name: Shape__Area
-  description: 'Area of feature in internal units squared.'
-  data_type: double
-- name: shape_leng
-  display_name: Shape__Length
-  description: 'Length of feature in internal units.'
-  data_type: double
-- name: the_geom
-  display_name: the_geom
-  description: ''
-  data_type: wkb
+- id: shape_area
+  name: Shape__Area
+  data_type: decimal
+  description: Area of feature in internal units squared.
+  example: None
+- id: shape_leng
+  name: Shape__Length
+  data_type: decimal
+  description: Length of feature in internal units.
+  example: None
+- id: the_geom
+  name: the_geom
+  data_type: geometry
+  example: None

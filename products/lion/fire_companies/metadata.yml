@@ -1,86 +1,106 @@
-name: fire_companies
-display_name: Fire Companies
-summary: ""
-description: >
-  GIS data: Boundaries of Fire Companies.
+id: fire_companies
 
+attributes:
+  description: |-
+    GIS data: Boundaries of Fire Companies.
 
-  All previously released versions of this data are available at
-  <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
-tags: [fire companies, dcp, public safety, fdny]
-each_row_is_a: Fire Company
+    All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
+  display_name: Fire Companies
+  each_row_is_a: Fire Company
+  tags:
+  - fire companies
+  - dcp
+  - public safety
+  - fdny
+
+assembly: []
+
+custom: {}
 
 destinations:
 - id: socrata
   type: socrata
-  four_four: qzxy-jtkb
-  attachments: [nyfc_metadata.pdf]
-  datasets:
-  - shapefile
-  omit_columns: []
-  column_details: {}
-  overrides:
-    omit_columns: []
-    ignore_validation: []
-    columns: {}
-    tags: []
+  files:
+  - id: nyfc_metadata.pdf
+    custom:
+      destination_use: attachment
+  - id: shapefile
+    custom:
+      destination_use: dataset_file
+  custom:
+    four_four: qzxy-jtkb
 - id: bytes
   type: bytes
   files:
-    - id: shapefile
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nyfc_{{ version }}.zip
-    - id: nyfc_metadata.pdf
+  - id: shapefile
+    custom:
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nyfc_{{
+        version }}.zip
+  - id: nyfc_metadata.pdf
+    custom:
       url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nyfc_metadata.pdf
 
-package:
-  dataset_files:
-  - name: shapefile
-    type: shapefile
+files:
+- file:
+    id: shapefile
     filename: nyfc.zip
-    overrides:
-      omit_columns: []
-      ignore_validation: []
-      columns:
-        shape_length: {name: shape_leng}
-        fire_company_type: {name: firecotype}
-        fire_company_number: {name: fireconum}
-        fire_battalion: {name: firebn}
-        fire_division: {name: firediv}
-      tags: []
-  attachments:
-  - nyfc_metadata.pdf
+    type: shapefile
+  dataset_overrides:
+    overridden_columns:
+    - id: shape_length
+      name: shape_leng
+    - id: fire_company_type
+      name: firecotype
+    - id: fire_company_number
+      name: fireconum
+    - id: fire_battalion
+      name: firebn
+    - id: fire_division
+      name: firediv
+- file:
+    id: nyfc_metadata.pdf
+    filename: nyfc_metadata.pdf
+    is_metadata: true
+    type: None
 
 columns:
-- name: fire_company_type
-  display_name: FireCoType
-  description: Denotes whether the company is an engine company, ladder company or squad.
+- id: fire_company_type
+  name: FireCoType
   data_type: text
+  description: Denotes whether the company is an engine company, ladder company or
+    squad.
+  example: None
   values:
-    - ["L", "Ladder Company"]
-    - ["E", "Engine Company"]
-    - ["Q", "Fire Squad"]
-- name: fire_company_number
-  display_name: FireCoNum
+  - value: L
+    description: Ladder Company
+  - value: E
+    description: Engine Company
+  - value: Q
+    description: Fire Squad
+- id: fire_company_number
+  name: FireCoNum
+  data_type: integer
   description: The company number servicing the district
-  data_type: integer
-- name: fire_division
-  display_name: FireDiv
-  description: The division number servicing the district
+  example: None
+- id: fire_division
+  name: FireDiv
   data_type: text
-- name: fire_battalion
-  display_name: FireBN
-  description: The battalion number servicing the district
+  description: The division number servicing the district
+  example: None
+- id: fire_battalion
+  name: FireBN
   data_type: integer
-
-- name: the_geom
-  display_name: Shape
-  description: ""
-  data_type: wkb
-- name: shape_length
-  display_name: Shape_Length
-  description: ""
-  data_type: double
-- name: shape_area
-  display_name: Shape_Area
-  description: ""
-  data_type: double
+  description: The battalion number servicing the district
+  example: None
+- id: the_geom
+  name: Shape
+  data_type: geometry
+  example: None
+- id: shape_length
+  name: Shape_Length
+  data_type: decimal
+  example: None
+- id: shape_area
+  name: Shape_Area
+  data_type: decimal
+  example: None
