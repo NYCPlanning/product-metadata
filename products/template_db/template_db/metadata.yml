@@ -1,8 +1,9 @@
 name: dcp_template_db
-display_name: "Template DB (Overridden at the dest level)"
+display_name: Template DB
 summary: |
   Template DB is a mock dataset created by the Data Engineering team at the Department of City Planning (DCP).
-description: "Overriding at the the destination-level"
+description: |
+  Template DB is a mock dataset created by the Data Engineering team at the Department of City Planning (DCP).
 tags: [Department of City Planning, DCP, New York City, NYC]
 each_row_is_a: Interesting place in NYC
 
