@@ -29,6 +29,15 @@ destinations:
       destination_use: dataset_file
   custom:
     four_four: epne-qv9x
+- id: bytes
+  type: bytes
+  files:
+  - id: shapefile
+    custom:
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nyhez_{{ version }}.zip
+    id: nyhez_metadata.pdf
+    custom:
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nyhez_metadata.pdf
 
 files:
 - file:

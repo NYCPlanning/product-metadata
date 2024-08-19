@@ -104,6 +104,11 @@ columns:
   data_type: integer
   description: Municipal Court District Number
   example: None
+- id: state_senate_district
+  name: State Senate District
+  data_type: integer
+  description: Municipal Court District Number
+  example: None
 - id: borocode
   name: BoroCode
   data_type: text

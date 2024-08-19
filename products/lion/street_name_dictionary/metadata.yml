@@ -58,5 +58,11 @@ files:
     filename: snd_metadata.pdf
     is_metadata: true
     type: None
+- file:
+    id: snd_userguide.pdf
+    filename: snd_userguide.pdf
+    is_metadata: true
+    type: None
+
 
 columns: []

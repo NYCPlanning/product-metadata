@@ -30,7 +30,7 @@ destinations:
     custom:
       url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nyap_{{
         version }}.zip
-  - id: nynta2020_metadata.pdf
+  - id: nyap_metadata.pdf
     custom:
       url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nyap_metadata.pdf
 

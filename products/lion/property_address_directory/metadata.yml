@@ -59,5 +59,10 @@ files:
     filename: padlayout.pdf
     is_metadata: true
     type: None
+- file:
+    id: padgui.pdf
+    filename: padgui.pdf
+    is_metadata: true
+    type: None
 
 columns: []
