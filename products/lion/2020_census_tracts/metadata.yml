@@ -76,13 +76,13 @@ files:
     type: shapefile
   dataset_overrides:
     attributes:
-      description: 2020 Census Blocks (water areas included) from the US Census for
+      description: 2020 Census Tracts (water areas included) from the US Census for
         New York City. These boundary files are derived from the US Census Bureau's
         TIGER data products and have been geographically modified to fit the New York
         City base map. All previously released versions of this data are available
         at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES
         of the BIG APPLE- Archive</a>.
-      display_name: 2020 Census Blocks (water areas included)
+      display_name: 2020 Census Tracts (water areas included)
 - file:
     id: nyct2020_metadata.pdf
     filename: nyct2020_metadata.pdf
