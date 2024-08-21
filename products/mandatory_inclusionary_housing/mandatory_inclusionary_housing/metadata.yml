@@ -40,6 +40,15 @@ destinations:
       destination_use: dataset_file
   custom:
     four_four: p6cc-cxkc
+- id: bytes
+  type: bytes
+  files:
+  - id: primary_shapefile
+    custom:
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nycmih_{{ version }}.zip
+  - id: nycmih_metadata.pdf
+    custom:
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nycmih_metadata.pdf
 
 files:
 - file:

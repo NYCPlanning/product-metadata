@@ -13,7 +13,15 @@ attributes:
   - zoning
   - nyc zoning tax lot database
 
-assembly: []
+assembly:
+- id: csv_package
+  filename: nyczoningtaxlotdb.zip
+  type: Zip
+  contents:
+  - id: zoningtaxlotdatabase_datadictionary.pdf
+    filename: zoningtaxlotdatabase_datadictionary.pdf
+  - id: primary_csv
+    filename: NY_ZoningTaxLotDB{{ version }}.csv
 
 custom: {}
 
@@ -79,6 +87,12 @@ destinations:
       destination_use: dataset_file
   custom:
     four_four: fdkv-4t4z
+- id: bytes
+  type: bytes
+  files:
+  - id: csv_package
+    custom:
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nyczoningtaxlotdb_{{ version }}.zip
 
 files:
 - file:

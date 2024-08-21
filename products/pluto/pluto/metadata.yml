@@ -19,7 +19,17 @@ attributes:
   - new york city
   - nyc
 
-assembly: []
+assembly:
+- id: csv_zip
+  filename: nyc_pluto_csv
+  type: Zip
+  contents:
+  - id: pluto_readme.pdf
+    filename: pluto_readme.pdf
+  - id: pluto_datadictionary.pdf
+    filename: pluto_datadictionary.pdf
+  - id: csv
+    filename: pluto_{{ version }}.csv
 
 custom: {}
 
@@ -80,6 +90,18 @@ destinations:
       destination_use: dataset_file
   custom:
     four_four: 4g5k-ab5u
+- id: bytes
+  type: bytes
+  files:
+  - id: csv_zip
+    custom:
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nyc_pluto_{{ version }}_csv.zip
+  - id: pluto_datadictionary.pdf
+    custom:
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/pluto_datadictionary.pdf
+  - id: pluto_readme.pdf
+    custom:
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/pluto_readme.pdf
 
 files:
 - file:
@@ -485,6 +507,11 @@ files:
     filename: pluto_readme.pdf
     is_metadata: true
     type: None
+- file:
+    id: csv
+    filename: pluto.csv
+    is_metadata: false
+    type: zip
 
 columns:
 - id: borough

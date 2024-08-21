@@ -26,7 +26,13 @@ attributes:
   - dcp
   - nyc
 
-assembly: []
+assembly:
+- id: csv_package
+  filename: nyedescsv.zip
+  type: Zip
+  contents:
+  - id: csv
+    filename: E_GIS_{{ version }}.csv
 
 custom: {}
 
@@ -53,6 +59,18 @@ destinations:
       destination_use: dataset_file
   custom:
     four_four: hxm3-23vy
+- id: bytes
+  type: bytes
+  files:
+  - id: csv_package
+    custom:
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nyedes_{{ version }}csv.zip
+  - id: shapefile
+    custom:
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nyedes_{{ version }}shp.zip
+  - id: nyedes_metadata.pdf
+    custom:
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nyedes_metadata.pdf
 
 files:
 - file:

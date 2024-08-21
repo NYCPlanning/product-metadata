@@ -25,7 +25,15 @@ attributes:
   - department of city planning
   - dcp
 
-assembly: []
+assembly:
+- id: csv_package
+  filename: zapprojects_csv.zip
+  type: Zip
+  contents:
+  - id: zapprojects_datadictionary.xlsx
+    filename: zapprojects_datadictionary.xlsx
+  - id: projects
+    filename: zap_projects.csv
 
 custom: {}
 
@@ -41,6 +49,12 @@ destinations:
       destination_use: dataset_file
   custom:
     four_four: hgx4-8ukb
+- id: bytes
+  type: bytes
+  files:
+  - id: csv_package
+    custom:
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/zapprojects_{{ version }}csv.zip
 
 files:
 - file:
