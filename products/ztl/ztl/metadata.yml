@@ -3,6 +3,7 @@ id: ztl
 attributes:
   description: |-
     The Zoning Tax Lot Database is a comma-separated values (CSV) file that contains up-to-date zoning by parcel. The Database includes the zoning designations and zoning map associated with a specific tax block and lot. The Database is updated on a monthly basis to reflect rezoning and corrections to the file.
+
     All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>
   display_name: NYC Zoning Tax Lot Database
   each_row_is_a: Tax Lot
@@ -33,56 +34,6 @@ destinations:
     custom:
       destination_use: attachment
   - id: primary_csv
-    dataset_overrides:
-      overridden_columns:
-      - id: Borough Code
-        custom:
-          api_name: borough_code
-      - id: Tax Block
-        custom:
-          api_name: tax_block
-      - id: Tax Lot
-        custom:
-          api_name: tax_lot
-      - id: BBL
-        custom:
-          api_name: bbl
-      - id: Zoning District 1
-        custom:
-          api_name: zoning_district_1
-      - id: Zoning District 2
-        custom:
-          api_name: zoning_district_2
-      - id: Zoning District 3
-        custom:
-          api_name: zoning_district_3
-      - id: Zoning District 4
-        custom:
-          api_name: zoning_district_4
-      - id: Commercial Overlay 1
-        custom:
-          api_name: commercial_overlay_1
-      - id: Commercial Overlay 2
-        custom:
-          api_name: commercial_overlay_2
-      - id: Special District 1
-        custom:
-          api_name: special_district_1
-      - id: Special District 2
-        custom:
-          api_name: special_district_2
-      - id: Special District 3
-        custom:
-          api_name: special_district_3
-      - id: Limited Height District
-        custom:
-          api_name: limited_height_district
-      - id: Zoning Map Number
-        custom:
-          api_name: zoning_map_number
-      - id: Zoning Map Code
-        custom:
-          api_name: zoning_map_code
     custom:
       destination_use: dataset_file
   custom:
