@@ -16,58 +16,114 @@ attributes:
   - budget
   - omb
 
-assembly: []
+assembly:
+- id: csv_package
+  filename: cpdb.zip
+  type: zip
+  contents:
+  - id: projects_csv
+    filename: cpdb_projects_{{ version }}.csv
 
 custom: {}
 
 destinations:
-- id: socrata_projects
+- id: socrata_csv
   type: socrata
   files:
-  - id: projects
+  - id: projects_csv
+    dataset_overrides:
+      overridden_columns:
+      - id: plannedcommit_ccexempt
+        custom:
+          api_name: ccexempt
+      - id: plannedcommit_ccnonexempt
+        custom:
+          api_name: ccnonexempt
+      - id: plannedcommit_citycost
+        custom:
+          api_name: totalcityplannedcommit
+      - id: plannedcommit_nccfederal
+        custom:
+          api_name: nccfederal
+      - id: plannedcommit_nccother
+        custom:
+          api_name: nccother
+      - id: plannedcommit_nccstate
+        custom:
+          api_name: nccstate
+      - id: plannedcommit_noncitycost
+        custom:
+          api_name: totalnoncityplannedcommit
+      - id: plannedcommit_total
+        custom:
+          api_name: totalplannedcommit
     custom:
       destination_use: dataset_file
   custom:
     four_four: fi59-268w
-- id: socrata_projects_points
+- id: socrata_points
   type: socrata
   files:
   - id: projects_points
+    dataset_overrides:
+      overridden_columns:
+      - id: geometry
+        custom:
+          api_name: the_geom
     custom:
       destination_use: dataset_file
   custom:
     four_four: h2ic-zdws
-- id: socrata_projects_polygons
+- id: socrata_polygons
   type: socrata
   files:
   - id: projects_polygons
+    dataset_overrides:
+      omitted_columns:
+        - shape_area
+        - shape_length
+      overridden_columns:
+      - id: geometry
+        custom:
+          api_name: the_geom
     custom:
       destination_use: dataset_file
   custom:
     four_four: 9jkp-n57r
+- id: bytes
+  type: bytes
+  files:
+  - id: csv_package
+    custom:
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/cpdb_24exec.zip
+  - id: projects_points
+    custom:
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/cpdb_projects_pts_24exec.zip
+  - id: projects_polygons
+    custom:
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/cpdb_projects_poly_24exec.zip
 
 files:
 - file:
-    id: projects
+    id: projects_csv
     filename: cpdb_projects.csv
     type: csv
   dataset_overrides:
     omitted_columns:
     - geometry
+    - shape_area
+    - shape_length
 - file:
     id: projects_points
     filename: cpdb_projects_pts.shp.zip
     type: shapefile
   dataset_overrides:
+    omitted_columns:
+    - shape_area
+    - shape_length
     attributes:
       display_name: Capital Projects Database (CPDB) - Projects (Points)
     overridden_columns:
-    - id: maprojid
-      name: maprojid
-    - id: magency
-      name: magency
-    - id: projectid
-      name: projectid
     - id: description
       name: descript
     - id: plannedcommit_ccnonexempt
@@ -347,243 +403,243 @@ columns:
   example: Fixed Asset
 - id: plannedcommit_ccnonexempt
   name: plannedcommit_ccnonexempt
-  data_type: decimal
+  data_type: number
   description: Sum of City Cost (Non-Exempt) funding across all commitments associated
     with the project.
   example: None
 - id: plannedcommit_ccexempt
   name: plannedcommit_ccexempt
-  data_type: decimal
+  data_type: number
   description: Sum of City Cost (Exempt) funding across all commitments associated
     with the project.
   example: None
 - id: plannedcommit_citycost
   name: plannedcommit_citycost
-  data_type: decimal
+  data_type: number
   description: Sum of City funding across all commitments associated with the project.
   example: None
 - id: plannedcommit_nccstate
   name: plannedcommit_nccstate
-  data_type: decimal
+  data_type: number
   description: Sum of State funding across all commitments associated with the project.
   example: None
 - id: plannedcommit_nccfederal
   name: plannedcommit_nccfederal
-  data_type: decimal
+  data_type: number
   description: Sum of Federal funding across all commitments associated with the project.
   example: None
 - id: plannedcommit_nccother
   name: plannedcommit_nccother
-  data_type: decimal
+  data_type: number
   description: Sum of Other funding across all commitments associated with the project.
   example: None
 - id: plannedcommit_noncitycost
   name: plannedcommit_noncitycost
-  data_type: decimal
+  data_type: number
   description: Sum of Non-City funding across all commitments associated with the
     project.
   example: None
 - id: plannedcommit_total
   name: plannedcommit_total
-  data_type: decimal
+  data_type: number
   description: Sum of City Cost and Non-City Cost, which reports the total planned
     commitments for the project allocated in the Capital Commitment Plan.
   example: None
 - id: adopt_ccnonexempt
   name: adopt_ccnonexempt
-  data_type: decimal
+  data_type: number
   description: Sum of City adopted funding (Non-Exempt) associated with the project
     within in the City's budget.
   example: None
 - id: adopt_ccexempt
   name: adopt_ccexempt
-  data_type: decimal
+  data_type: number
   description: Sum of City adopted funding (Exempt) with the project within in the
     City's budget.
   example: None
 - id: adopt_citycost
   name: adopt_citycost
-  data_type: decimal
+  data_type: number
   description: Sum of City adopted funding associated with the project within in the
     City's budget.
   example: None
 - id: adopt_nccstate
   name: adopt_nccstate
-  data_type: decimal
+  data_type: number
   description: Sum of State adopted funding associated with the project within in
     the City's budget.
   example: None
 - id: adopt_nccfederal
   name: adopt_nccfederal
-  data_type: decimal
+  data_type: number
   description: Sum of Federal adopted funding associated with the project within in
     the City's budget.
   example: None
 - id: adopt_nccother
   name: adopt_nccother
-  data_type: decimal
+  data_type: number
   description: Sum of Other adopted funding associated with the project within in
     the City's budget.
   example: None
 - id: adopt_noncitycost
   name: adopt_noncitycost
-  data_type: decimal
+  data_type: number
   description: Sum of Non-City adopted funding associated with the project within
     in the City's budget.
   example: None
 - id: adopt_total
   name: adopt_total
-  data_type: decimal
+  data_type: number
   description: Sum of of the total adopted funding associated with the project within
     the City's budget.
   example: None
 - id: allocate_ccnonexempt
   name: allocate_ccnonexempt
-  data_type: decimal
+  data_type: number
   description: Sum of City allocated funding (Non-Exempt) associated with the project
     within in the City's budget.
   example: None
 - id: allocate_ccexempt
   name: allocate_ccexempt
-  data_type: decimal
+  data_type: number
   description: Sum of City allocated funding (Exempt) with the project within in the
     City's budget.
   example: None
 - id: allocate_citycost
   name: allocate_citycost
-  data_type: decimal
+  data_type: number
   description: Sum of City allocated funding associated with the project within in
     the City's budget.
   example: None
 - id: allocate_nccstate
   name: allocate_nccstate
-  data_type: decimal
+  data_type: number
   description: Sum of State allocated funding associated with the project within in
     the City's budget.
   example: None
 - id: allocate_nccfederal
   name: allocate_nccfederal
-  data_type: decimal
+  data_type: number
   description: Sum of Federal allocated funding associated with the project within
     in the City's budget.
   example: None
 - id: allocate_nccother
   name: allocate_nccother
-  data_type: decimal
+  data_type: number
   description: Sum of Other allocated funding associated with the project within in
     the City's budget.
   example: None
 - id: allocate_noncitycost
   name: allocate_noncitycost
-  data_type: decimal
+  data_type: number
   description: Sum of Non-City allocated funding associated with the project within
     in the City's budget.
   example: None
 - id: allocate_total
   name: allocate_total
-  data_type: decimal
+  data_type: number
   description: Sum of of the total allocated funding associated with the project within
     the City's budget.
   example: None
 - id: commit_ccnonexempt
   name: commit_ccnonexempt
-  data_type: decimal
+  data_type: number
   description: Sum of City committed funding (Non-Exempt) associated with the project
     within in the City's budget.
   example: None
 - id: commit_ccexempt
   name: commit_ccexempt
-  data_type: decimal
+  data_type: number
   description: Sum of City committed funding (Exempt) with the project within in the
     City's budget.
   example: None
 - id: commit_citycost
   name: commit_citycost
-  data_type: decimal
+  data_type: number
   description: Sum of City committed funding associated with the project within in
     the City's budget.
   example: None
 - id: commit_nccstate
   name: commit_nccstate
-  data_type: decimal
+  data_type: number
   description: Sum of State committed funding associated with the project within in
     the City's budget.
   example: None
 - id: commit_nccfederal
   name: commit_nccfederal
-  data_type: decimal
+  data_type: number
   description: Sum of Federal committed funding associated with the project within
     in the City's budget.
   example: None
 - id: commit_nccother
   name: commit_nccother
-  data_type: decimal
+  data_type: number
   description: Sum of Other committed funding associated with the project within in
     the City's budget.
   example: None
 - id: commit_noncitycost
   name: commit_noncitycost
-  data_type: decimal
+  data_type: number
   description: Sum of Non-City committed funding associated with the project within
     in the City's budget.
   example: None
 - id: commit_total
   name: commit_total
-  data_type: decimal
+  data_type: number
   description: Sum of of the total committed funding associated with the project within
     the City's budget.
   example: None
 - id: spent_ccnonexempt
   name: spent_ccnonexempt
-  data_type: decimal
+  data_type: number
   description: Sum of City funding spent (Non-Exempt) associated with the project
     within in the City's budget.
   example: None
 - id: spent_ccexempt
   name: spent_ccexempt
-  data_type: decimal
+  data_type: number
   description: Sum of City funding spent (Exempt) with the project within in the City's
     budget.
   example: None
 - id: spent_citycost
   name: spent_citycost
-  data_type: decimal
+  data_type: number
   description: Sum of City funding spent associated with the project within in the
     City's budget.
   example: None
 - id: spent_nccstate
   name: spent_nccstate
-  data_type: decimal
+  data_type: number
   description: Sum of State funding spent associated with the project within in the
     City's budget.
   example: None
 - id: spent_nccfederal
   name: spent_nccfederal
-  data_type: decimal
+  data_type: number
   description: Sum of Federal funding spent associated with the project within in
     the City's budget.
   example: None
 - id: spent_nccother
   name: spent_nccother
-  data_type: decimal
+  data_type: number
   description: Sum of Other funding spent associated with the project within in the
     City's budget.
   example: None
 - id: spent_noncitycost
   name: spent_noncitycost
-  data_type: decimal
+  data_type: number
   description: Sum of Non-City funding spent associated with the project within in
     the City's budget.
   example: None
 - id: spent_total
   name: spent_total
-  data_type: decimal
+  data_type: number
   description: Sum of of the total funding spent associated with the project within
     the City's budget.
   example: None
 - id: spent_total_checkbooknyc
   name: spent_total_checkbooknyc
-  data_type: decimal
+  data_type: number
   description: Sum of check values from Checkbook NYC associated with the project.
   example: None
 - id: geometry
@@ -591,3 +647,11 @@ columns:
   data_type: text
   description: Spatial data for the project.
   example: None
+- id: shape_area
+  name: Shape_Area
+  data_type: decimal
+  description: ""
+- id: shape_length
+  name: Shape_Leng
+  data_type: decimal
+  description: ""
