@@ -16,19 +16,57 @@ attributes:
   - budget
   - omb
 
-assembly: []
+assembly:
+- id: commitments_zip
+  filename: cpdb_planned_commitments_{{ version }}.zip
+  type: zip
+  contents:
+  - id: commitments
+    filename: cpdb_planned_commitments_24exec.csv
 
 custom: {}
 
 destinations:
-- id: socrata_commitments
+- id: socrata
   type: socrata
   files:
   - id: commitments
+    dataset_overrides:
+      overridden_columns:
+        - id: plannedcommit_ccnonexempt
+          custom:
+            api_name: ccnonexempt
+        - id: plannedcommit_ccexempt
+          custom:
+            api_name: ccexempt
+        - id: plannedcommit_citycost
+          custom:
+            api_name: totalcityplannedcommit
+        - id: plannedcommit_nccfederal
+          custom:
+            api_name: nccfederal
+        - id: plannedcommit_nccother
+          custom:
+            api_name: nccother
+        - id: plannedcommit_nccstate
+          custom:
+            api_name: nccstate
+        - id: plannedcommit_noncitycost
+          custom:
+            api_name: totalnoncityplannedcommit
+        - id: plannedcommit_total
+          custom:
+            api_name: totalplannedcommit
     custom:
       destination_use: dataset_file
   custom:
     four_four: djxg-kcfi
+- id: bytes
+  type: bytes
+  files:
+  - id: commitments_zip
+    custom:
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/cpdb_planned_commitments_{{ version }}.zip
 
 files:
 - file:
