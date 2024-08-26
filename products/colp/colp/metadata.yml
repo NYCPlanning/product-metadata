@@ -20,7 +20,19 @@ attributes:
   - New York City
   - NYC
 
-assembly: []
+assembly:
+- id: csv_zip
+  filename: csv.zip
+  type: zip
+  contents:
+  - id: primary_csv
+    filename: colp_{{ version }}.csv
+- id: xlsx_zip
+  filename: xlsx.zip
+  type: zip
+  contents:
+  - id: xlsx
+    filename: colp_{{ version }}.xlsx
 
 custom: {}
 
@@ -36,6 +48,7 @@ destinations:
       destination_use: attachment
   - id: primary_shapefile
     dataset_overrides:
+      omitted_columns: ['dcpedited', 'uid']
       overridden_columns:
       - id: borough
         name: BOROUGH
@@ -123,6 +136,42 @@ destinations:
       destination_use: dataset_file
   custom:
     four_four: fn4k-qyk2
+- id: socrata_fgdb
+  type: socrata
+  files:
+  - id: primary_file_geodatabase
+    custom:
+      destination_use: dataset_file
+  - id: colp_readme.pdf
+    custom:
+      destination_use: attachment
+  - id: colp_metadata.pdf
+    custom:
+      destination_use: attachment
+  custom:
+    four_four: c2g8-ercv
+    is_unparsed_dataset: true
+- id: bytes
+  type: bytes
+  files:
+  - id: colp_readme.pdf
+    custom:
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/colp_readme.pdf
+  - id: colp_metadata.pdf
+    custom:
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/colp_metadata.pdf
+  - id: primary_shapefile
+    custom:
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/colp_{{ version }}_shp.zip
+  - id: csv_zip
+    custom:
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/colp_{{ version }}_csv.zip
+  - id: xlsx_zip
+    custom:
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/colp_{{ version }}_xlsx.zip
+  - id: primary_file_geodatabase
+    custom:
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/colp_{{ version }}_gdb.zip
 
 files:
 - file:
@@ -192,9 +241,20 @@ files:
     - id: geom
       name: GEOM
 - file:
+    id: xlsx
+    filename: colp.xlsx
+    type: xlsx
+- file:
     id: primary_file_geodatabase
     filename: colp.gdb.zip
     type: fgdb
+  dataset_overrides:
+    attributes:
+      display_name: City Owned and Leased Property (COLP) – Geodatabase
+      description: |-
+        Geodatabase of city-owned and leased properties and uses. COLP is a comprehensive list of uses on city owned and leased properties that includes geographic information as well as the type of use, agency and other related information.
+
+        All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive.</a>
 - file:
     id: colp_readme.pdf
     filename: colp_readme.pdf
