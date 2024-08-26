@@ -1,75 +1,93 @@
 name: dcp_template_db
-display_name: Template DB
-summary: |
-  Template DB is a mock dataset created by the Data Engineering team at the Department of City Planning (DCP).
-description: |
-  Template DB is a mock dataset created by the Data Engineering team at the Department of City Planning (DCP).
-tags: [Department of City Planning, DCP, New York City, NYC]
-each_row_is_a: Interesting place in NYC
 
-columns:
-  - name: place_name
-    description: The name of the Place
-    display_name: Place Name
-    data_type: text
+attributes:
+  display_name: Template DB
+  description: |
+    Template DB is a mock dataset created by the Data Engineering team at the Department of City Planning (DCP).
+  each_row_is_a: Interesting place in NYC
+  tags:
+  - Department of City Planning
+  - DCP
+  - New York City
+  - NYC
 
-  - name: bbl
-    description: The Borough-Block-Lot (BBL) of the Place
-    display_name: BBL
-    data_type: bbl
+assembly: []
 
-  - name: place_type
-    description: The type of the Place
-    display_name: Place Type
-    data_type: text
-
-  - name: borough
-    description: The borough of the Place
-    display_name: Borough
-    data_type: text
-
-  - name: wkb_geometry
-    description: The geometry of the Place
-    display_name: Geometry
-    data_type: wkb
-
-package:
-  dataset_files:
-    - name: primary_csv
-      filename: templatedb.csv
-      type: csv
-    - name: shapefile_points
-      filename: templatedb_points.shp.zip
-      type: shapefile
-      overrides:
-        columns:
-          wkb_geometry:
-            name: the_geom
-    - name: shapefile_polygons
-      filename: templatedb_polygons.shp.zip
-      type: shapefile
-      overrides:
-        columns:
-          wkb_geometry:
-            name: the_geom
-  attachments:
-    - source_data_versions.csv
-    - build_metadata.json
+custom: {}
 
 destinations:
-  - id: socrata
-    type: socrata
-    four_four: "b7pm-uzu7"
-    datasets:
-      - shapefile_points
-    attachments:
-      - source_data_versions.csv
-    overrides:
-      display_name: Template DB
-      description: |
-          Template DB is a mock dataset created by the Data Engineering team at the Department of City Planning (DCP).
+- id: socrata
+  type: socrata
+  files:
+  - id: source_data_versions.csv
+    custom:
+      destination_use: attachment
+  - id: shapefile_points
+    dataset_overrides:
+      overridden_columns:
+      - id: the_geom
+        custom:
+          api_name: wkb_geometry
+    custom:
+      destination_use: dataset_file
+  custom:
+    four_four: b7pm-uzu7
 
-          More details are available at the DCP Data Engineering wiki <a href="https://github.com/NYCPlanning/data-engineering/wiki/"\>here</a>
-    column_details:
-      the_geom:
-        api_name: wkb_geometry
+files:
+- file:
+    id: primary_csv
+    filename: templatedb.csv
+    type: csv
+- file:
+    id: shapefile_points
+    filename: templatedb_points.shp.zip
+    type: shapefile
+  dataset_overrides:
+    overridden_columns:
+    - id: wkb_geometry
+      name: the_geom
+- file:
+    id: shapefile_polygons
+    filename: templatedb_polygons.shp.zip
+    type: shapefile
+  dataset_overrides:
+    overridden_columns:
+    - id: wkb_geometry
+      name: the_geom
+- file:
+    id: source_data_versions.csv
+    filename: source_data_versions.csv
+    is_metadata: true
+    type: None
+- file:
+    id: build_metadata.json
+    filename: build_metadata.json
+    is_metadata: true
+    type: None
+
+columns:
+- id: place_name
+  name: Place Name
+  data_type: text
+  description: The name of the Place
+  example: None
+- id: bbl
+  name: BBL
+  data_type: bbl
+  description: The Borough-Block-Lot (BBL) of the Place
+  example: None
+- id: place_type
+  name: Place Type
+  data_type: text
+  description: The type of the Place
+  example: None
+- id: borough
+  name: Borough
+  data_type: text
+  description: The borough of the Place
+  example: None
+- id: wkb_geometry
+  name: Geometry
+  data_type: geometry
+  description: The geometry of the Place
+  example: None

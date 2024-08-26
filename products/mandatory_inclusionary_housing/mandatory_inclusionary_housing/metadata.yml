@@ -1,160 +1,181 @@
-name: mandatory_inclusionary_housing
-display_name: Mandatory Inclusionary Housing
-summary: ""
-description: >
-  The Mandatory Inclusionary Housing program was adopted in 2016 to encourage the creation of
-  housing for families at a range of incomes in areas planned for housing growth. When actions
-  of the Commission significantly increase residential density, the City Planning
-  Commission and the City Council will apply one or more options to require affordable housing
-  as part of new residential construction.
+id: mandatory_inclusionary_housing
 
+attributes:
+  description: |-
+    The Mandatory Inclusionary Housing program was adopted in 2016 to encourage the creation of housing for families at a range of incomes in areas planned for housing growth. When actions of the Commission significantly increase residential density, the City Planning Commission and the City Council will apply one or more options to require affordable housing as part of new residential construction.
 
-  All previously released versions of this data are available at
-  <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>
+    All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>
+  display_name: Mandatory Inclusionary Housing
+  each_row_is_a: A Mandatorily Included House
+  tags:
+  - housing
+  - house
+  - building
+  - development
 
+assembly: []
 
-tags: [housing, house, building, development]
-each_row_is_a: A Mandatorily Included House
+custom: {}
 
 destinations:
 - id: socrata
   type: socrata
-  four_four: bw8v-wzdr
-  attachments:
-  - nycmih_metadata.pdf
-  datasets:
-  - primary_shapefile
-  omit_columns: []
-  column_details: {}
-
+  files:
+  - id: nycmih_metadata.pdf
+    custom:
+      destination_use: attachment
+  - id: primary_shapefile
+    custom:
+      destination_use: dataset_file
+  custom:
+    four_four: bw8v-wzdr
 - id: socrata_test
   type: socrata
-  four_four: p6cc-cxkc
-  attachments:
-  - nycmih_metadata.pdf
-  datasets:
-  - primary_shapefile
-  omit_columns: []
-  column_details: {}
+  files:
+  - id: nycmih_metadata.pdf
+    custom:
+      destination_use: attachment
+  - id: primary_shapefile
+    custom:
+      destination_use: dataset_file
+  custom:
+    four_four: p6cc-cxkc
+- id: bytes
+  type: bytes
+  files:
+  - id: primary_shapefile
+    custom:
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nycmih_{{ version }}.zip
+  - id: nycmih_metadata.pdf
+    custom:
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nycmih_metadata.pdf
 
-package:
-  dataset_files:
-  - name: primary_shapefile
-    type: shapefile
+files:
+- file:
+    id: primary_shapefile
     filename: nycmih.zip
-    overrides:
-      omit_columns: []
-      columns:
-        zr_ulurpno:
-          name: ZR_ULURPno
-        project_id:
-          name: Project_ID
-        boro:
-          name: Boro
-        mih_option:
-          name: MIH_Option
-        zr_map:
-          name: ZR_Map
-        cd:
-          name: CD
-        projectnam:
-          name: ProjectNam
-        dateadopte:
-          name: DateAdopte
-        shape_leng:
-          name: Shape_Leng
-        status:
-          name: Status
-        shape_area:
-          name: Shape_Area
-        the_geom:
-          name: geometry
-          data_type: geom_poly
-        zoning_map:
-          name: Zoning_Map
-  attachments:
-  - nycmih_metadata.pdf
+    type: shapefile
+  dataset_overrides:
+    overridden_columns:
+    - id: zr_ulurpno
+      name: ZR_ULURPno
+    - id: project_id
+      name: Project_ID
+    - id: boro
+      name: Boro
+    - id: mih_option
+      name: MIH_Option
+    - id: zr_map
+      name: ZR_Map
+    - id: cd
+      name: CD
+    - id: projectnam
+      name: ProjectNam
+    - id: dateadopte
+      name: DateAdopte
+    - id: shape_leng
+      name: Shape_Leng
+    - id: status
+      name: Status
+    - id: shape_area
+      name: Shape_Area
+    - id: the_geom
+      name: geometry
+      data_type: geometry
+    - id: zoning_map
+      name: Zoning_Map
+- file:
+    id: nycmih_metadata.pdf
+    filename: nycmih_metadata.pdf
+    is_metadata: true
+    type: None
 
 columns:
-- name: the_geom
-  display_name: the_geom
+- id: the_geom
+  name: the_geom
+  data_type: geometry
   description: Geometry type, changed
-  data_type: wkb
-  example: 
-  readme_data_type: geometry
-- name: boro
-  display_name: Boro
+  example: None
+  custom:
+    readme_data_type: geometry
+- id: boro
+  name: Boro
+  data_type: text
   description: The NYC Borough where the Mandatory Inclusionary Housing (MIH) area
     is mapped. The boro code is a single digit identifier, indicating a particular
     borough (1 = Manhattan, 2 = Bronx, 3 = Brooklyn, 4 = Queens, 5 = Staten Island).
-  data_type: text
   example: '1'
   values:
-    - ["1", Manhattan]
-    - ["2", Bronx]
-    - ["3", Brooklyn]
-    - ["4", Queens]
-    - ["5", Staten Island]
-- name: status
-  display_name: Status
+  - value: '1'
+    description: Manhattan
+  - value: '2'
+    description: Bronx
+  - value: '3'
+    description: Brooklyn
+  - value: '4'
+    description: Queens
+  - value: '5'
+    description: Staten Island
+- id: status
+  name: Status
+  data_type: text
   description: Status of the ULURP text amendment application (Adopted = final approval,
     Pipeline = awaiting approval)
-  data_type: text
   example: Adopted
   values:
-  - [Adopted, ]
-- name: projectnam
-  display_name: Project Name
+  - value: Adopted
+- id: projectnam
+  name: Project Name
+  data_type: text
   description: Project Name of the Mandatory Inclusionary Housing (MIH) area.
-  data_type: text
   example: Jerome Avenue Rezoning
-- name: dateadopte
-  display_name: Date Adopted
-  description: The date the ULURP text amendment application was adopted.
+- id: dateadopte
+  name: Date Adopted
   data_type: datetime
+  description: The date the ULURP text amendment application was adopted.
   example: '2021-11-23T00:00:00.000'
-- name: zr_ulurpno
-  display_name: ZR_ULURP Number
-  description: The ULURP number of the ULURP text amendment application.
+- id: zr_ulurpno
+  name: ZR_ULURP Number
   data_type: text
+  description: The ULURP number of the ULURP text amendment application.
   example: 190352ZRQ
-- name: zr_map
-  display_name: ZR_Map
+- id: zr_map
+  name: ZR_Map
+  data_type: text
   description: The map number referenced in Appendix F of the Zoning Resolution for
     the mapped Mandatory Inclusionary Housing (MIH) area.
-  data_type: text
   example: CD11-Map 1 (Area 1)
-- name: cd
-  display_name: CD
+- id: cd
+  name: CD
+  data_type: text
   description: Community District where the Mandatory Inclusionary Housing (MIH) area
     is mapped.
-  data_type: text
   example: '1'
-- name: mih_option
-  display_name: MIH_Option
+- id: mih_option
+  name: MIH_Option
+  data_type: text
   description: Level of affordability and options applied to the mapped Mandatory
     Inclusionary Housing (MIH) area.
-  data_type: text
   example: Option 1
-- name: zoning_map
-  display_name: Zoning_Map
+- id: zoning_map
+  name: Zoning_Map
+  data_type: text
   description: Zoning Map index number where the Mandatory Inclusionary Housing (MIH)
     area is mapped.
-  data_type: text
   example: 16c
-- name: project_id
-  display_name: Project_ID
+- id: project_id
+  name: Project_ID
+  data_type: text
   description: Zoning Application Portal (ZAP) project id. ZAP is a DCP project tracking
     database.
-  data_type: text
   example: P2013X0135
-- name: shape_leng
-  display_name: Shape_Length
+- id: shape_leng
+  name: Shape_Length
+  data_type: decimal
   description: Length of feature in feet.
-  data_type: double
   example: '837.017259715'
-- name: shape_area
-  display_name: Shape_Area
+- id: shape_area
+  name: Shape_Area
+  data_type: decimal
   description: Area of feature in internal squared feet.
-  data_type: double
   example: '700002.648777'

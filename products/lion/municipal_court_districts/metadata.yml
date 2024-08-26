@@ -1,124 +1,150 @@
-name: municipal_court_districts
-summary: ""
-display_name: Municipal Court Districts
-description: >
-  GIS data: Boundaries of Municipal Court Districts.
+id: municipal_court_districts
 
+attributes:
+  description: |-
+    GIS data: Boundaries of Municipal Court Districts.
 
-  All previously released versions of this data are available at
-  <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
-tags: [municipal court districts, dcp, city planning, judicial, judge, law]
-each_row_is_a: Municipal Court District
+    All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
+  display_name: Municipal Court Districts
+  each_row_is_a: Municipal Court District
+  tags:
+  - municipal court districts
+  - dcp
+  - city planning
+  - judicial
+  - judge
+  - law
+
+assembly: []
+
+custom: {}
 
 destinations:
 - id: socrata_water_included
   type: socrata
-  four_four: yr65-4zy6
-  attachments: [nymcwi_metadata.pdf]
-  datasets:
-  - shapefile_wi
-  omit_columns: []
-  column_details: {}
-  overrides:
-    omit_columns: []
-    ignore_validation: []
-    columns: {}
-    tags: []
+  files:
+  - id: nymcwi_metadata.pdf
+    custom:
+      destination_use: attachment
+  - id: shapefile_wi
+    custom:
+      destination_use: dataset_file
+  custom:
+    four_four: yr65-4zy6
 - id: socrata
   type: socrata
-  four_four: 5ewv-dbt8
-  attachments: [nymc_metadata.pdf]
-  datasets:
-  - shapefile
-  omit_columns: []
-  column_details: {}
-  overrides:
-    omit_columns: []
-    ignore_validation: []
-    columns: {}
-    tags: []
+  files:
+  - id: nymc_metadata.pdf
+    custom:
+      destination_use: attachment
+  - id: shapefile
+    custom:
+      destination_use: dataset_file
+  custom:
+    four_four: 5ewv-dbt8
 - id: bytes
   type: bytes
   files:
-    - id: shapefile
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nymc_{{ version }}.zip
-    - id: shapefile_wi
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nymcwi_{{ version }}.zip
-    - id: nymc_metadata.pdf
+  - id: shapefile
+    custom:
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nymc_{{
+        version }}.zip
+  - id: shapefile_wi
+    custom:
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nymcwi_{{
+        version }}.zip
+  - id: nymc_metadata.pdf
+    custom:
       url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nymc_metadata.pdf
-    - id: nymcwi_metadata.pdf
+  - id: nymcwi_metadata.pdf
+    custom:
       url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nymcwi_metadata.pdf
 
-package:
-  dataset_files:
-  - name: shapefile_wi
-    type: shapefile
+files:
+- file:
+    id: shapefile_wi
     filename: nymcwi.zip
-    overrides:
-      omit_columns: []
-      ignore_validation: []
-      columns:
-        shape_length: {name: shape_leng}
-        state_senate_district: {name: stsendist}
-      tags: []
-      display_name: Municipal Court Districts  (water areas included)
-      description: >
+    type: shapefile
+  dataset_overrides:
+    attributes:
+      description: |-
         GIS data: Boundaries of Municipal Court Districts. (water areas included)
 
-
-        All previously released versions of this data are available at
-        <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
-  - name: shapefile
-    type: shapefile
+        All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
+      display_name: Municipal Court Districts  (water areas included)
+    overridden_columns:
+    - id: shape_length
+      name: shape_leng
+    - id: state_senate_district
+      name: stsendist
+- file:
+    id: shapefile
     filename: nymc.zip
-    overrides:
-      omit_columns: []
-      ignore_validation: []
-      columns:
-        shape_length: {name: shape_leng}
-        state_senate_district: {name: stsendist}
-      tags: []
-  attachments:
-  - nymc_metadata.pdf
-  - nymcwi_metadata.pdf
-
+    type: shapefile
+  dataset_overrides:
+    overridden_columns:
+    - id: shape_length
+      name: shape_leng
+    - id: state_senate_district
+      name: stsendist
+- file:
+    id: nymc_metadata.pdf
+    filename: nymc_metadata.pdf
+    is_metadata: true
+    type: None
+- file:
+    id: nymcwi_metadata.pdf
+    filename: nymcwi_metadata.pdf
+    is_metadata: true
+    type: None
 
 columns:
-- name: municourt
-  display_name: MuniCourt
-  description: Municipal Court District Number
+- id: municourt
+  name: MuniCourt
   data_type: integer
-- name: borocode
-  display_name: BoroCode
-  description: 'Borough code for the borough in which the census block is located.'
+  description: Municipal Court District Number
+  example: None
+- id: state_senate_district
+  name: State Senate District
+  data_type: integer
+  description: Municipal Court District Number
+  example: None
+- id: borocode
+  name: BoroCode
   data_type: text
+  description: Borough code for the borough in which the census block is located.
   example: '4'
   values:
-    - ["1", Manhattan]
-    - ["2", Bronx]
-    - ["3", Brooklyn]
-    - ["4", Queens]
-    - ["5", Staten Island]
-- name: boroname
-  display_name: BoroName
-  description: 'Borough Name.'
+  - value: '1'
+    description: Manhattan
+  - value: '2'
+    description: Bronx
+  - value: '3'
+    description: Brooklyn
+  - value: '4'
+    description: Queens
+  - value: '5'
+    description: Staten Island
+- id: boroname
+  name: BoroName
   data_type: text
+  description: Borough Name.
   example: Queens
   values:
-    - [Brooklyn, ""]
-    - [Bronx, ""]
-    - [Manhattan, ""]
-    - [Queens, ""]
-    - [Staten Island, ""]
-- name: the_geom
-  display_name: Shape
-  description: ""
-  data_type: wkb
-- name: shape_length
-  display_name: Shape_Length
-  description: ""
-  data_type: double
-- name: shape_area
-  display_name: Shape_Area
-  description: ""
-  data_type: double
+  - value: Brooklyn
+  - value: Bronx
+  - value: Manhattan
+  - value: Queens
+  - value: Staten Island
+- id: the_geom
+  name: Shape
+  data_type: geometry
+  example: None
+- id: shape_length
+  name: Shape_Length
+  data_type: decimal
+  example: None
+- id: shape_area
+  name: Shape_Area
+  data_type: decimal
+  example: None

@@ -1,99 +1,120 @@
-name: election_districts
-summary: ""
-display_name: Election Districts
-description: >
-  GIS data: Boundaries of Election Districts.
+id: election_districts
 
+attributes:
+  description: |-
+    GIS data: Boundaries of Election Districts.
 
-  All previously released versions of this data are available at
-  <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
-tags: ['political & election districts gis: election districts', dcp, geographic, voting, location, map, cartography, district, boundary, elect, election]
-each_row_is_a: Election District
+    All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
+  display_name: Election Districts
+  each_row_is_a: Election District
+  tags:
+  - 'political & election districts gis: election districts'
+  - dcp
+  - geographic
+  - voting
+  - location
+  - map
+  - cartography
+  - district
+  - boundary
+  - elect
+  - election
+
+assembly: []
+
+custom: {}
 
 destinations:
 - id: socrata_water_included
   type: socrata
-  four_four: 63sm-kk9b
-  attachments: [nyedwi_metadata.pdf]
-  datasets:
-  - shapefile_wi
-  omit_columns: []
-  column_details: {}
-  overrides:
-    omit_columns: []
-    ignore_validation: []
-    columns: {}
-    tags: []
+  files:
+  - id: nyedwi_metadata.pdf
+    custom:
+      destination_use: attachment
+  - id: shapefile_wi
+    custom:
+      destination_use: dataset_file
+  custom:
+    four_four: 63sm-kk9b
 - id: socrata
   type: socrata
-  four_four: afve-r9tt
-  attachments: [nyed_metadata.pdf]
-  datasets:
-  - shapefile
-  omit_columns: []
-  column_details: {}
-  overrides:
-    omit_columns: []
-    ignore_validation: []
-    columns: {}
-    tags: []
+  files:
+  - id: nyed_metadata.pdf
+    custom:
+      destination_use: attachment
+  - id: shapefile
+    custom:
+      destination_use: dataset_file
+  custom:
+    four_four: afve-r9tt
 - id: bytes
   type: bytes
   files:
-    - id: shapefile
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nyed_{{ version }}.zip
-    - id: shapefile_wi
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nyedwi_{{ version }}.zip
-    - id: nyed_metadata.pdf
+  - id: shapefile
+    custom:
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nyed_{{
+        version }}.zip
+  - id: shapefile_wi
+    custom:
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nyedwi_{{
+        version }}.zip
+  - id: nyed_metadata.pdf
+    custom:
       url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nyed_metadata.pdf
-    - id: nyedwi_metadata.pdf
+  - id: nyedwi_metadata.pdf
+    custom:
       url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nyedwi_metadata.pdf
 
-package:
-  dataset_files:
-  - name: shapefile_wi
-    type: shapefile
+files:
+- file:
+    id: shapefile_wi
     filename: nyedwi.zip
-    overrides:
-      omit_columns: []
-      ignore_validation: []
-      columns:
-        shape_length: {name: shape_leng}
-      tags: []
-      display_name: Election Districts (Water Areas Included)
-      description: >
+    type: shapefile
+  dataset_overrides:
+    attributes:
+      description: |-
         GIS data: Boundaries of Election Districts (Water Areas Included).
 
-
-        All previously released versions of this data are available at
-        <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
-  - name: shapefile
-    type: shapefile
+        All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
+      display_name: Election Districts (Water Areas Included)
+    overridden_columns:
+    - id: shape_length
+      name: shape_leng
+- file:
+    id: shapefile
     filename: nyed.zip
-    overrides:
-      omit_columns: []
-      ignore_validation: []
-      columns:
-        shape_length: {name: shape_leng}
-      tags: []
-  attachments:
-  - nyed_metadata.pdf
-  - nyedwi_metadata.pdf
+    type: shapefile
+  dataset_overrides:
+    overridden_columns:
+    - id: shape_length
+      name: shape_leng
+- file:
+    id: nyed_metadata.pdf
+    filename: nyed_metadata.pdf
+    is_metadata: true
+    type: None
+- file:
+    id: nyedwi_metadata.pdf
+    filename: nyedwi_metadata.pdf
+    is_metadata: true
+    type: None
 
 columns:
-- name: electdist
-  display_name: ElectDist
-  description: Three digit election district number proceeded by the two digit state assembly district.
+- id: electdist
+  name: ElectDist
   data_type: integer
-- name: the_geom
-  display_name: Shape
-  description: ""
-  data_type: wkb
-- name: shape_length
-  display_name: Shape_Length
-  description: ""
-  data_type: double
-- name: shape_area
-  display_name: Shape_Area
-  description: ""
-  data_type: double
+  description: Three digit election district number proceeded by the two digit state
+    assembly district.
+  example: None
+- id: the_geom
+  name: Shape
+  data_type: geometry
+  example: None
+- id: shape_length
+  name: Shape_Length
+  data_type: decimal
+  example: None
+- id: shape_area
+  name: Shape_Area
+  data_type: decimal
+  example: None
