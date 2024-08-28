@@ -1,0 +1,94 @@
+id: inclusionary_housing_designated_areas
+
+attributes:
+  description: |-
+    GIS data:  A specified area in which the Inclusionary Housing Program
+    is applicable. The program modifies the floor area ratio (FAR) and offers a
+    bonus for developments that provide affordable housing.
+
+    All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
+  display_name: Inclusionary Housing Designated Areas
+  each_row_is_a: Inclusionary Housing Designated Area
+  tags:
+  - inclusionary housing designated areas
+  - dcp
+  - city planning
+
+assembly: []
+
+custom: {}
+
+destinations:
+- id: socrata
+  type: socrata
+  custom:
+    four_four: 7nec-8aw4
+- id: bytes
+  type: bytes
+  files:
+  - id: shapefile
+    custom:
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nycihda_{{ version }}.zip
+  - id: metadata_pdf
+    custom:
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nycihda_metadata.pdf
+
+files:
+- file:
+    id: shapefile
+    filename: nycihda.zip
+    type: shapefile
+- file:
+    id: metadata_pdf
+    filename: nycihda_metadata.pdf
+
+columns:
+- id: boro
+  name: Boro
+  data_type: text
+  description: Borough code for the borough in which the census block is located.
+  example: '4'
+  values:
+  - value: '1'
+    description: Manhattan
+  - value: '2'
+    description: Bronx
+  - value: '3'
+    description: Brooklyn
+  - value: '4'
+    description: Queens
+  - value: '5'
+    description: Staten Island
+- id: shape
+  name: Shape
+  description: ""
+- id: status
+  name: Status
+  description: ""
+- id: project_name
+  name: ProjectNam
+  description: ""
+- id: date_adopted
+  name: datea_dopted
+  description: ""
+- id: zr_map
+  name: ZR_Map
+  description: ""
+- id: lead_action
+  name: LeadAction
+  description: ""
+- id: cd
+  name: CD
+  description: ""
+- id: shape_length
+  name: shape_Leng
+  description: ""
+- id: shape_area
+  name: Shape_Area
+  description: ""
+- id: shape_starea
+  name: Shape_STAr
+  description: ""
+- id: shape_stleng
+  name: Shape_STLe
+  description: ""
