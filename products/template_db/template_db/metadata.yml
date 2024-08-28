@@ -1,4 +1,4 @@
-name: dcp_template_db
+id: dcp_template_db
 
 attributes:
   display_name: Template DB
