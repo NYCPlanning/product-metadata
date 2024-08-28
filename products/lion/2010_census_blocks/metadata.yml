@@ -10,6 +10,7 @@ attributes:
   - gis
   - map
   - dcp
+  date_made_public: '1/31/2013'
 
 assembly: []
 
@@ -64,9 +65,9 @@ files:
   dataset_overrides:
     attributes:
       description: |-
-        2010 Census Blocks from the US Census for New York City. These boundary files are derived from the US Census Bureau's TIGER data products and have been geographically modified to fit the New York City base map.
+        2010 Census Blocks from the US Census for New York City. These boundary files are derived from the US Census Bureau's TIGER data products and have been geographically modified to fit the New York City basemap.
 
-        All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive.</a>
+        All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE - Archive.</a>
       display_name: 2010 Census Blocks
 - file:
     id: shapefile_water_included
@@ -75,7 +76,7 @@ files:
   dataset_overrides:
     attributes:
       description: |-
-        2010 Census Blocks (water areas included) from the US Census for New York City. These boundary files are derived from the US Census Bureau's TIGER data products and have been geographically modified to fit the New York City base map.
+        2010 Census Blocks (water areas included) from the US Census for New York City. These boundary files are derived from the US Census Bureau's TIGER data products and have been geographically modified to fit the New York City basemap.
 
         All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive.</a>
       display_name: 2010 Census Blocks (water areas included)
@@ -115,7 +116,7 @@ columns:
 - id: boroname
   name: BoroName
   data_type: text
-  description: Borough Name.
+  description: Borough name.
   example: Queens
   values:
   - value: Brooklyn
@@ -131,8 +132,8 @@ columns:
 - id: bctcb2010
   name: BCTCB2010
   data_type: text
-  description: Merged string value of the BoroCode, census tract number, and census
-    block number.
+  description: Merged string value of the borough code (BoroCode), census tract number (CT2010), and census
+    block number (CB2010).
   example: '20060002009'
 - id: shape_area
   name: Shape__Area
@@ -147,4 +148,5 @@ columns:
 - id: the_geom
   name: the_geom
   data_type: geometry
+  description: None
   example: None

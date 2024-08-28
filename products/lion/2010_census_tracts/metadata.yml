@@ -2,8 +2,8 @@ id: 2010_census_tracts
 
 attributes:
   description: |-
-    2010 Census Tracts from the US Census for New York City. These boundary files are derived from the US Census Bureau's TIGER data products and have been geographically modified to fit the New York City base map.
-    All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
+    2010 Census Tracts from the US Census for New York City. These boundary files are derived from the US Census Bureau's TIGER data products and have been geographically modified to fit the New York City basemap.
+    All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE - Archive</a>.
   display_name: 2010 Census Tracts
   each_row_is_a: Census Tract
   tags:
@@ -12,6 +12,7 @@ attributes:
   - city planning
   - census
   - water areas
+  - gis
 
 assembly: []
 
@@ -96,6 +97,7 @@ columns:
 - id: the_geom
   name: the_geom
   data_type: geometry
+  description: None
   example: None
   custom:
     readme_data_type: geometry
@@ -124,7 +126,7 @@ columns:
 - id: boroname
   name: BoroName
   data_type: text
-  description: Borough Name.
+  description: Borough name.
   example: Queens
   values:
   - value: Brooklyn
@@ -135,32 +137,32 @@ columns:
 - id: ct2010
   name: CT2010
   data_type: text
-  description: String value of the 2010 census tract number.
+  description: Census tract number.
   example: None
 - id: boroct2010
   name: BoroCT2010
   data_type: text
-  description: Merged string of borough code and 2010 census tract number.
+  description: Merged string of borough code (BoroCode) and census tract number (CT2010).
   example: '20060002009'
 - id: cdeligibil
   name: CDEligibil
   data_type: text
-  description: Community Development Block Grant Eligibility.
+  description: Community Development Block Grant eligibility.
   example: None
 - id: ntacode
   name: NTACode
   data_type: text
-  description: 2010 Neighborhood Tabulation Area Code
+  description: 2010 Neighborhood Tabulation Area code.
   example: None
 - id: ntaname
   name: NTAName
   data_type: text
-  description: 2010 Neighborhood Tabulation Area Name
+  description: 2010 Neighborhood Tabulation Area name.
   example: None
 - id: puma
   name: PUMA
   data_type: text
-  description: 2010 Public Use Microdata Area code
+  description: 2010 Public Use Microdata Area code.
   example: None
 - id: shape_area
   name: Shape__Area
