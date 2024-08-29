@@ -2,13 +2,14 @@ id: atomic_polygons
 
 attributes:
   description: |-
-    Atomic polygons serve as a set of basic building blocks for generating the polygons of many of the district types represented in the CSCL database. Feature classes such as election district, school district, census block, FDNY administrative company, and community district can be dissolved by combining the appropriate fields in atomic polygons.
+    Atomic polygons serve as a set of basic building blocks for generating the polygons of many of the district types represented in the NYC Street Centerline (CSCL) database. Feature classes such as election district, school district, census block, FDNY administrative company, and community district can be dissolved by combining the appropriate fields in atomic polygons.
 
-    All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
+    All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE - Archive</a>.
   display_name: Atomic Polygons
   each_row_is_a: Atomic Polygon
   tags:
   - atomic polygons
+  date_made_public: '3/6/2015'
 
 assembly: []
 
@@ -17,6 +18,10 @@ custom: {}
 destinations:
 - id: socrata
   type: socrata
+  files:
+  - id: []
+    custom:
+      destination_use: attachment
   files:
   - id: shapefile
     custom:
@@ -79,7 +84,7 @@ columns:
 - id: borough
   name: BOROUGH
   data_type: text
-  description: Borough Code
+  description: Borough Code.
   example: '4'
   values:
   - value: '1'
@@ -135,78 +140,78 @@ columns:
 - id: water_flag
   name: WATER_FLAG
   data_type: text
-  description: Flag to indicate the relationship of the Atomic Polygon to water
+  description: Flag to indicate the relationship of the atomic polygon to water.
   example: None
   values:
   - value: Water
-    description: Atomic polygon is under water that is part of the shoreline
+    description: Atomic polygon is under water that is part of the shoreline.
   - value: Non-Water
-    description: Atomic polygon is on land
+    description: Atomic polygon is on land.
   - value: Internal Water
     description: Atomic polygon is under water that is not part of the shoreline (lake,
       pond, reservior, etc.)
   - value: Pier
-    description: Atomic polygon is on a pier or structure over water
+    description: Atomic polygon is on a pier or structure over water.
 - id: assemdist
   name: ASSEMDIST
   data_type: text
-  description: State Assembly District Number
+  description: State Assembly district number.
   example: None
 - id: electdist
   name: ELECTDIST
   data_type: text
-  description: Three digit election district number
+  description: Three digit election district number.
   example: None
 - id: schooldist
   name: SCHOOLDIST
   data_type: text
-  description: The two digit school district number
+  description: The two digit school district number.
   example: None
 - id: commdist
   name: COMMDIST
   data_type: text
-  description: Community district number preceded by BoroCode
+  description: Community district number preceded by BoroCode.
   example: None
 - id: sb1_volume
   name: SB1_VOLUME
   data_type: text
-  description: First Sanborn volume the atomic polygon appears in
+  description: First Sanborn volume the atomic polygon appears in.
   example: None
 - id: sb1_page
   name: SB1_PAGE
   data_type: text
-  description: First Sanborn page the atomic polygon appears in
+  description: First Sanborn page the atomic polygon appears in.
   example: None
 - id: sb2_volume
   name: SB2_VOLUME
   data_type: text
-  description: Second Sanborn volume the atomic polygon appears in
+  description: Second Sanborn volume the atomic polygon appears in.
   example: None
 - id: sb2_page
   name: SB2_PAGE
   data_type: text
-  description: Second Sanborn page the atomic polygon appears in
+  description: Second Sanborn page the atomic polygon appears in.
   example: None
 - id: sb3_volume
   name: SB3_VOLUME
   data_type: text
-  description: Third Sanborn volume the atomic polygon appears in
+  description: Third Sanborn volume the atomic polygon appears in.
   example: None
 - id: sb3_page
   name: SB3_PAGE
   data_type: text
-  description: Third Sanborn page the atomic polygon appears in
+  description: Third Sanborn page the atomic polygon appears in.
   example: None
 - id: atomicid
   name: ATOMICID
   data_type: text
-  description: Unique ID for the atomic polygon
+  description: Unique ID for the atomic polygon.
   example: None
 - id: atomic_num
   name: ATOMIC_NUM
   data_type: text
-  description: Atomic Number is the 3 last digits of the Atomic ID. This field has
-    been depracated and is no longer maintained (all NULL values)
+  description: Atomic number is the 3 last digits of the Atomic ID. This field has
+    been deprecated and is no longer maintained (all NULL values).
   example: None
 - id: hurricane_evacuation_zone
   name: HURRICANE_EVACUATION_ZONE
@@ -235,17 +240,18 @@ columns:
 - id: commercial_waste_zone
   name: Commercial Waste Zone
   data_type: text
-  description: As part of the Department of Sanitation's (DSNY) comprehensive plan
-    for reforming the private carting industry, it has established Commercial Waste
-    Zones
+  description: Commercial Waste Zones established as part of the Department of Sanitation's (DSNY) comprehensive plan
+    for reforming the private carting industry.
   example: None
 - id: shape_area
   name: Shape_Area
   data_type: decimal
+  description: Area of feature in internal units squared.
   example: None
 - id: shape_length
   name: Shape_Length
   data_type: decimal
+  description: Length of feature in internal units.
   example: None
 - id: the_geom
   name: The_Geom
