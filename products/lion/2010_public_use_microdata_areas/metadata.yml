@@ -8,13 +8,13 @@ attributes:
   display_name: 2010 Public Use Microdata Areas (PUMAs)
   each_row_is_a: Public Use Microdata Area
   tags:
-    - public use microdata area
-    - dcp
-    - city planning
-    - community
-    - area
-    - puma
-    - census
+  - public use microdata area
+  - dcp
+  - city planning
+  - community
+  - area
+  - puma
+  - census
   date_made_public: '7/14/2015'
 
 assembly: []
