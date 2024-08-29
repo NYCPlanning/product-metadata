@@ -19,7 +19,7 @@ destinations:
 - id: socrata
   type: socrata
   files:
-  - id: []
+  - id: nyap_metadata.pdf
     custom:
       destination_use: attachment
   files:
