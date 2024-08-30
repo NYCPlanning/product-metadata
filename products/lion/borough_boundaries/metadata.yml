@@ -99,7 +99,7 @@ columns:
 - id: borocode
   name: BoroCode
   data_type: integer
-  description: Borough Code.
+  description: Borough code.
   example: None
   values:
   - value: '1'
@@ -115,7 +115,7 @@ columns:
 - id: boroname
   name: BoroName
   data_type: text
-  description: Name of Borough.
+  description: Borough name.
   example: None
   values:
   - value: Brooklyn

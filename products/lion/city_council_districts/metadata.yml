@@ -2,9 +2,9 @@ id: city_council_districts
 
 attributes:
   description: |-
-    GIS data: Boundaries of City Council Districts.
+    Boundaries of City Council districts.
 
-    All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive.</a>
+    All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE - Archive.</a>
   display_name: City Council Districts
   each_row_is_a: Council District
   tags:
@@ -20,6 +20,7 @@ attributes:
   - election
   - city council districts
   - dcp
+  date_made_public: '4/18/2013'
 
 assembly: []
 
@@ -74,10 +75,10 @@ files:
   dataset_overrides:
     attributes:
       description: |-
-        GIS data: Boundaries of City Council Districts. (Water Areas Included)
+        Boundaries of City Council districts. (water areas included)
 
-        All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive.</a>
-      display_name: City Council Districts (Water Areas Included)
+        All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE - Archive.</a>
+      display_name: City Council Districts (water areas included)
     overridden_columns:
     - id: shape_length
       name: shape_leng
@@ -104,10 +105,10 @@ columns:
 - id: coundist
   name: CounDist
   data_type: integer
-  description: City Council District Number
+  description: City Council district number
   example: None
 - id: the_geom
-  name: Shape
+  name: the_geom
   data_type: geometry
   example: None
 - id: shape_length
