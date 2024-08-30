@@ -2,11 +2,11 @@ id: community_districts
 
 attributes:
   description: |-
-    GIS data: Community Districts
+    Boundaries of Community Districts
 
     Community Districts are mandated by the city charter to review and monitor quality of life issues for New York City (NYC) neighborhoods.  NYC is currently comprised of 59 community districts. The first byte is a borough code and the second and third bytes are the community district number. There are also 12 Joint Interest Areas (JIAs).  The JIAs are major parks and airports and are not contained within any community district.   This dataset is being provided by the Department of City Planning (DCP) for informational purposes only. DCP does not warranty the completeness, accuracy, content, or fitness for any particular purpose or use of the dataset, nor are any such warranties to be implied or inferred with respect to the dataset as furnished on the website. DCP and the City are not liable for any deficiencies in the completeness, accuracy, content, or fitness for any particular purpose or use the dataset, or applications utilizing the dataset, provided by any third party.
 
-    All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
+    All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE - Archive</a>.
   display_name: Community Districts
   each_row_is_a: Community District
   tags:
@@ -19,6 +19,7 @@ attributes:
   - community
   - boundaries
   - water
+  date_made_public: '1/31/2013'
 
 assembly: []
 
@@ -73,12 +74,12 @@ files:
   dataset_overrides:
     attributes:
       description: |-
-        GIS data: Community Districts (Water areas included)
+        Community Districts (water areas included)
 
         Community Districts are mandated by the city charter to review and monitor quality of life issues for New York City (NYC) neighborhoods.  NYC is currently comprised of 59 community districts. The first byte is a borough code and the second and third bytes are the community district number. There are also 12 Joint Interest Areas (JIAs).  The JIAs are major parks and airports and are not contained within any community district.   This dataset is being provided by the Department of City Planning (DCP) for informational purposes only. DCP does not warranty the completeness, accuracy, content, or fitness for any particular purpose or use of the dataset, nor are any such warranties to be implied or inferred with respect to the dataset as furnished on the website. DCP and the City are not liable for any deficiencies in the completeness, accuracy, content, or fitness for any particular purpose or use the dataset, or applications utilizing the dataset, provided by any third party.
 
-        All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
-      display_name: Community Districts (Water areas included)
+        All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE - Archive</a>.
+      display_name: Community Districts (water areas included)
     overridden_columns:
     - id: shape_length
       name: shape_leng
@@ -105,17 +106,20 @@ columns:
 - id: borocd
   name: BoroCd
   data_type: text
-  description: Community district number preceded by BoroCode.
+  description: Community District number preceded by BoroCode.
   example: None
 - id: the_geom
-  name: Shape
+  name: the_geom
   data_type: geometry
+  description: []
   example: None
 - id: shape_length
   name: Shape_Length
   data_type: decimal
+  description: Length of feature in internal units.
   example: None
 - id: shape_area
   name: Shape_Area
   data_type: decimal
+  description: Area of feature in internal units squared.
   example: None
