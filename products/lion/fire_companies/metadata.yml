@@ -2,16 +2,17 @@ id: fire_companies
 
 attributes:
   description: |-
-    GIS data: Boundaries of Fire Companies.
+    Boundaries of fire companies.
 
-    All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
+    All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE - Archive</a>.
   display_name: Fire Companies
-  each_row_is_a: Fire Company
+  each_row_is_a: Fire company
   tags:
   - fire companies
   - dcp
   - public safety
   - fdny
+  date_made_public: []
 
 assembly: []
 
@@ -80,27 +81,30 @@ columns:
 - id: fire_company_number
   name: FireCoNum
   data_type: integer
-  description: The company number servicing the district
+  description: The company number servicing the district.
   example: None
 - id: fire_division
   name: FireDiv
   data_type: text
-  description: The division number servicing the district
+  description: The division number servicing the district.
   example: None
 - id: fire_battalion
   name: FireBN
   data_type: integer
-  description: The battalion number servicing the district
+  description: The battalion number servicing the district.
   example: None
 - id: the_geom
-  name: Shape
+  name: the_geom
   data_type: geometry
+  description: []
   example: None
 - id: shape_length
   name: Shape_Length
   data_type: decimal
+  description: Length of feature in internal units.
   example: None
 - id: shape_area
   name: Shape_Area
   data_type: decimal
+  description: Area of feature in internal units squared.
   example: None
