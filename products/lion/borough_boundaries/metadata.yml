@@ -2,7 +2,7 @@ id: borough_boundaries
 
 attributes:
   display_name: Borough Boundaries
-  each_row_is_a: Borough Boundary
+  each_row_is_a: Borough boundary
   tags:
   - borough boundaries
   - data
