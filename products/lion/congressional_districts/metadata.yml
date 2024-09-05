@@ -45,7 +45,7 @@ destinations:
   - id: nycg_metadata.pdf
     custom:
       destination_use: attachment
-  - id: shapefile_wi
+  - id: shapefile
     custom:
       destination_use: dataset_file
   custom:
