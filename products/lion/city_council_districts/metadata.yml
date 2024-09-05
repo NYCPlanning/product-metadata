@@ -20,6 +20,7 @@ attributes:
   - election
   - city council districts
   - dcp
+  date_made_public: []
 
 assembly: []
 
