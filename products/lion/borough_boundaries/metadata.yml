@@ -63,7 +63,7 @@ files:
   dataset_overrides:
     attributes:
       description: |-
-        Boundaries of Boroughs (water areas included).
+        Boundaries of boroughs (water areas included).
 
         All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE - Archive</a>.
       display_name: Borough Boundaries (water areas included)
@@ -77,7 +77,7 @@ files:
   dataset_overrides:
     attributes:
       description: |-
-        Boundaries of Boroughs (water areas excluded).
+        Boundaries of boroughs (water areas excluded).
 
         All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE - Archive</a>.
       display_name: Borough Boundaries
@@ -99,7 +99,7 @@ columns:
 - id: borocode
   name: BoroCode
   data_type: integer
-  description: Borough Code.
+  description: Borough code.
   example: None
   values:
   - value: '1'
@@ -115,7 +115,7 @@ columns:
 - id: boroname
   name: BoroName
   data_type: text
-  description: Name of Borough.
+  description: Name of borough.
   example: None
   values:
   - value: Brooklyn

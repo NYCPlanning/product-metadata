@@ -2,7 +2,7 @@ id: congressional_districts
 
 attributes:
   description: |-
-    Boundaries of Congressional Districts.
+    Boundaries of congressional districts.
 
     All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE - Archive</a>.
   display_name: Congressional Districts
@@ -76,7 +76,7 @@ files:
   dataset_overrides:
     attributes:
       description: |-
-        Boundaries of Congressional Districts (water areas included).
+        Boundaries of Congressional districts (water areas included).
 
         All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE - Archive</a>.
       display_name: Congressional Districts (water areas included)
@@ -106,7 +106,7 @@ columns:
 - id: congdist
   name: CongDist
   data_type: integer
-  description: US House of Representatives Congressional District Number for the State
+  description: US House of Representatives congressional district number for the State
     of New York.
   example: None
 - id: the_geom

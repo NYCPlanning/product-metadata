@@ -2,7 +2,7 @@ id: election_districts
 
 attributes:
   description: |-
-    Boundaries of Election Districts.
+    Boundaries of election districts.
 
     All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE - Archive</a>.
   display_name: Election Districts
@@ -74,7 +74,7 @@ files:
   dataset_overrides:
     attributes:
       description: |-
-        Boundaries of Election Districts (water areas included).
+        Boundaries of election districts (water areas included).
 
         All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE - Archive</a>.
       display_name: Election Districts (water areas included)
@@ -104,7 +104,7 @@ columns:
 - id: electdist
   name: ElectDist
   data_type: integer
-  description: Three digit election district number proceeded by the two digit state
+  description: Three digit election district number preceded by the two digit state
     assembly district.
   example: None
 - id: the_geom
