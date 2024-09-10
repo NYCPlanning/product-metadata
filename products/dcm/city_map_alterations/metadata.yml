@@ -1,0 +1,203 @@
+id: city_map_alterations
+
+attributes:
+  description:
+    'Outlines for all alterations to the City Map including pending changes.
+    The final approval of a City Map alteration is considered "filed" on the date
+    indicated on the Alteration map which becomes effective the following day. This
+    dataset is featured on the Department of City Planning''s Street Map application:
+    https://streets.planning.nyc.gov/'
+  display_name: Digital City Map (DCM) - City Map Alterations
+  each_row_is_a: City Map Alteration
+  publishing_frequency: Monthly
+  publishing_purpose:
+    "General area where alterations to the Official City Map of
+    New York City are proposed, adopted, or adopted and filed. Dataset last updated:
+    March 31, 2024."
+  tags:
+    - Digital City Map
+    - DCM
+    - city map alterations
+    - alteration maps
+    - street changes
+    - mapped streets
+    - demapped streets
+    - city map changes index
+    - Department of City Planning
+    - DCP
+    - nymi
+
+assembly: []
+
+custom: {}
+
+destinations:
+  - id: socrata
+    type: socrata
+    files:
+      - id: shapefile
+        custom:
+          destination_use: dataset_file
+      - id: data_dictionary_pdf
+        custom:
+          destination_use: attachment
+    custom:
+      four_four: 5iv5-v7sg
+  - id: bytes
+    type: bytes
+    files:
+      - id: data_dictionary_pdf
+        custom:
+          url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/dcm_city_map_alterations.pdf
+
+files:
+  - file:
+      id: shapefile
+      filename: CityMapAlterations.shp.zip
+      type: shapefile
+  - file:
+      id: data_dictionary_pdf
+      filename: dcm_city_map_alterations.pdf
+      is_metadata: true
+
+columns:
+  - id: boro_code
+    name: Boro_Code
+    data_type: text
+    description: Single letter code for the borough in which the map alteration is located.
+    values:
+      - value: K
+        description: Brooklyn
+      - value: M
+        description: Manhattan
+      - value: Q
+        description: Queens
+      - value: R
+        description: Staten Island
+      - value: X
+        description: Bronx
+      - value: Y
+        description: Citywide
+  - id: app_num
+    name: APP_NUM
+    data_type: text
+    description: Application number associated with map alteration.
+  - id: project_nm
+    name: Project_NM
+    data_type: text
+    description: Project name assigned to mapping application.
+  - id: status
+    name: Status
+    data_type: text
+    description: Map alteration application latest milestone.
+    values:
+      - value: "0"
+        description: Unknown
+      - value: "10"
+        description: Map not adopted
+      - value: "11"
+        description: Approved but Superseded
+      - value: "13"
+        description: Adopted not filed
+      - value: "14"
+        description: Adopted and filed
+  - id: filed_stat
+    name: Filed_Stat
+    data_type: text
+  - id: effect_dt
+    name: Effect_DT
+    data_type: date
+    description: Indicates effective date of map alteration on Alteration map.
+  - id: bp_num
+    name: BP_NUM
+    data_type: text
+    description: Borough President's map number associated with the Alteration map.
+  - id: cc_res_num
+    name: CC_RES_NUM
+    data_type: integer
+    description: City Council resolution number assigned to application after adoption.
+  - id: zr_update
+    name: ZR_Update
+    data_type: integer
+    description:
+      Active zoning resolution update number when the street change map became
+      effective.
+  - id: cert_date
+    name: Cert_Date
+    data_type: date
+    description: The date the mapping application was certified by City Planning.
+  - id: chg_type
+    name: CHG_TYPE
+    data_type: text
+    description:
+      The primary map change type associated with application, e.g., a street
+      change, park change or grade change.
+    values:
+      - value: Drainage
+      - value: Drainage/Grades
+      - value: Easement
+      - value: Grades
+      - value: Grades/Multiple
+      - value: Multiple
+      - value: Other
+      - value: Park
+      - value: Park/Easement
+      - value: Public Place
+      - value: Street Volume
+      - value: Streets
+      - value: Street/Canal
+      - value: Streets/Drainage/Grades
+      - value: Streets/Easement
+      - value: Streets/Grades
+      - value: Street/Grades/Easement
+      - value: Streets/Grades/Park
+      - value: Streets/Multiple
+      - value: Streets/Park
+      - value: Streets/Park/Public Place
+      - value: Sts/Park/Bridge/Easements
+      - value: Unknown
+  - id: altmappdf
+    name: ALTMAPPDF
+    data_type: text
+    description: Name of the PDF file of the scanned Alteration Map.
+  - id: altmaplink
+    name: ALTMAPLink
+    data_type: text
+    description: Link address to scanned Alteration Map.
+  - id: scanned
+    name: Scanned
+    data_type: text
+    description: Indicates whether paper Alteration Map has been digitally scanned.
+    values:
+      - value: "Yes"
+      - value: "No"
+      - value: Incomplete
+  - id: track_num
+    name: Track_NUM
+    data_type: text
+    description: Scanning vendor's tracking number assigned to each map scanned.
+  - id: source
+    name: Source
+    data_type: text
+    description: Source of the map alteration.
+    values:
+      - value: Alteration map
+      - value: Collected by TRD Intern Summer 2005
+      - value: Consultant CAD data convex hulls
+      - value: NYC Law Department
+      - value: Sketch Map Request
+  - id: map_series
+    name: Map_Series
+    data_type: text
+    description: Map series from which the paper Alteration Map belongs.
+  - id: map_copies
+    name: Map_Copies
+    data_type: integer
+    description: Number of copies of paper Alteration Map on file.
+  - id: map_cabine
+    name: Map_Cabine
+    data_type: text
+  - id: the_geom
+    name: the_geom
+    data_type: geometry
+    description: Feature geometry.
