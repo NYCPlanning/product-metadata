@@ -1,0 +1,86 @@
+id: zoning_zoning_map_amendments
+
+attributes:
+  description: |-
+    Areas covered by zoning changes adopted and proposed.
+
+    Includes outlines for current "Certified" rezonings. Selected city-initiated text amendments to the Zoning Resolution that have discrete geographical boundaries may be included.
+  display_name: Zoning - Zoning Map Amendments (NYZMA)
+  each_row_is_a: Zoning Map Amendment
+  publishing_frequency: Monthly
+  tags:
+  - dcp
+  - zoning
+  - geographic
+  - location
+  - map
+  - cartography
+  - zone
+  - district
+  - commercial
+
+assembly: []
+
+custom: {}
+
+destinations:
+- id: socrata
+  type: socrata
+  files:
+  - id: metadata_pdf
+    custom:
+      destination_use: attachment
+  - id: shapefile
+    custom:
+      destination_use: dataset_file
+  custom:
+    four_four: k5u6-psh6
+- id: bytes
+  type: bytes
+  files:
+  - id: metadata_pdf
+    custom:
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nyzma_metadata.pdf
+
+files:
+- file:
+    id: shapefile
+    filename: nyzma.shp.zip
+    type: shapefile
+- file:
+    id: metadata_pdf
+    filename: nyzma_metadata.pdf
+    is_metadata: true
+
+columns:
+- id: the_geom
+  name: the_geom
+  data_type: geometry
+  description: Feature geometry.
+- id: status
+  name: STATUS
+  data_type: text
+  description: Current status of zoning change
+- id: effective
+  name: EFFECTIVE
+  data_type: datetime
+  description: Date change became effective
+- id: ulurpno
+  name: ULURPNO
+  data_type: text
+  description: Same as TRACKINGNO
+- id: lucats
+  name: LUCATS
+  data_type: text
+  description: Foreign key to link to LUCATS database records
+- id: project_na
+  name: PROJECT_NA
+  data_type: text
+- id: shape_leng
+  name: Shape_Leng
+  data_type: decimal
+  description: Length of feature in internal units.
+- id: shape_area
+  name: Shape_Area
+  data_type: decimal
+  description: Area of feature in internal units squared.
