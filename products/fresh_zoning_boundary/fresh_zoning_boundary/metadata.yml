@@ -1,0 +1,75 @@
+id: fresh_zoning_boundary
+
+attributes:
+  description:
+    FRESH boundaries where zoning and discretionary tax incentives are
+    available for the development, expansion and renovation of full line grocery stores
+    and supermarkets
+  display_name: FRESH Food Stores Zoning Boundaries
+  publishing_frequency: As-Needed
+  each_row_is_a: FRESH boundary
+  publishing_purpose:
+    These areas were established to create and retain full line
+    grocery stores and supermarkets in underserved areas of New York City
+  tags:
+    - boundary
+    - boundaries
+    - supermarket
+    - grocery stores
+    - FRESH
+    - zoning incentives
+    - discretionary tax incentives
+    - NYC Department of City Planning
+    - NYC Industrial Development Agency
+
+assembly: []
+
+custom: {}
+
+destinations:
+  - id: socrata
+    type: socrata
+    custom:
+      four_four: cgn7-aehz
+    files:
+      - id: shapefile
+        custom:
+          destination_use: dataset_file
+      - id: metadata_pdf
+        custom:
+          destination_use: attachment
+  - id: bytes
+    type: bytes
+    files:
+      - id: shapefile
+        custom:
+          url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nycfreshzoning_{{ version }}.zip
+      - id: metadata_pdf
+        custom:
+          url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nyc_freshzoning_metadata.pdf
+
+files:
+  - file:
+      id: shapefile
+      filename: nycfreshzoning.shp.zip
+      type: shapefile
+  - file:
+      id: metadata_pdf
+      filename: nyc_freshzoning_metadata.pdf
+      is_metadata: true
+
+columns:
+  - id: the_geom
+    name: geometry
+    data_type: geometry
+    description: Feature geometry.
+  - id: name
+    name: Name
+    data_type: text
+  - id: shape_leng
+    name: Shape_Leng
+    data_type: decimal
+  - id: shape_area
+    name: Shape_Area
+    data_type: decimal
+    description: Area of feature in internal units squared.
