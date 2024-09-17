@@ -1,0 +1,51 @@
+id: waterfront_revitalization_program
+
+attributes:
+  description: |-
+    Waterfront Revitalization Program.
+
+  display_name: Waterfront Revitalization Program (WRP)
+  each_row_is_a: Waterfront Revitalization Program
+  tags:
+    - waterfront revitalization program
+    - waterfront
+    - wrp
+
+assembly: []
+
+custom: {}
+
+destinations:
+  - id: socrata
+    type: socrata
+    files:
+      - id: shapefile
+        custom:
+          destination_use: dataset_file
+      - id: readme_pdf
+        custom:
+          destination_use: attachment
+    custom:
+      four_four: cbn4-bn4p
+      is_unparsed_dataset: true
+  - id: bytes
+    type: bytes
+    files:
+      - id: shapefile
+        custom:
+          url: http://www1.nyc.gov/assets/planning/download/zip/data-maps/open-data/nycwrpgdb{{ version }}.zip
+      - id: readme_pdf
+        custom:
+          url: https://www1.nyc.gov/assets/planning/download/pdf/data-maps/open-data/meta_wap.pdf
+
+files:
+  - file:
+      id: shapefile
+      filename: nycwrpgdb.zip
+      type: shapefile
+  - file:
+      id: readme_pdf
+      filename: meta_wap.pdf
+      is_metadata: true
+
+columns: []
