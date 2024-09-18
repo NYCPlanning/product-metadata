@@ -4,11 +4,12 @@ attributes:
   description: |-
     Health Center Districts - by Department of City Planning.
 
-    All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
+    All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE - Archive</a>.
   display_name: Health Center Districts
   each_row_is_a: Health Center District
   tags:
   - 'gis data: boundaries of health districts'
+  date_made_public: '2/23/2015'
 
 assembly: []
 
@@ -91,15 +92,18 @@ columns:
   data_type: integer
   description: Denotes the Health Center number
   example: None
-- id: shape_area
-  name: Shape_Area
-  data_type: decimal
-  example: None
 - id: shape_length
   name: Shape_Length
   data_type: decimal
+  description: Length of feature in internal units.
+  example: None
+- id: shape_area
+  name: Shape_Area
+  data_type: decimal
+  description: Area of feature in internal units squared.
   example: None
 - id: the_geom
-  name: Shape
+  name: the_geom
   data_type: geometry
+  description: []
   example: None
