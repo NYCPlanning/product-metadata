@@ -90,7 +90,7 @@ columns:
 - id: health_center_district
   name: HealthCenterDistrict
   data_type: integer
-  description: Denotes the Health Center number
+  description: Denotes the Health Center number.
   example: None
 - id: shape_length
   name: Shape_Length

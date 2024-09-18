@@ -61,7 +61,7 @@ columns:
 - id: hurricane_evacuation_zone
   name: HurricaneEvacuationZone
   data_type: text
-  description: Hurricane evacuation zone
+  description: Hurricane evacuation zone.
   example: None
 - id: the_geom
   name: the_geom
