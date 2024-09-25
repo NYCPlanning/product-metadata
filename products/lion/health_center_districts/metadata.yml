@@ -28,6 +28,7 @@ destinations:
   - id: oti_data_dictionary
     custom:
       destination_use: attachment
+  tags: [socrata_unpublished]
   custom:
     four_four: 6nss-v3ep
 - id: bytes
@@ -113,5 +114,5 @@ columns:
 - id: the_geom
   name: the_geom
   data_type: geometry
-  description: []
+  description: ''
   example: None

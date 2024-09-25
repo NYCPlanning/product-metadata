@@ -21,7 +21,7 @@ attributes:
   - election
   - congressional districts
   - dcp
-  date_made_public: []
+  date_made_public: ''
 
 assembly: []
 
@@ -40,6 +40,7 @@ destinations:
   - id: oti_data_dictionary
     custom:
       destination_use: attachment
+  tags: [socrata_unpublished]
   custom:
     four_four: j5kw-6gtg
 - id: socrata
@@ -54,6 +55,7 @@ destinations:
   - id: oti_data_dictionary
     custom:
       destination_use: attachment
+  tags: [socrata_unpublished]
   custom:
     four_four: j3u5-usz2
 - id: bytes
@@ -123,7 +125,7 @@ columns:
 - id: the_geom
   name: the_geom
   data_type: geometry
-  description: []
+  description: ''
   example: None
 - id: shape_length
   name: Shape_Length

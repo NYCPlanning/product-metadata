@@ -29,6 +29,7 @@ destinations:
   - id: oti_data_dictionary
     custom:
       destination_use: attachment
+  tags: [socrata_unpublished]
   custom:
     four_four: y9w2-ph8n
 - id: socrata_water_included
@@ -43,6 +44,7 @@ destinations:
   - id: oti_data_dictionary
     custom:
       destination_use: attachment
+  tags: [socrata_unpublished]
   custom:
     four_four: 444b-5yrw
 - id: bytes

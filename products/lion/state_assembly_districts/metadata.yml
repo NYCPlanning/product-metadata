@@ -33,6 +33,7 @@ destinations:
   - id: oti_data_dictionary
     custom:
       destination_use: attachment
+  tags: [socrata_unpublished]
   custom:
     four_four: 8gke-583r
 - id: socrata
@@ -47,6 +48,7 @@ destinations:
   - id: oti_data_dictionary
     custom:
       destination_use: attachment
+  tags: [socrata_unpublished]
   custom:
     four_four: 5yfv-9hkp
 - id: bytes

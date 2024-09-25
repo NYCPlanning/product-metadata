@@ -32,6 +32,7 @@ destinations:
   - id: oti_data_dictionary
     custom:
       destination_use: attachment
+  tags: [socrata_unpublished]
   custom:
     four_four: bmjq-373p
 - id: socrata_water_included
@@ -46,6 +47,7 @@ destinations:
   - id: oti_data_dictionary
     custom:
       destination_use: attachment
+  tags: [socrata_unpublished]
   custom:
     four_four: ht7m-2uh6
 - id: bytes

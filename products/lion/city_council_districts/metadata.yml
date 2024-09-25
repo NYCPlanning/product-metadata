@@ -20,7 +20,7 @@ attributes:
   - election
   - city council districts
   - dcp
-  date_made_public: []
+  date_made_public: ''
 
 assembly: []
 
@@ -39,6 +39,7 @@ destinations:
   - id: oti_data_dictionary
     custom:
       destination_use: attachment
+  tags: [socrata_unpublished]
   custom:
     four_four: acqs-su35
 - id: socrata
@@ -53,6 +54,7 @@ destinations:
   - id: oti_data_dictionary
     custom:
       destination_use: attachment
+  tags: [socrata_unpublished]
   custom:
     four_four: 872g-cjhh
 - id: bytes

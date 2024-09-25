@@ -19,7 +19,7 @@ attributes:
   - community
   - boundaries
   - water
-  date_made_public: []
+  date_made_public: ''
 
 assembly: []
 
@@ -38,6 +38,7 @@ destinations:
   - id: oti_data_dictionary
     custom:
       destination_use: attachment
+  tags: [socrata_unpublished]
   custom:
     four_four: 5crt-au7u
 - id: socrata_water_included
@@ -52,6 +53,7 @@ destinations:
   - id: oti_data_dictionary
     custom:
       destination_use: attachment
+  tags: [socrata_unpublished]
   custom:
     four_four: 597j-7eb8
 - id: bytes
