@@ -37,6 +37,9 @@ destinations:
   - id: shapefile_wi
     custom:
       destination_use: dataset_file
+  - id: oti_data_dictionary
+    custom:
+      destination_use: attachment
   custom:
     four_four: j5kw-6gtg
 - id: socrata
@@ -48,6 +51,9 @@ destinations:
   - id: shapefile
     custom:
       destination_use: dataset_file
+  - id: oti_data_dictionary
+    custom:
+      destination_use: attachment
   custom:
     four_four: j3u5-usz2
 - id: bytes
@@ -101,6 +107,11 @@ files:
     filename: nycgwi_metadata.pdf
     is_metadata: true
     type: None
+- file:
+    id: oti_data_dictionary
+    filename: data_dictionary.xlsx
+    is_metadata: true
+    type: oti_data_dictionary
 
 columns:
 - id: congdist

@@ -30,6 +30,9 @@ destinations:
   - id: shapefile_wi
     custom:
       destination_use: dataset_file
+  - id: oti_data_dictionary
+    custom:
+      destination_use: attachment
   custom:
     four_four: 8gke-583r
 - id: socrata
@@ -41,6 +44,9 @@ destinations:
   - id: shapefile
     custom:
       destination_use: dataset_file
+  - id: oti_data_dictionary
+    custom:
+      destination_use: attachment
   custom:
     four_four: 5yfv-9hkp
 - id: bytes
@@ -104,6 +110,11 @@ files:
     filename: nyadwi_metadata.pdf
     is_metadata: true
     type: None
+- file:
+    id: oti_data_dictionary
+    filename: data_dictionary.xlsx
+    is_metadata: true
+    type: oti_data_dictionary
 
 columns:
 - id: assembly_district

@@ -35,6 +35,9 @@ destinations:
   - id: shapefile_wi
     custom:
       destination_use: dataset_file
+  - id: oti_data_dictionary
+    custom:
+      destination_use: attachment
   custom:
     four_four: 63sm-kk9b
 - id: socrata
@@ -46,6 +49,9 @@ destinations:
   - id: shapefile
     custom:
       destination_use: dataset_file
+  - id: oti_data_dictionary
+    custom:
+      destination_use: attachment
   custom:
     four_four: afve-r9tt
 - id: bytes
@@ -99,6 +105,11 @@ files:
     filename: nyedwi_metadata.pdf
     is_metadata: true
     type: None
+- file:
+    id: oti_data_dictionary
+    filename: data_dictionary.xlsx
+    is_metadata: true
+    type: oti_data_dictionary
 
 columns:
 - id: electdist

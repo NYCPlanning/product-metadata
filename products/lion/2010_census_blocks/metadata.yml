@@ -26,6 +26,9 @@ destinations:
   - id: shapefile_water_not_included
     custom:
       destination_use: dataset_file
+  - id: oti_data_dictionary
+    custom:
+      destination_use: attachment
   custom:
     four_four: y9w2-ph8n
 - id: socrata_water_included
@@ -37,6 +40,9 @@ destinations:
   - id: shapefile_water_included
     custom:
       destination_use: dataset_file
+  - id: oti_data_dictionary
+    custom:
+      destination_use: attachment
   custom:
     four_four: 444b-5yrw
 - id: bytes
@@ -90,6 +96,11 @@ files:
     filename: nycb2010wi_metadata.pdf
     is_metadata: true
     type: None
+- file:
+    id: oti_data_dictionary
+    filename: data_dictionary.xlsx
+    is_metadata: true
+    type: oti_data_dictionary
 
 columns:
 - id: cb2010
