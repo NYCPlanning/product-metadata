@@ -1,0 +1,49 @@
+- id: block
+  name: Tax block
+  data_type: integer
+  description: |-
+    The tax block in which the tax lot is located.
+    This field contains a one to five-digit tax block number.
+    Each tax block is unique within a borough (see BOROUGH).
+  example: '1637'
+- id: lot
+  name: Tax lot
+  data_type: integer
+  description: |-
+    The number of the tax lot.
+
+    This field contains a one to four-digit tax lot number.
+
+    Each tax lot is unique within a tax block
+  example: '141'
+- id: borough
+  name: borough
+  data_type: text
+  description: |-
+    Two-letter borough code
+
+    Two portions of the city, Marble Hill and Rikers Island, are legally located in one borough but are serviced by a different borough. The BOROUGH codes associated with these areas are the boroughs in which they are legally located. Marble Hill is serviced by the Bronx, but is legally located in Manhattan and has a BOROUGH of MN. Rikers Island is serviced by Queens, but is legally located in the Bronx and has a BOROUGH of BX.
+  example: QN
+  values:
+  - value: BK
+    description: Brooklyn
+  - value: BX
+    description: Bronx
+  - value: MN
+    description: Manhattan
+  - value: QN
+    description: Queens
+  - value: SI
+    description: Staten Island
+- id: bbl
+  name: BBL
+  data_type: bbl
+  description: |-
+    A concatenation of the borough code, tax block and tax lot.
+
+    This field consists of the borough code followed by the tax block followed by the tax lot.  The borough code is one numeric digit.  The tax block is one to five numeric digits, preceded with leading zeros when the block is less than five digits.  The tax lot is one to four digits and is preceded with leading zeros when the lot is less than four digits.
+
+    Examples:
+    Manhattan Borough Code 1, Tax Block 16, Tax Lot 100 would be stored as 1000160100.
+    Brooklyn Borough Code 3, Tax Block 15828, Tax Lot 7501 would be stored as 3158287501.
+  example: '1016370141'
