@@ -84,8 +84,6 @@ files:
     overridden_columns:
     - id: shape_length
       name: shape_leng
-    - id: state_senate_district
-      name: stsendist
 - file:
     id: shapefile
     filename: nymc.zip
@@ -94,8 +92,6 @@ files:
     overridden_columns:
     - id: shape_length
       name: shape_leng
-    - id: state_senate_district
-      name: stsendist
 - file:
     id: nymc_metadata.pdf
     filename: nymc_metadata.pdf
