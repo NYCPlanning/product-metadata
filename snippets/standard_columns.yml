@@ -34,16 +34,4 @@
   - value: QN
     description: Queens
   - value: SI
-    description: Staten Island
-- id: bbl
-  name: BBL
-  data_type: bbl
-  description: |-
-    A concatenation of the borough code, tax block and tax lot.
-
-    This field consists of the borough code followed by the tax block followed by the tax lot.  The borough code is one numeric digit.  The tax block is one to five numeric digits, preceded with leading zeros when the block is less than five digits.  The tax lot is one to four digits and is preceded with leading zeros when the lot is less than four digits.
-
-    Examples:
-    Manhattan Borough Code 1, Tax Block 16, Tax Lot 100 would be stored as 1000160100.
-    Brooklyn Borough Code 3, Tax Block 15828, Tax Lot 7501 would be stored as 3158287501.
-  example: '1016370141'
+    description: Staten Islandww
