@@ -17,6 +17,15 @@ jobs:
       image: nycplanning/dev:latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          repository: NYCPlanning/product-metadata
+          path: product-metadata
+      - uses: actions/checkout@v4
+        with:
+          repository: NYCPlanning/data-engineering
+          path: data-engineering
       - name: Validate All Files
-        # run: python -m dcpy.cli
-        run: echo "hi"
+        run: cd data-engineering; python -m dcpy.cli lifecycle scripts product_metadata validate_repo ../product-metadata
+        env:
+          RECIPES_BUCKET: edm-recipes
+          PUBLISHING_BUCKET: edm-publishing
