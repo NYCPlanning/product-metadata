@@ -2,12 +2,20 @@ id: 2010_public_use_microdata_areas
 
 attributes:
   description: |-
-    The 2010 NYC Public Use Microdata Areas (PUMAs) are statistical geographic areas defined for the dissemination of Public Use Microdata Sample (PUMS) data. PUMAs have a minimum population of 100,000 and were aggregated from 2010 census tracts. These boundary files are derived from the US Census Bureau's TIGER project and have been geographically modified to fit the New York City base map.
+    The 2010 NYC Public Use Microdata Areas (PUMAs) are statistical geographic areas defined for the dissemination of Public Use Microdata Sample (PUMS) data. PUMAs have a minimum population of 100,000 and were aggregated from 2010 census tracts. These boundary files are derived from the US Census Bureau's TIGER project and have been geographically modified to fit the New York City basemap.
 
-    All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>
+    All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE - Archive</a>
   display_name: 2010 Public Use Microdata Areas (PUMAs)
   each_row_is_a: Public Use Microdata Area
-  tags: []
+  tags:
+  - public use microdata area
+  - dcp
+  - city planning
+  - community
+  - area
+  - puma
+  - census
+  date_made_public: '7/14/2015'
 
 assembly: []
 
@@ -23,6 +31,10 @@ destinations:
   - id: shapefile
     custom:
       destination_use: dataset_file
+  - id: oti_data_dictionary
+    custom:
+      destination_use: attachment
+  tags: [socrata_unpublished]
   custom:
     four_four: k2r4-n9ax
 - id: bytes
@@ -45,6 +57,11 @@ files:
     filename: nypuma2010_metadata.pdf
     is_metadata: true
     type: None
+- file:
+    id: oti_data_dictionary
+    filename: data_dictionary.xlsx
+    is_metadata: true
+    type: oti_data_dictionary
 
 columns:
 - id: the_geom

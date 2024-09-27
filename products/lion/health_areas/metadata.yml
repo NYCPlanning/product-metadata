@@ -2,16 +2,17 @@ id: health_areas
 
 attributes:
   description: |-
-    GIS data: Boundaries of Health Areas.
+    Boundaries of health areas.
 
-    All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
+    All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE - Archive</a>.
   display_name: Health Areas
-  each_row_is_a: Health Area
+  each_row_is_a: Health area
   tags:
   - health areas
   - dcp
   - health
   - city planning
+  date_made_public: ''
 
 assembly: []
 
@@ -27,6 +28,10 @@ destinations:
   - id: shapefile
     custom:
       destination_use: dataset_file
+  - id: oti_data_dictionary
+    custom:
+      destination_use: attachment
+  tags: [socrata_unpublished]
   custom:
     four_four: jntv-ngw5
 - id: bytes
@@ -60,6 +65,11 @@ files:
     filename: nyha_metadata.pdf
     is_metadata: true
     type: None
+- file:
+    id: oti_data_dictionary
+    filename: data_dictionary.xlsx
+    is_metadata: true
+    type: oti_data_dictionary
 
 columns:
 - id: boro_code
@@ -81,7 +91,7 @@ columns:
 - id: boro_name
   name: BoroName
   data_type: text
-  description: Borough Name.
+  description: Borough name.
   example: Queens
   values:
   - value: Brooklyn
@@ -92,16 +102,20 @@ columns:
 - id: health_area
   name: HealthArea
   data_type: integer
-  example: None
-- id: shape_area
-  name: ShapeArea
-  data_type: decimal
-  example: None
-- id: shape_length
-  name: ShapeLength
-  data_type: decimal
+  description: ''
   example: None
 - id: the_geom
-  name: Shape
+  name: the_geom
   data_type: geometry
+  description: ''
+  example: None
+- id: shape_length
+  name: Shape_Length
+  data_type: decimal
+  description: Length of feature in internal units.
+  example: None
+- id: shape_area
+  name: Shape_Area
+  data_type: decimal
+  description: Area of feature in internal units squared.
   example: None

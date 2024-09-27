@@ -5,7 +5,7 @@ attributes:
     2010 Neighborhood Tabulation Areas (NTAs) are medium-sized statistical geographies for reporting Decennial Census and American Community Survey (ACS). 2010 NTAs are created by aggregating 2020 census tracts and nest within Community District Tabulation Areas (CDTA). NTAs were delineated with the need for both geographic specificity and statistical reliability in mind. Consequently, each NTA contains enough population to mitigate sampling error associated with the ACS yet offers a unit of analysis that is smaller than a Community District.
     Though NTA boundaries and their associated names roughly correspond with many neighborhoods commonly recognized by New Yorkers, NTAs are not intended to definitively represent neighborhoods, nor are they intended to be exhaustive of all possible names and understandings of neighborhoods throughout New York City. Additionally, non-residential areas including large parks, airports, cemeteries, and other special areas are represented separately within this dataset and are assigned codes according to their type (See NTAType field).
 
-    All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>
+    All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE - Archive</a>
   display_name: 2010 Neighborhood Tabulation Areas (NTAs)
   each_row_is_a: Neighborhood Tabulation Area
   tags:
@@ -15,6 +15,7 @@ attributes:
   - community
   - area
   - nta
+  date_made_public: '1/31/2013'
 
 assembly: []
 
@@ -30,6 +31,10 @@ destinations:
   - id: shapefile
     custom:
       destination_use: dataset_file
+  - id: oti_data_dictionary
+    custom:
+      destination_use: attachment
+  tags: [socrata_unpublished]
   custom:
     four_four: ca69-3vdk
 - id: bytes
@@ -53,6 +58,11 @@ files:
     filename: nynta2010_metadata.pdf
     is_metadata: true
     type: None
+- file:
+    id: oti_data_dictionary
+    filename: data_dictionary.xlsx
+    is_metadata: true
+    type: oti_data_dictionary
 
 columns:
 - id: borocode
@@ -74,7 +84,7 @@ columns:
 - id: boroname
   name: BoroName
   data_type: text
-  description: Borough Name.
+  description: Borough name.
   example: None
   values:
   - value: Brooklyn
@@ -85,12 +95,12 @@ columns:
 - id: countyfips
   name: CountyFIPS
   data_type: text
-  description: The Census Bureau defined County FIPS code
+  description: The Census Bureau defined county FIPS code.
   example: None
 - id: ntacode
   name: NTACode
   data_type: text
-  description: 2010 Neighborhood Tabulation Area Code
+  description: 2010 Neighborhood Tabulation Area code.
   example: None
 - id: ntaname
   name: NTAName

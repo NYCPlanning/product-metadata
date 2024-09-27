@@ -2,11 +2,11 @@ id: state_senate_districts
 
 attributes:
   description: |-
-    GIS data: Boundaries of State Senate Districts.
+    Boundaries of State Senate districts.
 
-    All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
+    All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE - Archive</a>.
   display_name: State Senate Districts
-  each_row_is_a: State Senate District
+  each_row_is_a: State Senate district
   tags:
   - state senate districts
   - dcp
@@ -19,6 +19,7 @@ attributes:
   - senate
   - district
   - boundary
+  date_made_public: '1/31/2013'
 
 assembly: []
 
@@ -34,6 +35,10 @@ destinations:
   - id: shapefile_wi
     custom:
       destination_use: dataset_file
+  - id: oti_data_dictionary
+    custom:
+      destination_use: attachment
+  tags: [socrata_unpublished]
   custom:
     four_four: kkv2-gkck
 - id: socrata
@@ -45,6 +50,10 @@ destinations:
   - id: shapefile
     custom:
       destination_use: dataset_file
+  - id: oti_data_dictionary
+    custom:
+      destination_use: attachment
+  tags: [socrata_unpublished]
   custom:
     four_four: qi35-3r9s
 - id: bytes
@@ -73,10 +82,10 @@ files:
   dataset_overrides:
     attributes:
       description: |-
-        GIS data: Boundaries of State Senate Districts (water areas included).
+        Boundaries of State Senate Districts (water areas included).
 
-        All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
-      display_name: State Senate Districts
+        All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE - Archive</a>.
+      display_name: State Senate Districts (water areas included)
     overridden_columns:
     - id: shape_length
       name: shape_leng
@@ -89,9 +98,9 @@ files:
   dataset_overrides:
     attributes:
       description: |-
-        GIS data: Boundaries of State Senate Districts.
+        Boundaries of State Senate Districts.
 
-        All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
+        All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE - Archive</a>.
     overridden_columns:
     - id: shape_length
       name: shape_leng
@@ -107,22 +116,30 @@ files:
     filename: nysswi_metadata.pdf
     is_metadata: true
     type: None
+- file:
+    id: oti_data_dictionary
+    filename: data_dictionary.xlsx
+    is_metadata: true
+    type: oti_data_dictionary
 
 columns:
 - id: state_senate_district
   name: StateSenateDistrict
   data_type: integer
-  description: New York State Senate District Number
+  description: New York State Senate district number.
   example: None
 - id: the_geom
-  name: Shape
+  name: the_geom
   data_type: geometry
+  description:
   example: None
 - id: shape_length
   name: Shape_Length
   data_type: decimal
+  description: Length of feature in internal units.
   example: None
 - id: shape_area
   name: Shape_Area
   data_type: decimal
+  description: Area of feature in internal units squared.
   example: None

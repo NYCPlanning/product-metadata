@@ -2,18 +2,13 @@ id: police_precincts
 
 attributes:
   description: |-
-    GIS data: Boundaries of Police Precincts.
+    Boundaries of police precincts.
 
-    All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
+    All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE - Archive</a>.
   display_name: Police Precincts
-  each_row_is_a: Police Precinct
+  each_row_is_a: Police precinct
   tags:
-  - police precincts
   - dcp
-  - geographic
-  - location
-  - map
-  - cartography
   - safety
   - crime
   - boundary
@@ -22,12 +17,9 @@ attributes:
   - cop
   - division
   - precinct
-  - precincts
   - gis
   - jurisdiction
-  - school
-  - health
-  - 'fire & police gis: police precincts'
+  date_made_public: '1/31/2013'
 
 assembly: []
 
@@ -43,6 +35,10 @@ destinations:
   - id: shapefile
     custom:
       destination_use: dataset_file
+  - id: oti_data_dictionary
+    custom:
+      destination_use: attachment
+  tags: [socrata_unpublished]
   custom:
     four_four: y76i-bdw7
 - id: bytes
@@ -70,22 +66,30 @@ files:
     filename: nypp_metadata.pdf
     is_metadata: true
     type: None
+- file:
+    id: oti_data_dictionary
+    filename: data_dictionary.xlsx
+    is_metadata: true
+    type: oti_data_dictionary
 
 columns:
 - id: precinct
   name: Precinct
   data_type: integer
-  description: Denotes the precinct number serviced by the police precinct
+  description: Denotes the precinct number serviced by the police precinct.
   example: None
 - id: the_geom
-  name: Shape
+  name: the_geom
   data_type: geometry
+  description: ''
   example: None
 - id: shape_length
   name: Shape_Length
   data_type: decimal
+  description: Length of feature in internal units.
   example: None
 - id: shape_area
   name: Shape_Area
   data_type: decimal
+  description: Area of feature in internal units squared.
   example: None

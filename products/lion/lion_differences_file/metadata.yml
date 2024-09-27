@@ -30,6 +30,9 @@ destinations:
   - id: shapefile
     custom:
       destination_use: dataset_file
+  - id: oti_data_dictionary
+    custom:
+      destination_use: attachment
   custom:
     four_four: ige5-v6sk
     is_unparsed_dataset: true
@@ -54,5 +57,10 @@ files:
     filename: ldf_metadata.pdf
     is_metadata: true
     type: None
+- file:
+    id: oti_data_dictionary
+    filename: data_dictionary.xlsx
+    is_metadata: true
+    type: oti_data_dictionary
 
 columns: []
