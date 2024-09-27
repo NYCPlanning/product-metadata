@@ -23,11 +23,6 @@ destinations:
     custom:
       destination_use: attachment
   - id: shapefile_points
-    dataset_overrides:
-      overridden_columns:
-      - id: the_geom
-        custom:
-          api_name: wkb_geometry
     custom:
       destination_use: dataset_file
   custom:

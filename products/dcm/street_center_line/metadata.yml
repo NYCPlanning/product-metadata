@@ -185,7 +185,7 @@ columns:
         description: marginal street, wharf or place
   - id: edit_date
     name: Edit_Date
-    data_type: date
+    data_type: text
     description: The date the record was last edited.
   - id: the_geom
     name: the_geom

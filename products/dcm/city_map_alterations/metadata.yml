@@ -106,7 +106,7 @@ columns:
     data_type: text
   - id: effect_dt
     name: Effect_DT
-    data_type: date
+    data_type: text
     description: Indicates effective date of map alteration on Alteration map.
   - id: bp_num
     name: BP_NUM
@@ -124,7 +124,7 @@ columns:
       effective.
   - id: cert_date
     name: Cert_Date
-    data_type: date
+    data_type: text
     description: The date the mapping application was certified by City Planning.
   - id: chg_type
     name: CHG_TYPE

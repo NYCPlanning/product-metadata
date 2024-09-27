@@ -41,122 +41,122 @@ destinations:
     custom:
       destination_use: attachment
   - id: shapefile
-    dataset_overrides:
-      overridden_columns:
-      - id: UID
-        custom:
-          api_name: uid
-      - id: FACNAME
-        custom:
-          api_name: facname
-      - id: ADDRESSNUM
-        custom:
-          api_name: addressnum
-      - id: STREETNAME
-        custom:
-          api_name: streetname
-      - id: ADDRESS
-        custom:
-          api_name: address
-      - id: CITY
-        custom:
-          api_name: city
-      - id: BORO
-        custom:
-          api_name: boro
-      - id: BOROCODE
-        custom:
-          api_name: borocode
-      - id: ZIPCODE
-        custom:
-          api_name: zipcode
-      - id: LATITUDE
-        custom:
-          api_name: latitude
-      - id: LONGITUDE
-        custom:
-          api_name: longitude
-      - id: XCOORD
-        custom:
-          api_name: xcoord
-      - id: YCOORD
-        custom:
-          api_name: ycoord
-      - id: BIN
-        custom:
-          api_name: bin
-      - id: BBL
-        custom:
-          api_name: bbl
-      - id: CD
-        custom:
-          api_name: cd
-      - id: COUNCIL
-        custom:
-          api_name: council
-      - id: CT2010
-        custom:
-          api_name: ct2010
-      - id: CT2020
-        custom:
-          api_name: ct2020
-      - id: NTA2010
-        custom:
-          api_name: nta2010
-      - id: NTA2020
-        custom:
-          api_name: nta2020
-      - id: FACGROUP
-        custom:
-          api_name: facgroup
-      - id: FACSUBGRP
-        custom:
-          api_name: facsubgrp
-      - id: FACTYPE
-        custom:
-          api_name: factype
-      - id: CAPACITY
-        custom:
-          api_name: capacity
-      - id: CAPTYPE
-        custom:
-          api_name: captype
-      - id: OPTYPE
-        custom:
-          api_name: optype
-      - id: OPNAME
-        custom:
-          api_name: opname
-      - id: OPABBREV
-        custom:
-          api_name: opabbrev
-      - id: OVERLEVEL
-        custom:
-          api_name: overlevel
-      - id: OVERAGENCY
-        custom:
-          api_name: overagency
-      - id: OVERABBREV
-        custom:
-          api_name: overabbrev
-      - id: DATASOURCE
-        custom:
-          api_name: datasource
-      - id: FACDOMAIN
-        custom:
-          api_name: facdomain
-      - id: SCHOOLDIST
-        custom:
-          api_name: schooldist
-      - id: POLICEPRCT
-        custom:
-          api_name: policeprct
-      - id: SERVAREA
-        custom:
-          api_name: servarea
-      - id: geometry
-        custom:
-          api_name: geometry
+    # dataset_overrides:
+    #   overridden_columns:
+    #   - id: UID
+    #     custom:
+    #       api_name: uid
+    #   - id: FACNAME
+    #     custom:
+    #       api_name: facname
+    #   - id: ADDRESSNUM
+    #     custom:
+    #       api_name: addressnum
+    #   - id: STREETNAME
+    #     custom:
+    #       api_name: streetname
+    #   - id: ADDRESS
+    #     custom:
+    #       api_name: address
+    #   - id: CITY
+    #     custom:
+    #       api_name: city
+    #   - id: BORO
+    #     custom:
+    #       api_name: boro
+    #   - id: BOROCODE
+    #     custom:
+    #       api_name: borocode
+    #   - id: ZIPCODE
+    #     custom:
+    #       api_name: zipcode
+    #   - id: LATITUDE
+    #     custom:
+    #       api_name: latitude
+    #   - id: LONGITUDE
+    #     custom:
+    #       api_name: longitude
+    #   - id: XCOORD
+    #     custom:
+    #       api_name: xcoord
+    #   - id: YCOORD
+    #     custom:
+    #       api_name: ycoord
+    #   - id: BIN
+    #     custom:
+    #       api_name: bin
+    #   - id: BBL
+    #     custom:
+    #       api_name: bbl
+    #   - id: CD
+    #     custom:
+    #       api_name: cd
+    #   - id: COUNCIL
+    #     custom:
+    #       api_name: council
+    #   - id: CT2010
+    #     custom:
+    #       api_name: ct2010
+    #   - id: CT2020
+    #     custom:
+    #       api_name: ct2020
+    #   - id: NTA2010
+    #     custom:
+    #       api_name: nta2010
+    #   - id: NTA2020
+    #     custom:
+    #       api_name: nta2020
+    #   - id: FACGROUP
+    #     custom:
+    #       api_name: facgroup
+    #   - id: FACSUBGRP
+    #     custom:
+    #       api_name: facsubgrp
+    #   - id: FACTYPE
+    #     custom:
+    #       api_name: factype
+    #   - id: CAPACITY
+    #     custom:
+    #       api_name: capacity
+    #   - id: CAPTYPE
+    #     custom:
+    #       api_name: captype
+    #   - id: OPTYPE
+    #     custom:
+    #       api_name: optype
+    #   - id: OPNAME
+    #     custom:
+    #       api_name: opname
+    #   - id: OPABBREV
+    #     custom:
+    #       api_name: opabbrev
+    #   - id: OVERLEVEL
+    #     custom:
+    #       api_name: overlevel
+    #   - id: OVERAGENCY
+    #     custom:
+    #       api_name: overagency
+    #   - id: OVERABBREV
+    #     custom:
+    #       api_name: overabbrev
+    #   - id: DATASOURCE
+    #     custom:
+    #       api_name: datasource
+    #   - id: FACDOMAIN
+    #     custom:
+    #       api_name: facdomain
+    #   - id: SCHOOLDIST
+    #     custom:
+    #       api_name: schooldist
+    #   - id: POLICEPRCT
+    #     custom:
+    #       api_name: policeprct
+    #   - id: SERVAREA
+    #     custom:
+    #       api_name: servarea
+    #   - id: geometry
+    #     custom:
+    #       api_name: geometry
     custom:
       destination_use: dataset_file
   custom:
