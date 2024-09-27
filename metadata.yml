@@ -1,0 +1,27 @@
+products:
+- building_elevation_and_subgrade
+- census_equivalency_tract_table
+- colp
+- community_development_block_grant_cdbg_eligibility_by_census_tract
+- cpdb
+- dcm
+- designated_areas_m_districts_appendix_j
+- directory_of_land_use_application_fees
+- e_designations
+- facilities
+- fresh_zoning_boundary
+- inclusionary_housing_designated_areas
+- lion
+- lower_density_growth_management_areas
+- mandatory_inclusionary_housing
+- new_york_city_neighborhood_name_centroid
+- pluto
+- pops
+- projected_sea_level_rise
+- template_db
+- transit_zones
+- waterfront_public_access_areas
+- waterfront_revitalization_program
+- zap
+- zoning
+- ztl
