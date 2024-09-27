@@ -1,0 +1,22 @@
+name: 🧪 Validate Metadata
+run-name: 🧪 Validate (${{ github.event_name }})
+
+on:
+  workflow_dispatch:
+  workflow_call:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+jobs:
+  test:
+    name: Validate Metadata
+    runs-on: ubuntu-22.04
+    container:
+      image: nycplanning/dev:latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate All Files
+        # run: python -m dcpy.cli
+        run: echo "hi"
