@@ -1,0 +1,75 @@
+id: waterfront_access_map_combined
+
+attributes:
+  description:
+    The Waterfront Access Map (WAM) data contains information about waterfront
+    areas accessible to the public that are either publicly owned or on private property.
+    The Waterfront Public Access Areas (WPAA)s data contains privately owned waterfront
+    zoning lots where publicly accessible open space is provided to and along the
+    shoreline for public enjoyment. The Publicly Owned Waterfront data contains City,
+    State, and Federally owned public parks and facilities that provide waterfront
+    parkland and open space for public enjoyment. Data for WPAA footprints and access
+    points, human powered boat launches and saltwater fishing access are also included.
+    All Waterfront Access Map (WAM) datasets are featured on the<a href="https://waterfrontaccess.planning.nyc.gov/about#10/40.7097/-73.9653">
+    NYC DCP Waterfront Access Map </a>
+  display_name: "Waterfront Access Map Data: Geodatabase"
+  each_row_is_a: <depends on which feature> see metadata
+  tags:
+    - waterfront public access areas
+    - wpaa
+    - open space
+    - parks
+    - footprints
+    - access points
+    - publicly owned waterfront
+    - human powered boat launches
+    - boating
+    - saltwater fishing
+    - waterfront access map
+    - wam
+    - publicly accessible waterfront
+    - shore public access
+    - city planning
+    - dcp
+    - nyc
+
+assembly: []
+
+custom: {}
+
+destinations:
+  - id: socrata_prod
+    type: socrata
+    files:
+      - id: fgdb
+        custom:
+          destination_use: dataset_file
+      - id: paws_user_guide
+        custom:
+          destination_use: attachment
+      - id: meta_zip
+        custom:
+          destination_use: attachment
+    custom:
+      four_four: sp9a-cd2a
+      is_unparsed_dataset: true
+  - id: bytes
+    type: bytes
+    files:
+      - id: fgdb
+        custom:
+          url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nycwpaas_{{ version }}fgdb.zip
+
+files:
+  - file:
+      id: fgdb
+      filename: nycwpaas.zip
+      type: fgdb
+  - file:
+      id: paws_user_guide
+      filename: paws_user_guide.pdf
+  - file:
+      id: meta_zip
+      filename: nycwpaas_meta.zip
+
+columns: []

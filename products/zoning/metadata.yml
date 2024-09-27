@@ -1,5 +1,8 @@
 id: zoning
 
+attributes:
+  publishing_frequency: Monthly
+
 datasets:
 - commercial_overlay_district
 - zoning_districts

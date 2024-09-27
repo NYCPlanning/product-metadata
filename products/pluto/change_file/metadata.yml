@@ -37,7 +37,7 @@ destinations:
 - id: socrata
   type: socrata
   files:
-  - id: pluto_removed_records.csv
+  - id: pluto_removed_records
     custom:
       destination_use: attachment
   - id: pluto_changes_applied
@@ -48,7 +48,7 @@ destinations:
 - id: socrata_test
   type: socrata
   files:
-  - id: pluto_removed_records.csv
+  - id: pluto_removed_records
     custom:
       destination_use: attachment
   - id: pluto_changes_applied
