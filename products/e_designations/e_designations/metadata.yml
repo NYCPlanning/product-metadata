@@ -44,6 +44,11 @@ destinations:
     custom:
       destination_use: attachment
   - id: shapefile
+    dataset_overrides:
+      overridden_columns:
+      - id: description
+        custom:
+          api_name: descriptio
     custom:
       destination_use: dataset_file
   custom:
@@ -78,13 +83,37 @@ files:
     filename: nyedes_shape.zip
     type: shapefile
   dataset_overrides:
+    omitted_columns: ['air_code', 'air_date', 'effective_date', 'hazmat_code', 'hazmat_date', 'noise_code', 'noise_date']
     overridden_columns:
     - id: description
-      name: descriptio
+      name: DESCRIPTIO
+    - id: enumber
+      name: ENUMBER
+    - id: the_geom
+      name: geometry
 - file:
     id: csv
     filename: nyedes.csv
     type: csv
+  dataset_overrides:
+    omitted_columns: [the_geom]
+    overridden_columns:
+    - id: air_code
+      name: AIR
+    - id: air_date
+      name: AIR_DATE
+    - id: enumber
+      name: ENUMBER
+    - id: effective_date
+      name: E_DATE
+    - id: hazmat_code
+      name: HAZMAT
+    - id: hazmat_date
+      name: HAZMAT_D
+    - id: noise_code
+      name: NOISE
+    - id: noise_date
+      name: NOISE_D
 - file:
     id: nyedes_metadata.pdf
     filename: nyedes_metadata.pdf
