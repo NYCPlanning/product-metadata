@@ -21,7 +21,7 @@ attributes:
 
 assembly:
 - id: csv_zip
-  filename: nyc_pluto_csv
+  filename: nyc_pluto_csv.zip
   type: Zip
   contents:
   - id: pluto_readme.pdf
@@ -43,21 +43,7 @@ destinations:
   - id: pluto_readme.pdf
     custom:
       destination_use: attachment
-  - id: shapefile_water_incl
-    dataset_overrides:
-      overridden_columns:
-      - id: pfirm15_flag
-        custom:
-          api_name: pfirm15_fla
-      - id: firm07_flag
-        custom:
-          api_name: firm07_fla
-      - id: healthcenterdistrict
-        custom:
-          api_name: healthcent
-      - id: sanitdistrict
-        custom:
-          api_name: sanitdistr
+  - id: csv
     custom:
       destination_use: dataset_file
   custom:
@@ -511,7 +497,7 @@ files:
     id: csv
     filename: pluto.csv
     is_metadata: false
-    type: zip
+    type: csv
 
 columns:
 - id: borough
