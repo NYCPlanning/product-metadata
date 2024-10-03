@@ -1,524 +1,449 @@
-name: housing_database_project_level_files
-display_name: Housing Database Project Level Files
-summary: >
-  The NYC Department of City Planning's (DCP)
-  <a href="https://www.nyc.gov/site/planning/data-maps/open-data/dwn-housing-database.page#housingdevelopmentproject">Housing Database</a>
-  contains all NYC Department of Buildings (DOB) approved housing construction and demolition jobs filed or completed in NYC since January 1, 2010.
-  It includes the three primary construction job types that add or remove residential units: new buildings, major alterations, and demolitions, 
-  and can be used to determine the change in legal housing units across time and space. Records in the Housing Database Project-Level Files 
-  are geocoded to the greatest level of precision possible, subject to numerous quality assurance and control checks, recoded for usability, 
-  and joined to other housing data sources relevant to city planners and analysts.
+id: housing_database_project_level_files
 
-  Data are updated semiannually, at the end of the second and fourth quarters of each year.
-  
-  Please see DCP's annual Housing Production Snapshot summarizing findings from the 21Q4 data release 
-  <a href="https://storymaps.arcgis.com/stories/1c9138dc24064b2e8142ff156345a719">here. Additional Housing and Economic analyses are also 
-  <a href="https://www.nyc.gov/site/planning/planning-level/housing-economy/housing-economy.page">available</a>.
-  
-  All previously released versions of this data are available at 
-  <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%255byear%255d=0">BYTES of the BIG APPLE- Archive</a>.
-description: >
-  The NYC Department of City Planning's (DCP)
-  <a href="https://www.nyc.gov/site/planning/data-maps/open-data/dwn-housing-database.page#housingdevelopmentproject">Housing Database</a>
-  contains all NYC Department of Buildings (DOB) approved housing construction and demolition jobs filed or completed in NYC since January 1, 2010.
-  It includes the three primary construction job types that add or remove residential units: new buildings, major alterations, and demolitions, 
-  and can be used to determine the change in legal housing units across time and space. Records in the Housing Database Project-Level Files 
-  are geocoded to the greatest level of precision possible, subject to numerous quality assurance and control checks, recoded for usability, 
-  and joined to other housing data sources relevant to city planners and analysts.
+attributes:
+  description: |-
+    The NYC Department of City Planning's (DCP) <a href="https://www.nyc.gov/site/planning/data-maps/open-data/dwn-housing-database.page#housingdevelopmentproject">Housing Database</a> contains all NYC Department of Buildings (DOB) approved housing construction and demolition jobs filed or completed in NYC since January 1, 2010. It includes the three primary construction job types that add or remove residential units: new buildings, major alterations, and demolitions,  and can be used to determine the change in legal housing units across time and space. Records in the Housing Database Project-Level Files  are geocoded to the greatest level of precision possible, subject to numerous quality assurance and control checks, recoded for usability,  and joined to other housing data sources relevant to city planners and analysts.
+    Data are updated semiannually, at the end of the second and fourth quarters of each year.
+    Please see DCP's annual Housing Production Snapshot summarizing findings from the 21Q4 data release  <a href="https://storymaps.arcgis.com/stories/1c9138dc24064b2e8142ff156345a719">here. Additional Housing and Economic analyses are also  <a href="https://www.nyc.gov/site/planning/planning-level/housing-economy/housing-economy.page">available</a>.
+    All previously released versions of this data are available at  <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%255byear%255d=0">BYTES of the BIG APPLE- Archive</a>.
+  display_name: Housing Database Project Level Files
+  each_row_is_a: DOB-approved housing construction or demolition job
+  tags:
+  - housing
+  - house
+  - building
+  - development
+  - dwelling unit
+  - certificate of occupancy
+  - co
+  - permit
+  - job application
+  - filing
+  - net units
+  - unit change
+  - pipeline
+  - construction
+  - census block
+  - census tract
+  - nta
+  - puma
+  - city council district
+  - community district
 
-  Data are updated semiannually, at the end of the second and fourth quarters of each year.
-  
-  Please see DCP's annual Housing Production Snapshot summarizing findings from the 21Q4 data release 
-  <a href="https://storymaps.arcgis.com/stories/1c9138dc24064b2e8142ff156345a719">here. Additional Housing and Economic analyses are also 
-  <a href="https://www.nyc.gov/site/planning/planning-level/housing-economy/housing-economy.page">available</a>.
-  
-  All previously released versions of this data are available at 
-  <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%255byear%255d=0">BYTES of the BIG APPLE- Archive</a>.
-tags:
-- housing
-- house
-- building
-- development
-- dwelling unit
-- certificate of occupancy
-- co
-- permit
-- job application
-- filing
-- net units
-- unit change
-- pipeline
-- construction
-- census block
-- census tract
-- nta
-- puma
-- city council district
-- community district
-each_row_is_a: DOB-approved housing construction or demolition job
+assembly: []
+
+custom: {}
+
 destinations:
 - id: socrata_prod
   type: socrata
-  four_four: uxt4-ugwr
-  attachments: []
-  datasets: [primary_shapefile]
-  omit_columns: []
-  column_details: {}
-  overrides:
-    omit_columns: []
-    ignore_validation: []
-    columns: {}
-    tags: []
-package:
-  dataset_files:
-  - name: primary_shapefile
-    type: shapefile
+  files:
+  - id: primary_shapefile
+    custom:
+      destination_use: dataset_file
+  custom:
+    four_four: uxt4-ugwr
+
+files:
+- file:
+    id: primary_shapefile
     filename: nychdb_shp.zip
-    overrides:
-      omit_columns: []
-      ignore_validation: []
-      columns: {}
-      tags: []
-  attachments:
-  - Housing_Database_Data_Dictionary.xlsx
+    type: shapefile
+- file:
+    id: Housing_Database_Data_Dictionary.xlsx
+    filename: Housing_Database_Data_Dictionary.xlsx
+    is_metadata: true
+    type: None
+
 columns:
-- name: the_geom
-  display_name: the_geom
-  description: ''
-  data_type: point
-  example:
-    coordinates:
-    - 1006276.9556583731
-    - 142173.22203716455
-    type: Point
-- name: job_number
-  display_name: Job_Number
-  description: ''
+- id: the_geom
+  name: the_geom
+  data_type: geometry
+  example: '{''coordinates'': [1006276.9556583731, 142173.22203716455], ''type'':
+    ''Point''}'
+- id: job_number
+  name: Job_Number
   data_type: text
   example: '320241010'
-- name: job_type
-  display_name: Job_Type
-  description: ''
+- id: job_type
+  name: Job_Type
   data_type: text
   example: Alteration
   values:
-  - [Alteration]
-  - [New Building]
-  - [Demolition]
-- name: residflag
-  display_name: ResidFlag
-  description: ''
+  - value: Alteration
+  - value: New Building
+  - value: Demolition
+- id: residflag
+  name: ResidFlag
   data_type: text
   example: Residential
   values:
-  - [Residential]
-- name: nonresflag
-  display_name: NonresFlag
-  description: ''
+  - value: Residential
+- id: nonresflag
+  name: NonresFlag
   data_type: text
   example: Non-Residential
   values:
-  - [Non-Residential]
-- name: job_status
-  display_name: Job_Status
-  description: ''
+  - value: Non-Residential
+- id: job_status
+  name: Job_Status
   data_type: text
   example: 5. Completed Construction
   values:
-  - [1. Filed Application]
-  - [2. Approved Application]
-  - [3. Permitted for Construction]
-  - [ 4. Partially Completed Construction]
-  - [5. Completed Construction]
-- name: compltyear
-  display_name: CompltYear
-  description: ''
+  - value: 1. Filed Application
+  - value: 2. Approved Application
+  - value: 3. Permitted for Construction
+  - value: 4. Partially Completed Construction
+  - value: 5. Completed Construction
+- id: compltyear
+  name: CompltYear
   data_type: text
   example: '2010'
-- name: permityear
-  display_name: PermitYear
-  description: ''
+- id: permityear
+  name: PermitYear
   data_type: text
   example: '2017'
-- name: classainit
-  display_name: ClassAInit
-  description: ''
-  data_type: double
+- id: classainit
+  name: ClassAInit
+  data_type: decimal
   example: '0.0'
-- name: classaprop
-  display_name: ClassAProp
-  description: ''
-  data_type: double
+- id: classaprop
+  name: ClassAProp
+  data_type: decimal
   example: '2.0'
-- name: classanet
-  display_name: ClassANet
-  description: ''
-  data_type: double
+- id: classanet
+  name: ClassANet
+  data_type: decimal
   example: '0.0'
-- name: hotelinit
-  display_name: HotelInit
-  description: ''
+- id: hotelinit
+  name: HotelInit
   data_type: text
   example: '0'
-- name: hotelprop
-  display_name: HotelProp
-  description: ''
+- id: hotelprop
+  name: HotelProp
   data_type: text
   example: '0'
-- name: otherbinit
-  display_name: OtherBInit
-  description: ''
+- id: otherbinit
+  name: OtherBInit
   data_type: text
   example: '0'
-- name: otherbprop
-  display_name: OtherBProp
-  description: ''
+- id: otherbprop
+  name: OtherBProp
   data_type: text
   example: '0'
-- name: unitsco
-  display_name: UnitsCO
-  description: ''
-  data_type: double
+- id: unitsco
+  name: UnitsCO
+  data_type: decimal
   example: '2.0'
-- name: boro
-  display_name: Boro
+- id: boro
+  name: Boro
+  data_type: text
   description: int
-  data_type: text
   example: '4'
   values:
-  - ["1"]
-  - ["2"]
-  - ["3"]
-  - ["4"]
-  - ["5"]
-- name: bin
-  display_name: BIN
-  description: <FILL ME IN!>
+  - value: '1'
+  - value: '2'
+  - value: '3'
+  - value: '4'
+  - value: '5'
+- id: bin
+  name: BIN
   data_type: text
+  description: <FILL ME IN!>
   example: '4466645'
-- name: bbl
-  display_name: BBL
-  description: <FILL ME IN!>
+- id: bbl
+  name: BBL
   data_type: text
+  description: <FILL ME IN!>
   example: '4163500400'
-- name: addressnum
-  display_name: AddressNum
-  description: <FILL ME IN!>
+- id: addressnum
+  name: AddressNum
   data_type: text
+  description: <FILL ME IN!>
   example: '15'
-- name: addressst
-  display_name: AddressSt
-  description: <FILL ME IN!>
+- id: addressst
+  name: AddressSt
   data_type: text
+  description: <FILL ME IN!>
   example: BROADWAY
-- name: occ_init
-  display_name: Occ_Init
-  description: <FILL ME IN!>
+- id: occ_init
+  name: Occ_Init
   data_type: text
+  description: <FILL ME IN!>
   example: Empty Site
-- name: occ_prop
-  display_name: Occ_Prop
-  description: <FILL ME IN!>
+- id: occ_prop
+  name: Occ_Prop
   data_type: text
+  description: <FILL ME IN!>
   example: 'Residential: 1-2 Family Houses (R-3)'
-- name: job_desc
-  display_name: Job_Desc
-  description: <FILL ME IN!>
+- id: job_desc
+  name: Job_Desc
   data_type: text
+  description: <FILL ME IN!>
   example: DEMOLITION OF STRUCTURE
-- name: datefiled
-  display_name: DateFiled
-  description: ''
+- id: datefiled
+  name: DateFiled
   data_type: datetime
   example: '2007-12-18T00:00:00.000'
-- name: datepermit
-  display_name: Datepermit
-  description: ''
+- id: datepermit
+  name: Datepermit
   data_type: datetime
   example: '2008-07-29T00:00:00.000'
-- name: datelstupd
-  display_name: DateLstUpd
-  description: ''
+- id: datelstupd
+  name: DateLstUpd
   data_type: datetime
   example: '2023-12-28T00:00:00.000'
-- name: datecomplt
-  display_name: Datecomplt
-  description: ''
+- id: datecomplt
+  name: Datecomplt
   data_type: datetime
   example: '2013-10-23T00:00:00.000'
-- name: zoningdst1
-  display_name: ZoningDst1
-  description: <FILL ME IN!>
+- id: zoningdst1
+  name: ZoningDst1
   data_type: text
+  description: <FILL ME IN!>
   example: R6
-- name: zoningdst2
-  display_name: ZoningDst2
-  description: <FILL ME IN!>
+- id: zoningdst2
+  name: ZoningDst2
   data_type: text
+  description: <FILL ME IN!>
   example: R6
-- name: zoningdst3
-  display_name: ZoningDst3
-  description: <FILL ME IN!>
+- id: zoningdst3
+  name: ZoningDst3
   data_type: text
+  description: <FILL ME IN!>
   example: R6B
-- name: specldst1
-  display_name: SpeclDst1
-  description: <FILL ME IN!>
+- id: specldst1
+  name: SpeclDst1
   data_type: text
+  description: <FILL ME IN!>
   example: SRD
-- name: specldst2
-  display_name: SpeclDst2
-  description: <FILL ME IN!>
+- id: specldst2
+  name: SpeclDst2
   data_type: text
+  description: <FILL ME IN!>
   example: MS4
-- name: landmark
-  display_name: Landmark
-  description: <FILL ME IN!>
+- id: landmark
+  name: Landmark
   data_type: text
+  description: <FILL ME IN!>
   example: 'Yes'
   values:
-  - ['Yes']
-- name: floorsinit
-  display_name: FloorsInit
+  - value: 'Yes'
+- id: floorsinit
+  name: FloorsInit
+  data_type: decimal
   description: <FILL ME IN!>
-  data_type: double
   example: '2.0'
-- name: floorsprop
-  display_name: FloorsProp
+- id: floorsprop
+  name: FloorsProp
+  data_type: decimal
   description: <FILL ME IN!>
-  data_type: dpib;e
   example: '2.0'
-- name: enlargemnt
-  display_name: Enlargemnt
-  description: <FILL ME IN!>
+- id: enlargemnt
+  name: Enlargemnt
   data_type: text
+  description: <FILL ME IN!>
   example: Horizontal and Vertical
   values:
-  - [Horizontal and Vertical]
-  - [Horizontal]
-  - [Vertical]
-- name: ownership
-  display_name: Ownership
-  description: <FILL ME IN!>
+  - value: Horizontal and Vertical
+  - value: Horizontal
+  - value: Vertical
+- id: ownership
+  name: Ownership
   data_type: text
+  description: <FILL ME IN!>
   example: 'Private For-Profit: Individual'
-- name: cenblock10
-  display_name: CenBlock10
-  description: <FILL ME IN!>
+- id: cenblock10
+  name: CenBlock10
   data_type: text
+  description: <FILL ME IN!>
   example: '360471070011011'
-- name: bctcb2010
-  display_name: BCTCB2010
-  description: <FILL ME IN!>
+- id: bctcb2010
+  name: BCTCB2010
   data_type: text
+  description: <FILL ME IN!>
   example: '31070011011'
-- name: bct2010
-  display_name: BCT2010
-  description: <FILL ME IN!>
+- id: bct2010
+  name: BCT2010
   data_type: text
+  description: <FILL ME IN!>
   example: '4091603'
-- name: nta2010
-  display_name: NTA2010
-  description: <FILL ME IN!>
+- id: nta2010
+  name: NTA2010
   data_type: text
+  description: <FILL ME IN!>
   example: SI0304
-- name: ntaname10
-  display_name: NTAName10
-  description: <FILL ME IN!>
+- id: ntaname10
+  name: NTAName10
   data_type: text
+  description: <FILL ME IN!>
   example: Annadale-Huguenot-Prince's Bay-Woodrow
-- name: commntydst
-  display_name: CommntyDst
-  description: ''
+- id: commntydst
+  name: CommntyDst
   data_type: text
   example: '503'
-- name: councildst
-  display_name: CouncilDst
-  description: ''
+- id: councildst
+  name: CouncilDst
   data_type: text
   example: '50'
-- name: schsubdist
-  display_name: SchSubDist
-  description: ''
+- id: schsubdist
+  name: SchSubDist
   data_type: text
   example: '31_1'
-- name: schcommnty
-  display_name: SchCommnty
-  description: ''
+- id: schcommnty
+  name: SchCommnty
   data_type: text
   example: '31'
-- name: schelmntry
-  display_name: SchElmntry
-  description: ''
+- id: schelmntry
+  name: SchElmntry
   data_type: text
   example: '404'
-- name: schmiddle
-  display_name: SchMiddle
-  description: ''
+- id: schmiddle
+  name: SchMiddle
   data_type: text
   example: '7'
-- name: firecmpany
-  display_name: FireCmpany
-  description: ''
+- id: firecmpany
+  name: FireCmpany
   data_type: text
   example: E329
-- name: firebattln
-  display_name: FireBattln
-  description: ''
+- id: firebattln
+  name: FireBattln
   data_type: text
   example: '23'
-- name: firedivsn
-  display_name: FireDivsn
-  description: ''
+- id: firedivsn
+  name: FireDivsn
   data_type: text
   example: 08
-- name: policepcnt
-  display_name: PolicePcnt
-  description: ''
+- id: policepcnt
+  name: PolicePcnt
   data_type: text
   example: '122'
-- name: pl_firm07
-  display_name: PL_FIRM07
-  description: ''
+- id: pl_firm07
+  name: PL_FIRM07
   data_type: text
   example: '1'
   values:
-  - ['1']
-- name: pl_pfirm15
-  display_name: PL_PFIRM15
-  description: ''
+  - value: '1'
+- id: pl_pfirm15
+  name: PL_PFIRM15
   data_type: text
   example: '1'
   values:
-  - ['1']
-- name: latitude
-  display_name: Latitude
-  description: ''
+  - value: '1'
+- id: latitude
+  name: Latitude
   data_type: <FILL ME IN!>
   example: '40.556881'
-- name: longitude
-  display_name: Longitude
-  description: ''
+- id: longitude
+  name: Longitude
   data_type: <FILL ME IN!>
   example: '-73.920731'
-- name: geomsource
-  display_name: GeomSource
-  description: ''
+- id: geomsource
+  name: GeomSource
   data_type: text
   example: BIN DOB buildingfootprints
   values:
-  - [BIN DOB buildingfootprints, <FILL ME IN!>]
-  - [Lat/Lon geosupport, <FILL ME IN!>]
-  - [BBL DOB MapPLUTO, <FILL ME IN!>]
-  - [Lat/Lon DCP, <FILL ME IN!>]
-  - [BIN DOB buildingfootprints (historical), <FILL ME IN!>]
-  - [Lat/Lon DOB, <FILL ME IN!>]
-- name: dcpedited
-  display_name: DCPEdited
-  description: ''
+  - value: BIN DOB buildingfootprints
+    description: <FILL ME IN!>
+  - value: Lat/Lon geosupport
+    description: <FILL ME IN!>
+  - value: BBL DOB MapPLUTO
+    description: <FILL ME IN!>
+  - value: Lat/Lon DCP
+    description: <FILL ME IN!>
+  - value: BIN DOB buildingfootprints (historical)
+    description: <FILL ME IN!>
+  - value: Lat/Lon DOB
+    description: <FILL ME IN!>
+- id: dcpedited
+  name: DCPEdited
   data_type: text
   example: classa_init
-- name: version
-  display_name: Version
-  description: ''
+- id: version
+  name: Version
   data_type: text
   example: 23Q4
-- name: location
-  display_name: Location
-  description: ''
-  data_type: point
-  example:
-    coordinates:
-    - -73.920731
-    - 40.556881
-    type: Point
-- name: bldg_class
-  display_name: Bldg_Class
-  description: ''
+- id: location
+  name: Location
+  data_type: geometry
+  example: '{''coordinates'': [-73.920731, 40.556881], ''type'': ''Point''}'
+- id: bldg_class
+  name: Bldg_Class
   data_type: text
   example: A1
-- name: centract10
-  display_name: CenTract10
-  description: ''
+- id: centract10
+  name: CenTract10
   data_type: text
   example: '36081091603'
-- name: cenblock20
-  display_name: CenBlock20
-  description: ''
+- id: cenblock20
+  name: CenBlock20
   data_type: text
   example: '360471070011011'
-- name: centract20
-  display_name: CenTract20
-  description: ''
+- id: centract20
+  name: CenTract20
   data_type: text
   example: '36081091603'
-- name: bctcb2020
-  display_name: BCTCB2020
-  description: ''
+- id: bctcb2020
+  name: BCTCB2020
   data_type: text
   example: '31070011011'
-- name: bct2020
-  display_name: BCT2020
-  description: ''
+- id: bct2020
+  name: BCT2020
   data_type: text
   example: '4091603'
-- name: nta2020
-  display_name: NTA2020
-  description: ''
+- id: nta2020
+  name: NTA2020
   data_type: text
   example: SI0304
-- name: ntaname20
-  display_name: NTAName20
-  description: ''
+- id: ntaname20
+  name: NTAName20
   data_type: text
   example: Annadale-Huguenot-Prince's Bay-Woodrow
-- name: cdta2020
-  display_name: CDTA2020
-  description: ''
+- id: cdta2020
+  name: CDTA2020
   data_type: text
   example: SI03
-- name: cdtaname20
-  display_name: CDTAName20
-  description: ''
+- id: cdtaname20
+  name: CDTAName20
   data_type: text
   example: SI03 South Shore (CD 3 Approximation)
-- name: :@computed_region_efsh_h5xi
-  display_name: Zip Codes
+- id: :@computed_region_efsh_h5xi
+  name: Zip Codes
+  data_type: <FILL ME IN!>
   description: This column was automatically created in order to record in what polygon
     from the dataset 'Zip Codes' (efsh-h5xi) the point in column 'location' is located.  This
     enables the creation of region maps (choropleths) in the visualization canvas
     and data lens.
-  data_type: <FILL ME IN!>
   example: <FILL ME IN!>
-- name: :@computed_region_f5dn_yrer
-  display_name: Community Districts
+- id: :@computed_region_f5dn_yrer
+  name: Community Districts
+  data_type: <FILL ME IN!>
   description: This column was automatically created in order to record in what polygon
     from the dataset 'Community Districts' (f5dn-yrer) the point in column 'location'
     is located.  This enables the creation of region maps (choropleths) in the visualization
     canvas and data lens.
-  data_type: <FILL ME IN!>
   example: <FILL ME IN!>
-- name: :@computed_region_yeji_bk3q
-  display_name: Borough Boundaries
+- id: :@computed_region_yeji_bk3q
+  name: Borough Boundaries
+  data_type: <FILL ME IN!>
   description: This column was automatically created in order to record in what polygon
     from the dataset 'Borough Boundaries' (yeji-bk3q) the point in column 'location'
     is located.  This enables the creation of region maps (choropleths) in the visualization
     canvas and data lens.
-  data_type: <FILL ME IN!>
   example: <FILL ME IN!>
-- name: :@computed_region_92fq_4b7q
-  display_name: City Council Districts
+- id: :@computed_region_92fq_4b7q
+  name: City Council Districts
+  data_type: <FILL ME IN!>
   description: This column was automatically created in order to record in what polygon
     from the dataset 'City Council Districts' (92fq-4b7q) the point in column 'location'
     is located.  This enables the creation of region maps (choropleths) in the visualization
     canvas and data lens.
-  data_type: <FILL ME IN!>
   example: <FILL ME IN!>
-- name: :@computed_region_sbqj_enih
-  display_name: Police Precincts
+- id: :@computed_region_sbqj_enih
+  name: Police Precincts
+  data_type: <FILL ME IN!>
   description: This column was automatically created in order to record in what polygon
     from the dataset 'Police Precincts' (sbqj-enih) the point in column 'location'
     is located.  This enables the creation of region maps (choropleths) in the visualization
     canvas and data lens.
-  data_type: <FILL ME IN!>
   example: <FILL ME IN!>

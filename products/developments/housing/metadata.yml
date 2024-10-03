@@ -1,94 +1,58 @@
-name: housing_database
-display_name: Housing Database
-summary: >
-  The NYC Department of City Planning's (DCP) 
-  <a href = "https://www.nyc.gov/site/planning/data-maps/open-data/dwn-housing-database.page#housingdevelopmentproject">Housing Database</a> 
-  contains all NYC Department of Buildings (DOB) approved housing construction and demolition jobs filed or completed in NYC since January 1, 2010. 
-  It includes the three primary construction job types that add or remove residential units: new buildings, major alterations, and demolitions,
-  and can be used to determine the change in legal housing units across time and space. Records in the Housing Database Project-Level Files
-  are geocoded to the greatest level of precision possible, subject to numerous quality assurance and control checks, recoded for usability,
-  and joined to other housing data sources relevant to city planners and analysts.
+id: housing_database
 
-  Data are updated semiannually, at the end of the second and fourth quarters of each year.\nPlease see DCP's annual Housing Production Snapshot
-  summarizing findings from the 21Q4 data release <a href="https://storymaps.arcgis.com/stories/1c9138dc24064b2e8142ff156345a719">here</a>. 
-  Additional Housing and Economic analyses are also <a href="https://www.nyc.gov/site/planning/planning-level/housing-economy/housing-economy.page">available</a>.
-  
-  
-  
-  The NYC Department of City Planning's (DCP) <a href="https://www.nyc.gov/site/planning/data-maps/open-data/dwn-housing-database.page#housingdevelopmentunit">Housing Database Unit Change Summary Files</a>
-  provide the net change in Class A housing units since 2010, and the count of units pending completion for commonly used political and statistical boundaries
-  (Census Block, Census Tract, City Council district, Community District, Community District Tabulation Area (CDTA), Neighborhood Tabulation Area (NTA).
-  These tables are aggregated from the DCP Housing Database Project-Level Files, which is derived from Department of Buildings (DOB) approved housing
-  construction and demolition jobs filed or completed in NYC since January 1, 2010. Net housing unit change is calculated as the sum of all three
-  construction job types that add or remove residential units: new buildings, major alterations, and demolitions. These files can be used to determine
-  the change in legal housing units across time and space.
-description: >
-  The NYC Department of City Planning's (DCP) 
-  <a href = "https://www.nyc.gov/site/planning/data-maps/open-data/dwn-housing-database.page#housingdevelopmentproject">Housing Database</a> 
-  contains all NYC Department of Buildings (DOB) approved housing construction and demolition jobs filed or completed in NYC since January 1, 2010. 
-  It includes the three primary construction job types that add or remove residential units: new buildings, major alterations, and demolitions,
-  and can be used to determine the change in legal housing units across time and space. Records in the Housing Database Project-Level Files
-  are geocoded to the greatest level of precision possible, subject to numerous quality assurance and control checks, recoded for usability,
-  and joined to other housing data sources relevant to city planners and analysts.
+attributes:
+  description: |-
+    The NYC Department of City Planning's (DCP)  <a href = "https://www.nyc.gov/site/planning/data-maps/open-data/dwn-housing-database.page#housingdevelopmentproject">Housing Database</a>  contains all NYC Department of Buildings (DOB) approved housing construction and demolition jobs filed or completed in NYC since January 1, 2010.  It includes the three primary construction job types that add or remove residential units: new buildings, major alterations, and demolitions, and can be used to determine the change in legal housing units across time and space. Records in the Housing Database Project-Level Files are geocoded to the greatest level of precision possible, subject to numerous quality assurance and control checks, recoded for usability, and joined to other housing data sources relevant to city planners and analysts.
+    Data are updated semiannually, at the end of the second and fourth quarters of each year.\nPlease see DCP's annual Housing Production Snapshot summarizing findings from the 21Q4 data release <a href="https://storymaps.arcgis.com/stories/1c9138dc24064b2e8142ff156345a719">here</a>.  Additional Housing and Economic analyses are also <a href="https://www.nyc.gov/site/planning/planning-level/housing-economy/housing-economy.page">available</a>.
+    The NYC Department of City Planning's (DCP) <a href="https://www.nyc.gov/site/planning/data-maps/open-data/dwn-housing-database.page#housingdevelopmentunit">Housing Database Unit Change Summary Files</a> provide the net change in Class A housing units since 2010, and the count of units pending completion for commonly used political and statistical boundaries (Census Block, Census Tract, City Council district, Community District, Community District Tabulation Area (CDTA), Neighborhood Tabulation Area (NTA). These tables are aggregated from the DCP Housing Database Project-Level Files, which is derived from Department of Buildings (DOB) approved housing construction and demolition jobs filed or completed in NYC since January 1, 2010. Net housing unit change is calculated as the sum of all three construction job types that add or remove residential units: new buildings, major alterations, and demolitions. These files can be used to determine the change in legal housing units across time and space.
+  display_name: Housing Database
+  each_row_is_a: <FILL ME IN!>
+  tags:
+  - housing
+  - house
+  - building
+  - development
+  - dwelling unit
+  - alteration
+  - demolition
+  - certificate of occupancy
+  - co
+  - permit
+  - job application
+  - filing
+  - net units
+  - unit change
+  - hotel
+  - class b
+  - class a
+  - pipeline
+  - existing units
+  - proposed units
+  - construction
 
-  Data are updated semiannually, at the end of the second and fourth quarters of each year.\nPlease see DCP's annual Housing Production Snapshot
-  summarizing findings from the 21Q4 data release <a href="https://storymaps.arcgis.com/stories/1c9138dc24064b2e8142ff156345a719">here</a>. 
-  Additional Housing and Economic analyses are also <a href="https://www.nyc.gov/site/planning/planning-level/housing-economy/housing-economy.page">available</a>.
-  
-  The NYC Department of City Planning's (DCP) <a href="https://www.nyc.gov/site/planning/data-maps/open-data/dwn-housing-database.page#housingdevelopmentunit">Housing Database Unit Change Summary Files</a>
-  provide the net change in Class A housing units since 2010, and the count of units pending completion for commonly used political and statistical boundaries
-  (Census Block, Census Tract, City Council district, Community District, Community District Tabulation Area (CDTA), Neighborhood Tabulation Area (NTA).
-  These tables are aggregated from the DCP Housing Database Project-Level Files, which is derived from Department of Buildings (DOB) approved housing
-  construction and demolition jobs filed or completed in NYC since January 1, 2010. Net housing unit change is calculated as the sum of all three
-  construction job types that add or remove residential units: new buildings, major alterations, and demolitions. These files can be used to determine
-  the change in legal housing units across time and space.
-tags:
-- housing
-- house
-- building
-- development
-- dwelling unit
-- alteration
-- demolition
-- certificate of occupancy
-- co
-- permit
-- job application
-- filing
-- net units
-- unit change
-- hotel
-- class b
-- class a
-- pipeline
-- existing units
-- proposed units
-- construction
-each_row_is_a: <FILL ME IN!>
+assembly: []
+
+custom: {}
+
 destinations:
 - id: socrata_prod
   type: socrata
-  four_four: 6umk-irkx
-  attachments: []
-  datasets:
-  - primary_shapefile
-  omit_columns: []
-  column_details: {}
-  overrides:
-    omit_columns: []
-    ignore_validation: []
-    columns: {}
-    tags: []
-package:
-  dataset_files:
-  - name: primary_shapefile
-    type: shapefile
+  files:
+  - id: primary_shapefile
+    custom:
+      destination_use: dataset_file
+  custom:
+    four_four: 6umk-irkx
+
+files:
+- file:
+    id: primary_shapefile
     filename: shapefile.zip
-    overrides:
-      omit_columns: []
-      ignore_validation: []
-      columns: {}
-      tags: []
-  attachments:
-  - Housing_Database_Data_Dictionary (4).xlsx
+    type: shapefile
+- file:
+    id: Housing_Database_Data_Dictionary (4).xlsx
+    filename: Housing_Database_Data_Dictionary (4).xlsx
+    is_metadata: true
+    type: None
+
 columns: []
