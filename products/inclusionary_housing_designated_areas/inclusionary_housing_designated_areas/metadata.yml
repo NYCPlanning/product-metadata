@@ -61,34 +61,45 @@ columns:
     description: Staten Island
 - id: shape
   name: Shape
+  data_type: text
   description: ""
 - id: status
   name: Status
+  data_type: text
   description: ""
 - id: project_name
   name: ProjectNam
+  data_type: text
   description: ""
 - id: date_adopted
   name: datea_dopted
+  data_type: text
   description: ""
 - id: zr_map
   name: ZR_Map
+  data_type: text
   description: ""
 - id: lead_action
   name: LeadAction
+  data_type: text
   description: ""
 - id: cd
   name: CD
+  data_type: text
   description: ""
 - id: shape_length
   name: shape_Leng
+  data_type: decimal
   description: ""
 - id: shape_area
   name: Shape_Area
+  data_type: decimal
   description: ""
 - id: shape_starea
   name: Shape_STAr
+  data_type: decimal
   description: ""
 - id: shape_stleng
   name: Shape_STLe
+  data_type: decimal
   description: ""
