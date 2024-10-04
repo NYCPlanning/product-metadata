@@ -41,12 +41,16 @@ custom: {}
 
 destinations:
   - id: socrata
+    tags: [unpublished]
     type: socrata
     files:
       - id: shapefile
         custom:
           destination_use: dataset_file
       - id: data_dictionary_pdf
+        custom:
+          destination_use: attachment
+      - id: oti_data_dictionary
         custom:
           destination_use: attachment
     custom:
@@ -67,6 +71,11 @@ files:
       id: data_dictionary_pdf
       filename: dcm_street_centerline.pdf
       is_metadata: true
+  - file:
+      id: oti_data_dictionary
+      filename: data_dictionary.xlsx
+      is_metadata: true
+      type: oti_data_dictionary
 
 columns:
   - id: borough
