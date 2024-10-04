@@ -35,11 +35,15 @@ custom: {}
 destinations:
   - id: socrata
     type: socrata
+    tags: [unpublished]
     files:
       - id: shapefile
         custom:
           destination_use: dataset_file
       - id: data_dictionary_pdf
+        custom:
+          destination_use: attachment
+      - id: oti_data_dictionary
         custom:
           destination_use: attachment
     custom:
@@ -60,6 +64,11 @@ files:
       id: data_dictionary_pdf
       filename: dcm_arterials_major_streets.pdf
       is_metadata: true
+  - file:
+      id: oti_data_dictionary
+      filename: data_dictionary.xlsx
+      is_metadata: true
+      type: oti_data_dictionary
 
 columns:
   - id: borough

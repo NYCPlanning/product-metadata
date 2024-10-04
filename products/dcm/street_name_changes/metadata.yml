@@ -37,6 +37,7 @@ custom: {}
 
 destinations:
   - id: socrata_areas
+    tags: [unpublished]
     type: socrata
     files:
       - id: areas_shapefile
@@ -48,7 +49,6 @@ destinations:
               Law. Years included are from 1998 to current. This dataset is featured on the
               Department of City Planning's Street Map application: https://streets.planning.nyc.gov/"
             display_name: Digital City Map (DCM) - Street Name Changes (Areas)
-            publishing_frequency: Monthly
             publishing_purpose:
               "Local Law name changes to public places (areas). Dataset last
               updated: March 31, 2024."
@@ -57,10 +57,14 @@ destinations:
       - id: areas_data_dictionary_pdf
         custom:
           destination_use: attachment
+      - id: oti_data_dictionary_areas
+        custom:
+          destination_use: attachment
     custom:
       four_four: nzui-5vt3
 
   - id: socrata_lines
+    tags: [unpublished]
     type: socrata
     files:
       - id: lines_shapefile
@@ -72,7 +76,6 @@ destinations:
               Local Law. Years included are from 1997 to current. This dataset is featured on
               the Department of City Planning's Street Map application: https://streets.planning.nyc.gov/"
             display_name: Digital City Map (DCM) - Street Name Changes (Lines)
-            publishing_frequency: Monthly
             publishing_purpose:
               "Local Law name changes to pulibc throughfares (lines). Dataset
               last updated: March 30, 2024."
@@ -81,10 +84,14 @@ destinations:
       - id: lines_data_dictionary_pdf
         custom:
           destination_use: attachment
+      - id: oti_data_dictionary_lines
+        custom:
+          destination_use: attachment
     custom:
       four_four: i3nt-3kau
 
   - id: socrata_points
+    tags: [unpublished]
     type: socrata
     files:
       - id: points_shapefile
@@ -96,13 +103,15 @@ destinations:
               Local Law. Years included are from 1998 to current. This dataset is featured on
               the Department of City Planning's Street Map application: https://streets.planning.nyc.gov/"
             display_name: Digital City Map (DCM) - Street Name Changes (Points)
-            publishing_frequency: Monthly
             publishing_purpose:
               "Local Law name changes to to corners or intersections (points).
               Dataset last updated: March 31, 2024."
         custom:
           destination_use: dataset_file
       - id: points_data_dictionary_pdf
+        custom:
+          destination_use: attachment
+      - id: oti_data_dictionary_points
         custom:
           destination_use: attachment
     custom:
@@ -146,6 +155,36 @@ files:
       id: points_data_dictionary_pdf
       filename: dcm_street_name_changes_points.pdf
       is_metadata: true
+  - file:
+      id: oti_data_dictionary_areas
+      filename: data_dictionary_areas.xlsx
+      is_metadata: true
+      type: oti_data_dictionary
+      custom:
+        assembly:
+          with_metadata_from:
+            file_id: areas_shapefile
+            destination_id: socrata_areas
+  - file:
+      id: oti_data_dictionary_lines
+      filename: data_dictionary_lines.xlsx
+      is_metadata: true
+      type: oti_data_dictionary
+      custom:
+        assembly:
+          with_metadata_from:
+            file_id: lines_shapefile
+            destination_id: socrata_lines
+  - file:
+      id: oti_data_dictionary_points
+      filename: data_dictionary_points.xlsx
+      is_metadata: true
+      type: oti_data_dictionary
+      custom:
+        assembly:
+          with_metadata_from:
+            file_id: points_shapefile
+            destination_id: socrata_points
 
 columns:
   - id: borough
