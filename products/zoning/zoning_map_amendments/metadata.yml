@@ -25,7 +25,7 @@ custom: {}
 
 destinations:
 - id: socrata
-  tags: [unpublished]
+  tags: [socrata_unpublished]
   type: socrata
   files:
   - id: metadata_pdf
