@@ -6,6 +6,7 @@ attributes:
 
     All previously released versions of this data are available at  <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>
   display_name: E-Designations
+  publishing_frequency: Monthly
   each_row_is_a: E-Designation
   tags:
   - e-designation
@@ -39,6 +40,7 @@ custom: {}
 destinations:
 - id: socrata_shapefile
   type: socrata
+  tags: [socrata_unpublished]
   files:
   - id: nyedes_metadata.pdf
     custom:
@@ -51,6 +53,9 @@ destinations:
           api_name: descriptio
     custom:
       destination_use: dataset_file
+  - id: oti_data_dictionary_shapefile
+    custom:
+      destination_use: attachment
   custom:
     four_four: jep3-h9py
 - id: socrata_csv
@@ -119,6 +124,15 @@ files:
     filename: nyedes_metadata.pdf
     is_metadata: true
     type: None
+- file:
+    id: oti_data_dictionary_shapefile
+    filename: data_dictionary.xlsx
+    is_metadata: true
+    type: oti_data_dictionary
+    custom:
+      assembly:
+        with_metadata_from:
+          file_id: shapefile
 
 columns:
 - id: enumber

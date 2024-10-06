@@ -6,6 +6,7 @@ attributes:
 
     All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>
   display_name: Mandatory Inclusionary Housing
+  publishing_frequency: Monthly
   each_row_is_a: A Mandatorily Included House
   tags:
   - housing
@@ -18,7 +19,7 @@ assembly: []
 custom: {}
 
 destinations:
-- id: socrata
+- id: socrata_old
   type: socrata
   files:
   - id: nycmih_metadata.pdf
@@ -29,8 +30,9 @@ destinations:
       destination_use: dataset_file
   custom:
     four_four: bw8v-wzdr
-- id: socrata_test
+- id: socrata
   type: socrata
+  tags: [socrata_unpublished]
   files:
   - id: nycmih_metadata.pdf
     custom:
@@ -38,6 +40,9 @@ destinations:
   - id: primary_shapefile
     custom:
       destination_use: dataset_file
+  - id: oti_data_dictionary_shapefile
+    custom:
+      destination_use: attachment
   custom:
     four_four: p6cc-cxkc
 - id: bytes
@@ -89,6 +94,15 @@ files:
     filename: nycmih_metadata.pdf
     is_metadata: true
     type: None
+- file:
+    id: oti_data_dictionary_shapefile
+    filename: data_dictionary.xlsx
+    is_metadata: true
+    type: oti_data_dictionary
+    custom:
+      assembly:
+        with_metadata_from:
+          file_id: primary_shapefile
 
 columns:
 - id: the_geom
@@ -124,6 +138,9 @@ columns:
   example: Adopted
   values:
   - value: Adopted
+    description: Final Approval
+  - value: Pipeline
+    description: Awaiting Approval
 - id: projectnam
   name: Project Name
   data_type: text

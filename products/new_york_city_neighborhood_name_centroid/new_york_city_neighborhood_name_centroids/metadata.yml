@@ -25,6 +25,7 @@ custom: {}
 destinations:
   - id: socrata
     type: socrata
+    tags: [socrata_unpublished]
     custom:
       four_four: 37v4-hksf
     files:
@@ -32,6 +33,9 @@ destinations:
         custom:
           destination_use: dataset_file
       - id: readme_pdf
+        custom:
+          destination_use: attachment
+      - id: oti_data_dictionary
         custom:
           destination_use: attachment
   - id: bytes
@@ -53,6 +57,11 @@ files:
       id: readme_pdf
       filename: meta_nhood.pdf
       is_metadata: true
+  - file:
+      id: oti_data_dictionary
+      filename: data_dictionary.xlsx
+      is_metadata: true
+      type: oti_data_dictionary
 
 columns:
   - id: the_geom
