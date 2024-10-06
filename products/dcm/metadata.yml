@@ -1,9 +1,9 @@
 id: dcm
 
 datasets:
-- dcm
+- digital_city_map
 - street_center_line
 - city_map_alterations
 - street_name_changes
 - arterials_major_streets
-- fgdb
+- digital_city_map__geodatabase
