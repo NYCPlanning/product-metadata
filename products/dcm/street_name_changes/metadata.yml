@@ -37,7 +37,7 @@ custom: {}
 
 destinations:
   - id: socrata_areas
-    tags: [unpublished]
+    tags: [socrata_unpublished]
     type: socrata
     files:
       - id: areas_shapefile
@@ -64,7 +64,7 @@ destinations:
       four_four: nzui-5vt3
 
   - id: socrata_lines
-    tags: [unpublished]
+    tags: [socrata_unpublished]
     type: socrata
     files:
       - id: lines_shapefile
@@ -91,7 +91,7 @@ destinations:
       four_four: i3nt-3kau
 
   - id: socrata_points
-    tags: [unpublished]
+    tags: [socrata_unpublished]
     type: socrata
     files:
       - id: points_shapefile
