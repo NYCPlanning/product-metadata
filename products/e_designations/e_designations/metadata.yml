@@ -62,6 +62,20 @@ destinations:
   - id: csv
     custom:
       destination_use: dataset_file
+    dataset_overrides:
+      overridden_columns:
+      - id: effective_date
+        name: E_EFFECTIVE_DATE
+      - id: hazmat_code
+        name: HAZMAT_CODE
+      - id: air_code
+        name: AIR_CODE
+      - id: noise_code
+        name: NOISE_CODE
+      - id: hazmat_date
+        name: HAZMAT_DATE
+      - id: noise_date
+        name: NOISE_DATE
   custom:
     four_four: hxm3-23vy
 - id: bytes
