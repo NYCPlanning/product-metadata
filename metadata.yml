@@ -1,3 +1,9 @@
+attributes:
+  agency: "Department of City Planning (DCP)"
+  category: "City Government"
+  attribution: "Department of City Planning (DCP)"
+  attributionLink: "https://www.nyc.gov/site/planning/data-maps/open-data.page"
+
 products:
 - building_elevation_and_subgrade
 - census_equivalency_tract_table

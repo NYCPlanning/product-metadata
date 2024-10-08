@@ -1,6 +1,6 @@
 id: zoning
 
-attributes:
+dataset_defaults:
   publishing_frequency: Monthly
 
 datasets:
