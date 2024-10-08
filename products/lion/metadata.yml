@@ -1,8 +1,7 @@
 id: lion
 
-attributes:
+dataset_defaults:
   publishing_frequency: Quarterly
-
 
 datasets:
   - 2010_census_blocks
