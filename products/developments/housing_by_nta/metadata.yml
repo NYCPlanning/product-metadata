@@ -172,27 +172,27 @@ columns:
 - id: filed
   name: filed
   data_type: integer
-  description: <FILL ME IN!>
+  description: Net number of incomplete class A housing units where the job status is filed. Excludes inactive jobs.
   example: '713.0'
 - id: approved
   name: approved
   data_type: integer
-  description: <FILL ME IN!>
+  description: Net number of incomplete class A housing units where the job status is application approved. Excludes inactive jobs.
   example: '509.0'
 - id: permitted
   name: permitted
   data_type: integer
-  description: <FILL ME IN!>
+  description: Net number of incomplete class A housing units where the job status is permit issued. Excludes inactive jobs.
   example: '390.0'
 - id: withdrawn
   name: withdrawn
   data_type: integer
-  description: <FILL ME IN!>
+  description: Net number of incomplete class A housing units where the job status is withdrawn.
   example: '316.0'
 - id: inactive
   name: inactive
   data_type: integer
-  description: <FILL ME IN!>
+  description: Net number of incomplete class A housing units where the job is inactive but not withdrawn.
   example: '239.0'
 - id: shape_area
   name: Shape__Area
