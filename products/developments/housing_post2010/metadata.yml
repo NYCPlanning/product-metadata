@@ -510,39 +510,3 @@ columns:
   data_type: text
   description: 2020 Community District Tabulation Area (NTA) descriptive name.
   example: SI03 South Shore (CD 3 Approximation)
-- id: :@computed_region_efsh_h5xi
-  name: Zip Codes
-  data_type: integer
-  description: This column was automatically created in order to record in what polygon
-    from the dataset 'Zip Codes' (efsh-h5xi) the point in column 'location' is located.  This
-    enables the creation of region maps (choropleths) in the visualization canvas
-    and data lens.
-- id: :@computed_region_f5dn_yrer
-  name: Community Districts
-  data_type: text
-  description: This column was automatically created in order to record in what polygon
-    from the dataset 'Community Districts' (f5dn-yrer) the point in column 'location'
-    is located.  This enables the creation of region maps (choropleths) in the visualization
-    canvas and data lens.
-- id: :@computed_region_yeji_bk3q
-  name: Borough Boundaries
-  data_type: integer
-  description: This column was automatically created in order to record in what polygon
-    from the dataset 'Borough Boundaries' (yeji-bk3q) the point in column 'location'
-    is located.  This enables the creation of region maps (choropleths) in the visualization
-    canvas and data lens.
-- id: :@computed_region_92fq_4b7q
-  name: City Council Districts
-  data_type: text
-  description: This column was automatically created in order to record in what polygon
-    from the dataset 'City Council Districts' (92fq-4b7q) the point in column 'location'
-    is located.  This enables the creation of region maps (choropleths) in the visualization
-    canvas and data lens.
-  example: text
-- id: :@computed_region_sbqj_enih
-  name: Police Precincts
-  data_type: text
-  description: This column was automatically created in order to record in what polygon
-    from the dataset 'Police Precincts' (sbqj-enih) the point in column 'location'
-    is located.  This enables the creation of region maps (choropleths) in the visualization
-    canvas and data lens.
