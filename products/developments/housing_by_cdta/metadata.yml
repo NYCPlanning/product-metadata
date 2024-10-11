@@ -3,7 +3,7 @@ id: housing_database_by_2020_cdta
 attributes:
   description: |-
     Net change in housing units arising from new buildings, demolitions, or alterations for NYC Community District Tabulation Areas (CDTAs) since 2010. The NYC Department of City Planning's (DCP) <a href="https://www1.nyc.gov/site/planning/data-maps/open-data/dwn-housing-database.page#housingdevelopmentproject">Housing Database</a> provide the 2010 census count of housing units, the net change in Class A housing units since the census, and the count of units pending completion for commonly used political and statistical boundaries. These tables are aggregated from the DCP Housing Database, which is derived from Department of Buildings (DOB)-approved housing construction and demolition jobs filed or completed in NYC since January 1, 2010. Net housing unit change is calculated as the sum of all three construction job types that add or remove residential units: new buildings, major alterations, and demolitions, and can be used to determine the change in legal housing units across time and space.
-    {{ bytes_previous_versions_link }}.
+    {{ bytes_previous_versions_link }}
   display_name: Housing Database by 2020 CDTA
   each_row_is_a: community district tabulation area
   tags:
