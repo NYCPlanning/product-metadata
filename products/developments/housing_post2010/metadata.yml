@@ -512,7 +512,7 @@ columns:
   example: SI03 South Shore (CD 3 Approximation)
 - id: :@computed_region_efsh_h5xi
   name: Zip Codes
-  data_type: int
+  data_type: integer
   description: This column was automatically created in order to record in what polygon
     from the dataset 'Zip Codes' (efsh-h5xi) the point in column 'location' is located.  This
     enables the creation of region maps (choropleths) in the visualization canvas
