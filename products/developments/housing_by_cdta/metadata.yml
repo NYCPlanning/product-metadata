@@ -48,6 +48,12 @@ destinations:
   - id: primary_shapefile
     custom:
       destination_use: dataset_file
+  - id: readme
+    custom:
+      destination_use: attachment
+  - id: data_dictionary
+    custom:
+      destination_use: attachment
   custom:
     four_four: 48dt-mn3z
 
@@ -57,12 +63,12 @@ files:
     filename: shapefile.zip
     type: shapefile
 - file:
-    id: Housing Summary Files - ReadMe.pdf
+    id: readme
     filename: Housing Summary Files - ReadMe.pdf
     is_metadata: true
     type: None
 - file:
-    id: Housing_Summary_Files_Data_Dictionary.xlsx
+    id: data_dictionary
     filename: Housing_Summary_Files_Data_Dictionary.xlsx
     is_metadata: true
     type: None

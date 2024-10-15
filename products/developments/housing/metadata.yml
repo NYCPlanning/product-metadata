@@ -38,19 +38,15 @@ destinations:
 - id: socrata_prod
   type: socrata
   files:
-  - id: primary_shapefile
+  - id: data_dictionary
     custom:
-      destination_use: dataset_file
+      destination_use: attachment
   custom:
     four_four: 6umk-irkx
 
 files:
 - file:
-    id: primary_shapefile
-    filename: shapefile.zip
-    type: shapefile
-- file:
-    id: Housing_Database_Data_Dictionary.xlsx
+    id: data_dictionary
     filename: Housing_Database_Data_Dictionary.xlsx
     is_metadata: true
     type: None

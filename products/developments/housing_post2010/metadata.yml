@@ -41,6 +41,9 @@ destinations:
   - id: primary_shapefile
     custom:
       destination_use: dataset_file
+  - id: data_dictionary
+    custom:
+      destination_use: attachment
   custom:
     four_four: uxt4-ugwr
 
@@ -50,7 +53,7 @@ files:
     filename: nychdb_shp.zip
     type: shapefile
 - file:
-    id: Housing_Database_Data_Dictionary.xlsx
+    id: data_dictionary
     filename: Housing_Database_Data_Dictionary.xlsx
     is_metadata: true
     type: None
