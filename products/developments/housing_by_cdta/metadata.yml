@@ -49,9 +49,6 @@ destinations:
   - id: primary_shapefile
     custom:
       destination_use: dataset_file
-  - id: readme
-    custom:
-      destination_use: attachment
   - id: data_dictionary
     custom:
       destination_use: attachment
@@ -72,11 +69,6 @@ files:
     id: primary_shapefile
     filename: shapefile.zip
     type: shapefile
-- file:
-    id: readme
-    filename: Housing Summary Files - ReadMe.pdf
-    is_metadata: true
-    type: None
 - file:
     id: data_dictionary
     filename: Housing_Summary_Files_Data_Dictionary.xlsx
