@@ -1,5 +1,8 @@
 id: developments
 
+dataset_defaults:
+  publishing_frequency: Bi-annually
+
 datasets:
 - housing
 - housing_by_cb
