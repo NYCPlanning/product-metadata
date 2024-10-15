@@ -57,6 +57,15 @@ destinations:
       destination_use: attachment
   custom:
     four_four: 48dt-mn3z
+- id: bytes
+  type: bytes
+  files:
+  - id: primary_shapefile
+    custom:
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nychdb_cdta_{{ version }}_shp.zip
+  - id: data_dictionary
+    custom:
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/excel/data-tools/bytes/Housing_Summary_Files_Data_Dictionary.xlsx
 
 files:
 - file:

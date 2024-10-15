@@ -48,6 +48,15 @@ destinations:
       destination_use: attachment
   custom:
     four_four: szq8-b4uy
+- id: bytes
+  type: bytes
+  files:
+  - id: primary_shapefile
+    custom:
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nychdb_council_{{ version }}_shp.zip
+  - id: data_dictionary
+    custom:
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/excel/data-tools/bytes/Housing_Summary_Files_Data_Dictionary.xlsx
 
 files:
 - file:
