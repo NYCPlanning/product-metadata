@@ -6,6 +6,7 @@ attributes:
 
     All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>
   display_name: NYC Zoning Tax Lot Database
+  publishing_frequency: Monthly
   each_row_is_a: Tax Lot
   tags:
   - dcp
