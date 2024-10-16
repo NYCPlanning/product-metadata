@@ -1,5 +1,9 @@
 id: zap
 
+dataset_defaults:
+  publishing_frequency: Monthly
+  attributionLink: https://zap.planning.nyc.gov/projects
+
 datasets:
 - projects
 - bbls
