@@ -1,5 +1,8 @@
 id: pluto
 
+dataset_defaults:
+  publishing_frequency: Quarterly
+
 datasets:
 - change_file
 - pluto
