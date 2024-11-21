@@ -3,6 +3,10 @@ attributes:
   category: "City Government"
   attribution: "Department of City Planning (DCP)"
   attributionLink: "https://www.nyc.gov/site/planning/data-maps/open-data.page"
+  rows_removed: True
+  can_be_automated: True
+  on_agency_website: True
+  agency_website_data_updated_automatically: True
 
 products:
 - building_elevation_and_subgrade

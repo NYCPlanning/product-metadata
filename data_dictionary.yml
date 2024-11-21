@@ -1,0 +1,41 @@
+# Meta Metadata
+
+org: {}
+
+product: {}
+
+dataset:
+  fields:
+    # Primer / Internal Page
+    tags:
+      summary: Dataset Tags
+      extra_description: |
+        A list of comma-separated terms, based on the topic of the dataset,
+        that will link to other datasets with that same tag.
+      custom:
+        oti_extra_notes: Tags are used along with the dataset name and description to search NYC Open Data.
+    rows_removed:
+      summary: Are rows removed from this dataset when the data is updated?
+      extra_description: |
+        related to another Local Law (106 of 2015) for data retention.
+        Basically, if the dataset is updated as append or upsert, the answer is Yes.
+    can_be_automated:
+      summary: Can this dataset be feasibly automated?
+      extra_description: ""
+    on_agency_website:
+      summary: Is this data also present on a website maintained by or on behalf of the agency?
+      extra_description: ""
+      custom:
+        oti_extra_notes: If so, please provide the website URL.
+    publishing_frequency:
+      summary: What is the update frequency of the data on the agency's website?
+      extra_description: ""
+      custom:
+        oti_extra_notes: Only applicable if the data is also present on a website maintained by or on behalf of the agency
+    agency_website_data_updated_automatically:
+      summary: Is the data on the agency's website updated automatically?
+      extra_description: ""
+      custom:
+        oti_extra_notes: Only applicable if the data is also present on a website maintained by or on behalf of the agency
+
+    # Dataset Information
