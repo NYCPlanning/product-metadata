@@ -1,0 +1,52 @@
+artifacts:
+  - name: oti_xlsx
+    type: xlsx
+    tabs:
+      - id: dataset_information
+        name: Dataset Information
+        index: 0
+        title: Data Dictionary
+        subtitle: Dataset Information
+        image_path: Open_Data_Logo.png
+        data_source: dataset.attributes # TODO: actually implement this
+        fields:
+          - display_name
+          - agency
+          - each_row_is_a
+          - publishing_frequency
+          - data_change_frequency
+          - publishing_frequency_details
+          - description
+          - publishing_purpose
+          - data_collection_method
+          - potential_uses
+          - disclaimer
+          - projection
+      - id: revision_history
+        name: Dataset Revision History
+        index: 2
+        title: Data Dictionary
+        subtitle: Dataset Information
+        data_source: dataset.revisions
+        description: >
+          Description of all major changes to the format including what specific fields were added or removed,
+          data calculation method, or method of collection of the data that have taken place since the initial
+          version. Adding or updating new data values does not necessitate a new version entry.
+        fields: []
+      - id: internal_primer
+        name: Primer Page & Internal Information
+        index: 3
+        title: Data Dictionary
+        subtitle: Open Data Team Internal Information
+        description: |
+          This section is used for internal purposes only by the Open Data Team and can be ignored by external data users.
+
+          Information shared in this section may be publicly displayed on the dataset’s primer page on NYC Open Data.
+        data_source: dataset.attributes
+        fields:
+          - tags
+          - rows_removed
+          - can_be_automated
+          - attribution_link
+          - publishing_frequency
+          - agency_website_data_updated_automatically

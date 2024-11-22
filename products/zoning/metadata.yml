@@ -2,6 +2,8 @@ id: zoning
 
 dataset_defaults:
   publishing_frequency: Monthly
+  data_change_frequency: Monthly
+  attribution_link: "https://www.nyc.gov/site/planning/data-maps/open-data/dwn-gis-zoning.page"
 
 datasets:
 - commercial_overlay_district

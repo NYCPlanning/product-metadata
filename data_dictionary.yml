@@ -6,36 +6,81 @@ product: {}
 
 dataset:
   fields:
+    # Dataset Information
+    display_name:
+      summary: "Dataset Name"
+      extra_description: ""
+    agency:
+      summary: "Data Provided by"
+      extra_description: The name of the NYC agency providing this data to the public.
+    each_row_is_a:
+      summary: "Each row is a..."
+      extra_description: The unit of analysis/level of aggregation of the dataset
+    publishing_frequency:
+      summary: "Publishing Frequency"
+      extra_description: |
+        How often changed data is published to this dataset. For an automatically updated dataset, this is the frequency of that automation
+    publishing_frequency_details:
+      summary: "Frequency Details"
+      extra_description: Additional details about the publishing or data change frequency, if needed
+    data_change_frequency:
+      summary: Data Change Frequency
+      extra_description: How often the data underlying this dataset is changed
+    description:
+      summary: Dataset Description
+      extra_description: |
+        Overview of the information this dataset contains, including overall context and definitions of key terms. This field may include links to supporting datasets, agency websites, or external resources for additional context.
+    publishing_purpose:
+      summary: Why is this data collected?
+      extra_description: |
+        Purpose behind the collection of this data, including any legal or policy requirements for this data by NYC Executive Order, Local Law, or other policy directive.
+    data_collection_method:
+      summary: How is this data collected?
+      extra_description: |
+        The methods used to create and update this dataset, including what cleaning or processing was involved prior to dataset publication.
+
+        If data collection includes interpreting physical information this field includes technical details.
+
+        If data collection includes fielding applications, requests, or complaints, this field includes details about the forms, applications, and processes used.
+    potential_uses:
+      summary: How can this data be used?
+      extra_description: |
+        Examples of and/or links to projects or agency operations that have used this dataset.
+      custom:
+        oti_extra_notes: |
+          Where relevant, includes links to online projects, agency websites, visualizations, maps, or dashboards.
+
+          What are some questions one might answer using this dataset?
+    disclaimer:
+      summary: What are the unique characteristics or limitations of this dataset?
+      extra_description: |
+        Unique characteristics of this dataset to be aware of, specifically, constraints or limitations to the use of the data.
+    projection:
+      summary: Additional geospatial information
+      extra_description: |
+        For any datasets with geospatial data, specify the coordinate reference system or projection used and other relevant details.
+
     # Primer / Internal Page
     tags:
       summary: Dataset Tags
       extra_description: |
-        A list of comma-separated terms, based on the topic of the dataset,
-        that will link to other datasets with that same tag.
+        A list of comma-separated terms, based on the topic of the dataset, that will link to other datasets with that same tag.
       custom:
         oti_extra_notes: Tags are used along with the dataset name and description to search NYC Open Data.
     rows_removed:
       summary: Are rows removed from this dataset when the data is updated?
       extra_description: |
-        related to another Local Law (106 of 2015) for data retention.
-        Basically, if the dataset is updated as append or upsert, the answer is Yes.
+        Related to another Local Law (106 of 2015) for data retention. Basically, if the dataset is updated as append or upsert, the answer is Yes.
     can_be_automated:
       summary: Can this dataset be feasibly automated?
       extra_description: ""
-    on_agency_website:
+    attribution_link:
       summary: Is this data also present on a website maintained by or on behalf of the agency?
       extra_description: ""
       custom:
         oti_extra_notes: If so, please provide the website URL.
-    publishing_frequency:
-      summary: What is the update frequency of the data on the agency's website?
-      extra_description: ""
-      custom:
-        oti_extra_notes: Only applicable if the data is also present on a website maintained by or on behalf of the agency
     agency_website_data_updated_automatically:
       summary: Is the data on the agency's website updated automatically?
       extra_description: ""
       custom:
         oti_extra_notes: Only applicable if the data is also present on a website maintained by or on behalf of the agency
-
-    # Dataset Information
