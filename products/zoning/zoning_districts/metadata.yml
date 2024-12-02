@@ -2,22 +2,24 @@ id: zoning_districts
 
 attributes:
   description: |-
-    Zoning districts for New York City. Data is updated monthly.
+    Zoning districts for New York City.
 
     These are polygon features representing the zoning districts. These features cover the entire city, extending to the city limits on land and out to the US Army Corps of Engineers' pierhead lines over water. Zoning district designations are indicated in the ZONEDIST attribute.
-  display_name: Zoning - Zoning Districts (NYZD)
-  each_row_is_a: Zoning Districts
+  display_name: Zoning Districts (NYZD)
+  disclaimer: |
+    This dataset is being provided by the Department of City Planning (DCP) on DCP’s  website for informational purposes only. DCP does not warranty the completeness,  accuracy, content, or fitness for any particular purpose or use of the dataset,  nor are any such warranties to be implied or inferred with respect to the dataset  as furnished on the website. DCP and the City are not liable for any deficiencies  in the completeness, accuracy, content, or fitness for any particular purpose or  use the dataset, or applications utilizing the dataset, provided by any third party. These features are not intended for determining zoning at the individual tax lot level.
+  each_row_is_a: Zoning district
   publishing_frequency: Monthly
   tags:
-  - dcp
-  - zoning
-  - geographic
-  - location
-  - map
-  - cartography
-  - zone
-  - district
+  - zoning districts
+  - nyzd
+  - residential
   - commercial
+  - manufacturing
+  - New York City
+  - NYC
+  - Department of City Planning
+  - DCP
 
 assembly: []
 
@@ -57,7 +59,7 @@ files:
     is_metadata: true
 - file:
     id: oti_data_dictionary
-    filename: data_dictionary.xlsx
+    filename: zoning_districts_data_dictionary.xlsx
     is_metadata: true
     type: oti_data_dictionary
 
@@ -69,7 +71,7 @@ columns:
 - id: zonedist
   name: ZONEDIST
   data_type: text
-  description: Zoning district designation
+  description: Zoning district designation.
 - id: shape_leng
   name: Shape_Leng
   data_type: decimal

@@ -9,16 +9,13 @@ attributes:
   each_row_is_a: Commercial Overlay district
   publishing_frequency: Monthly
   tags:
-    - dcp
-    - zoning
-    - geographic
-    - location
-    - map
-    - cartography
-    - zone
-    - district
-    - commercial
-
+  - zoning
+  - commercial overlays
+  - nyco
+  - New York City
+  - NYC
+  - Department of City Planning
+  - DCP
 assembly: []
 
 custom: {}
@@ -57,7 +54,7 @@ files:
       is_metadata: true
   - file:
       id: oti_data_dictionary
-      filename: data_dictionary.xlsx
+      filename: commercial_overlays_data_dictionary.xlsx
       is_metadata: true
       type: oti_data_dictionary
 
@@ -69,7 +66,7 @@ columns:
   - id: overlay
     name: OVERLAY
     data_type: text
-    description: Commercial Overlay District Designation.
+    description: Commercial Overlay district designation.
   - id: shape_leng
     name: Shape_Leng
     data_type: decimal

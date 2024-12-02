@@ -10,20 +10,17 @@ attributes:
     may be incomplete. See the Zoning Resolution for a complete description of the
     special purpose district. Where appropriate, the Zoning Resolution includes a
     district map showing subdistricts and subareas within the special purpose district.
-  display_name: Zoning - Special Purpose Districts (NYSP)
-  each_row_is_a: Special Purpose District
+  display_name: Special Purpose Districts (NYSP)
+  each_row_is_a: Special Purpose district
   publishing_frequency: Monthly
   tags:
-  - dcp
   - zoning
-  - geographic
-  - location
-  - map
-  - cartography
-  - zone
-  - district
-  - commercial
-
+  - special purpose districts
+  - nysp
+  - New York City
+  - NYC
+  - Department of City Planning
+  - DCP
 assembly: []
 
 custom: {}
@@ -62,7 +59,7 @@ files:
     is_metadata: true
 - file:
     id: oti_data_dictionary
-    filename: data_dictionary.xlsx
+    filename: special_districts_data_dictionary.xlsx
     is_metadata: true
     type: oti_data_dictionary
 
@@ -70,7 +67,7 @@ columns:
 - id: sdname
   name: SDNAME
   data_type: text
-  description: Special District Name.
+  description: Special Purpose district name.
 - id: the_geom
   name: the_geom
   data_type: geometry
@@ -78,7 +75,7 @@ columns:
 - id: sdlbl
   name: SDLBL
   data_type: text
-  description: Special District Label as shown on DCP zoning maps
+  description: Special Purpose district label, as it appears on the Zoning Map of New York City.
 - id: shape_leng
   name: Shape_Leng
   data_type: decimal
