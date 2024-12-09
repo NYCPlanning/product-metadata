@@ -5,20 +5,21 @@ attributes:
     Areas within Special Purpose Districts where unique rules apply.
 
     This feature class contains only the internal subdistricts of any special purpose districts that are so subdivided. The main special purpose district name is indicated by the SPNAME attribute, the SUBDIST attribute contains the subdistrict name. Any further subdistrict divisions are named in the SUBAREA_NM or SUBAREA_OTR attribute. Subdistrict data has not been fully digitized and may be incomplete. See the Zoning Resolution for a complete description of the special purpose district. Where appropriate, the Zoning Resolution includes a district map showing subdistricts and subareas within the special purpose district.
-  display_name: Zoning - Special Purpose Subdistricts (NYSP_SD)
-  each_row_is_a: Special Purpose Subdistrict
+  display_name: Special Purpose Subdistricts (NYSP_SD)
+  each_row_is_a: Special Purpose subdistrict
   publishing_frequency: Monthly
   tags:
-  - dcp
   - zoning
-  - geographic
-  - location
-  - map
-  - cartography
-  - zone
-  - district
-  - commercial
-
+  - special purpose districts
+  - nysp_sd
+  - subdistrict
+  - subarea
+  - sub-district
+  - sub-area
+  - New York City
+  - NYC
+  - Department of City Planning
+  - DCP
 assembly: []
 
 custom: {}
@@ -57,7 +58,7 @@ files:
     is_metadata: true
 - file:
     id: oti_data_dictionary
-    filename: data_dictionary.xlsx
+    filename: special_subdistricts_data_dictionary.xlsx
     is_metadata: true
     type: oti_data_dictionary
 
@@ -69,25 +70,31 @@ columns:
 - id: spname
   name: SPNAME
   data_type: text
+  description: Special Purpose district name.
 - id: splbl
   name: SPLBL
   data_type: text
+  description: Special Purpose district label, it appears on the Zoning Map of New York City.
 - id: subdist
   name: SUBDIST
   data_type: text
-  description: Special District sub-district designation
+  description: Special Purpose district subdistrict name.
 - id: sub_area_n
   name: SUB_AREA_N
   data_type: text
+  description: Sub-area name of a Special Purpose district sub-district.
 - id: subdist_lb
   name: SUBDIST_LB
   data_type: text
+  description: Special Purpose district subdistrict label
 - id: subarea_lb
   name: SUBAREA_LB
   data_type: text
+  description: Sub-area label of a Special Purpose district sub-district.
 - id: subarea_ot
   name: SUBAREA_OT
   data_type: text
+  description: Other sub-area name of a Special Purpose district sub-district, if needed.
 - id: shape_leng
   name: Shape_Leng
   data_type: decimal

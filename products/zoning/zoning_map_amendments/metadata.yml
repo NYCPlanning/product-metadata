@@ -2,23 +2,21 @@ id: zoning_map_amendments
 
 attributes:
   description: |-
-    Areas covered by zoning changes adopted and proposed.
+    Areas covered by zoning changes adopted or certified.
 
-    Includes outlines for current "Certified" rezonings. Selected city-initiated text amendments to the Zoning Resolution that have discrete geographical boundaries may be included.
-  display_name: Zoning - Zoning Map Amendments (NYZMA)
+    Includes outlines for both adopted and current "Certified" rezonings. Selected city-initiated text amendments to the Zoning Resolution that have discrete geographical boundaries may be included.
+  display_name: Zoning Map Amendments (NYZMA)
   each_row_is_a: Zoning Map Amendment
   publishing_frequency: Monthly
   tags:
-  - dcp
-  - zoning
-  - geographic
-  - location
-  - map
-  - cartography
-  - zone
-  - district
-  - commercial
-
+  - zoning map amendment
+  - nyzma
+  - zoning change index
+  - rezoning
+  - New York City
+  - NYC
+  - Department of City Planning
+  - DCP
 assembly: []
 
 custom: {}
@@ -57,7 +55,7 @@ files:
     is_metadata: true
 - file:
     id: oti_data_dictionary
-    filename: data_dictionary.xlsx
+    filename: zoning_map_amendments_data_dictionary.xlsx
     is_metadata: true
     type: oti_data_dictionary
 
@@ -70,21 +68,46 @@ columns:
   name: STATUS
   data_type: text
   description: Current status of zoning change
+  values:
+    - value: Adopted
+    - value: Certified
+    - value: "Null"
 - id: effective
   name: EFFECTIVE
   data_type: datetime
-  description: Date change became effective
+  description: Date amendment became effective
 - id: ulurpno
   name: ULURPNO
   data_type: text
-  description: Same as TRACKINGNO
+  description: |
+    ULURLP number for  application associated with the zoning map amendment.
+
+    A nine to ten digit string. The first six charaters are numbers, starting with a two digit year the application was filed, followed by a two letter ULURP application abbreviation, then a one letter borough code.
+
+    Ten digit ULURP numbers are for modified applications. If an application is modified it receives a new ULURP number with a letter between the first six numbers and last three letters, starting with "a" for the first modification and changing to the next letter for each time it is modified. (i.e., 991234zmm,991234azmm, 991234bzmm, etc.)
+
+    Does not contain the ULURP prefix for status.
+  notes: |
+    ULURP = Uniform Land Use Review Procedure
+
+    ULURP Borough Codes:
+    K = Brooklyn (Kings)
+    M = Manhattan
+    Q = Queens
+    R = Staten Island (Richmond)
+    X = Bronx
+    Y = Citywide or more than one Borough
+
+    ULURP application abbreviations: scroll to the bottom of this web page: https://www.nyc.gov/site/planning/applicants/applicant-portal/step3-preparation-applications.page
 - id: lucats
   name: LUCATS
   data_type: text
-  description: Foreign key to link to LUCATS database records
+  description: Foreign key to link to retired LUCATS database records.
+  notes: The number portion only of the ULURP number.
 - id: project_na
   name: PROJECT_NA
   data_type: text
+  description: The name of the project on the associated  application.
 - id: shape_leng
   name: Shape_Leng
   data_type: decimal

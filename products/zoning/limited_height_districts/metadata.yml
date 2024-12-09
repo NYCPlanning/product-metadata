@@ -4,21 +4,17 @@ attributes:
   description: |-
     Districts in which the height of buildings is restricted.
 
-    Limited Height Districts contain restrictions on the height of buildings and other structures. A Limited Height District may be superimposed on an area designated as an historic district by the Landmarks Preservation Commission.
-  display_name: Zoning - Limited Height Districts (NYLH)
-  each_row_is_a: Limited Height District
+    Limited Height Districts contain restrictions on the height of buildings and other structures. A Limited Height district may be superimposed on an area designated as an historic district by the Landmarks Preservation Commission (LPC).
+  display_name: Limited Height Districts (NYLH)
+  each_row_is_a: Limited Height district
   publishing_frequency: Monthly
   tags:
-  - dcp
   - zoning
-  - geographic
-  - location
-  - map
-  - cartography
-  - zone
-  - district
-  - commercial
-
+  - limited height districts
+  - New York City
+  - NYC
+  - Department of City Planning
+  - DCP
 assembly: []
 
 custom: {}
@@ -57,7 +53,7 @@ files:
     is_metadata: true
 - file:
     id: oti_data_dictionary
-    filename: data_dictionary.xlsx
+    filename: limited_height_districts_data_dictionary.xlsx
     is_metadata: true
     type: oti_data_dictionary
 
@@ -65,9 +61,11 @@ columns:
 - id: lhname
   name: LHNAME
   data_type: text
+  description: Limited Height district name.
 - id: lhlbl
   name: LHLBL
   data_type: text
+  description: Limited Height district label, as it appears on the Zoning Map of New York City.
 - id: the_geom
   name: the_geom
   data_type: geometry
