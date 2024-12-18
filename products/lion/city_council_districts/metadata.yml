@@ -141,6 +141,8 @@ columns:
   name: Shape_Length
   data_type: decimal
   example: None
+  custom:
+    api_name: shape_leng
 - id: shape_area
   name: Shape_Area
   data_type: decimal
