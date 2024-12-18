@@ -8,6 +8,7 @@ attributes:
     data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES
     of the BIG APPLE- Archive</a>.
   display_name: 2020 Community District Tabulation Areas (CDTAs)
+  date_made_public: '9/13/2021'
   each_row_is_a: Community District Tabulation Area
   tags:
   - community district tabulation area
