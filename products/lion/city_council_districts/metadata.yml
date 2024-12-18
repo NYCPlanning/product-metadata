@@ -2,25 +2,25 @@ id: city_council_districts
 
 attributes:
   description: |-
-    GIS data: Boundaries of City Council Districts.
+    The City Council district boundaries for New York City.
 
-    All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive.</a>
+    {{ bytes_previous_versions_link }}
   display_name: City Council Districts
-  each_row_is_a: Council District
+  each_row_is_a: Council district
+  date_made_public: "4/18/2013"
   tags:
-  - geographic
-  - voting
-  - location
-  - map
-  - cartography
-  - city council
-  - council
-  - boundary
-  - elect
+  - City Council Districts
   - election
-  - city council districts
-  - dcp
-  date_made_public: ''
+  - political
+  - boundary
+  - boundaries
+  - districts
+  - LION
+  - CSCL
+  - Department of City Planning
+  - DCP
+  - New York City
+  - NYC
 
 assembly: []
 
@@ -36,12 +36,13 @@ destinations:
   - id: shapefile_wi
     custom:
       destination_use: dataset_file
-  - id: oti_data_dictionary_wi
-    custom:
-      destination_use: attachment
-  tags: [socrata_unpublished]
+    dataset_overrides:
+      overridden_columns:
+      - id: coundist
+        custom:
+          api_name: coun_dist
   custom:
-    four_four: acqs-su35
+    four_four: mkqi-d8x3
 - id: socrata
   type: socrata
   files:
@@ -51,9 +52,6 @@ destinations:
   - id: shapefile_wi
     custom:
       destination_use: dataset_file
-  - id: oti_data_dictionary
-    custom:
-      destination_use: attachment
   tags: [socrata_unpublished]
   custom:
     four_four: 872g-cjhh
@@ -83,9 +81,9 @@ files:
   dataset_overrides:
     attributes:
       description: |-
-        GIS data: Boundaries of City Council Districts. (Water Areas Included)
+        The City Council district boundaries for New York City including portions under water.
 
-        All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive.</a>
+        {{ bytes_previous_versions_link }}
       display_name: City Council Districts (Water Areas Included)
     overridden_columns:
     - id: shape_length
@@ -131,19 +129,13 @@ columns:
 - id: coundist
   name: CounDist
   data_type: integer
-  description: City Council District Number
+  description: City Council district number
   example: None
 - id: the_geom
-  name: Shape
   data_type: geometry
-  example: None
 - id: shape_length
-  name: Shape_Length
   data_type: decimal
-  example: None
   custom:
     api_name: shape_leng
 - id: shape_area
-  name: Shape_Area
   data_type: decimal
-  example: None
