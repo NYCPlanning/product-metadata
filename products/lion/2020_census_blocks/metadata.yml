@@ -8,6 +8,7 @@ attributes:
     of the BIG APPLE- Archive</a>.
   display_name: 2020 Census Blocks
   each_row_is_a: Census Block
+  date_made_public: '9/13/2021'
   tags:
   - census block
   - '2020'
