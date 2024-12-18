@@ -12,7 +12,7 @@ attributes:
   - dcp
   - public safety
   - fdny
-  date_made_public: ''
+  date_made_public: '1/31/2013'
 
 assembly: []
 
@@ -28,12 +28,8 @@ destinations:
   - id: shapefile
     custom:
       destination_use: dataset_file
-  - id: oti_data_dictionary
-    custom:
-      destination_use: attachment
-  tags: [socrata_unpublished]
   custom:
-    four_four: qzxy-jtkb
+    four_four: bst7-5464
 - id: bytes
   type: bytes
   files:
@@ -87,21 +83,29 @@ columns:
     description: Engine Company
   - value: Q
     description: Fire Squad
+  custom:
+    api_name: fire_co_type
 - id: fire_company_number
   name: FireCoNum
   data_type: integer
   description: The company number servicing the district.
   example: None
+  custom:
+    api_name: fire_co_num
 - id: fire_division
   name: FireDiv
   data_type: text
   description: The division number servicing the district.
   example: None
+  custom:
+    api_name: fire_div
 - id: fire_battalion
   name: FireBN
   data_type: integer
   description: The battalion number servicing the district.
   example: None
+  custom:
+    api_name: fire_bn
 - id: the_geom
   name: the_geom
   data_type: geometry
