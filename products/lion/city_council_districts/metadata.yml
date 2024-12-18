@@ -7,6 +7,7 @@ attributes:
     All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive.</a>
   display_name: City Council Districts
   each_row_is_a: Council District
+  date_made_public: "4/18/2013"
   tags:
   - geographic
   - voting
@@ -20,7 +21,6 @@ attributes:
   - election
   - city council districts
   - dcp
-  date_made_public: ''
 
 assembly: []
 
@@ -36,12 +36,8 @@ destinations:
   - id: shapefile_wi
     custom:
       destination_use: dataset_file
-  - id: oti_data_dictionary_wi
-    custom:
-      destination_use: attachment
-  tags: [socrata_unpublished]
   custom:
-    four_four: acqs-su35
+    four_four: mkqi-d8x3
 - id: socrata
   type: socrata
   files:
@@ -51,9 +47,6 @@ destinations:
   - id: shapefile_wi
     custom:
       destination_use: dataset_file
-  - id: oti_data_dictionary
-    custom:
-      destination_use: attachment
   tags: [socrata_unpublished]
   custom:
     four_four: 872g-cjhh
@@ -133,6 +126,8 @@ columns:
   data_type: integer
   description: City Council District Number
   example: None
+  custom:
+    api_name: coun_dist
 - id: the_geom
   name: Shape
   data_type: geometry
