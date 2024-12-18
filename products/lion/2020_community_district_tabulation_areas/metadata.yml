@@ -35,9 +35,6 @@ destinations:
   - id: nycdta2020_metadata.pdf
     custom:
       destination_use: attachment
-  - id: oti_data_dictionary
-    custom:
-      destination_use: attachment
   - id: shapefile
     custom:
       destination_use: dataset_file
