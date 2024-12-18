@@ -2,17 +2,24 @@ id: fire_divisions
 
 attributes:
   description: |-
-    Boundaries of fire divisions.
+    Fire Divisions boundaries of New York City.
 
-    All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE - Archive</a>.
+    {{ bytes_previous_versions_link }}
   display_name: Fire Divisions
   each_row_is_a: Fire division
+  date_made_public: '1/31/2013'
   tags:
-  - fire divisions
-  - dcp
-  - public safety
-  - fdny
-  date_made_public: ''
+  - Fire Divisions
+  - FDNY
+  - boundary
+  - boundaries
+  - districts
+  - LION
+  - CSCL
+  - Department of City Planning
+  - DCP
+  - New York City
+  - NYC
 
 assembly: []
 
@@ -26,14 +33,18 @@ destinations:
     custom:
       destination_use: attachment
   - id: shapefile
+    dataset_overrides:
+      overridden_columns:
+      - id: fire_division
+        name: FireDiv
+        custom:
+          api_name: fire_div
+      - id: shape_length
+        name: Shape_Leng
     custom:
       destination_use: dataset_file
-  - id: oti_data_dictionary
-    custom:
-      destination_use: attachment
-  tags: [socrata_unpublished]
   custom:
-    four_four: pdpm-dczf
+    four_four: 68m2-uzcb
 - id: bytes
   type: bytes
   files:
@@ -66,23 +77,14 @@ files:
     type: oti_data_dictionary
 
 columns:
-- id: firediv
-  name: FireDiv
+- id: fire_division
+  name: firediv
   data_type: integer
   description: The fire division number servicing the district.
   example: None
 - id: the_geom
-  name: the_geom
   data_type: geometry
-  description: ''
-  example: None
 - id: shape_length
-  name: Shape_Length
   data_type: decimal
-  description: Length of feature in internal units.
-  example: None
 - id: shape_area
-  name: Shape_Area
   data_type: decimal
-  description: Area of feature in internal units squared.
-  example: None
