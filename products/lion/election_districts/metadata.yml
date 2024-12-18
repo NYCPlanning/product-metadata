@@ -19,7 +19,7 @@ attributes:
   - boundary
   - elect
   - election
-  date_made_public: ''
+  date_made_public: '1/31/2013'
 
 assembly: []
 
@@ -35,12 +35,8 @@ destinations:
   - id: shapefile_wi
     custom:
       destination_use: dataset_file
-  - id: oti_data_dictionary_wi
-    custom:
-      destination_use: attachment
-  tags: [socrata_unpublished]
   custom:
-    four_four: 63sm-kk9b
+    four_four: y4qz-3s3n
 - id: socrata
   type: socrata
   files:
@@ -50,12 +46,8 @@ destinations:
   - id: shapefile
     custom:
       destination_use: dataset_file
-  - id: oti_data_dictionary
-    custom:
-      destination_use: attachment
-  tags: [socrata_unpublished]
   custom:
-    four_four: afve-r9tt
+    four_four: wwxk-38u4
 - id: bytes
   type: bytes
   files:
@@ -133,6 +125,8 @@ columns:
   description: Three digit election district number preceded by the two digit state
     assembly district.
   example: None
+  custom:
+    api_name: elect_dist
 - id: the_geom
   name: the_geom
   data_type: geometry
