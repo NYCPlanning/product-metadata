@@ -21,7 +21,7 @@ attributes:
   - election
   - congressional districts
   - dcp
-  date_made_public: ''
+  date_made_public: '4/18/2013'
 
 assembly: []
 
@@ -37,12 +37,8 @@ destinations:
   - id: shapefile_wi
     custom:
       destination_use: dataset_file
-  - id: oti_data_dictionary_wi
-    custom:
-      destination_use: attachment
-  tags: [socrata_unpublished]
   custom:
-    four_four: j5kw-6gtg
+    four_four: 35e4-miqd
 - id: socrata
   type: socrata
   files:
@@ -135,6 +131,8 @@ columns:
   description: US House of Representatives congressional district number for the State
     of New York.
   example: None
+  custom:
+    api_name: cong_dist
 - id: the_geom
   name: the_geom
   data_type: geometry
