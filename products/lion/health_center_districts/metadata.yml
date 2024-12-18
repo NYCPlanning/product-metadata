@@ -25,12 +25,8 @@ destinations:
   - id: shapefile
     custom:
       destination_use: dataset_file
-  - id: oti_data_dictionary
-    custom:
-      destination_use: attachment
-  tags: [socrata_unpublished]
   custom:
-    four_four: 6nss-v3ep
+    four_four: 6ez8-za84
 - id: bytes
   type: bytes
   files:
@@ -101,11 +97,15 @@ columns:
   data_type: integer
   description: Denotes the Health Center number.
   example: None
+  custom:
+    api_name: hcent_dist
 - id: shape_length
   name: Shape_Length
   data_type: decimal
   description: Length of feature in internal units.
   example: None
+  custom:
+    api_name: shape_leng
 - id: shape_area
   name: Shape_Area
   data_type: decimal
