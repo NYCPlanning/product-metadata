@@ -2,26 +2,25 @@ id: congressional_districts
 
 attributes:
   description: |-
-    Boundaries of congressional districts.
+    US Congressional District boundaries for New York City.
 
-    All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE - Archive</a>.
+    {{ bytes_previous_versions_link }}
   display_name: Congressional Districts
   each_row_is_a: Congressional district
   tags:
-  - geographic
-  - voting
-  - location
-  - map
-  - cartography
-  - district
-  - congress
-  - congressional
-  - boundary
-  - elect
+  - Congressional Districts
   - election
-  - congressional districts
-  - dcp
-  date_made_public: ''
+  - political
+  - boundary
+  - boundaries
+  - districts
+  - LION
+  - CSCL
+  - Department of City Planning
+  - DCP
+  - New York City
+  - NYC
+  date_made_public: '4/18/2013'
 
 assembly: []
 
@@ -37,12 +36,8 @@ destinations:
   - id: shapefile_wi
     custom:
       destination_use: dataset_file
-  - id: oti_data_dictionary_wi
-    custom:
-      destination_use: attachment
-  tags: [socrata_unpublished]
   custom:
-    four_four: j5kw-6gtg
+    four_four: 35e4-miqd
 - id: socrata
   type: socrata
   files:
@@ -52,9 +47,9 @@ destinations:
   - id: shapefile
     custom:
       destination_use: dataset_file
-  - id: oti_data_dictionary
-    custom:
-      destination_use: attachment
+  # - id: oti_data_dictionary
+  #   custom:
+  #     destination_use: attachment
   tags: [socrata_unpublished]
   custom:
     four_four: j3u5-usz2
@@ -84,9 +79,9 @@ files:
   dataset_overrides:
     attributes:
       description: |-
-        Boundaries of Congressional districts (water areas included).
+        US Congressional District boundaries for New York City including portions under water.
 
-        All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE - Archive</a>.
+        {{ bytes_previous_versions_link }}
       display_name: Congressional Districts (water areas included)
     overridden_columns:
     - id: shape_length
@@ -135,6 +130,8 @@ columns:
   description: US House of Representatives congressional district number for the State
     of New York.
   example: None
+  custom:
+    api_name: cong_dist
 - id: the_geom
   name: the_geom
   data_type: geometry
