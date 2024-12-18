@@ -1,18 +1,26 @@
+# TODO: Matt: FireBN - should be Fire Battalion. Should it?
 id: fire_battalions
 
 attributes:
   description: |-
-    Boundaries of fire battalions.
+    Fire Battalion boundaries of New York City.
 
-    All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE - Archive</a>.
+    {{ bytes_previous_versions_link }}
   display_name: Fire Battalions
   each_row_is_a: Fire battalion
   tags:
-  - fire battalions
-  - dcp
-  - public safety
-  - fdny
-  date_made_public: ''
+  - Fire Battalions
+  - FDNY
+  - boundary
+  - boundaries
+  - districts
+  - LION
+  - CSCL
+  - Department of City Planning
+  - DCP
+  - New York City
+  - NYC
+  date_made_public: '1/31/2013'
 
 assembly: []
 
@@ -28,12 +36,8 @@ destinations:
   - id: shapefile
     custom:
       destination_use: dataset_file
-  - id: oti_data_dictionary
-    custom:
-      destination_use: attachment
-  tags: [socrata_unpublished]
   custom:
-    four_four: srix-vkxq
+    four_four: xzng-ft6f
 - id: bytes
   type: bytes
   files:
@@ -71,6 +75,8 @@ columns:
   data_type: integer
   description: The battalion number servicing the district.
   example: None
+  custom:
+    api_name: fire_bn
 - id: the_geom
   name: the_geom
   data_type: geometry
