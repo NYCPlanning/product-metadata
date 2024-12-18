@@ -40,7 +40,7 @@ destinations:
   - id: shapefile
     custom:
       url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nyhez_{{ version }}.zip
-    id: nyhez_metadata.pdf
+  - id: nyhez_metadata.pdf
     custom:
       url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nyhez_metadata.pdf
 
