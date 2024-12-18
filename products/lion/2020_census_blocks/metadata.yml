@@ -34,9 +34,6 @@ destinations:
   - id: shapefile_water_not_included
     custom:
       destination_use: dataset_file
-  - id: oti_data_dictionary
-    custom:
-      destination_use: attachment
   custom:
     four_four: wmsu-5muw
 - id: socrata_water_included
@@ -48,9 +45,6 @@ destinations:
   - id: shapefile_water_included
     custom:
       destination_use: dataset_file
-  - id: oti_data_dictionary_wi
-    custom:
-      destination_use: attachment
   custom:
     four_four: wrzv-t2c4
 - id: bytes
