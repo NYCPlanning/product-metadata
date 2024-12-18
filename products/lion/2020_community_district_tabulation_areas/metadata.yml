@@ -8,6 +8,7 @@ attributes:
     data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES
     of the BIG APPLE- Archive</a>.
   display_name: 2020 Community District Tabulation Areas (CDTAs)
+  date_made_public: '9/13/2021'
   each_row_is_a: Community District Tabulation Area
   tags:
   - community district tabulation area
@@ -33,9 +34,6 @@ destinations:
   type: socrata
   files:
   - id: nycdta2020_metadata.pdf
-    custom:
-      destination_use: attachment
-  - id: oti_data_dictionary
     custom:
       destination_use: attachment
   - id: shapefile
@@ -149,6 +147,8 @@ columns:
   data_type: decimal
   description: Length of feature in internal units.
   example: '37550.8572191'
+  custom:
+    api_name: shape_leng
 - id: shape_area
   name: Shape_Area
   data_type: decimal

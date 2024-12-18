@@ -7,6 +7,7 @@ attributes:
     All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
   display_name: Property Address Directory
   each_row_is_a: Property Address
+  date_made_public: '9/13/2021'
   tags:
   - dcp
   - pad
@@ -32,9 +33,6 @@ destinations:
   - id: shapefile
     custom:
       destination_use: dataset_file
-  - id: oti_data_dictionary
-    custom:
-      destination_use: attachment
   custom:
     four_four: bc8t-ecyu
     is_unparsed_dataset: true
