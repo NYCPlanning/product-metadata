@@ -4,7 +4,7 @@ attributes:
   description: |-
     The Street Name Dictionary (SND) contains street names and street codes for New York City.  Street names (which include names of other geographic features as well) are associated to street codes.  Alias street names and variant spellings are related through a street code hierarchy.
 
-    All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>
+    {{ bytes_previous_versions_link }}
   display_name: Street Name Dictionary
   each_row_is_a: Street Name
   tags:
@@ -16,6 +16,7 @@ attributes:
   - snd
   - geographic
   - intersection
+  attribution_link: https://www.nyc.gov/site/planning/data-maps/open-data.page#other
 
 assembly: []
 
