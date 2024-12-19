@@ -4,11 +4,20 @@ attributes:
   description: |-
     Atomic polygons serve as a set of basic building blocks for generating the polygons of many of the district types represented in the NYC Street Centerline (CSCL) database. Feature classes such as election district, school district, census block, FDNY administrative company, and community district can be dissolved by combining the appropriate fields in atomic polygons.
 
-    All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE - Archive</a>.
+    {{ bytes_previous_versions_link }}
   display_name: Atomic Polygons
   each_row_is_a: Atomic Polygon
   tags:
   - atomic polygons
+  - boundary
+  - boundaries
+  - districts
+  - LION
+  - CSCL
+  - Department of City Planning
+  - DCP
+  - New York City
+  - NYC
   date_made_public: '3/6/2015'
 
 assembly: []
@@ -24,6 +33,36 @@ destinations:
       destination_use: attachment
   files:
   - id: shapefile
+    dataset_overrides:
+      overridden_columns:
+      - id: admin_fire_company
+        name: ADMIN_FIRE
+      - id: commercial_waste_zone
+        name: COMMERCIAL
+      - id: hurricane_evacuation_zone
+        name: HURRICANE
+      - id: censusblock_2000
+        name: CENSUSBLOC
+      - id: censusblock_2000_suffix
+        name: CENSUSBL_1
+      - id: censustract_2000
+        name: CENSUSTRAC
+      - id: censusblock_2010
+        name: CENSUSBL_2
+      - id: censusblock_2010_suffix
+        name: CENSUSBL_3
+      - id: censustract_2010
+        name: CENSUSTR_1
+      - id: censustract_1990
+        name: CENSUSTR_2
+      - id: censustract_2020
+        name: CENSUSTR_3
+      - id: censusblock_2020
+        name: CENSUSBL_4
+      - id: censusblock_2020_suffix
+        name: CENSUSBL_5
+      - id: shape_length
+        name: shape_length
     custom:
       destination_use: dataset_file
   - id: nyap_metadata.pdf
@@ -93,7 +132,7 @@ columns:
 - id: borough
   name: BOROUGH
   data_type: text
-  description: Borough Code.
+  description: Borough code.
   example: '4'
   values:
   - value: '1'
@@ -279,18 +318,8 @@ columns:
   custom:
     api_name: commercial
 - id: shape_area
-  name: Shape_Area
   data_type: decimal
-  description: Area of feature in internal units squared.
-  example: None
 - id: shape_length
-  name: Shape_Length
   data_type: decimal
-  description: Length of feature in internal units.
-  example: None
-  custom:
-    api_name: shape_leng
 - id: the_geom
-  name: The_Geom
   data_type: geometry
-  example: None
