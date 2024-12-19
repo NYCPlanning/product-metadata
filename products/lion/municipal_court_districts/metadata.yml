@@ -4,7 +4,7 @@ attributes:
   description: |-
     Boundaries of Municipal Court districts.
 
-    All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE - Archive</a>.
+    {{ bytes_previous_versions_link }}
   display_name: Municipal Court Districts
   each_row_is_a: Municipal Court district
   tags:
@@ -28,14 +28,20 @@ destinations:
     custom:
       destination_use: attachment
   - id: shapefile_wi
+    dataset_overrides:
+      overridden_columns:
+      - id: borocode
+        name: BoroCode
+      - id: boroname
+        name: BoroName
+      - id: municourt
+        name: MuniCourt
+      - id: shape_length
+        name: Shape_Length
     custom:
       destination_use: dataset_file
-  - id: oti_data_dictionary_wi
-    custom:
-      destination_use: attachment
-  tags: [socrata_unpublished]
   custom:
-    four_four: yr65-4zy6
+    four_four: qssd-iewi
 - id: socrata
   type: socrata
   files:
@@ -43,14 +49,20 @@ destinations:
     custom:
       destination_use: attachment
   - id: shapefile
+    dataset_overrides:
+      overridden_columns:
+      - id: borocode
+        name: BoroCode
+      - id: boroname
+        name: BoroName
+      - id: municourt
+        name: MuniCourt
+      - id: shape_length
+        name: Shape_Length
     custom:
       destination_use: dataset_file
-  - id: oti_data_dictionary
-    custom:
-      destination_use: attachment
-  tags: [socrata_unpublished]
   custom:
-    four_four: 5ewv-dbt8
+    four_four: mi5z-t7dx
 - id: bytes
   type: bytes
   files:
@@ -77,10 +89,10 @@ files:
   dataset_overrides:
     attributes:
       description: |-
-        Boundaries of Municipal Court districts. (water areas included)
+        Boundaries of Municipal Court districts including portions under water.
 
-        All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE - Archive</a>.
-      display_name: Municipal Court Districts  (water areas included)
+        {{ bytes_previous_versions_link }}
+      display_name: Municipal Court Districts (water areas included)
     overridden_columns:
     - id: shape_length
       name: shape_leng
@@ -127,6 +139,8 @@ columns:
   data_type: integer
   description: Municipal Court district number.
   example: None
+  custom:
+    api_name: muni_court
 - id: borocode
   name: BoroCode
   data_type: text
@@ -143,6 +157,8 @@ columns:
     description: Queens
   - value: '5'
     description: Staten Island
+  custom:
+    api_name: boro_code
 - id: boroname
   name: BoroName
   data_type: text
@@ -154,20 +170,11 @@ columns:
   - value: Manhattan
   - value: Queens
   - value: Staten Island
-- id: the_geom
-  name: the_geom
-  data_type: geometry
-  description: ''
-  example: None
-- id: shape_length
-  name: Shape_Length
-  data_type: decimal
-  description: Length of feature in internal units.
-  example: None
   custom:
-    api_name: shape_leng
-- id: shape_area
-  name: Shape_Area
+    api_name: boro_name
+- id: the_geom
+  data_type: geometry
+- id: shape_length
   data_type: decimal
-  description: Area of feature in internal units squared.
-  example: None
+- id: shape_area
+  data_type: decimal
