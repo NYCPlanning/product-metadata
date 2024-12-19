@@ -1,11 +1,14 @@
 id: pseudo_lots
 
 attributes:
-  description: The Pseudo Lots dataset contains polygons of locations that have an
+  description: |-
+    The Pseudo Lots dataset contains polygons of locations that have an
     address and/or a structure with a building identification number (BIN), but for
     which there is no tax lot. Pseudo lots may exist for locations with open space,
     subway or train stations, skyways, tunnels, or other miscellaneous features. Note
     that this is not a comprehensive dataset of locations with these types of features.
+
+    {{ bytes_previous_versions_link }}
   display_name: Pseudo Lots
   each_row_is_a: Pseudo Lot
   tags:
@@ -14,6 +17,8 @@ attributes:
   - building identification number
   - addresses
   - cscl
+  date_made_public: '9/13/2021'
+  attribution_link: https://www1.nyc.gov/site/planning/data-maps/open-data.page#pseudo
 
 assembly: []
 

@@ -4,10 +4,12 @@ attributes:
   description: |-
     A text file representing the relationships between generic and roadbed segments (or roadbed terminators segments that represent the merging of divided roadbeds back into each other as a single roadbed or undivided street) by segment ID.
 
-    All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
+    {{ bytes_previous_versions_link }}
   display_name: Roadbed Pointer List (RPL)
   each_row_is_a: Roadbed Pointer
   tags: []
+  date_made_public: '9/13/2021'
+  attribution_link: https://www.nyc.gov/site/planning/data-maps/open-data.page#lion
 
 assembly: []
 
