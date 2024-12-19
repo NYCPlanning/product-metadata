@@ -8,6 +8,7 @@ attributes:
     of the BIG APPLE- Archive</a>.
   display_name: 2020 Census Blocks
   each_row_is_a: Census Block
+  date_made_public: '9/13/2021'
   tags:
   - census block
   - '2020'
@@ -34,9 +35,6 @@ destinations:
   - id: shapefile_water_not_included
     custom:
       destination_use: dataset_file
-  - id: oti_data_dictionary
-    custom:
-      destination_use: attachment
   custom:
     four_four: wmsu-5muw
 - id: socrata_water_included
@@ -48,9 +46,6 @@ destinations:
   - id: shapefile_water_included
     custom:
       destination_use: dataset_file
-  - id: oti_data_dictionary_wi
-    custom:
-      destination_use: attachment
   custom:
     four_four: wrzv-t2c4
 - id: bytes

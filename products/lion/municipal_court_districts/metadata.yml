@@ -30,12 +30,8 @@ destinations:
   - id: shapefile_wi
     custom:
       destination_use: dataset_file
-  - id: oti_data_dictionary_wi
-    custom:
-      destination_use: attachment
-  tags: [socrata_unpublished]
   custom:
-    four_four: yr65-4zy6
+    four_four: k2bb-k6p8
 - id: socrata
   type: socrata
   files:
@@ -45,12 +41,8 @@ destinations:
   - id: shapefile
     custom:
       destination_use: dataset_file
-  - id: oti_data_dictionary
-    custom:
-      destination_use: attachment
-  tags: [socrata_unpublished]
   custom:
-    four_four: 5ewv-dbt8
+    four_four: mi5z-t7dx
 - id: bytes
   type: bytes
   files:
@@ -127,6 +119,8 @@ columns:
   data_type: integer
   description: Municipal Court district number.
   example: None
+  custom:
+    api_name: muni_court
 - id: borocode
   name: BoroCode
   data_type: text
@@ -143,6 +137,8 @@ columns:
     description: Queens
   - value: '5'
     description: Staten Island
+  custom:
+    api_name: boro_code
 - id: boroname
   name: BoroName
   data_type: text
@@ -154,6 +150,8 @@ columns:
   - value: Manhattan
   - value: Queens
   - value: Staten Island
+  custom:
+    api_name: boro_name
 - id: the_geom
   name: the_geom
   data_type: geometry
@@ -164,6 +162,8 @@ columns:
   data_type: decimal
   description: Length of feature in internal units.
   example: None
+  custom:
+    api_name: shape_leng
 - id: shape_area
   name: Shape_Area
   data_type: decimal

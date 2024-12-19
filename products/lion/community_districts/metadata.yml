@@ -19,7 +19,7 @@ attributes:
   - community
   - boundaries
   - water
-  date_made_public: ''
+  date_made_public: '2/23/2015'
 
 assembly: []
 
@@ -50,12 +50,8 @@ destinations:
   - id: shapefile_wi
     custom:
       destination_use: dataset_file
-  - id: oti_data_dictionary_wi
-    custom:
-      destination_use: attachment
-  tags: [socrata_unpublished]
   custom:
-    four_four: 597j-7eb8
+    four_four: 6ak9-vek3
 - id: bytes
   type: bytes
   files:
@@ -134,6 +130,8 @@ columns:
   data_type: text
   description: Community district number preceded by BoroCode.
   example: None
+  custom:
+    api_name: boro_cd
 - id: the_geom
   name: Shape
   data_type: geometry
@@ -142,6 +140,8 @@ columns:
   name: Shape_Length
   data_type: decimal
   example: None
+  custom:
+    api_name: shape_leng
 - id: shape_area
   name: Shape_Area
   data_type: decimal
