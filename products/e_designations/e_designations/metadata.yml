@@ -7,6 +7,9 @@ attributes:
     All previously released versions of this data are available at  <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>
   display_name: E-Designations
   each_row_is_a: E-Designation
+  publishing_frequency: Monthly
+  attribution_link: https://zap.planning.nyc.gov/projects
+  date_made_public: '06/13/2018'
   tags:
   - e-designation
   - (e) designation
@@ -176,37 +179,23 @@ columns:
   example: '1'
 - id: hazmat_code
   name: HazMatCode
-  data_type: integer
-  description: A one digit numeric code that represents the E-Designation is related
+  data_type: bool
+  description: A code indicating whether the E-Designation is related
     to hazardous materials
-  example: '1'
-  values:
-  - value: '0'
-    description: 'No'
-  - value: '1'
-    description: 'Yes'
+  example: 'False'
 - id: air_code
   name: AirCode
-  data_type: integer
-  description: A one digit numeric code that represents the E-Designation is related
+  data_type: bool
+  description: A code indicating whether the E-Designation is related
     to air quality
-  example: '0'
-  values:
-  - value: '0'
-    description: 'No'
-  - value: '1'
-    description: 'Yes'
+  example: 'False'
 - id: noise_code
   name: NoiseCode
-  data_type: integer
-  description: A one digit numeric code that represents the E-Designation is related
+  data_type: bool
+  description: A code indicating whether the E-Designation is related
     to noise quality
-  example: '1'
-  values:
-  - value: '0'
-    description: 'No'
-  - value: '1'
-    description: 'Yes'
+    to air quality
+  example: 'False'
 - id: hazmat_date
   name: HazMatDate
   data_type: datetime
@@ -239,6 +228,7 @@ columns:
 - id: zoning_map
   name: ZONING_MAP
   data_type: text
+  description: Zoning Map index number associated to the E-designation
   example: 14d
 - id: description
   name: DESCRIPTION
@@ -248,6 +238,8 @@ columns:
 - id: bbl
   name: BBL
   data_type: bbl
+  description: A ten digit numeric code that represents the tax lot where the E-desigination
+    is located
   example: '3070650012'
 - id: the_geom
   name: the_geom
