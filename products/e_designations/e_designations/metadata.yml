@@ -55,7 +55,7 @@ destinations:
     custom:
       destination_use: dataset_file
   custom:
-    four_four: jep3-h9py
+    four_four: jsrs-ggnx
 - id: socrata_csv
   type: socrata
   files:
