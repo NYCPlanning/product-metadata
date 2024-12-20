@@ -2,117 +2,118 @@ id: zoning_features
 
 attributes:
   description: |-
-    GIS data: This data set consists of 6 classes of zoning features:
+    This data set consists of 6 classes of zoning features:
     zoning districts, special purpose districts, special purpose district subdistricts,
     limited height districts, commercial overlay districts,  and zoning map amendments.
 
     All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
-  display_name: 'Zoning GIS Data: Geodatabase'
+  display_name: "Zoning GIS Data: Geodatabase"
   each_row_is_a: "NA"
   tags:
-  - zoning
-  - geographic
-  - location
-  - map
-  - cartography
-  - zone
-  - district
-  - commercial
-  - dcp
+    - zoning
+    - geographic
+    - location
+    - map
+    - cartography
+    - zone
+    - district
+    - commercial
+    - dcp
+  date_made_public: "9/13/2021"
 
 assembly: []
 
 custom: {}
 
 destinations:
-- id: socrata
-  type: socrata
-  custom:
-    four_four: mm69-vrje
-    is_unparsed_dataset: true
-  files:
-  - id: fgdb
+  - id: socrata
+    type: socrata
     custom:
-      destination_use: dataset_file
-  - id: nyco_metadata
-    custom:
-      destination_use: attachment
-  - id: nylh_metadata
-    custom:
-      destination_use: attachment
-  - id: nysp_metadata
-    custom:
-      destination_use: attachment
-  - id: nysp_sd_metadata
-    custom:
-      destination_use: attachment
-  - id: nyzd_metadata
-    custom:
-      destination_use: attachment
-  - id: nyzma_metadata
-    custom:
-      destination_use: attachment
+      four_four: mm69-vrje
+      is_unparsed_dataset: true
+    files:
+      - id: fgdb
+        custom:
+          destination_use: dataset_file
+      - id: nyco_metadata
+        custom:
+          destination_use: attachment
+      - id: nylh_metadata
+        custom:
+          destination_use: attachment
+      - id: nysp_metadata
+        custom:
+          destination_use: attachment
+      - id: nysp_sd_metadata
+        custom:
+          destination_use: attachment
+      - id: nyzd_metadata
+        custom:
+          destination_use: attachment
+      - id: nyzma_metadata
+        custom:
+          destination_use: attachment
 
-- id: bytes
-  type: bytes
-  files:
-  - id: shapefile
-    custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nycgiszoningfeatures_{{ version }}shp.zip
-  - id: fgdb
-    custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nycgiszoningfeatures_{{ version }}fgdb.zip
-  - id: nyco_metadata
-    custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nyco_metadata.pdf
-  - id: nylh_metadata
-    custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nylh_metadata.pdf
-  - id: nysp_metadata
-    custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nysp_metadata.pdf
-  - id: nysp_sd_metadata
-    custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nysp_sd_metadata.pdf
-  - id: nyzd_metadata
-    custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nyzd_metadata.pdf
-  - id: nyzma_metadata
-    custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nyzma_metadata.pdf
+  - id: bytes
+    type: bytes
+    files:
+      - id: shapefile
+        custom:
+          url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nycgiszoningfeatures_{{ version }}shp.zip
+      - id: fgdb
+        custom:
+          url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nycgiszoningfeatures_{{ version }}fgdb.zip
+      - id: nyco_metadata
+        custom:
+          url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nyco_metadata.pdf
+      - id: nylh_metadata
+        custom:
+          url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nylh_metadata.pdf
+      - id: nysp_metadata
+        custom:
+          url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nysp_metadata.pdf
+      - id: nysp_sd_metadata
+        custom:
+          url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nysp_sd_metadata.pdf
+      - id: nyzd_metadata
+        custom:
+          url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nyzd_metadata.pdf
+      - id: nyzma_metadata
+        custom:
+          url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nyzma_metadata.pdf
 
 files:
-- file:
-    id: fgdb
-    filename: nycgiszoningfeatures_fgdb.zip
-    type: fgdb
-- file:
-    id: shapefile
-    filename: nycgiszoningfeatures_shp.zip
-    type: shapefile
-- file:
-    id: nyco_metadata
-    filename: nyco_metadata.pdf
-    is_metadata: true
-- file:
-    id: nylh_metadata
-    filename: nylh_metadata.pdf
-    is_metadata: true
-- file:
-    id: nysp_metadata
-    filename: nysp_metadata.pdf
-    is_metadata: true
-- file:
-    id: nysp_sd_metadata
-    filename: nysp_sd_metadata.pdf
-    is_metadata: true
-- file:
-    id: nyzd_metadata
-    filename: nyzd_metadata.pdf
-    is_metadata: true
-- file:
-    id: nyzma_metadata
-    filename: nyzma_metadata.pdf
-    is_metadata: true
+  - file:
+      id: fgdb
+      filename: nycgiszoningfeatures_fgdb.zip
+      type: fgdb
+  - file:
+      id: shapefile
+      filename: nycgiszoningfeatures_shp.zip
+      type: shapefile
+  - file:
+      id: nyco_metadata
+      filename: nyco_metadata.pdf
+      is_metadata: true
+  - file:
+      id: nylh_metadata
+      filename: nylh_metadata.pdf
+      is_metadata: true
+  - file:
+      id: nysp_metadata
+      filename: nysp_metadata.pdf
+      is_metadata: true
+  - file:
+      id: nysp_sd_metadata
+      filename: nysp_sd_metadata.pdf
+      is_metadata: true
+  - file:
+      id: nyzd_metadata
+      filename: nyzd_metadata.pdf
+      is_metadata: true
+  - file:
+      id: nyzma_metadata
+      filename: nyzma_metadata.pdf
+      is_metadata: true
 
 columns: []
