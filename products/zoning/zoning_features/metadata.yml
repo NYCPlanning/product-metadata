@@ -2,12 +2,12 @@ id: zoning_features
 
 attributes:
   description: |-
-    GIS data: This data set consists of 6 classes of zoning features:
+    This data set consists of 6 classes of zoning features:
     zoning districts, special purpose districts, special purpose district subdistricts,
     limited height districts, commercial overlay districts,  and zoning map amendments.
 
     All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
-  display_name: 'Zoning GIS Data: Geodatabase'
+  display_name: "Zoning GIS Data: Geodatabase"
   each_row_is_a: "NA"
   tags:
   - zoning
@@ -19,6 +19,7 @@ attributes:
   - district
   - commercial
   - dcp
+  date_made_public: "9/13/2021"
 
 assembly: []
 
