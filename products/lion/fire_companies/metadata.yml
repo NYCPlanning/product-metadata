@@ -2,17 +2,24 @@ id: fire_companies
 
 attributes:
   description: |-
-    Boundaries of fire companies.
+    Fire Companies boundaries of New York City.
 
-    All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE - Archive</a>.
+    {{ bytes_previous_versions_link }}
   display_name: Fire Companies
   each_row_is_a: Fire company
   tags:
-  - fire companies
-  - dcp
-  - public safety
-  - fdny
-  date_made_public: ''
+  - Fire Companies
+  - FDNY
+  - boundary
+  - boundaries
+  - districts
+  - LION
+  - CSCL
+  - Department of City Planning
+  - DCP
+  - New York City
+  - NYC
+  date_made_public: '1/31/2013'
 
 assembly: []
 
@@ -26,14 +33,22 @@ destinations:
     custom:
       destination_use: attachment
   - id: shapefile
+    dataset_overrides:
+      overridden_columns:
+      - id: fire_company_type
+        name: FireCoType
+      - id: fire_company_number
+        name: FireCoNum
+      - id: fire_division
+        name: FireDiv
+      - id: fire_battalion
+        name: FireBN
+      - id: shape_length
+        name: Shape_Leng
     custom:
       destination_use: dataset_file
-  - id: oti_data_dictionary
-    custom:
-      destination_use: attachment
-  tags: [socrata_unpublished]
   custom:
-    four_four: qzxy-jtkb
+    four_four: bst7-5464
 - id: bytes
   type: bytes
   files:
@@ -87,33 +102,32 @@ columns:
     description: Engine Company
   - value: Q
     description: Fire Squad
+  custom:
+    api_name: fire_co_type
 - id: fire_company_number
   name: FireCoNum
   data_type: integer
   description: The company number servicing the district.
   example: None
+  custom:
+    api_name: fire_co_num
 - id: fire_division
   name: FireDiv
   data_type: text
   description: The division number servicing the district.
   example: None
+  custom:
+    api_name: fire_div
 - id: fire_battalion
   name: FireBN
   data_type: integer
   description: The battalion number servicing the district.
   example: None
+  custom:
+    api_name: fire_bn
 - id: the_geom
-  name: the_geom
   data_type: geometry
-  description: ''
-  example: None
 - id: shape_length
-  name: Shape_Length
   data_type: decimal
-  description: Length of feature in internal units.
-  example: None
 - id: shape_area
-  name: Shape_Area
   data_type: decimal
-  description: Area of feature in internal units squared.
-  example: None

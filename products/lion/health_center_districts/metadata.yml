@@ -2,13 +2,23 @@ id: health_center_districts
 
 attributes:
   description: |-
-    Health Center Districts - by Department of City Planning.
+    Health center service area boundaries for New York City. Health Center service areas are aggregates of health areas and are used for reporting health statistics. They were created by the NYC Department of Health and Mental Hygiene (DOHMH).
 
-    All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE - Archive</a>.
+    {{ bytes_previous_versions_link }}
   display_name: Health Center Districts
-  each_row_is_a: Health Center District
+  each_row_is_a: Health Center district
   tags:
-  - 'gis data: boundaries of health districts'
+  - Health Center Sevice Area
+  - DOHMH
+  - boundary
+  - boundaries
+  - districts
+  - LION
+  - CSCL
+  - Department of City Planning
+  - DCP
+  - New York City
+  - NYC
   date_made_public: '2/23/2015'
 
 assembly: []
@@ -23,14 +33,22 @@ destinations:
     custom:
       destination_use: attachment
   - id: shapefile
+    dataset_overrides:
+      overridden_columns:
+      - id: boro_code
+        name: BoroCode
+      - id: boro_name
+        name: BoroName
+      - id: health_center_district
+        name: HCentDist
+        custom:
+          api_name: hcent_dist
+      - id: shape_length
+        name: Shape_Leng
     custom:
       destination_use: dataset_file
-  - id: oti_data_dictionary
-    custom:
-      destination_use: attachment
-  tags: [socrata_unpublished]
   custom:
-    four_four: 6nss-v3ep
+    four_four: 6ez8-za84
 - id: bytes
   type: bytes
   files:
@@ -102,17 +120,8 @@ columns:
   description: Denotes the Health Center number.
   example: None
 - id: shape_length
-  name: Shape_Length
   data_type: decimal
-  description: Length of feature in internal units.
-  example: None
 - id: shape_area
-  name: Shape_Area
   data_type: decimal
-  description: Area of feature in internal units squared.
-  example: None
 - id: the_geom
-  name: the_geom
   data_type: geometry
-  description: ''
-  example: None

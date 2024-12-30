@@ -2,24 +2,24 @@ id: election_districts
 
 attributes:
   description: |-
-    Boundaries of election districts.
+    New York City Board of Elections election district boundaries for New York City clipped to the shoreline.
 
-    All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE - Archive</a>.
+    {{ bytes_previous_versions_link }}
   display_name: Election Districts
   each_row_is_a: Election district
   tags:
+  - Election Districts
   - political
-  - dcp
-  - geographic
-  - voting
-  - location
-  - map
-  - cartography
-  - district
   - boundary
-  - elect
-  - election
-  date_made_public: ''
+  - boundaries
+  - districts
+  - LION
+  - CSCL
+  - Department of City Planning
+  - DCP
+  - New York City
+  - NYC
+  date_made_public: '1/31/2013'
 
 assembly: []
 
@@ -33,14 +33,14 @@ destinations:
     custom:
       destination_use: attachment
   - id: shapefile_wi
+    dataset_overrides:
+      overridden_columns:
+      - id: shape_length
+        name: Shape_Leng
     custom:
       destination_use: dataset_file
-  - id: oti_data_dictionary_wi
-    custom:
-      destination_use: attachment
-  tags: [socrata_unpublished]
   custom:
-    four_four: 63sm-kk9b
+    four_four: y4qz-3s3n
 - id: socrata
   type: socrata
   files:
@@ -48,14 +48,14 @@ destinations:
     custom:
       destination_use: attachment
   - id: shapefile
+    dataset_overrides:
+      overridden_columns:
+      - id: shape_length
+        name: Shape_Leng
     custom:
       destination_use: dataset_file
-  - id: oti_data_dictionary
-    custom:
-      destination_use: attachment
-  tags: [socrata_unpublished]
   custom:
-    four_four: afve-r9tt
+    four_four: wwxk-38u4
 - id: bytes
   type: bytes
   files:
@@ -82,9 +82,9 @@ files:
   dataset_overrides:
     attributes:
       description: |-
-        Boundaries of election districts (water areas included).
+        New York City Board of Elections election district boundaries for New York City including portions under water.
 
-        All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE - Archive</a>.
+        {{ bytes_previous_versions_link }}
       display_name: Election Districts (water areas included)
     overridden_columns:
     - id: shape_length
@@ -133,18 +133,13 @@ columns:
   description: Three digit election district number preceded by the two digit state
     assembly district.
   example: None
+  custom:
+    api_name: elect_dist
 - id: the_geom
-  name: the_geom
   data_type: geometry
-  description: ''
-  example: None
 - id: shape_length
-  name: Shape_Length
   data_type: decimal
-  description: Length of feature in internal units.
-  example: None
+  custom:
+    api_name: shape_leng
 - id: shape_area
-  name: Shape_Area
   data_type: decimal
-  description: Area of feature in internal units squared.
-  example: None
