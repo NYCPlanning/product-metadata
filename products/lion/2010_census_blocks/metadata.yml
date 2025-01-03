@@ -46,7 +46,7 @@ destinations:
       destination_use: attachment
   tags: [socrata_unpublished]
   custom:
-    four_four: 444b-5yrw
+    four_four: jyp7-eqhh
 - id: bytes
   type: bytes
   files:
@@ -139,6 +139,8 @@ columns:
     description: Queens
   - value: '5'
     description: Staten Island
+  custom:
+    api_name: boro_code
 - id: boroname
   name: BoroName
   data_type: text
@@ -150,6 +152,8 @@ columns:
   - value: Manhattan
   - value: Queens
   - value: Staten Island
+  custom:
+    api_name: boro_name
 - id: ct2010
   name: CT2010
   data_type: text
