@@ -2,13 +2,16 @@ id: developments
 
 dataset_defaults:
   publishing_frequency: Bi-annually
+  data_change_frequency: Bi-annually
+  category: Housing & Development
+  attribution_link: https://www.nyc.gov/site/planning/data-maps/open-data/dwn-housing-database.page
 
 datasets:
-- housing
-- housing_by_cb
-- housing_by_ccd
-- housing_by_cd
-- housing_by_cdta
-- housing_by_ct
-- housing_by_nta
-- housing_post2010
+- housing_database # metadata only
+- housing_database_project_level_files
+- housing_database_by_2020_census_block
+- housing_database_by_2020_census_tract
+- housing_database_by_2020_nta
+- housing_database_by_2020_cdta
+- housing_database_by_2024_city_council
+- housing_database_by_community_district
