@@ -8,6 +8,7 @@ attributes:
   display_name: NYC Zoning Tax Lot Database
   publishing_frequency: Monthly
   each_row_is_a: Tax Lot
+  date_made_public: '9/13/2021'
   tags:
   - dcp
   - city planning
