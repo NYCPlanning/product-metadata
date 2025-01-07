@@ -1,9 +1,17 @@
 id: housing_database_by_2024_city_council
 
 attributes:
-  description: |-
-    Net change in housing units arising from new buildings, demolitions, or alterations for NYC City Council Districts since 2010. The NYC Department of City Planning's (DCP) <a href="https://www1.nyc.gov/site/planning/data-maps/open-data/dwn-housing-database.page#housingdevelopmentproject">Housing Database</a> provide the 2010 census count of housing units, the net change in Class A housing units since the census, and the count of units pending completion for commonly used political and statistical boundaries. These tables are aggregated from the DCP Housing Database, which is derived from Department of Buildings (DOB)-approved housing construction and demolition jobs filed or completed in NYC since January 1, 2010. Net housing unit change is calculated as the sum of all three construction job types that add or remove residential units: new buildings, major alterations, and demolitions, and can be used to determine the change in legal housing units across time and space.
-    
+  description: >-
+    Net change in housing units arising from new buildings, demolitions, or alterations for NYC City Council Districts since 2010.
+    The NYC Department of City Planning's (DCP) <a
+    href="https://www1.nyc.gov/site/planning/data-maps/open-data/dwn-housing-database.page#housingdevelopmentproject">Housing
+    Database</a> provide the 2010 census count of housing units, the net change in Class A housing units since the census, and the
+    count of units pending completion for commonly used political and statistical boundaries. These tables are aggregated from the
+    DCP Housing Database, which is derived from Department of Buildings (DOB)-approved housing construction and demolition jobs
+    filed or completed in NYC since January 1, 2010. Net housing unit change is calculated as the sum of all three construction
+    job types that add or remove residential units: new buildings, major alterations, and demolitions, and can be used to
+    determine the change in legal housing units across time and space.
+
     {{ bytes_previous_versions_link }}
   display_name: Housing Database by 2024 City Council
   each_row_is_a: city council district
@@ -34,10 +42,10 @@ assembly: []
 custom: {}
 
 destinations:
-- id: socrata_prod
+- id: socrata
   type: socrata
   files:
-  - id: primary_shapefile
+  - id: shapefile
     custom:
       destination_use: dataset_file
   - id: data_dictionary
@@ -48,18 +56,25 @@ destinations:
 - id: bytes
   type: bytes
   files:
-  - id: primary_shapefile
+  - id: shapefile
     custom:
       url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nychdb_council_{{ version }}_shp.zip
+  - id: csv
+    custom:
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nychdb_council_{{ version }}_csv.zip
   - id: data_dictionary
     custom:
       url: https://s-media.nyc.gov/agencies/dcp/assets/files/excel/data-tools/bytes/Housing_Summary_Files_Data_Dictionary.xlsx
 
 files:
 - file:
-    id: primary_shapefile
-    filename: HousingDB_by_2024_CityCouncilDistrict.zip
+    id: shapefile
+    filename: nychdb_council_{{ version }}_shp.zip
     type: shapefile
+- file:
+    id: csv
+    filename: nychdb_council_{{ version }}_csv.zip
+    type: csv
 - file:
     id: data_dictionary
     filename: Housing_Summary_Files_Data_Dictionary.xlsx
