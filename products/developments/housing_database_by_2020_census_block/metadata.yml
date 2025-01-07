@@ -36,6 +36,7 @@ attributes:
   - puma
   - city council district
   - community district
+  date_made_public: "4/7/2021"
 
 assembly: []
 
@@ -100,9 +101,9 @@ columns:
 - id: comp2010ap
   name: comp2010ap
   data_type: integer
-  description: |
-    Net number of class A housing units completed between April 1, 2010
-    and December 31, 2010, accounting for new buildings, alterations, and demolitions
+  description: >-
+    Net number of class A housing units completed between April 1, 2010 and December 31, 2010, accounting for new buildings,
+    alterations, and demolitions
   example: '253.0'
 - id: comp2010
   name: comp2010
@@ -177,9 +178,7 @@ columns:
 - id: comp2024
   name: comp2024
   data_type: integer
-  description: |
-    Net number of class A housing units completed year to date, accounting
-    for new buildings, alterations, and demolitions
+  description: Net number of class A housing units completed year to date, accounting for new buildings, alterations, and demolitions
   example: '74.0'
 - id: cenunits20
   name: cenunits20
