@@ -22,7 +22,7 @@ assembly:
   type: zip
   contents:
   - id: commitments
-    filename: cpdb_planned_commitments_24exec.csv
+    filename: cpdb_planned_commitments_{{ version }}.csv
 
 custom: {}
 
