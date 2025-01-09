@@ -48,7 +48,9 @@ destinations:
     custom:
       destination_use: attachment
   - id: shapefile
-    # TODO: Uncomment me when the time comes
+    # TODO: Uncomment me when this dataset is migrated to the
+    # new four-four. Overrides mirror those to the destination above, which has been migrated already
+
     # dataset_overrides:
     #   overridden_columns:
     #   - id: assembly_district
