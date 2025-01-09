@@ -4,8 +4,9 @@ attributes:
   description: |-
     The Mandatory Inclusionary Housing program was adopted in 2016 to encourage the creation of housing for families at a range of incomes in areas planned for housing growth. When actions of the Commission significantly increase residential density, the City Planning Commission and the City Council will apply one or more options to require affordable housing as part of new residential construction.
 
-    All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>
+    {{ bytes_previous_versions_link }}
   display_name: Mandatory Inclusionary Housing
+  date_made_public: "3/14/2017"
   publishing_frequency: Monthly
   each_row_is_a: A Mandatorily Included House
   tags:
@@ -40,7 +41,7 @@ destinations:
     custom:
       destination_use: dataset_file
   custom:
-    four_four: p6cc-cxkc
+    four_four: m79g-k9r4
 - id: bytes
   type: bytes
   files:
@@ -130,11 +131,15 @@ columns:
   data_type: text
   description: Project Name of the Mandatory Inclusionary Housing (MIH) area.
   example: Jerome Avenue Rezoning
+  custom:
+    api_name: project_nam
 - id: dateadopte
   name: Date Adopted
   data_type: datetime
   description: The date the ULURP text amendment application was adopted.
   example: '2021-11-23T00:00:00.000'
+  custom:
+    api_name: date_adopte
 - id: zr_ulurpno
   name: ZR_ULURP Number
   data_type: text

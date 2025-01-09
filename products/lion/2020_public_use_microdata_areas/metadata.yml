@@ -1,4 +1,4 @@
-id: 2020_public_use_microdata_areas_pumas
+id: 2020_public_use_microdata_areas
 
 attributes:
   description: The 2020 NYC Public Use Microdata Areas (PUMAs) are statistical geographic
@@ -9,6 +9,7 @@ attributes:
     are derived from the US Census Bureau's TIGER project and have been geographically
     modified to fit the New York City base map.
   display_name: 2020 Public Use Microdata Areas (PUMAs)
+  date_made_public: '9/13/2021'
   each_row_is_a: A 2020 Public Use Microdata Area (PUMA)
   tags:
   - puma
@@ -48,6 +49,15 @@ destinations:
     custom:
       url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nypuma2020_metadata.pdf
 
+
+revisions:
+- date: '10/31/23'
+  summary: "Published to NYC Open Data Portal"
+  notes: "Version 23C. Orighinal version 23B was released on 5/8/2023"
+- date: '7/1/24'
+  summary: "Updated field description for PUMA field."
+  notes: " "
+
 files:
 - file:
     id: shapefile
@@ -59,6 +69,7 @@ files:
     is_metadata: true
 - file:
     id: data_dictionary_xlsx
+    type: oti_data_dictionary
     filename: puma2020_data_dictionary.xlsx
     is_metadata: true
 

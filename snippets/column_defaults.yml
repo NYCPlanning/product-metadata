@@ -5,6 +5,7 @@
 - id: the_geom
   name: the_geom
   data_type: geometry
+  description: ''
 - id: shape_length
   name: Shape_Length
   data_type: decimal

@@ -25,9 +25,6 @@ destinations:
   - id: shapefile
     custom:
       destination_use: dataset_file
-  - id: oti_data_dictionary
-    custom:
-      destination_use: attachment
   custom:
     four_four: qs4p-vs2w
     is_unparsed_dataset: true

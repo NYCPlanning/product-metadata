@@ -12,6 +12,7 @@ datasets:
   - 2020_census_tracts
   - 2020_community_district_tabulation_areas
   - 2020_neighborhood_tabulation_areas
+  - 2020_public_use_microdata_areas
   - atomic_polygons
   - borough_boundaries
   - city_council_districts

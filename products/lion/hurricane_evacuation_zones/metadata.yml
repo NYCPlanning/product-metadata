@@ -40,7 +40,7 @@ destinations:
   - id: shapefile
     custom:
       url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nyhez_{{ version }}.zip
-    id: nyhez_metadata.pdf
+  - id: nyhez_metadata.pdf
     custom:
       url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nyhez_metadata.pdf
 
@@ -72,6 +72,8 @@ columns:
   data_type: text
   description: Hurricane evacuation zone.
   example: None
+  custom:
+    api_name: hurricane_
 - id: the_geom
   name: the_geom
   data_type: geometry
@@ -82,6 +84,8 @@ columns:
   data_type: decimal
   description: Length of feature in internal units.
   example: None
+  custom:
+    api_name: shape_leng
 - id: shape_area
   name: Shape_Area
   data_type: decimal
