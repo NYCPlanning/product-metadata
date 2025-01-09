@@ -36,9 +36,6 @@ destinations:
       - id: plannedcommit_ccexempt
         custom:
           api_name: ccexempt
-      - id: plannedcommit_ccnonexempt
-        custom:
-          api_name: ccnonexempt
       - id: plannedcommit_citycost
         custom:
           api_name: totalcityplannedcommit
@@ -95,13 +92,13 @@ destinations:
   files:
   - id: csv_package
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/cpdb_24exec.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/cpdb_{{ version }}.zip
   - id: projects_points
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/cpdb_projects_pts_24exec.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/cpdb_projects_pts_{{ version }}.zip
   - id: projects_polygons
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/cpdb_projects_poly_24exec.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/cpdb_projects_poly_{{ version }}.zip
 
 files:
 - file:
@@ -350,7 +347,7 @@ columns:
 - id: maprojid
   name: maprojid
   data_type: text
-  description: Unique identifier that defines a discrete project.The maprojid is a
+  description: Unique identifier that defines a discrete project. The maprojid is a
     concatenation of magency and projectid and it is the primary key.
   example: 801HLDNSTJHN
 - id: magencyacro
@@ -438,6 +435,12 @@ columns:
   data_type: number
   description: Sum of Non-City funding across all commitments associated with the
     project.
+  example: None
+- id: plannedcommit_total
+  name: plannedcommit_total
+  data_type: number
+  description: Sum of City Cost and Non-City Cost, which reports the total planned
+    commitments for the project allocated in the Capital Commitment Plan.
   example: None
 - id: plannedcommit_total
   name: plannedcommit_total
