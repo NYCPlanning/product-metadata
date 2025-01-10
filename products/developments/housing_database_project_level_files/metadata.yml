@@ -19,7 +19,7 @@ attributes:
 
     {{ bytes_previous_versions_link }}
   display_name: Housing Database Project Level Files
-  each_row_is_a: DOB-approved housing construction or demolition job
+  each_row_is_a: unique job record at the Department of Buildings to alter or demolish an existing building or construct a new one.
   tags:
   - housing
   - house
@@ -41,7 +41,7 @@ attributes:
   - puma
   - city council district
   - community district
-  date_made_public: '4/7/2021'
+  date_made_public: '5/21/2024'
   geocoded: true
   contains_address: true
 
@@ -61,6 +61,19 @@ destinations:
       destination_use: attachment
   custom:
     four_four: uxt4-ugwr
+- id: socrata_inactive_included
+  type: socrata
+  #overrides:
+  #  display_name: Housing Database Project Level Files - Inactive Included
+  files:
+  - id: shapefile_inactive_included
+    custom:
+      destination_use: dataset_file
+  - id: data_dictionary
+    custom:
+      destination_use: attachment
+  custom:
+    four_four: br6q-ssj3
 - id: bytes
   type: bytes
   files:
@@ -73,7 +86,7 @@ destinations:
   - id: data_dictionary
     custom:
       url: https://s-media.nyc.gov/agencies/dcp/assets/files/excel/data-tools/bytes/Housing_Database_Data_Dictionary.xlsx
-- id: bytes_inactive_included
+- id: bytes # TODO - multiple bytes sources for socrata dist not supported
   type: bytes
   files:
   - id: shapefile_inactive_included
@@ -113,6 +126,7 @@ columns:
 - id: the_geom
   name: the_geom
   data_type: geometry
+  description: Geometry field used for mapping.
   example: '{''coordinates'': [1006276.9556583731, 142173.22203716455], ''type'': ''Point''}'
 - id: job_number
   name: Job_Number
@@ -126,7 +140,13 @@ columns:
 - id: job_type
   name: Job_Type
   data_type: text
-  description: DOB's type category for the job application.
+  description: >-
+    DOB's type category for the job application. More information is available here. The following types are included in this
+    database: New Building (NB): an application to build a new structure. “NB” cannot be selected if any existing building
+    elements are to remain—for example a part of an old foundation, a portion of a façade that will be incorporated into the
+    construction, etc. Alteration Type I (A1): a major alteration that will change the use, egress, or occupancy of the building.
+    Demolition (DM): an application to fully or partially demolish an existing building. Note that many demolition permits are
+    only for partial demolitions and for garages (these are also captured).
   example: Alteration
   values:
   - value: Alteration
@@ -249,8 +269,8 @@ columns:
   description: Number of Class B units (excluding hotel units) proposed in the job application after the proposed work has been
     completed, as determined through DCP research.
   example: '0'
-- id: unitsco
-  name: UnitsCO
+- id: units_co
+  name: Units_CO
   data_type: decimal
   description: Number of dwelling units provided on the temporary or final certificates of occupancy. This unit count may include
     Class A units in addition to Class B units and hotel units.
@@ -304,6 +324,12 @@ columns:
     as the proposed occupancy type of the building.  Note that the applicant may only choose one occupancy code, even in a
     building containing multiple uses, so this code is only able to describe one of many possible uses.
   example: 'Residential: 1-2 Family Houses (R-3)'
+- id: bldg_class
+  name: Bldg_Class
+  data_type: text
+  description: Building Class code. A code used by Department of Finance (DOF) and Department of Buildings (DOB) describing the
+    major use of a structure.
+  example: A1
 - id: job_desc
   name: Job_Desc
   data_type: text
@@ -312,18 +338,32 @@ columns:
 - id: datefiled
   name: DateFiled
   data_type: datetime
+  description: >-
+    Date of job status A (pre-filing application). This is the first step in the process for all job applications. The job
+    application # is assigned at this status. This occurs when the applicant submits any part of the application (even a single
+    form), in person or electronically.
   example: '2007-12-18T00:00:00.000'
 - id: datepermit
-  name: Datepermit
+  name: DatePermit
   data_type: datetime
+  description: >-
+    Date of job status Q (first partial permit issuance). This is when construction work may begin. This field should be used for
+    identifying the number of permits approved in a given year.
   example: '2008-07-29T00:00:00.000'
 - id: datelstupd
   name: DateLstUpd
   data_type: datetime
+  description: The date of the last update to the DOB record for the job filing.
   example: '2023-12-28T00:00:00.000'
 - id: datecomplt
-  name: Datecomplt
+  name: DateComplt
   data_type: datetime
+  description: >-
+    DCP's best estimate of completion date for all jobs. For new buildings and alterations, date complete is equal to the date of
+    the earliest certificate of occupancy. For demolitions, date complete is equal to status Q (permit issued), since demolitions
+    do not receive certificates of occupancy. Blank indicates no certificate of occupancy has been issued. Typically, a building
+    can be considered complete at this stage. Large buildings with many units may have units receiving certificates of occupancy
+    over a longer period of time.
   example: '2013-10-23T00:00:00.000'
 - id: zoningdst1
   name: ZoningDst1
@@ -345,8 +385,8 @@ columns:
   name: SpeclDst1
   data_type: text
   description: >
-    The primary special zoning district of the tax lot per the applicant at time of application.  Other zoning designations may
-    appear in this field, such as industrial business zones (IBZ), mandatory inclusionary housing (MIH) areas,  or other zoning
+    The primary special zoning district of the tax lot per the applicant at time of application. Other zoning designations may
+    appear in this field, such as industrial business zones (IBZ), mandatory inclusionary housing (MIH) areas, or other zoning
     designations. This field is provided by the applicant, and is likely inconsistent.
   example: SRD
 - id: specldst2
@@ -387,34 +427,50 @@ columns:
   description: This indicates whether the property is government owned, the ownership structure, and non-profit status, as reported
     by the applicant and recoded by DCP.
   example: 'Private For-Profit: Individual'
-- id: cenblock10
-  name: CenBlock10
+- id: cenblock20
+  name: CenBlock20
   data_type: text
-  description: 2010 Census Block FIPS code.
+  description: 2020 Census Block FIPS code.
   example: '360471070011011'
-- id: bctcb2010
-  name: BCTCB2010
+- id: centract20
+  name: CenTract20
   data_type: text
-  description: The Borough - 2010 Census Tract - Census Block code.
+  description: 2020 Census Tract FIPS code.
+  example: '36081091603'
+- id: bctcb2020
+  name: BCTCB2020
+  data_type: text
+  description: The Borough - 2020 Census Tract - Census Block code.
   example: '31070011011'
-- id: bct2010
-  name: BCT2010
+- id: bct2020
+  name: BCT2020
   data_type: text
-  description: The Borough - 2010 Census Tract code.
+  description: The Borough - 2020 Census Tract code.
   example: '4091603'
-- id: nta2010
-  name: NTA2010
+- id: nta2020
+  name: NTA2020
   data_type: text
-  description: 2010 Neighborhood Tabulation Area (NTA) code.
+  description: 2020 Neighborhood Tabulation Area (NTA) code.
   example: SI0304
-- id: ntaname10
-  name: NTAName10
+- id: ntaname20
+  name: NTAName20
   data_type: text
-  description: 2010 Neighborhood Tabulation Area (NTA) descriptive name.
+  description: 2020 Neighborhood Tabulation Area (NTA) descriptive name.
   example: Annadale-Huguenot-Prince's Bay-Woodrow
+- id: cdta2020
+  name: CDTA2020
+  data_type: text
+  description: 2020 Community District Tabulation Area (NTA) code.
+  example: SI03
+- id: cdtaname20
+  name: CDTAName20
+  data_type: text
+  description: 2020 Community District Tabulation Area (NTA) descriptive name.
+  example: SI03 South Shore (CD 3 Approximation)
 - id: commntydst
   name: CommntyDst
   data_type: text
+  description: NYC Community District code.
   example: '503'
 - id: councildst
   name: CouncilDst
@@ -523,58 +579,3 @@ columns:
   data_type: text
   description: Version of the Developments Database.
   example: 23Q4
-- id: location
-  name: Location
-  data_type: geometry
-  example: '{''coordinates'': [-73.920731, 40.556881], ''type'': ''Point''}'
-- id: bldg_class
-  name: Bldg_Class
-  data_type: text
-  description: Building Class code. A code used by Department of Finance (DOF) and Department of Buildings (DOB) describing the
-    major use of a structure.
-  example: A1
-- id: centract10
-  name: CenTract10
-  data_type: text
-  description: 2010 Census Tract FIPS code.
-  example: '36081091603'
-- id: cenblock20
-  name: CenBlock20
-  data_type: text
-  description: 2020 Census Block FIPS code.
-  example: '360471070011011'
-- id: centract20
-  name: CenTract20
-  data_type: text
-  description: 2020 Census Tract FIPS code.
-  example: '36081091603'
-- id: bctcb2020
-  name: BCTCB2020
-  data_type: text
-  description: The Borough - 2020 Census Tract - Census Block code.
-  example: '31070011011'
-- id: bct2020
-  name: BCT2020
-  data_type: text
-  description: The Borough - 2020 Census Tract code.
-  example: '4091603'
-- id: nta2020
-  name: NTA2020
-  data_type: text
-  description: 2020 Neighborhood Tabulation Area (NTA) code.
-  example: SI0304
-- id: ntaname20
-  name: NTAName20
-  data_type: text
-  description: 2020 Neighborhood Tabulation Area (NTA) descriptive name.
-  example: Annadale-Huguenot-Prince's Bay-Woodrow
-- id: cdta2020
-  name: CDTA2020
-  data_type: text
-  description: 2020 Community District Tabulation Area (NTA) code.
-  example: SI03
-- id: cdtaname20
-  name: CDTAName20
-  data_type: text
-  description: 2020 Community District Tabulation Area (NTA) descriptive name.
-  example: SI03 South Shore (CD 3 Approximation)

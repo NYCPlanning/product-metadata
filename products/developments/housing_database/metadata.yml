@@ -51,6 +51,7 @@ attributes:
   - existing units
   - proposed units
   - construction
+  date_made_public: "4/7/2021"
 
 assembly: []
 
@@ -65,11 +66,46 @@ destinations:
       destination_use: attachment
   custom:
     four_four: 6umk-irkx
+- id: bytes
+  type: bytes
+  files:
+  - id: csv
+    custom:
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nychousingdb_{{ version }}_csv.zip
+  - id: gdb
+    custom:
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nychousingdb_{{ version }}_gdb.zip
+  - id: shapefile
+    custom:
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nychousingdb_{{ version }}_shp.zip
+  - id: data_dictionary
+    custom:
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/excel/data-tools/bytes/Housing_Database_Data_Dictionary.xlsx
+  - id: data_dictionary_summary_files
+    custom:
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/excel/data-tools/bytes/Housing_Summary_Files_Data_Dictionary.xlsx
 
 files:
 - file:
+    id: csv
+    filename: nychousingdb_{{ version }}_csv.zip
+    type: csv
+- file:
+    id: shapefile
+    filename: nychousingdb_{{ version }}_shp.zip
+    type: shapefile
+- file:
+    id: gdb
+    filename: nychousingdb_{{ version }}_gdb.zip
+    type: fgdb
+- file:
     id: data_dictionary
     filename: Housing_Database_Data_Dictionary.xlsx
+    is_metadata: true
+    type: None
+- file:
+    id: data_dictionary_summary_files
+    filename: Housing_Summary_Files_Data_Dictionary.xlsx
     is_metadata: true
     type: None
 
