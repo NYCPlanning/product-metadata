@@ -31,9 +31,9 @@ destinations:
       - id: shapefile
         custom:
           destination_use: dataset_file
-      - id: oti_data_dictionary
-        custom:
-          destination_use: attachment
+      # - id: oti_data_dictionary
+      #   custom:
+      #     destination_use: attachment
     custom:
       four_four: aaxv-7bvq
   - id: bytes
