@@ -57,9 +57,9 @@ destinations:
       - id: areas_data_dictionary_pdf
         custom:
           destination_use: attachment
-      - id: oti_data_dictionary_areas
-        custom:
-          destination_use: attachment
+      # - id: oti_data_dictionary_areas
+      #   custom:
+      #     destination_use: attachment
     custom:
       four_four: nzui-5vt3
 
@@ -84,9 +84,9 @@ destinations:
       - id: lines_data_dictionary_pdf
         custom:
           destination_use: attachment
-      - id: oti_data_dictionary_lines
-        custom:
-          destination_use: attachment
+      # - id: oti_data_dictionary_lines
+      #   custom:
+      #     destination_use: attachment
     custom:
       four_four: i3nt-3kau
 
@@ -111,9 +111,9 @@ destinations:
       - id: points_data_dictionary_pdf
         custom:
           destination_use: attachment
-      - id: oti_data_dictionary_points
-        custom:
-          destination_use: attachment
+      # - id: oti_data_dictionary_points
+      #   custom:
+      #     destination_use: attachment
     custom:
       four_four: hsi9-e2ec
 

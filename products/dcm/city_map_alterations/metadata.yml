@@ -42,9 +42,9 @@ destinations:
       - id: data_dictionary_pdf
         custom:
           destination_use: attachment
-      - id: oti_data_dictionary
-        custom:
-          destination_use: attachment
+      # - id: oti_data_dictionary
+      #   custom:
+      #     destination_use: attachment
     custom:
       four_four: 5iv5-v7sg
   - id: bytes
