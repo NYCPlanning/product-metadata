@@ -57,9 +57,6 @@ destinations:
 - id: bytes
   type: bytes
   files:
-  - id: shapefile
-    custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nycgiszoningfeatures_{{ version }}shp.zip
   - id: fgdb
     custom:
       url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nycgiszoningfeatures_{{ version }}fgdb.zip

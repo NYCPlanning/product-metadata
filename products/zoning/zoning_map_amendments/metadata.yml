@@ -17,7 +17,15 @@ attributes:
   - NYC
   - Department of City Planning
   - DCP
-assembly: []
+
+assembly:
+- id: dcm_multilayer
+  filename: nycgiszoningfeatures_shp.zip
+  type: multilayer_shapefile
+  contents:
+  - id: shapefile
+    custom:
+      layer_name: nyzma
 
 custom: {}
 
@@ -40,6 +48,9 @@ destinations:
 - id: bytes
   type: bytes
   files:
+  - id: dcm_multilayer
+    custom:
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nycgiszoningfeatures_{{ version }}shp.zip
   - id: metadata_pdf
     custom:
       url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nyzma_metadata.pdf
