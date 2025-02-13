@@ -11,7 +11,6 @@ attributes:
     Street Map application: https://streets.planning.nyc.gov/"
   display_name: Digital City Map (DCM) - Arterials and Major Streets
   each_row_is_a: Designated rights-of-way
-  publishing_frequency: Monthly
   publishing_purpose:
     "Designated rights-of-way shown on the City Planning Commission
     Master Plan of Arterial Highways and Major Streets referenced in Appendix H of

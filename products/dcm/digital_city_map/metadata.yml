@@ -15,7 +15,6 @@ attributes:
     on the Department of City Planning's Street Map application: https:/streets.planning.nyc.gov/"
   display_name: Digital City Map (DCM)
   each_row_is_a: City Feature
-  publishing_frequency: Monthly
   publishing_purpose:
     "Citywide streets and other features (pierhead, bulkhead, etc)
     shown on the official City Map of New York City. Dataset last updated: March 31,
