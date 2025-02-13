@@ -84,7 +84,7 @@ destinations:
     files:
       - id: fgdb
         custom:
-          url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/dcm_{{ version }}fgdb.zip
+          url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/dcm_{{ version }}fdgb.zip
       - id: dcm_street_name_changes_areas_pdf
         custom:
           url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/dcm_street_name_changes_areas.pdf
