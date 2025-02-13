@@ -111,7 +111,7 @@ files:
   - file:
       id: fgdb
       filename: fgdb.zip
-      type: shapefile
+      type: fgdb
   - file:
       id: dcm_arterials_major_streets_pdf
       filename: dcm_arterials_major_streets.pdf
