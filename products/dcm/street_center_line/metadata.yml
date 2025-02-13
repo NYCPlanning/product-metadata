@@ -12,7 +12,6 @@ attributes:
     https://streets.planning.nyc.gov/"
   display_name: Digital City Map (DCM) - Street Center Line
   each_row_is_a: Street Center Line
-  publishing_frequency: Monthly
   publishing_purpose:
     "Citywide street center-line features representing official
     street names and widths shown on the Official City Map of New York City. Dataset

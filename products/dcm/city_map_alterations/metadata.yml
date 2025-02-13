@@ -9,7 +9,6 @@ attributes:
     https://streets.planning.nyc.gov/'
   display_name: Digital City Map (DCM) - City Map Alterations
   each_row_is_a: City Map Alteration
-  publishing_frequency: Monthly
   publishing_purpose:
     "General area where alterations to the Official City Map of
     New York City are proposed, adopted, or adopted and filed. Dataset last updated:

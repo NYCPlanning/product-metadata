@@ -8,7 +8,6 @@ attributes:
     Department of City Planning's Street Map application: https://streets.planning.nyc.gov/"
   display_name: Digital City Map (DCM) - Street Name Changes (Areas)
   each_row_is_a: Street Name Change
-  publishing_frequency: Monthly
   publishing_purpose:
     "Local Law name changes to public places (areas). Dataset last
     updated: March 31, 2024."
