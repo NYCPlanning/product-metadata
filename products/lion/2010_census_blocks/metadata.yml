@@ -75,7 +75,7 @@ files:
       description: |-
         2010 Census Blocks from the US Census for New York City. These boundary files are derived from the US Census Bureau's TIGER data products and have been geographically modified to fit the New York City basemap.
 
-        All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE - Archive.</a>
+        {{ bytes_previous_versions_link }}
       display_name: 2010 Census Blocks
 - file:
     id: shapefile_water_included
@@ -86,7 +86,7 @@ files:
       description: |-
         2010 Census Blocks (water areas included) from the US Census for New York City. These boundary files are derived from the US Census Bureau's TIGER data products and have been geographically modified to fit the New York City basemap.
 
-        All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE - Archive.</a>
+        {{ bytes_previous_versions_link }}
       display_name: 2010 Census Blocks (water areas included)
 - file:
     id: nycb2010_metadata.pdf
