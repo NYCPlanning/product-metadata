@@ -27,7 +27,14 @@ attributes:
     - Toll Crossing
     - Archive
 
-assembly: []
+assembly:
+- id: dcm_multilayer
+  filename: dcm_{{ version }}shp.zip
+  type: multilayer_shapefile
+  contents:
+  - id: shapefile
+    custom:
+      layer_name: DCM_ArterialsMajorStreets
 
 custom: {}
 
@@ -37,6 +44,13 @@ destinations:
     tags: [socrata_unpublished]
     files:
       - id: shapefile
+        dataset_overrides:
+          omitted_columns:
+            - shape_leng
+          overridden_columns:
+          - id: geometry
+            custom:
+              api_name: the_geom
         custom:
           destination_use: dataset_file
       - id: data_dictionary_pdf
@@ -50,6 +64,9 @@ destinations:
   - id: bytes
     type: bytes
     files:
+      - id: dcm_multilayer
+        custom:
+          url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/dcm_{{ version }}shp.zip
       - id: data_dictionary_pdf
         custom:
           url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/dcm_arterials_major_streets.pdf
@@ -96,7 +113,7 @@ columns:
       - value: "5"
         description: Staten Island
   - id: route_name
-    name: Route Name
+    name: Route_Name
     data_type: text
     description: Official name of the route shown on the City Map.
   - id: route_type
@@ -112,15 +129,22 @@ columns:
     description: Types of routes and any other additional status from the Master Plan.
     values:
       - value: Intersection requiring special treatment
-      - value: Major Streets
+      - value: Major Street
       - value: Major street to be improved
       - value: Parkway
       - value: Principal Route
+      - value: Toll Crossing
       - value: Toll Crossing Under Authorities
-  - id: the_geom
-    name: the_geom
+      - value: Parkway/Toll Crossing
+      - value: Principal Route/Toll Crossing
+      - value: None
+  - id: geometry
+    name: geometry
     data_type: geometry
     description: Feature geometry.
+  - id: shape_leng
+    name: Shape_Leng
+    data_type: decimal
   - id: route_stat
     name: Route_Stat
     data_type: text
