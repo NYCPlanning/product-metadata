@@ -34,7 +34,14 @@ attributes:
     - New York City
     - NYC
 
-assembly: []
+assembly:
+- id: dcm_multilayer
+  filename: dcm_{{ version }}shp.zip
+  type: multilayer_shapefile
+  contents:
+  - id: shapefile
+    custom:
+      layer_name: DCM_StreetCenterLine
 
 custom: {}
 
@@ -44,6 +51,13 @@ destinations:
     type: socrata
     files:
       - id: shapefile
+        dataset_overrides:
+          omitted_columns:
+            - shape_leng
+          overridden_columns:
+          - id: geometry
+            custom:
+              api_name: the_geom
         custom:
           destination_use: dataset_file
       - id: data_dictionary_pdf
@@ -57,6 +71,9 @@ destinations:
   - id: bytes
     type: bytes
     files:
+      - id: dcm_multilayer
+        custom:
+          url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/dcm_{{ version }}shp.zip
       - id: data_dictionary_pdf
         custom:
           url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/dcm_street_centerline.pdf
@@ -127,10 +144,11 @@ columns:
       Route type shown on the Master Plan of Arterial Highways and Major
       Streets referenced in Appendix H of NYC Zoning Resolution.
     values:
-      - value: Arterial
+      - value: Artrl
       - value: Former_ROW
-      - value: General_use
-      - value: Major_street
+      - value: Gen_use
+      - value: Ltd_use
+      - value: Mjr_st
       - value: Other
   - id: streetwidt
     name: Streetwidt
@@ -145,8 +163,9 @@ columns:
       and Zoning Map. New unmapped streets are not recorded and displayed on the City
       Map or Zoning Map.
     values:
-      - value: "yes"
-        description: record street
+      - value: N
+      - value: None
+      - value: Y
   - id: roadwaytyp
     name: RoadwayTyp
     data_type: text
@@ -161,8 +180,12 @@ columns:
       a street that is officially mapped but is not physically built and only appears
       on paper on the Official City Map.
     values:
+      - value: N
+      - value: "No"
+      - value: None
+      - value: Y
       - value: "yes"
-        description: paper street
+      - value: "Yes"
   - id: stair_st
     name: Stair_ST
     data_type: text
@@ -170,8 +193,9 @@ columns:
       Flag that indicates if feature is a stair street. A stair street is
       a street segment that contains steps or stairs to accommodate foot traffic.
     values:
-      - value: "yes"
-        description: stair street
+      - value: N
+      - value: None
+      - value: Y
   - id: cco_st
     name: CCO_ST
     data_type: text
@@ -179,8 +203,11 @@ columns:
       Non city-owned street made eligible for public use and capital improvements
       through a Corporation Councel Opinion (CCO) of Dedication.
     values:
-      - value: "yes"
-        description: CCO street
+      - value: N
+      - value: "No"
+      - value: None
+      - value: Y
+      - value: "n/a"
   - id: marg_wharf
     name: Marg_Wharf
     data_type: text
@@ -189,13 +216,18 @@ columns:
       of Small Business Services (SBS) and displayed as "Marginal Street, Wharf or Place".
       It is not the same as an official street but is shown on the City Map.
     values:
-      - value: "yes"
-        description: marginal street, wharf or place
+      - value: N
+      - value: "No"
+      - value: None
+      - value: Y
   - id: edit_date
     name: Edit_Date
     data_type: text
     description: The date the record was last edited.
-  - id: the_geom
-    name: the_geom
+  - id: geometry
+    name: geometry
     data_type: geometry
     description: Feature geometry.
+  - id: shape_leng
+    name: Shape_Leng
+    data_type: decimal
