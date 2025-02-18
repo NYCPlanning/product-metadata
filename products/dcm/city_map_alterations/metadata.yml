@@ -26,7 +26,14 @@ attributes:
     - DCP
     - nymi
 
-assembly: []
+assembly:
+- id: dcm_multilayer
+  filename: dcm_{{ version }}shp.zip
+  type: multilayer_shapefile
+  contents:
+  - id: shapefile
+    custom:
+      layer_name: DCM_CityMapAlterations
 
 custom: {}
 
@@ -36,6 +43,14 @@ destinations:
     tags: [socrata_unpublished]
     files:
       - id: shapefile
+        dataset_overrides:
+          omitted_columns:
+            - shape_leng
+            - shape_area
+          overridden_columns:
+          - id: geometry
+            custom:
+              api_name: the_geom
         custom:
           destination_use: dataset_file
       - id: data_dictionary_pdf
@@ -49,6 +64,9 @@ destinations:
   - id: bytes
     type: bytes
     files:
+      - id: dcm_multilayer
+        custom:
+          url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/dcm_{{ version }}shp.zip
       - id: data_dictionary_pdf
         custom:
           url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/dcm_city_map_alterations.pdf
@@ -141,29 +159,69 @@ columns:
       The primary map change type associated with application, e.g., a street
       change, park change or grade change.
     values:
-      - value: Drainage
+      - value: Additional Lands
+      - value: Bridge
+      - value: Change in street system
+      - value: City 
+      - value: City BHL
+      - value: City Map change
+      - value: City Map change to...
+      - value: D&C
+      - value: D&C Widening
+      - value: D&C/Limiting Plane
+      - value: D&C/St/Grade/Volume
+      - value: Dedication
+      - value: Drainage Plan
       - value: Drainage/Grades
       - value: Easement
+      - value: Elim. lines and grades
+      - value: grades
       - value: Grades
-      - value: Grades/Multiple
-      - value: Multiple
+      - value: Layout Map
+      - value: Line and 
+      - value: Line and grades
+      - value: Lines and grades
+      - value: Lines/grades
+      - value: Map change to...
+      - value: None
       - value: Other
       - value: Park
-      - value: Park/Easement
+      - value: PHL/BHL
+      - value: Plaza
       - value: Public Place
+      - value: Sewer
+      - value: Sewer Easement
+      - value: St/Multiple
+      - value: St/Pk
+      - value: St/Pk/Bridge/Easements
+      - value: St/Pk/Public Place
+      - value: Street
+      - value: Street line
+      - value: Street Line
+      - value: Street Line/Grades
+      - value: Street Line/Sewer easemnt
+      - value: Street lines
+      - value: Street lines/sewer
+      - value: Street system
       - value: Street Volume
-      - value: Streets
+      - value: Street Widening
       - value: Street/Canal
-      - value: Streets/Drainage/Grades
-      - value: Streets/Easement
-      - value: Streets/Grades
-      - value: Street/Grades/Easement
-      - value: Streets/Grades/Park
-      - value: Streets/Multiple
-      - value: Streets/Park
-      - value: Streets/Park/Public Place
-      - value: Sts/Park/Bridge/Easements
+      - value: Street/Draft Damage Map
+      - value: Street/Drainage/Grade
+      - value: Street/Easement
+      - value: Street/Grade
+      - value: Street/Grade/Park
+      - value: Street/Grades
+      - value: Street/park
+      - value: Street/Public Place
+      - value: Street/Sewer
+      - value: Streets
+      - value: Streets/sewer
+      - value: Subdivision
+      - value: Treatment
       - value: Unknown
+      - value: Various
+      - value: Waterfront
   - id: altmappdf
     name: ALTMAPPDF
     data_type: text
@@ -189,11 +247,15 @@ columns:
     data_type: text
     description: Source of the map alteration.
     values:
+      - value: AE
       - value: Alteration map
+      - value: BP Topo
       - value: Collected by TRD Intern Summer 2005
-      - value: Consultant CAD data convex hulls
-      - value: NYC Law Department
+      - value: Consultant CAD data, convex hulls
+      - value: GM
+      - value: Sketch map request
       - value: Sketch Map Request
+      - value: Trd_edits
   - id: map_series
     name: Map_Series
     data_type: text
@@ -205,7 +267,13 @@ columns:
   - id: map_cabine
     name: Map_Cabine
     data_type: text
-  - id: the_geom
-    name: the_geom
+  - id: geometry
+    name: geometry
     data_type: geometry
     description: Feature geometry.
+  - id: shape_leng
+    name: Shape_Leng
+    data_type: decimal
+  - id: shape_area
+    name: Shape_Area
+    data_type: decimal
