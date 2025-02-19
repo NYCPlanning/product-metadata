@@ -1,8 +1,8 @@
 id: digital_city_map
 
 attributes:
-  description:
-    "Citywide streets and other features (pierhead, bulkhead, etc) shown
+  description: |-
+    Citywide streets and other features (pierhead, bulkhead, etc) shown
     on the official City Map of New York City. Street lines unmapped streets that
     are NOT found on the City Map are included in this dataset for context and informational
     purposes only. An exhaustive record of mapped city streets, parks and public places,
@@ -11,11 +11,9 @@ attributes:
     and other reference data including: LION, Digital Tax Map (DTM), United States
     Army Corps of Engineers (USACE), pierhead and bulkhead line maps, aerial images
     and Google Streetview. Record streets and unmapped streets are included in this
-    dataset for context and informational purposes only. This dataset is featured
-    on the Department of City Planning's Street Map application: https:/streets.planning.nyc.gov/"
+    dataset for context and informational purposes only. {{ streets_map_app_link }}
   display_name: Digital City Map (DCM)
   each_row_is_a: City Feature
-  publishing_frequency: Monthly
   publishing_purpose:
     "Citywide streets and other features (pierhead, bulkhead, etc)
     shown on the official City Map of New York City. Dataset last updated: March 31,
@@ -40,7 +38,14 @@ attributes:
     - New York City
     - NYC
 
-assembly: []
+assembly:
+- id: dcm_multilayer
+  filename: dcm_{{ version }}shp.zip
+  type: multilayer_shapefile
+  contents:
+  - id: shapefile
+    custom:
+      layer_name: DCM
 
 custom: {}
 
@@ -50,6 +55,13 @@ destinations:
     type: socrata
     files:
       - id: shapefile
+        dataset_overrides:
+          omitted_columns:
+            - shape_leng
+          overridden_columns:
+          - id: geometry
+            custom:
+              api_name: the_geom
         custom:
           destination_use: dataset_file
       - id: data_dictionary_pdf
@@ -63,6 +75,9 @@ destinations:
   - id: bytes
     type: bytes
     files:
+      - id: dcm_multilayer
+        custom:
+          url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/dcm_{{ version }}shp.zip
       - id: data_dictionary_pdf
         custom:
           url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/dcm.pdf
@@ -95,6 +110,8 @@ columns:
       - value: Manhattan
       - value: Queens
       - value: Staten Island
+      - value: Other
+      - value: None
   - id: feat_type
     name: Feat_Type
     data_type: text
@@ -116,6 +133,7 @@ columns:
       - value: Underpass_or_tunnel
       - value: Unmapped_St
       - value: Water_edge
+      - value: None
   - id: record_st
     name: Record_ST
     data_type: text
@@ -130,7 +148,10 @@ columns:
     name: Edit_Date
     data_type: text
     description: The date the record was last edited.
-  - id: the_geom
-    name: the_geom
+  - id: geometry
+    name: geometry
     data_type: geometry
     description: Feature geometry.
+  - id: shape_leng
+    name: Shape_Leng
+    data_type: decimal
