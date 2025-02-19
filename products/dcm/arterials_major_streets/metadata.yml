@@ -1,14 +1,13 @@
 id: arterials_major_streets
 
 attributes:
-  description:
-    "Designated rights-of-way shown on the City Planning Commission Master
+  description: |-
+    Designated rights-of-way shown on the City Planning Commission Master
     Plan of Arterial Highways and Major Streets referenced in Appendix H of the NYC
     Zoning Resolution. Single line features representing rights-of-way which appear
     on the City Map of New York City and are also classified as Principal Routes,
     Parkways and Toll Crossings on the adopted Master Plan of Arterial Highways and
-    Major Streets. This dataset is featured on the Department of City Planning's
-    Street Map application: https://streets.planning.nyc.gov/"
+    Major Streets. {{ streets_map_app_link }}
   display_name: Digital City Map (DCM) - Arterials and Major Streets
   each_row_is_a: Designated rights-of-way
   publishing_purpose:

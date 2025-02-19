@@ -1,8 +1,8 @@
 id: digital_city_map
 
 attributes:
-  description:
-    "Citywide streets and other features (pierhead, bulkhead, etc) shown
+  description: |-
+    Citywide streets and other features (pierhead, bulkhead, etc) shown
     on the official City Map of New York City. Street lines unmapped streets that
     are NOT found on the City Map are included in this dataset for context and informational
     purposes only. An exhaustive record of mapped city streets, parks and public places,
@@ -11,8 +11,7 @@ attributes:
     and other reference data including: LION, Digital Tax Map (DTM), United States
     Army Corps of Engineers (USACE), pierhead and bulkhead line maps, aerial images
     and Google Streetview. Record streets and unmapped streets are included in this
-    dataset for context and informational purposes only. This dataset is featured
-    on the Department of City Planning's Street Map application: https:/streets.planning.nyc.gov/"
+    dataset for context and informational purposes only. {{ streets_map_app_link }}
   display_name: Digital City Map (DCM)
   each_row_is_a: City Feature
   publishing_purpose:

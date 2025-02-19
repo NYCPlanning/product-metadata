@@ -1,15 +1,14 @@
 id: street_center_line
 
 attributes:
-  description:
-    "Citywide street center-line features representing official street
+  description: |-
+    Citywide street center-line features representing official street
     names and widths shown on the Official City Map of New York City. Features include
     paper streets gathered from Borough Final Section maps (except Staten Island).
     Alteration Maps, Zoning Maps and street name index cards on archive in the Technical
     Review Division at the Department of City Planning. Record streets and unmapped
     streets are included in this dataset for context and informational purposes only.
-    This dataset is featured on the Department of City Planning's Street Map application:
-    https://streets.planning.nyc.gov/"
+    {{ streets_map_app_link }}
   display_name: Digital City Map (DCM) - Street Center Line
   each_row_is_a: Street Center Line
   publishing_purpose:
