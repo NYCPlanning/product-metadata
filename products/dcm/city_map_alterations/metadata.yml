@@ -1,12 +1,10 @@
 id: city_map_alterations
 
 attributes:
-  description:
-    'Outlines for all alterations to the City Map including pending changes.
+  description: |-
+    Outlines for all alterations to the City Map including pending changes.
     The final approval of a City Map alteration is considered "filed" on the date
-    indicated on the Alteration map which becomes effective the following day. This
-    dataset is featured on the Department of City Planning''s Street Map application:
-    https://streets.planning.nyc.gov/'
+    indicated on the Alteration map which becomes effective the following day. {{ streets_map_app_link }}
   display_name: Digital City Map (DCM) - City Map Alterations
   each_row_is_a: City Map Alteration
   publishing_purpose:

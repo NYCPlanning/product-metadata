@@ -1,11 +1,10 @@
 id: street_name_changes
 
 attributes:
-  description:
-    "Local Law name changes to public places (areas). Polygon (area) features
+  description: |-
+    Local Law name changes to public places (areas). Polygon (area) features
     of official street and honorary name changes established by City Council Local
-    Law. Years included are from 1998 to current. This dataset is featured on the
-    Department of City Planning's Street Map application: https://streets.planning.nyc.gov/"
+    Law. Years included are from 1998 to current. {{ streets_map_app_link }}
   display_name: Digital City Map (DCM) - Street Name Changes (Areas)
   each_row_is_a: Street Name Change
   publishing_purpose:
@@ -55,11 +54,10 @@ destinations:
       - id: areas_shapefile
         dataset_overrides:
           attributes:
-            description:
-              "Local Law name changes to public places (areas). Polygon (area) features
+            description: |-
+              Local Law name changes to public places (areas). Polygon (area) features
               of official street and honorary name changes established by City Council Local
-              Law. Years included are from 1998 to current. This dataset is featured on the
-              Department of City Planning's Street Map application: https://streets.planning.nyc.gov/"
+              Law. Years included are from 1998 to current. {{ streets_map_app_link }}
             display_name: Digital City Map (DCM) - Street Name Changes (Areas)
             publishing_purpose:
               "Local Law name changes to public places (areas). Dataset last
@@ -89,11 +87,10 @@ destinations:
       - id: lines_shapefile
         dataset_overrides:
           attributes:
-            description:
-              "Local Law name changes to public thoroughfares (lines). Single line
+            description: |-
+              Local Law name changes to public thoroughfares (lines). Single line
               features of official street and honorary name changes estalbished by City Council
-              Local Law. Years included are from 1997 to current. This dataset is featured on
-              the Department of City Planning's Street Map application: https://streets.planning.nyc.gov/"
+              Local Law. Years included are from 1997 to current. {{ streets_map_app_link }}
             display_name: Digital City Map (DCM) - Street Name Changes (Lines)
             publishing_purpose:
               "Local Law name changes to pulibc throughfares (lines). Dataset
@@ -123,11 +120,10 @@ destinations:
       - id: points_shapefile
         dataset_overrides:
           attributes:
-            description:
-              "Local Law name changes to corners or intersections (points). Point
+            description: |-
+              Local Law name changes to corners or intersections (points). Point
               features of official street and honorary name changes established by City Council
-              Local Law. Years included are from 1998 to current. This dataset is featured on
-              the Department of City Planning's Street Map application: https://streets.planning.nyc.gov/"
+              Local Law. Years included are from 1998 to current. {{ streets_map_app_link }}
             display_name: Digital City Map (DCM) - Street Name Changes (Points)
             publishing_purpose:
               "Local Law name changes to to corners or intersections (points).
