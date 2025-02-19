@@ -30,7 +30,20 @@ attributes:
     - Official Map
     - Archive
 
-assembly: []
+assembly:
+- id: dcm_multilayer
+  filename: dcm_{{ version }}shp.zip
+  type: multilayer_shapefile
+  contents:
+  - id: areas_shapefile
+    custom:
+      layer_name: DCM_StreetNameChanges_Areas
+  - id: lines_shapefile
+    custom:
+      layer_name: DCM_StreetNameChanges_Lines
+  - id: points_shapefile
+    custom:
+      layer_name: DCM_StreetNameChanges_Points
 
 custom: {}
 
@@ -51,6 +64,13 @@ destinations:
             publishing_purpose:
               "Local Law name changes to public places (areas). Dataset last
               updated: March 31, 2024."
+          omitted_columns:
+            - shape_leng
+            - shape_area
+          overridden_columns:
+          - id: geometry
+            custom:
+              api_name: the_geom
         custom:
           destination_use: dataset_file
       - id: areas_data_dictionary_pdf
@@ -78,6 +98,13 @@ destinations:
             publishing_purpose:
               "Local Law name changes to pulibc throughfares (lines). Dataset
               last updated: March 30, 2024."
+          omitted_columns:
+            - shape_leng
+            - shape_area
+          overridden_columns:
+          - id: geometry
+            custom:
+              api_name: the_geom
         custom:
           destination_use: dataset_file
       - id: lines_data_dictionary_pdf
@@ -105,6 +132,13 @@ destinations:
             publishing_purpose:
               "Local Law name changes to to corners or intersections (points).
               Dataset last updated: March 31, 2024."
+          omitted_columns:
+            - shape_leng
+            - shape_area
+          overridden_columns:
+          - id: geometry
+            custom:
+              api_name: the_geom
         custom:
           destination_use: dataset_file
       - id: points_data_dictionary_pdf
@@ -119,6 +153,9 @@ destinations:
   - id: bytes
     type: bytes
     files:
+      - id: dcm_multilayer
+        custom:
+          url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/dcm_{{ version }}shp.zip
       - id: areas_data_dictionary_pdf
         custom:
           url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/dcm_street_name_changes_areas.pdf
@@ -138,10 +175,17 @@ files:
       id: lines_shapefile
       filename: StreetNameChanges_Lines.shp.zip
       type: shapefile
+    dataset_overrides:
+      omitted_columns:
+      - shape_area
   - file:
       id: points_shapefile
       filename: StreetNameChanges_Points.shp.zip
       type: shapefile
+    dataset_overrides:
+      omitted_columns:
+      - shape_area
+      - shape_leng
   - file:
       id: areas_data_dictionary_pdf
       filename: dcm_street_name_changes_areas.pdf
@@ -193,8 +237,12 @@ columns:
     values:
       - value: Bronx
       - value: Brooklyn
+      - value: Manahttan
       - value: Manhattan
+      - value: Manhattan and Queens
+      - value: None
       - value: Queens
+      - value: Staten island
       - value: Staten Island
   - id: feat_type
     name: Feat_Type
@@ -203,14 +251,26 @@ columns:
       The type of feature that is being renamed in the Local Law (e.g. street,
       corner, etc).
     values:
+      - value: Ballfield name
       - value: Bike lane name
       - value: Boardwalk name
       - value: Corner name
+      - value: Field name
+      - value: Intersection Corner
       - value: Intersection name
+      - value: None
       - value: Park name
+      - value: Pier name
+      - value: Playground name
       - value: Plaza name
+      - value: Public place
       - value: Square name
+      - value: Street name
+      - value: Street Name
+      - value: Streetname
+      - value: Structure name
       - value: Triangle name
+      - value: Triangle Name
   - id: officialnm
     name: OfficialNM
     data_type: text
@@ -293,8 +353,9 @@ columns:
       Flag that indicates whether the Local Law was repealed by another Local
       Law.
     values:
-      - value: "Yes"
       - value: "No"
+      - value: "Yes"
+      - value: None
   - id: repeal_dt
     name: Repeal_DT
     data_type: text
@@ -306,8 +367,9 @@ columns:
       Flag that indicates whether the Local Law was amended by another Local
       Law.
     values:
-      - value: "Yes"
       - value: "No"
+      - value: "Yes"
+      - value: None
   - id: amend_dt
     name: Amend_DT
     data_type: text
@@ -324,7 +386,13 @@ columns:
     description:
       A unique identifier concatenating Local Law amendment year, Local Law
       section (in that order).
-  - id: the_geom
-    name: the_geom
+  - id: geometry
+    name: geometry
     data_type: geometry
     description: Feature geometry.
+  - id: shape_leng
+    name: Shape_Leng
+    data_type: decimal
+  - id: shape_area
+    name: Shape_Area
+    data_type: decimal
