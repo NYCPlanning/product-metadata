@@ -19,7 +19,7 @@ attributes:
 assembly:
 - id: csv_package
   filename: nyczoningtaxlotdb.zip
-  type: Zip
+  type: zip
   contents:
   - id: zoningtaxlotdatabase_datadictionary.pdf
     filename: zoningtaxlotdatabase_datadictionary.pdf

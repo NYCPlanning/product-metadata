@@ -33,7 +33,7 @@ attributes:
 assembly:
 - id: csv_package
   filename: zapprojectbbls_csv.zip
-  type: Zip
+  type: zip
   contents:
     # TODO: Id is somewhat wrong
   - id: zapprojects_datadictionary.xlsx

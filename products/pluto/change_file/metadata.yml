@@ -22,7 +22,7 @@ attributes:
 assembly:
 - id: csv_package
   filename: PLUTOChangeFile{{ version }}.zip
-  type: Zip
+  type: zip
   contents:
   - id: pluto_changes_applied
     filename: pluto_changes_applied.csv

@@ -22,7 +22,7 @@ attributes:
 assembly:
 - id: csv_zip
   filename: nyc_pluto_csv.zip
-  type: Zip
+  type: zip
   contents:
   - id: pluto_readme.pdf
     filename: pluto_readme.pdf

@@ -28,7 +28,7 @@ attributes:
 assembly:
 - id: csv_package
   filename: zapprojects_csv.zip
-  type: Zip
+  type: zip
   contents:
   - id: zapprojects_datadictionary.xlsx
     filename: zapprojects_datadictionary.xlsx
