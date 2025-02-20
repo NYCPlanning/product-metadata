@@ -32,7 +32,7 @@ attributes:
 assembly:
 - id: csv_package
   filename: nyedescsv.zip
-  type: Zip
+  type: zip
   contents:
   - id: csv
     filename: E_GIS_{{ version }}.csv
