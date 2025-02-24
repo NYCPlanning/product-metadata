@@ -78,7 +78,7 @@ destinations:
     dataset_overrides:
       omitted_columns:
         - shape_area
-        - shape_length
+        - shape_leng
       overridden_columns:
       - id: geometry
         custom:
@@ -109,7 +109,7 @@ files:
     omitted_columns:
     - geometry
     - shape_area
-    - shape_length
+    - shape_leng
 - file:
     id: projects_points
     filename: cpdb_projects_pts.shp.zip
@@ -117,7 +117,7 @@ files:
   dataset_overrides:
     omitted_columns:
     - shape_area
-    - shape_length
+    - shape_leng
     attributes:
       display_name: Capital Projects Database (CPDB) - Projects (Points)
     overridden_columns:
@@ -649,7 +649,7 @@ columns:
   name: Shape_Area
   data_type: decimal
   description: ""
-- id: shape_length
+- id: shape_leng
   name: Shape_Leng
   data_type: decimal
   description: ""
