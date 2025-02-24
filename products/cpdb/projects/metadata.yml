@@ -331,11 +331,6 @@ files:
       name: sptotal
     - id: geometry
       name: geometry
-- file:
-    id: source_data_versions.csv
-    filename: source_data_versions.csv
-    is_metadata: true
-    type: None
 
 columns:
 - id: ccpversion
