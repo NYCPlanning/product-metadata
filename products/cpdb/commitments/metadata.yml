@@ -73,11 +73,6 @@ files:
     id: commitments
     filename: cpdb_planned_commitments.csv
     type: csv
-- file:
-    id: source_data_versions.csv
-    filename: source_data_versions.csv
-    is_metadata: true
-    type: None
 
 columns:
 - id: ccpversion
