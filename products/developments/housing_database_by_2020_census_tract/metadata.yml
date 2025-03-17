@@ -108,72 +108,72 @@ columns:
 - id: comp2010
   name: comp2010
   data_type: integer
-  description: Net number of class A housing units completed year in 2010, accounting for new buildings, alterations, and demolitions
+  description: Net number of class A housing units completed in 2010, accounting for new buildings, alterations, and demolitions
   example: '188.0'
 - id: comp2011
   name: comp2011
   data_type: integer
-  description: Net number of class A housing units completed year in 2011, accounting for new buildings, alterations, and demolitions
+  description: Net number of class A housing units completed in 2011, accounting for new buildings, alterations, and demolitions
   example: '122.0'
 - id: comp2012
   name: comp2012
   data_type: integer
-  description: Net number of class A housing units completed year in 2012, accounting for new buildings, alterations, and demolitions
+  description: Net number of class A housing units completed in 2012, accounting for new buildings, alterations, and demolitions
   example: '34.0'
 - id: comp2013
   name: comp2013
   data_type: integer
-  description: Net number of class A housing units completed year in 2013, accounting for new buildings, alterations, and demolitions
+  description: Net number of class A housing units completed in 2013, accounting for new buildings, alterations, and demolitions
   example: '70.0'
 - id: comp2014
   name: comp2014
   data_type: integer
-  description: Net number of class A housing units completed year in 2014, accounting for new buildings, alterations, and demolitions
+  description: Net number of class A housing units completed in 2014, accounting for new buildings, alterations, and demolitions
   example: '46.0'
 - id: comp2015
   name: comp2015
   data_type: integer
-  description: Net number of class A housing units completed year in 2015, accounting for new buildings, alterations, and demolitions
+  description: Net number of class A housing units completed in 2015, accounting for new buildings, alterations, and demolitions
   example: '63.0'
 - id: comp2016
   name: comp2016
   data_type: integer
-  description: Net number of class A housing units completed year in 2016, accounting for new buildings, alterations, and demolitions
+  description: Net number of class A housing units completed in 2016, accounting for new buildings, alterations, and demolitions
   example: '41.0'
 - id: comp2017
   name: comp2017
   data_type: integer
-  description: Net number of class A housing units completed year in 2017, accounting for new buildings, alterations, and demolitions
+  description: Net number of class A housing units completed in 2017, accounting for new buildings, alterations, and demolitions
   example: '2011.0'
 - id: comp2018
   name: comp2018
   data_type: integer
-  description: Net number of class A housing units completed year in 2018, accounting for new buildings, alterations, and demolitions
+  description: Net number of class A housing units completed in 2018, accounting for new buildings, alterations, and demolitions
   example: '119.0'
 - id: comp2019
   name: comp2019
   data_type: integer
-  description: Net number of class A housing units completed year in 2019, accounting for new buildings, alterations, and demolitions
+  description: Net number of class A housing units completed in 2019, accounting for new buildings, alterations, and demolitions
   example: '352.0'
 - id: comp2020
   name: comp2020
   data_type: integer
-  description: Net number of class A housing units completed year in 2020, accounting for new buildings, alterations, and demolitions
+  description: Net number of class A housing units completed in 2020, accounting for new buildings, alterations, and demolitions
   example: '792.0'
 - id: comp2021
   name: comp2021
   data_type: integer
-  description: Net number of class A housing units completed year in 2021, accounting for new buildings, alterations, and demolitions
+  description: Net number of class A housing units completed in 2021, accounting for new buildings, alterations, and demolitions
   example: '658.0'
 - id: comp2022
   name: comp2022
   data_type: integer
-  description: Net number of class A housing units completed year in 2022, accounting for new buildings, alterations, and demolitions
+  description: Net number of class A housing units completed in 2022, accounting for new buildings, alterations, and demolitions
   example: '93.0'
 - id: comp2023
   name: comp2023
   data_type: integer
-  description: Net number of class A housing units completed year in 2023, accounting for new buildings, alterations, and demolitions
+  description: Net number of class A housing units completed in 2023, accounting for new buildings, alterations, and demolitions
 - id: comp2024
   name: comp2024
   data_type: integer
