@@ -48,7 +48,7 @@ destinations:
       destination_use: attachment
   - id: primary_shapefile
     dataset_overrides:
-      omitted_columns: ['dcpedited', 'uid']
+      omitted_columns: [ 'dcpedited', 'uid' ]
       overridden_columns:
       - id: borough
         name: BOROUGH
@@ -156,22 +156,22 @@ destinations:
   files:
   - id: colp_readme.pdf
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/colp_readme.pdf
+      url: "{{ bytes_pdf_prefix_url }}/colp_readme.pdf"
   - id: colp_metadata.pdf
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/colp_metadata.pdf
+      url: "{{ bytes_pdf_prefix_url }}/colp_metadata.pdf"
   - id: primary_shapefile
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/colp_{{ version }}_shp.zip
+      url: "{{ bytes_zip_prefix_url }}/city-owned-leased-properties/colp_{{ version }}_shp.zip"
   - id: csv_zip
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/colp_{{ version }}_csv.zip
+      url: "{{ bytes_zip_prefix_url }}/city-owned-leased-properties/colp_{{ version }}_csv.zip"
   - id: xlsx_zip
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/colp_{{ version }}_xlsx.zip
+      url: "{{ bytes_zip_prefix_url }}/city-owned-leased-properties/colp_{{ version }}_xlsx.zip"
   - id: primary_file_geodatabase
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/colp_{{ version }}_gdb.zip
+      url: "{{ bytes_zip_prefix_url }}/city-owned-leased-properties/colp_{{ version }}_gdb.zip"
 
 files:
 - file:
@@ -275,9 +275,9 @@ columns:
 - id: uid
   name: Unique ID
   data_type: text
-  description: Unique identifier created from a hash of all fields for the record
-    on the IPIS source file. As long as no fields change on the record, this identifier
-    is static between versions of COLP.
+  description: Unique identifier created from a hash of all fields for the record on the
+    IPIS source file. As long as no fields change on the record, this identifier is
+    static between versions of COLP.
   data_source: Department of City Planning
   checks:
     is_primary_key: true
@@ -285,8 +285,7 @@ columns:
 - id: borough
   name: Borough
   data_type: text
-  description: NYC borough - 1 (Manhattan), 2 (Bronx), 3 (Brooklyn), 4 (Queens), 5
-    (Staten Island)
+  description: NYC borough - 1 (Manhattan), 2 (Bronx), 3 (Brooklyn), 4 (Queens), 5 (Staten Island)
   checks:
     non_nullable: true
   example: None
@@ -320,11 +319,11 @@ columns:
   name: BBL
   data_type: bbl
   description: 10-digit identifier for a tax lot, consisting of the borough code followed
-    by the tax block followed by the tax lot. The borough code is one numeric digit.
-    The tax block is one to five numeric digits, preceded with leading zeros when
-    the block is less than five digits. The tax lot is one to four digits and is preceded
-    with leading zeros when the lot is less than four digits. For condominiums, this
-    is usually the unit BBL.
+    by the tax block followed by the tax lot. The borough code is one numeric digit. The
+    tax block is one to five numeric digits, preceded with leading zeros when the block
+    is less than five digits. The tax lot is one to four digits and is preceded with
+    leading zeros when the lot is less than four digits. For condominiums, this is
+    usually the unit BBL.
   checks:
     non_nullable: true
   example: '1016370141'
@@ -333,13 +332,13 @@ columns:
 - id: mapbbl
   name: Mapped BBL
   data_type: bbl
-  description: The mapped BBL is the BBL used to map the record. For condominium lots,
-    the mapped BBL is the billing BBL, which is the 75nn-series record shown on the
-    tax map and in MapPLUTO. It is generally associated with the condominium management
+  description: The mapped BBL is the BBL used to map the record. For condominium lots, the
+    mapped BBL is the billing BBL, which is the 75nn-series record shown on the tax map
+    and in MapPLUTO. It is generally associated with the condominium management
     organization. For air rights lots, the mapped BBL is the donating BBL from the
-    Air_Rights_Lot table in the Department of Finance's Digital Tax Map. If there
-    is more than one donating BBL, the one whose lot number most closely matches that
-    of the air rights lot is used. For all other lots, MAPBBL is the same as BBL.
+    Air_Rights_Lot table in the Department of Finance's Digital Tax Map. If there is
+    more than one donating BBL, the one whose lot number most closely matches that of
+    the air rights lot is used. For all other lots, MAPBBL is the same as BBL.
   data_source: Department of City Planning - Geosupport
   example: '1016370141'
   custom:
@@ -347,12 +346,12 @@ columns:
 - id: cd
   name: Community district
   data_type: integer
-  description: The community district or joint interest area for the tax lot. The
-    city is divided into 59 community districts and 12 joint interest areas, which
-    are large parks or airports that are not considered part of any community district.
-    This field consists of three digits, the first of which is the borough code. The
-    second and third digits are the community district or joint interest area number,
-    whichever is applicable.
+  description: The community district or joint interest area for the tax lot. The city is
+    divided into 59 community districts and 12 joint interest areas, which are large
+    parks or airports that are not considered part of any community district. This field
+    consists of three digits, the first of which is the borough code. The second and
+    third digits are the community district or joint interest area number, whichever is
+    applicable.
   data_source: Department of City Planning
   example: '111'
 - id: hnum
@@ -374,15 +373,15 @@ columns:
   name: Parcel name
   data_type: text
   description: Name of the parcel or facility on the lot. DCP applies some modifications
-    to parcel names to improve readability. Some abbreviations are expanded programmatically.
-    Other modifications are made after manual research. For the latter, DCPEDITED
-    = "Y".
+    to parcel names to improve readability. Some abbreviations are expanded
+    programmatically. Other modifications are made after manual research. For the
+    latter, DCPEDITED = "Y".
   example: AGUILAR BRANCH LIBRARY
 - id: agency
   name: Agency
   data_type: text
-  description: Abbreviation for agency or entity using the lot. See appendix A for
-    a list of abbreviations with their full name.
+  description: Abbreviation for agency or entity using the lot. See appendix A for a list
+    of abbreviations with their full name.
   example: NYPL
 - id: usecode
   name: Use code
@@ -393,8 +392,8 @@ columns:
 - id: usetype
   name: Use description
   data_type: text
-  description: Description of how the lot is being used by the agency. See Appendix
-    B for a complete list of use codes and descriptions.
+  description: Description of how the lot is being used by the agency. See Appendix B for
+    a complete list of use codes and descriptions.
   example: BRANCH LIBRARY
 - id: ownership
   name: Owner type
@@ -411,13 +410,12 @@ columns:
   - value: P
     description: Private
   - value: O
-    description: Other/public authority (includes properties owned by federal and
-      state entities)
+    description: Other/public authority (includes properties owned by federal and state entities)
 - id: category
   name: Category
   data_type: integer
-  description: Category classifies lots as non-residential properties with a current
-    use, residential properties, or properties without a current use.
+  description: Category classifies lots as non-residential properties with a current use,
+    residential properties, or properties without a current use.
   data_source: Department of City Planning
   checks:
     non_nullable: true
@@ -462,16 +460,15 @@ columns:
 - id: excatdesc
   name: Expanded category description
   data_type: text
-  description: Descriptions for the expanded category values. See EXPANDCAT for the
-    domain values.
+  description: Descriptions for the expanded category values. See EXPANDCAT for the domain values.
   data_source: Department of City Planning
   example: None
 - id: leased
   name: Leased
   data_type: text
-  description: A value of "L" indicates that the agency's use of the property is authorized
-    through a lease. For questions about the lease or ownership status of specific
-    lots, please contact DCAS at (212) 386-0622 or RESPlanning311@dcas.nyc.gov.
+  description: A value of "L" indicates that the agency's use of the property is
+    authorized through a lease. For questions about the lease or ownership status of
+    specific lots, please contact DCAS at (212) 386-0622 or RESPlanning311@dcas.nyc.gov.
   example: None
   values:
   - value: L
@@ -515,8 +512,8 @@ columns:
 - id: latitude
   name: Latitude
   data_type: decimal
-  description: Latitude based on the Geosupport label point for the billing BBL. Coordinate
-    system is NAD_1983.
+  description: Latitude based on the Geosupport label point for the billing BBL.
+    Coordinate system is NAD_1983.
   data_source: Department of City Planning
   example: '40.794169'
 - id: longitude
@@ -530,9 +527,9 @@ columns:
   name: DCP Edited
   data_type: text
   description: City Planning modifies some records to correct street names or normalize
-    parcel names when programmatic cleaning is insufficient. If a field has been manually
-    modified, the original value can be found on GitHub in the modifications_applied.csv
-    available in Outputs file series.
+    parcel names when programmatic cleaning is insufficient. If a field has been
+    manually modified, the original value can be found on GitHub in the
+    modifications_applied.csv available in Outputs file series.
   data_source: Department of City Planning
   example: None
   values:

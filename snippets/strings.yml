@@ -1,2 +1,8 @@
-bytes_previous_versions_link: All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE - Archive</a>.
-streets_map_app_link: This dataset is featured on the Department of City Planning's <a href="https://streets.planning.nyc.gov/">Street Map application</a>.
+bytes_previous_versions_link: All previously released versions of this data are
+  available at <a
+  href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES
+  of the BIG APPLE - Archive</a>.
+streets_map_app_link: This dataset is featured on the Department of City Planning's <a
+  href="https://streets.planning.nyc.gov/">Street Map application</a>.
+bytes_zip_prefix_url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes
+bytes_pdf_prefix_url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes
