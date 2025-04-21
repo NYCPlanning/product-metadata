@@ -8,6 +8,9 @@ attributes:
   display_name: City Owned and Leased Property (COLP)
   each_row_is_a: City Owned or Leased Property
   publishing_frequency: Bi-annually
+  date_made_public: "4/16/2020"
+  contains_address: true
+  geocoded: true
   tags:
   - COLP
   - IPIS
