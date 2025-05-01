@@ -15,3 +15,37 @@ datasets:
 - limited_height_districts
 - special_purpose_districts
 - georeferenced_nyc_zoning_maps
+
+files:
+- id: dcm_shapefile_bytes
+  filename: dcm.zip
+  url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nycgiszoningfeatures_{{ version }}shp.zip
+  contains:
+  - special_purpose_districts.shapefile
+  - commercial_overlay_district.shapefile
+
+lifecycle:
+  assemble: # scripts for lifecycle.assemble
+    my_assemble_from_bytes_script:
+      steps:
+      - type: pull_file
+        source: zoning.dcm_shapefile_bytes # omit product prefix?
+      - type: disassemble # generates shapefiles for each dataset
+        source: zoning.dcm_shapefile_bytes
+      - type: generate_artifacts
+        artifacts:
+        - special_purpose_districts.metadata_pdf
+        - special_purpose_districts.oti_data_dictionary
+        - commercial_overlay_district.metadata_pdf
+        - commercial_overlay_district.oti_data_dictionary
+  distribute: # scripts for lifecycle.assemble
+    from_bytes_to_socrata_unpublished:
+      steps:
+      - type: distribute
+        filters: edm.packaging # push to the packaging bucket
+      - type: distribute
+        filters:
+          tags: socrata_unpublished # then push to socrata
+      - type: distribute
+        filters:
+          type: ftp # then push to an FTP site
