@@ -39,8 +39,10 @@ destinations:
   # - id: oti_data_dictionary_wi
   #   custom:
   #     destination_use: attachment
+  tags: [dist_all]
   custom:
     four_four: nymm-wb5m
+    packaged_files_source: bytes
 - id: socrata
   type: socrata
   files:

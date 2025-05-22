@@ -36,9 +36,11 @@ destinations:
   - id: oti_data_dictionary
     custom:
       destination_use: attachment
+  tags: [dist_all]
   custom:
     four_four: ige5-v6sk
     is_unparsed_dataset: true
+    packaged_files_source: bytes
 - id: bytes
   type: bytes
   files:

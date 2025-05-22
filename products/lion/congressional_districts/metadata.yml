@@ -36,8 +36,10 @@ destinations:
   - id: shapefile_wi
     custom:
       destination_use: dataset_file
+  tags: [dist_all]
   custom:
     four_four: 35e4-miqd
+    packaged_files_source: bytes
 - id: socrata
   type: socrata
   files:
@@ -50,9 +52,10 @@ destinations:
   # - id: oti_data_dictionary
   #   custom:
   #     destination_use: attachment
-  tags: [socrata_unpublished]
+  tags: [socrata_unpublished, dist_all]
   custom:
     four_four: j3u5-usz2
+    packaged_files_source: bytes
 - id: bytes
   type: bytes
   files:

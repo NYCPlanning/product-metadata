@@ -68,9 +68,10 @@ destinations:
   - id: nyap_metadata.pdf
     custom:
       destination_use: attachment
-  tags: [socrata_unpublished]
+  tags: [socrata_unpublished, dist_all]
   custom:
     four_four: wgbs-damt
+    packaged_files_source: bytes
 - id: bytes
   type: bytes
   files:

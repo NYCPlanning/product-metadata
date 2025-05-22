@@ -39,8 +39,10 @@ destinations:
         name: Shape_Leng
     custom:
       destination_use: dataset_file
+  tags: [dist_all]
   custom:
     four_four: y4qz-3s3n
+    packaged_files_source: bytes
 - id: socrata
   type: socrata
   files:
@@ -54,8 +56,10 @@ destinations:
         name: Shape_Leng
     custom:
       destination_use: dataset_file
+  tags: [dist_all]
   custom:
     four_four: wwxk-38u4
+    packaged_files_source: bytes
 - id: bytes
   type: bytes
   files:

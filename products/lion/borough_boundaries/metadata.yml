@@ -27,9 +27,10 @@ destinations:
   - id: oti_data_dictionary_wi
     custom:
       destination_use: attachment
-  tags: [socrata_unpublished]
+  tags: [socrata_unpublished, dist_all]
   custom:
     four_four: wh2p-dxnf
+    packaged_files_source: bytes
 - id: socrata
   type: socrata
   files:
@@ -42,9 +43,10 @@ destinations:
   - id: oti_data_dictionary
     custom:
       destination_use: attachment
-  tags: [socrata_unpublished]
+  tags: [socrata_unpublished, dist_all]
   custom:
     four_four: gthc-hcne
+    packaged_files_source: bytes
 - id: bytes
   type: bytes
   files:
