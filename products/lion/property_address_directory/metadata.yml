@@ -1,10 +1,11 @@
 id: property_address_directory
 
 attributes:
+  attribution_link: {{ bytes_lion_urls__pad }}
   description: |-
     The PAD (Property Address Directory) file contains additional geographic information at the tax lot level not found in the PLUTO files.  This data includes alias addresses and Building Identification Numbers (BINs).  It consists of two ASCII, comma delimited files: a tax lot file and an address file.
 
-    All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
+    All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__pad }}">DCP Website: BYTES of the BIG APPLE</a>.
   display_name: Property Address Directory
   each_row_is_a: Property Address
   date_made_public: '9/13/2021'
@@ -33,16 +34,17 @@ destinations:
   - id: shapefile
     custom:
       destination_use: dataset_file
+  tags: [25b]
   custom:
     four_four: bc8t-ecyu
     is_unparsed_dataset: true
+    packaged_files_source: bytes
 - id: bytes
   type: bytes
   files:
   - id: shapefile
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/pad_{{
-        version }}.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/pad/pad_{{ version }}.zip
   - id: padlayout.pdf
     custom:
       url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/padlayout.pdf

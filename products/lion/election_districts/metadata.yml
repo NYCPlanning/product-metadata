@@ -1,24 +1,21 @@
 id: election_districts
 
 attributes:
-  description: |-
-    New York City Board of Elections election district boundaries for New York City clipped to the shoreline.
-
-    {{ bytes_previous_versions_link }}
+  attribution_link: {{ bytes_lion_urls__elec_dists }}
   display_name: Election Districts
   each_row_is_a: Election district
   tags:
-  - Election Districts
+  - election districts
   - political
   - boundary
   - boundaries
   - districts
-  - LION
-  - CSCL
-  - Department of City Planning
-  - DCP
-  - New York City
-  - NYC
+  - lion
+  - cscl
+  - department of city planning
+  - dcp
+  - new york city
+  - nyc
   date_made_public: '1/31/2013'
 
 assembly: []
@@ -36,11 +33,13 @@ destinations:
     dataset_overrides:
       overridden_columns:
       - id: shape_length
-        name: Shape_Leng
+        name: Shape_Length
     custom:
       destination_use: dataset_file
+  tags: [25b]
   custom:
     four_four: y4qz-3s3n
+    packaged_files_source: bytes
 - id: socrata
   type: socrata
   files:
@@ -51,22 +50,22 @@ destinations:
     dataset_overrides:
       overridden_columns:
       - id: shape_length
-        name: Shape_Leng
+        name: Shape_Length
     custom:
       destination_use: dataset_file
+  tags: [25b]
   custom:
     four_four: wwxk-38u4
+    packaged_files_source: bytes
 - id: bytes
   type: bytes
   files:
   - id: shapefile
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nyed_{{
-        version }}.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/election-districts/nyed_{{ version }}.zip
   - id: shapefile_wi
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nyedwi_{{
-        version }}.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/election-districts/nyedwi_{{ version }}.zip
   - id: nyed_metadata.pdf
     custom:
       url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nyed_metadata.pdf
@@ -84,7 +83,7 @@ files:
       description: |-
         New York City Board of Elections election district boundaries for New York City including portions under water.
 
-        {{ bytes_previous_versions_link }}
+        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__elec_dists }}">DCP Website: BYTES of the BIG APPLE</a>.
       display_name: Election Districts (water areas included)
     overridden_columns:
     - id: shape_length
@@ -94,6 +93,11 @@ files:
     filename: nyed.zip
     type: shapefile
   dataset_overrides:
+    attributes:
+      description: |-
+        New York City Board of Elections election district boundaries for New York City clipped to the shoreline.
+
+        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__elec_dists }}">DCP Website: BYTES of the BIG APPLE</a>.
     overridden_columns:
     - id: shape_length
       name: shape_leng

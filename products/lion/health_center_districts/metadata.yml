@@ -1,24 +1,25 @@
 id: health_center_districts
 
 attributes:
+  attribution_link: {{ bytes_lion_urls__health }}
   description: |-
     Health center service area boundaries for New York City. Health Center service areas are aggregates of health areas and are used for reporting health statistics. They were created by the NYC Department of Health and Mental Hygiene (DOHMH).
 
-    {{ bytes_previous_versions_link }}
+    All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__health }}">DCP Website: BYTES of the BIG APPLE</a>.
   display_name: Health Center Districts
   each_row_is_a: Health Center district
   tags:
-  - Health Center Sevice Area
-  - DOHMH
+  - health center sevice area
+  - dohmh
   - boundary
   - boundaries
   - districts
-  - LION
-  - CSCL
-  - Department of City Planning
-  - DCP
-  - New York City
-  - NYC
+  - lion
+  - cscl
+  - department of city planning
+  - dcp
+  - new york city
+  - nyc
   date_made_public: '2/23/2015'
 
 assembly: []
@@ -36,26 +37,27 @@ destinations:
     dataset_overrides:
       overridden_columns:
       - id: boro_code
-        name: BoroCode
+        name: Borough Code
       - id: boro_name
-        name: BoroName
+        name: Borough Name
       - id: health_center_district
-        name: HCentDist
+        name: Health Center number
         custom:
           api_name: hcent_dist
       - id: shape_length
-        name: Shape_Leng
+        name: Shape_Length
     custom:
       destination_use: dataset_file
+  tags: [25b]
   custom:
     four_four: 6ez8-za84
+    packaged_files_source: bytes
 - id: bytes
   type: bytes
   files:
   - id: shapefile
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nyhc_{{
-        version }}.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/health-center/nyhc_{{ version }}.zip
   - id: nyhc_metadata.pdf
     custom:
       url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nyhc_metadata.pdf

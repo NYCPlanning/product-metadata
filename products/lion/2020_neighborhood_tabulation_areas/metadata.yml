@@ -1,10 +1,13 @@
 id: 2020_neighborhood_tabulation_areas
 
 attributes:
+  attribution_link: {{ bytes_lion_urls__ntas }}
   description: |-
     2020 Neighborhood Tabulation Areas (NTAs) are medium-sized statistical geographies for reporting Decennial Census and American Community Survey (ACS). 2020 NTAs are created by aggregating 2020 census tracts and nest within Community District Tabulation Areas (CDTA). NTAs were delineated with the need for both geographic specificity and statistical reliability in mind. Consequently, each NTA contains enough population to mitigate sampling error associated with the ACS yet offers a unit of analysis that is smaller than a Community District.
 
-    Though NTA boundaries and their associated names roughly correspond with many neighborhoods commonly recognized by New Yorkers, NTAs are not intended to definitively represent neighborhoods, nor are they intended to be exhaustive of all possible names and understandings of neighborhoods throughout New York City. Additionally, non-residential areas including large parks, airports, cemeteries, and other special areas are represented separately within this dataset and are assigned codes according to their type (See NTAType field). All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
+    Though NTA boundaries and their associated names roughly correspond with many neighborhoods commonly recognized by New Yorkers, NTAs are not intended to definitively represent neighborhoods, nor are they intended to be exhaustive of all possible names and understandings of neighborhoods throughout New York City. Additionally, non-residential areas including large parks, airports, cemeteries, and other special areas are represented separately within this dataset and are assigned codes according to their type (See NTAType field).
+
+    All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__ntas }}">DCP Website: BYTES of the BIG APPLE</a>.
   display_name: 2020 Neighborhood Tabulation Areas (NTAs)
   each_row_is_a: Neighborhood Tabulation Area
   date_made_public: '9/13/2021'
@@ -37,15 +40,16 @@ destinations:
   - id: shapefile
     custom:
       destination_use: dataset_file
+  tags: [25b]
   custom:
     four_four: 9nt8-h7nd
+    packaged_files_source: bytes
 - id: bytes
   type: bytes
   files:
   - id: shapefile
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nynta2020_{{
-        version }}.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/neighborhood-tabulation-areas/nynta2020_{{ version }}.zip
   - id: nynta2020_metadata.pdf
     custom:
       url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nynta2020_metadata.pdf
@@ -67,12 +71,6 @@ files:
     type: oti_data_dictionary
 
 columns:
-- id: the_geom
-  name: the_geom
-  data_type: geometry
-  example: None
-  custom:
-    readme_data_type: geometry
 - id: borocode
   name: BoroCode
   data_type: text
@@ -171,3 +169,9 @@ columns:
   data_type: decimal
   description: Area of feature in internal units squared.
   example: '70537629.8708'
+- id: the_geom
+  name: the_geom
+  data_type: geometry
+  example: None
+  custom:
+    readme_data_type: geometry

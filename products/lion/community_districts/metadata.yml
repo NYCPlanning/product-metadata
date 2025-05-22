@@ -1,28 +1,23 @@
 id: community_districts
 
 attributes:
-  description: |-
-    Community District boundaries for New York City.
-
-    Community Districts (CD) are mandated by the city charter to review and monitor quality of life issues for New York City (NYC) neighborhoods.  NYC is currently comprised of 59 community districts. There are also 12 Joint Interest Areas (JIAs).  The JIAs are major parks and airports and are not contained within any community district.  The BoroCD value is the unique ID for CDs and JIAs with the first byte representing the borough code and the second and third bytes are the CD or JIA number.
-
-    {{ bytes_previous_versions_link }}
+  attribution_link: {{ bytes_lion_urls__comm_dists }}
   display_name: Community Districts
   each_row_is_a: Community district
   tags:
-  - Community Districts
-  - CD
-  - Community Board
-  - CB
+  - community districts
+  - cd
+  - community board
+  - cb
   - boundary
   - boundaries
   - districts
-  - LION
-  - CSCL
-  - Department of City Planning
-  - DCP
-  - New York City
-  - NYC
+  - lion
+  - cscl
+  - department of city planning
+  - dcp
+  - new york city
+  - nyc
   date_made_public: '2/23/2015'
 
 assembly: []
@@ -37,14 +32,19 @@ destinations:
     custom:
       destination_use: attachment
   - id: shapefile
+    dataset_overrides:
+      overridden_columns:
+      - id: shape_length
+        name: Shape_Length
     custom:
       destination_use: dataset_file
   - id: oti_data_dictionary
     custom:
       destination_use: attachment
-  tags: [socrata_unpublished]
+  tags: [25b]
   custom:
     four_four: 5crt-au7u
+    packaged_files_source: bytes
 - id: socrata_water_included
   type: socrata
   files:
@@ -56,21 +56,23 @@ destinations:
       overridden_columns:
       - id: borocd
         name: BoroCD
+      - id: shape_length
+        name: Shape_Length
     custom:
       destination_use: dataset_file
+  tags: [25b]
   custom:
     four_four: 6ak9-vek3
+    packaged_files_source: bytes
 - id: bytes
   type: bytes
   files:
   - id: shapefile
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nycd_{{
-        version }}.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/community-districts/nycd_{{ version }}.zip
   - id: shapefile_wi
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nycdwi_{{
-        version }}.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/community-districts/nycdwi_{{ version }}.zip
   - id: nycd_metadata.pdf
     custom:
       url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nycd_metadata.pdf
@@ -90,7 +92,7 @@ files:
 
         Community Districts (CD) are mandated by the city charter to review and monitor quality of life issues for New York City (NYC) neighborhoods.  NYC is currently comprised of 59 community districts. There are also 12 Joint Interest Areas (JIAs).  The JIAs are major parks and airports and are not contained within any community district.  The BoroCD value is the unique ID for CDs and JIAs with the first byte representing the borough code and the second and third bytes are the CD or JIA number.
 
-        {{ bytes_previous_versions_link }}
+        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__comm_dists }}">DCP Website: BYTES of the BIG APPLE</a>.
       display_name: Community Districts (Water areas included)
     overridden_columns:
     - id: shape_length
@@ -100,6 +102,13 @@ files:
     filename: nycd.zip
     type: shapefile
   dataset_overrides:
+    attributes:
+      description: |-
+        Community District boundaries for New York City.
+
+        Community Districts (CD) are mandated by the city charter to review and monitor quality of life issues for New York City (NYC) neighborhoods.  NYC is currently comprised of 59 community districts. There are also 12 Joint Interest Areas (JIAs).  The JIAs are major parks and airports and are not contained within any community district.  The BoroCD value is the unique ID for CDs and JIAs with the first byte representing the borough code and the second and third bytes are the CD or JIA number.
+
+        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__comm_dists }}">DCP Website: BYTES of the BIG APPLE</a>.
     overridden_columns:
     - id: shape_length
       name: shape_leng
@@ -140,9 +149,9 @@ columns:
   example: None
   custom:
     api_name: boro_cd
-- id: the_geom
-  data_type: geometry
 - id: shape_length
   data_type: decimal
 - id: shape_area
   data_type: decimal
+- id: the_geom
+  data_type: geometry

@@ -1,15 +1,22 @@
 id: 2010_census_blocks
 
 attributes:
+  attribution_link: {{ bytes_lion_urls__census_blocks }}
   display_name: 2010 Census Blocks
   each_row_is_a: Census Block
   tags:
-  - 2010 census blocks
-  - census
+  - census block
   - '2010'
-  - gis
-  - map
+  - us census bureau
+  - boundary
+  - boundaries
+  - districts
+  - lion
+  - cscl
+  - department of city planning
   - dcp
+  - new york city
+  - nyc
   date_made_public: '1/31/2013'
 
 assembly: []
@@ -29,9 +36,10 @@ destinations:
   - id: oti_data_dictionary
     custom:
       destination_use: attachment
-  tags: [socrata_unpublished]
+  tags: [25b]
   custom:
     four_four: y9w2-ph8n
+    packaged_files_source: bytes
 - id: socrata_water_included
   type: socrata
   files:
@@ -39,25 +47,32 @@ destinations:
     custom:
       destination_use: attachment
   - id: shapefile_water_included
+    dataset_overrides:
+      overridden_columns:
+      - id: borocode
+        custom:
+          api_name: boro_code
+      - id: boroname
+        custom:
+          api_name: boro_name
     custom:
       destination_use: dataset_file
   - id: oti_data_dictionary_wi
     custom:
       destination_use: attachment
-  tags: [socrata_unpublished]
+  tags: [25b]
   custom:
-    four_four: 444b-5yrw
+    four_four: jyp7-eqhh
+    packaged_files_source: bytes
 - id: bytes
   type: bytes
   files:
   - id: shapefile_water_not_included
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nycb2010_{{
-        version }}.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/census-blocks/nycb2010_{{ version }}.zip
   - id: shapefile_water_included
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nycb2010wi_{{
-        version }}.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/census-blocks/nycb2010wi_{{ version }}.zip
   - id: nycb2010_metadata.pdf
     custom:
       url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nycb2010_metadata.pdf
@@ -72,10 +87,10 @@ files:
     type: shapefile
   dataset_overrides:
     attributes:
-      description: |-
-        2010 Census Blocks from the US Census for New York City. These boundary files are derived from the US Census Bureau's TIGER data products and have been geographically modified to fit the New York City basemap.
+      description: |
+        Census Blocks from the 2010 US Census for New York City clipped to the shoreline. These boundary files are derived from the US Census Bureau's TIGER project and have been geographically modified to fit the New York City base map. Because some census blocks are under water not all census blocks are contained in this file, only census blocks that are partially or totally located on land have been mapped in this file.
 
-        {{ bytes_previous_versions_link }}
+        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__census_blocks }}">DCP Website: BYTES of the BIG APPLE</a>.
       display_name: 2010 Census Blocks
 - file:
     id: shapefile_water_included
@@ -83,10 +98,10 @@ files:
     type: shapefile
   dataset_overrides:
     attributes:
-      description: |-
-        2010 Census Blocks (water areas included) from the US Census for New York City. These boundary files are derived from the US Census Bureau's TIGER data products and have been geographically modified to fit the New York City basemap.
+      description: |
+        Census Blocks from the 2010 US Census for New York City including portions under water. These boundary files are derived from the US Census Bureau's TIGER project and have been geographically modified to fit the New York City base map.
 
-        {{ bytes_previous_versions_link }}
+        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__census_blocks }}">DCP Website: BYTES of the BIG APPLE</a>.
       display_name: 2010 Census Blocks (water areas included)
 - file:
     id: nycb2010_metadata.pdf
@@ -162,15 +177,11 @@ columns:
     block number (CB2010).
   example: '20060002009'
 - id: shape_area
-  name: Shape__Area
+  name: Shape_Area
   data_type: decimal
-  description: Area of feature in internal units squared.
-  example: None
 - id: shape_leng
-  name: Shape__Length
+  name: Shape_Length
   data_type: decimal
-  description: Length of feature in internal units.
-  example: None
 - id: the_geom
   name: the_geom
   data_type: geometry
