@@ -29,9 +29,10 @@ destinations:
   - id: oti_data_dictionary
     custom:
       destination_use: attachment
-  tags: [socrata_unpublished]
+  tags: [socrata_unpublished, gha_dist_test]
   custom:
     four_four: y9w2-ph8n
+    packaged_files_source: bytes
 - id: socrata_water_included
   type: socrata
   files:
@@ -47,17 +48,16 @@ destinations:
   tags: [socrata_unpublished]
   custom:
     four_four: 444b-5yrw
+    packaged_files_source: bytes
 - id: bytes
   type: bytes
   files:
   - id: shapefile_water_not_included
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nycb2010_{{
-        version }}.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/census-blocks/nycb2010_{{ version }}.zip
   - id: shapefile_water_included
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nycb2010wi_{{
-        version }}.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/census-blocks/nycb2010wi_{{ version }}.zip
   - id: nycb2010_metadata.pdf
     custom:
       url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nycb2010_metadata.pdf
