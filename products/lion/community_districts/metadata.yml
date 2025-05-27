@@ -37,14 +37,19 @@ destinations:
     custom:
       destination_use: attachment
   - id: shapefile
+    dataset_overrides:
+      overridden_columns:
+      - id: shape_length
+        name: Shape_Length
     custom:
       destination_use: dataset_file
   - id: oti_data_dictionary
     custom:
       destination_use: attachment
-  tags: [socrata_unpublished, dist_all]
+  tags: [socrata_unpublished]
   custom:
     four_four: 5crt-au7u
+    packaged_files_source: bytes
 - id: socrata_water_included
   type: socrata
   files:
@@ -56,9 +61,11 @@ destinations:
       overridden_columns:
       - id: borocd
         name: BoroCD
+      - id: shape_length
+        name: Shape_Length
     custom:
       destination_use: dataset_file
-  tags: [dist_all]
+  tags: [transitioned_needs_review]
   custom:
     four_four: 6ak9-vek3
     packaged_files_source: bytes

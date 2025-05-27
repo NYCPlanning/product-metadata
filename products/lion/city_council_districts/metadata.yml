@@ -38,10 +38,12 @@ destinations:
       destination_use: dataset_file
     dataset_overrides:
       overridden_columns:
+      - id: shape_length
+        name: Shape_Length
       - id: coundist
         custom:
           api_name: coun_dist
-  tags: [dist_all]
+  tags: [transitioned_needs_review]
   custom:
     four_four: mkqi-d8x3
     packaged_files_source: bytes
@@ -51,10 +53,14 @@ destinations:
   - id: nycc_metadata.pdf
     custom:
       destination_use: attachment
-  - id: shapefile_wi
+  - id: shapefile
+    dataset_overrides:
+      overridden_columns:
+      - id: shape_length
+        name: Shape_Length
     custom:
       destination_use: dataset_file
-  tags: [socrata_unpublished, dist_all]
+  tags: [socrata_unpublished]
   custom:
     four_four: 872g-cjhh
     packaged_files_source: bytes
@@ -135,8 +141,10 @@ columns:
 - id: the_geom
   data_type: geometry
 - id: shape_length
+  name: Shape_Length
   data_type: decimal
   custom:
     api_name: shape_leng
 - id: shape_area
+  name: Shape_Area
   data_type: decimal

@@ -36,14 +36,14 @@ destinations:
     dataset_overrides:
       overridden_columns:
       - id: fire_division
-        name: FireDiv
+        name: Fire Division
         custom:
           api_name: fire_div
       - id: shape_length
-        name: Shape_Leng
+        name: Shape_Length
     custom:
       destination_use: dataset_file
-  tags: [dist_all]
+  tags: [transitioned_needs_review]
   custom:
     four_four: 68m2-uzcb
     packaged_files_source: bytes

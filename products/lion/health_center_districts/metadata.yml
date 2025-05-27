@@ -36,18 +36,18 @@ destinations:
     dataset_overrides:
       overridden_columns:
       - id: boro_code
-        name: BoroCode
+        name: Borough Code
       - id: boro_name
-        name: BoroName
+        name: Borough Name
       - id: health_center_district
-        name: HCentDist
+        name: Health Center number
         custom:
           api_name: hcent_dist
       - id: shape_length
-        name: Shape_Leng
+        name: Shape_Length
     custom:
       destination_use: dataset_file
-  tags: [dist_all]
+  tags: [transitioned_needs_review]
   custom:
     four_four: 6ez8-za84
     packaged_files_source: bytes

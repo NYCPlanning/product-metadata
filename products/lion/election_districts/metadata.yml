@@ -36,10 +36,10 @@ destinations:
     dataset_overrides:
       overridden_columns:
       - id: shape_length
-        name: Shape_Leng
+        name: Shape_Length
     custom:
       destination_use: dataset_file
-  tags: [dist_all]
+  tags: [transitioned_needs_review]
   custom:
     four_four: y4qz-3s3n
     packaged_files_source: bytes
@@ -53,10 +53,10 @@ destinations:
     dataset_overrides:
       overridden_columns:
       - id: shape_length
-        name: Shape_Leng
+        name: Shape_Length
     custom:
       destination_use: dataset_file
-  tags: [dist_all]
+  tags: [transitioned_needs_review]
   custom:
     four_four: wwxk-38u4
     packaged_files_source: bytes

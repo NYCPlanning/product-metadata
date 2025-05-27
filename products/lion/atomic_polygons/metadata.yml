@@ -62,13 +62,13 @@ destinations:
       - id: censusblock_2020_suffix
         name: CENSUSBL_5
       - id: shape_length
-        name: shape_length
+        name: Shape_Length
     custom:
       destination_use: dataset_file
   - id: nyap_metadata.pdf
     custom:
       destination_use: attachment
-  tags: [socrata_unpublished, dist_all]
+  tags: [socrata_unpublished]
   custom:
     four_four: wgbs-damt
     packaged_files_source: bytes
