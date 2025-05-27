@@ -43,8 +43,7 @@ destinations:
   files:
   - id: shapefile
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/pseudolots_{{
-        version }}.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/pseudolots/pseudolots_{{ version }}.zip
   - id: pseudolots_datadictionary.xlsx
     custom:
       url: https://s-media.nyc.gov/agencies/dcp/assets/files/excel/data-tools/bytes/pseudolots_datadictionary.xlsx
