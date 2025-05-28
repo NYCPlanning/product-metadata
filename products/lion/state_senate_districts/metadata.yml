@@ -38,13 +38,13 @@ destinations:
       - id: state_senate_district
         name: AssemDist
       - id: shape_length
-        name: Shape_Leng
+        name: Shape_Length
     custom:
       destination_use: dataset_file
-  # - id: oti_data_dictionary_wi
-  #   custom:
-  #     destination_use: attachment
-  tags: [dist_all]
+  - id: oti_data_dictionary_wi
+    custom:
+      destination_use: attachment
+  tags: [transitioned_needs_review]
   custom:
     four_four: 4294-fz9s
     packaged_files_source: bytes
@@ -60,13 +60,13 @@ destinations:
       - id: state_senate_district
         name: AssemDist
       - id: shape_length
-        name: Shape_Leng
+        name: Shape_Length
     custom:
       destination_use: dataset_file
-  # - id: oti_data_dictionary
-  #   custom:
-  #     destination_use: attachment
-  tags: [dist_all]
+  - id: oti_data_dictionary
+    custom:
+      destination_use: attachment
+  tags: [transitioned_needs_review]
   custom:
     four_four: afns-vxeu
     packaged_files_source: bytes

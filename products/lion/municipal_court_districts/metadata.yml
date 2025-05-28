@@ -40,7 +40,7 @@ destinations:
         name: Shape_Length
     custom:
       destination_use: dataset_file
-  tags: [dist_all]
+  tags: [transitioned_needs_review]
   custom:
     four_four: qssd-iewi
     packaged_files_source: bytes
@@ -63,7 +63,7 @@ destinations:
         name: Shape_Length
     custom:
       destination_use: dataset_file
-  tags: [dist_all]
+  tags: [transitioned_needs_review]
   custom:
     four_four: mi5z-t7dx
     packaged_files_source: bytes
