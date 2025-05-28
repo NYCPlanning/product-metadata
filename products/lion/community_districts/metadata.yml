@@ -37,6 +37,10 @@ destinations:
     custom:
       destination_use: attachment
   - id: shapefile
+    dataset_overrides:
+      overridden_columns:
+      - id: shape_length
+        name: Shape_Length
     custom:
       destination_use: dataset_file
   - id: oti_data_dictionary
@@ -45,6 +49,7 @@ destinations:
   tags: [socrata_unpublished]
   custom:
     four_four: 5crt-au7u
+    packaged_files_source: bytes
 - id: socrata_water_included
   type: socrata
   files:
@@ -56,21 +61,23 @@ destinations:
       overridden_columns:
       - id: borocd
         name: BoroCD
+      - id: shape_length
+        name: Shape_Length
     custom:
       destination_use: dataset_file
+  tags: [transitioned_needs_review]
   custom:
     four_four: 6ak9-vek3
+    packaged_files_source: bytes
 - id: bytes
   type: bytes
   files:
   - id: shapefile
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nycd_{{
-        version }}.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/community-districts/nycd_{{ version }}.zip
   - id: shapefile_wi
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nycdwi_{{
-        version }}.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/community-districts/nycdwi_{{ version }}.zip
   - id: nycd_metadata.pdf
     custom:
       url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nycd_metadata.pdf

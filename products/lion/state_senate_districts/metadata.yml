@@ -38,14 +38,16 @@ destinations:
       - id: state_senate_district
         name: AssemDist
       - id: shape_length
-        name: Shape_Leng
+        name: Shape_Length
     custom:
       destination_use: dataset_file
-  # - id: oti_data_dictionary_wi
-  #   custom:
-  #     destination_use: attachment
+  - id: oti_data_dictionary_wi
+    custom:
+      destination_use: attachment
+  tags: [transitioned_needs_review]
   custom:
     four_four: 4294-fz9s
+    packaged_files_source: bytes
 - id: socrata
   type: socrata
   files:
@@ -58,25 +60,25 @@ destinations:
       - id: state_senate_district
         name: AssemDist
       - id: shape_length
-        name: Shape_Leng
+        name: Shape_Length
     custom:
       destination_use: dataset_file
-  # - id: oti_data_dictionary
-  #   custom:
-  #     destination_use: attachment
+  - id: oti_data_dictionary
+    custom:
+      destination_use: attachment
+  tags: [transitioned_needs_review]
   custom:
     four_four: afns-vxeu
+    packaged_files_source: bytes
 - id: bytes
   type: bytes
   files:
   - id: shapefile
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nyss_{{
-        version }}.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/state-senate/nyss_{{ version }}.zip
   - id: shapefile_wi
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nysswi_{{
-        version }}.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/state-senate/nysswi_{{ version }}.zip
   - id: nyss_metadata.pdf
     custom:
       url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nyss_metadata.pdf

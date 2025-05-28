@@ -39,15 +39,16 @@ destinations:
   - id: shapefile
     custom:
       destination_use: dataset_file
+  tags: [dist_all]
   custom:
     four_four: xn3r-zk6y
+    packaged_files_source: bytes
 - id: bytes
   type: bytes
   files:
   - id: shapefile
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nycdta2020_{{
-        version }}.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/community-district-tabulation-areas/nycdta2020_{{ version }}.zip
   - id: nycdta2020_metadata.pdf
     custom:
       url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nycdta2020_metadata.pdf

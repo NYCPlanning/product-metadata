@@ -31,7 +31,9 @@ destinations:
     dataset_overrides:
       overridden_columns:
       - id: assembly_district
-        name: AssemDist
+        name: Assembly District
+        custom:
+          api_name: assem_dist
       - id: shape_length
         name: Shape_Length
     custom:
@@ -39,8 +41,10 @@ destinations:
   # - id: oti_data_dictionary_wi
   #   custom:
   #     destination_use: attachment
+  tags: [transitioned_needs_review]
   custom:
     four_four: nymm-wb5m
+    packaged_files_source: bytes
 - id: socrata
   type: socrata
   files:
@@ -48,20 +52,17 @@ destinations:
     custom:
       destination_use: attachment
   - id: shapefile
-    # TODO: Uncomment me when this dataset is migrated to the
-    # new four-four. Overrides mirror those to the destination above, which has been migrated already
-
-    # dataset_overrides:
-    #   overridden_columns:
-    #   - id: assembly_district
-    #     name: AssemDist
-    #   - id: shape_length
-    #     name: Shape_Length
+    dataset_overrides:
+      overridden_columns:
+      - id: assembly_district
+        name: Assembly District
+      - id: shape_length
+        name: Shape_Length
     custom:
       destination_use: dataset_file
-  # - id: oti_data_dictionary
-  #   custom:
-  #     destination_use: attachment
+  - id: oti_data_dictionary
+    custom:
+      destination_use: attachment
   tags: [socrata_unpublished]
   custom:
     four_four: 5yfv-9hkp
@@ -70,12 +71,10 @@ destinations:
   files:
   - id: shapefile
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nyad_{{
-        version }}.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/state-assembly/nyad_{{ version }}.zip
   - id: shapefile_wi
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nyadwi_{{
-        version }}.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/state-assembly/nyadwi_{{ version }}.zip
   - id: nyad_metadata.pdf
     custom:
       url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nyad_metadata.pdf

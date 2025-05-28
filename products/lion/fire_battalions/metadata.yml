@@ -1,4 +1,3 @@
-# TODO: Matt: FireBN - should be Fire Battalion. Should it?
 id: fire_battalions
 
 attributes:
@@ -34,17 +33,24 @@ destinations:
     custom:
       destination_use: attachment
   - id: shapefile
+    dataset_overrides:
+      overridden_columns:
+      - id: firebn
+        name: Fire Battalion
+      - id: shape_length
+        name: Shape_Length
     custom:
       destination_use: dataset_file
+  tags: [transitioned_needs_review]
   custom:
     four_four: xzng-ft6f
+    packaged_files_source: bytes
 - id: bytes
   type: bytes
   files:
   - id: shapefile
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nyfb_{{
-        version }}.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/fire-battalions/nyfb_{{ version }}.zip
   - id: nyfb_metadata.pdf
     custom:
       url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nyfb_metadata.pdf
