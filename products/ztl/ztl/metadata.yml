@@ -45,7 +45,7 @@ destinations:
   files:
   - id: csv_package
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nyczoningtaxlotdb_{{ version }}.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/zoning-tax-lot-database/nyczoningtaxlotdb_{{ version }}.zip
 
 files:
 - file:
