@@ -66,7 +66,7 @@ destinations:
   files:
   - id: commitments_zip
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/cpdb_planned_commitments_{{ version }}.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/capital-projects-database/cpdb_planned_commitments_{{ version }}.zip
 
 files:
 - file:
