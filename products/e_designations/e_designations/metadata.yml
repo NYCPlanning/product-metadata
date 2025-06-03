@@ -86,10 +86,10 @@ destinations:
   files:
   - id: csv_package
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nyedes_{{ version }}csv.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/e-designations/nyedes_{{ version }}csv.zip
   - id: shapefile
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nyedes_{{ version }}shp.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/e-designations/nyedes_{{ version }}shp.zip
   - id: nyedes_metadata.pdf
     custom:
       url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nyedes_metadata.pdf
