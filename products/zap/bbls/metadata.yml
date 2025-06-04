@@ -10,8 +10,7 @@ attributes:
 
     To report data errors or for questions, email <a href="mailto:zap_feedback_dl@planning.nyc.gov">zap_feedback_dl@planning.nyc.gov</a>.
   display_name: Zoning Application Portal (ZAP) - BBL
-  each_row_is_a: tax lot associated to a project in the Zoning Application Portal
-    (ZAP)
+  each_row_is_a: tax lot associated to a project in the Zoning Application Portal (ZAP)
   tags:
   - zap
   - zoning application portal
@@ -35,7 +34,7 @@ assembly:
   filename: zapprojectbbls_csv.zip
   type: zip
   contents:
-    # TODO: Id is somewhat wrong
+  # TODO: Id is somewhat wrong
   - id: zapprojects_datadictionary.xlsx
     filename: zapprojectbbls_datadictionary.xlsx
   - id: bbls
@@ -44,7 +43,7 @@ assembly:
 custom: {}
 
 destinations:
-- id: socrata_bbls
+- id: socrata
   type: socrata
   files:
   - id: zapprojects_datadictionary.xlsx
@@ -60,7 +59,7 @@ destinations:
   files:
   - id: csv_package
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/zapprojectbbls_{{ version }}csv.zip
+      url: "{{ bytes_zip_prefix_url }}/zap/zapprojectbbls_{{ version }}csv.zip"
 
 files:
 - file:
@@ -83,17 +82,17 @@ columns:
   name: bbl
   data_type: text
   description: Borough, block and lot number of a tax lot associated to the application.
-    This field consists of the borough code, followed by the tax block, followed by
-    the tax lot. The borough code is one numeric digit. The tax block is one to five
-    numeric digits, preceded with leading zeros when the block is less than five digits.
-    The tax lot is one to four digits and is preceded with leading zeros when the
-    lot is less than four digits. This was validated by Geosupport.
+    This field consists of the borough code, followed by the tax block, followed by the
+    tax lot. The borough code is one numeric digit. The tax block is one to five numeric
+    digits, preceded with leading zeros when the block is less than five digits. The tax
+    lot is one to four digits and is preceded with leading zeros when the lot is less
+    than four digits. This was validated by Geosupport.
   example: '4000827501'
 - id: validated_borough
   name: validated_borough
   data_type: text
-  description: Borough of a tax lot associated to the application. This was validated
-    by Geosupport. See validated field description for more details.
+  description: Borough of a tax lot associated to the application. This was validated by
+    Geosupport. See validated field description for more details.
   example: Staten Island
 - id: validated_block
   name: validated_block
@@ -106,7 +105,7 @@ columns:
   data_type: text
   description: Tax lot number of a tax lot associated to the application. This was
     validated by Geosupport. See validated field description for more details.
-  example: 0008
+  example: 8
 - id: validated
   name: validated
   data_type: text
@@ -129,16 +128,14 @@ columns:
 - id: unverified_block
   name: unverified_block
   data_type: text
-  description: Block number of a tax lot associated to the application. This data
-    was manually entered by a user. If validated_block field is blank then there was
-    not a matching record in Geosupport. See validated field description for more
-    details.
+  description: Block number of a tax lot associated to the application. This data was
+    manually entered by a user. If validated_block field is blank then there was not a
+    matching record in Geosupport. See validated field description for more details.
   example: '3043'
 - id: unverified_lot
   name: unverified_lot
   data_type: text
-  description: Tax lot number of a tax lot associated to the application. This data
-    was manually entered by a user. If validated_lot field is blank then there was
-    not a matching record in Geosupport. See validated field description for more
-    details.
+  description: Tax lot number of a tax lot associated to the application. This data was
+    manually entered by a user. If validated_lot field is blank then there was not a
+    matching record in Geosupport. See validated field description for more details.
   example: '8'

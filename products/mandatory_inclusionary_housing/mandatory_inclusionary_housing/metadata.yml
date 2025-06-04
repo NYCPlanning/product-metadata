@@ -47,10 +47,10 @@ destinations:
   files:
   - id: primary_shapefile
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nycmih_{{ version }}.zip
+      url: "{{ bytes_zip_prefix_url }}/mandatory-inclusionary-housing/nycmih_{{ version }}.zip"
   - id: nycmih_metadata.pdf
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nycmih_metadata.pdf
+      url: "{{ bytes_pdf_prefix_url }}/nycmih_metadata.pdf"
 
 files:
 - file:

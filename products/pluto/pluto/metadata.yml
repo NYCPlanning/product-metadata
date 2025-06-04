@@ -81,13 +81,13 @@ destinations:
   files:
   - id: csv_zip
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nyc_pluto_{{ version }}_csv.zip
+      url: "{{ bytes_zip_prefix_url }}/pluto/nyc_pluto_{{ version }}_csv.zip"
   - id: pluto_datadictionary.pdf
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/pluto_datadictionary.pdf
+      url: "{{ bytes_pdf_prefix_url }}/pluto_datadictionary.pdf"
   - id: pluto_readme.pdf
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/pluto_readme.pdf
+      url: "{{ bytes_pdf_prefix_url }}/pluto_readme.pdf"
 
 files:
 - file:
@@ -1024,9 +1024,9 @@ columns:
     description: Industrial & Manufacturing
   - value: '7'
     description: Transportation & Utility
-  - value: 08
+  - value: 8
     description: Public Facilities & Institutions
-  - value: 09
+  - value: 9
     description: Open Space & Outdoor Recreation
   - value: '10'
     description: Parking Facilities
@@ -1068,11 +1068,10 @@ columns:
   - value: C
     description: City ownership
   - value: X
-    description: Fully tax-exempt property that may be owned by the city, state, or
-      federal government; a public authority; or a private institution
+    description: Fully tax-exempt property that may be owned by the city, state, or federal
+      government; a public authority; or a private institution
   - value: O
-    description: Other - owned by either a public authority or the state or federal
-      government
+    description: Other - owned by either a public authority or the state or federal government
   - value: P
     description: Private ownership
   - value: M
@@ -1339,11 +1338,11 @@ columns:
   - value: '2'
     description: Department of Finance's Property Tax System (PTS)
   - value: '4'
-    description: BUILDING CLASS starts with 'V' and NUMBER OF BUILDINGS is 0. TOTAL
-      BUILDING FLOOR AREA is 0.
+    description: BUILDING CLASS starts with 'V' and NUMBER OF BUILDINGS is 0. TOTAL BUILDING
+      FLOOR AREA is 0.
   - value: '5'
-    description: Calculated from PTS building dimensions and NUMBER OF FLOORS for
-      primary building only.
+    description: Calculated from PTS building dimensions and NUMBER OF FLOORS for primary
+      building only.
   - value: '7'
     description: Department of Finance's Mass Appraisal System (CAMA)
   custom:
@@ -1463,8 +1462,8 @@ columns:
   name: proxcode
   data_type: integer
   description: A code describing the physical relationship of the building to neighboring
-    buildings. If there are multiple buildings on the lot, CAMA data for building
-    number 1 is used.
+    buildings. If there are multiple buildings on the lot, CAMA data for building number
+    1 is used.
   data_source: Department of Finance - Mass Appraisal System (CAMA)
   example: '1'
   values:
@@ -1505,29 +1504,27 @@ columns:
   - value: '1'
     description: Block assemblage - a tax lot that encompasses an entire block
   - value: '2'
-    description: Waterfront - a tax lot bordering on a body of water.  Waterfront
-      lots may contain a small amount of submerged land.
+    description: Waterfront - a tax lot bordering on a body of water.  Waterfront lots may
+      contain a small amount of submerged land.
   - value: '3'
     description: Corner - a tax lot bordering on two intersecting streets
   - value: '4'
-    description: Through - a tax lot connecting two streets, with frontage on both
-      streets. Note that a lot with two frontages is not necessarily a through lot.
-      For example, an L-shaped lot with two frontages is considered an inside lot
-      (5).
+    description: Through - a tax lot connecting two streets, with frontage on both streets.
+      Note that a lot with two frontages is not necessarily a through lot. For example,
+      an L-shaped lot with two frontages is considered an inside lot (5).
   - value: '5'
-    description: Inside - a tax lot with frontage on only one street. This value comes
-      from CAMA, but is only assigned in PLUTO if CAMA has no other lot types for
-      the tax lot.
+    description: Inside - a tax lot with frontage on only one street. This value comes from
+      CAMA, but is only assigned in PLUTO if CAMA has no other lot types for the tax
+      lot.
   - value: '6'
     description: Interior lot - a tax lot that has no street frontage
   - value: '7'
     description: Island lot - a tax lot that is entirely surrounded by water
   - value: '8'
-    description: Alley lot - a tax lot that is too narrow to accommodate a building.
-      The lot is usually 12 feet or less in width.
+    description: Alley lot - a tax lot that is too narrow to accommodate a building. The lot
+      is usually 12 feet or less in width.
   - value: '9'
-    description: Submerged land lot - a tax lot that is totally or almost completely
-      submerged
+    description: Submerged land lot - a tax lot that is totally or almost completely submerged
   custom:
     readme_data_type: Alphanumeric - 1 character
 - id: bsmtcode
@@ -1542,21 +1539,20 @@ columns:
   - value: '0'
     description: None/No Basement
   - value: '1'
-    description: Above grade full basement - the basement is 75% or more of the area
-      of the first floor and the basement walls are at least 4 feet high on at least
-      two sides
+    description: Above grade full basement - the basement is 75% or more of the area of the
+      first floor and the basement walls are at least 4 feet high on at least two sides
   - value: '2'
-    description: Below grade full basement - the basement is 75% or more of the area
-      of the first floor and the basement walls are fully submerged or are less than
-      4 feet on at least three sides
+    description: Below grade full basement - the basement is 75% or more of the area of the
+      first floor and the basement walls are fully submerged or are less than 4 feet on
+      at least three sides
   - value: '3'
-    description: Above grade partial basement - the basement is between 25% and 75%
-      of the area of the first floor and the basement walls are at least 4 feet high
-      on at least two sides
+    description: Above grade partial basement - the basement is between 25% and 75% of the
+      area of the first floor and the basement walls are at least 4 feet high on at
+      least two sides
   - value: '4'
-    description: Below grade partial basement - the basement is between 25% and 75%
-      of the area of the first floor and the basement walls are fully submerged or
-      are less than 4 feet on at least three sides
+    description: Below grade partial basement - the basement is between 25% and 75% of the
+      area of the first floor and the basement walls are fully submerged or are less
+      than 4 feet on at least three sides
   - value: '5'
     description: Unknown
   custom:
@@ -1848,8 +1844,8 @@ columns:
 - id: longitude
   name: longitude
   data_type: decimal
-  description: The WGS 84 longitude of the latitude/longitude coordinate pair for
-    the approximate location of the tax lot
+  description: The WGS 84 longitude of the latitude/longitude coordinate pair for the
+    approximate location of the tax lot
   data_source: Department of City Planning
   example: '-73.9452063'
   custom:
@@ -1857,9 +1853,9 @@ columns:
 - id: zonemap
   name: zonemap
   data_type: text
-  description: The Department of City Planning Zoning Map Number associated with the
-    tax lot's X and Y Coordinates. If the tax lot is on the border of two or more
-    zoning maps, ZONING MAP \# is the zoning map covering the greatest area.
+  description: The Department of City Planning Zoning Map Number associated with the tax
+    lot's X and Y Coordinates. If the tax lot is on the border of two or more zoning
+    maps, ZONING MAP \# is the zoning map covering the greatest area.
   data_source: Department of City Planning Georeferenced NYC Zoning Maps
   example: 17a
   custom:
@@ -1867,8 +1863,7 @@ columns:
 - id: zmcode
   name: zmcode
   data_type: bool
-  description: A code (Y) identifies a tax lot on the border of two or more zoning
-    maps.
+  description: A code (Y) identifies a tax lot on the border of two or more zoning maps.
   data_source: Department of City Planning Georeferenced NYC Zoning Maps
   example: 'True'
   custom:
@@ -1963,8 +1958,8 @@ columns:
   - value: '3'
     description: Lot is in both versions of MapPLUTO, but not in PLUTO
   - value: '4'
-    description: Lot is in PLUTO and MapPLUTO (with water areas included), but not
-      in the clipped version of MapPLUTO. Tax lot is completely under water.
+    description: Lot is in PLUTO and MapPLUTO (with water areas included), but not in the
+      clipped version of MapPLUTO. Tax lot is completely under water.
   - value: '5'
     description: Lot is in MapPLUTO (with water areas included), but not in the clipped
       version of MapPLUTO or in PLUTO. Tax lot is completely under water.
@@ -2027,8 +2022,8 @@ columns:
   example: '1'
   values:
   - value: '1'
-    description: Some portion of the tax lot falls within the 1% annual chance floodplain
-      as determined by FEMA's 2007 Flood Insurance Rate Map
+    description: Some portion of the tax lot falls within the 1% annual chance floodplain as
+      determined by FEMA's 2007 Flood Insurance Rate Map
   custom:
     readme_data_type: Alphanumeric - 1 character
 - id: pfirm15_flag
@@ -2044,8 +2039,8 @@ columns:
   example: '1'
   values:
   - value: '1'
-    description: Some portion of the tax lot falls within the 1% annual chance floodplain
-      as determined by FEMA's 2015 Preliminary Flood Insurance Rate Map.
+    description: Some portion of the tax lot falls within the 1% annual chance floodplain as
+      determined by FEMA's 2015 Preliminary Flood Insurance Rate Map.
   custom:
     readme_data_type: Alphanumeric - 1 character
 - id: rpaddate
@@ -2104,8 +2099,7 @@ columns:
   example: t
   values:
   - value: t
-    description: City Planning has made a change to any field values for this tax
-      lot
+    description: City Planning has made a change to any field values for this tax lot
   custom:
     readme_data_type: Alphanumeric - 3 characters
 - id: notes
