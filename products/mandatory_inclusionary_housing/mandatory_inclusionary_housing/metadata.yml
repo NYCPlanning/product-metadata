@@ -1,14 +1,18 @@
 id: mandatory_inclusionary_housing
 
 attributes:
-  description: |-
-    The Mandatory Inclusionary Housing program was adopted in 2016 to encourage the creation of housing for families at a range of incomes in areas planned for housing growth. When actions of the Commission significantly increase residential density, the City Planning Commission and the City Council will apply one or more options to require affordable housing as part of new residential construction.
+  description: >-
+    The Mandatory Inclusionary Housing program was adopted in 2016 to encourage the
+    creation of housing for families at a range of incomes in areas planned for housing
+    growth. When actions of the Commission significantly increase residential density,
+    the City Planning Commission and the City Council will apply one or more options to
+    require affordable housing as part of new residential construction.
 
     {{ bytes_previous_versions_link }}
   display_name: Mandatory Inclusionary Housing
   date_made_public: "3/14/2017"
   publishing_frequency: Monthly
-  each_row_is_a: A Mandatorily Included House
+  each_row_is_a: Area where the Mandatory inclusionary Housing program is applicable
   tags:
   - housing
   - house
@@ -100,9 +104,10 @@ columns:
 - id: boro
   name: Boro
   data_type: text
-  description: The NYC Borough where the Mandatory Inclusionary Housing (MIH) area
-    is mapped. The boro code is a single digit identifier, indicating a particular
-    borough (1 = Manhattan, 2 = Bronx, 3 = Brooklyn, 4 = Queens, 5 = Staten Island).
+  description: >-
+    The NYC Borough where the Mandatory Inclusionary Housing (MIH) area is mapped. The
+    boro code is a single digit identifier, indicating a particular borough (1 =
+    Manhattan, 2 = Bronx, 3 = Brooklyn, 4 = Queens, 5 = Staten Island).
   example: '1'
   values:
   - value: '1'
@@ -145,14 +150,14 @@ columns:
 - id: zr_map
   name: ZR_Map
   data_type: text
-  description: The map number referenced in Appendix F of the Zoning Resolution for
-    the mapped Mandatory Inclusionary Housing (MIH) area.
+  description: >-
+    The map number referenced in Appendix F of the Zoning Resolution for the mapped
+    Mandatory Inclusionary Housing (MIH) area.
   example: CD11-Map 1 (Area 1)
 - id: cd
   name: CD
   data_type: text
-  description: Community District where the Mandatory Inclusionary Housing (MIH) area
-    is mapped.
+  description: Community District where the Mandatory Inclusionary Housing (MIH) area is mapped.
   example: '1'
 - id: mih_option
   name: MIH_Option
@@ -163,14 +168,12 @@ columns:
 - id: zoning_map
   name: Zoning_Map
   data_type: text
-  description: Zoning Map index number where the Mandatory Inclusionary Housing (MIH)
-    area is mapped.
+  description: Zoning Map index number where the Mandatory Inclusionary Housing (MIH) area is mapped.
   example: 16c
 - id: project_id
   name: Project_ID
   data_type: text
-  description: Zoning Application Portal (ZAP) project id. ZAP is a DCP project tracking
-    database.
+  description: Zoning Application Portal (ZAP) project id. ZAP is a DCP project tracking database.
   example: P2013X0135
 - id: shape_leng
   name: Shape_Length
