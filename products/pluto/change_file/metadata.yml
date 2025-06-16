@@ -61,11 +61,10 @@ destinations:
   files:
   - id: csv_package
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/PLUTOChangeFile{{
-        version }}.zip
+      url: "{{ bytes_zip_prefix_url }}/pluto-change-file/PLUTOChangeFile{{ version }}.zip"
   - id: pluto_change_file_readme
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/plutochangefile_readme.pdf
+      url: "{{ bytes_pdf_prefix_url }}/plutochangefile_readme.pdf"
 
 files:
 - file:
@@ -117,31 +116,31 @@ columns:
   - value: '1'
     description: Programmatic
     custom:
-      other_details: '[''Changes that are applied programmatically to each new version
-        of PLUTO. For example, if lot area is zero in DOF’s Property Tax System, PLUTO
-        uses the area of the tax lot’s geometric shape.'']'
+      other_details: '[''Changes that are applied programmatically to each new version of
+        PLUTO. For example, if lot area is zero in DOF’s Property Tax System, PLUTO uses
+        the area of the tax lot’s geometric shape.'']'
   - value: '2'
     description: Research
     custom:
-      other_details: '[''Changes resulting from DCP research that are stored in PLUTO_input_research.csv.
-        Each row in this file contains a change needed for a particular BBL and field.
-        The change will be applied for each new version unless the original value
-        of the field changes.'']'
+      other_details: '[''Changes resulting from DCP research that are stored in
+        PLUTO_input_research.csv. Each row in this file contains a change needed for a
+        particular BBL and field. The change will be applied for each new version unless
+        the original value of the field changes.'']'
   - value: '3'
     description: User reported
     custom:
-      other_details: '[''Errors reported by users. These are verified by DCP and stored
-        in PLUTO_input_research.csv.'']'
+      other_details: '[''Errors reported by users. These are verified by DCP and stored in
+        PLUTO_input_research.csv.'']'
 - id: reason
   name: reason
   data_type: text
-  description: The reason the field value was changed. See Appendix for valid values
-    for programmatic and research changes. For user reported changes, the reason states
-    the field that was wrong, e.g. "Lot area wrong."
+  description: The reason the field value was changed. See Appendix for valid values for
+    programmatic and research changes. For user reported changes, the reason states the
+    field that was wrong, e.g. "Lot area wrong."
   example: LPC year built
 - id: version
   name: version
   data_type: text
-  description: For programmatic changes, this is version in which the programmatic
-    change was implemented.
+  description: For programmatic changes, this is version in which the programmatic change
+    was implemented.
   example: 20v1

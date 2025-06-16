@@ -30,27 +30,24 @@ destinations:
     custom:
       destination_use: dataset_file
   custom:
-    four_four: bw8v-wzdr
-- id: socrata_test
+    four_four: m79g-k9r4
+- id: socrata_map
   type: socrata
   files:
   - id: nycmih_metadata.pdf
     custom:
       destination_use: attachment
-  - id: primary_shapefile
-    custom:
-      destination_use: dataset_file
   custom:
-    four_four: m79g-k9r4
+    four_four: bw8v-wzdr
 - id: bytes
   type: bytes
   files:
   - id: primary_shapefile
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nycmih_{{ version }}.zip
+      url: "{{ bytes_zip_prefix_url }}/mandatory-inclusionary-housing/nycmih_{{ version }}.zip"
   - id: nycmih_metadata.pdf
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nycmih_metadata.pdf
+      url: "{{ bytes_pdf_prefix_url }}/nycmih_metadata.pdf"
 
 files:
 - file:

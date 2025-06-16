@@ -38,7 +38,7 @@ assembly:
 custom: {}
 
 destinations:
-- id: socrata_projects
+- id: socrata
   type: socrata
   files:
   - id: zapprojects_datadictionary.xlsx
@@ -54,7 +54,7 @@ destinations:
   files:
   - id: csv_package
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/zapprojects_{{ version }}csv.zip
+      url: "{{ bytes_zip_prefix_url }}/zap/zapprojects_{{ version }}csv.zip"
 
 files:
 - file:
@@ -86,8 +86,7 @@ columns:
 - id: project_status
   name: project_status
   data_type: text
-  description: This indicates whether the application is actively being worked on
-    or not.
+  description: This indicates whether the application is actively being worked on or not.
   example: Complete
 - id: public_status
   name: public_status
@@ -98,24 +97,24 @@ columns:
   name: ulurp_non
   data_type: text
   description: Flag that indicates if a project is subject to ULURP or not. Applications
-    can either follow the Uniform Land Use Review Procedure (ULURP) or are designated
-    as Non-ULURP, and are therefore not restricted to ULURP rules and timing.
+    can either follow the Uniform Land Use Review Procedure (ULURP) or are designated as
+    Non-ULURP, and are therefore not restricted to ULURP rules and timing.
   example: Non-ULURP
 - id: actions
   name: actions
   data_type: text
   description: The type of action(s) included in the application. There may be multiple
-    land use actions attached to an application to facilitate a single development.
-    Many action types on historical applications are retired.
+    land use actions attached to an application to facilitate a single development. Many
+    action types on historical applications are retired.
   example: RC
 - id: ulurp_numbers
   name: ulurp_numbers
   data_type: text
-  description: The ULURP number is a unique identifier for each application's action.
-    The first 2-characters (number) are the fiscal year the application was filed,
-    followed by 4-character unique number, if an application was modified it will
-    be followed by a 1-character (letter), followed by 2-character (letter) action
-    code, followed by a 1-character (letter) borough code.
+  description: The ULURP number is a unique identifier for each application's action. The
+    first 2-characters (number) are the fiscal year the application was filed, followed
+    by 4-character unique number, if an application was modified it will be followed by
+    a 1-character (letter), followed by 2-character (letter) action code, followed by a
+    1-character (letter) borough code.
   example: C870526HAK
 - id: ceqr_type
   name: ceqr_type
@@ -130,15 +129,14 @@ columns:
 - id: eas_eis
   name: eas_eis
   data_type: text
-  description: Flag that indicates the environmental review document issued.   Environmental
-    Assessment Statement (EAS), Environmental Impact Statement (EIS), Technical Memorandum
-    (Tech Memo)
+  description: Flag that indicates the environmental review document
+    issued.   Environmental Assessment Statement (EAS), Environmental Impact Statement
+    (EIS), Technical Memorandum (Tech Memo)
   example: EAS
 - id: ceqr_leadagency
   name: ceqr_leadagency
   data_type: text
-  description: The agency responsible for determining if an environmental review is
-    required.
+  description: The agency responsible for determining if an environmental review is required.
   example: DCP
 - id: primary_applicant
   name: primary_applicant
@@ -168,9 +166,8 @@ columns:
 - id: flood_zone_a
   name: flood_zone_a
   data_type: text
-  description: Flag that indicates if project is in the 1% annual chance floodplain.
-    Areas subject to the 1% annual chance flood (100 year flood) and are considered
-    high-risk.
+  description: Flag that indicates if project is in the 1% annual chance floodplain. Areas
+    subject to the 1% annual chance flood (100 year flood) and are considered high-risk.
   example: 'false'
 - id: flood_zone_shadedx
   name: flood_zone_shadedx
@@ -187,14 +184,13 @@ columns:
 - id: current_milestone_date
   name: current_milestone_date
   data_type: datetime
-  description: The start date of the current milestone related to the review of a
-    land use application
+  description: The start date of the current milestone related to the review of a land use
+    application
   example: '2022-10-11T00:00:00.000'
 - id: current_envmilestone
   name: current_envmilestone
   data_type: text
-  description: The current milestone related to the CEQR/environmental review of an
-    application.
+  description: The current milestone related to the CEQR/environmental review of an application.
   example: EAS - Review Filed EAS
 - id: current_envmilestone_date
   name: current_envmilestone_date
@@ -205,14 +201,13 @@ columns:
 - id: app_filed_date
   name: app_filed_date
   data_type: datetime
-  description: The date an application(s) was filed with the Department of City Planning
-    (DCP)
+  description: The date an application(s) was filed with the Department of City Planning (DCP)
   example: '2018-05-04T00:00:00.000'
 - id: noticed_date
   name: noticed_date
   data_type: datetime
-  description: The date notice was given that an application will certify no sooner
-    than 30 days per the City Charter requirement. This only applies to ULURP projects.
+  description: The date notice was given that an application will certify no sooner than
+    30 days per the City Charter requirement. This only applies to ULURP projects.
   example: '2020-08-14T00:00:00.000'
 - id: certified_referred
   name: certified_referred
@@ -233,38 +228,36 @@ columns:
 - id: mih_flag
   name: mih_flag
   data_type: text
-  description: Flag that indicates if Mandatory Inclusionary Housing (MIH) is proposed
-    to be mapped through an amendment to the Zoning Resolution.
+  description: Flag that indicates if Mandatory Inclusionary Housing (MIH) is proposed to
+    be mapped through an amendment to the Zoning Resolution.
   example: 'false'
 - id: mih_option1
   name: mih_option1
   data_type: text
-  description: Flag that indicates MIH Option 1 is proposed to be mapped (25% Units/60%
-    AMI)
+  description: Flag that indicates MIH Option 1 is proposed to be mapped (25% Units/60% AMI)
   example: 'false'
 - id: mih_option2
   name: mih_option2
   data_type: text
-  description: Flag that indicates MIH Option 2 is proposed to be mapped (30% Units/80%
-    AMI)
+  description: Flag that indicates MIH Option 2 is proposed to be mapped (30% Units/80% AMI)
   example: 'False'
 - id: mih_workforce
   name: mih_workforce
   data_type: text
-  description: Flag that indicates the MIH Workforce option is proposed to be mapped
-    (30% Units/115% AMI)
+  description: Flag that indicates the MIH Workforce option is proposed to be mapped (30%
+    Units/115% AMI)
   example: 'false'
 - id: mih_deepaffordability
   name: mih_deepaffordability
   data_type: text
-  description: Flag that indicates the MIH Deep Affordability option is proposed to
-    be mapped (20% Units/40% AMI)
+  description: Flag that indicates the MIH Deep Affordability option is proposed to be
+    mapped (20% Units/40% AMI)
   example: 'false'
 - id: mih_mapped_no_res
   name: mih_mapped_no_res
   data_type: text
-  description: Flag that indicates Mandatory Inclusionary Housing (MIH) is proposed
-    to be mapped, but no residential units are proposed
+  description: Flag that indicates Mandatory Inclusionary Housing (MIH) is proposed to be
+    mapped, but no residential units are proposed
   example: 'false'
 - id: dcp_visibility
   name: dcp_visibility
