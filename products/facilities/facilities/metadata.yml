@@ -8,6 +8,7 @@ attributes:
   display_name: Facilities Database
   each_row_is_a: Public or Private Facility Licensed to Operate in NYC
   publishing_frequency: Bi-annually
+  geocoded: true
   tags:
   - service
   - services
@@ -42,122 +43,84 @@ destinations:
     custom:
       destination_use: attachment
   - id: shapefile
-    # dataset_overrides:
-    #   overridden_columns:
-    #   - id: UID
-    #     custom:
-    #       api_name: uid
-    #   - id: FACNAME
-    #     custom:
-    #       api_name: facname
-    #   - id: ADDRESSNUM
-    #     custom:
-    #       api_name: addressnum
-    #   - id: STREETNAME
-    #     custom:
-    #       api_name: streetname
-    #   - id: ADDRESS
-    #     custom:
-    #       api_name: address
-    #   - id: CITY
-    #     custom:
-    #       api_name: city
-    #   - id: BORO
-    #     custom:
-    #       api_name: boro
-    #   - id: BOROCODE
-    #     custom:
-    #       api_name: borocode
-    #   - id: ZIPCODE
-    #     custom:
-    #       api_name: zipcode
-    #   - id: LATITUDE
-    #     custom:
-    #       api_name: latitude
-    #   - id: LONGITUDE
-    #     custom:
-    #       api_name: longitude
-    #   - id: XCOORD
-    #     custom:
-    #       api_name: xcoord
-    #   - id: YCOORD
-    #     custom:
-    #       api_name: ycoord
-    #   - id: BIN
-    #     custom:
-    #       api_name: bin
-    #   - id: BBL
-    #     custom:
-    #       api_name: bbl
-    #   - id: CD
-    #     custom:
-    #       api_name: cd
-    #   - id: COUNCIL
-    #     custom:
-    #       api_name: council
-    #   - id: CT2010
-    #     custom:
-    #       api_name: ct2010
-    #   - id: CT2020
-    #     custom:
-    #       api_name: ct2020
-    #   - id: NTA2010
-    #     custom:
-    #       api_name: nta2010
-    #   - id: NTA2020
-    #     custom:
-    #       api_name: nta2020
-    #   - id: FACGROUP
-    #     custom:
-    #       api_name: facgroup
-    #   - id: FACSUBGRP
-    #     custom:
-    #       api_name: facsubgrp
-    #   - id: FACTYPE
-    #     custom:
-    #       api_name: factype
-    #   - id: CAPACITY
-    #     custom:
-    #       api_name: capacity
-    #   - id: CAPTYPE
-    #     custom:
-    #       api_name: captype
-    #   - id: OPTYPE
-    #     custom:
-    #       api_name: optype
-    #   - id: OPNAME
-    #     custom:
-    #       api_name: opname
-    #   - id: OPABBREV
-    #     custom:
-    #       api_name: opabbrev
-    #   - id: OVERLEVEL
-    #     custom:
-    #       api_name: overlevel
-    #   - id: OVERAGENCY
-    #     custom:
-    #       api_name: overagency
-    #   - id: OVERABBREV
-    #     custom:
-    #       api_name: overabbrev
-    #   - id: DATASOURCE
-    #     custom:
-    #       api_name: datasource
-    #   - id: FACDOMAIN
-    #     custom:
-    #       api_name: facdomain
-    #   - id: SCHOOLDIST
-    #     custom:
-    #       api_name: schooldist
-    #   - id: POLICEPRCT
-    #     custom:
-    #       api_name: policeprct
-    #   - id: SERVAREA
-    #     custom:
-    #       api_name: servarea
-    #   - id: geometry
-    #     custom:
-    #       api_name: geometry
+    dataset_overrides:
+      overridden_columns:
+      - id: uid
+        name: uid
+      - id: facname
+        name: facname
+      - id: addressnum
+        name: addressnum
+      - id: streetname
+        name: streetname
+      - id: address
+        name: address
+      - id: city
+        name: city
+      - id: boro
+        name: boro
+      - id: borocode
+        name: borocode
+      - id: zipcode
+        name: zipcode
+      - id: latitude
+        name: latitude
+      - id: longitude
+        name: longitude
+      - id: xcoord
+        name: xcoord
+      - id: ycoord
+        name: ycoord
+      - id: bin
+        name: bin
+      - id: bbl
+        name: bbl
+      - id: cd
+        name: cd
+      - id: council
+        name: council
+      - id: ct2010
+        name: ct2010
+      - id: ct2020
+        name: ct2020
+      - id: nta2010
+        name: nta2010
+      - id: nta2020
+        name: nta2020
+      - id: facgroup
+        name: facgroup
+      - id: facsubgrp
+        name: facsubgrp
+      - id: factype
+        name: factype
+      - id: capacity
+        name: capacity
+      - id: captype
+        name: captype
+      - id: optype
+        name: optype
+      - id: opname
+        name: opname
+      - id: opabbrev
+        name: opabbrev
+      - id: overlevel
+        name: overlevel
+      - id: overagency
+        name: overagency
+      - id: overabbrev
+        name: overabbrev
+      - id: datasource
+        name: datasource
+      - id: facdomain
+        name: facdomain
+      - id: schooldist
+        name: schooldist
+      - id: policeprct
+        name: policeprct
+      - id: servarea
+        name: servarea
+      - id: geometry
+        name: geometry
     custom:
       destination_use: dataset_file
   custom:
