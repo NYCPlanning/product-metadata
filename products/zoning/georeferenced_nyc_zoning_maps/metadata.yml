@@ -38,7 +38,7 @@ destinations:
   files:
   - id: fgdb
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/georeferencedzoningmaps_{{version }}.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/georeferenced-zoning-maps/georeferencedzoningmaps_{{version }}.zip
   - id: georeferencedzoningmaps_metadata
     custom:
       url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/georeferencedzoningmaps_metadata.pdf
