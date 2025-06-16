@@ -29,17 +29,14 @@ destinations:
   - id: primary_shapefile
     custom:
       destination_use: dataset_file
-  custom:
-    four_four: bw8v-wzdr
-- id: socrata_test
+- id: socrata_map
   type: socrata
   files:
   - id: nycmih_metadata.pdf
     custom:
       destination_use: attachment
-  - id: primary_shapefile
-    custom:
-      destination_use: dataset_file
+  custom:
+    four_four: bw8v-wzdr
   custom:
     four_four: m79g-k9r4
 - id: bytes
