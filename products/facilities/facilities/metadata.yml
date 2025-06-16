@@ -161,6 +161,12 @@ destinations:
       destination_use: dataset_file
   custom:
     four_four: ji82-xba5
+- id: bytes
+  type: bytes
+  files:
+  - id: shapefile
+    custom:
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/facilities-database/facilities_{{ version }}_shp.zip
 
 files:
 - file:
