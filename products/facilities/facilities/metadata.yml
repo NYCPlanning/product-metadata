@@ -249,8 +249,8 @@ files:
     - id: datasource
       name: DATASOURCE
     - id: facdomain
-    - id: schooldist
       name: FACDOMAIN
+    - id: schooldist
       name: SCHOOLDIST
     - id: policeprct
       name: POLICEPRCT
