@@ -85,10 +85,6 @@ files:
     filename: nycgiszoningfeatures_fgdb.zip
     type: fgdb
 - file:
-    id: shapefile
-    filename: nycgiszoningfeatures_shp.zip
-    type: shapefile
-- file:
     id: nyco_metadata
     filename: nyco_metadata.pdf
     is_metadata: true
