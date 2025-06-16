@@ -59,9 +59,6 @@ destinations:
   - id: metadata_pdf
     custom:
       destination_use: attachment
-  - id: data_dict_xlsx
-    custom:
-      destination_use: attachment
   custom:
     four_four: 3u5q-ae5y
     is_unparsed_dataset: true
