@@ -29,6 +29,8 @@ destinations:
   - id: primary_shapefile
     custom:
       destination_use: dataset_file
+  custom:
+    four_four: m79g-k9r4
 - id: socrata_map
   type: socrata
   files:
@@ -37,8 +39,6 @@ destinations:
       destination_use: attachment
   custom:
     four_four: bw8v-wzdr
-  custom:
-    four_four: m79g-k9r4
 - id: bytes
   type: bytes
   files:
