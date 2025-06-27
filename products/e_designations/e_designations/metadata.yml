@@ -1,10 +1,16 @@
 id: e_designations
 
 attributes:
-  description: |-
-    This data set contains information and locations of (E) Designations, including CEQR Environment Requirements (Table 1) and CEQR Restrictive Declarations (Table 2), in Appendix C of the Zoning Resolution. An (E) Designation provides notice of the presence of an environmental requirement pertaining to potential hazardous materials contamination, high ambient noise levels or air emission concerns on a particular tax lot.
+  description: >-
+    This data set contains information and locations of (E) Designations, including CEQR
+    Environment Requirements (Table 1) and CEQR Restrictive Declarations (Table 2), in
+    Appendix C of the Zoning Resolution. An (E) Designation provides notice of the
+    presence of an environmental requirement pertaining to potential hazardous materials
+    contamination, high ambient noise levels or air emission concerns on a particular
+    tax lot.
 
-    All previously released versions of this data are available at  <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>
+
+    {{ bytes_previous_versions_link }}
   display_name: E-Designations
   each_row_is_a: E-Designation
   publishing_frequency: Monthly
@@ -86,13 +92,13 @@ destinations:
   files:
   - id: csv_package
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/e-designations/nyedes_{{ version }}csv.zip
+      url: "{{ bytes_zip_prefix_url }}/e-designations/nyedes_{{ version }}csv.zip"
   - id: shapefile
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/e-designations/nyedes_{{ version }}shp.zip
+      url: "{{ bytes_zip_prefix_url }}/e-designations/nyedes_{{ version }}shp.zip"
   - id: nyedes_metadata.pdf
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nyedes_metadata.pdf
+      url: "{{ bytes_pdf_prefix_url }}/nyedes_metadata.pdf"
 
 files:
 - file:
@@ -100,7 +106,16 @@ files:
     filename: nyedes_shape.zip
     type: shapefile
   dataset_overrides:
-    omitted_columns: ['air_code', 'air_date', 'effective_date', 'hazmat_code', 'hazmat_date', 'noise_code', 'noise_date']
+    omitted_columns:
+      [
+        'air_code',
+        'air_date',
+        'effective_date',
+        'hazmat_code',
+        'hazmat_date',
+        'noise_code',
+        'noise_date'
+      ]
     overridden_columns:
     - id: description
       name: DESCRIPTIO
@@ -113,7 +128,7 @@ files:
     filename: nyedes.csv
     type: csv
   dataset_overrides:
-    omitted_columns: [the_geom]
+    omitted_columns: [ the_geom ]
     overridden_columns:
     - id: air_code
       name: AIR
@@ -151,8 +166,9 @@ columns:
 - id: borocode
   name: BOROCODE
   data_type: text
-  description: A one digit numeric code that represents the Borough of New York City  where
-    the E-desigination is located
+  description: >-
+    A one digit numeric code that represents the Borough of New York City  where the
+    E-desigination is located
   example: '3'
   values:
   - value: '1'
@@ -168,51 +184,50 @@ columns:
 - id: taxblock
   name: TAXBLOCK
   data_type: integer
-  description: A five digit numeric code that represents the tax block where the E-desigination
-    is located
+  description: >-
+    A five digit numeric code that represents the tax block where the E-desigination is
+    located
   example: '1116'
 - id: taxlot
   name: TAXLOT
   data_type: integer
-  description: A four digit numeric code that represents the tax block where the E-desigination
-    is located
+  description: >-
+    A four digit numeric code that represents the tax block where the E-desigination is
+    located
   example: '1'
 - id: hazmat_code
   name: HazMatCode
   data_type: bool
-  description: A code indicating whether the E-Designation is related
-    to hazardous materials
+  description: A code indicating whether the E-Designation is related to hazardous materials
   example: 'False'
 - id: air_code
   name: AirCode
   data_type: bool
-  description: A code indicating whether the E-Designation is related
-    to air quality
+  description: A code indicating whether the E-Designation is related to air quality
   example: 'False'
 - id: noise_code
   name: NoiseCode
   data_type: bool
-  description: A code indicating whether the E-Designation is related
-    to noise quality
-    to air quality
+  description: >-
+    A code indicating whether the E-Designation is related to noise quality to air
+    quality
   example: 'False'
 - id: hazmat_date
   name: HazMatDate
   data_type: datetime
-  description: The date the hazardous material component of the E-designation was
-    satisfied (remediated)
+  description: >-
+    The date the hazardous material component of the E-designation was satisfied
+    (remediated)
   example: 2003/08/04 0:00:00
 - id: air_date
   name: AirDate
   data_type: datetime
-  description: The date the air quality component of the E-designation was satisfied
-    (remediated)
+  description: The date the air quality component of the E-designation was satisfied (remediated)
   example: 2003/08/04 0:00:00
 - id: noise_date
   name: NoiseDate
   data_type: datetime
-  description: The date the noise quality component of the E-designation was satisfied
-    (remediated)
+  description: The date the noise quality component of the E-designation was satisfied (remediated)
   example: '2023-05-30T00:00:00.000'
 - id: ceqr_num
   name: CEQR_NUM
@@ -222,8 +237,7 @@ columns:
 - id: ulurp_num
   name: ULURP_NUM
   data_type: text
-  description: ULURP Numbers assigned to all ULURP applications associated to the
-    E-designation
+  description: ULURP Numbers assigned to all ULURP applications associated to the E-designation
   example: 070314ZMQ
 - id: zoning_map
   name: ZONING_MAP
@@ -238,8 +252,9 @@ columns:
 - id: bbl
   name: BBL
   data_type: bbl
-  description: A ten digit numeric code that represents the tax lot where the E-desigination
-    is located
+  description: >-
+    A ten digit numeric code that represents the tax lot where the E-desigination is
+    located
   example: '3070650012'
 - id: the_geom
   name: the_geom

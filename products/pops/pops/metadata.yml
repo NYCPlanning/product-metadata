@@ -1,9 +1,19 @@
 id: pops
 
 attributes:
-  description: |-
-    Privately owned public spaces, also known by the acronym POPS, are outdoor  and indoor spaces provided for public enjoyment by private owners in exchange  for bonus floor area or waivers, an incentive first introduced into New York City's  zoning regulations in 1961. To find out more about POPS, visit the Department  of City Planning's website at http://nyc.gov/pops. This database contains detailed  information about each privately owned public space in New York City.
-    Data Source: Privately Owned Public Space Database (2018), owned and maintained  by the New York City Department of City Planning and created in collaboration  with Jerold S. Kayden and The Municipal Art Society of New York.
+  description: >-
+    Privately owned public spaces, also known by the acronym POPS, are outdoor  and
+    indoor spaces provided for public enjoyment by private owners in exchange  for bonus
+    floor area or waivers, an incentive first introduced into New York City's  zoning
+    regulations in 1961. To find out more about POPS, visit the Department  of City
+    Planning's website at http://nyc.gov/pops. This database contains
+    detailed  information about each privately owned public space in New York City.
+
+
+    Data Source: Privately Owned Public Space Database (2018), owned and maintained  by
+    the New York City Department of City Planning and created in collaboration  with
+    Jerold S. Kayden and The Municipal Art Society of New York.
+
 
     {{ bytes_previous_versions_link }}
   display_name: Privately Owned Public Spaces (POPS)
@@ -33,10 +43,10 @@ destinations:
   - id: primary_csv
     dataset_overrides:
       omitted_columns:
-        - postcode
-        - tpadbin
-        - tpadbinstatus
-        - geometry
+      - postcode
+      - tpadbin
+      - tpadbinstatus
+      - geometry
       overridden_columns:
       - id: pops_number
         name: POPS_Number
@@ -121,13 +131,15 @@ destinations:
   files:
   - id: primary_csv_zip
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/pops_{{ version }}_csv.zip
+      url: "{{ bytes_zip_prefix_url }}/privately-owned-public-space/pops_{{ version
+        }}_csv.zip"
   - id: primary_shapefile
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/pops_{{ version }}_shp.zip
+      url: "{{ bytes_zip_prefix_url }}/privately-owned-public-space/pops_{{ version
+        }}_shp.zip"
   - id: pops_datadictionary_xlsx
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/excel/data-tools/bytes/pops_datadictionary.xlsx
+      url: "{{ bytes_xl_prefix_url }}/pops_datadictionary.xlsx"
 
 files:
 - file:
@@ -215,14 +227,16 @@ columns:
 - id: pops_number
   name: pops_number
   data_type: text
-  description: POPS Number is the record number the Department of City Planning uses
-    to identify a building address within the POPS Database.
+  description: >-
+    POPS Number is the record number the Department of City Planning uses to identify a
+    building address within the POPS Database.
   example: K010001
 - id: borough_name
   name: borough_name
   data_type: text
-  description: The Borough in which the public space is located. The City has 5 geographically  defined
-    boroughs.
+  description: >-
+    The Borough in which the public space is located. The City has 5
+    geographically  defined boroughs.
   checks:
     non_nullable: true
   example: None
@@ -235,8 +249,9 @@ columns:
 - id: borocode
   name: borocode
   data_type: integer
-  description: Borough Code is a single digit that represents the borough in which
-    the public  space is located. The City has 5 geographically defined boroughs.
+  description: >-
+    Borough Code is a single digit that represents the borough in which the
+    public  space is located. The City has 5 geographically defined boroughs.
   checks:
     non_nullable: true
   example: None
@@ -254,22 +269,25 @@ columns:
 - id: community_district
   name: community_board
   data_type: integer
-  description: The community district in which the public space is located. The City
-    has  59 geographically defined community districts overseen by community boards.  The
+  description: >-
+    The community district in which the public space is located. The City has  59
+    geographically defined community districts overseen by community boards.  The
     community boards play a role in the City's Uniform Land Use Review  Procedure
-    (ULURP), as well as in the review of other City Planning Commission  and Board
-    of Standards and Appeals actions.
+    (ULURP), as well as in the review of other City Planning Commission  and Board of
+    Standards and Appeals actions.
   example: '5'
 - id: address_number
   name: address_number
   data_type: text
-  description: The address number as displayed on the building's exterior or as recorded
+  description: >-
+    The address number as displayed on the building's exterior or as recorded
     in  Department of Finance records.
   example: '200'
 - id: street_name
   name: street_name
   data_type: text
-  description: The street name as displayed on the building's exterior or as recorded
+  description: >-
+    The street name as displayed on the building's exterior or as recorded
     in  Department of Finance records.
   example: BROADWAY
 - id: zip_code
@@ -285,49 +303,55 @@ columns:
 - id: building_address_with_zip_code
   name: building_address_with_zip_code
   data_type: text
-  description: Building Address with Zip Code is the street address as displayed on  the
-    building's exterior or as recorded in Department of Finance records.
+  description: >-
+    Building Address with Zip Code is the street address as displayed on  the building's
+    exterior or as recorded in Department of Finance records.
   example: 1000 TENTH AVENUE, New York, NY 10019
 - id: tax_block
   name: tax_block
   data_type: integer
-  description: Tax Block is the block number for the development's relevant zoning
-    lots.  The block refers to a city block, within which are a number of lots. The
-    source for  this information is the Department of Finance records and published
-    information  such as the Sanborn Manhattan Land Book.
+  description: >-
+    Tax Block is the block number for the development's relevant zoning lots.  The block
+    refers to a city block, within which are a number of lots. The source for  this
+    information is the Department of Finance records and published information  such as
+    the Sanborn Manhattan Land Book.
   example: '1292'
 - id: tax_lot
   name: tax_lot
   data_type: integer
-  description: Tax Lot is the lot number(s) for the development's relevant zoning
-    lots. The block refers  to a city block, within which are a number of lots. With
-    condominium buildings, each  condominium unity has its own lot number. The source
-    for this information is the Department  of Finance records and published information
-    such as the Sanborn Manhattan Land Book.
+  description: >-
+    Tax Lot is the lot number(s) for the development's relevant zoning lots. The block
+    refers  to a city block, within which are a number of lots. With condominium
+    buildings, each  condominium unity has its own lot number. The source for this
+    information is the Department  of Finance records and published information such as
+    the Sanborn Manhattan Land Book.
   example: '7501'
 - id: building_name
   name: building_name
   data_type: text
-  description: The name of the building as displayed on the building's exterior or
-    as generally presented  to the public. If there is no building name, the field
-    is left blank.
+  description: >-
+    The name of the building as displayed on the building's exterior or as generally
+    presented  to the public. If there is no building name, the field is left blank.
   example: Normandie Court
 - id: building_location
   name: building_location
   data_type: text
-  description: The location of the main entrance or entrances to the building, and
-    describes the building  rather than the public space, location.
+  description: >-
+    The location of the main entrance or entrances to the building, and describes the
+    building  rather than the public space, location.
   example: South side of West 57th Street between Sixth and Seventh Avenues
 - id: year_completed
   name: year_completed
   data_type: text
-  description: Year Completed is the year the building was completed, according to
-    published information  and discussions with the owner.
+  description: >-
+    Year Completed is the year the building was completed, according to published
+    information  and discussions with the owner.
   example: '1974'
 - id: building_constructed
   name: building_constructed
   data_type: text
-  description: Building Construction is the construction status of the building, according
+  description: >-
+    Building Construction is the construction status of the building, according
     to  published information and discussions with the owner.
   example: None
   values:
@@ -336,68 +360,78 @@ columns:
 - id: public_space_type
   name: public_space_type
   data_type: text
-  description: Public Space Type is the type of spaces required to be provided at
-    the development.
+  description: Public Space Type is the type of spaces required to be provided at the development.
   example: Plaza
 - id: developer
   name: developer
   data_type: text
-  description: "Developer is the name of the legal entity or a person or persons participating\
-    \ in  the legal entity that has developed the building and its public space(s).\
-    \ \nThe sources for this field are varied, including legal records, published\
-    \ information,  and discussions with the current owner."
+  description: >-
+    Developer is the name of the legal entity or a person or persons participating
+    in  the legal entity that has developed the building and its public space(s).
+
+    The sources for this field are varied, including legal records, published
+    information,  and discussions with the current owner."
   example: Fisher Brothers
 - id: building_architect
   name: building_architect
   data_type: text
-  description: "Building Architect is the architect of the building. \nThe sources\
-    \ for this field are varied, including legal records, published information, \
-    \ and discussions with the current owner."
+  description: >-
+    Building Architect is the architect of the building.
+
+    The sources for this field are varied, including legal records, published
+    information,  and discussions with the current owner.
   example: Emery Roth & Sons
 - id: principal_public_space_designer
   name: principal_public_space_designer
   data_type: text
-  description: "Principal Public Space Designer is the designer who designed or redesigned\
-    \ the public space,  and frequently is the building architect. \nThe sources for\
-    \ this field are varied, including legal records, published information,  and\
-    \ discussions with the current owner."
+  description: >-
+    Principal Public Space Designer is the designer who designed or redesigned the
+    public space,  and frequently is the building architect.
+
+    The sources for this field are varied, including legal records, published
+    information,  and discussions with the current owner.
   example: Emery Roth & Sons
 - id: size_required
   name: size_required
   data_type: text
-  description: Size Required is the legally required size of the public space(s) at
-    the development.
+  description: Size Required is the legally required size of the public space(s) at the development.
   example: Through Block Connection 3012.00 sf
 - id: hour_of_access_required
   name: hour_of_access_required
   data_type: text
-  description: Hours of Access Required is the legally required hours that the public
-    space(s)  at the development must be open to the public.
+  description: >-
+    Hours of Access Required is the legally required hours that the public space(s)  at
+    the development must be open to the public.
   example: 24 Hours
 - id: amenities_required
   name: amenities_required
   data_type: text
-  description: Amenities Required is the legally required amenities at the public
-    space(s)  at the development.
+  description: >-
+    Amenities Required is the legally required amenities at the public space(s)  at the
+    development.
   example: Plaque/Sign; Subway; Trees on Street
 - id: other_required
   name: other_required
   data_type: text
-  description: Other Required is the other legally required amenities at the public
-    space(s)  at the development.
+  description: >-
+    Other Required is the other legally required amenities at the public space(s) at the
+    development.
   example: skylight
 - id: permitted_amenities
   name: permitted_amenities
   data_type: text
-  description: Permitted Required is the permitted amenities at the public space(s)
-    at the development.
+  description: >-
+    Permitted Required is the permitted amenities at the public space(s) at the
+    development.
   example: Open Air Cafe
 - id: physically_disabled_access
   name: physically_disabled_access
   data_type: text
-  description: "Physically Disabled is a description of whether or not the public\
-    \ spaces, taken as  a whole, are wheelchair accessible to some degree to the physically\
-    \ disabled. \nFull/Partial means that the spaces are fully or partially accessible."
+  description: >-
+    Physically Disabled is a description of whether or not the public spaces, taken
+    as  a whole, are wheelchair accessible to some degree to the physically disabled.
+
+    Full/Partial means that the spaces are fully or partially accessible.
   example: None
   values:
   - value: Full/Partial
@@ -415,14 +449,12 @@ columns:
 - id: xcoordinate
   name: xcoordinate
   data_type: integer
-  description: X coordinate in NAD 1983 State Plane New York Long Island FIPS 3104
-    (US Feet)
+  description: X coordinate in NAD 1983 State Plane New York Long Island FIPS 3104 (US Feet)
   example: '990213'
 - id: ycoordinate
   name: ycoordinate
   data_type: integer
-  description: Y coordinate in NAD 1983 State Plane New York Long Island FIPS 3104
-    (US Feet)
+  description: Y coordinate in NAD 1983 State Plane New York Long Island FIPS 3104 (US Feet)
   example: '197005'
 - id: council_district
   name: council_district
@@ -437,10 +469,13 @@ columns:
 - id: bin
   name: bin
   data_type: integer
-  description: "The Building Identification Number (BIN) is a unique number assigned\
-    \ by the  Department of City Planning (DCP) and used by the Department of Buildings\
-    \ (DOB)  for each building in NYC. \nThis field consists of the borough code followed\
-    \ by six digits unique for buildings  within that borough."
+  description: >-
+    The Building Identification Number (BIN) is a unique number assigned by
+    the  Department of City Planning (DCP) and used by the Department of Buildings
+    (DOB)  for each building in NYC.
+
+    This field consists of the borough code followed by six digits unique for
+    buildings  within that borough.
   example: '1000000'
 - id: tpadbin
   name: tpadbin
@@ -453,23 +488,25 @@ columns:
 - id: bbl
   name: bbl
   data_type: bbl
-  description: A concatenation of the borough code, tax block and tax lot. This field
-    consists of  the borough code followed by the tax block followed by the tax lot.
-    The borough  code is one numeric digit. The tax block is one to five numeric digits,
-    preceded  with leading zeros when the block is less than five digits. The tax
-    lot is one to  four digits and is preceded with leading zeros when the lot is
-    less than four digits.
+  description: >-
+    A concatenation of the borough code, tax block and tax lot. This field consists
+    of  the borough code followed by the tax block followed by the tax lot. The
+    borough  code is one numeric digit. The tax block is one to five numeric digits,
+    preceded  with leading zeros when the block is less than five digits. The tax lot is
+    one to  four digits and is preceded with leading zeros when the lot is less than
+    four digits.
   example: '1000047501'
 - id: nta
   name: nta
   data_type: text
-  description: The Neighborhood Tabulaton Area (NTA) in which the public space is
-    located. NTAs were  created by aggregating census tracts. NTAs were delineated
-    with the need for both geographic  specificity and statistical reliability in
-    mind.  Though NTA boundaries and their associated  names roughly correspond with
-    many neighborhoods commonly recognized by New Yorkers, NTAs  are not intended
-    to definitively represent neighborhoods, nor are they intended to be exhaustive  of
-    all possible names and understandings of neighborhoods throughout New York City.
+  description: >-
+    The Neighborhood Tabulaton Area (NTA) in which the public space is located. NTAs
+    were  created by aggregating census tracts. NTAs were delineated with the need for
+    both geographic  specificity and statistical reliability in mind.  Though NTA
+    boundaries and their associated  names roughly correspond with many neighborhoods
+    commonly recognized by New Yorkers, NTAs  are not intended to definitively represent
+    neighborhoods, nor are they intended to be exhaustive  of all possible names and
+    understandings of neighborhoods throughout New York City.
   example: None
 - id: geocoded_column
   name: location

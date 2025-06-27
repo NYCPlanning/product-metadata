@@ -1,10 +1,14 @@
 id: ztl
 
 attributes:
-  description: |-
-    The Zoning Tax Lot Database is a comma-separated values (CSV) file that contains up-to-date zoning by parcel. The Database includes the zoning designations and zoning map associated with a specific tax block and lot. The Database is updated on a monthly basis to reflect rezoning and corrections to the file.
+  description: >-
+    The Zoning Tax Lot Database is a comma-separated values (CSV) file that contains
+    up-to-date zoning by parcel. The Database includes the zoning designations and
+    zoning map associated with a specific tax block and lot. The Database is updated on
+    a monthly basis to reflect rezoning and corrections to the file.
 
-    All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>
+
+    {{ bytes_previous_versions_link }}
   display_name: NYC Zoning Tax Lot Database
   publishing_frequency: Monthly
   each_row_is_a: Tax Lot
@@ -45,7 +49,8 @@ destinations:
   files:
   - id: csv_package
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/zoning-tax-lot-database/nyczoningtaxlotdb_{{ version }}.zip
+      url: "{{ bytes_zip_prefix_url }}/zoning-tax-lot-database/nyczoningtaxlotdb_{{ version
+        }}.zip"
 
 files:
 - file:
