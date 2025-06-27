@@ -2,11 +2,9 @@ id: zoning_features
 
 attributes:
   description: |-
-    This data set consists of 6 classes of zoning features:
-    zoning districts, special purpose districts, special purpose district subdistricts,
-    limited height districts, commercial overlay districts,  and zoning map amendments.
+    This data set consists of 6 classes of zoning features: zoning districts, special purpose districts, special purpose district subdistricts, limited height districts, commercial overlay districts,  and zoning map amendments.
 
-    All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
+    {{ bytes_previous_versions_link }}
   display_name: "Zoning GIS Data: Geodatabase"
   each_row_is_a: "NA"
   tags:
@@ -59,25 +57,25 @@ destinations:
   files:
   - id: fgdb
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/gis-zoning-features/nycgiszoningfeatures_{{ version }}fgdb.zip
+      url: "{{ bytes_zip_prefix_url }}/gis-zoning-features/nycgiszoningfeatures_{{ version }}fgdb.zip"
   - id: nyco_metadata
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nyco_metadata.pdf
+      url: "{{ bytes_pdf_prefix_url }}/nyco_metadata.pdf"
   - id: nylh_metadata
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nylh_metadata.pdf
+      url: "{{ bytes_pdf_prefix_url }}/nylh_metadata.pdf"
   - id: nysp_metadata
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nysp_metadata.pdf
+      url: "{{ bytes_pdf_prefix_url }}/nysp_metadata.pdf"
   - id: nysp_sd_metadata
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nysp_sd_metadata.pdf
+      url: "{{ bytes_pdf_prefix_url }}/nysp_sd_metadata.pdf"
   - id: nyzd_metadata
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nyzd_metadata.pdf
+      url: "{{ bytes_pdf_prefix_url }}/nyzd_metadata.pdf"
   - id: nyzma_metadata
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nyzma_metadata.pdf
+      url: "{{ bytes_pdf_prefix_url }}/nyzma_metadata.pdf"
 
 files:
 - file:
