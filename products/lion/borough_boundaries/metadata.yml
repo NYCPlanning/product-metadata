@@ -27,9 +27,10 @@ destinations:
   - id: oti_data_dictionary_wi
     custom:
       destination_use: attachment
-  tags: [socrata_unpublished]
+  tags: [socrata_unpublished, dist_all]
   custom:
     four_four: wh2p-dxnf
+    packaged_files_source: bytes
 - id: socrata
   type: socrata
   files:
@@ -42,20 +43,19 @@ destinations:
   - id: oti_data_dictionary
     custom:
       destination_use: attachment
-  tags: [socrata_unpublished]
+  tags: [socrata_unpublished, dist_all]
   custom:
     four_four: gthc-hcne
+    packaged_files_source: bytes
 - id: bytes
   type: bytes
   files:
   - id: shapefile
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nybb_{{
-        version }}.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/borough-boundaries/nybb_{{ version }}.zip
   - id: shapefile_wi
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nybbwi_{{
-        version }}.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/borough-boundaries/nybbwi_{{ version }}.zip
   - id: nybb_metadata.pdf
     custom:
       url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nybb_metadata.pdf

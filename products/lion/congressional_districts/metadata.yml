@@ -34,10 +34,16 @@ destinations:
     custom:
       destination_use: attachment
   - id: shapefile_wi
+    dataset_overrides:
+      overridden_columns:
+      - id: shape_length
+        name: Shape_Length
     custom:
       destination_use: dataset_file
+  tags: [transitioned_needs_review]
   custom:
     four_four: 35e4-miqd
+    packaged_files_source: bytes
 - id: socrata
   type: socrata
   files:
@@ -45,6 +51,10 @@ destinations:
     custom:
       destination_use: attachment
   - id: shapefile
+    dataset_overrides:
+      overridden_columns:
+      - id: shape_length
+        name: Shape_Length
     custom:
       destination_use: dataset_file
   # - id: oti_data_dictionary
@@ -53,17 +63,16 @@ destinations:
   tags: [socrata_unpublished]
   custom:
     four_four: j3u5-usz2
+    packaged_files_source: bytes
 - id: bytes
   type: bytes
   files:
   - id: shapefile
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nycg_{{
-        version }}.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/congressional/nycg_{{ version }}.zip
   - id: shapefile_wi
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nycgwi_{{
-        version }}.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/congressional/nycgwi_{{ version }}.zip
   - id: nycg_metadata.pdf
     custom:
       url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nycg_metadata.pdf

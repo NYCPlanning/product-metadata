@@ -37,15 +37,16 @@ destinations:
   - id: shapefile
     custom:
       destination_use: dataset_file
+  tags: [dist_all]
   custom:
     four_four: 9nt8-h7nd
+    packaged_files_source: bytes
 - id: bytes
   type: bytes
   files:
   - id: shapefile
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nynta2020_{{
-        version }}.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/neighborhood-tabulation-areas/nynta2020_{{ version }}.zip
   - id: nynta2020_metadata.pdf
     custom:
       url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nynta2020_metadata.pdf

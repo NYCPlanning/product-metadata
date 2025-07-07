@@ -25,16 +25,17 @@ destinations:
   - id: shapefile
     custom:
       destination_use: dataset_file
+  tags: [dist_all]
   custom:
     four_four: qs4p-vs2w
     is_unparsed_dataset: true
+    packaged_files_source: bytes
 - id: bytes
   type: bytes
   files:
   - id: shapefile
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/rpl_{{
-        version }}.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/rpl/rpl_{{ version }}.zip
   - id: rpl_filelayout.pdf
     custom:
       url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/rpl_filelayout.pdf

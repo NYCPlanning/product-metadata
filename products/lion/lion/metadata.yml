@@ -42,16 +42,17 @@ destinations:
   - id: oti_data_dictionary
     custom:
       destination_use: attachment
+  tags: [dist_all]
   custom:
     four_four: 2v4z-66xt
     is_unparsed_dataset: true
+    packaged_files_source: bytes
 - id: bytes
   type: bytes
   files:
   - id: lion_zip
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nyclion_{{
-        version }}.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/lion/nyclion_{{ version }}.zip
   - id: lion_metadata.pdf
     custom:
       url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/lion_metadata.pdf
