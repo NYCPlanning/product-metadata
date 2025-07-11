@@ -29,7 +29,7 @@ attributes:
     Community Planning and Development (CPD) Notice CPD-24-04</a>.
   display_name: Community Development Block Grant (CDBG) Eligibility by Census Tract
   each_row_is_a: Census Tract
-  publishing_frequency: decennially
+  publishing_frequency: As-Needed
   tags:
   - community development
   - block grant eligibility
