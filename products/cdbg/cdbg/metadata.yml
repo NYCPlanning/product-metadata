@@ -81,10 +81,10 @@ destinations:
   files:
   - id: csv_zip
     custom:
-      url: "{{ bytes_zip_prefix_url }}/community-development-block-grant/nyc_cdbg_eligibile_2020_census_tracts_{{ version }}_csv.zip"
+      url: "{{ bytes_zip_prefix_url }}/community-development-block-grant/nyc_cdbg_eligible_2020_census_tracts_{{ version }}_csv.zip"
   - id: fgdb
     custom:
-      url: "{{ bytes_zip_prefix_url }}/community-development-block-grant/nyc_cdbg_eligibile_2020_census_tracts_{{ version }}_gdb.zip"
+      url: "{{ bytes_zip_prefix_url }}/community-development-block-grant/nyc_cdbg_eligible_2020_census_tracts_{{ version }}_gdb.zip"
   - id: metadata_pdf
     custom:
       url: "{{ bytes_pdf_prefix_url }}/cdbg_eligible_2020_census_tracts_metadata.pdf"
@@ -92,11 +92,11 @@ destinations:
 files:
 - file:
     id: csv
-    filename: cdbg_eligibile_2020_census_tracts.csv
+    filename: cdbg_eligible_2020_census_tracts.csv
     type: csv
 - file:
     id: fgdb
-    filename: nyc_cdbg_eligibile_2020_census_tracts_{{ version }}_gdb.zip
+    filename: nyc_cdbg_eligible_2020_census_tracts_{{ version }}_gdb.zip
 - file:
     id: metadata_pdf
     filename: cdbg_census_tracts_metadata.pdf
