@@ -287,15 +287,6 @@ files:
     filename: MapPLUTO_WI_truncated.zip
     type: shapefile
   dataset_overrides:
-    omitted_columns:
-    - basempdate
-    - dcasdate
-    - edesigdate
-    - landmkdate
-    - masdate
-    - polidate
-    - rpaddate
-    - zoningdate
     overridden_columns:
     - id: geom
       name: geometry
@@ -2043,51 +2034,6 @@ columns:
       determined by FEMA's 2015 Preliminary Flood Insurance Rate Map.
   custom:
     readme_data_type: Alphanumeric - 1 character
-- id: rpaddate
-  name: rpaddate
-  data_type: text
-  deprecated: true
-  example: None
-- id: dcasdate
-  name: dcasdate
-  data_type: text
-  deprecated: true
-  example: None
-- id: zoningdate
-  name: zoningdate
-  data_type: text
-  deprecated: true
-  example: None
-- id: landmkdate
-  name: landmkdate
-  data_type: text
-  deprecated: true
-  example: None
-- id: basempdate
-  name: basempdate
-  data_type: text
-  deprecated: true
-  example: None
-- id: masdate
-  name: masdate
-  data_type: text
-  deprecated: true
-  example: None
-- id: polidate
-  name: polidate
-  data_type: text
-  deprecated: true
-  example: None
-- id: edesigdate
-  name: edesigdate
-  data_type: text
-  deprecated: true
-  example: None
-- id: geom
-  name: geom
-  data_type: text
-  deprecated: true
-  example: None
 - id: dcpedited
   name: dcpedited
   data_type: text
@@ -2156,3 +2102,7 @@ columns:
   example: '50170071000'
   custom:
     readme_data_type: Alphanumeric - 11 characters
+- id: geom
+  name: geom
+  data_type: text
+  example: None
