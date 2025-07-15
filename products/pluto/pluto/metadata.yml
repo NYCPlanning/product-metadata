@@ -941,15 +941,15 @@ columns:
     readme_data_type: Alphanumeric - 5 characters
 - id: splitzone
   name: splitzone
-  data_type: bool
+  data_type: text
   description: A code indicating whether the tax lot is split between multiple zoning
     features. The split boundary indicator is equal to "Y" if the tax lot has a value
     for ZONING DISTRICT 2, COMMERCIAL OVERLAY 2, or SPECIAL DISTRICT BOUNDARY 2.
   data_source: Department of City Planning NYC GIS Zoning Features
-  example: 'False'
+  example: 'Y'
   values:
-  - value: 'False'
-  - value: 'True'
+  - value: 'Y'
+  - value: 'N'
   custom:
     readme_data_type: Alphanumeric - 1 character
 - id: bldgclass
@@ -1001,23 +1001,23 @@ columns:
   data_source: Department of City Planning
   example: '01'
   values:
-  - value: '1'
+  - value: '01'
     description: One & Two Family Buildings
-  - value: '2'
+  - value: '02'
     description: Multi-Family Walk-Up Buildings
-  - value: '3'
+  - value: '03'
     description: Multi-Family Elevator Buildings
-  - value: '4'
+  - value: '04'
     description: Mixed Residential & Commercial Buildings
-  - value: '5'
+  - value: '05'
     description: Commercial & Office Buildings
-  - value: '6'
+  - value: '06'
     description: Industrial & Manufacturing
-  - value: '7'
+  - value: '07'
     description: Transportation & Utility
-  - value: 8
+  - value: '08'
     description: Public Facilities & Institutions
-  - value: 9
+  - value: '09'
     description: Open Space & Outdoor Recreation
   - value: '10'
     description: Parking Facilities
@@ -1472,11 +1472,11 @@ columns:
   name: irrlotcode
   data_type: bool
   description: A code indicating whether the tax lot is irregularly shaped.
-  example: 'False'
+  example: 'Y'
   values:
-  - value: 'True'
+  - value: 'Y'
     description: Yes, an irregularly shaped lot
-  - value: 'False'
+  - value: 'N'
     description: No, not an irregularly shaped lot
   - value: None
     description: Unknown
@@ -1900,13 +1900,13 @@ columns:
     readme_data_type: Alphanumeric - 5 characters
 - id: appbbl
   name: appbbl
-  data_type: bbl
+  data_type: decimal
   description: |-
     The originating BBL (borough, block and lot) from the apportionment prior to the merge, split or property's conversion to a condominium.
 
     APPORTIONMENT BBL is only available for mergers, splits, and conversions since 1984.
   data_source: Department of Finance - Property Tax System (PTS)
-  example: '5057350102'
+  example: '5057350102.00000000'
   custom:
     readme_data_type: Numeric - 10 digits
 - id: appdate
