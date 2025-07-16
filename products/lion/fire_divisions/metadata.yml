@@ -1,25 +1,26 @@
 id: fire_divisions
 
 attributes:
+  attribution_link: {{ bytes_lion_urls__fire }}
   description: |-
     Fire Divisions boundaries of New York City.
 
-    {{ bytes_previous_versions_link }}
+    All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__fire }}">DCP Website: BYTES of the BIG APPLE</a>.
   display_name: Fire Divisions
   each_row_is_a: Fire division
   date_made_public: '1/31/2013'
   tags:
-  - Fire Divisions
-  - FDNY
+  - fire divisions
+  - fdny
   - boundary
   - boundaries
   - districts
-  - LION
-  - CSCL
-  - Department of City Planning
-  - DCP
-  - New York City
-  - NYC
+  - lion
+  - cscl
+  - department of city planning
+  - dcp
+  - new york city
+  - nyc
 
 assembly: []
 
@@ -36,22 +37,23 @@ destinations:
     dataset_overrides:
       overridden_columns:
       - id: fire_division
-        name: FireDiv
+        name: Fire Division
         custom:
           api_name: fire_div
       - id: shape_length
-        name: Shape_Leng
+        name: Shape_Length
     custom:
       destination_use: dataset_file
+  tags: [transitioned_needs_review]
   custom:
     four_four: 68m2-uzcb
+    packaged_files_source: bytes
 - id: bytes
   type: bytes
   files:
   - id: shapefile
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nyfd_{{
-        version }}.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/fire-divisions/nyfd_{{ version }}.zip
   - id: nyfd_metadata.pdf
     custom:
       url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nyfd_metadata.pdf

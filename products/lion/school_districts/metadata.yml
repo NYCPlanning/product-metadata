@@ -1,10 +1,11 @@
 id: school_districts
 
 attributes:
+  attribution_link: {{ bytes_lion_urls__school_districts }}
   description: |-
     Boundaries of school districts.
 
-    All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE - Archive</a>.
+    All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__school_districts }}">DCP Website: BYTES of the BIG APPLE</a>.
   display_name: School Districts
   each_row_is_a: School district
   tags:
@@ -27,6 +28,10 @@ destinations:
     custom:
       destination_use: attachment
   - id: shapefile
+    dataset_overrides:
+      overridden_columns:
+      - id: shape_length
+        name: Shape_Length
     custom:
       destination_use: dataset_file
   - id: oti_data_dictionary
@@ -35,13 +40,13 @@ destinations:
   tags: [socrata_unpublished]
   custom:
     four_four: 8ugf-3d8u
+    packaged_files_source: bytes
 - id: bytes
   type: bytes
   files:
   - id: shapefile
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nysd_{{
-        version }}.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/school/nysd_{{ version }}.zip
   - id: nysd_metadata.pdf
     custom:
       url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nysd_metadata.pdf
@@ -55,7 +60,7 @@ files:
     overridden_columns:
     - id: shape_length
       name: shape_leng
-    - id: school_district
+    - id: schooldist
       name: schooldist
 - file:
     id: nysd_metadata.pdf
@@ -69,7 +74,7 @@ files:
     type: oti_data_dictionary
 
 columns:
-- id: school_district
+- id: schooldist
   name: SchoolDistrict
   data_type: integer
   description: The school district identifier the region defines.

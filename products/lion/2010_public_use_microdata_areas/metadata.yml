@@ -1,10 +1,11 @@
 id: 2010_public_use_microdata_areas
 
 attributes:
+  attribution_link: {{ bytes_lion_urls__pumas }}
   description: |-
     The 2010 NYC Public Use Microdata Areas (PUMAs) are statistical geographic areas defined for the dissemination of Public Use Microdata Sample (PUMS) data. PUMAs have a minimum population of 100,000 and were aggregated from 2010 census tracts. These boundary files are derived from the US Census Bureau's TIGER project and have been geographically modified to fit the New York City basemap.
 
-    All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE - Archive</a>
+    All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__pumas }}">DCP Website: BYTES of the BIG APPLE</a>.
   display_name: 2010 Public Use Microdata Areas (PUMAs)
   each_row_is_a: Public Use Microdata Area
   tags:
@@ -34,15 +35,16 @@ destinations:
   - id: oti_data_dictionary
     custom:
       destination_use: attachment
-  tags: [socrata_unpublished]
+  tags: [25b]
   custom:
     four_four: k2r4-n9ax
+    packaged_files_source: bytes
 - id: bytes
   type: bytes
   files:
   - id: shapefile
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nypuma2010_{{ version }}.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/puma/nypuma2010_{{ version }}.zip
   - id: nypuma2010_metadata.pdf
     custom:
       url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nypuma2010_metadata.pdf

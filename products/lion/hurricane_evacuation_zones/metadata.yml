@@ -1,10 +1,11 @@
 id: hurricane_evacuation_zones
 
 attributes:
+  attribution_link: {{ bytes_lion_urls__hurricane }}
   description: |-
     Hurricane Evacuation Zones are determined by New York City Emergency Management and represent varying threat levels of coastal flooding resulting from storm surge. Hurricane evacuation zones should not be confused with flood insurance risk zones, which are designated by FEMA and available in the form of Flood Insurance Rate Maps (FIRMs).
 
-    All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE - Archive</a>.
+    All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__hurricane }}">DCP Website: BYTES of the BIG APPLE</a>.
   display_name: Hurricane Evacuation Zones
   each_row_is_a: Hurricane evacuation zone
   tags:
@@ -26,6 +27,12 @@ destinations:
     custom:
       destination_use: attachment
   - id: shapefile
+    dataset_overrides:
+      overridden_columns:
+      - id: shape_length
+        name: Shape_Length
+      - id: hurricane_evacuation_zone
+        name: Hurricane Evacuation Zone
     custom:
       destination_use: dataset_file
   - id: oti_data_dictionary
@@ -34,12 +41,13 @@ destinations:
   tags: [socrata_unpublished]
   custom:
     four_four: epne-qv9x
+    packaged_files_source: bytes
 - id: bytes
   type: bytes
   files:
   - id: shapefile
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nyhez_{{ version }}.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/hurricane-evacuation-zones/nyhez_{{ version }}.zip
   - id: nyhez_metadata.pdf
     custom:
       url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nyhez_metadata.pdf
@@ -74,11 +82,6 @@ columns:
   example: None
   custom:
     api_name: hurricane_
-- id: the_geom
-  name: the_geom
-  data_type: geometry
-  description: ''
-  example: None
 - id: shape_length
   name: Shape_Length
   data_type: decimal
@@ -90,4 +93,9 @@ columns:
   name: Shape_Area
   data_type: decimal
   description: Area of feature in internal units squared.
+  example: None
+- id: the_geom
+  name: the_geom
+  data_type: geometry
+  description: ''
   example: None
