@@ -60,7 +60,7 @@ files:
     overridden_columns:
     - id: shape_length
       name: shape_leng
-    - id: schooldist
+    - id: school_district
       name: schooldist
 - file:
     id: nysd_metadata.pdf
@@ -74,7 +74,7 @@ files:
     type: oti_data_dictionary
 
 columns:
-- id: schooldist
+- id: school_district
   name: SchoolDistrict
   data_type: integer
   description: The school district identifier the region defines.
