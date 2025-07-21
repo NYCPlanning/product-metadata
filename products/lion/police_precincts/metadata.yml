@@ -46,7 +46,6 @@ destinations:
   tags: [25b]
   custom:
     four_four: y76i-bdw7
-    packaged_files_source: bytes
 - id: bytes
   type: bytes
   files:

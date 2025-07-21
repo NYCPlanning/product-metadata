@@ -38,7 +38,6 @@ destinations:
   tags: [25b]
   custom:
     four_four: dx24-9ef7
-    packaged_files_source: bytes
 - id: bytes
   type: bytes
   files:

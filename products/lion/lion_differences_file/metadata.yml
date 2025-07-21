@@ -41,7 +41,6 @@ destinations:
   custom:
     four_four: ige5-v6sk
     is_unparsed_dataset: true
-    packaged_files_source: bytes
 - id: bytes
   type: bytes
   files:

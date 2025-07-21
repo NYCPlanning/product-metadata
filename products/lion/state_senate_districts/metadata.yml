@@ -44,7 +44,6 @@ destinations:
   tags: [25b]
   custom:
     four_four: 4294-fz9s
-    packaged_files_source: bytes
 - id: socrata
   type: socrata
   files:
@@ -66,7 +65,6 @@ destinations:
   tags: [25b]
   custom:
     four_four: afns-vxeu
-    packaged_files_source: bytes
 - id: bytes
   type: bytes
   files:

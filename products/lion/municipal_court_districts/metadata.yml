@@ -47,7 +47,6 @@ destinations:
   tags: [25b]
   custom:
     four_four: qssd-iewi
-    packaged_files_source: bytes
 - id: socrata
   type: socrata
   files:
@@ -70,7 +69,6 @@ destinations:
   tags: [25b]
   custom:
     four_four: mi5z-t7dx
-    packaged_files_source: bytes
 - id: bytes
   type: bytes
   files:

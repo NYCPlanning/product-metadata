@@ -72,7 +72,6 @@ destinations:
   tags: [25b]
   custom:
     four_four: wgbs-damt
-    packaged_files_source: bytes
 - id: bytes
   type: bytes
   files:

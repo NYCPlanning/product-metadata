@@ -40,7 +40,6 @@ destinations:
   tags: [25b]
   custom:
     four_four: 35e4-miqd
-    packaged_files_source: bytes
 - id: socrata
   type: socrata
   files:
@@ -60,7 +59,6 @@ destinations:
   tags: [25b]
   custom:
     four_four: j3u5-usz2
-    packaged_files_source: bytes
 - id: bytes
   type: bytes
   files:

@@ -39,7 +39,6 @@ destinations:
   tags: [25b]
   custom:
     four_four: y9w2-ph8n
-    packaged_files_source: bytes
 - id: socrata_water_included
   type: socrata
   files:
@@ -63,7 +62,6 @@ destinations:
   tags: [25b]
   custom:
     four_four: jyp7-eqhh
-    packaged_files_source: bytes
 - id: bytes
   type: bytes
   files:

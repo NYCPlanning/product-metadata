@@ -46,7 +46,6 @@ destinations:
   custom:
     four_four: 2v4z-66xt
     is_unparsed_dataset: true
-    packaged_files_source: bytes
 - id: bytes
   type: bytes
   files:

@@ -39,7 +39,6 @@ destinations:
   tags: [25b]
   custom:
     four_four: bmjq-373p
-    packaged_files_source: bytes
 - id: socrata_water_included
   type: socrata
   files:
@@ -55,7 +54,6 @@ destinations:
   tags: [25b]
   custom:
     four_four: ht7m-2uh6
-    packaged_files_source: bytes
 - id: bytes
   type: bytes
   files:

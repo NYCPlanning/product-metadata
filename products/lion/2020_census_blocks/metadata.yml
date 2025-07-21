@@ -35,7 +35,6 @@ destinations:
   tags: [25b]
   custom:
     four_four: wmsu-5muw
-    packaged_files_source: bytes
 - id: socrata_water_included
   type: socrata
   files:
@@ -48,7 +47,6 @@ destinations:
   tags: [25b]
   custom:
     four_four: wrzv-t2c4
-    packaged_files_source: bytes
 - id: bytes
   type: bytes
   files:

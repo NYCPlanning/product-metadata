@@ -51,7 +51,6 @@ destinations:
   tags: [25b]
   custom:
     four_four: 6ez8-za84
-    packaged_files_source: bytes
 - id: bytes
   type: bytes
   files:
