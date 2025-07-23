@@ -1,12 +1,11 @@
 id: 2020_community_district_tabulation_areas
 
 attributes:
-  description: The Department of City Planning (DCP) created Community District Tabulation
-    Areas (CDTAs) to closely approximate the 59 Community Districts of New York City
-    for the purpose of reporting American Community Survey (ACS) data. CDTAs are built
-    by aggregating whole 2020 census tracts. All previously released versions of this
-    data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES
-    of the BIG APPLE- Archive</a>.
+  attribution_link: {{ bytes_lion_urls__cdtas }}
+  description: |
+    The Department of City Planning (DCP) created Community District Tabulation Areas (CDTAs) to closely approximate the 59 Community Districts of New York City for the purpose of reporting American Community Survey (ACS) data. CDTAs are built by aggregating whole 2020 census tracts.
+
+    All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__cdtas }}">DCP Website: BYTES of the BIG APPLE</a>.
   display_name: 2020 Community District Tabulation Areas (CDTAs)
   date_made_public: '9/13/2021'
   each_row_is_a: Community District Tabulation Area
@@ -39,6 +38,7 @@ destinations:
   - id: shapefile
     custom:
       destination_use: dataset_file
+  tags: [25b]
   custom:
     four_four: xn3r-zk6y
 - id: bytes
@@ -46,8 +46,7 @@ destinations:
   files:
   - id: shapefile
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nycdta2020_{{
-        version }}.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/community-district-tabulation-areas/nycdta2020_{{ version }}.zip
   - id: nycdta2020_metadata.pdf
     custom:
       url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nycdta2020_metadata.pdf
@@ -69,12 +68,6 @@ files:
     type: oti_data_dictionary
 
 columns:
-- id: the_geom
-  name: the_geom
-  data_type: geometry
-  example: None
-  custom:
-    readme_data_type: geometry
 - id: borocode
   name: BoroCode
   data_type: integer
@@ -154,3 +147,9 @@ columns:
   data_type: decimal
   description: Area of feature in internal units squared.
   example: '66224982.0063'
+- id: the_geom
+  name: the_geom
+  data_type: geometry
+  example: None
+  custom:
+    readme_data_type: geometry

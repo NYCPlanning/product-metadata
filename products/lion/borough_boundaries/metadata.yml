@@ -1,6 +1,7 @@
 id: borough_boundaries
 
 attributes:
+  attribution_link: {{ bytes_lion_urls__borough_boundaries }}
   display_name: Borough Boundaries
   each_row_is_a: Borough boundary
   tags:
@@ -22,12 +23,16 @@ destinations:
     custom:
       destination_use: attachment
   - id: shapefile_wi
+    dataset_overrides:
+      overridden_columns:
+      - id: shape_length
+        name: Shape_Length
     custom:
       destination_use: dataset_file
   - id: oti_data_dictionary_wi
     custom:
       destination_use: attachment
-  tags: [socrata_unpublished]
+  tags: [25b]
   custom:
     four_four: wh2p-dxnf
 - id: socrata
@@ -37,12 +42,16 @@ destinations:
     custom:
       destination_use: attachment
   - id: shapefile
+    dataset_overrides:
+      overridden_columns:
+      - id: shape_length
+        name: Shape_Length
     custom:
       destination_use: dataset_file
   - id: oti_data_dictionary
     custom:
       destination_use: attachment
-  tags: [socrata_unpublished]
+  tags: [25b]
   custom:
     four_four: gthc-hcne
 - id: bytes
@@ -50,12 +59,10 @@ destinations:
   files:
   - id: shapefile
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nybb_{{
-        version }}.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/borough-boundaries/nybb_{{ version }}.zip
   - id: shapefile_wi
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nybbwi_{{
-        version }}.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/borough-boundaries/nybbwi_{{ version }}.zip
   - id: nybb_metadata.pdf
     custom:
       url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nybb_metadata.pdf
@@ -73,7 +80,7 @@ files:
       description: |-
         Boundaries of boroughs (water areas included).
 
-        All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE - Archive</a>.
+        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__borough_boundaries }}">DCP Website: BYTES of the BIG APPLE</a>.
       display_name: Borough Boundaries (water areas included)
     overridden_columns:
     - id: shape_length
@@ -87,7 +94,7 @@ files:
       description: |-
         Boundaries of boroughs (water areas excluded).
 
-        All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE - Archive</a>.
+        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__borough_boundaries }}">DCP Website: BYTES of the BIG APPLE</a>.
       display_name: Borough Boundaries
     overridden_columns:
     - id: shape_length

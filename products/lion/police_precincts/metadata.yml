@@ -1,10 +1,11 @@
 id: police_precincts
 
 attributes:
+  attribution_link: {{ bytes_lion_urls__police_precincts }}
   description: |-
     Boundaries of police precincts.
 
-    All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE - Archive</a>.
+    All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__police_precincts }}">DCP Website: BYTES of the BIG APPLE</a>.
   display_name: Police Precincts
   each_row_is_a: Police precinct
   tags:
@@ -33,12 +34,16 @@ destinations:
     custom:
       destination_use: attachment
   - id: shapefile
+    dataset_overrides:
+      overridden_columns:
+      - id: shape_length
+        name: Shape_Length
     custom:
       destination_use: dataset_file
   - id: oti_data_dictionary
     custom:
       destination_use: attachment
-  tags: [socrata_unpublished]
+  tags: [25b]
   custom:
     four_four: y76i-bdw7
 - id: bytes
@@ -46,8 +51,7 @@ destinations:
   files:
   - id: shapefile
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nypp_{{
-        version }}.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/police-precincts/nypp_{{ version }}.zip
   - id: nypp_metadata.pdf
     custom:
       url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nypp_metadata.pdf

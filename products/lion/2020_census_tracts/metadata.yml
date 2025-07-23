@@ -1,16 +1,12 @@
 id: 2020_census_tracts
 
 attributes:
-  description: 2020 Census Tracts from the US Census for New York City. These boundary
-    files are derived from the US Census Bureau's TIGER data products and have been
-    geographically modified to fit the New York City base map. All previously released
-    versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES
-    of the BIG APPLE- Archive</a>.
+  attribution_link: {{ bytes_lion_urls__census_tracts }}
   display_name: 2020 Census Tracts
   each_row_is_a: Census Tract
   date_made_public: '9/13/2021'
   tags:
-  - census tracts
+  - census tract
   - '2020'
   - us census bureau
   - boundary
@@ -20,7 +16,8 @@ attributes:
   - cscl
   - department of city planning
   - dcp
-
+  - new york city
+  - nyc
 assembly: []
 
 custom: {}
@@ -35,6 +32,7 @@ destinations:
   - id: shapefile_water_not_included
     custom:
       destination_use: dataset_file
+  tags: [25b]
   custom:
     four_four: 63ge-mke6
 - id: socrata_water_included
@@ -46,6 +44,7 @@ destinations:
   - id: shapefile_water_included
     custom:
       destination_use: dataset_file
+  tags: [25b]
   custom:
     four_four: imfq-nf3j
 - id: bytes
@@ -53,12 +52,10 @@ destinations:
   files:
   - id: shapefile_water_not_included
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nyct2020_{{
-        version }}.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/census-tracts/nyct2020_{{ version }}.zip
   - id: shapefile_water_included
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nyct2020wi_{{
-        version }}.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/census-tracts/nyct2020wi_{{ version }}.zip
   - id: nyct2020_metadata.pdf
     custom:
       url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nyct2020_metadata.pdf
@@ -71,18 +68,23 @@ files:
     id: shapefile_water_not_included
     filename: nyct2020.zip
     type: shapefile
+  dataset_overrides:
+    attributes:
+      description: |
+        Census Tracts from the 2020 US Census for New York City clipped to the shoreline. These boundary files are derived from the US Census Bureau's TIGER project and have been geographically modified to fit the New York City base map. Because some census tracts are under water not all census tracts are contained in this file, only census tracts that are partially or totally located on land have been mapped in this file.
+
+        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__census_tracts }}">DCP Website: BYTES of the BIG APPLE</a>.
+      display_name: 2020 Census Tracts
 - file:
     id: shapefile_water_included
     filename: nyct2020wi.zip
     type: shapefile
   dataset_overrides:
     attributes:
-      description: 2020 Census Tracts (water areas included) from the US Census for
-        New York City. These boundary files are derived from the US Census Bureau's
-        TIGER data products and have been geographically modified to fit the New York
-        City base map. All previously released versions of this data are available
-        at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES
-        of the BIG APPLE- Archive</a>.
+      description: |
+        Census Tracts from the 2020 US Census for New York City including portions under water. These boundary files are derived from the US Census Bureau's TIGER project and have been geographically modified to fit the New York City base map.
+
+        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__census_tracts }}">DCP Website: BYTES of the BIG APPLE</a>.
       display_name: 2020 Census Tracts (water areas included)
 - file:
     id: nyct2020_metadata.pdf

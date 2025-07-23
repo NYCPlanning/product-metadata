@@ -1,19 +1,23 @@
 id: municipal_court_districts
 
 attributes:
-  description: |-
-    Boundaries of Municipal Court districts.
-
-    {{ bytes_previous_versions_link }}
+  attribution_link: {{ bytes_lion_urls__municipal_court }}
   display_name: Municipal Court Districts
   each_row_is_a: Municipal Court district
   tags:
   - municipal court districts
-  - dcp
-  - city planning
   - judicial
-  - judge
+  - judges
   - law
+  - boundary
+  - boundaries
+  - districts
+  - lion
+  - cscl
+  - department of city planning
+  - dcp
+  - new york city
+  - nyc
   date_made_public: '1/31/2013'
 
 assembly: []
@@ -40,6 +44,7 @@ destinations:
         name: Shape_Length
     custom:
       destination_use: dataset_file
+  tags: [25b]
   custom:
     four_four: qssd-iewi
 - id: socrata
@@ -61,6 +66,7 @@ destinations:
         name: Shape_Length
     custom:
       destination_use: dataset_file
+  tags: [25b]
   custom:
     four_four: mi5z-t7dx
 - id: bytes
@@ -68,12 +74,10 @@ destinations:
   files:
   - id: shapefile
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nymc_{{
-        version }}.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/municipal-court/nymc_{{ version }}.zip
   - id: shapefile_wi
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nymcwi_{{
-        version }}.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/municipal-court/nymcwi_{{ version }}.zip
   - id: nymc_metadata.pdf
     custom:
       url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nymc_metadata.pdf
@@ -91,7 +95,7 @@ files:
       description: |-
         Boundaries of Municipal Court districts including portions under water.
 
-        {{ bytes_previous_versions_link }}
+        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__municipal_court }}">DCP Website: BYTES of the BIG APPLE</a>.
       display_name: Municipal Court Districts (water areas included)
     overridden_columns:
     - id: shape_length
@@ -101,6 +105,11 @@ files:
     filename: nymc.zip
     type: shapefile
   dataset_overrides:
+    attributes:
+      description: |-
+        Boundaries of Municipal Court districts.
+
+        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__municipal_court }}">DCP Website: BYTES of the BIG APPLE</a>.
     overridden_columns:
     - id: shape_length
       name: shape_leng

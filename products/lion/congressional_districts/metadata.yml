@@ -1,25 +1,22 @@
 id: congressional_districts
 
 attributes:
-  description: |-
-    US Congressional District boundaries for New York City.
-
-    {{ bytes_previous_versions_link }}
+  attribution_link: {{ bytes_lion_urls__cong_dists }}
   display_name: Congressional Districts
   each_row_is_a: Congressional district
   tags:
-  - Congressional Districts
+  - congressional districts
   - election
   - political
   - boundary
   - boundaries
   - districts
-  - LION
-  - CSCL
-  - Department of City Planning
-  - DCP
-  - New York City
-  - NYC
+  - lion
+  - cscl
+  - department of city planning
+  - dcp
+  - new york city
+  - nyc
   date_made_public: '4/18/2013'
 
 assembly: []
@@ -34,8 +31,13 @@ destinations:
     custom:
       destination_use: attachment
   - id: shapefile_wi
+    dataset_overrides:
+      overridden_columns:
+      - id: shape_length
+        name: Shape_Length
     custom:
       destination_use: dataset_file
+  tags: [25b]
   custom:
     four_four: 35e4-miqd
 - id: socrata
@@ -45,12 +47,16 @@ destinations:
     custom:
       destination_use: attachment
   - id: shapefile
+    dataset_overrides:
+      overridden_columns:
+      - id: shape_length
+        name: Shape_Length
     custom:
       destination_use: dataset_file
   # - id: oti_data_dictionary
   #   custom:
   #     destination_use: attachment
-  tags: [socrata_unpublished]
+  tags: [25b]
   custom:
     four_four: j3u5-usz2
 - id: bytes
@@ -58,12 +64,10 @@ destinations:
   files:
   - id: shapefile
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nycg_{{
-        version }}.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/congressional/nycg_{{ version }}.zip
   - id: shapefile_wi
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nycgwi_{{
-        version }}.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/congressional/nycgwi_{{ version }}.zip
   - id: nycg_metadata.pdf
     custom:
       url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nycg_metadata.pdf
@@ -81,7 +85,7 @@ files:
       description: |-
         US Congressional District boundaries for New York City including portions under water.
 
-        {{ bytes_previous_versions_link }}
+        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__cong_dists }}">DCP Website: BYTES of the BIG APPLE</a>.
       display_name: Congressional Districts (water areas included)
     overridden_columns:
     - id: shape_length
@@ -91,6 +95,11 @@ files:
     filename: nycg.zip
     type: shapefile
   dataset_overrides:
+    attributes:
+      description: |-
+        US Congressional District boundaries for New York City.
+
+        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__cong_dists }}">DCP Website: BYTES of the BIG APPLE</a>.
     overridden_columns:
     - id: shape_length
       name: shape_leng

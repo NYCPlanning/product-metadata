@@ -1,10 +1,7 @@
 id: state_senate_districts
 
 attributes:
-  description: |-
-    Boundaries of State Senate districts.
-
-    {{ bytes_previous_versions_link }}
+  attribution_link: {{ bytes_lion_urls__state_senate }}
   display_name: State Senate Districts
   each_row_is_a: State Senate district
   tags:
@@ -38,12 +35,13 @@ destinations:
       - id: state_senate_district
         name: AssemDist
       - id: shape_length
-        name: Shape_Leng
+        name: Shape_Length
     custom:
       destination_use: dataset_file
-  # - id: oti_data_dictionary_wi
-  #   custom:
-  #     destination_use: attachment
+  - id: oti_data_dictionary_wi
+    custom:
+      destination_use: attachment
+  tags: [25b]
   custom:
     four_four: 4294-fz9s
 - id: socrata
@@ -58,12 +56,13 @@ destinations:
       - id: state_senate_district
         name: AssemDist
       - id: shape_length
-        name: Shape_Leng
+        name: Shape_Length
     custom:
       destination_use: dataset_file
-  # - id: oti_data_dictionary
-  #   custom:
-  #     destination_use: attachment
+  - id: oti_data_dictionary
+    custom:
+      destination_use: attachment
+  tags: [25b]
   custom:
     four_four: afns-vxeu
 - id: bytes
@@ -71,12 +70,10 @@ destinations:
   files:
   - id: shapefile
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nyss_{{
-        version }}.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/state-senate/nyss_{{ version }}.zip
   - id: shapefile_wi
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nysswi_{{
-        version }}.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/state-senate/nysswi_{{ version }}.zip
   - id: nyss_metadata.pdf
     custom:
       url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nyss_metadata.pdf
@@ -92,9 +89,9 @@ files:
   dataset_overrides:
     attributes:
       description: |-
-        Boundaries of State Senate Districts including portions under water.
+        New York State Senate District boundaries for New York City including portions under water.
 
-        {{ bytes_previous_versions_link }}
+        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__state_senate }}">DCP Website: BYTES of the BIG APPLE</a>.
       display_name: State Senate Districts (water areas included)
     overridden_columns:
     - id: shape_length
@@ -106,6 +103,11 @@ files:
     filename: nyss.zip
     type: shapefile
   dataset_overrides:
+    attributes:
+      description: |-
+        New York State Senate District boundaries for New York City clipped to the shoreline.
+
+        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__state_senate }}">DCP Website: BYTES of the BIG APPLE</a>.
     overridden_columns:
     - id: shape_length
       name: shape_leng

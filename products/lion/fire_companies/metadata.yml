@@ -1,24 +1,25 @@
 id: fire_companies
 
 attributes:
+  attribution_link: {{ bytes_lion_urls__fire }}
   description: |-
     Fire Companies boundaries of New York City.
 
-    {{ bytes_previous_versions_link }}
+    All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__fire }}">DCP Website: BYTES of the BIG APPLE</a>.
   display_name: Fire Companies
   each_row_is_a: Fire company
   tags:
-  - Fire Companies
-  - FDNY
+  - fire companies
+  - fdny
   - boundary
   - boundaries
   - districts
-  - LION
-  - CSCL
-  - Department of City Planning
-  - DCP
-  - New York City
-  - NYC
+  - lion
+  - cscl
+  - department of city planning
+  - dcp
+  - new york city
+  - nyc
   date_made_public: '1/31/2013'
 
 assembly: []
@@ -36,17 +37,18 @@ destinations:
     dataset_overrides:
       overridden_columns:
       - id: fire_company_type
-        name: FireCoType
+        name: Fire Company Type
       - id: fire_company_number
-        name: FireCoNum
+        name: Fire Company Number
       - id: fire_division
-        name: FireDiv
+        name: Fire Division
       - id: fire_battalion
-        name: FireBN
+        name: Fire Battalion
       - id: shape_length
-        name: Shape_Leng
+        name: Shape_Length
     custom:
       destination_use: dataset_file
+  tags: [25b]
   custom:
     four_four: bst7-5464
 - id: bytes
@@ -54,8 +56,7 @@ destinations:
   files:
   - id: shapefile
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nyfc_{{
-        version }}.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/fire-companies/nyfc_{{ version }}.zip
   - id: nyfc_metadata.pdf
     custom:
       url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nyfc_metadata.pdf

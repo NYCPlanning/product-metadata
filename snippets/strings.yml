@@ -1,9 +1,34 @@
 bytes_previous_versions_link: All previously released versions of this data are
-  available at <a
-  href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES
-  of the BIG APPLE - Archive</a>.
+  available at <a href="https://www.nyc.gov/content/planning/pages/resources#datasets">BYTES of the BIG APPLE - Archive</a>.
 streets_map_app_link: This dataset is featured on the Department of City Planning's <a
   href="https://streets.planning.nyc.gov/">Street Map application</a>.
 bytes_zip_prefix_url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes
 bytes_pdf_prefix_url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes
 bytes_xl_prefix_url: https://s-media.nyc.gov/agencies/dcp/assets/files/excel/data-tools/bytes
+
+## BYTES urls
+bytes_lion_urls__census_blocks: https://www.nyc.gov/content/planning/pages/resources/datasets/census-blocks
+bytes_lion_urls__census_tracts: https://www.nyc.gov/content/planning/pages/resources/datasets/census-tracts
+bytes_lion_urls__ntas: https://www.nyc.gov/content/planning/pages/resources/datasets/neighborhood-tabulation
+bytes_lion_urls__pumas: https://www.nyc.gov/content/planning/pages/resources/datasets/public-use-microdata-areas
+bytes_lion_urls__cdtas: https://www.nyc.gov/content/planning/pages/resources/datasets/community-district-tabulation
+bytes_lion_urls__atomic_polygons: https://www.nyc.gov/content/planning/pages/resources/datasets/atomic-polygons
+bytes_lion_urls__borough_boundaries: https://www.nyc.gov/content/planning/pages/resources/datasets/borough-boundaries
+bytes_lion_urls__ccds: https://www.nyc.gov/content/planning/pages/resources/datasets/city-council
+bytes_lion_urls__comm_dists: https://www.nyc.gov/content/planning/pages/resources/datasets/community-districts
+bytes_lion_urls__cong_dists: https://www.nyc.gov/content/planning/pages/resources/datasets/congressional-districts
+bytes_lion_urls__elec_dists: https://www.nyc.gov/content/planning/pages/resources/datasets/election-districts
+bytes_lion_urls__fire: https://www.nyc.gov/content/planning/pages/resources/datasets/fire-battalions-companies-divisions
+bytes_lion_urls__health: https://www.nyc.gov/content/planning/pages/resources/datasets/health-area-center
+bytes_lion_urls__hurricane: https://www.nyc.gov/content/planning/pages/resources/datasets/hurricane-evacuation-zones
+bytes_lion_urls__lion: https://www.nyc.gov/content/planning/pages/resources/datasets/lion
+bytes_lion_urls__lion_diff: https://www.nyc.gov/content/planning/pages/resources/datasets/lion-difference-files
+bytes_lion_urls__municipal_court: https://www.nyc.gov/content/planning/pages/resources/datasets/municipal-court
+bytes_lion_urls__police_precincts: https://www.nyc.gov/content/planning/pages/resources/datasets/police-precincts
+bytes_lion_urls__pad: https://www.nyc.gov/content/planning/pages/resources/datasets/pad
+bytes_lion_urls__pseudo_lots: https://www.nyc.gov/content/planning/pages/resources/datasets/pseudo-lots
+bytes_lion_urls__rpl: https://www.nyc.gov/content/planning/pages/resources/datasets/road-pointer-list
+bytes_lion_urls__school_districts: https://www.nyc.gov/content/planning/pages/resources/datasets/school-districts
+bytes_lion_urls__state_assembly: https://www.nyc.gov/content/planning/pages/resources/datasets/state-assembly
+bytes_lion_urls__state_senate: https://www.nyc.gov/content/planning/pages/resources/datasets/state-senate
+bytes_lion_urls__snd: https://www.nyc.gov/content/planning/pages/resources/datasets/snd

@@ -1,25 +1,25 @@
-# TODO: Matt: FireBN - should be Fire Battalion. Should it?
 id: fire_battalions
 
 attributes:
+  attribution_link: {{ bytes_lion_urls__fire }}
   description: |-
     Fire Battalion boundaries of New York City.
 
-    {{ bytes_previous_versions_link }}
+    All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__fire }}">DCP Website: BYTES of the BIG APPLE</a>.
   display_name: Fire Battalions
   each_row_is_a: Fire battalion
   tags:
-  - Fire Battalions
-  - FDNY
+  - fire battalions
+  - fdny
   - boundary
   - boundaries
   - districts
-  - LION
-  - CSCL
-  - Department of City Planning
-  - DCP
-  - New York City
-  - NYC
+  - lion
+  - cscl
+  - department of city planning
+  - dcp
+  - new york city
+  - nyc
   date_made_public: '1/31/2013'
 
 assembly: []
@@ -34,8 +34,15 @@ destinations:
     custom:
       destination_use: attachment
   - id: shapefile
+    dataset_overrides:
+      overridden_columns:
+      - id: firebn
+        name: Fire Battalion
+      - id: shape_length
+        name: Shape_Length
     custom:
       destination_use: dataset_file
+  tags: [25b]
   custom:
     four_four: xzng-ft6f
 - id: bytes
@@ -43,8 +50,7 @@ destinations:
   files:
   - id: shapefile
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nyfb_{{
-        version }}.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/fire-battalions/nyfb_{{ version }}.zip
   - id: nyfb_metadata.pdf
     custom:
       url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nyfb_metadata.pdf

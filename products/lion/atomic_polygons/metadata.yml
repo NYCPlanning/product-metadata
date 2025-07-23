@@ -1,10 +1,11 @@
 id: atomic_polygons
 
 attributes:
+  attribution_link: {{ bytes_lion_urls__atomic_polygons }}
   description: |-
     Atomic polygons serve as a set of basic building blocks for generating the polygons of many of the district types represented in the NYC Street Centerline (CSCL) database. Feature classes such as election district, school district, census block, FDNY administrative company, and community district can be dissolved by combining the appropriate fields in atomic polygons.
 
-    {{ bytes_previous_versions_link }}
+    All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__atomic_polygons }}">DCP Website: BYTES of the BIG APPLE</a>.
   display_name: Atomic Polygons
   each_row_is_a: Atomic Polygon
   tags:
@@ -12,12 +13,12 @@ attributes:
   - boundary
   - boundaries
   - districts
-  - LION
-  - CSCL
-  - Department of City Planning
-  - DCP
-  - New York City
-  - NYC
+  - lion
+  - cscl
+  - department of city planning
+  - dcp
+  - new york city
+  - nyc
   date_made_public: '3/6/2015'
 
 assembly: []
@@ -62,13 +63,13 @@ destinations:
       - id: censusblock_2020_suffix
         name: CENSUSBL_5
       - id: shape_length
-        name: shape_length
+        name: Shape_Length
     custom:
       destination_use: dataset_file
   - id: nyap_metadata.pdf
     custom:
       destination_use: attachment
-  tags: [socrata_unpublished]
+  tags: [25b]
   custom:
     four_four: wgbs-damt
 - id: bytes
@@ -76,8 +77,7 @@ destinations:
   files:
   - id: shapefile
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nyap_{{
-        version }}.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/atomic-polygons/nyap_{{ version }}.zip
   - id: nyap_metadata.pdf
     custom:
       url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nyap_metadata.pdf

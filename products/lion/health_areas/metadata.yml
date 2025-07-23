@@ -1,17 +1,25 @@
 id: health_areas
 
 attributes:
+  attribution_link: {{ bytes_lion_urls__health }}
   description: |-
     Boundaries of health areas.
 
-    All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE - Archive</a>.
+    All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__health }}">DCP Website: BYTES of the BIG APPLE</a>.
   display_name: Health Areas
   each_row_is_a: Health area
   tags:
-  - health areas
+  - health center sevice area
+  - dohmh
+  - boundary
+  - boundaries
+  - districts
+  - lion
+  - cscl
+  - department of city planning
   - dcp
-  - health
-  - city planning
+  - new york city
+  - nyc
   date_made_public: ''
 
 assembly: []
@@ -26,6 +34,10 @@ destinations:
     custom:
       destination_use: attachment
   - id: shapefile
+    dataset_overrides:
+      overridden_columns:
+      - id: shape_length
+        name: Shape_Length
     custom:
       destination_use: dataset_file
   - id: oti_data_dictionary
@@ -39,8 +51,7 @@ destinations:
   files:
   - id: shapefile
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nyha_{{
-        version }}.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/health-area/nyha_{{ version }}.zip
   - id: nyha_metadata.pdf
     custom:
       url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nyha_metadata.pdf
@@ -88,6 +99,8 @@ columns:
     description: Queens
   - value: '5'
     description: Staten Island
+  custom:
+    api_name: borocode
 - id: boro_name
   name: BoroName
   data_type: text
@@ -99,11 +112,15 @@ columns:
   - value: Manhattan
   - value: Queens
   - value: Staten Island
+  custom:
+    api_name: boroname
 - id: health_area
   name: HealthArea
   data_type: integer
   description: ''
   example: None
+  custom:
+    api_name: healtharea
 - id: the_geom
   name: the_geom
   data_type: geometry

@@ -1,6 +1,7 @@
 id: pseudo_lots
 
 attributes:
+  attribution_link: {{ bytes_lion_urls__pseudo_lots }}
   description: |-
     The Pseudo Lots dataset contains polygons of locations that have an
     address and/or a structure with a building identification number (BIN), but for
@@ -8,7 +9,7 @@ attributes:
     subway or train stations, skyways, tunnels, or other miscellaneous features. Note
     that this is not a comprehensive dataset of locations with these types of features.
 
-    {{ bytes_previous_versions_link }}
+    All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__pseudo_lots }}">DCP Website: BYTES of the BIG APPLE</a>.
   display_name: Pseudo Lots
   each_row_is_a: Pseudo Lot
   tags:
@@ -34,6 +35,7 @@ destinations:
   - id: shapefile
     custom:
       destination_use: dataset_file
+  tags: [25b]
   custom:
     four_four: dx24-9ef7
 - id: bytes
@@ -41,8 +43,7 @@ destinations:
   files:
   - id: shapefile
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/pseudolots_{{
-        version }}.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/pseudolots/pseudolots_{{ version }}.zip
   - id: pseudolots_datadictionary.xlsx
     custom:
       url: https://s-media.nyc.gov/agencies/dcp/assets/files/excel/data-tools/bytes/pseudolots_datadictionary.xlsx

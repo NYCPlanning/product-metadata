@@ -1,14 +1,10 @@
 id: 2020_census_blocks
 
 attributes:
-  description: 2020 Census Blocks from the US Census for New York City. These boundary
-    files are derived from the US Census Bureau's TIGER data products and have been
-    geographically modified to fit the New York City base map. All previously released
-    versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES
-    of the BIG APPLE- Archive</a>.
-  display_name: 2020 Census Blocks
+  attribution_link: {{ bytes_lion_urls__census_blocks }}
   each_row_is_a: Census Block
   date_made_public: '9/13/2021'
+  display_name: 2020 Census Blocks
   tags:
   - census block
   - '2020'
@@ -20,7 +16,8 @@ attributes:
   - cscl
   - department of city planning
   - dcp
-
+  - new york city
+  - nyc
 assembly: []
 
 custom: {}
@@ -35,6 +32,7 @@ destinations:
   - id: shapefile_water_not_included
     custom:
       destination_use: dataset_file
+  tags: [25b]
   custom:
     four_four: wmsu-5muw
 - id: socrata_water_included
@@ -46,6 +44,7 @@ destinations:
   - id: shapefile_water_included
     custom:
       destination_use: dataset_file
+  tags: [25b]
   custom:
     four_four: wrzv-t2c4
 - id: bytes
@@ -53,12 +52,10 @@ destinations:
   files:
   - id: shapefile_water_not_included
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nycb2020_{{
-        version }}.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/census-blocks/nycb2020_{{ version }}.zip
   - id: shapefile_water_included
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nycb2020wi_{{
-        version }}.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/census-blocks/nycb2020wi_{{ version }}.zip
   - id: nycb2020_metadata.pdf
     custom:
       url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nycb2020_metadata.pdf
@@ -71,18 +68,23 @@ files:
     id: shapefile_water_not_included
     filename: nycb2020.zip
     type: shapefile
+  dataset_overrides:
+    attributes:
+      description: |
+        Census Blocks from the 2020 US Census for New York City clipped to the shoreline. These boundary files are derived from the US Census Bureau's TIGER project and have been geographically modified to fit the New York City base map. Because some census blocks are under water not all census blocks are contained in this file, only census blocks that are partially or totally located on land have been mapped in this file.
+
+        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__census_blocks }}">DCP Website: BYTES of the BIG APPLE</a>.
+      display_name: 2020 Census Blocks
 - file:
     id: shapefile_water_included
     filename: nycb2020wi.zip
     type: shapefile
   dataset_overrides:
     attributes:
-      description: 2020 Census Blocks (water areas included) from the US Census for
-        New York City. These boundary files are derived from the US Census Bureau's
-        TIGER data products and have been geographically modified to fit the New York
-        City base map. All previously released versions of this data are available
-        at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES
-        of the BIG APPLE- Archive</a>.
+      description: |
+        Census Blocks from the 2020 US Census for New York City including portions under water. These boundary files are derived from the US Census Bureau's TIGER project and have been geographically modified to fit the New York City base map.
+
+        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__census_blocks }}">DCP Website: BYTES of the BIG APPLE</a>.
       display_name: 2020 Census Blocks (water areas included)
 - file:
     id: nycb2020_metadata.pdf

@@ -1,18 +1,22 @@
 id: 2010_census_tracts
 
 attributes:
-  description: |-
-    2010 Census Tracts from the US Census for New York City. These boundary files are derived from the US Census Bureau's TIGER data products and have been geographically modified to fit the New York City basemap.
-    All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE - Archive</a>.
+  attribution_link: {{ bytes_lion_urls__census_tracts }}
   display_name: 2010 Census Tracts
   each_row_is_a: Census Tract
   tags:
-  - 2010 census tracts (water areas included)
+  - census tract
+  - '2010'
+  - us census bureau
+  - boundary
+  - boundaries
+  - districts
+  - lion
+  - cscl
+  - department of city planning
   - dcp
-  - city planning
-  - census
-  - water areas
-  - gis
+  - new york city
+  - nyc
   date_made_public: '1/31/2013'
 
 assembly: []
@@ -32,7 +36,7 @@ destinations:
   - id: oti_data_dictionary
     custom:
       destination_use: attachment
-  tags: [socrata_unpublished]
+  tags: [25b]
   custom:
     four_four: bmjq-373p
 - id: socrata_water_included
@@ -47,7 +51,7 @@ destinations:
   - id: oti_data_dictionary_wi
     custom:
       destination_use: attachment
-  tags: [socrata_unpublished]
+  tags: [25b]
   custom:
     four_four: ht7m-2uh6
 - id: bytes
@@ -55,12 +59,10 @@ destinations:
   files:
   - id: shapefile_water_not_included
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nyct2010_{{
-        version }}.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/census-tracts/nyct2010_{{ version }}.zip
   - id: shapefile_water_included
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nyct2010wi_{{
-        version }}.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/census-tracts/nyct2010wi_{{ version }}.zip
   - id: nyct2010_metadata.pdf
     custom:
       url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nyct2010_metadata.pdf
@@ -75,10 +77,10 @@ files:
     type: shapefile
   dataset_overrides:
     attributes:
-      description: |-
-        2010 Census Tracts from the US Census for New York City. These boundary files are derived from the US Census Bureau's TIGER data products and have been geographically modified to fit the New York City basemap.
+      description: |
+        Census Tracts from the 2010 US Census for New York City clipped to the shoreline. These boundary files are derived from the US Census Bureau's TIGER project and have been geographically modified to fit the New York City base map. Because some census tracts are under water not all census tracts are contained in this file, only census tracts that are partially or totally located on land have been mapped in this file.
 
-        All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE - Archive</a>.
+        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__census_tracts }}">DCP Website: BYTES of the BIG APPLE</a>.
       display_name: 2010 Census Tracts
 - file:
     id: shapefile_water_included
@@ -86,10 +88,10 @@ files:
     type: shapefile
   dataset_overrides:
     attributes:
-      description: |-
-        2010 Census Tracts (water areas included) from the US Census for New York City. These boundary files are derived from the US Census Bureau's TIGER data products and have been geographically modified to fit the New York City basemap.
+      description: |
+        Census Tracts from the 2010 US Census for New York City including portions under water. These boundary files are derived from the US Census Bureau's TIGER project and have been geographically modified to fit the New York City base map.
 
-        All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE - Archive</a>.
+        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__census_tracts }}">DCP Website: BYTES of the BIG APPLE</a>.
       display_name: 2010 Census Tracts (water areas included)
 - file:
     id: nyct2010_metadata.pdf
