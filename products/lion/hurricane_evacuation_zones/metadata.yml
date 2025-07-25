@@ -3,16 +3,32 @@ id: hurricane_evacuation_zones
 attributes:
   attribution_link: {{ bytes_lion_urls__hurricane }}
   description: |-
-    Hurricane Evacuation Zones are determined by New York City Emergency Management and represent varying threat levels of coastal flooding resulting from storm surge. Hurricane evacuation zones should not be confused with flood insurance risk zones, which are designated by FEMA and available in the form of Flood Insurance Rate Maps (FIRMs).
+    The New York City Hurricane Evacuation Zones represent varying threat levels of flooding resulting from storm surge. New York City's hurricane contingency plans are based on six evacuation zones.
+
+    Hurricane evacuation zones should not be confused with flood insurance risk zones, which are designated by FEMA and available in the form of Flood Insurance Rate Maps (FIRMs).
+
+    For more information visit NYC.gov or call 311 (TTY: 212-504-4155).
+
+    These zones were created by New York City Emergency Management (NYCEM) and are maintained by the Department of City Planning (DCP).
 
     All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__hurricane }}">DCP Website: BYTES of the BIG APPLE</a>.
   display_name: Hurricane Evacuation Zones
   each_row_is_a: Hurricane evacuation zone
   tags:
-  - nycem
-  - evacuation
   - hurricane
+  - evacuation
   - zones
+  - boundary
+  - boundaries
+  - districts
+  - lion
+  - cscl
+  - department of city planning
+  - dcp
+  - emergency management
+  - nycem
+  - new york city
+  - nyc
   date_made_public: '7/14/2015'
   
 assembly: []
@@ -35,9 +51,9 @@ destinations:
         name: Hurricane Evacuation Zone
     custom:
       destination_use: dataset_file
-  - id: oti_data_dictionary
-    custom:
-      destination_use: attachment
+  # - id: oti_data_dictionary
+  #   custom:
+  #     destination_use: attachment
   tags: [socrata_unpublished]
   custom:
     four_four: epne-qv9x

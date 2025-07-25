@@ -3,14 +3,13 @@ id: health_areas
 attributes:
   attribution_link: {{ bytes_lion_urls__health }}
   description: |-
-    Boundaries of health areas.
+    Health Area boundaries for New York City. Health areas are used for reporting health statistics and were created by the NYC Department of Health and Mental Hygiene (DOHMH)
 
     All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__health }}">DCP Website: BYTES of the BIG APPLE</a>.
   display_name: Health Areas
   each_row_is_a: Health area
   tags:
-  - health center sevice area
-  - dohmh
+  - health areas
   - boundary
   - boundaries
   - districts
@@ -36,13 +35,19 @@ destinations:
   - id: shapefile
     dataset_overrides:
       overridden_columns:
+      - id: boro_code
+        name: Borough Code
+      - id: boro_name
+        name: Borough Name
+      - id: health_area
+        name: Health Area Number
       - id: shape_length
         name: Shape_Length
     custom:
       destination_use: dataset_file
-  - id: oti_data_dictionary
-    custom:
-      destination_use: attachment
+  # - id: oti_data_dictionary
+  #   custom:
+  #     destination_use: attachment
   tags: [socrata_unpublished]
   custom:
     four_four: jntv-ngw5
@@ -63,12 +68,6 @@ files:
     type: shapefile
   dataset_overrides:
     overridden_columns:
-    - id: boro_code
-      name: borocode
-    - id: boro_name
-      name: boroname
-    - id: health_area
-      name: healtharea
     - id: shape_length
       name: shape_leng
 - file:
@@ -84,9 +83,9 @@ files:
 
 columns:
 - id: boro_code
-  name: BoroCode
+  name: borocode
   data_type: integer
-  description: Borough code for the borough in which the census block is located.
+  description: Borough code for the Health Area.
   example: None
   values:
   - value: '1'
@@ -102,9 +101,9 @@ columns:
   custom:
     api_name: borocode
 - id: boro_name
-  name: BoroName
+  name: boroname
   data_type: text
-  description: Borough name.
+  description: Borough Name for the Health Area.
   example: Queens
   values:
   - value: Brooklyn
@@ -115,17 +114,12 @@ columns:
   custom:
     api_name: boroname
 - id: health_area
-  name: HealthArea
+  name: healtharea
   data_type: integer
-  description: ''
+  description: Denotes the Health Area number.
   example: None
   custom:
     api_name: healtharea
-- id: the_geom
-  name: the_geom
-  data_type: geometry
-  description: ''
-  example: None
 - id: shape_length
   name: Shape_Length
   data_type: decimal
@@ -135,4 +129,9 @@ columns:
   name: Shape_Area
   data_type: decimal
   description: Area of feature in internal units squared.
+  example: None
+- id: the_geom
+  name: the_geom
+  data_type: geometry
+  description: ''
   example: None

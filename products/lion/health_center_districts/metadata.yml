@@ -91,7 +91,7 @@ columns:
 - id: boro_code
   name: BoroCode
   data_type: integer
-  description: Borough code for the borough in which the census block is located.
+  description: Borough code for the Health Area.
   example: None
   values:
   - value: '1'
@@ -107,7 +107,7 @@ columns:
 - id: boro_name
   name: BoroName
   data_type: text
-  description: Borough Name.
+  description: Borough Name for the Health Area.
   example: Queens
   values:
   - value: Brooklyn
@@ -118,7 +118,7 @@ columns:
 - id: health_center_district
   name: HealthCenterDistrict
   data_type: integer
-  description: Denotes the Health Center number.
+  description: Denotes the Health Area number.
   example: None
 - id: shape_length
   data_type: decimal

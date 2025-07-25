@@ -3,17 +3,24 @@ id: school_districts
 attributes:
   attribution_link: {{ bytes_lion_urls__school_districts }}
   description: |-
-    Boundaries of school districts.
+    School District boundaries for New York City. School districts are administrative areas defined by New York City Department of Education (DOE). School districts are not the same as the school zones that are used by DOE for school assignment at the elementary or middle school level.
 
     All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__school_districts }}">DCP Website: BYTES of the BIG APPLE</a>.
   display_name: School Districts
   each_row_is_a: School district
   tags:
   - school districts
-  - education
+  - doe
+  - sca
+  - boundary
+  - boundaries
+  - districts
+  - lion
+  - cscl
+  - department of city planning
   - dcp
-  - city planning
-  - maps
+  - new york city
+  - nyc
   date_made_public: '1/31/2013'
 
 assembly: []
@@ -32,11 +39,13 @@ destinations:
       overridden_columns:
       - id: shape_length
         name: Shape_Length
+      - id: schooldist
+        name: School District
     custom:
       destination_use: dataset_file
-  - id: oti_data_dictionary
-    custom:
-      destination_use: attachment
+  # - id: oti_data_dictionary
+  #   custom:
+  #     destination_use: attachment
   tags: [socrata_unpublished]
   custom:
     four_four: 8ugf-3d8u
@@ -59,7 +68,7 @@ files:
     overridden_columns:
     - id: shape_length
       name: shape_leng
-    - id: school_district
+    - id: schooldist
       name: schooldist
 - file:
     id: nysd_metadata.pdf
@@ -73,15 +82,10 @@ files:
     type: oti_data_dictionary
 
 columns:
-- id: school_district
+- id: schooldist
   name: SchoolDistrict
   data_type: integer
-  description: The school district identifier the region defines.
-  example: None
-- id: the_geom
-  name: the_geom
-  data_type: geometry
-  description: ''
+  description: Denotes the School District number.
   example: None
 - id: shape_length
   name: Shape_Length
@@ -92,4 +96,9 @@ columns:
   name: Shape_Area
   data_type: decimal
   description: Area of feature in internal units squared.
+  example: None
+- id: the_geom
+  name: the_geom
+  data_type: geometry
+  description: ''
   example: None
