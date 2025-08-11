@@ -1,6 +1,7 @@
 id: section_zoning_map_index
 
 attributes:
+  attribution_link: {{ bytes_url__zoning_map_index }}
   description: |-
     Shapefile of zoning section map index, grid to determine which zoning
     section map relates to specific areas of NYC. A sectional index grid to determine
@@ -12,7 +13,7 @@ attributes:
     to 35. Each map covers an area of approximately 8,000 feet (north/south) by
     12,500 feet (east/west).
 
-    {{ bytes_previous_versions_link }}
+    All previously released versions of this data are available on the <a href="{{ bytes_url__zoning_map_index }}">DCP Website: BYTES of the BIG APPLE</a>.
   display_name: Section_ZoningMapIndex
   each_row_is_a: Section Map Index
   tags:

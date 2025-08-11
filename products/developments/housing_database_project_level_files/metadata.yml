@@ -1,6 +1,7 @@
 id: housing_database_project_level_files
 
 attributes:
+  attribution_link: {{ bytes_url__housing_database_project_level_files }}
   description: >-
     The NYC Department of City Planning's (DCP) <a
     href="https://www.nyc.gov/site/planning/data-maps/open-data/dwn-housing-database.page#housingdevelopmentproject">Housing
@@ -17,7 +18,7 @@ attributes:
     href="https://storymaps.arcgis.com/stories/1c9138dc24064b2e8142ff156345a719">here. Additional Housing and Economic analyses
     are also  <a href="https://www.nyc.gov/site/planning/planning-level/housing-economy/housing-economy.page">available</a>.
 
-    {{ bytes_previous_versions_link }}
+    All previously released versions of this data are available on the <a href="{{ bytes_url__housing_database_project_level_files }}">DCP Website: BYTES of the BIG APPLE</a>.
   display_name: Housing Database Project Level Files
   each_row_is_a: unique job record at the Department of Buildings to alter or demolish an existing building or construct a new one.
   tags:

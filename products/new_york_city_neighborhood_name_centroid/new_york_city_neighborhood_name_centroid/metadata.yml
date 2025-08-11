@@ -1,11 +1,13 @@
 id: new_york_city_neighborhood_name_centroid
 
 attributes:
-  description:
-    "The New York City Neighborhood Names point file was created as a guide
+  description: |-
+    The New York City Neighborhood Names point file was created as a guide
     to New York City’s neighborhoods that appear in the “New York: A City of Neighborhoods”
     map poster and webpage. Best estimates of label centroids were established at
-    a 1:1,000 scale, but are ideally viewed at a 1:50,000 scale."
+    a 1:1,000 scale, but are ideally viewed at a 1:50,000 scale.
+
+    All previously released versions of this data are available on the <a href="{{ bytes_url__new_york_city_neighborhood_name_centroid }}">DCP Website: BYTES of the BIG APPLE</a>.
   display_name: New York City Neighborhood Name Centroids
   publishing_frequency: As-Needed
   each_row_is_a: Neighborhood Centroid

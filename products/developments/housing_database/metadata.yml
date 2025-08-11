@@ -27,6 +27,8 @@ attributes:
     construction and demolition jobs filed or completed in NYC since January 1, 2010. Net housing unit change is calculated as the
     sum of all three construction job types that add or remove residential units: new buildings, major alterations, and
     demolitions. These files can be used to determine the change in legal housing units across time and space.
+
+    All previously released versions of this data are available on the <a href="{{ bytes_url__housing_database }}">DCP Website: BYTES of the BIG APPLE</a>.
   display_name: Housing Database
   each_row_is_a: DOB-approved housing construction or demolition job
   tags:

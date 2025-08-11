@@ -4,7 +4,7 @@ dataset_defaults:
   publishing_frequency: Bi-annually
   data_change_frequency: Bi-annually
   category: Housing & Development
-  attribution_link: https://www.nyc.gov/site/planning/data-maps/open-data/dwn-housing-database.page
+  attribution_link: {{ bytes_url__housing_database }}
 
 datasets:
 - housing_database # metadata only

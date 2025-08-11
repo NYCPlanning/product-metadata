@@ -14,8 +14,7 @@ attributes:
     the New York City Department of City Planning and created in collaboration  with
     Jerold S. Kayden and The Municipal Art Society of New York.
 
-
-    {{ bytes_previous_versions_link }}
+    All previously released versions of this data are available on the <a href="{{ bytes_url__pops }}">DCP Website: BYTES of the BIG APPLE</a>.
   display_name: Privately Owned Public Spaces (POPS)
   date_made_public: 7/9/2019
   each_row_is_a: Privately Owned Public Space

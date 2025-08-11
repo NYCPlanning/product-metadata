@@ -1,9 +1,11 @@
 id: waterfront_revitalization_program
 
 attributes:
+  attribution_link: {{ bytes_url__waterfront_revitalization_program }}
   description: |-
     Waterfront Revitalization Program.
 
+    All previously released versions of this data are available on the <a href="{{ bytes_url__waterfront_revitalization_program }}">DCP Website: BYTES of the BIG APPLE</a>.
   display_name: Waterfront Revitalization Program (WRP)
   each_row_is_a: Waterfront Revitalization Program
   tags:

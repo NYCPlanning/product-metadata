@@ -1,6 +1,7 @@
 id: projects
 
 attributes:
+  attribution_link: {{ bytes_url__zap }}
   description: |-
     The Department of City Planning (DCP) processes land use applications submitted by City or other public agencies and other (private) applicants. This data set provides information on land use applications, specifically the project tracking and description data related to approximately 30,000 projects since the late 1970s.
 
@@ -9,6 +10,8 @@ attributes:
     You can explore this data in the <a href="https://zap.planning.nyc.gov/projects">Zoning Application Portal</a>
 
     To report data errors or for questions, email <a href="mailto:zap_feedback_dl@planning.nyc.gov">zap_feedback_dl@planning.nyc.gov</a>.
+
+    All previously released versions of this data are available on the <a href="{{ bytes_url__zap }}">DCP Website: BYTES of the BIG APPLE</a>.
   display_name: Zoning Application Portal (ZAP) - Project Data
   each_row_is_a: project in the Zoning Application Portal (ZAP)
   tags:

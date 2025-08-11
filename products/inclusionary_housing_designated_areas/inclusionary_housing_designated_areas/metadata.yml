@@ -1,12 +1,13 @@
 id: inclusionary_housing_designated_areas
 
 attributes:
+  attribution_link: {{ bytes_url__inclusionary_housing_designated_areas }}
   description: |-
     GIS data:  A specified area in which the Inclusionary Housing Program
     is applicable. The program modifies the floor area ratio (FAR) and offers a
     bonus for developments that provide affordable housing.
 
-    All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>.
+    All previously released versions of this data are available on the <a href="{{ bytes_url__inclusionary_housing_designated_areas }}">DCP Website: BYTES of the BIG APPLE</a>.
   display_name: Inclusionary Housing Designated Areas
   each_row_is_a: Inclusionary Housing Designated Area
   tags:

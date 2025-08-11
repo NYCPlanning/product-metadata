@@ -12,7 +12,7 @@ attributes:
     job types that add or remove residential units: new buildings, major alterations, and demolitions, and can be used to
     determine the change in legal housing units across time and space.
 
-    {{ bytes_previous_versions_link }}
+    All previously released versions of this data are available on the <a href="{{ bytes_url__housing_database }}">DCP Website: BYTES of the BIG APPLE</a>.
   display_name: Housing Database by 2024 City Council
   each_row_is_a: city council district
   tags:

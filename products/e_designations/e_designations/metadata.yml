@@ -1,7 +1,7 @@
 id: e_designations
 
 attributes:
-  description: >-
+  description: |-
     This data set contains information and locations of (E) Designations, including CEQR
     Environment Requirements (Table 1) and CEQR Restrictive Declarations (Table 2), in
     Appendix C of the Zoning Resolution. An (E) Designation provides notice of the
@@ -10,11 +10,10 @@ attributes:
     tax lot.
 
 
-    {{ bytes_previous_versions_link }}
+    All previously released versions of this data are available on the <a href="{{ bytes_url__e_designations }}">DCP Website: BYTES of the BIG APPLE</a>.
   display_name: E-Designations
   each_row_is_a: E-Designation
   publishing_frequency: Monthly
-  attribution_link: https://zap.planning.nyc.gov/projects
   date_made_public: '06/13/2018'
   tags:
   - e-designation

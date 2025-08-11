@@ -12,6 +12,8 @@ attributes:
     Army Corps of Engineers (USACE), pierhead and bulkhead line maps, aerial images
     and Google Streetview. Record streets and unmapped streets are included in this
     dataset for context and informational purposes only. {{ streets_map_app_link }}
+
+    All previously released versions of this data are available on the <a href="{{ bytes_url__dcm }}">DCP Website: BYTES of the BIG APPLE</a>.
   display_name: Digital City Map (DCM)
   each_row_is_a: City Feature
   publishing_purpose:

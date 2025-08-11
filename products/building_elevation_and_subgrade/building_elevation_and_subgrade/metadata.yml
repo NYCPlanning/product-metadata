@@ -1,6 +1,7 @@
 id: building_elevation_and_subgrade
 
 attributes:
+  attribution_link: {{ bytes_url__building_elevation_and_subgrade }}
   description: The Building Elevation and Subgrade data contains New York City building
     centroids derived from the Department of Building's (DOB) February 26th, 2022
     building footprint dataset. Each record contains a grade and first floor measurement
