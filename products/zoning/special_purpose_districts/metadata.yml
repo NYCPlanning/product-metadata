@@ -1,7 +1,9 @@
 id: special_purpose_districts
 
 attributes:
-  description: Special purpose districts have regulations that supplement and modify
+  attribution_link: {{ bytes_url__zoning_features }}
+  description: |-
+    Special purpose districts have regulations that supplement and modify
     the underlying zoning for distinctive neighborhoods with particular issues and
     goals. The district designation is indicated in the SDNAME attribute. The abbreviation
     as shown on the zoning map is indicated in the SDLBL attribute. See also Special
@@ -10,6 +12,8 @@ attributes:
     may be incomplete. See the Zoning Resolution for a complete description of the
     special purpose district. Where appropriate, the Zoning Resolution includes a
     district map showing subdistricts and subareas within the special purpose district.
+    
+    All previously released versions of this data are available on the <a href="{{ bytes_url__zoning_features }}">DCP Website: BYTES of the BIG APPLE</a>.
   display_name: Special Purpose Districts (NYSP)
   each_row_is_a: Special Purpose district
   publishing_frequency: Monthly

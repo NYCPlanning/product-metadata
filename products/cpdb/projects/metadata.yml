@@ -7,6 +7,8 @@ attributes:
     To explore the data, please visit  <a href="https://capitalplanning.nyc.gov/map#10/40.7128/-74.0807">Capital Planning Explorer</a>
 
     For additional information, please visit  <a href="https://www.ibo.nyc.ny.us/iboreports/IBOCBG.pdf">A Guide to The Capital Budget</a>
+
+    All previously released versions of this data are available on the <a href="{{ bytes_url__cpdb }}">DCP Website: BYTES of the BIG APPLE</a>
   display_name: Capital Projects Database (CPDB) - Projects
   each_row_is_a: Capital Project
   tags:

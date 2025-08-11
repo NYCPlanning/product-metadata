@@ -1,10 +1,13 @@
 id: special_purpose_districts_subdistricts
 
 attributes:
+  attribution_link: {{ bytes_url__zoning_features }}
   description: |-
     Areas within Special Purpose Districts where unique rules apply.
 
     This feature class contains only the internal subdistricts of any special purpose districts that are so subdivided. The main special purpose district name is indicated by the SPNAME attribute, the SUBDIST attribute contains the subdistrict name. Any further subdistrict divisions are named in the SUBAREA_NM or SUBAREA_OTR attribute. Subdistrict data has not been fully digitized and may be incomplete. See the Zoning Resolution for a complete description of the special purpose district. Where appropriate, the Zoning Resolution includes a district map showing subdistricts and subareas within the special purpose district.
+
+    All previously released versions of this data are available on the <a href="{{ bytes_url__zoning_features }}">DCP Website: BYTES of the BIG APPLE</a>.
   display_name: Special Purpose Subdistricts (NYSP_SD)
   each_row_is_a: Special Purpose subdistrict
   publishing_frequency: Monthly

@@ -1,10 +1,13 @@
 id: zoning_map_amendments
 
 attributes:
+  attribution_link: {{ bytes_url__zoning_features }}
   description: |-
     Areas covered by zoning changes adopted or certified.
 
     Includes outlines for both adopted and current "Certified" rezonings. Selected city-initiated text amendments to the Zoning Resolution that have discrete geographical boundaries may be included.
+
+    All previously released versions of this data are available on the <a href="{{ bytes_url__zoning_features }}">DCP Website: BYTES of the BIG APPLE</a>.
   display_name: Zoning Map Amendments (NYZMA)
   each_row_is_a: Zoning Map Amendment
   publishing_frequency: Monthly

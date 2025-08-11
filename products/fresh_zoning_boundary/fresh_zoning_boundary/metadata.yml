@@ -1,10 +1,13 @@
 id: fresh_zoning_boundary
 
 attributes:
-  description:
+  attribution_link: {{ bytes_url__fresh_zoning_boundary }}
+  description: |-
     FRESH boundaries where zoning and discretionary tax incentives are
     available for the development, expansion and renovation of full line grocery stores
     and supermarkets
+
+    All previously released versions of this data are available on the <a href="{{ bytes_url__fresh_zoning_boundary }}">DCP Website: BYTES of the BIG APPLE</a>.
   display_name: FRESH Food Stores Zoning Boundaries
   publishing_frequency: As-Needed
   each_row_is_a: FRESH boundary

@@ -4,7 +4,7 @@ attributes:
   description: |-
     A Lower Density Growth Management Area is an area designated in the Zoning Resolution where new developments must provide more off-street parking, larger yards and more open space than would otherwise be required in the applicable zoning districts In Staten Island and Bronx Community District 10.
 
-    All previously released versions of this data are available at  <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>
+    All previously released versions of this data are available on the <a href="{{ bytes_url__lower_density_growth_management_areas }}">DCP Website: BYTES of the BIG APPLE</a>.
   display_name: Lower Density Growth Management Areas
   each_row_is_a: Lower Density Growth Management Area
   tags:

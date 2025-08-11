@@ -1,10 +1,13 @@
 id: commercial_overlay_district
 
 attributes:
+  attribution_link: {{ bytes_url__zoning_features }}
   description: |-
     Commercial overlay districts for New York City. A commercial overlay is a C1 or C2 district mapped within residential zoning districts to serve local retail needs.
 
     Polygon features representing the within-tax-block limits for commercial overlay districts, as shown on the DCP zoning maps. Commercial overlay district designations are indicated in the OVERLAY attribute.
+
+    All previously released versions of this data are available on the <a href="{{ bytes_url__zoning_features }}">DCP Website: BYTES of the BIG APPLE</a>.
   display_name: Commercial Overlay (NYCO)
   each_row_is_a: Commercial Overlay district
   publishing_frequency: Monthly

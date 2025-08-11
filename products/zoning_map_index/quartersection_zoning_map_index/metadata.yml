@@ -1,6 +1,7 @@
 id: quartersection_zoning_map_index
 
 attributes:
+  attribution_link: {{ bytes_url__zoning_map_index }}
   description: |-
     Shapefile of zoning quartersection map index. Grid to determine which
     zoning quartersection map relates to specific areas of NYC.
@@ -15,7 +16,7 @@ attributes:
     Each map covers an area of approximately 8,000 feet (north/south) by 12,500
     feet (east/west).
 
-    {{ bytes_previous_versions_link }}
+    All previously released versions of this data are available on the <a href="{{ bytes_url__zoning_map_index }}">DCP Website: BYTES of the BIG APPLE</a>.
   display_name: Quartersection_ZoningMapIndex
   each_row_is_a: Quarter Section Map Index
   tags:

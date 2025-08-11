@@ -5,7 +5,7 @@ attributes:
     Shapefile of Transit Zone boundaries where parking requirements are
     eliminated or reduced for a range of affordable and senior housing units.
 
-    All previously released versions of this data are available at  <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive</a>
+    All previously released versions of this data are available on the <a href="{{ bytes_url__transit_zones }}">DCP Website: BYTES of the BIG APPLE</a>.
   publishing_frequency: As-Needed
 
   display_name: Transit Zones

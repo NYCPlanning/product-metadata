@@ -3,7 +3,7 @@ id: dcm
 dataset_defaults:
   publishing_frequency: Monthly
   data_change_frequency: Monthly
-  attribution_link: "https://www.nyc.gov/site/planning/data-maps/open-data/dwn-digital-city-map.page"
+  attribution_link: {{ bytes_url__dcm }}
   geocoded: True
   date_made_public: '6/1/2020'
 

@@ -1,10 +1,11 @@
 id: georeferenced_nyc_zoning_maps
 
 attributes:
+  attribution_link: {{ bytes_url__zoning_features }}
   description: |-
     The Georeferenced NYC Zoning Maps raster dataset is intended to be a spatial representation of the entire zoning map catalog for the City of New York as one seamless citywide raster zoning map sans title blocks. These maps are normally maintained as 126 individual quarter sections and printed periodically for inclusion in Vol III of the City's 2019 Zoning Resolution. This dataset encompasses recent changes to mapped zoning districts or zoning text amendments as they are adopted by the City Council as well as filed City Map changes.
 
-    {{ bytes_previous_versions_link }}
+    All previously released versions of this data are available on the <a href="{{ bytes_url__zoning_features }}">DCP Website: BYTES of the BIG APPLE</a>.
   display_name: Georeferenced NYC Zoning Maps
   each_row_is_a: Row
   tags:
@@ -14,7 +15,6 @@ attributes:
   - dcp
   - maps
   date_made_public: "9/13/2021"
-  attribution_link: https://www.nyc.gov/site/planning/data-maps/open-data.page#zoning_related
 
 assembly: []
 
