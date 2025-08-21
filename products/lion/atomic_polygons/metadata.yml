@@ -150,57 +150,57 @@ columns:
   data_type: text
   description: String value of the 2020 census tract number.
   example: None
-  custom:
-    api_name: censusbloc
+  # custom:
+  #   api_name: censusbloc
 - id: censusblock_2000_suffix
   name: CENSUSBLOCK_2000_SUFFIX
   data_type: text
   description: An alphabetic suffix for the 2000 census block.
   example: None
-  custom:
-    api_name: censusbl_1
+  # custom:
+  #   api_name: censusbl_1
 - id: censustract_2000
   name: CENSUSTRACT_2000
   data_type: text
   description: String value of the 2000 census tract number.
   example: None
-  custom:
-    api_name: censustrac
+  # custom:
+  #   api_name: censustrac
 - id: censusblock_2010
   name: CENSUSBLOCK_2010
   data_type: text
   description: String value of the 2010 census block number.
   example: None
-  custom:
-    api_name: censusbl_2
+  # custom:
+  #   api_name: censusbl_2
 - id: censusblock_2010_suffix
   name: CENSUSBLOCK_2010_SUFFIX
   data_type: text
   description: An alphabetic suffix for the 2010 census block.
   example: None
-  custom:
-    api_name: censusbl_3
+  # custom:
+  #   api_name: censusbl_3
 - id: censustract_2010
   name: CENSUSTRACT_2010
   data_type: text
   description: String value of the 2000 census tract number.
   example: None
-  custom:
-    api_name: censustr_1
+  # custom:
+  #   api_name: censustr_1
 - id: censustract_1990
   name: CENSUSTRACT_1990
   data_type: text
   description: String value of the 1990 census tract number.
   example: None
-  custom:
-    api_name: censustr_2
+  # custom:
+  #   api_name: censustr_2
 - id: admin_fire_company
   name: ADMIN_FIRE_COMPANY
   data_type: text
   description: The fire company number servicing the district.
   example: None
-  custom:
-    api_name: admin_fire
+  # custom:
+  #   api_name: admin_fire_company
 - id: water_flag
   name: WATER_FLAG
   data_type: text
@@ -286,37 +286,37 @@ columns:
     an evacuation zone. (Note: field name may appear as "Hurricane_" in shapefile
     due to ESRI character limit)'
   example: None
-  custom:
-    api_name: hurricane_
+  # custom:
+  #   api_name: hurricane_
 - id: censustract_2020
   name: CENSUSTRACT_2020
   data_type: text
   description: String value of the 2020 census tract number.
   example: None
-  custom:
-    api_name: censustr_3
+  # custom:
+  #   api_name: censustr_3
 - id: censusblock_2020
   name: CENSUSBLOCK_2020
   data_type: text
   description: String value of the 2020 census block number.
   example: None
-  custom:
-    api_name: censusbl_4
+  # custom:
+  #   api_name: censusbl_4
 - id: censusblock_2020_suffix
   name: CENSUSBLOCK_2020_SUFFIX
   data_type: text
   description: An alphabetic suffix for the 2020 census block.
   example: None
-  custom:
-    api_name: censusbl_5
+  # custom:
+  #   api_name: censusbl_5
 - id: commercial_waste_zone
   name: Commercial Waste Zone
   data_type: text
   description: Commercial Waste Zones established as part of the Department of Sanitation's (DSNY) comprehensive plan
     for reforming the private carting industry.
   example: None
-  custom:
-    api_name: commercial
+  # custom:
+  #   api_name: commercial
 - id: shape_area
   data_type: decimal
 - id: shape_length

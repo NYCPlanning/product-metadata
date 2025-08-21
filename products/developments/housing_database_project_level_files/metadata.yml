@@ -84,12 +84,6 @@ destinations:
   - id: csv
     custom:
       url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nychdb_{{ version }}_csv.zip
-  - id: data_dictionary
-    custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/excel/data-tools/bytes/Housing_Database_Data_Dictionary.xlsx
-- id: bytes # TODO - multiple bytes sources for socrata dist not supported
-  type: bytes
-  files:
   - id: shapefile_inactive_included
     custom:
       url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nychdb_inactiveincluded_{{ version }}_shp.zip
