@@ -95,7 +95,7 @@ files:
       description: |-
         Boundaries of Municipal Court districts including portions under water.
 
-        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__municipal_court }}">DCP Website: BYTES of the BIG APPLE</a>.
+        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__municipal_court }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ version }}
       display_name: Municipal Court Districts (water areas included)
     overridden_columns:
     - id: shape_length
@@ -109,7 +109,7 @@ files:
       description: |-
         Boundaries of Municipal Court districts.
 
-        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__municipal_court }}">DCP Website: BYTES of the BIG APPLE</a>.
+        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__municipal_court }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ version }}
     overridden_columns:
     - id: shape_length
       name: shape_leng

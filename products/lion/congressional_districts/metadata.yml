@@ -85,7 +85,7 @@ files:
       description: |-
         US Congressional District boundaries for New York City including portions under water.
 
-        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__cong_dists }}">DCP Website: BYTES of the BIG APPLE</a>.
+        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__cong_dists }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ version }}
       display_name: Congressional Districts (water areas included)
     overridden_columns:
     - id: shape_length
@@ -99,7 +99,7 @@ files:
       description: |-
         US Congressional District boundaries for New York City.
 
-        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__cong_dists }}">DCP Website: BYTES of the BIG APPLE</a>.
+        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__cong_dists }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ version }}
     overridden_columns:
     - id: shape_length
       name: shape_leng

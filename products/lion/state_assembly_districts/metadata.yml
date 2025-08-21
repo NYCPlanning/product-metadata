@@ -96,7 +96,7 @@ files:
       description: |-
         New York State Assembly District boundaries for New York City including portions under water.
 
-        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__state_assembly }}">DCP Website: BYTES of the BIG APPLE</a>.
+        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__state_assembly }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ version }}
       display_name: State Assembly Districts (water areas included)
     overridden_columns:
     - id: shape_length
@@ -112,7 +112,7 @@ files:
       description: |-
         New York State Assembly District boundaries for New York City clipped to the shoreline.
 
-        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__state_assembly }}">DCP Website: BYTES of the BIG APPLE</a>.
+        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__state_assembly }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ version }}
     overridden_columns:
     - id: shape_length
       name: shape_leng

@@ -85,7 +85,7 @@ files:
       description: |-
         The City Council district boundaries for New York City including portions under water.
 
-        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__ccds }}">DCP Website: BYTES of the BIG APPLE</a>.
+        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__ccds }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ version }}
       display_name: City Council Districts (Water Areas Included)
     overridden_columns:
     - id: shape_length
@@ -99,7 +99,7 @@ files:
       description: |-
         The City Council district boundaries for New York City.
 
-        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__ccds }}">DCP Website: BYTES of the BIG APPLE</a>.
+        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__ccds }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ version }}
       display_name: City Council Districts (Water Areas Included)
     overridden_columns:
     - id: shape_length

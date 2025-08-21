@@ -80,7 +80,7 @@ files:
       description: |
         Census Tracts from the 2010 US Census for New York City clipped to the shoreline. These boundary files are derived from the US Census Bureau's TIGER project and have been geographically modified to fit the New York City base map. Because some census tracts are under water not all census tracts are contained in this file, only census tracts that are partially or totally located on land have been mapped in this file.
 
-        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__census_tracts }}">DCP Website: BYTES of the BIG APPLE</a>.
+        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__census_tracts }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ version }}
       display_name: 2010 Census Tracts
 - file:
     id: shapefile_water_included
@@ -91,7 +91,7 @@ files:
       description: |
         Census Tracts from the 2010 US Census for New York City including portions under water. These boundary files are derived from the US Census Bureau's TIGER project and have been geographically modified to fit the New York City base map.
 
-        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__census_tracts }}">DCP Website: BYTES of the BIG APPLE</a>.
+        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__census_tracts }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ version }}
       display_name: 2010 Census Tracts (water areas included)
 - file:
     id: nyct2010_metadata.pdf

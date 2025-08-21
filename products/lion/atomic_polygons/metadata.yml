@@ -5,7 +5,7 @@ attributes:
   description: |-
     Atomic polygons serve as a set of basic building blocks for generating the polygons of many of the district types represented in the NYC Street Centerline (CSCL) database. Feature classes such as election district, school district, census block, FDNY administrative company, and community district can be dissolved by combining the appropriate fields in atomic polygons.
 
-    All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__atomic_polygons }}">DCP Website: BYTES of the BIG APPLE</a>.
+    All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__atomic_polygons }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ version }}
   display_name: Atomic Polygons
   each_row_is_a: Atomic Polygon
   tags:

@@ -5,7 +5,7 @@ attributes:
   description: |
     The 2020 NYC Public Use Microdata Areas (PUMAs) are statistical geographic areas defined for the dissemination of 2020 Public Use Microdata Sample (PUMS) data. PUMAs have a minimum population of 100,000, are aggregated from census tracts, and approximate Community Districts (CDs), or combinations of CDs (There are 59 CDs and only 55 NYC PUMAs because of such combinations). These boundary files are derived from the US Census Bureau's TIGER project and have been geographically modified to fit the New York City base map.
 
-    All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__pumas }}">DCP Website: BYTES of the BIG APPLE</a>.
+    All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__pumas }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ version }}
   display_name: 2020 Public Use Microdata Areas (PUMAs)
   date_made_public: '9/13/2021'
   each_row_is_a: A 2020 Public Use Microdata Area (PUMA)
