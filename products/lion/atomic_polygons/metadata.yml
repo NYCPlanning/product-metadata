@@ -39,29 +39,29 @@ destinations:
       - id: admin_fire_company
         name: ADMIN_FIRE
       - id: commercial_waste_zone
-        name: COMMERCIAL
+        name: COMMERCIAL_WASTE_ZONE
       - id: hurricane_evacuation_zone
-        name: HURRICANE
+        name: HURRICANE_EVACUATION_ZONE
       - id: censusblock_2000
-        name: CENSUSBLOC
+        name: CENSUSBLOCK_2000
       - id: censusblock_2000_suffix
-        name: CENSUSBL_1
+        name: CENSUSBLOCK_2000_SUFFIX
       - id: censustract_2000
-        name: CENSUSTRAC
+        name: CENSUSTRACT_2000
       - id: censusblock_2010
-        name: CENSUSBL_2
+        name: CENSUSBLOCK_2010
       - id: censusblock_2010_suffix
-        name: CENSUSBL_3
+        name: CENSUSBLOCK_2010_SUFFIX
       - id: censustract_2010
-        name: CENSUSTR_1
+        name: CENSUSTRACT_2010
       - id: censustract_1990
-        name: CENSUSTR_2
+        name: CENSUSTRACT_1990
       - id: censustract_2020
-        name: CENSUSTR_3
+        name: CENSUSTRACT_2020
       - id: censusblock_2020
-        name: CENSUSBL_4
+        name: CENSUSBLOCK_2020
       - id: censusblock_2020_suffix
-        name: CENSUSBL_5
+        name: CENSUSBLOCK_2020_SUFFIX
       - id: shape_length
         name: Shape_Length
     custom:
