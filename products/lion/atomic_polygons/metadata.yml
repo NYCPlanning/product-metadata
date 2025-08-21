@@ -69,7 +69,7 @@ destinations:
   - id: nyap_metadata.pdf
     custom:
       destination_use: attachment
-  tags: [25b]
+  tags: [25c]
   custom:
     four_four: wgbs-damt
 - id: bytes

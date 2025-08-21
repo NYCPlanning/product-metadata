@@ -46,7 +46,7 @@ destinations:
   # - id: oti_data_dictionary_wi
   #   custom:
   #     destination_use: attachment
-  tags: [25b]
+  tags: [25c]
   custom:
     four_four: nymm-wb5m
 - id: socrata
@@ -67,7 +67,7 @@ destinations:
   - id: oti_data_dictionary
     custom:
       destination_use: attachment
-  tags: [25b]
+  tags: [25c]
   custom:
     four_four: 5yfv-9hkp
 - id: bytes

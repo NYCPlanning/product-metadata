@@ -32,7 +32,7 @@ destinations:
   - id: shapefile_water_not_included
     custom:
       destination_use: dataset_file
-  tags: [25b]
+  tags: [25c]
   custom:
     four_four: 63ge-mke6
 - id: socrata_water_included
@@ -44,7 +44,7 @@ destinations:
   - id: shapefile_water_included
     custom:
       destination_use: dataset_file
-  tags: [25b]
+  tags: [25c]
   custom:
     four_four: imfq-nf3j
 - id: bytes

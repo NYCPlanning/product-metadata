@@ -37,7 +37,7 @@ destinations:
   - id: oti_data_dictionary
     custom:
       destination_use: attachment
-  tags: [dist_all]
+  tags: [25c]
   custom:
     four_four: ige5-v6sk
     is_unparsed_dataset: true

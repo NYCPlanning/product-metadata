@@ -40,7 +40,7 @@ destinations:
       - id: coundist
         custom:
           api_name: coun_dist
-  tags: [25b]
+  tags: [25c]
   custom:
     four_four: mkqi-d8x3
 - id: socrata
@@ -56,7 +56,7 @@ destinations:
         name: Shape_Length
     custom:
       destination_use: dataset_file
-  tags: [25b]
+  tags: [25c]
   custom:
     four_four: 872g-cjhh
 - id: bytes

@@ -35,7 +35,7 @@ destinations:
   - id: data_dictionary_xlsx
     custom:
       destination_use: attachment
-  tags: [25b]
+  tags: [25c]
   custom:
     four_four: pikk-p9nv
 - id: bytes

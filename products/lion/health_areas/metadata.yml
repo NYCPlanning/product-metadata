@@ -48,7 +48,7 @@ destinations:
   # - id: oti_data_dictionary
   #   custom:
   #     destination_use: attachment
-  tags: [socrata_unpublished]
+  tags: [socrata_unpublished, 25c]
   custom:
     four_four: jntv-ngw5
 - id: bytes

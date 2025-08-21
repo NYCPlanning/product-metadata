@@ -36,7 +36,7 @@ destinations:
   - id: oti_data_dictionary
     custom:
       destination_use: attachment
-  tags: [25b]
+  tags: [25c]
   custom:
     four_four: y9w2-ph8n
 - id: socrata_water_included
@@ -59,7 +59,7 @@ destinations:
   - id: oti_data_dictionary_wi
     custom:
       destination_use: attachment
-  tags: [25b]
+  tags: [25c]
   custom:
     four_four: jyp7-eqhh
 - id: bytes
