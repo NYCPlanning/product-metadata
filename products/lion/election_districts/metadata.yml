@@ -36,7 +36,7 @@ destinations:
         name: Shape_Length
     custom:
       destination_use: dataset_file
-  tags: [25b]
+  tags: [25c]
   custom:
     four_four: y4qz-3s3n
 - id: socrata
@@ -52,7 +52,7 @@ destinations:
         name: Shape_Length
     custom:
       destination_use: dataset_file
-  tags: [25b]
+  tags: [25c]
   custom:
     four_four: wwxk-38u4
 - id: bytes
@@ -81,7 +81,7 @@ files:
       description: |-
         New York City Board of Elections election district boundaries for New York City including portions under water.
 
-        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__elec_dists }}">DCP Website: BYTES of the BIG APPLE</a>.
+        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__elec_dists }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ version }}
       display_name: Election Districts (water areas included)
     overridden_columns:
     - id: shape_length
@@ -95,7 +95,7 @@ files:
       description: |-
         New York City Board of Elections election district boundaries for New York City clipped to the shoreline.
 
-        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__elec_dists }}">DCP Website: BYTES of the BIG APPLE</a>.
+        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__elec_dists }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ version }}
     overridden_columns:
     - id: shape_length
       name: shape_leng

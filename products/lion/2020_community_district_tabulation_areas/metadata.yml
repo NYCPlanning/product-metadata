@@ -5,7 +5,7 @@ attributes:
   description: |
     The Department of City Planning (DCP) created Community District Tabulation Areas (CDTAs) to closely approximate the 59 Community Districts of New York City for the purpose of reporting American Community Survey (ACS) data. CDTAs are built by aggregating whole 2020 census tracts.
 
-    All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__cdtas }}">DCP Website: BYTES of the BIG APPLE</a>.
+    All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__cdtas }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ version }}
   display_name: 2020 Community District Tabulation Areas (CDTAs)
   date_made_public: '9/13/2021'
   each_row_is_a: Community District Tabulation Area
@@ -38,7 +38,7 @@ destinations:
   - id: shapefile
     custom:
       destination_use: dataset_file
-  tags: [25b]
+  tags: [25c]
   custom:
     four_four: xn3r-zk6y
 - id: bytes

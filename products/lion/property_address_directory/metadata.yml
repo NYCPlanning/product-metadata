@@ -5,7 +5,7 @@ attributes:
   description: |-
     The PAD (Property Address Directory) file contains additional geographic information at the tax lot level not found in the PLUTO files.  This data includes alias addresses and Building Identification Numbers (BINs).  It consists of two ASCII, comma delimited files: a tax lot file and an address file.
 
-    All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__pad }}">DCP Website: BYTES of the BIG APPLE</a>.
+    All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__pad }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ version }}
   display_name: Property Address Directory
   each_row_is_a: Property Address
   date_made_public: '9/13/2021'
@@ -34,7 +34,7 @@ destinations:
   - id: shapefile
     custom:
       destination_use: dataset_file
-  tags: [25b]
+  tags: [25c]
   custom:
     four_four: bc8t-ecyu
     is_unparsed_dataset: true

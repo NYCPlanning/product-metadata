@@ -5,7 +5,7 @@ attributes:
   description: |-
     Fire Divisions boundaries of New York City.
 
-    All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__fire }}">DCP Website: BYTES of the BIG APPLE</a>.
+    All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__fire }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ version }}
   display_name: Fire Divisions
   each_row_is_a: Fire division
   date_made_public: '1/31/2013'
@@ -44,7 +44,7 @@ destinations:
         name: Shape_Length
     custom:
       destination_use: dataset_file
-  tags: [transitioned_needs_review]
+  tags: [transitioned_needs_review, 25c]
   custom:
     four_four: 68m2-uzcb
 - id: bytes

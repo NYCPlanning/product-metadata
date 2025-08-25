@@ -5,7 +5,7 @@ attributes:
   description: |-
     Health center service area boundaries for New York City. Health Center service areas are aggregates of health areas and are used for reporting health statistics. They were created by the NYC Department of Health and Mental Hygiene (DOHMH).
 
-    All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__health }}">DCP Website: BYTES of the BIG APPLE</a>.
+    All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__health }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ version }}
   display_name: Health Center Districts
   each_row_is_a: Health Center district
   tags:
@@ -48,7 +48,7 @@ destinations:
         name: Shape_Length
     custom:
       destination_use: dataset_file
-  tags: [25b]
+  tags: [25c]
   custom:
     four_four: 6ez8-za84
 - id: bytes

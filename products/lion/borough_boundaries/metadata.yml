@@ -32,7 +32,7 @@ destinations:
   - id: oti_data_dictionary_wi
     custom:
       destination_use: attachment
-  tags: [25b]
+  tags: [25c]
   custom:
     four_four: wh2p-dxnf
 - id: socrata
@@ -51,7 +51,7 @@ destinations:
   - id: oti_data_dictionary
     custom:
       destination_use: attachment
-  tags: [25b]
+  tags: [25c]
   custom:
     four_four: gthc-hcne
 - id: bytes
@@ -80,7 +80,7 @@ files:
       description: |-
         Boundaries of boroughs (water areas included).
 
-        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__borough_boundaries }}">DCP Website: BYTES of the BIG APPLE</a>.
+        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__borough_boundaries }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ version }}
       display_name: Borough Boundaries (water areas included)
     overridden_columns:
     - id: shape_length
@@ -94,7 +94,7 @@ files:
       description: |-
         Boundaries of boroughs (water areas excluded).
 
-        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__borough_boundaries }}">DCP Website: BYTES of the BIG APPLE</a>.
+        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__borough_boundaries }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ version }}
       display_name: Borough Boundaries
     overridden_columns:
     - id: shape_length

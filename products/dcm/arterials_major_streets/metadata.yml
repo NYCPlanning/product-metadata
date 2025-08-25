@@ -66,11 +66,7 @@ destinations:
     type: bytes
     files:
       - id: dcm_multilayer
-        custom:
-          url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/dcm_{{ version }}shp.zip
       - id: data_dictionary_pdf
-        custom:
-          url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/dcm_arterials_major_streets.pdf
 
 files:
   - file:

@@ -5,7 +5,7 @@ attributes:
   description: |-
     Fire Companies boundaries of New York City.
 
-    All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__fire }}">DCP Website: BYTES of the BIG APPLE</a>.
+    All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__fire }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ version }}
   display_name: Fire Companies
   each_row_is_a: Fire company
   tags:
@@ -48,7 +48,7 @@ destinations:
         name: Shape_Length
     custom:
       destination_use: dataset_file
-  tags: [25b]
+  tags: [25c]
   custom:
     four_four: bst7-5464
 - id: bytes

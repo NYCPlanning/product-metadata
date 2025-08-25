@@ -41,7 +41,7 @@ destinations:
   - id: oti_data_dictionary
     custom:
       destination_use: attachment
-  tags: [25b]
+  tags: [25c]
   custom:
     four_four: 5crt-au7u
 - id: socrata_water_included
@@ -59,7 +59,7 @@ destinations:
         name: Shape_Length
     custom:
       destination_use: dataset_file
-  tags: [25b]
+  tags: [25c]
   custom:
     four_four: 6ak9-vek3
 - id: bytes
@@ -90,7 +90,7 @@ files:
 
         Community Districts (CD) are mandated by the city charter to review and monitor quality of life issues for New York City (NYC) neighborhoods.  NYC is currently comprised of 59 community districts. There are also 12 Joint Interest Areas (JIAs).  The JIAs are major parks and airports and are not contained within any community district.  The BoroCD value is the unique ID for CDs and JIAs with the first byte representing the borough code and the second and third bytes are the CD or JIA number.
 
-        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__comm_dists }}">DCP Website: BYTES of the BIG APPLE</a>.
+        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__comm_dists }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ version }}
       display_name: Community Districts (Water areas included)
     overridden_columns:
     - id: shape_length
@@ -106,7 +106,7 @@ files:
 
         Community Districts (CD) are mandated by the city charter to review and monitor quality of life issues for New York City (NYC) neighborhoods.  NYC is currently comprised of 59 community districts. There are also 12 Joint Interest Areas (JIAs).  The JIAs are major parks and airports and are not contained within any community district.  The BoroCD value is the unique ID for CDs and JIAs with the first byte representing the borough code and the second and third bytes are the CD or JIA number.
 
-        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__comm_dists }}">DCP Website: BYTES of the BIG APPLE</a>.
+        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__comm_dists }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ version }}
     overridden_columns:
     - id: shape_length
       name: shape_leng

@@ -11,7 +11,7 @@ attributes:
 
     These zones were created by New York City Emergency Management (NYCEM) and are maintained by the Department of City Planning (DCP).
 
-    All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__hurricane }}">DCP Website: BYTES of the BIG APPLE</a>.
+    All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__hurricane }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ version }}
   display_name: Hurricane Evacuation Zones
   each_row_is_a: Hurricane evacuation zone
   tags:
@@ -54,7 +54,7 @@ destinations:
   # - id: oti_data_dictionary
   #   custom:
   #     destination_use: attachment
-  tags: [socrata_unpublished]
+  tags: [socrata_unpublished, 25c]
   custom:
     four_four: epne-qv9x
 - id: bytes

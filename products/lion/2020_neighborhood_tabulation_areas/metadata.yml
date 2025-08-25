@@ -7,7 +7,7 @@ attributes:
 
     Though NTA boundaries and their associated names roughly correspond with many neighborhoods commonly recognized by New Yorkers, NTAs are not intended to definitively represent neighborhoods, nor are they intended to be exhaustive of all possible names and understandings of neighborhoods throughout New York City. Additionally, non-residential areas including large parks, airports, cemeteries, and other special areas are represented separately within this dataset and are assigned codes according to their type (See NTAType field).
 
-    All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__ntas }}">DCP Website: BYTES of the BIG APPLE</a>.
+    All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__ntas }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ version }}
   display_name: 2020 Neighborhood Tabulation Areas (NTAs)
   each_row_is_a: Neighborhood Tabulation Area
   date_made_public: '9/13/2021'
@@ -40,7 +40,7 @@ destinations:
   - id: shapefile
     custom:
       destination_use: dataset_file
-  tags: [25b]
+  tags: [25c]
   custom:
     four_four: 9nt8-h7nd
 - id: bytes

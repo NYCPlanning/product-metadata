@@ -37,7 +37,7 @@ destinations:
         name: Shape_Length
     custom:
       destination_use: dataset_file
-  tags: [25b]
+  tags: [25c]
   custom:
     four_four: 35e4-miqd
 - id: socrata
@@ -56,7 +56,7 @@ destinations:
   # - id: oti_data_dictionary
   #   custom:
   #     destination_use: attachment
-  tags: [25b]
+  tags: [25c]
   custom:
     four_four: j3u5-usz2
 - id: bytes
@@ -85,7 +85,7 @@ files:
       description: |-
         US Congressional District boundaries for New York City including portions under water.
 
-        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__cong_dists }}">DCP Website: BYTES of the BIG APPLE</a>.
+        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__cong_dists }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ version }}
       display_name: Congressional Districts (water areas included)
     overridden_columns:
     - id: shape_length
@@ -99,7 +99,7 @@ files:
       description: |-
         US Congressional District boundaries for New York City.
 
-        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__cong_dists }}">DCP Website: BYTES of the BIG APPLE</a>.
+        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__cong_dists }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ version }}
     overridden_columns:
     - id: shape_length
       name: shape_leng

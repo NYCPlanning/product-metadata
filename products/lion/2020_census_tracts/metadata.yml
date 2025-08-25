@@ -32,7 +32,7 @@ destinations:
   - id: shapefile_water_not_included
     custom:
       destination_use: dataset_file
-  tags: [25b]
+  tags: [25c]
   custom:
     four_four: 63ge-mke6
 - id: socrata_water_included
@@ -44,7 +44,7 @@ destinations:
   - id: shapefile_water_included
     custom:
       destination_use: dataset_file
-  tags: [25b]
+  tags: [25c]
   custom:
     four_four: imfq-nf3j
 - id: bytes
@@ -73,7 +73,7 @@ files:
       description: |
         Census Tracts from the 2020 US Census for New York City clipped to the shoreline. These boundary files are derived from the US Census Bureau's TIGER project and have been geographically modified to fit the New York City base map. Because some census tracts are under water not all census tracts are contained in this file, only census tracts that are partially or totally located on land have been mapped in this file.
 
-        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__census_tracts }}">DCP Website: BYTES of the BIG APPLE</a>.
+        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__census_tracts }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ version }}
       display_name: 2020 Census Tracts
 - file:
     id: shapefile_water_included
@@ -84,7 +84,7 @@ files:
       description: |
         Census Tracts from the 2020 US Census for New York City including portions under water. These boundary files are derived from the US Census Bureau's TIGER project and have been geographically modified to fit the New York City base map.
 
-        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__census_tracts }}">DCP Website: BYTES of the BIG APPLE</a>.
+        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__census_tracts }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ version }}
       display_name: 2020 Census Tracts (water areas included)
 - file:
     id: nyct2020_metadata.pdf

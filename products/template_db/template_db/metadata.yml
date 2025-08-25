@@ -5,6 +5,7 @@ attributes:
   description: |
     Template DB is a mock dataset created by the Data Engineering team at the Department of City Planning (DCP).
   each_row_is_a: Interesting place in NYC
+  publishing_frequency: As-Needed
   tags:
   - Department of City Planning
   - DCP
@@ -25,8 +26,22 @@ destinations:
   - id: shapefile_points
     custom:
       destination_use: dataset_file
+  - id: oti_data_dictionary
+    custom:
+      destination_use: attachment
   custom:
     four_four: b7pm-uzu7
+- id: my_edm_publishing_destination
+  type: edm.publishing.published
+  files:
+  - id: source_data_versions.csv
+    custom:
+      key: db-template
+      filepath: source_data_versions.csv
+  - id: shapefile_points
+    custom:
+      key: db-template
+      filepath: templatedb_points.zip
 
 files:
 - file:
@@ -59,6 +74,11 @@ files:
     filename: build_metadata.json
     is_metadata: true
     type: None
+- file:
+    id: oti_data_dictionary
+    filename: data_dictionary.xlsx
+    is_metadata: true
+    type: oti_data_dictionary
 
 columns:
 - id: place_name

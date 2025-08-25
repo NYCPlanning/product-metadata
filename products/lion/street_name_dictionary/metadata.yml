@@ -5,7 +5,7 @@ attributes:
   description: |-
     The Street Name Dictionary (SND) contains street names and street codes for New York City.  Street names (which include names of other geographic features as well) are associated to street codes.  Alias street names and variant spellings are related through a street code hierarchy.
 
-    All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__snd }}">DCP Website: BYTES of the BIG APPLE</a>.
+    All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__snd }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ version }}
   display_name: Street Name Dictionary
   each_row_is_a: Street Name
   tags:
@@ -33,7 +33,7 @@ destinations:
   - id: shapefile
     custom:
       destination_use: dataset_file
-  tags: [25b]
+  tags: [25c]
   custom:
     four_four: w4v2-rv6b
     is_unparsed_dataset: true

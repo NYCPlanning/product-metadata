@@ -36,7 +36,7 @@ destinations:
   - id: oti_data_dictionary
     custom:
       destination_use: attachment
-  tags: [25b]
+  tags: [25c]
   custom:
     four_four: y9w2-ph8n
 - id: socrata_water_included
@@ -59,7 +59,7 @@ destinations:
   - id: oti_data_dictionary_wi
     custom:
       destination_use: attachment
-  tags: [25b]
+  tags: [25c]
   custom:
     four_four: jyp7-eqhh
 - id: bytes
@@ -88,7 +88,7 @@ files:
       description: |
         Census Blocks from the 2010 US Census for New York City clipped to the shoreline. These boundary files are derived from the US Census Bureau's TIGER project and have been geographically modified to fit the New York City base map. Because some census blocks are under water not all census blocks are contained in this file, only census blocks that are partially or totally located on land have been mapped in this file.
 
-        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__census_blocks }}">DCP Website: BYTES of the BIG APPLE</a>.
+        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__census_blocks }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ version }}
       display_name: 2010 Census Blocks
 - file:
     id: shapefile_water_included
@@ -99,7 +99,7 @@ files:
       description: |
         Census Blocks from the 2010 US Census for New York City including portions under water. These boundary files are derived from the US Census Bureau's TIGER project and have been geographically modified to fit the New York City base map.
 
-        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__census_blocks }}">DCP Website: BYTES of the BIG APPLE</a>.
+        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__census_blocks }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ version }}
       display_name: 2010 Census Blocks (water areas included)
 - file:
     id: nycb2010_metadata.pdf

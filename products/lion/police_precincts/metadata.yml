@@ -5,7 +5,7 @@ attributes:
   description: |-
     Boundaries of police precincts.
 
-    All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__police_precincts }}">DCP Website: BYTES of the BIG APPLE</a>.
+    All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__police_precincts }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ version }}
   display_name: Police Precincts
   each_row_is_a: Police precinct
   tags:
@@ -43,7 +43,7 @@ destinations:
   - id: oti_data_dictionary
     custom:
       destination_use: attachment
-  tags: [25b]
+  tags: [25c]
   custom:
     four_four: y76i-bdw7
 - id: bytes

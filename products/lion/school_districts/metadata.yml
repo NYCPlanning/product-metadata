@@ -5,7 +5,7 @@ attributes:
   description: |-
     School District boundaries for New York City. School districts are administrative areas defined by New York City Department of Education (DOE). School districts are not the same as the school zones that are used by DOE for school assignment at the elementary or middle school level.
 
-    All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__school_districts }}">DCP Website: BYTES of the BIG APPLE</a>.
+    All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__school_districts }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ version }}
   display_name: School Districts
   each_row_is_a: School district
   tags:
@@ -46,7 +46,7 @@ destinations:
   # - id: oti_data_dictionary
   #   custom:
   #     destination_use: attachment
-  tags: [socrata_unpublished]
+  tags: [socrata_unpublished, 25c]
   custom:
     four_four: 8ugf-3d8u
 - id: bytes

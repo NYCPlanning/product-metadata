@@ -9,7 +9,7 @@ attributes:
     subway or train stations, skyways, tunnels, or other miscellaneous features. Note
     that this is not a comprehensive dataset of locations with these types of features.
 
-    All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__pseudo_lots }}">DCP Website: BYTES of the BIG APPLE</a>.
+    All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__pseudo_lots }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ version }}
   display_name: Pseudo Lots
   each_row_is_a: Pseudo Lot
   tags:
@@ -35,7 +35,7 @@ destinations:
   - id: shapefile
     custom:
       destination_use: dataset_file
-  tags: [25b]
+  tags: [25c]
   custom:
     four_four: dx24-9ef7
 - id: bytes
