@@ -37,7 +37,7 @@ custom: {}
 
 destinations:
 - id: socrata_water_incl
-  type: socrata
+  type: open_data
   files:
   - id: pluto_datadictionary.pdf
     custom:
@@ -51,7 +51,7 @@ destinations:
   custom:
     four_four: 64uk-42ks
 - id: test_socrata_water_incl
-  type: socrata
+  type: open_data
   files:
   - id: pluto_datadictionary.pdf
     custom:

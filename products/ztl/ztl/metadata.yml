@@ -33,7 +33,7 @@ custom: {}
 
 destinations:
 - id: socrata
-  type: socrata
+  type: open_data
   files:
   - id: zoningtaxlotdatabase_datadictionary.pdf
     custom:

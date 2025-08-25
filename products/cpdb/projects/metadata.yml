@@ -30,7 +30,7 @@ custom: {}
 
 destinations:
 - id: socrata_csv
-  type: socrata
+  type: open_data
   files:
   - id: projects_csv
     dataset_overrides:
@@ -61,7 +61,7 @@ destinations:
   custom:
     four_four: fi59-268w
 - id: socrata_points
-  type: socrata
+  type: open_data
   files:
   - id: projects_points
     dataset_overrides:
@@ -74,7 +74,7 @@ destinations:
   custom:
     four_four: h2ic-zdws
 - id: socrata_polygons
-  type: socrata
+  type: open_data
   files:
   - id: projects_polygons
     dataset_overrides:

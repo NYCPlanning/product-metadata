@@ -17,7 +17,7 @@ custom: {}
 
 destinations:
 - id: socrata
-  type: socrata
+  type: open_data
   files:
   # TODO: This file is janky. Change to a csv, or remove the headers
   # id: dataset_xlsx

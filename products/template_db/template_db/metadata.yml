@@ -18,7 +18,7 @@ custom: {}
 
 destinations:
 - id: socrata
-  type: socrata
+  type: open_data
   files:
   - id: source_data_versions.csv
     custom:

@@ -26,7 +26,7 @@ custom: {}
 
 destinations:
 - id: socrata_water_included
-  type: socrata
+  type: open_data
   files:
   - id: nymcwi_metadata.pdf
     custom:
@@ -48,7 +48,7 @@ destinations:
   custom:
     four_four: qssd-iewi
 - id: socrata
-  type: socrata
+  type: open_data
   files:
   - id: nymc_metadata.pdf
     custom:

@@ -54,7 +54,7 @@ custom: {}
 destinations:
   - id: socrata
     tags: [socrata_unpublished]
-    type: socrata
+    type: open_data
     files:
       - id: shapefile
         dataset_overrides:

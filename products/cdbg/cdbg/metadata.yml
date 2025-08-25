@@ -52,7 +52,7 @@ custom: {}
 
 destinations:
 - id: socrata_fgdb
-  type: socrata
+  type: open_data
   files:
   - id: fgdb
     dataset_overrides:
@@ -67,7 +67,7 @@ destinations:
     four_four: 3u5q-ae5y
     is_unparsed_dataset: true
 - id: socrata
-  type: socrata
+  type: open_data
   files:
   - id: csv
     dataset_overrides:

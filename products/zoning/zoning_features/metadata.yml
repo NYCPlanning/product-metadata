@@ -26,7 +26,7 @@ custom: {}
 
 destinations:
 - id: socrata
-  type: socrata
+  type: open_data
   custom:
     four_four: mm69-vrje
     is_unparsed_dataset: true

@@ -34,7 +34,7 @@ assembly:
 
 destinations:
 - id: socrata
-  type: socrata
+  type: open_data
   files:
   - id: pops_datadictionary_xlsx
     custom:
