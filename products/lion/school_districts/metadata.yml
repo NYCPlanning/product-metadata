@@ -29,7 +29,7 @@ custom: {}
 
 destinations:
 - id: socrata
-  type: socrata
+  type: open_data
   files:
   - id: nysd_metadata.pdf
     custom:

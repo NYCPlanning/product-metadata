@@ -45,7 +45,7 @@ custom: {}
 
 destinations:
 - id: socrata
-  type: socrata
+  type: open_data
   files:
   - id: colp_readme.pdf
     custom:
@@ -144,7 +144,7 @@ destinations:
   custom:
     four_four: fn4k-qyk2
 - id: socrata_fgdb
-  type: socrata
+  type: open_data
   files:
   - id: primary_file_geodatabase
     custom:

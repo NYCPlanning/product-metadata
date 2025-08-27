@@ -52,7 +52,7 @@ custom: {}
 
 destinations:
 - id: socrata
-  type: socrata
+  type: open_data
   files:
   - id: shapefile
     custom:
@@ -63,7 +63,7 @@ destinations:
   custom:
     four_four: uxt4-ugwr
 - id: socrata_inactive_included
-  type: socrata
+  type: open_data
   #overrides:
   #  display_name: Housing Database Project Level Files - Inactive Included
   files:

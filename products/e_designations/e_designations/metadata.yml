@@ -46,7 +46,7 @@ custom: {}
 
 destinations:
 - id: socrata_shapefile
-  type: socrata
+  type: open_data
   files:
   - id: nyedes_metadata.pdf
     custom:
@@ -62,7 +62,7 @@ destinations:
   custom:
     four_four: jsrs-ggnx
 - id: socrata_csv
-  type: socrata
+  type: open_data
   files:
   - id: nyedes_metadata.pdf
     custom:

@@ -28,7 +28,7 @@ custom: {}
 
 destinations:
 - id: socrata
-  type: socrata
+  type: open_data
   files:
   - id: nyhc_metadata.pdf
     custom:

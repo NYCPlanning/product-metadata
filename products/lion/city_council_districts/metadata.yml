@@ -25,7 +25,7 @@ custom: {}
 
 destinations:
 - id: socrata_water_included
-  type: socrata
+  type: open_data
   files:
   - id: nyccwi_metadata.pdf
     custom:
@@ -44,7 +44,7 @@ destinations:
   custom:
     four_four: mkqi-d8x3
 - id: socrata
-  type: socrata
+  type: open_data
   files:
   - id: nycc_metadata.pdf
     custom:

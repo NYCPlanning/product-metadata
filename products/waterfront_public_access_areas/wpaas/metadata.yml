@@ -33,7 +33,7 @@ custom: {}
 
 destinations:
   - id: socrata
-    type: socrata
+    type: open_data
     custom:
       four_four: 388s-pnvc
     files:

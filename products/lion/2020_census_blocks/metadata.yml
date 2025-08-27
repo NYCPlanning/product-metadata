@@ -24,7 +24,7 @@ custom: {}
 
 destinations:
 - id: socrata
-  type: socrata
+  type: open_data
   files:
   - id: nycb2020_metadata.pdf
     custom:
@@ -36,7 +36,7 @@ destinations:
   custom:
     four_four: wmsu-5muw
 - id: socrata_water_included
-  type: socrata
+  type: open_data
   files:
   - id: nycb2020wi_metadata.pdf
     custom:

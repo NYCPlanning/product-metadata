@@ -42,7 +42,7 @@ custom: {}
 
 destinations:
 - id: socrata
-  type: socrata
+  type: open_data
   files:
   - id: zapprojects_datadictionary.xlsx
     custom:

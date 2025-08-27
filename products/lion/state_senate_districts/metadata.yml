@@ -24,7 +24,7 @@ custom: {}
 
 destinations:
 - id: socrata_water_included
-  type: socrata
+  type: open_data
   files:
   - id: nysswi_metadata.pdf
     custom:
@@ -45,7 +45,7 @@ destinations:
   custom:
     four_four: 4294-fz9s
 - id: socrata
-  type: socrata
+  type: open_data
   files:
   - id: nyss_metadata.pdf
     custom:

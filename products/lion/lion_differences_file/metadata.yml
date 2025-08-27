@@ -26,7 +26,7 @@ custom: {}
 
 destinations:
 - id: socrata
-  type: socrata
+  type: open_data
   files:
   - id: ldf_metadata.pdf
     custom:

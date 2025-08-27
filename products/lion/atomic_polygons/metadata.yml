@@ -27,7 +27,7 @@ custom: {}
 
 destinations:
 - id: socrata
-  type: socrata
+  type: open_data
   files:
   - id: nyap_metadata.pdf
     custom:

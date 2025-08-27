@@ -36,7 +36,7 @@ custom: {}
 
 destinations:
 - id: socrata
-  type: socrata
+  type: open_data
   files:
   - id: pluto_removed_records
     custom:
@@ -47,7 +47,7 @@ destinations:
   custom:
     four_four: qt5r-nqxp
 - id: socrata_test
-  type: socrata
+  type: open_data
   files:
   - id: pluto_removed_records
     custom:

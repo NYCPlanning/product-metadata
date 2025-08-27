@@ -16,7 +16,7 @@ assembly: []
 custom: {}
 destinations:
   - id: socrata
-    type: socrata
+    type: open_data
     custom:
       four_four: dpnc-b2hd
     files:

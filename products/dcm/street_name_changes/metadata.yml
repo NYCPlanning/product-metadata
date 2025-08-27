@@ -51,7 +51,7 @@ custom: {}
 destinations:
   - id: socrata_areas
     tags: [socrata_unpublished]
-    type: socrata
+    type: open_data
     files:
       - id: areas_shapefile
         dataset_overrides:
@@ -84,7 +84,7 @@ destinations:
 
   - id: socrata_lines
     tags: [socrata_unpublished]
-    type: socrata
+    type: open_data
     files:
       - id: lines_shapefile
         dataset_overrides:
@@ -117,7 +117,7 @@ destinations:
 
   - id: socrata_points
     tags: [socrata_unpublished]
-    type: socrata
+    type: open_data
     files:
       - id: points_shapefile
         dataset_overrides:
