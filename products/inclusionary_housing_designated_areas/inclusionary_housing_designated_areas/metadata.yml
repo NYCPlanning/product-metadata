@@ -10,6 +10,7 @@ attributes:
     All previously released versions of this data are available on the <a href="{{ bytes_url__inclusionary_housing_designated_areas }}">DCP Website: BYTES of the BIG APPLE</a>.
   display_name: Inclusionary Housing Designated Areas
   each_row_is_a: Inclusionary Housing Designated Area
+  publishing_frequency: As-Needed
   tags:
   - inclusionary housing designated areas
   - dcp
@@ -22,6 +23,13 @@ custom: {}
 destinations:
 - id: socrata
   type: open_data
+  files:
+  - id: shapefile
+    custom:
+      destination_use: dataset_file
+  - id: metadata_pdf
+    custom:
+      destination_use: attachment
   custom:
     four_four: 7nec-8aw4
 - id: bytes
@@ -42,6 +50,7 @@ files:
 - file:
     id: metadata_pdf
     filename: nycihda_metadata.pdf
+    is_metadata: true
 
 columns:
 - id: boro
@@ -61,19 +70,21 @@ columns:
   - value: '5'
     description: Staten Island
 - id: shape
-  name: Shape
+  name: the_geom
   data_type: text
   description: ""
+  custom:
+    api_name: the_geom
 - id: status
   name: Status
   data_type: text
   description: ""
 - id: project_name
-  name: ProjectNam
+  name: ProjectName
   data_type: text
   description: ""
 - id: date_adopted
-  name: datea_dopted
+  name: DateAdopted
   data_type: text
   description: ""
 - id: zr_map
@@ -88,19 +99,23 @@ columns:
   name: CD
   data_type: text
   description: ""
-- id: shape_length
-  name: shape_Leng
+- id: shape_leng
+  name: shape_leng
   data_type: decimal
   description: ""
+  custom:
+    api_name: shape_leng
 - id: shape_area
   name: Shape_Area
   data_type: decimal
   description: ""
 - id: shape_starea
-  name: Shape_STAr
+  name: Shape_STArea
   data_type: decimal
   description: ""
 - id: shape_stleng
-  name: Shape_STLe
+  name: Shape_STLength
   data_type: decimal
   description: ""
+  custom:
+    api_name: shape_stlength
