@@ -36,7 +36,7 @@ destinations:
   custom:
     four_four: m79g-k9r4
 - id: socrata_map
-  type: open_data
+  type: open_data_map
   files:
   - id: nycmih_metadata.pdf
     custom:
