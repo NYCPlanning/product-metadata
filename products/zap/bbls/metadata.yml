@@ -11,7 +11,7 @@ attributes:
 
     To report data errors or for questions, email <a href="mailto:zap_feedback_dl@planning.nyc.gov">zap_feedback_dl@planning.nyc.gov</a>.
 
-    All previously released versions of this data are available on the <a href="{{ bytes_url__zap }}">DCP Website: BYTES of the BIG APPLE</a>.
+    All previously released versions of this data are available on the <a href="{{ bytes_url__zap }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ version }}
   display_name: Zoning Application Portal (ZAP) - BBL
   each_row_is_a: tax lot associated to a project in the Zoning Application Portal (ZAP)
   tags:

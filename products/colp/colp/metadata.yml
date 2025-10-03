@@ -7,7 +7,7 @@ attributes:
 
     Questions or feedback on errors within the City Owned and Leased Properties can be directed to DCAS Land Use Planning at (212) 386-0622 or RESPlanning311@dcas.nyc.gov.
 
-    All previously released versions of this data are available on the <a href="{{ bytes_url__cpdb }}">DCP Website: BYTES of the BIG APPLE</a>
+    All previously released versions of this data are available on the <a href="{{ bytes_url__cpdb }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ version }}
   display_name: City Owned and Leased Property (COLP)
   each_row_is_a: City Owned or Leased Property
   publishing_frequency: Bi-annually

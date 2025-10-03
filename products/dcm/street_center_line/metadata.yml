@@ -10,7 +10,7 @@ attributes:
     streets are included in this dataset for context and informational purposes only.
     {{ streets_map_app_link }}
 
-    All previously released versions of this data are available on the <a href="{{ bytes_url__dcm }}">DCP Website: BYTES of the BIG APPLE</a>.
+    All previously released versions of this data are available on the <a href="{{ bytes_url__dcm }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ version }}
   display_name: Digital City Map (DCM) - Street Center Line
   each_row_is_a: Street Center Line
   publishing_purpose:

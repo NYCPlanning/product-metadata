@@ -7,7 +7,7 @@ attributes:
 
     Questions about this database can be directed to <b><a href="mailto:dcpopendata@planning.nyc.gov">dcpopendata@planning.nyc.gov</a></b>.
 
-    All previously released versions of this data are available on the <a href="{{ bytes_url__facilities }}">DCP Website: BYTES of the BIG APPLE</a>.
+    All previously released versions of this data are available on the <a href="{{ bytes_url__facilities }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ version }}
   display_name: Facilities Database
   each_row_is_a: Public or Private Facility Licensed to Operate in NYC
   publishing_frequency: Bi-annually

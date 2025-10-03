@@ -10,7 +10,7 @@ attributes:
     tax lot.
 
 
-    All previously released versions of this data are available on the <a href="{{ bytes_url__e_designations }}">DCP Website: BYTES of the BIG APPLE</a>.
+    All previously released versions of this data are available on the <a href="{{ bytes_url__e_designations }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ version }}
   display_name: E-Designations
   each_row_is_a: E-Designation
   publishing_frequency: Monthly

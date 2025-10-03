@@ -2,13 +2,14 @@ id: designated_areas_m_districts_appendix_j
 
 attributes:
   attribution_link: {{ bytes_url__designated_areas_m_districts_appendix_j }}
-  description:
+  description: |
     Designated Areas in M districts (shown in the maps of Appendix J in
     the Zoning Resolution) are areas where the development of new self-storage facilities
     are subject to restrictions. Designated areas in which self-storage facilities
     are subject to the as-of-right provisions of Section 42-121 are shown as Subarea
     1, and those in which such use is subject to special permit of the City Planning
-    Commission pursuant to Section 74-932 are shown as Subarea 2.
+    Commission pursuant to Section 74-932 are shown as Subarea 2. Current version: {{ version }}
+
   display_name: Designated_Areas_M_districts_AppendixJ
   each_row_is_a: <FILL ME IN>
   tags:

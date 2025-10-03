@@ -5,7 +5,7 @@ attributes:
   description: |-
     Footprints of Waterfront Public Access Areas (WPAAs). Footprints are the portion of privately owned waterfront zoning lots where publicly accessible open space is provided to and along the shoreline for public enjoyment, as shown on the NYC DCP Waterfront Access Map (WAM) - waterfrontaccess.planning.nyc.gov.
 
-    All previously released versions of this data are available on the <a href="{{ bytes_url__waterfront_public_access_areas }}">DCP Website: BYTES of the BIG APPLE</a>.
+    All previously released versions of this data are available on the <a href="{{ bytes_url__waterfront_public_access_areas }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ version }}
   display_name: Waterfront Public Access Area (WPAA) Footprints
   each_row_is_a: Footprint of Waterfront Public Access Area
   publishing_frequency: As-Needed

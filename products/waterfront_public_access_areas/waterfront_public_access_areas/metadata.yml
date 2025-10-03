@@ -12,7 +12,7 @@ attributes:
     parkland and open space for public enjoyment. Data for WPAA footprints and access
     points, human powered boat launches and saltwater fishing access are also included.
 
-    All previously released versions of this data are available on the <a href="{{ bytes_url__waterfront_public_access_areas }}">DCP Website: BYTES of the BIG APPLE</a>.
+    All previously released versions of this data are available on the <a href="{{ bytes_url__waterfront_public_access_areas }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ version }}
   display_name: "Waterfront Access Map Data: Geodatabase"
   each_row_is_a: <depends on which feature> see metadata
   tags:

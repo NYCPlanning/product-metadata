@@ -7,7 +7,7 @@ attributes:
     zoning lots where publicly accessible open space is provided to and along the
     shoreline for public enjoyment, as shown on the <a href="https://waterfrontaccess.planning.nyc.gov/">Waterfront Access Map (WAM)</a>.
 
-    All previously released versions of this data are available on the <a href="{{ bytes_url__waterfront_public_access_areas }}">DCP Website: BYTES of the BIG APPLE</a>.
+    All previously released versions of this data are available on the <a href="{{ bytes_url__waterfront_public_access_areas }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ version }}
   display_name: Waterfront Public Access Areas (WPAAs)
   each_row_is_a:
     A publicly accessible portion of the waterfront that is privately

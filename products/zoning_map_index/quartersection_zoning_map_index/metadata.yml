@@ -16,7 +16,7 @@ attributes:
     Each map covers an area of approximately 8,000 feet (north/south) by 12,500
     feet (east/west).
 
-    All previously released versions of this data are available on the <a href="{{ bytes_url__zoning_map_index }}">DCP Website: BYTES of the BIG APPLE</a>.
+    All previously released versions of this data are available on the <a href="{{ bytes_url__zoning_map_index }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ version }}
   display_name: Quartersection_ZoningMapIndex
   each_row_is_a: Quarter Section Map Index
   tags:

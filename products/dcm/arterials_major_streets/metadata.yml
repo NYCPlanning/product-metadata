@@ -9,7 +9,7 @@ attributes:
     Parkways and Toll Crossings on the adopted Master Plan of Arterial Highways and
     Major Streets. {{ streets_map_app_link }}
 
-    All previously released versions of this data are available on the <a href="{{ bytes_url__dcm }}">DCP Website: BYTES of the BIG APPLE</a>.
+    All previously released versions of this data are available on the <a href="{{ bytes_url__dcm }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ version }}
   display_name: Digital City Map (DCM) - Arterials and Major Streets
   each_row_is_a: Designated rights-of-way
   publishing_purpose:

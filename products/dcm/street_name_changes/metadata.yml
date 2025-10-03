@@ -6,7 +6,7 @@ attributes:
     of official street and honorary name changes established by City Council Local
     Law. Years included are from 1998 to current. {{ streets_map_app_link }}
 
-    All previously released versions of this data are available on the <a href="{{ bytes_url__dcm }}">DCP Website: BYTES of the BIG APPLE</a>.
+    All previously released versions of this data are available on the <a href="{{ bytes_url__dcm }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ version }}
   display_name: Digital City Map (DCM) - Street Name Changes (Areas)
   each_row_is_a: Street Name Change
   publishing_purpose:

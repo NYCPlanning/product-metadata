@@ -7,7 +7,7 @@ attributes:
 
     Limited Height Districts contain restrictions on the height of buildings and other structures. A Limited Height district may be superimposed on an area designated as an historic district by the Landmarks Preservation Commission (LPC).
 
-    All previously released versions of this data are available on the <a href="{{ bytes_url__zoning_features }}">DCP Website: BYTES of the BIG APPLE</a>.
+    All previously released versions of this data are available on the <a href="{{ bytes_url__zoning_features }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ version }}
   display_name: Limited Height Districts (NYLH)
   each_row_is_a: Limited Height district
   publishing_frequency: Monthly

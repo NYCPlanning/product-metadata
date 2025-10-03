@@ -8,7 +8,7 @@ attributes:
     the City Planning Commission and the City Council will apply one or more options to
     require affordable housing as part of new residential construction.
 
-    All previously released versions of this data are available on the <a href="{{ bytes_url__mandatory_inclusionary_housing }}">DCP Website: BYTES of the BIG APPLE</a>.
+    All previously released versions of this data are available on the <a href="{{ bytes_url__mandatory_inclusionary_housing }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ version }}
   display_name: Mandatory Inclusionary Housing
   date_made_public: "3/14/2017"
   publishing_frequency: Monthly

@@ -5,7 +5,7 @@ attributes:
   description: |-
     Extensive land use and geographic data at the tax lot level in comma-separated values (CSV) file format. The PLUTO files contain more than seventy fields derived from data maintained by city agencies.
 
-    All previously released versions of this data are available on the <a href="{{ bytes_url__pluto }}">DCP Website: BYTES of the BIG APPLE</a>.
+    All previously released versions of this data are available on the <a href="{{ bytes_url__pluto }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ version }}
   display_name: Primary Land Use Tax Lot Output (PLUTO)
   each_row_is_a: Tax Lot
   tags:
