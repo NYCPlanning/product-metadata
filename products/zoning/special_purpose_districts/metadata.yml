@@ -13,7 +13,7 @@ attributes:
     special purpose district. Where appropriate, the Zoning Resolution includes a
     district map showing subdistricts and subareas within the special purpose district.
     
-    All previously released versions of this data are available on the <a href="{{ bytes_url__zoning_features }}">DCP Website: BYTES of the BIG APPLE</a>.
+    All previously released versions of this data are available on the <a href="{{ bytes_url__zoning_features }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ version }}
   display_name: Special Purpose Districts (NYSP)
   each_row_is_a: Special Purpose district
   publishing_frequency: Monthly

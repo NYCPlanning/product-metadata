@@ -29,7 +29,7 @@ attributes:
     href='https://www.hud.gov/sites/dfiles/OA/documents/CPD-24-04.pdf'>HUD Office of
     Community Planning and Development (CPD) Notice CPD-24-04</a>.
 
-    All previously released versions of this data are available on the <a href="{{ bytes_url__cdbg }}">DCP Website: BYTES of the BIG APPLE</a>.
+    All previously released versions of this data are available on the <a href="{{ bytes_url__cdbg }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ version }}
   display_name: Community Development Block Grant (CDBG) Eligibility by Census Tract
   each_row_is_a: Census Tract
   publishing_frequency: As-Needed

@@ -6,7 +6,7 @@ attributes:
     York City Panel on Climate Change (NPCC). Data includes the 10th, 25th, 50th,
     75th and 90th percentile projections for the years 2020, 2050, 2080 and 2100.
 
-    All previously released versions of this data are available on the <a href="{{ bytes_url__projected_sea_level_rise }}">DCP Website: BYTES of the BIG APPLE</a>.
+    All previously released versions of this data are available on the <a href="{{ bytes_url__projected_sea_level_rise }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ version }}
   display_name: Projected Sea Level Rise
   each_row_is_a: N/A
 

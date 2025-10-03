@@ -2,9 +2,10 @@ id: 2010_census_tract_to_neighborhood_tabulation_area_equivalency_table
 
 attributes:
   attribution_link: {{ bytes_lion_urls__ntas }}
-  description: Excel table of census data created to project populations at the Neighborhood
+  description: |
+    Excel table of census data created to project populations at the Neighborhood
     Tabulation Area, a small area level, from 2000 to 2030 for PlaNYC, the long-term
-    sustainability plan for New York City
+    sustainability plan for New York City. Current version: {{ version }}
   display_name: 2010 Census Tract to Neighborhood Tabulation Area Equivalency table
   each_row_is_a: Census Tract
   tags:

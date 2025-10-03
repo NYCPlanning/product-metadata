@@ -2,14 +2,15 @@ id: 2020_census_tracts_to_2020_ntas_and_cdtas_equivalency
 
 attributes:
   attribution_link: {{ bytes_lion_urls__cdtas }}
-  description: This file shows the relationship between New York City’s 2020 census
+  description: |
+    This file shows the relationship between New York City’s 2020 census
     tracts, 2020 Neighborhood Tabulation Areas (NTAs), and Community District Tabulation
     Areas (CDTAs). 2020 census tracts nest within 2020 NTAs, and 2020 NTAs nest within
     CDTAs, so each census tract is listed only once. Note that CDTAs sometimes cross
     borough boundaries, and therefore will not add up to borough totals for the Bronx,
     Queens, and Manhattan. As they are nested within CDTAs, NTAs will likewise not
     add up to borough totals. Also note that census tracts in New York City’s water
-    areas are excluded from this file.
+    areas are excluded from this file.  Current version: {{ version }}
   display_name: 2020 Census Tracts to 2020 NTAs and CDTAs Equivalency
   each_row_is_a: NTA CDTA Equivalency
   tags:

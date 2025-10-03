@@ -5,7 +5,7 @@ attributes:
   description: |-
     Access points for saltwater fishing sites in NYC, that are shown on the Waterfront Access Map (WAM) - waterfrontaccess.planning.nyc.gov. No updates since December 2019 release.
 
-    All previously released versions of this data are available on the <a href="{{ bytes_url__waterfront_public_access_areas }}">DCP Website: BYTES of the BIG APPLE</a>.
+    All previously released versions of this data are available on the <a href="{{ bytes_url__waterfront_public_access_areas }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ version }}
   display_name: NYC Saltwater Fishing Sites
   each_row_is_a: Access point for saltwater fishing site
   publishing_frequency: As-Needed

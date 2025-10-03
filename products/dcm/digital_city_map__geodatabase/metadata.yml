@@ -13,7 +13,7 @@ attributes:
     Street Name Changes (areas), Street Name Changes (lines), and Street Name Changes
     (points). {{ streets_map_app_link }}
 
-    All previously released versions of this data are available on the <a href="{{ bytes_url__dcm }}">DCP Website: BYTES of the BIG APPLE</a>.
+    All previously released versions of this data are available on the <a href="{{ bytes_url__dcm }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ version }}
   display_name: Digital City Map – Geodatabase
   each_row_is_a: NA
   tags:

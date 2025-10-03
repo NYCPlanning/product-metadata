@@ -7,7 +7,7 @@ attributes:
 
     Polygon features representing the within-tax-block limits for commercial overlay districts, as shown on the DCP zoning maps. Commercial overlay district designations are indicated in the OVERLAY attribute.
 
-    All previously released versions of this data are available on the <a href="{{ bytes_url__zoning_features }}">DCP Website: BYTES of the BIG APPLE</a>.
+    All previously released versions of this data are available on the <a href="{{ bytes_url__zoning_features }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ version }}
   display_name: Commercial Overlay (NYCO)
   each_row_is_a: Commercial Overlay district
   publishing_frequency: Monthly

@@ -6,7 +6,7 @@ attributes:
     The final approval of a City Map alteration is considered "filed" on the date
     indicated on the Alteration map which becomes effective the following day. {{ streets_map_app_link }}
 
-    All previously released versions of this data are available on the <a href="{{ bytes_url__dcm }}">DCP Website: BYTES of the BIG APPLE</a>.
+    All previously released versions of this data are available on the <a href="{{ bytes_url__dcm }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ version }}
   display_name: Digital City Map (DCM) - City Map Alterations
   each_row_is_a: City Map Alteration
   publishing_purpose:

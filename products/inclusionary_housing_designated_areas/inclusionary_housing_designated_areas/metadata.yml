@@ -7,7 +7,7 @@ attributes:
     is applicable. The program modifies the floor area ratio (FAR) and offers a
     bonus for developments that provide affordable housing.
 
-    All previously released versions of this data are available on the <a href="{{ bytes_url__inclusionary_housing_designated_areas }}">DCP Website: BYTES of the BIG APPLE</a>.
+    All previously released versions of this data are available on the <a href="{{ bytes_url__inclusionary_housing_designated_areas }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ version }}
   display_name: Inclusionary Housing Designated Areas
   each_row_is_a: Inclusionary Housing Designated Area
   publishing_frequency: As-Needed

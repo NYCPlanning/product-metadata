@@ -2,7 +2,8 @@ id: building_elevation_and_subgrade
 
 attributes:
   attribution_link: {{ bytes_url__building_elevation_and_subgrade }}
-  description: The Building Elevation and Subgrade data contains New York City building
+  description: |
+    The Building Elevation and Subgrade data contains New York City building
     centroids derived from the Department of Building's (DOB) February 26th, 2022
     building footprint dataset. Each record contains a grade and first floor measurement
     for each building (recorded as feet above sea-level in the NADV88 vertical datum)
@@ -11,7 +12,7 @@ attributes:
     center of every building recorded in the DOB dataset. The dataset excluded the
     footprints of small accessory buildings such as sheds. Each row within the dataset
     represents one building centroid, and records the X and Y coordinates of that
-    centroid in the NAD 1983 coordinate system.
+    centroid in the NAD 1983 coordinate system. Current version: {{ version }}
   display_name: Building Elevation and Subgrade (BES)
   each_row_is_a: A centroid of a building in NYC
   tags:

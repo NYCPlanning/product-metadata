@@ -5,7 +5,7 @@ attributes:
   description: |-
     This data set consists of 6 classes of zoning features: zoning districts, special purpose districts, special purpose district subdistricts, limited height districts, commercial overlay districts,  and zoning map amendments.
 
-    All previously released versions of this data are available on the <a href="{{ bytes_url__zoning_features }}">DCP Website: BYTES of the BIG APPLE</a>.
+    All previously released versions of this data are available on the <a href="{{ bytes_url__zoning_features }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ version }}
   display_name: "Zoning GIS Data: Geodatabase"
   each_row_is_a: "NA"
   tags:

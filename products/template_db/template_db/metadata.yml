@@ -3,7 +3,7 @@ id: template_db
 attributes:
   display_name: Template DB
   description: |
-    Template DB is a mock dataset created by the Data Engineering team at the Department of City Planning (DCP).
+    Template DB is a mock dataset created by the Data Engineering team at the Department of City Planning (DCP). Current version: {{ version }}
   each_row_is_a: Interesting place in NYC
   publishing_frequency: As-Needed
   tags:

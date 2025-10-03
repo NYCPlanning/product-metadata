@@ -4,7 +4,7 @@ attributes:
   description: "Directory of Land Use Application and CEQR Fees required when filing\
     \ application pursuant to City Charter 197-c and Other Applications with the Department\
     \ of City Planning.\r\n\r\nA resource for applicants and general public to asses\
-    \ fees related to Land Use and CEQR applications at the Department of City Planning."
+    \ fees related to Land Use and CEQR applications at the Department of City Planning. Current version: {{ version }}"
   display_name: Directory Of Land Use Application Fees
   each_row_is_a: Land Use Application Fee
   tags:

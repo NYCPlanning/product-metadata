@@ -7,7 +7,7 @@ attributes:
     available for the development, expansion and renovation of full line grocery stores
     and supermarkets
 
-    All previously released versions of this data are available on the <a href="{{ bytes_url__fresh_zoning_boundary }}">DCP Website: BYTES of the BIG APPLE</a>.
+    All previously released versions of this data are available on the <a href="{{ bytes_url__fresh_zoning_boundary }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ version }}
   display_name: FRESH Food Stores Zoning Boundaries
   publishing_frequency: As-Needed
   each_row_is_a: FRESH boundary
