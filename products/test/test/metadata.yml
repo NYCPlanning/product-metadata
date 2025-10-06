@@ -10,8 +10,16 @@ assembly: []
 custom: {}
 
 destinations:
+- id: socrata_2
+  type: open_data_mock
+  files:
+  - id: shapefile
+    custom:
+      destination_use: dataset_file
+  custom:
+    four_four: abcd-1234
 - id: socrata
-  type: open_data
+  type: open_data_mock
   files:
   - id: shapefile
     custom:
