@@ -1,0 +1,231 @@
+id: green_fast_track_lots
+
+attributes:
+  attribution_link: https://www.nyc.gov/content/planning/pages/our-work/plans/citywide/green-fast-track-for-housing
+  description: |-
+    Tax lots and the results of their CEQR Type II eligibility checks. These results power the screening tool used
+    to hep determine eligibility for DCP's <a href="https://www.nyc.gov/content/planning/pages/our-work/plans/citywide/green-fast-track-for-housing">Green Fast Track for Housing</a>
+    to streamline the environmental review process for small- and medium-sized residential developments.
+
+    Green Fast Track lot and source data is available on DCP's ArcGIS Online portal as <a href="https://dcp.maps.arcgis.com/home/item.html?id=16e45892aeef4ff0978172a04b54fc58">Fast Tracker Web Map - CEQR Type II</a>.
+
+  display_name: Green Fast Track Lots
+  each_row_is_a: Tax lot
+  publishing_frequency: As-Needed
+  tags:
+    - green fast track
+    - ceqr
+    - (e) designation
+    - housing
+
+assembly: []
+
+custom: {}
+
+destinations:
+  - id: socrata
+    type: open_data
+    custom:
+      four_four: xxxx-xxxx
+    files:
+      - id: shapefile
+
+columns:
+  - id: bbl
+    name: BBL
+    data_type: bbl
+    description: 10-digit identifier for the tax lot consisting of the borough code, tax block, and tax lot
+    example: '1016370141'
+
+  - id: zoning_category
+    name: Zoning Category
+    data_type: string
+    description: The Green Fast Track zoning category for the lot
+    values:
+      - value: R1-R4
+      - value: R5-R10
+      - value: Commercial or Manufacturing
+      - value: Other
+      - value: R1-R4 with Commercial or Manufacturing
+
+  - id: zoning_district
+    name: Zoning District
+    data_type: string
+    description: The zoning district for the tax lot
+    example: M1-4
+
+  - id: special_coastal_risk_flag
+    name: special_coastal_risk_flag
+    data_type: string
+    description: Flag to indicate 
+    values: [ value: "Yes", value: "No" ]
+  - id: special_coastal_risk
+    name: special_coastal_risk
+    data_type: string
+
+  - id: cats_permit_flag
+    name: cats_permit_flag
+    data_type: string
+    values: [ value: "Yes", value: "No" ]
+  - id: cats_permit
+    name: cats_permit
+    data_type: string
+
+  - id: industrial_lots_flag
+    name: industrial_lots_flag
+    data_type: string
+    values: [ value: "Yes", value: "No" ]
+  - id: industrial_lots
+    name: industrial_lots
+    data_type: string
+
+  - id: state_facility_flag
+    name: state_facility_flag
+    data_type: string
+    values: [ value: "Yes", value: "No" ]
+  - id: state_facility
+    name: state_facility
+    data_type: string
+
+  - id: title_v_permit_flag
+    name: title_v_permit_flag
+    data_type: string
+    values: [ value: "Yes", value: "No" ]
+  - id: title_v_permit
+    name: title_v_permit
+    data_type: string
+
+  - id: vent_tower_flag
+    name: vent_tower_flag
+    data_type: string
+    values: [ value: "Yes", value: "No" ]
+  - id: vent_tower
+    name: vent_tower
+    data_type: string
+
+  - id: e_des_air_quality_flag
+    name: e_des_air_quality_flag
+    data_type: string
+    values: [ value: "Yes", value: "No" ]
+  - id: e_des_air_quality
+    name: e_des_air_quality
+    data_type: string
+
+  - id: e_des_noise_flag
+    name: e_des_noise_flag
+    data_type: string
+    values: [ value: "Yes", value: "No" ]
+  - id: e_des_noise
+    name: e_des_noise
+    data_type: string
+
+  - id: arterial_highway_flag
+    name: arterial_highway_flag
+    data_type: string
+    values: [ value: "Yes", value: "No" ]
+  - id: arterial_highway
+    name: arterial_highway
+    data_type: string
+
+  - id: exposed_railway_flag
+    name: exposed_railway_flag
+    data_type: string
+    values: [ value: "Yes", value: "No" ]
+  - id: exposed_railway
+    name: exposed_railway
+    data_type: string
+
+  - id: airport_noise_flag
+    name: airport_noise_flag
+    data_type: string
+    values: [ value: "Yes", value: "No" ]
+  - id: airport_noise
+    name: airport_noise
+    data_type: string
+
+  - id: e_des_hazmat_flag
+    name: e_des_hazmat_flag
+    data_type: string
+    values: [ value: "Yes", value: "No" ]
+  - id: e_des_hazmat
+    name: e_des_hazmat
+    data_type: string
+
+  - id: natural_resources_flag
+    name: natural_resources_flag
+    data_type: string
+    values: [ value: "Yes", value: "No" ]
+  - id: natural_resources
+    name: natural_resources
+    data_type: string
+
+  - id: wetland_checkzone_flag
+    name: wetland_checkzone_flag
+    data_type: string
+    values: [ value: "Yes", value: "No" ]
+  - id: wetland_checkzone
+    name: wetland_checkzone
+    data_type: string
+
+  - id: archaeological_area_flag
+    name: archaeological_area_flag
+    data_type: string
+    values: [ value: "Yes", value: "No" ]
+  - id: archaeological_area
+    name: archaeological_area
+    data_type: string
+
+  - id: historic_districts_flag
+    name: historic_districts_flag
+    data_type: string
+    values: [ value: "Yes", value: "No" ]
+  - id: historic_districts
+    name: historic_districts
+    data_type: string
+
+  - id: historic_resources_flag
+    name: historic_resources_flag
+    data_type: string
+    values: [ value: "Yes", value: "No" ]
+  - id: historic_resources
+    name: historic_resources
+    data_type: string
+
+  - id: historic_resources_adj_flag
+    name: historic_resources_adj_flag
+    data_type: string
+    values: [ value: "Yes", value: "No" ]
+  - id: historic_resources_adj
+    name: historic_resources_adj
+    data_type: string
+
+  - id: shadow_open_spaces_flag
+    name: shadow_open_spaces_flag
+    data_type: string
+    values: [ value: "Yes", value: "No" ]
+  - id: shadow_open_spaces
+    name: shadow_open_spaces
+    data_type: string
+
+  - id: shadow_nat_resources_flag
+    name: shadow_nat_resources_flag
+    data_type: string
+    values: [ value: "Yes", value: "No" ]
+  - id: shadow_nat_resources
+    name: shadow_nat_resources
+    data_type: string
+
+  - id: shadow_hist_resources_flag
+    name: shadow_hist_resources_flag
+    data_type: string
+    values: [ value: "Yes", value: "No" ]
+  - id: shadow_hist_resources
+    name: shadow_hist_resources
+    data_type: string
+
+  - id: geom
+    name: geometry
+    data_type: geometry
+    custom:
+      geometry_type: multipolygon
+    description: The shape of the tax lot
