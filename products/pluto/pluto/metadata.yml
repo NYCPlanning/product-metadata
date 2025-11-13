@@ -51,7 +51,7 @@ destinations:
   custom:
     four_four: 64uk-42ks
 - id: test_socrata_water_incl
-  type: open_data
+  type: open_data_test
   files:
   - id: pluto_datadictionary.pdf
     custom:
@@ -2108,3 +2108,52 @@ columns:
   name: geom
   data_type: text
   example: None
+# Deprecated Fields
+- id: basempdate
+  name: basempdate
+  data_type: text
+  example: None
+  custom:
+    note: deprecated
+- id: dcasdate
+  name: dcasdate
+  data_type: text
+  example: None
+  custom:
+    note: deprecated
+- id: edesigdate
+  name: edesigdate
+  data_type: text
+  example: None
+  custom:
+    note: deprecated
+- id: landmkdate
+  name: landmkdate
+  data_type: text
+  example: None
+  custom:
+    note: deprecated
+- id: masdate
+  name: masdate
+  data_type: text
+  example: None
+  custom:
+    note: deprecated
+- id: polidate
+  name: polidate
+  data_type: text
+  example: None
+  custom:
+    note: deprecated
+- id: rpaddate
+  name: rpaddate
+  data_type: text
+  example: None
+  custom:
+    note: deprecated
+- id: zoningdate
+  name: zoningdate
+  data_type: text
+  example: None
+  custom:
+    note: deprecated
