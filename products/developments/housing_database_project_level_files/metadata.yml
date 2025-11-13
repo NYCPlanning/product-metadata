@@ -51,17 +51,6 @@ assembly: []
 custom: {}
 
 destinations:
-- id: socrata
-  type: open_data
-  files:
-  - id: shapefile
-    custom:
-      destination_use: dataset_file
-  - id: data_dictionary
-    custom:
-      destination_use: attachment
-  custom:
-    four_four: uxt4-ugwr
 - id: socrata_inactive_included
   type: open_data
   #overrides:
