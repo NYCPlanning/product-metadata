@@ -46,17 +46,6 @@ destinations:
       destination_use: dataset_file
   custom:
     four_four: qt5r-nqxp
-- id: socrata_test
-  type: open_data
-  files:
-  - id: pluto_removed_records
-    custom:
-      destination_use: attachment
-  - id: pluto_changes_applied
-    custom:
-      destination_use: dataset_file
-  custom:
-    four_four: v3y3-tzps
 - id: bytes
   type: bytes
   files:
