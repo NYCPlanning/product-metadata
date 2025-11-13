@@ -61,7 +61,7 @@ custom: {}
 
 destinations:
 - id: socrata
-  type: open_data
+  type: open_data_bytes_link # Probably a better way to do this - I just don't want it to show up as out-of-date on our dashboard
   files:
   - id: data_dictionary
     custom:
