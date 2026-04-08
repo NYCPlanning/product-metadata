@@ -1,0 +1,216 @@
+name: 📦 Create Metadata Release
+run-name: "📦 Create Metadata Release: ${{ inputs.release_version }}"
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_version:
+        description: "Release version (e.g., 24v3)"
+        type: string
+        required: true
+
+jobs:
+  create-release:
+    runs-on: ubuntu-22.04
+    defaults:
+      run:
+        shell: bash
+    container:
+      image: nycplanning/build-base:latest
+    env:
+      PRODUCT_METADATA_REPO_PATH: product-metadata
+      _TYPER_STANDARD_TRACEBACK: 1
+    steps:
+      - name: Checkout data-engineering repo
+        uses: actions/checkout@v4
+        with:
+          repository: NYCPlanning/data-engineering
+          path: data-engineering
+
+      - name: Checkout product-metadata repo
+        uses: actions/checkout@v4
+        with:
+          repository: NYCPlanning/product-metadata
+          path: product-metadata
+
+      - name: Set up Python environment
+        run: |
+          cd data-engineering
+          pip install -e .
+
+      - name: Generate metadata assets
+        run: |
+          cd data-engineering
+          mkdir -p ../release_artifacts/metadata_assets
+          python -m dcpy lifecycle package metadata generate \
+            --output-dir ../release_artifacts/metadata_assets \
+            --version ${{ inputs.release_version }}
+
+      - name: Generate destination versions
+        run: |
+          cd data-engineering
+          python -c "
+          from dcpy.lifecycle import product_metadata
+          from pathlib import Path
+          
+          org_md = product_metadata.load(version='${{ inputs.release_version }}')
+          versions = org_md.get_all_destination_current_versions()
+          
+          output_path = Path('../release_artifacts/destination_versions.txt')
+          output_path.write_text('\n'.join(versions) + '\n')
+          print(f'Generated {len(versions)} destination versions')
+          "
+
+      - name: Fetch previous release and generate diff
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cd product-metadata
+          
+          # Get the latest release
+          PREV_RELEASE=$(gh release list --limit 1 --json tagName --jq '.[0].tagName' 2>/dev/null || echo "")
+          
+          if [ -z "$PREV_RELEASE" ]; then
+            echo "No previous release found. This is the initial release."
+            echo "# Version Changes: Initial Release" > ../release_artifacts/changed_versions.txt
+            echo "" >> ../release_artifacts/changed_versions.txt
+            echo "This is the first release. All versions are new." >> ../release_artifacts/changed_versions.txt
+          else
+            echo "Previous release: $PREV_RELEASE"
+            
+            # Download previous destination_versions.txt
+            gh release download "$PREV_RELEASE" -p "destination_versions.txt" -D /tmp || {
+              echo "Could not download destination_versions.txt from previous release"
+              echo "# Version Changes from $PREV_RELEASE to ${{ inputs.release_version }}" > ../release_artifacts/changed_versions.txt
+              echo "" >> ../release_artifacts/changed_versions.txt
+              echo "Unable to compare - previous release missing destination_versions.txt" >> ../release_artifacts/changed_versions.txt
+              exit 0
+            }
+            
+            # Generate diff
+            echo "# Version Changes from $PREV_RELEASE to ${{ inputs.release_version }}" > ../release_artifacts/changed_versions.txt
+            echo "" >> ../release_artifacts/changed_versions.txt
+            
+            # Parse and categorize changes
+            python3 << 'EOF'
+          import sys
+          from pathlib import Path
+          
+          prev_file = Path("/tmp/destination_versions.txt")
+          curr_file = Path("../release_artifacts/destination_versions.txt")
+          output_file = Path("../release_artifacts/changed_versions.txt")
+          
+          # Read versions
+          prev_versions = {}
+          if prev_file.exists():
+              for line in prev_file.read_text().strip().split('\n'):
+                  if '|' in line:
+                      dest, ver = line.split('|', 1)
+                      prev_versions[dest] = ver
+          
+          curr_versions = {}
+          for line in curr_file.read_text().strip().split('\n'):
+              if '|' in line:
+                  dest, ver = line.split('|', 1)
+                  curr_versions[dest] = ver
+          
+          # Categorize changes
+          added = []
+          changed = []
+          removed = []
+          
+          for dest, ver in sorted(curr_versions.items()):
+              if dest not in prev_versions:
+                  added.append(f"+ {dest}|{ver}")
+              elif prev_versions[dest] != ver:
+                  changed.append(f"  {dest}|{prev_versions[dest]} -> {ver}")
+          
+          for dest, ver in sorted(prev_versions.items()):
+              if dest not in curr_versions:
+                  removed.append(f"- {dest}|{ver}")
+          
+          # Append to output
+          with output_file.open('a') as f:
+              if added:
+                  f.write("## Added\n")
+                  for line in added:
+                      f.write(line + '\n')
+                  f.write('\n')
+              
+              if changed:
+                  f.write("## Changed\n")
+                  for line in changed:
+                      f.write(line + '\n')
+                  f.write('\n')
+              
+              if removed:
+                  f.write("## Removed\n")
+                  for line in removed:
+                      f.write(line + '\n')
+                  f.write('\n')
+              
+              if not added and not changed and not removed:
+                  f.write("No changes detected.\n")
+          
+          print(f"Changes: {len(added)} added, {len(changed)} changed, {len(removed)} removed")
+          EOF
+          fi
+
+      - name: Create release archive
+        run: |
+          cd release_artifacts/metadata_assets
+          zip -r ../metadata-assets-${{ inputs.release_version }}.zip .
+          cd ..
+          ls -lh
+
+      - name: Create GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cd product-metadata
+          
+          # Create release notes
+          cat > /tmp/release_notes.md << 'EOF'
+          # Metadata Assets Release ${{ inputs.release_version }}
+          
+          This release contains generated metadata assets for all datasets.
+          
+          ## Contents
+          
+          - **metadata-assets-${{ inputs.release_version }}.zip**: All generated XLSX data dictionaries
+          - **destination_versions.txt**: Complete list of all destination versions
+          - **changed_versions.txt**: Version changes since the previous release
+          
+          ## Generated Assets
+          
+          EOF
+          
+          # Add count of generated files
+          FILE_COUNT=$(unzip -l ../release_artifacts/metadata-assets-${{ inputs.release_version }}.zip | grep -c "\.xlsx$" || echo "0")
+          echo "- $FILE_COUNT XLSX data dictionaries" >> /tmp/release_notes.md
+          
+          # Add version change summary if available
+          if [ -f ../release_artifacts/changed_versions.txt ]; then
+            echo "" >> /tmp/release_notes.md
+            echo "## Version Changes" >> /tmp/release_notes.md
+            echo "" >> /tmp/release_notes.md
+            echo '```' >> /tmp/release_notes.md
+            cat ../release_artifacts/changed_versions.txt >> /tmp/release_notes.md
+            echo '```' >> /tmp/release_notes.md
+          fi
+          
+          # Create the release
+          gh release create "${{ inputs.release_version }}" \
+            --title "Metadata Release ${{ inputs.release_version }}" \
+            --notes-file /tmp/release_notes.md \
+            ../release_artifacts/metadata-assets-${{ inputs.release_version }}.zip \
+            ../release_artifacts/destination_versions.txt \
+            ../release_artifacts/changed_versions.txt
+
+      - name: Summary
+        run: |
+          echo "✅ Release ${{ inputs.release_version }} created successfully!"
+          echo ""
+          echo "Artifacts:"
+          ls -lh release_artifacts/
