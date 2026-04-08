@@ -65,9 +65,14 @@ jobs:
           
           if [ -z "$PREV_RELEASE" ]; then
             echo "No previous release found. This is the initial release."
+            
+            # Text version
             echo "# Version Changes: Initial Release" > ../release_artifacts/changed_versions.txt
             echo "" >> ../release_artifacts/changed_versions.txt
             echo "This is the first release. All versions are new." >> ../release_artifacts/changed_versions.txt
+            
+            # JSON version (empty for initial release)
+            echo '{"added":[],"changed":[],"removed":[],"summary":{"added_count":0,"changed_count":0,"removed_count":0}}' > ../release_artifacts/changed_versions.json
           else
             echo "Previous release: $PREV_RELEASE"
             
@@ -77,10 +82,11 @@ jobs:
               echo "# Version Changes from $PREV_RELEASE to ${{ inputs.release_version }}" > ../release_artifacts/changed_versions.txt
               echo "" >> ../release_artifacts/changed_versions.txt
               echo "Unable to compare - previous release missing destination_versions.txt" >> ../release_artifacts/changed_versions.txt
+              echo '{"added":[],"changed":[],"removed":[],"summary":{"added_count":0,"changed_count":0,"removed_count":0}}' > ../release_artifacts/changed_versions.json
               exit 0
             }
             
-            # Generate diff using CLI
+            # Generate text diff for human reading
             cd ../data-engineering
             echo "# Version Changes from $PREV_RELEASE to ${{ inputs.release_version }}" > ../release_artifacts/changed_versions.txt
             echo "" >> ../release_artifacts/changed_versions.txt
@@ -88,6 +94,13 @@ jobs:
               /tmp/destination_versions.txt \
               ../release_artifacts/destination_versions.txt \
               >> ../release_artifacts/changed_versions.txt
+            
+            # Generate JSON diff for distribution workflows
+            dcpy lifecycle package metadata diff-versions \
+              /tmp/destination_versions.txt \
+              ../release_artifacts/destination_versions.txt \
+              --json \
+              --output ../release_artifacts/changed_versions.json
           fi
 
       - name: Create release archive
@@ -109,7 +122,8 @@ jobs:
             --notes "Automated metadata assets release for version ${{ inputs.release_version }}" \
             ../release_artifacts/metadata-assets-${{ inputs.release_version }}.zip \
             ../release_artifacts/destination_versions.txt \
-            ../release_artifacts/changed_versions.txt
+            ../release_artifacts/changed_versions.txt \
+            ../release_artifacts/changed_versions.json
 
       - name: Summary
         run: |
