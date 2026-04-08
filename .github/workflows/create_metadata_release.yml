@@ -12,11 +12,6 @@ on:
 jobs:
   create-release:
     runs-on: ubuntu-22.04
-    defaults:
-      run:
-        shell: bash
-    container:
-      image: nycplanning/build-base:latest
     env:
       PRODUCT_METADATA_REPO_PATH: product-metadata
       _TYPER_STANDARD_TRACEBACK: 1
@@ -33,7 +28,12 @@ jobs:
           repository: NYCPlanning/product-metadata
           path: product-metadata
 
-      - name: Set up Python environment
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
         run: |
           cd data-engineering
           pip install -e .
