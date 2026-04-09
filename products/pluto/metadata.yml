@@ -1,7 +1,7 @@
 id: pluto
 
 dataset_defaults:
-  current_version: 26v1
+  current_version: {{ current_version_pluto }}
   publishing_frequency: Quarterly
 
 datasets:
