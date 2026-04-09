@@ -8,18 +8,23 @@ on:
         description: "Release version (e.g., 24v3)"
         type: string
         required: true
+      data_engineering_branch:
+        description: "Data Engineering branch/ref to use"
+        type: string
+        default: "main"
+        required: false
 
 jobs:
   create-release:
     runs-on: ubuntu-22.04
     env:
-      PRODUCT_METADATA_REPO_PATH: product-metadata
       _TYPER_STANDARD_TRACEBACK: 1
     steps:
       - name: Checkout data-engineering repo
         uses: actions/checkout@v4
         with:
           repository: NYCPlanning/data-engineering
+          ref: ${{ inputs.data_engineering_branch }}
           path: data-engineering
 
       - name: Checkout product-metadata repo
@@ -31,7 +36,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: '3.13'
 
       - name: Install dependencies
         run: |
@@ -42,16 +47,18 @@ jobs:
         run: |
           cd data-engineering
           mkdir -p ../release_artifacts/metadata_assets
-          dcpy lifecycle package metadata generate \
-            --output-dir ../release_artifacts/metadata_assets \
-            --version ${{ inputs.release_version }}
+          PRODUCT_METADATA_REPO_PATH=${{ github.workspace }}/product-metadata \
+            dcpy lifecycle package metadata generate \
+              --output-dir ../release_artifacts/metadata_assets \
+              --version ${{ inputs.release_version }}
 
       - name: Generate destination versions
         run: |
           cd data-engineering
-          dcpy lifecycle package metadata list-versions \
-            --version ${{ inputs.release_version }} \
-            --output ../release_artifacts/destination_versions.txt
+          PRODUCT_METADATA_REPO_PATH=${{ github.workspace }}/product-metadata \
+            dcpy lifecycle package metadata list-versions \
+              --version ${{ inputs.release_version }} \
+              --output ../release_artifacts/destination_versions.txt
 
       - name: Fetch previous release and generate diff
         continue-on-error: true
