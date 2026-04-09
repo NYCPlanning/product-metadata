@@ -8,6 +8,11 @@ on:
         description: "Release version (e.g., 24v3)"
         type: string
         required: true
+      data_engineering_branch:
+        description: "Data Engineering branch/ref to use"
+        type: string
+        default: "main"
+        required: false
 
 jobs:
   create-release:
@@ -20,6 +25,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: NYCPlanning/data-engineering
+          ref: ${{ inputs.data_engineering_branch }}
           path: data-engineering
 
       - name: Checkout product-metadata repo
