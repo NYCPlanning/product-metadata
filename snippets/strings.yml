@@ -57,3 +57,8 @@ bytes_url__zap: https://www.nyc.gov/content/planning/pages/resources/datasets/zo
 bytes_url__zoning_features: https://www.nyc.gov/content/planning/pages/resources/datasets/gis-zoning-features
 bytes_url__zoning_map_index: https://www.nyc.gov/content/planning/pages/resources/datasets/zoning-map-index
 bytes_url__ztl: https://www.nyc.gov/content/planning/pages/resources/datasets/zoning-map-index
+
+# Versions
+current_version_lion: 26A
+current_version_pluto: 25v4
+current_version_facilities: 25v2

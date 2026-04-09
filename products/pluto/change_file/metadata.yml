@@ -5,7 +5,7 @@ attributes:
   description: |-
     This is a companion dataset to PLUTO and MapPLUTO. PLUTO and MapPLUTO are created using the best available data from a number of city agencies. To further improve data quality, the Department of City Planning (DCP) applies changes to selected field values. DCPEdited is set to "1" in PLUTO if the record contains any changed values.
 
-    All previously released versions of this data are available on the <a href="{{ bytes_url__pluto }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ version }}
+    All previously released versions of this data are available on the <a href="{{ bytes_url__pluto }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ current_version_pluto }}
   display_name: PLUTO Change File
   each_row_is_a: change to selected filed value in PLUTO
   tags:
@@ -22,7 +22,7 @@ attributes:
 
 assembly:
 - id: csv_package
-  filename: PLUTOChangeFile{{ version }}.zip
+  filename: PLUTOChangeFile{{ current_version_pluto }}.zip
   type: zip
   contents:
   - id: pluto_changes_applied
@@ -51,7 +51,7 @@ destinations:
   files:
   - id: csv_package
     custom:
-      url: "{{ bytes_zip_prefix_url }}/pluto-change-file/PLUTOChangeFile{{ version }}.zip"
+      url: "{{ bytes_zip_prefix_url }}/pluto-change-file/PLUTOChangeFile{{ current_version_pluto }}.zip"
   - id: pluto_change_file_readme
     custom:
       url: "{{ bytes_pdf_prefix_url }}/plutochangefile_readme.pdf"
