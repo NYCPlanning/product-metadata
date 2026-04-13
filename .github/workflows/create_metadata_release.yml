@@ -58,7 +58,7 @@ jobs:
           PRODUCT_METADATA_REPO_PATH=${{ github.workspace }}/product-metadata \
             dcpy lifecycle package metadata list-versions \
               --version ${{ inputs.release_version }} \
-              --output ../release_artifacts/destination_versions.txt
+              --output ../release_artifacts/destination_versions.json
 
       - name: Fetch previous release and generate diff
         continue-on-error: true
@@ -83,12 +83,12 @@ jobs:
           else
             echo "Previous release: $PREV_RELEASE"
             
-            # Download previous destination_versions.txt
-            gh release download "$PREV_RELEASE" -p "destination_versions.txt" -D /tmp || {
-              echo "Could not download destination_versions.txt from previous release"
+            # Download previous destination_versions.json
+            gh release download "$PREV_RELEASE" -p "destination_versions.json" -D /tmp || {
+              echo "Could not download destination_versions.json from previous release"
               echo "# Version Changes from $PREV_RELEASE to ${{ inputs.release_version }}" > ../release_artifacts/changed_versions.txt
               echo "" >> ../release_artifacts/changed_versions.txt
-              echo "Unable to compare - previous release missing destination_versions.txt" >> ../release_artifacts/changed_versions.txt
+              echo "Unable to compare - previous release missing destination_versions.json" >> ../release_artifacts/changed_versions.txt
               echo '{"added":[],"changed":[],"removed":[],"summary":{"added_count":0,"changed_count":0,"removed_count":0}}' > ../release_artifacts/changed_versions.json
               exit 0
             }
@@ -98,14 +98,14 @@ jobs:
             echo "# Version Changes from $PREV_RELEASE to ${{ inputs.release_version }}" > ../release_artifacts/changed_versions.txt
             echo "" >> ../release_artifacts/changed_versions.txt
             dcpy lifecycle package metadata diff-versions \
-              /tmp/destination_versions.txt \
-              ../release_artifacts/destination_versions.txt \
+              /tmp/destination_versions.json \
+              ../release_artifacts/destination_versions.json \
               >> ../release_artifacts/changed_versions.txt
             
             # Generate JSON diff for distribution workflows
             dcpy lifecycle package metadata diff-versions \
-              /tmp/destination_versions.txt \
-              ../release_artifacts/destination_versions.txt \
+              /tmp/destination_versions.json \
+              ../release_artifacts/destination_versions.json \
               --json \
               --output ../release_artifacts/changed_versions.json
           fi
@@ -128,7 +128,7 @@ jobs:
             --title "Metadata Release ${{ inputs.release_version }}" \
             --notes "Automated metadata assets release for version ${{ inputs.release_version }}" \
             ../release_artifacts/metadata-assets-${{ inputs.release_version }}.zip \
-            ../release_artifacts/destination_versions.txt \
+            ../release_artifacts/destination_versions.json \
             ../release_artifacts/changed_versions.txt \
             ../release_artifacts/changed_versions.json
 
