@@ -93,6 +93,10 @@ destinations:
 
 files:
 - file:
+    id: primary_file_geodatabase
+    filename: mappluto_wi_gdb.zip
+    type: geodatabase
+- file:
     id: shapefile_water_incl
     filename: mappluto_wi_shp.zip
     type: shapefile
