@@ -7,7 +7,7 @@ attributes:
 
     Questions or feedback on errors within the City Owned and Leased Properties can be directed to DCAS Land Use Planning at (212) 386-0622 or RESPlanning311@dcas.nyc.gov.
 
-    All previously released versions of this data are available on the <a href="{{ bytes_url__cpdb }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ version }}
+    All previously released versions of this data are available on the <a href="{{ bytes_url__colp }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ version }}
   display_name: City Owned and Leased Property (COLP)
   each_row_is_a: City Owned or Leased Property
   publishing_frequency: Bi-annually
@@ -261,7 +261,7 @@ files:
       description: |-
         Geodatabase of city-owned and leased properties and uses. COLP is a comprehensive list of uses on city owned and leased properties that includes geographic information as well as the type of use, agency and other related information.
 
-        All previously released versions of this data are available at <a href="https://www.nyc.gov/site/planning/data-maps/open-data/bytes-archive.page?sorts%5Byear%5D=0">BYTES of the BIG APPLE- Archive.</a>
+        All previously released versions of this data are available on the <a href="{{ bytes_url__colp }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ version }}
 - file:
     id: colp_readme.pdf
     filename: colp_readme.pdf
