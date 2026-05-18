@@ -45,7 +45,6 @@ custom: {}
 
 destinations:
 - id: socrata
-  tags: [colp_socrata_shp]
   type: open_data
   files:
   - id: colp_readme.pdf
@@ -145,7 +144,6 @@ destinations:
   custom:
     four_four: fn4k-qyk2
 - id: socrata_fgdb
-  tags: [colp_socrata_fgdb]
   type: open_data
   files:
   - id: primary_file_geodatabase
@@ -172,15 +170,15 @@ destinations:
   - id: primary_shapefile
     custom:
       url: "{{ bytes_zip_prefix_url }}/city-owned-leased-properties/colp_{{ version }}_shp.zip"
-  # - id: csv_zip
-  #   custom:
-  #     url: "{{ bytes_zip_prefix_url }}/city-owned-leased-properties/colp_{{ version }}_csv.zip"
-  # - id: xlsx_zip
-  #   custom:
-  #     url: "{{ bytes_zip_prefix_url }}/city-owned-leased-properties/colp_{{ version }}_xlsx.zip"
-  # - id: primary_file_geodatabase
-  #   custom:
-  #     url: "{{ bytes_zip_prefix_url }}/city-owned-leased-properties/colp_{{ version }}_gdb.zip"
+  - id: csv_zip
+    custom:
+      url: "{{ bytes_zip_prefix_url }}/city-owned-leased-properties/colp_{{ version }}_csv.zip"
+  - id: xlsx_zip
+    custom:
+      url: "{{ bytes_zip_prefix_url }}/city-owned-leased-properties/colp_{{ version }}_xlsx.zip"
+  - id: primary_file_geodatabase
+    custom:
+      url: "{{ bytes_zip_prefix_url }}/city-owned-leased-properties/colp_{{ version }}_gdb.zip"
 
 files:
 - file:
