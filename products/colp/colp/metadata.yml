@@ -168,9 +168,9 @@ destinations:
   - id: colp_metadata.pdf
     custom:
       url: "{{ bytes_pdf_prefix_url }}/colp_metadata.pdf"
-  - id: primary_shapefile
-    custom:
-      url: "{{ bytes_zip_prefix_url }}/city-owned-leased-properties/colp_{{ version }}_shp.zip"
+  # - id: primary_shapefile
+  #   custom:
+  #     url: "{{ bytes_zip_prefix_url }}/city-owned-leased-properties/colp_{{ version }}_shp.zip"
   # - id: csv_zip
   #   custom:
   #     url: "{{ bytes_zip_prefix_url }}/city-owned-leased-properties/colp_{{ version }}_csv.zip"
