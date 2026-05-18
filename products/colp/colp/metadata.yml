@@ -144,6 +144,7 @@ destinations:
   custom:
     four_four: fn4k-qyk2
 - id: socrata_fgdb
+  tags: [colp_socrata_fgdb]
   type: open_data
   files:
   - id: primary_file_geodatabase
