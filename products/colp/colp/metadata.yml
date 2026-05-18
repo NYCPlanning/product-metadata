@@ -170,9 +170,9 @@ destinations:
   - id: primary_shapefile
     custom:
       url: "{{ bytes_zip_prefix_url }}/city-owned-leased-properties/colp_{{ version }}_shp.zip"
-  - id: csv_zip
-    custom:
-      url: "{{ bytes_zip_prefix_url }}/city-owned-leased-properties/colp_{{ version }}_csv.zip"
+  # - id: csv_zip
+  #   custom:
+  #     url: "{{ bytes_zip_prefix_url }}/city-owned-leased-properties/colp_{{ version }}_csv.zip"
   - id: xlsx_zip
     custom:
       url: "{{ bytes_zip_prefix_url }}/city-owned-leased-properties/colp_{{ version }}_xlsx.zip"
