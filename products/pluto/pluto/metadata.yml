@@ -170,6 +170,10 @@ files:
       name: Ext
     - id: facilfar
       name: FacilFAR
+    - id: facilfar
+      name: AffResFAR
+    - id: affresfar
+      name: ManuFAR
     - id: factryarea
       name: FactryArea
     - id: firecomp
@@ -202,6 +206,14 @@ files:
       name: LotType
     - id: ltdheight
       name: LtdHeight
+    - id: mihopt1
+      name: MIHOption1
+    - id: mihopt2
+      name: MIHOption2
+    - id: mihopt3
+      name: MIHOption3
+    - id: mihopt4
+      name: MIHOption4
     - id: notes
       name: Notes
     - id: numbldgs
@@ -254,6 +266,8 @@ files:
       name: TaxMap
     - id: tract2010
       name: Tract2010
+    - id: transitzone
+      name: TrnstZone
     - id: unitsres
       name: UnitsRes
     - id: unitstotal
@@ -796,7 +810,7 @@ columns:
     See SPLIT BOUNDARY INDICATOR to determine if the tax lot is divided.
 
     Abbreviation Description
-    R1-1 - R10H Residential Districts
+    R1-1 - R12 Residential Districts
     C1-6 - C8-4 Commercial Districts
     M1-1 - M3-2 Manufacturing Districts
     M1-1/R5 - M1-6/R10 Mixed Manufacturing & Residential Districts
@@ -1682,25 +1696,23 @@ columns:
   example: '0.0000'
   custom:
     readme_data_type: Numeric - 7 digits (9999.99)
+    human_readable_name: Built Floor Area Ratio
 - id: residfar
   name: residfar
   data_type: decimal
   description: |-
-    The maximum allowable residential floor area ratio, based on the zoning district classification occupying the greatest percentage of the tax lot's area as reported in ZoneDist1. If the lot is assigned to more than one zoning district and ZoneDist1 does not allow residential uses, MAXIMUM ALLOWABLE RESIDENTIAL FAR is based on ZoneDist2, ZoneDist3 or ZoneDist4, in that order.
+    The maximum allowable residential floor area ratio for standard residences, based on the zoning district classification occupying the greatest percentage of the tax lot’s area as reported in ZoneDist1. If the lot is assigned to more than one zoning district and ZoneDist1 does not allow residential uses, MAXIMUM ALLOWABLE RESIDENTIAL FAR is based on ZoneDist2, ZoneDist3 or ZoneDist4, in that order.
 
-    The maximum allowable residential floor area ratios are exclusive of bonuses for plazas, plaza-connected open areas, arcades, or other amenities.
+    The maximum allowable residential floor area ratios are exclusive of bonuses for plazas, plaza-connected open areas, arcades, or other amenities. For the maximum allowable floor area for affordable housing, Users should consult the AffResFAR field.
 
-    For R2X, R3, R4, and C3 zoning districts, ResidFAR does not include the attic allowance, under which the FAR may be increased by up to 20% for the inclusion of space beneath a pitched roof.
+    Users should consult Section 23-20 of the Zoning Resolution for more information.
 
-    For properties zoned R6, R7, R7-1, R8 or R9, ResidFAR reflects the maximum achievable floor area under ideal conditions.
-
-    The maximum allowable floor area does not reflect Voluntary Inclusionary Housing or Mandatory Inclusionary Housing Program floor area. See Appendix F and Section 23-154, paragraphs (b) and (d) of the Zoning Resolution.
-
-    For properties in special mixed use districts, PLUTO uses the wide street maximum allowable floor area ratio.  Since the maximum allowable floor area ratio in mixed use special districts is actually determined by whether the property is located on a wide street or a narrow street, users should consult Section 23-153 of the Zoning Resolution.
+    For properties zoned R6, R7-1, R7-2, R8 or R9, ResidFAR reflects the maximum achievable floor area under ideal conditions for sky exposure plane buildings. Users should consult Section 23-73 of the Zoning Resolution for more information.
   data_source: Department of City Planning Zoning Division
   example: '0.50000000000'
   custom:
     readme_data_type: Numeric - 5 digits (99.99)
+    human_readable_name: Maximum Allowable Residential FAR
 - id: commfar
   name: commfar
   data_type: decimal
@@ -1709,11 +1721,12 @@ columns:
 
     The maximum allowable commercial floor area ratios are exclusive of bonuses for plazas, plaza-connected open areas, arcades, or other amenities.
 
-    Users should consult Section 43-12 of the Zoning Resolution for more information.
+    Users should consult Section 33-12 of the Zoning Resolution for more information.
   data_source: Department of City Planning Zoning Division
   example: '0.00'
   custom:
     readme_data_type: Numeric - 5 digits (99.99)
+    human_readable_name: Maximum Allowable Commercial FAR
 - id: facilfar
   name: facilfar
   data_type: decimal
@@ -1722,11 +1735,42 @@ columns:
 
     The maximum allowable community facility floor area ratios are exclusive of bonuses for plazas, plaza-connected open areas, arcades, or other amenities.
 
-    Users should consult Section 24-11 of the Zoning Resolution for more information.
+    Users should consult Section 24-11, 33-12, or 43-12 of the Zoning Resolution, as applicable, for more information.
   data_source: Department of City Planning Zoning Division
   example: '2.00'
   custom:
     readme_data_type: Numeric - 5 digits (99.99)
+    human_readable_name: Maximum Allowable Affordable Residential FAR
+- id: affresfar
+  name: affresfar
+  data_type: decimal
+  description: |-
+    The maximum allowable residential floor area ratio for affordable housing, based on the zoning district classification occupying the greatest percentage of the tax lot’s area as reported in ZoneDist1. If the lot is assigned to more than one zoning district and ZoneDist1 does not allow residential uses, MAXIMUM ALLOWABLE AFFORDABLE RESIDENTIAL FAR is based on ZoneDist2, ZoneDist3 or ZoneDist4, in that order.
+
+    The maximum allowable residential floor area ratios are exclusive of bonuses for plazas, plaza-connected open areas, arcades, or other amenities.
+
+    Users should consult Section 23-20 of the Zoning Resolution for more information.
+  data_source: |-
+    Department of City Planning Zoning Division
+  example: 0.50
+  custom:
+    readme_data_type: Numeric - 5 digits (99.99)
+    human_readable_name: Maximum Allowable Affordable Residential FAR
+- id: mnffar
+  name: mnffar
+  data_type: decimal
+  description: |-
+    The maximum allowable Manufacturing floor area ratio, based on the zoning district classification occupying the greatest percentage of the tax lot’s area as reported in ZoneDist1. If the lot is assigned to more than one zoning district and ZoneDist1 does not allow manufacturing uses, MAXIMUM ALLOWABLE MANUFACTURING FAR is based on ZoneDist2, ZoneDist3 or ZoneDist4, in that order.
+
+    The maximum allowable manufacturing floor area ratios are exclusive of bonuses for plazas, plaza-connected open areas, arcades, or other amenities.
+
+    Users should consult Section 43-12 of the Zoning Resolution for more information.
+  data_source: |-
+    Department of City Planning Zoning Division
+  example: 0.50
+  custom:
+    readme_data_type: Numeric - 5 digits (99.99)
+    human_readable_name: Maximum Allowable Manufacturing FAR (ManuFAR)
 - id: borocode
   name: borocode
   data_type: integer
@@ -2109,6 +2153,77 @@ columns:
   example: '50170071000'
   custom:
     readme_data_type: Alphanumeric - 11 characters
+- id: mihopt1
+  name: mihopt1
+  data_type: integer
+  description: |-
+    Flag set to “1” if MIH Option 1 applies to tax lot. Under Option 1, 25 percent of the residential floor area must be affordable to households earning an average of 60 percent of Area Median Income, of which 10 percent shall be affordable to families earning 40 percent of Area Median Income.
+
+    Users should consult Section 27-131 of the Zoning Resolution for more information.
+  data_source: |-
+    Department of City Planning Mandatory Inclusionary Housing (MIH)
+  example: 1
+  custom:
+    readme_data_type: Alphanumeric – 1 character
+- id: mihopt2
+  name: mihopt2
+  data_type: integer
+  description: |-
+    Flag set to “1” if MIH Option 2 applies to tax lot. Under Option 2, 30 percent of the residential floor area must be affordable to households earning an average of 80 percent of Area Median Income.
+
+    Users should consult Section 27-131 of the Zoning Resolution for more information.
+  data_source: |-
+    Department of City Planning Mandatory Inclusionary Housing (MIH)
+  example: 1
+  custom:
+    readme_data_type: Alphanumeric - 1 characters
+- id: mihopt3
+  name: mihopt3
+  data_type: integer
+  description: |-
+    Flag set to “1” if MIH Option 3 (deep affordability) applies to tax lot. Under Option 3, 20 percent of the residential floor area must be affordable to households earning an average of 40 percent of Area Median Income.
+
+    Users should consult Section 27-131 of the Zoning Resolution for more information.
+  data_source: |-
+    Department of City Planning Mandatory Inclusionary Housing (MIH)
+  example: 1
+  custom:
+    readme_data_type: Alphanumeric - 1 characters
+- id: mihopt4
+  name: mihopt4
+  data_type: integer
+  description: |-
+    Flag set to “1” if MIH Option 4 (workforce option) applies to tax lot. Under Option 4, 30 percent of the residential floor area must be affordable to families earning an average of 115 percent of Area Median Income, of which 5 percent must be affordable to families earning 90 percent of Area Median Income and another 5 percent must be affordable to families earning 70 percent of Area Median Income.
+
+    Users should consult Section 27-131 of the Zoning Resolution for more information.
+  data_source: |-
+    Department of City Planning Mandatory Inclusionary Housing (MIH)
+  example: 1
+  custom:
+    readme_data_type: Alphanumeric - 1 characters
+- id: transitzone
+  name: transitzone
+  data_type: integer
+  description: |-
+    The Transit Zone classification of the tax lot. Under the Zoning Resolution, the map of New York City is apportioned into areas that generally govern residential parking. These include the Manhattan Core, LIC Parking Area, and Inner Transit Zone, where no residential parking is required. In addition, these include the Outer Transit Zone and the area Beyond the Greater Transit Zone where residential parking is required.
+
+    Users should consult Section 13-20 of the Zoning Resolution for more information on the Manhattan Core, Section 16-20 for more information on the LIC Parking Area, and Section 25-20 for more information on the other listed Transit Zone areas.
+  data_source: |-
+    Department of City Planning Transit Zones
+  example:
+  values:
+  - value: Manhattan Core and Long Island City Parking Areas
+    description: Manhattan Core and Long Island City Parking Areas
+  - value: Inner Transit Zone
+    description: Inner Transit Zone
+  - value: Outer Transit Zone
+    description: Outer Transit Zone
+  - value: Special 25-241 Parking Provisions
+    description: Special 25-241 Parking Provisions
+  - value: Beyond the Greater Transit Zone
+    description: Beyond the Greater Transit Zone
+  custom:
+    readme_data_type: Alphanumeric - 50 characters
 - id: geom
   name: geom
   data_type: text
