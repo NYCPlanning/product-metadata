@@ -170,9 +170,9 @@ files:
       name: Ext
     - id: facilfar
       name: FacilFAR
-    - id: facilfar
-      name: AffResFAR
     - id: affresfar
+      name: AffResFAR
+    - id: mnffar
       name: ManuFAR
     - id: factryarea
       name: FactryArea
