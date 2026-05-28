@@ -10,7 +10,7 @@ attributes:
     borough boundaries, and therefore will not add up to borough totals for the Bronx,
     Queens, and Manhattan. As they are nested within CDTAs, NTAs will likewise not
     add up to borough totals. Also note that census tracts in New York City’s water
-    areas are excluded from this file.  Current version: {{ version }}
+    areas are excluded from this file.  Current version: {{ current_version_census_equivalency_tract_table }}
   display_name: 2020 Census Tracts to 2020 NTAs and CDTAs Equivalency
   each_row_is_a: NTA CDTA Equivalency
   tags:
