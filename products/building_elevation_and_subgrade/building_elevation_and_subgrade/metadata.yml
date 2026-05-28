@@ -12,7 +12,7 @@ attributes:
     center of every building recorded in the DOB dataset. The dataset excluded the
     footprints of small accessory buildings such as sheds. Each row within the dataset
     represents one building centroid, and records the X and Y coordinates of that
-    centroid in the NAD 1983 coordinate system. Current version: {{ version }}
+    centroid in the NAD 1983 coordinate system. Current version: {{ current_version_building_elevation_and_subgrade }}
   display_name: Building Elevation and Subgrade (BES)
   each_row_is_a: A centroid of a building in NYC
   tags:

@@ -8,7 +8,7 @@ attributes:
     are subject to restrictions. Designated areas in which self-storage facilities
     are subject to the as-of-right provisions of Section 42-121 are shown as Subarea
     1, and those in which such use is subject to special permit of the City Planning
-    Commission pursuant to Section 74-932 are shown as Subarea 2. Current version: {{ version }}
+    Commission pursuant to Section 74-932 are shown as Subarea 2. Current version: {{ current_version_designated_areas_m_districts_appendix_j }}
 
   display_name: Designated_Areas_M_districts_AppendixJ
   each_row_is_a: <FILL ME IN>
