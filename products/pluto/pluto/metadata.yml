@@ -206,13 +206,13 @@ files:
       name: LotType
     - id: ltdheight
       name: LtdHeight
-    - id: mihopt1
+    - id: mih_opt1
       name: MIHOption1
-    - id: mihopt2
+    - id: mih_opt2
       name: MIHOption2
-    - id: mihopt3
+    - id: mih_opt3
       name: MIHOption3
-    - id: mihopt4
+    - id: mih_opt4
       name: MIHOption4
     - id: notes
       name: Notes
@@ -2153,7 +2153,7 @@ columns:
   example: '50170071000'
   custom:
     readme_data_type: Alphanumeric - 11 characters
-- id: mihopt1
+- id: mih_opt1
   name: mihopt1
   data_type: integer
   description: |-
@@ -2165,7 +2165,7 @@ columns:
   example: 1
   custom:
     readme_data_type: Alphanumeric – 1 character
-- id: mihopt2
+- id: mih_opt2
   name: mihopt2
   data_type: integer
   description: |-
@@ -2177,7 +2177,7 @@ columns:
   example: 1
   custom:
     readme_data_type: Alphanumeric - 1 characters
-- id: mihopt3
+- id: mih_opt3
   name: mihopt3
   data_type: integer
   description: |-
@@ -2189,7 +2189,7 @@ columns:
   example: 1
   custom:
     readme_data_type: Alphanumeric - 1 characters
-- id: mihopt4
+- id: mih_opt4
   name: mihopt4
   data_type: integer
   description: |-
