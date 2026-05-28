@@ -5,7 +5,7 @@ attributes:
   description: |-
     Fire Companies boundaries of New York City.
 
-    All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__fire }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ version }}
+    All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__fire }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ current_version_lion }}
   display_name: Fire Companies
   each_row_is_a: Fire company
   tags:
@@ -56,7 +56,7 @@ destinations:
   files:
   - id: shapefile
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/fire-companies/nyfc_{{ version }}.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/fire-companies/nyfc_{{ current_version_lion }}.zip
   - id: nyfc_metadata.pdf
     custom:
       url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nyfc_metadata.pdf

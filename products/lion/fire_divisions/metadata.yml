@@ -5,7 +5,7 @@ attributes:
   description: |-
     Fire Divisions boundaries of New York City.
 
-    All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__fire }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ version }}
+    All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__fire }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ current_version_lion }}
   display_name: Fire Divisions
   each_row_is_a: Fire division
   date_made_public: '1/31/2013'
@@ -52,7 +52,7 @@ destinations:
   files:
   - id: shapefile
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/fire-divisions/nyfd_{{ version }}.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/fire-divisions/nyfd_{{ current_version_lion }}.zip
   - id: nyfd_metadata.pdf
     custom:
       url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nyfd_metadata.pdf

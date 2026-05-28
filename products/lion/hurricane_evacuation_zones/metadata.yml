@@ -11,7 +11,7 @@ attributes:
 
     These zones were created by New York City Emergency Management (NYCEM) and are maintained by the Department of City Planning (DCP).
 
-    All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__hurricane }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ version }}
+    All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__hurricane }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ current_version_lion }}
   display_name: Hurricane Evacuation Zones
   each_row_is_a: Hurricane evacuation zone
   tags:
@@ -62,7 +62,7 @@ destinations:
   files:
   - id: shapefile
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/hurricane-evacuation-zones/nyhez_{{ version }}.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/hurricane-evacuation-zones/nyhez_{{ current_version_lion }}.zip
   - id: nyhez_metadata.pdf
     custom:
       url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nyhez_metadata.pdf

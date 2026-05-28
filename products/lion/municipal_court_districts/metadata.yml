@@ -74,10 +74,10 @@ destinations:
   files:
   - id: shapefile
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/municipal-court/nymc_{{ version }}.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/municipal-court/nymc_{{ current_version_lion }}.zip
   - id: shapefile_wi
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/municipal-court/nymcwi_{{ version }}.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/municipal-court/nymcwi_{{ current_version_lion }}.zip
   - id: nymc_metadata.pdf
     custom:
       url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nymc_metadata.pdf
@@ -95,7 +95,7 @@ files:
       description: |-
         Boundaries of Municipal Court districts including portions under water.
 
-        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__municipal_court }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ version }}
+        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__municipal_court }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ current_version_lion }}
       display_name: Municipal Court Districts (water areas included)
     overridden_columns:
     - id: shape_length
@@ -109,7 +109,7 @@ files:
       description: |-
         Boundaries of Municipal Court districts.
 
-        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__municipal_court }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ version }}
+        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__municipal_court }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ current_version_lion }}
     overridden_columns:
     - id: shape_length
       name: shape_leng

@@ -60,10 +60,10 @@ destinations:
   files:
   - id: shapefile
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/election-districts/nyed_{{ version }}.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/election-districts/nyed_{{ current_version_lion }}.zip
   - id: shapefile_wi
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/election-districts/nyedwi_{{ version }}.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/election-districts/nyedwi_{{ current_version_lion }}.zip
   - id: nyed_metadata.pdf
     custom:
       url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nyed_metadata.pdf
@@ -81,7 +81,7 @@ files:
       description: |-
         New York City Board of Elections election district boundaries for New York City including portions under water.
 
-        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__elec_dists }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ version }}
+        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__elec_dists }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ current_version_lion }}
       display_name: Election Districts (water areas included)
     overridden_columns:
     - id: shape_length
@@ -95,7 +95,7 @@ files:
       description: |-
         New York City Board of Elections election district boundaries for New York City clipped to the shoreline.
 
-        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__elec_dists }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ version }}
+        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__elec_dists }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ current_version_lion }}
     overridden_columns:
     - id: shape_length
       name: shape_leng
