@@ -64,10 +64,10 @@ destinations:
   files:
   - id: shapefile
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/congressional/nycg_{{ version }}.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/congressional/nycg_{{ current_version_lion }}.zip
   - id: shapefile_wi
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/congressional/nycgwi_{{ version }}.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/congressional/nycgwi_{{ current_version_lion }}.zip
   - id: nycg_metadata.pdf
     custom:
       url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nycg_metadata.pdf
@@ -85,7 +85,7 @@ files:
       description: |-
         US Congressional District boundaries for New York City including portions under water.
 
-        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__cong_dists }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ version }}
+        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__cong_dists }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ current_version_lion }}
       display_name: Congressional Districts (water areas included)
     overridden_columns:
     - id: shape_length
@@ -99,7 +99,7 @@ files:
       description: |-
         US Congressional District boundaries for New York City.
 
-        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__cong_dists }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ version }}
+        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__cong_dists }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ current_version_lion }}
     overridden_columns:
     - id: shape_length
       name: shape_leng

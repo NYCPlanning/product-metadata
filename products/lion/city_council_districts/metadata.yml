@@ -64,10 +64,10 @@ destinations:
   files:
   - id: shapefile
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/city-council/nycc_{{ version }}.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/city-council/nycc_{{ current_version_lion }}.zip
   - id: shapefile_wi
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/city-council/nyccwi_{{ version }}.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/city-council/nyccwi_{{ current_version_lion }}.zip
   - id: nycc_metadata.pdf
     custom:
       url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nycc_metadata.pdf
@@ -85,7 +85,7 @@ files:
       description: |-
         The City Council district boundaries for New York City including portions under water.
 
-        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__ccds }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ version }}
+        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__ccds }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ current_version_lion }}
       display_name: City Council Districts (Water Areas Included)
     overridden_columns:
     - id: shape_length
@@ -99,7 +99,7 @@ files:
       description: |-
         The City Council district boundaries for New York City.
 
-        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__ccds }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ version }}
+        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__ccds }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ current_version_lion }}
       display_name: City Council Districts
     overridden_columns:
     - id: shape_length

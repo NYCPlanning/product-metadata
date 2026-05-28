@@ -67,10 +67,10 @@ destinations:
   files:
   - id: shapefile_water_not_included
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/census-blocks/nycb2010_{{ version }}.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/census-blocks/nycb2010_{{ current_version_lion }}.zip
   - id: shapefile_water_included
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/census-blocks/nycb2010wi_{{ version }}.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/census-blocks/nycb2010wi_{{ current_version_lion }}.zip
   - id: nycb2010_metadata.pdf
     custom:
       url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nycb2010_metadata.pdf
@@ -88,7 +88,7 @@ files:
       description: |
         Census Blocks from the 2010 US Census for New York City clipped to the shoreline. These boundary files are derived from the US Census Bureau's TIGER project and have been geographically modified to fit the New York City base map. Because some census blocks are under water not all census blocks are contained in this file, only census blocks that are partially or totally located on land have been mapped in this file.
 
-        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__census_blocks }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ version }}
+        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__census_blocks }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ current_version_lion }}
       display_name: 2010 Census Blocks
 - file:
     id: shapefile_water_included
@@ -99,7 +99,7 @@ files:
       description: |
         Census Blocks from the 2010 US Census for New York City including portions under water. These boundary files are derived from the US Census Bureau's TIGER project and have been geographically modified to fit the New York City base map.
 
-        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__census_blocks }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ version }}
+        All previously released versions of this data are available on the <a href="{{ bytes_lion_urls__census_blocks }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ current_version_lion }}
       display_name: 2010 Census Blocks (water areas included)
 - file:
     id: nycb2010_metadata.pdf
