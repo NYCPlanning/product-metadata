@@ -20,11 +20,11 @@ attributes:
 
 assembly:
 - id: commitments_zip
-  filename: cpdb_planned_commitments_{{ version }}.zip
+  filename: cpdb_planned_commitments_{{ current_version_cpdb }}.zip
   type: zip
   contents:
   - id: commitments
-    filename: cpdb_planned_commitments_{{ version }}.csv
+    filename: cpdb_planned_commitments_{{ current_version_cpdb }}.csv
 
 custom: {}
 
@@ -68,7 +68,7 @@ destinations:
   files:
   - id: commitments_zip
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/capital-projects-database/cpdb_planned_commitments_{{ version }}.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/capital-projects-database/cpdb_planned_commitments_{{ current_version_cpdb }}.zip
 
 files:
 - file:

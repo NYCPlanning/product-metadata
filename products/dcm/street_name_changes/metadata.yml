@@ -33,7 +33,7 @@ attributes:
 
 assembly:
 - id: dcm_multilayer
-  filename: dcm_{{ version }}shp.zip
+  filename: dcm_{{ current_version_dcm }}shp.zip
   type: multilayer_shapefile
   contents:
   - id: areas_shapefile
@@ -153,7 +153,7 @@ destinations:
     files:
       - id: dcm_multilayer
         custom:
-          url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/dcm_{{ version }}shp.zip
+          url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/dcm_{{ current_version_dcm }}shp.zip
       - id: areas_data_dictionary_pdf
         custom:
           url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/dcm_street_name_changes_areas.pdf

@@ -31,7 +31,7 @@ destinations:
     files:
       - id: shapefile
         custom:
-          url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nyctransitzones_{{ version }}.zip
+          url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nyctransitzones_{{ current_version_transit_zones }}.zip
       - id: readme_pdf
         custom:
           url: https://s-media.nyc.gov/agencies/dcp/assets/files/pdf/data-tools/bytes/nyctransitzones_metadata.pdf

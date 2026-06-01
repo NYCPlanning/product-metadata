@@ -73,13 +73,13 @@ destinations:
   files:
   - id: csv
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nychousingdb_{{ version }}_csv.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nychousingdb_{{ current_version_developments }}_csv.zip
   - id: gdb
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nychousingdb_{{ version }}_gdb.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nychousingdb_{{ current_version_developments }}_gdb.zip
   - id: shapefile
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nychousingdb_{{ version }}_shp.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nychousingdb_{{ current_version_developments }}_shp.zip
   - id: data_dictionary
     custom:
       url: https://s-media.nyc.gov/agencies/dcp/assets/files/excel/data-tools/bytes/Housing_Database_Data_Dictionary.xlsx
@@ -90,15 +90,15 @@ destinations:
 files:
 - file:
     id: csv
-    filename: nychousingdb_{{ version }}_csv.zip
+    filename: nychousingdb_{{ current_version_developments }}_csv.zip
     type: csv
 - file:
     id: shapefile
-    filename: nychousingdb_{{ version }}_shp.zip
+    filename: nychousingdb_{{ current_version_developments }}_shp.zip
     type: shapefile
 - file:
     id: gdb
-    filename: nychousingdb_{{ version }}_gdb.zip
+    filename: nychousingdb_{{ current_version_developments }}_gdb.zip
     type: fgdb
 - file:
     id: data_dictionary

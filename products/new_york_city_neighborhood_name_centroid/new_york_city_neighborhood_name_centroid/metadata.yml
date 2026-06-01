@@ -41,7 +41,7 @@ destinations:
     files:
       - id: shapefile
         custom:
-          url: http://www1.nyc.gov/assets/planning/download/zip/data-maps/open-data/nyc_nhoodsnames{{ version }}.zip
+          url: http://www1.nyc.gov/assets/planning/download/zip/data-maps/open-data/nyc_nhoodsnames{{ current_version_new_york_city_neighborhood_name_centroid }}.zip
       - id: readme_pdf
         custom:
           url: https://www1.nyc.gov/assets/planning/download/pdf/data-maps/open-data/meta_nhood.pdf

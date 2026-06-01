@@ -32,7 +32,7 @@ destinations:
     files:
       - id: fgdb
         custom:
-          url: https://www.nyc.gov/assets/planning/download/zip/data-maps/open-data/nyc-future-high-tides-with-slr-{{ version }}.zip
+          url: https://www.nyc.gov/assets/planning/download/zip/data-maps/open-data/nyc-future-high-tides-with-slr-{{ current_version_projected_sea_level_rise }}.zip
       - id: metadata_pdf
         custom:
           url: https://www.nyc.gov/assets/planning/download/pdf/data-maps/open-data/slr_metadata.pdf

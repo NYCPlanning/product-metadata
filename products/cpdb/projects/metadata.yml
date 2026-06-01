@@ -24,7 +24,7 @@ assembly:
   type: zip
   contents:
   - id: projects_csv
-    filename: cpdb_projects_{{ version }}.csv
+    filename: cpdb_projects_{{ current_version_cpdb }}.csv
 
 custom: {}
 
@@ -94,13 +94,13 @@ destinations:
   files:
   - id: csv_package
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/capital-projects-database/cpdb_{{ version }}.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/capital-projects-database/cpdb_{{ current_version_cpdb }}.zip
   - id: projects_points
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/capital-projects-database/cpdb_projects_pts_{{ version }}.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/capital-projects-database/cpdb_projects_pts_{{ current_version_cpdb }}.zip
   - id: projects_polygons
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/capital-projects-database/cpdb_projects_poly_{{ version }}.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/capital-projects-database/cpdb_projects_poly_{{ current_version_cpdb }}.zip
 
 files:
 - file:

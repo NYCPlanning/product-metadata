@@ -30,7 +30,7 @@ attributes:
 
 assembly:
 - id: dcm_multilayer
-  filename: dcm_{{ version }}shp.zip
+  filename: dcm_{{ current_version_dcm }}shp.zip
   type: multilayer_shapefile
   contents:
   - id: shapefile

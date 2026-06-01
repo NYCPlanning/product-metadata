@@ -30,7 +30,7 @@ assembly:
   type: zip
   contents:
   - id: primary_csv
-    filename: pops_{{ version }}.csv
+    filename: pops_{{ current_version_pops }}.csv
 
 destinations:
 - id: socrata
@@ -130,11 +130,11 @@ destinations:
   files:
   - id: primary_csv_zip
     custom:
-      url: "{{ bytes_zip_prefix_url }}/privately-owned-public-space/pops_{{ version
+      url: "{{ bytes_zip_prefix_url }}/privately-owned-public-space/pops_{{ current_version_pops
         }}_csv.zip"
   - id: primary_shapefile
     custom:
-      url: "{{ bytes_zip_prefix_url }}/privately-owned-public-space/pops_{{ version
+      url: "{{ bytes_zip_prefix_url }}/privately-owned-public-space/pops_{{ current_version_pops
         }}_shp.zip"
   - id: pops_datadictionary_xlsx
     custom:
