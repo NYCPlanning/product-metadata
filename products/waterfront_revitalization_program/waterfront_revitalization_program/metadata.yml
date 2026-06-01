@@ -35,7 +35,7 @@ destinations:
     files:
       - id: shapefile
         custom:
-          url: http://www1.nyc.gov/assets/planning/download/zip/data-maps/open-data/nycwrpgdb{{ version }}.zip
+          url: http://www1.nyc.gov/assets/planning/download/zip/data-maps/open-data/nycwrpgdb{{ current_version_waterfront_revitalization_program }}.zip
       - id: readme_pdf
         custom:
           url: https://www1.nyc.gov/assets/planning/download/pdf/data-maps/open-data/meta_wap.pdf

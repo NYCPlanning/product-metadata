@@ -57,7 +57,7 @@ destinations:
   files:
   - id: csv_package
     custom:
-      url: "{{ bytes_zip_prefix_url }}/zap/zapprojects_{{ version }}csv.zip"
+      url: "{{ bytes_zip_prefix_url }}/zap/zapprojects_{{ current_version_zap }}csv.zip"
 
 files:
 - file:

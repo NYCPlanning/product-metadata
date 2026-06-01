@@ -69,16 +69,16 @@ destinations:
   files:
   - id: shapefile
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nychdb_{{ version }}_shp.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nychdb_{{ current_version_developments }}_shp.zip
   - id: csv
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nychdb_{{ version }}_csv.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nychdb_{{ current_version_developments }}_csv.zip
   - id: shapefile_inactive_included
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nychdb_inactiveincluded_{{ version }}_shp.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nychdb_inactiveincluded_{{ current_version_developments }}_shp.zip
   - id: csv_inactive_included
     custom:
-      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nychdb_inactiveincluded_{{ version }}_csv.zip
+      url: https://s-media.nyc.gov/agencies/dcp/assets/files/zip/data-tools/bytes/nychdb_inactiveincluded_{{ current_version_developments }}_csv.zip
   - id: data_dictionary
     custom:
       url: https://s-media.nyc.gov/agencies/dcp/assets/files/excel/data-tools/bytes/Housing_Database_Data_Dictionary.xlsx
@@ -86,19 +86,19 @@ destinations:
 files:
 - file:
     id: shapefile
-    filename: nychdb_{{ version }}_shp.zip
+    filename: nychdb_{{ current_version_developments }}_shp.zip
     type: shapefile
 - file:
     id: csv
-    filename: nychdb_{{ version }}_csv.zip
+    filename: nychdb_{{ current_version_developments }}_csv.zip
     type: csv
 - file:
     id: shapefile_inactive_included
-    filename: nychdb_inactiveincluded_{{ version }}_shp.zip
+    filename: nychdb_inactiveincluded_{{ current_version_developments }}_shp.zip
     type: shapefile
 - file:
     id: csv_inactive_included
-    filename: nychdb_inactiveincluded_{{ version }}_csv.zip
+    filename: nychdb_inactiveincluded_{{ current_version_developments }}_csv.zip
     type: csv
 - file:
     id: data_dictionary

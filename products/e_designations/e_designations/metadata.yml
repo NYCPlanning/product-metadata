@@ -40,7 +40,7 @@ assembly:
   type: zip
   contents:
   - id: csv
-    filename: E_GIS_{{ version }}.csv
+    filename: E_GIS_{{ current_version_e_designations }}.csv
 
 custom: {}
 
@@ -91,10 +91,10 @@ destinations:
   files:
   - id: csv_package
     custom:
-      url: "{{ bytes_zip_prefix_url }}/e-designations/nyedes_{{ version }}csv.zip"
+      url: "{{ bytes_zip_prefix_url }}/e-designations/nyedes_{{ current_version_e_designations }}csv.zip"
   - id: shapefile
     custom:
-      url: "{{ bytes_zip_prefix_url }}/e-designations/nyedes_{{ version }}shp.zip"
+      url: "{{ bytes_zip_prefix_url }}/e-designations/nyedes_{{ current_version_e_designations }}shp.zip"
   - id: nyedes_metadata.pdf
     custom:
       url: "{{ bytes_pdf_prefix_url }}/nyedes_metadata.pdf"

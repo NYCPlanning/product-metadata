@@ -33,13 +33,13 @@ assembly:
   type: zip
   contents:
   - id: primary_csv
-    filename: colp_{{ version }}.csv
+    filename: colp_{{ current_version_colp }}.csv
 - id: xlsx_zip
   filename: xlsx.zip
   type: zip
   contents:
   - id: xlsx
-    filename: colp_{{ version }}.xlsx
+    filename: colp_{{ current_version_colp }}.xlsx
 
 custom: {}
 
@@ -169,16 +169,16 @@ destinations:
       url: "{{ bytes_pdf_prefix_url }}/colp_metadata.pdf"
   - id: primary_shapefile
     custom:
-      url: "{{ bytes_zip_prefix_url }}/city-owned-leased-properties/colp_{{ version }}_shp.zip"
+      url: "{{ bytes_zip_prefix_url }}/city-owned-leased-properties/colp_{{ current_version_colp }}_shp.zip"
   - id: csv_zip
     custom:
-      url: "{{ bytes_zip_prefix_url }}/city-owned-leased-properties/colp_{{ version }}_csv.zip"
+      url: "{{ bytes_zip_prefix_url }}/city-owned-leased-properties/colp_{{ current_version_colp }}_csv.zip"
   - id: xlsx_zip
     custom:
-      url: "{{ bytes_zip_prefix_url }}/city-owned-leased-properties/colp_{{ version }}_xlsx.zip"
+      url: "{{ bytes_zip_prefix_url }}/city-owned-leased-properties/colp_{{ current_version_colp }}_xlsx.zip"
   - id: primary_file_geodatabase
     custom:
-      url: "{{ bytes_zip_prefix_url }}/city-owned-leased-properties/colp_{{ version }}_gdb.zip"
+      url: "{{ bytes_zip_prefix_url }}/city-owned-leased-properties/colp_{{ current_version_colp }}_gdb.zip"
 
 files:
 - file:
@@ -261,7 +261,7 @@ files:
       description: |-
         Geodatabase of city-owned and leased properties and uses. COLP is a comprehensive list of uses on city owned and leased properties that includes geographic information as well as the type of use, agency and other related information.
 
-        All previously released versions of this data are available on the <a href="{{ bytes_url__colp }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ version }}
+        All previously released versions of this data are available on the <a href="{{ bytes_url__colp }}">DCP Website: BYTES of the BIG APPLE</a>. Current version: {{ current_version_colp }}
 - file:
     id: colp_readme.pdf
     filename: colp_readme.pdf

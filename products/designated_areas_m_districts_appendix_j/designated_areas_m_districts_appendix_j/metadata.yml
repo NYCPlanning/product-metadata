@@ -54,7 +54,7 @@ destinations:
     files:
       - id: shapefile
         custom:
-          url: http://www1.nyc.gov/assets/planning/download/zip/data-maps/open-data/designated_areas_m_districts_{{ version }}.zip
+          url: http://www1.nyc.gov/assets/planning/download/zip/data-maps/open-data/designated_areas_m_districts_{{ current_version_designated_areas_m_districts_appendix_j }}.zip
       - id: metadata_pdf
         custom:
           url: https://www1.nyc.gov/assets/planning/download/pdf/data-maps/open-data/designated_areas_m_districts_metadata.pdf

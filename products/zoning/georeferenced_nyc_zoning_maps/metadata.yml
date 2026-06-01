@@ -38,7 +38,7 @@ destinations:
   files:
   - id: fgdb
     custom:
-      url: "{{ bytes_zip_prefix_url }}/georeferenced-zoning-maps/georeferencedzoningmaps_{{ version }}.zip"
+      url: "{{ bytes_zip_prefix_url }}/georeferenced-zoning-maps/georeferencedzoningmaps_{{ current_version_zoning }}.zip"
   - id: georeferencedzoningmaps_metadata
     custom:
       url: "{{ bytes_pdf_prefix_url }}/georeferencedzoningmaps_metadata.pdf"

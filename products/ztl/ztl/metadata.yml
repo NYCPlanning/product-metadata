@@ -27,7 +27,7 @@ assembly:
   - id: zoningtaxlotdatabase_datadictionary.pdf
     filename: zoningtaxlotdatabase_datadictionary.pdf
   - id: primary_csv
-    filename: NY_ZoningTaxLotDB{{ version }}.csv
+    filename: NY_ZoningTaxLotDB{{ current_version_zoning }}.csv
 
 custom: {}
 
@@ -48,7 +48,7 @@ destinations:
   files:
   - id: csv_package
     custom:
-      url: "{{ bytes_zip_prefix_url }}/zoning-tax-lot-database/nyczoningtaxlotdb_{{ version
+      url: "{{ bytes_zip_prefix_url }}/zoning-tax-lot-database/nyczoningtaxlotdb_{{ current_version_zoning
         }}.zip"
 
 files:

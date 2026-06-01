@@ -58,7 +58,7 @@ destinations:
   files:
   - id: fgdb
     custom:
-      url: "{{ bytes_zip_prefix_url }}/gis-zoning-features/nycgiszoningfeatures_{{ version }}fgdb.zip"
+      url: "{{ bytes_zip_prefix_url }}/gis-zoning-features/nycgiszoningfeatures_{{ current_version_zoning }}fgdb.zip"
   - id: nyco_metadata
     custom:
       url: "{{ bytes_pdf_prefix_url }}/nyco_metadata.pdf"

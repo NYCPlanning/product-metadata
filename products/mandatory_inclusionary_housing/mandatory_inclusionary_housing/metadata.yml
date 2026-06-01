@@ -48,7 +48,7 @@ destinations:
   files:
   - id: primary_shapefile
     custom:
-      url: "{{ bytes_zip_prefix_url }}/mandatory-inclusionary-housing/nycmih_{{ version }}.zip"
+      url: "{{ bytes_zip_prefix_url }}/mandatory-inclusionary-housing/nycmih_{{ current_version_mandatory_inclusionary_housing }}.zip"
   - id: nycmih_metadata.pdf
     custom:
       url: "{{ bytes_pdf_prefix_url }}/nycmih_metadata.pdf"
