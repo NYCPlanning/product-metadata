@@ -1,6 +1,7 @@
 id: zoning
 
 dataset_defaults:
+  current_version: {{ current_version_zoning }}
   publishing_frequency: Monthly
   data_change_frequency: Monthly
   attribution_link: "https://www.nyc.gov/site/planning/data-maps/open-data/dwn-gis-zoning.page"

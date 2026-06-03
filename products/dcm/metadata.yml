@@ -1,6 +1,7 @@
 id: dcm
 
 dataset_defaults:
+  current_version: {{ current_version_dcm }}
   publishing_frequency: Monthly
   data_change_frequency: Monthly
   attribution_link: {{ bytes_url__dcm }}

@@ -1,5 +1,8 @@
 id: waterfront_public_access_areas
 
+dataset_defaults:
+  current_version: {{ current_version_waterfront_public_access_areas }}
+
 datasets:
 - hpb_launches
 - nyc_saltwaterfishingsites
