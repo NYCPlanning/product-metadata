@@ -1,7 +1,7 @@
 id: lion
 
 dataset_defaults:
-  current_version: 26a
+  current_version: {{ current_version_lion }}
   publishing_frequency: Quarterly
 
 datasets:

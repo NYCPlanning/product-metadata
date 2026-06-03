@@ -1,6 +1,7 @@
 id: developments
 
 dataset_defaults:
+  current_version: {{ current_version_developments }}
   publishing_frequency: Bi-annually
   data_change_frequency: Bi-annually
   category: Housing & Development
