@@ -45,6 +45,7 @@ products:
 - pops
 - projected_sea_level_rise
 - template_db
+- test_dcpy
 - transit_zones
 - waterfront_public_access_areas
 - waterfront_revitalization_program

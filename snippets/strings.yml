@@ -86,3 +86,9 @@ current_version_waterfront_revitalization_program: 2016.1
 current_version_zap: 20260427
 current_version_zoning: 202604
 current_version_zoning_map_index:
+
+# Test variables for dcpy test suite
+test_product_freq: Test Product Frequency
+test_dataset_freq: Test Dataset Frequency
+test_agency: DCP
+test_version: 24c
